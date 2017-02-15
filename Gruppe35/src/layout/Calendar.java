@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class Calendar extends Application {
 
+	
+	//Launch the scene. 
 	@Override
 	public void start(Stage primStage) throws Exception {
 		// TODO Auto-generated method stub
