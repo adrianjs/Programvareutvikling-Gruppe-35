@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="torresrl_eduorg@mysql.stud.ntnu.no">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="torresrl_eduorg">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="test"/>
+    <table id="5" parent="2" name="EVENT"/>
+    <table id="6" parent="2" name="STUDENT"/>
+    <table id="7" parent="2" name="SUBJECT"/>
+    <table id="8" parent="2" name="subjectAssistent"/>
+    <column id="9" parent="5" name="eventID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="10" parent="5" name="navn">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="11" parent="5" name="startDate">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="5" name="endDate">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="5" name="description">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="14" parent="5" name="EVENT_eventID_uindex">
+      <ColNames>eventID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="5" name="PRIMARY">
+      <ColNames>eventID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="16" parent="5" name="EVENT_eventID_uindex">
+      <ColNames>eventID</ColNames>
+      <UnderlyingIndexName>EVENT_eventID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="17" parent="6" name="studentID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="6" name="firstName">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="6" name="lastName">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="6" name="field">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="21" parent="6" name="year">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <index id="22" parent="6" name="STUDENT_studentID_uindex">
+      <ColNames>studentID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="6" name="PRIMARY">
+      <ColNames>studentID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="24" parent="6" name="STUDENT_studentID_uindex">
+      <ColNames>studentID</ColNames>
+      <UnderlyingIndexName>STUDENT_studentID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="25" parent="7" name="subjectCode">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="7" name="examinationsDate">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="27" parent="7" name="evaluation">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="7" name="description">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="29" parent="7" name="SUBJECT_subjectKode_uindex">
+      <ColNames>subjectCode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="7" name="PRIMARY">
+      <ColNames>subjectCode</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="31" parent="7" name="SUBJECT_subjectKode_uindex">
+      <ColNames>subjectCode</ColNames>
+      <UnderlyingIndexName>SUBJECT_subjectKode_uindex</UnderlyingIndexName>
+    </key>
+    <column id="32" parent="8" name="studentID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="8" name="subjectCode">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="8" name="description">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <index id="35" parent="8" name="subjectAssistent_subjectCode">
+      <ColNames>subjectCode</ColNames>
+    </index>
+    <key id="36" parent="8" name="PRIMARY">
+      <ColNames>studentID
+subjectCode</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="8" name="subjectAssistent_studentID">
+      <ColNames>studentID</ColNames>
+      <RefSchemaName>torresrl_eduorg</RefSchemaName>
+      <RefTableName>STUDENT</RefTableName>
+      <RefColNames>studentID</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="8" name="subjectAssistent_subjectCode">
+      <ColNames>subjectCode</ColNames>
+      <RefSchemaName>torresrl_eduorg</RefSchemaName>
+      <RefTableName>SUBJECT</RefTableName>
+      <RefColNames>subjectCode</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
