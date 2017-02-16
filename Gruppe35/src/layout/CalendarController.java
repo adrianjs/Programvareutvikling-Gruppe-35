@@ -90,5 +90,6 @@ public class CalendarController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		setLines();
+		System.out.println("yo");
 	}
 }
