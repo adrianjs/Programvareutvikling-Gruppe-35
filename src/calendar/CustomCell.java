@@ -12,14 +12,14 @@ import java.util.Date;
  *  - Slot name
  *  - Slot description
  */
-public class Cell {
+public class CustomCell {
     private Date startDate = new Date(); //Also used to set start time
     private Date endDate = new Date();//Also used to set end time
     private String name;
     private String description;
     private int slotPriority;
 
-    public Cell(Date startDate, Date endDate, String name, String description, int slotPriority) {
+    public CustomCell(Date startDate, Date endDate, String name, String description, int slotPriority) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.name = name;

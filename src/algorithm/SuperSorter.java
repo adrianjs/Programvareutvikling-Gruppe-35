@@ -6,5 +6,4 @@ package algorithm;
  */
 public class SuperSorter {
 
-
 }
