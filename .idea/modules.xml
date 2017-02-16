@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Gruppe35/Gruppe35.iml" filepath="$PROJECT_DIR$/Gruppe35/Gruppe35.iml" />
       <module fileurl="file://$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" filepath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" />
     </modules>
   </component>
