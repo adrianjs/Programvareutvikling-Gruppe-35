@@ -1,11 +1,14 @@
 package layout;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -31,6 +34,8 @@ public class CalendarController implements Initializable{
 	AnchorPane dayAnchor;
 	@FXML
 	VBox leftPane;
+
+	//Labels for leftPane --> BOTTOFIELD
 	@FXML
 	Label botto1;
 	@FXML
@@ -41,8 +46,38 @@ public class CalendarController implements Initializable{
 	Label askBotto;
 	@FXML
 	Button sendInButton;
-	
-	
+
+
+	//Labels for Day pane.
+	@FXML
+	Label eightToNine;
+	@FXML
+	Label nineToTen;
+	@FXML
+	Label tenToEleven;
+	@FXML
+	Label elevenToTwelve;
+	@FXML
+	Label twelveToThirteen;
+	@FXML
+	Label thirteenToFourteen;
+	@FXML
+	Label fourteenTiFifthteen;
+	@FXML
+	Label fifthteenToSixteen;
+	@FXML
+	Label sixteenToSeventeen;
+	@FXML
+	Label seventeenToEighteen;
+	@FXML
+	Label eighteenToNineTeen;
+	@FXML
+	Label nineteenToTwenty;
+
+	//Date
+	@FXML
+	DatePicker date;
+
 	Calendar cal = new Calendar();
 
 	
@@ -62,7 +97,8 @@ public class CalendarController implements Initializable{
 		try{
 			question = askField.getText();
 			System.out.println(question);
-			//Do something here with the question. 
+			//Do something here with the question.
+
 		}catch(Exception e){
 			System.out.println(e);
 		}
@@ -83,6 +119,7 @@ public class CalendarController implements Initializable{
 	
 	//On action from O button
 	public void O(){
+
 		System.out.println("O");
 	}
 	
@@ -93,6 +130,7 @@ public class CalendarController implements Initializable{
 	
 	//ON action from BB
 	public void BB(){
+
 		System.out.println("BB");
 	}
 	
@@ -113,7 +151,7 @@ public class CalendarController implements Initializable{
 			askBotto.setText("");
 			leftPane.setPrefWidth(10);
 			askField.setVisible(false);
-			//sendInButton.setVisible(false);
+			//sendInButton.setDisable(true);
 			yo++;
 		}else{
 			
@@ -124,12 +162,23 @@ public class CalendarController implements Initializable{
 			botto2.setText("How can i help you?");
 			askBotto.setText("Ask b(O)tto:");
 			askField.setVisible(true);
-			//sendInButton.setVisible(true);
+			//sendInButton.setDisable(false);
 			yo--;
 		}
 		
 		
 	}
+
+
+	//Started to make methods to change veiw when minicalendar is changed.
+	public void changeDate(){
+		System.out.println("Date changed");
+        LocalDate dato = date.getValue();
+        System.out.println(dato);
+
+        //Make methods to get values to put in calendar. for the given day.
+	}
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
