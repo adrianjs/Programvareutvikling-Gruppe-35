@@ -25,6 +25,7 @@ public class LoginController implements Initializable {
     @FXML
     Button openCalendar;
 
+
     User user = new User();
 
     private Stage stage;
