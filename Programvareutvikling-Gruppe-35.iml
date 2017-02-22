@@ -7,5 +7,26 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Desktop/mysql-connector-java-3.1.14" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Desktop/mysql-connector-java-3.1.14/src" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Desktop/mysql-connector-java-3.1.14" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/jfoenix.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

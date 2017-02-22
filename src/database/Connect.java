@@ -79,13 +79,21 @@ public class Connect {
    public static void main(String[] args) {
    	Connect test = new Connect();
 
+
    	test.close();
    	}
 
-   	public void addStudent(){
-
+    public void addStudent(String email, String firstName, String lastName, String field, int year, String pass){
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO STUDENT VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+field+"'" +
+                    ", '"+year+"', '"+pass+"')");
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
 
     }
+
 
 
 
