@@ -6,17 +6,13 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
 
-import javafx.event.Event;
+import com.jfoenix.controls.JFXDatePicker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-
-
-import javax.swing.*;
-import javax.xml.transform.Source;
+import layout.*;
 
 public class CalendarController implements Initializable{
 	
@@ -96,6 +92,9 @@ public class CalendarController implements Initializable{
 	@FXML
 	Label day1;
 	@FXML
+	AnchorPane monthBox1;
+
+	@FXML
 	Label day2;
 	@FXML
 	Label day3;
@@ -166,10 +165,10 @@ public class CalendarController implements Initializable{
 
 	//Date
 	@FXML
-	DatePicker date;
+	JFXDatePicker date;
 
 	//To set a new scene.
-	Calendar cal = new Calendar();
+	layout.Calendar cal = new layout.Calendar();
 
 	//List to add the month labels.
 	@FXML
