@@ -4,6 +4,7 @@
 public class Hei {
 
 
+    //kommentar kun førr pushing
     public void hei(String s){
         System.out.print(s);
     }
