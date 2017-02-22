@@ -14,9 +14,9 @@
    <children>
       <BorderPane layoutX="94.0" layoutY="-12.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="538.0" prefWidth="976.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="496.0" prefWidth="976.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane prefHeight="538.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BorderPane prefHeight="478.0" prefWidth="976.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <center>
                         <ImageView pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
@@ -29,9 +29,9 @@
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane prefHeight="155.0" prefWidth="496.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="241.0" prefWidth="496.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="106.0" prefWidth="496.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="TOP_CENTER" layoutY="-33.0" prefHeight="138.0" prefWidth="496.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label alignment="CENTER" text="Enter your username:">
                            <font>
@@ -40,6 +40,7 @@
                         </Label>
                         <TextField fx:id="loginField" alignment="CENTER" prefHeight="31.0" prefWidth="541.0" />
                         <Button fx:id="openCalendar" mnemonicParsing="false" onAction="#login" text="LogIn" />
+                        <Button mnemonicParsing="false" text="New User" />
                      </children>
                   </VBox>
                </children>
