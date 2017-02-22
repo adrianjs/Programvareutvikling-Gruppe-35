@@ -2,7 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/37478eea-bd84-4dcb-aace-7fc387fe49b6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/37478eea-bd84-4dcb-aace-7fc387fe49b6/storage.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/5c9717de-6b8e-488c-862b-6850499d8dc5/storage.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Adrian.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Gruppe35.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Gruppe35/Gruppe35.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/Hei.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/Programvareutvikling-Gruppe-35.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/algorithm/SuperSorter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/calendar/Cell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Add.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Add.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/AddController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Calendar.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Calendar.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/CalendarController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/EO.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/LoginController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/MonthOrganizer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/Username.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/buttonStyle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Programvareutvikling-Gruppe-35/layout/style.css" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,28 +54,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Gruppe35.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruppe35.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,9 +102,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -114,8 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -145,6 +152,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -597,6 +606,7 @@
       <workItem from="1487241180706" duration="291000" />
       <workItem from="1487243881351" duration="296000" />
       <workItem from="1487756268034" duration="16000" />
+      <workItem from="1487756973498" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -623,10 +633,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1856000" />
+    <option name="totallyTimeSpent" value="1877000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -643,7 +653,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25703126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2595949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -682,8 +692,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gruppe35.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -692,6 +702,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruppe35.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -738,14 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruppe35.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/calendar/Month.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -779,10 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,10 +817,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruppe35.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
