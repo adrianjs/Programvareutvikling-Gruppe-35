@@ -247,11 +247,11 @@ public class CalendarController implements Initializable{
 			time.setText("");
 			botto1.setText("");
 			botto2.setText("");
-			askBotto.setText("Open slide to ask (b)Otto a question");
+			//askBotto.setText("Open slide to ask (b)Otto a question");
 			wholeField.setPrefWidth(50);
 			leftSide.setMaxWidth(0);
 			leftSide.setMinWidth(0);
-			askField.setVisible(false);
+			//askField.setVisible(false);
 			sliderButton.setText(">");
 			//sendInButton.setDisable(true);
 			yo++;
@@ -264,8 +264,8 @@ public class CalendarController implements Initializable{
 			time.setText("12.48");
 			botto1.setText("Hello i am b(O)tto!");
 			botto2.setText("How can i help you?");
-			askBotto.setText("Ask b(O)tto:");
-			askField.setVisible(true);
+			//askBotto.setText("Ask b(O)tto:");
+			//askField.setVisible(true);
 			sliderButton.setText("<");
 			//sendInButton.setDisable(false);
 			yo--;

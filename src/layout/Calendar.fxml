@@ -40,7 +40,7 @@
                               <Insets left="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button id="askButton" mnemonicParsing="false" onAction="#askBotto" stylesheets="@buttonStyle.css" text="Ask (b)Otto!" />
+                        <Button id="askButton" mnemonicParsing="false" onAction="#askBotto" prefHeight="31.0" prefWidth="240.0" stylesheets="@buttonStyle.css" text="Ask (b)Otto!" />
                      </children>
                   </HBox>
                </children></VBox>
