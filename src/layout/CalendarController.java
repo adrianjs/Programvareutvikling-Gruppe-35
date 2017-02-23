@@ -18,179 +18,104 @@ import javafx.scene.layout.GridPane;
 import layout.*;
 
 public class CalendarController implements Initializable{
-	
-	//DAY PANE
-	@FXML
-	GridPane day;
-	//WEEK PANE
-	@FXML 
-	GridPane week;
-	//MONTH PANE
-	@FXML 
-	GridPane month;
-	//Ask field
-	@FXML
-	TextField askField;
-	//Anchorpane day
-	@FXML
-	AnchorPane dayAnchor;
 
+	@FXML GridPane day; //DAY PANE
+	@FXML GridPane week; //WEEK PANE
+	@FXML GridPane month; //MONTH PANE
+	@FXML TextField askField;//Ask field
+	@FXML AnchorPane dayAnchor; //Anchorpane day
 
 	//AI panes.
-	@FXML
-	SplitPane wholeField;
-	@FXML
-	AnchorPane leftSide;
-	@FXML
-	AnchorPane rightSide;
+	@FXML SplitPane wholeField;
+	@FXML AnchorPane leftSide;
+	@FXML AnchorPane rightSide;
 
-	//Slide button
-	@FXML
-	Button sliderButton;
+	@FXML Button sliderButton; //Slide button
 
 	//Labels for leftPane --> BOTTOFIELD
-	@FXML
-	Label botto1;
-	@FXML
-	Label botto2;
-	@FXML
-	Label time;
-	@FXML
-	Label askBotto;
-	@FXML
-	Button sendInButton;
-
+	@FXML Label botto1;
+	@FXML Label botto2;
+	@FXML Label time;
+	@FXML Label askBotto;
+	@FXML Button sendInButton;
 
 	//Labels for Day pane.
-	@FXML
-	Label eightToNine;
-	@FXML
-	Label nineToTen;
-	@FXML
-	Label tenToEleven;
-	@FXML
-	Label elevenToTwelve;
-	@FXML
-	Label twelveToThirteen;
-	@FXML
-	Label thirteenToFourteen;
-	@FXML
-	Label fourteenTiFifthteen;
-	@FXML
-	Label fifthteenToSixteen;
-	@FXML
-	Label sixteenToSeventeen;
-	@FXML
-	Label seventeenToEighteen;
-	@FXML
-	Label eighteenToNineTeen;
-	@FXML
-	Label nineteenToTwenty;
-	@FXML
-	Label thisday;
+	@FXML Label eightToNine;
+	@FXML Label nineToTen;
+	@FXML Label tenToEleven;
+	@FXML Label elevenToTwelve;
+	@FXML Label twelveToThirteen;
+	@FXML Label thirteenToFourteen;
+	@FXML Label fourteenTiFifthteen;
+	@FXML Label fifthteenToSixteen;
+	@FXML Label sixteenToSeventeen;
+	@FXML Label seventeenToEighteen;
+	@FXML Label eighteenToNineTeen;
+	@FXML Label nineteenToTwenty;
+	@FXML Label thisday;
 
 	//Labels week-Pane
 
 	//Labels month pane
-	@FXML
-	Label day1;
-	@FXML
-	AnchorPane monthBox1;
+	@FXML Label day1;
+	@FXML AnchorPane monthBox1;
 
-	@FXML
-	Label day2;
-	@FXML
-	Label day3;
-	@FXML
-	Label day4;
-	@FXML
-	Label day5;
-	@FXML
-	Label day6;
-	@FXML
-	Label day7;
-	@FXML
-	Label day8;
-	@FXML
-	Label day9;
-	@FXML
-	Label day10;
-	@FXML
-	Label day11;
-	@FXML
-	Label day12;
-	@FXML
-	Label day13;
-	@FXML
-	Label day14;
-	@FXML
-	Label day15;
-	@FXML
-	Label day16;
-	@FXML
-	Label day17;
-	@FXML
-	Label day18;
-	@FXML
-	Label day19;
-	@FXML
-	Label day20;
-	@FXML
-	Label day21;
-	@FXML
-	Label day22;
-	@FXML
-	Label day23;
-	@FXML
-	Label day24;
-	@FXML
-	Label day25;
-	@FXML
-	Label day26;
-	@FXML
-	Label day27;
-	@FXML
-	Label day28;
-	@FXML
-	Label day29;
-	@FXML
-	Label day30;
-	@FXML
-	Label day31;
-	@FXML
-	Label day32;
-	@FXML
-	Label day33;
-	@FXML
-	Label day34;
-	@FXML
-	Label day35;
+	@FXML Label day2;
+	@FXML Label day3;
+	@FXML Label day4;
+	@FXML Label day5;
+	@FXML Label day6;
+	@FXML Label day7;
+	@FXML Label day8;
+	@FXML Label day9;
+	@FXML Label day10;
+	@FXML Label day11;
+	@FXML Label day12;
+	@FXML Label day13;
+	@FXML Label day14;
+	@FXML Label day15;
+	@FXML Label day16;
+	@FXML Label day17;
+	@FXML Label day18;
+	@FXML Label day19;
+	@FXML Label day20;
+	@FXML Label day21;
+	@FXML Label day22;
+	@FXML Label day23;
+	@FXML Label day24;
+	@FXML Label day25;
+	@FXML Label day26;
+	@FXML Label day27;
+	@FXML Label day28;
+	@FXML Label day29;
+	@FXML Label day30;
+	@FXML Label day31;
+	@FXML Label day32;
+	@FXML Label day33;
+	@FXML Label day34;
+	@FXML Label day35;
 
 	@FXML
 	Group hourGroup;
 
 	//Date
-	@FXML
-	JFXDatePicker date;
+	@FXML JFXDatePicker date;
 
 	//To set a new scene.
 	layout.Calendar cal = new layout.Calendar();
 
 	//List to add the month labels.
-	@FXML
-	List<Label> labels = new ArrayList<>();
+	@FXML List<Label> labels = new ArrayList<>();
+
 	//Counter to only add the labels to the labels list once.
 
-
     // List of labels in day Tab...
-    @FXML
-    List<Label> timeToTime = new ArrayList<>();
+    @FXML List<Label> timeToTime = new ArrayList<>();
 
-	int teller = 0;
+    int teller = 0;
 
 	//UserInformation
 	User user = new User();
-
 
 	//Methods starts here.
 

@@ -8,7 +8,8 @@ import java.util.Date;
  *
  */
 public class UserCell extends Cell {
-    public UserCell(Date startDate, Date endDate, String name, String description, int slotPriority) {
-        super(startDate, endDate, name, description, slotPriority);
+
+    public UserCell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+        super(startDate, endDate, name, description, slotPriority, repeating);
     }
 }

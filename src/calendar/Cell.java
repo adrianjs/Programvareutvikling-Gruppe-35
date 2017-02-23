@@ -18,13 +18,16 @@ public class Cell {
     private String name;
     private String description;
     private int slotPriority;
+    private boolean repeating;
 
-    public Cell(Date startDate, Date endDate, String name, String description, int slotPriority) {
+    public Cell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+        System.out.println("cellmate");
         this.startDate = startDate;
         this.endDate = endDate;
         this.name = name;
         this.description = description;
         this.slotPriority = slotPriority;
+        this.repeating = repeating;
     }
 
     public Date getStartDate() {
@@ -65,5 +68,13 @@ public class Cell {
 
     public void setSlotPriority(int slotPriority) {
         this.slotPriority = slotPriority;
+    }
+
+    public boolean isRepeating() {
+        return repeating;
+    }
+
+    public void setRepeating(boolean repeating) {
+        this.repeating = repeating;
     }
 }
