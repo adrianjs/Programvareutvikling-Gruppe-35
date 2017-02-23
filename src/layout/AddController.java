@@ -4,8 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -50,6 +52,12 @@ public class AddController implements Initializable{
     @FXML
     Label errorTime;
 
+    @FXML
+    ChoiceBox priority;
+
+    @FXML
+    Label priorityError;
+
     Stage stage;
 
 
@@ -67,6 +75,7 @@ public class AddController implements Initializable{
     public void sendIn(){
         errorActivity.setText("");
         errorDate.setText("");
+        priorityError.setText("");
         //Må sjekke i forhold til resten av kalenderen om det kan settes inn en aktivitet på dette tidspunktet..
         boolean check1 = checkActivity();
         boolean check2 = checkDate();
@@ -146,6 +155,19 @@ public class AddController implements Initializable{
         return true;
     }
 
+    public boolean checkPriority(){
+
+        return true;
+
+    }
+
+    public void setElementsToProirityChoiceBox(){
+        System.out.println("priority");
+        priority = new ChoiceBox(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
+        System.out.println("loaded that sjiet");
+
+    }
+
     //Close scene. On action from cancel button.
     public void cancel(){
 
@@ -155,6 +177,6 @@ public class AddController implements Initializable{
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setElementsToProirityChoiceBox();
     }
 }
