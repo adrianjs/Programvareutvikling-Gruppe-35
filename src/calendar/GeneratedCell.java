@@ -10,7 +10,8 @@ import java.util.Date;
  * TODO: Set up useful fields and methods
  */
 public class GeneratedCell extends Cell {
-    public GeneratedCell(Date startDate, Date endDate, String name, String description, int slotPriority) {
-        super(startDate, endDate, name, description, slotPriority);
+
+    public GeneratedCell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+        super(startDate, endDate, name, description, slotPriority, repeating);
     }
 }
