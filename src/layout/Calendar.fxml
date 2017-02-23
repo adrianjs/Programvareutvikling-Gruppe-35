@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -20,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CalendarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CalendarController">
    <bottom>
       <HBox prefHeight="78.0" prefWidth="1252.0" style="-fx-background-color: #76a4ed;" BorderPane.alignment="CENTER">
          <children>
@@ -164,23 +163,19 @@
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin></Label>
-                                    <Group fx:id="hourGroup" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                       <children>
-                                          <Label fx:id="eightToNine" layoutY="32.0" text="Eight To Nine" />
-                                          <Label fx:id="nineToTen" layoutY="64.0" text="Nine to Ten" />
-                                          <Label fx:id="tenToEleven" layoutY="96.0" text="Ten to eleven" />
-                                          <Label fx:id="elevenToTwelve" layoutY="128.0" text="Eleven to Twelve" />
-                                          <Label fx:id="sixteenToSeventeen" layoutY="288.0" text="16 to 17" />
-                                          <Label fx:id="seventeenToEighteen" layoutY="320.0" text="17 to 18" />
-                                          <Label fx:id="twelveToThirteen" layoutY="160.0" text="Twelve to thirteen" />
-                                          <Label fx:id="thirteenToFourteen" layoutY="192.0" text="Thirteen to fourteen" />
-                                          <Label fx:id="fourteenTiFifthteen" layoutY="224.0" text="Fourteen to fifteen" />
-                                          <Label fx:id="fifthteenToSixteen" layoutY="256.0" text="15 to 16" />
-                                          <Label fx:id="eighteenToNineTeen" layoutY="352.0" text="18 to 19" />
-                                          <Label fx:id="nineteenToTwenty" layoutY="384.0" text="19 to 20" />
-                                          <Label fx:id="thisday" text="Thisday" />
-                                       </children>
-                                    </Group>
+                                    <Label fx:id="eightToNine" text="Eight To Nine" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="nineToTen" text="Nine to Ten" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label fx:id="tenToEleven" text="Ten to eleven" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label fx:id="elevenToTwelve" text="Eleven to Twelve" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label fx:id="sixteenToSeventeen" text="16 to 17" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Label fx:id="seventeenToEighteen" text="17 to 18" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                    <Label fx:id="twelveToThirteen" text="Twelve to thirteen" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label fx:id="thirteenToFourteen" text="Thirteen to fourteen" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label fx:id="fourteenTiFifthteen" text="Fourteen to fifteen" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <Label fx:id="fifthteenToSixteen" text="15 to 16" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <Label fx:id="eighteenToNineTeen" text="18 to 19" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                    <Label fx:id="nineteenToTwenty" text="19 to 20" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                    <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1" />
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="8" />

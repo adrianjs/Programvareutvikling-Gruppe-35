@@ -97,8 +97,6 @@ public class CalendarController implements Initializable{
 	@FXML Label day34;
 	@FXML Label day35;
 
-	@FXML
-	Group hourGroup;
 
 	//Date
 	@FXML JFXDatePicker date;
@@ -260,13 +258,13 @@ public class CalendarController implements Initializable{
 
 	//Add labels tin day tab to list
     public void addTimeToTimeToList(){
-		ObservableList<Node> children = hourGroup.getChildren();
+		ObservableList<Node> children = day.getChildren();
 		for(Node label : children){
-			timeToTime.add((Label) label);
+			if(label.getId() != null){
+				timeToTime.add((Label) label);
+			}
 		}
 		System.out.println(timeToTime);
-		System.out.println(hourGroup.isResizable());
-		hourGroup.setAutoSizeChildren(true);
 	}
 
     //Add labels in month tab to list..
