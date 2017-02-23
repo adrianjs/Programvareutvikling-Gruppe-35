@@ -159,7 +159,7 @@ public class CalendarController implements Initializable{
 	//On action from addsubject button
 	public void addSubject(){
 		cal.changeScene("addSubject.fxml", "Add subject");
-		System.out.println("O");
+
 	}
 	
 	//On action form IL --> Currenly no IL button on fxml-file
@@ -223,12 +223,7 @@ public class CalendarController implements Initializable{
 	//Started to make methods to change veiw when minicalendar is changed.
 	public void changeDate(LocalDate dato){
 
-
-		System.out.println("Date changed");
-
-
-
-        String dato1 = dato.toString();
+		String dato1 = dato.toString();
 		thisday.setText(dato1);
         String[] split = dato1.split("-");
         String year = split[0];
@@ -243,10 +238,8 @@ public class CalendarController implements Initializable{
 			addLabelsToList();
 			teller++;
 		}
-
 		monthOrganizer(year1, month1-1, day1);
-
-        //Make methods to get values to put in calendar. for the given day.
+		//Make methods to get values to put in calendar. for the given day.
 	}
 
 	//Remove zero from string if it starts whith it.
@@ -381,6 +374,15 @@ public class CalendarController implements Initializable{
 			count++;
 		}
 
+	}
+
+	//Is between.
+	public boolean isBetween(Date endTime, Date startTime, Date timeToCheckStart, Date timeToCheckEnd){
+
+		if((endTime.before(timeToCheckStart))&&(startTime.after(timeToCheckEnd))){
+			return true;
+		}
+		return false;
 	}
 
 	@Override
