@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by larsmade on 21.02.2017.
@@ -27,6 +27,7 @@ public class LoginController implements Initializable {
 
 
     User user = new User();
+    Calendar cal = new Calendar();
 
     private Stage stage;
 
@@ -48,6 +49,27 @@ public class LoginController implements Initializable {
 
 
     }
+
+    public void newUser(){
+
+        try {
+            Parent load = FXMLLoader.load(getClass().getResource("makeuser.fxml"));
+            Stage st = new Stage();
+            st.setTitle("Make User");
+            st.setScene(new Scene(load));
+
+            st.show();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println("funker ikke");
+            e.printStackTrace();
+        }
+        System.out.println("press");
+
+    }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
