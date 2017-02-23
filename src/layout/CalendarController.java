@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
 
+import calendar.UserCell;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -382,6 +383,14 @@ public class CalendarController implements Initializable{
 		}
 		return false;
 	}
+
+	//GetUsercells --> Sjekke tiden på den, i tillegg til å sjekke
+    public void userCellOrganize(){
+	    //Get usercells from database..
+
+        ArrayList<UserCell> userCells = new ArrayList<UserCell>();
+    }
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
