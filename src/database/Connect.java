@@ -94,6 +94,17 @@ public class Connect {
 
     }
 
+    public void addTeacher(String email, String firstName, String lastName, String department, String description, String pass){
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+department+"'" +
+                    ", '"+pass+"', '"+description+"')");
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
+
+    }
+
 
 
 
