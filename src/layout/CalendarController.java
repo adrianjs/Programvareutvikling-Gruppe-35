@@ -7,6 +7,8 @@ import java.util.*;
 import java.util.GregorianCalendar;
 
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -400,11 +402,25 @@ public class CalendarController implements Initializable{
 		System.out.println("yo");
 	}
 
+	//When days in months are clicked, these methods will do the magic,.
+	@FXML
+	private void handleCalendarClick1(){
+		monthClicked(1);
+	}
+	@FXML
+	private void handleCalendarClick2(){
+		monthClicked(2);
+	}
+
 
 	//Go to that given day when month is clicked.
-	public void monthClicked(){
+	public void monthClicked(int tall){
 
-		System.out.println("MonthClicked");
+
+		//String id = pane.getId();
+		//System.out.println(tall);
+		System.out.println("MonthClicked day-number" + tall);
+		//System.out.println(id);
 	}
 
 	//Set initalize date.
@@ -425,5 +441,4 @@ public class CalendarController implements Initializable{
 		setLines();
 
 	}
-
 }

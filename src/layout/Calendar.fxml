@@ -53,25 +53,25 @@
       </HBox>
    </bottom>
    <right>
-      <VBox prefHeight="649.0" prefWidth="145.0" style="-fx-background-color: #76a4ed;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="455.0" prefWidth="103.0" style="-fx-background-color: #76a4ed;" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane onMouseClicked="#add" prefHeight="145.0" prefWidth="145.0" style="-fx-background-color: green;">
+            <AnchorPane onMouseClicked="#add" prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: green;">
                <children>
-                  <Label id="side" layoutX="40.0" layoutY="50.0" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="ADD" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label id="side" layoutX="40.0" layoutY="50.0" prefHeight="103.0" prefWidth="103.0" stylesheets="@buttonStyle.css" text="ADD" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font name="System Bold" size="30.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="40.0" />
+                        <Insets left="30.0" />
                      </padding>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="145.0" prefWidth="145.0" style="-fx-background-color: red;">
+            <AnchorPane prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: red;">
                <children>
                   <Label id="side" layoutX="19.0" layoutY="50.0" onMouseClicked="#remove" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="Remove" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font name="System Bold" size="30.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                      <padding>
                         <Insets left="15.0" />
@@ -79,14 +79,17 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="145.0" prefWidth="145.0" style="-fx-background-color: yellow;">
+            <AnchorPane prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: yellow;">
                <children>
-                  <Label id="side" layoutX="61.0" layoutY="50.0" onMouseClicked="#O" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="O" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label id="side" layoutX="61.0" layoutY="50.0" onMouseClicked="#O" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="Add subject" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font size="30.0" />
+                        <Font name="System Bold" size="14.0" />
                      </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                      <padding>
-                        <Insets left="60.0" />
+                        <Insets left="10.0" />
                      </padding>
                   </Label>
                </children>
@@ -331,12 +334,12 @@
                                     <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <AnchorPane id="month" fx:id="monthBox1" onMouseClicked="#monthClicked" stylesheets="@style.css" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" fx:id="monthBox1" onMouseClicked="#handleCalendarClick1" stylesheets="@style.css" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day1" stylesheets="@style.css" text="1" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick2" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day2" text="2" />
                                        </children>
@@ -565,7 +568,7 @@
    <top>
       <AnchorPane prefHeight="58.0" prefWidth="1054.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXDatePicker fx:id="date" layoutX="180.0" layoutY="14.0" onAction="#setNewDate" prefHeight="58.0" prefWidth="876.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <JFXDatePicker fx:id="date" layoutX="180.0" layoutY="14.0" onAction="#setNewDate" prefHeight="58.0" prefWidth="876.0" promptText="Select a date --&gt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </top>
