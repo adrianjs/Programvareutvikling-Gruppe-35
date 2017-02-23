@@ -131,24 +131,24 @@ public class CreateUser {
         }
         if (firstName.getText() == null || firstName.getText().length() == 0){
             errorMessage += "First name must be filled in.\n";
-        } else if (firstName.getText().length() > 15){
-            errorMessage += "First name must be less than 15 characters.\n";
+        } else if (firstName.getText().length() > 55){
+            errorMessage += "First name must be less than 55 characters.\n";
         }
         if (lastName.getText() == null || lastName.getText().length() == 0){
             errorMessage += "Last name must be filled in.\n";
-        } else if (lastName.getText().length() > 15){
-            errorMessage += "Last name must be less than 15 characters.\n";
+        } else if (lastName.getText().length() > 55){
+            errorMessage += "Last name must be less than 55 characters.\n";
         }
         if (password.getText() == null || password.getText().length() == 0){
             errorMessage += "Password must be filled in.\n";
-        } else if (password.getText().length() > 15){
-            errorMessage += "Passwork must be less than 15 characters.\n";
+        } else if (password.getText().length() > 55){
+            errorMessage += "Passwork must be less than 55 characters.\n";
         }
         if(fieldStud.isVisible()) {
             if (study.getText() == null || study.getText().length() == 0) {
                 errorMessage += "Field of study must be filled in.\n";
-            } else if (study.getText().length() > 15) {
-                errorMessage += "Field of study must be less than 15 characters.\n";
+            } else if (study.getText().length() > 55) {
+                errorMessage += "Field of study must be less than 55 characters.\n";
             }
             if (!firsty.isSelected() && !secondy.isSelected() && !thirdy.isSelected() &&
                     !fourthy.isSelected() && !fifthy.isSelected()) {
@@ -157,6 +157,8 @@ public class CreateUser {
         } else {
             if(department.getText() == null || department.getText().length() == 0){
                 errorMessage += "Department must be filled in.\n";
+            } else if (department.getText().length() > 100){
+                errorMessage += "Department must be less than 100 characters.\n";
             }
         }
 
