@@ -219,9 +219,9 @@ public class CalendarController implements Initializable{
 		System.out.println("remove");
 	}
 	
-	//On action from O button
-	public void O(){
-
+	//On action from addsubject button
+	public void addSubject(){
+		cal.changeScene("addSubject.fxml", "Add subject");
 		System.out.println("O");
 	}
 	
