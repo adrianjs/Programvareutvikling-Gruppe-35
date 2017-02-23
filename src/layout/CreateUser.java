@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.awt.*;
 
@@ -16,6 +17,8 @@ import java.awt.*;
  * Created by Henning on 22.02.2017.
  */
 public class CreateUser {
+    public Stage dialogStage;
+
     @FXML private TextArea description;
 
     @FXML private Button submit;
@@ -43,60 +46,64 @@ public class CreateUser {
 
 
     public void initialize(){
-        description.setOpacity(0);
-        fieldStud.setOpacity(0);
-        fieldTeach.setOpacity(0);
-        yearGroup.setOpacity(0);
+        description.setVisible(false);
+        fieldStud.setVisible(false);
+        fieldTeach.setVisible(false);
+        yearGroup.setVisible(false);
 
         cancel.setOnAction(event -> {
-            System.exit(0);
+            dialogStage.close();
         });
 
         stud.setOnAction(event -> {
             //Show stud related fields
-            fieldStud.setOpacity(1);
-            yearGroup.setOpacity(1);
+            fieldStud.setVisible(true);
+            yearGroup.setVisible(true);
             //Hide teacher related fields
-            fieldTeach.setOpacity(0);
-            description.setOpacity(0);
+            fieldTeach.setVisible(false);
+            description.setVisible(false);
         });
 
         teach.setOnAction(event -> {
-            //Show stud related fields
-            fieldStud.setOpacity(0);
-            yearGroup.setOpacity(0);
-            //Hide teacher related fields
-            fieldTeach.setOpacity(1);
-            description.setOpacity(1);
+            //Hide stud related fields
+            fieldStud.setVisible(false);
+            yearGroup.setVisible(false);
+            //Show teacher related fields
+            fieldTeach.setVisible(true);
+            description.setVisible(true);
 
         });
-
         submit.setOnAction(event -> {
-            Connect connecter = new Connect();
-            System.out.println(stud.isSelected());
-            System.out.println(teach.isSelected());
-            if(stud.isSelected()){
-                connecter.addStudent(email.getCharacters().toString(),
-                        firstName.getCharacters().toString(),
-                        lastName.getCharacters().toString(),
-                        study.getCharacters().toString(),
-                        getSchoolYear(),
-                        password.getCharacters().toString()
-                );
-            }else if(teach.isSelected()) {
-                //TODO: Arm this to push to TEACHER not STUDENT
-                connecter.addTeacher(email.getCharacters().toString(),
-                        firstName.getCharacters().toString(),
-                        lastName.getCharacters().toString(),
-                        department.getCharacters().toString(),
-                        description.getText(),
-                        password.getCharacters().toString()
-                );
-            }else{
-                System.out.println("You have to choose student or teacher!");
+            if (isInputValid()) {
+                Connect connecter = new Connect();
+                System.out.println(stud.isSelected());
+                System.out.println(teach.isSelected());
+                if (stud.isSelected()) {
+                    connecter.addStudent(email.getCharacters().toString(),
+                            firstName.getCharacters().toString(),
+                            lastName.getCharacters().toString(),
+                            study.getCharacters().toString(),
+                            getSchoolYear(),
+                            password.getCharacters().toString()
+                    );
+                } else if (teach.isSelected()) {
+                    //TODO: Arm this to push to TEACHER not STUDENT
+                    connecter.addTeacher(email.getCharacters().toString(),
+                            firstName.getCharacters().toString(),
+                            lastName.getCharacters().toString(),
+                            department.getCharacters().toString(),
+                            description.getText(),
+                            password.getCharacters().toString()
+                    );
+                } else {
+                    System.out.println("You have to choose student or teacher!");
+                }
             }
         });
+
     }
+
+    public void setDialogStage(Stage dialogStage){ this.dialogStage = dialogStage; }
 
     public int getSchoolYear(){
         if(firsty.isSelected()){
@@ -111,6 +118,58 @@ public class CreateUser {
             return 5;
         }else{
             return 0;
+        }
+    }
+
+    public boolean isInputValid(){
+        String errorMessage = "";
+
+        if (email.getText() == null || email.getText().length() == 0){
+            errorMessage += "Email must be filled in.\n";
+        } else if(email.getText().length() > 55){
+            errorMessage += "Email length must be less than 55 characters.\n";
+        }
+        if (firstName.getText() == null || firstName.getText().length() == 0){
+            errorMessage += "First name must be filled in.\n";
+        } else if (firstName.getText().length() > 15){
+            errorMessage += "First name must be less than 15 characters.\n";
+        }
+        if (lastName.getText() == null || lastName.getText().length() == 0){
+            errorMessage += "Last name must be filled in.\n";
+        } else if (lastName.getText().length() > 15){
+            errorMessage += "Last name must be less than 15 characters.\n";
+        }
+        if (password.getText() == null || password.getText().length() == 0){
+            errorMessage += "Password must be filled in.\n";
+        } else if (password.getText().length() > 15){
+            errorMessage += "Passwork must be less than 15 characters.\n";
+        }
+        if(fieldStud.isVisible()) {
+            if (study.getText() == null || study.getText().length() == 0) {
+                errorMessage += "Field of study must be filled in.\n";
+            } else if (study.getText().length() > 15) {
+                errorMessage += "Field of study must be less than 15 characters.\n";
+            }
+            if (!firsty.isSelected() && !secondy.isSelected() && !thirdy.isSelected() &&
+                    !fourthy.isSelected() && !fifthy.isSelected()) {
+                errorMessage += "You must select a year.\n";
+            }
+        } else {
+            if(department.getText() == null || department.getText().length() == 0){
+                errorMessage += "Department must be filled in.\n";
+            }
+        }
+
+        if (errorMessage.length() == 0){
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Invalid fields");
+            alert.setHeaderText("Please fix these errors:");
+            alert.setContentText(errorMessage);
+            alert.showAndWait();
+            return false;
+
         }
     }
 }

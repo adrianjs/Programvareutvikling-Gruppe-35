@@ -53,11 +53,13 @@ public class LoginController implements Initializable {
     public void newUser(){
 
         try {
-            Parent load = FXMLLoader.load(getClass().getResource("makeuser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("makeuser.fxml"));
+            Parent root = loader.load();
             Stage st = new Stage();
             st.setTitle("Make User");
-            st.setScene(new Scene(load));
-
+            CreateUser controller = loader.getController();
+            controller.setDialogStage(st);
+            st.setScene(new Scene(root));
             st.show();
 
         } catch (IOException e) {
