@@ -18,7 +18,7 @@ public class Login {
         connecter = new Connect();
     }
 
-    public void getStudent() throws SQLException {
+    public Set getStudent() throws SQLException {
         ResultSet m_ResultSet = connecter.stmt.executeQuery(query);
         while (m_ResultSet.next()) {
             List user = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Login {
             user.add(m_ResultSet.getString(3));
             users.add(user);
         }
-        System.out.println(users);
+        return users;
     }
 
 }

@@ -7,11 +7,13 @@ import java.util.*;
 import java.util.GregorianCalendar;
 
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -258,21 +260,14 @@ public class CalendarController implements Initializable{
 
 	//Add labels tin day tab to list
     public void addTimeToTimeToList(){
-	    timeToTime.add(eightToNine);
-        timeToTime.add(nineToTen);
-        timeToTime.add(tenToEleven);
-        timeToTime.add(elevenToTwelve);
-        timeToTime.add(twelveToThirteen);
-        timeToTime.add(thirteenToFourteen);
-        timeToTime.add(fourteenTiFifthteen);
-        timeToTime.add(fifthteenToSixteen);
-        timeToTime.add(sixteenToSeventeen);
-        timeToTime.add(seventeenToEighteen);
-        timeToTime.add(eighteenToNineTeen);
-        timeToTime.add(nineteenToTwenty);
-
-
-    }
+		ObservableList<Node> children = hourGroup.getChildren();
+		for(Node label : children){
+			timeToTime.add((Label) label);
+		}
+		System.out.println(timeToTime);
+		System.out.println(hourGroup.isResizable());
+		hourGroup.setAutoSizeChildren(true);
+	}
 
     //Add labels in month tab to list..
 	public void addLabelsToList(){
