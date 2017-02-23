@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +24,7 @@ public class LoginController implements Initializable {
 
     @FXML
     Button openCalendar;
+
 
     User user = new User();
 

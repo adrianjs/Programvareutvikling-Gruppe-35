@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,18 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddController">
    <children>
       <BorderPane layoutX="385.0" layoutY="301.0" prefHeight="789.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox prefHeight="789.0" prefWidth="225.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="236.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@EO.png" />
-                     </image>
-                  </ImageView>
-               </children></VBox>
+            <VBox prefHeight="554.0" prefWidth="38.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </left>
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
@@ -36,36 +27,58 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of activity:" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of activity:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Text>
                   <HBox prefHeight="52.0" prefWidth="1042.0">
                      <children>
-                        <TextField />
+                        <TextField fx:id="activity" />
+                        <Label fx:id="errorActivity" textFill="RED" />
                      </children>
                   </HBox>
-                  <Label text="Date:" />
-                  <DatePicker />
-                  <RadioButton mnemonicParsing="false" text="Every week" />
-                  <RadioButton mnemonicParsing="false" text="Just this time" />
-                  <Label text="From:" />
-                  <HBox prefHeight="51.0" prefWidth="912.0">
+                  <Label text="Date:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
+                  <HBox prefHeight="42.0" prefWidth="568.0">
                      <children>
-                        <ChoiceBox prefWidth="150.0" />
-                        <Label text=":" />
-                        <ChoiceBox prefWidth="150.0" />
+                        <JFXDatePicker id="cal" fx:id="date" stylesheets="@buttonStyle.css" />
+                        <Label fx:id="errorDate" textFill="RED" />
                      </children>
                   </HBox>
-                  <Label text="To:" />
+                  <HBox prefHeight="48.0" prefWidth="568.0">
+                     <children>
+                        <JFXCheckBox fx:id="everyWeek" text="Every week on this date" />
+                     </children>
+                  </HBox>
+                  <Label text="From:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
+                  <HBox prefHeight="6.0" prefWidth="912.0">
+                     <children>
+                        <JFXDatePicker id="cal" fx:id="startTime" showTime="true" stylesheets="@buttonStyle.css" />
+                     </children>
+                  </HBox>
+                  <Label text="To:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
+                  <HBox prefHeight="41.0" prefWidth="912.0">
+                     <children>
+                        <JFXDatePicker id="cal" fx:id="endTime" showTime="true" stylesheets="@buttonStyle.css" />
+                        <Label fx:id="errorTime" textFill="RED" />
+                     </children>
+                  </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ChoiceBox prefWidth="150.0" />
-                        <Label text=":" />
-                        <ChoiceBox prefWidth="150.0" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Button mnemonicParsing="false" text="Cancel" />
-                        <Button mnemonicParsing="false" text="Add" />
+                        <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="@buttonStyle.css" text="Cancel" />
+                        <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="@buttonStyle.css" text="Send In">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
                      </children>
                   </HBox>
                </children>

@@ -6,17 +6,15 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
 
+import com.jfoenix.controls.JFXDatePicker;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-
-
-import javax.swing.*;
-import javax.xml.transform.Source;
+import layout.*;
 
 public class CalendarController implements Initializable{
 	
@@ -96,6 +94,9 @@ public class CalendarController implements Initializable{
 	@FXML
 	Label day1;
 	@FXML
+	AnchorPane monthBox1;
+
+	@FXML
 	Label day2;
 	@FXML
 	Label day3;
@@ -166,10 +167,10 @@ public class CalendarController implements Initializable{
 
 	//Date
 	@FXML
-	DatePicker date;
+	JFXDatePicker date;
 
 	//To set a new scene.
-	Calendar cal = new Calendar();
+	layout.Calendar cal = new layout.Calendar();
 
 	//List to add the month labels.
 	@FXML
@@ -401,11 +402,25 @@ public class CalendarController implements Initializable{
 		System.out.println("yo");
 	}
 
+	//When days in months are clicked, these methods will do the magic,.
+	@FXML
+	private void handleCalendarClick1(){
+		monthClicked(1);
+	}
+	@FXML
+	private void handleCalendarClick2(){
+		monthClicked(2);
+	}
+
 
 	//Go to that given day when month is clicked.
-	public void monthClicked(){
+	public void monthClicked(int tall){
 
-		System.out.println("MonthClicked");
+
+		//String id = pane.getId();
+		//System.out.println(tall);
+		System.out.println("MonthClicked day-number" + tall);
+		//System.out.println(id);
 	}
 
 	//Set initalize date.
@@ -426,5 +441,4 @@ public class CalendarController implements Initializable{
 		setLines();
 
 	}
-
 }

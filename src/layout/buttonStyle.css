@@ -12,14 +12,6 @@
 	-fx-border-color: #4d5259;
 }
 
-/*
-#side{
-	
-	
-	
-	-fx-background-color: gray;
-}
-*/
 #side:hover{
 
 	-fx-border-color:  black;
@@ -42,3 +34,19 @@
 	-fx-border-color: #4d5259;
 	-fx-border-width: 0 0 8 0;
 }
+
+
+/* ADD */
+
+#cal{
+	
+	-fx-background-color:  #cadae0;
+	
+}
+
+#addButtons{
+	
+	-fx-background-color:  #cadae0; 
+	
+}
+
