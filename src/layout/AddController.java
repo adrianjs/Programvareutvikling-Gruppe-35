@@ -1,5 +1,6 @@
 package layout;
 
+import calendar.UserCell;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -67,8 +69,21 @@ public class AddController implements Initializable{
             start = startTime.getTime().getHour();
             stop = endTime.getTime().getHour();
             repeat = everyWeek.isSelected();
+            toUserCell();
             stage.close();
         }
+    }
+
+    //Send information to usercell.
+    public void toUserCell(){
+        LocalDateTime startTime = dateSet.atTime(start, 0);
+        LocalDateTime endTime = dateSet.atTime(stop, 0);
+
+        Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
+        Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
+        //Discriptionfield not made in add.fxml yet..
+        UserCell cell = new UserCell(dateStart, dateEnd, act, "Discription", priorityNumber, repeat);
+
     }
 
     //Must have something in the textfield... else not valid activity.

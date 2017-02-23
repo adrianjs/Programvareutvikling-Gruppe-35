@@ -9,30 +9,13 @@ import javafx.scene.control.TextField;
  */
 public class AddSubjectController {
 
-    @FXML
-    TextField subject;
-
-    @FXML
-    JFXButton sendInn;
-
-
-
-
-
+    @FXML TextField subject;
+    @FXML JFXButton sendInn;
 
     public void addSubjectToCalendar(){
-
         String subjectName = subject.getText();
-
         //check up against database..
-
         //Then add it to calendar if it exist.
-
         System.out.println("yolo");
-
     }
-
-
-
-
 }
