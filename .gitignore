@@ -12,20 +12,21 @@
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
+.idea/libraries/jfoenix.xml
 
 # Sensitive or high-churn files:
-# .idea/dataSources.ids
-# .idea/dataSources.xml
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
 
 # Gradle:
-# .idea/gradle.xml
-# .idea/libraries
+ .idea/gradle.xml
+ .idea/libraries
 
 # Mongo Explorer plugin:
-# .idea/mongoSettings.xml
+ .idea/mongoSettings.xml
 
 ## File-based project format:
 *.ipr
@@ -68,7 +69,7 @@ sftp-config.json
 
 # IntelliJ project files
 #.idea
-#out
+out
 gen### Eclipse template
 *.pydevproject
 .metadata
@@ -110,3 +111,7 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+.idea/dataSources.local.xml
+.idea/dataSources/
+.idea/inspectionProfiles/
+.idea/libraries/mysql_connector_java_3_1_14_bin.xml
