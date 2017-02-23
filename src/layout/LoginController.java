@@ -1,5 +1,6 @@
 package layout;
 
+import database.Login;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -35,19 +37,39 @@ public class LoginController implements Initializable {
 
     //Login and set user in userclass.
     public void login() throws IOException {
-
-        //Jumps to the Calendar window..
-        stage = (Stage) openCalendar.getScene().getWindow();
-        Parent load = FXMLLoader.load(getClass().getResource("Calendar.fxml"));
-        Scene scene = new Scene(load);
-        stage.setScene(scene);
-        System.out.println("login");
-
-        //Schould check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
         String username = loginField.getText();
         user.setUsername(username);
+        //TODO: Make valid login
+        if(validateLogin()){
+            //Jumps to the Calendar window..
+            stage = (Stage) openCalendar.getScene().getWindow();
+            Parent load = FXMLLoader.load(getClass().getResource("Calendar.fxml"));
+            Scene scene = new Scene(load);
+            stage.setScene(scene);
+            System.out.println("login");
+        }else{
+            System.out.println("FEIL BRUKERNAVN");
+        }
 
 
+        //Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
+
+
+    }
+
+    private boolean validateLogin() {
+        try {
+            Login login = new Login();
+            Set<List> students = login.getStudent();
+            for(List student : students){
+                if(student.get(0).equals(user.getUsername())){
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void newUser(){
