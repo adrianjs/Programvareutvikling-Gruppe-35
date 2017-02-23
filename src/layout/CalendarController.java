@@ -176,6 +176,12 @@ public class CalendarController implements Initializable{
 	@FXML
 	List<Label> labels = new ArrayList<>();
 	//Counter to only add the labels to the labels list once.
+
+
+    // List of labels in day Tab...
+    @FXML
+    List<Label> timeToTime = new ArrayList<>();
+
 	int teller = 0;
 
 	//UserInformation
@@ -321,9 +327,25 @@ public class CalendarController implements Initializable{
 		return Integer.parseInt(tall);
 	}
 
+	//Add labels tin day tab to list
+    public void addTimeToTimeToList(){
+	    timeToTime.add(eightToNine);
+        timeToTime.add(nineToTen);
+        timeToTime.add(tenToEleven);
+        timeToTime.add(elevenToTwelve);
+        timeToTime.add(twelveToThirteen);
+        timeToTime.add(thirteenToFourteen);
+        timeToTime.add(fourteenTiFifthteen);
+        timeToTime.add(fifthteenToSixteen);
+        timeToTime.add(sixteenToSeventeen);
+        timeToTime.add(seventeenToEighteen);
+        timeToTime.add(eighteenToNineTeen);
+        timeToTime.add(nineteenToTwenty);
 
 
+    }
 
+    //Add labels in month tab to list..
 	public void addLabelsToList(){
 		labels.add(day1);
 		labels.add(day2);
@@ -360,9 +382,11 @@ public class CalendarController implements Initializable{
 		labels.add(day33);
 		labels.add(day34);
 		labels.add(day35);
+    }
 
 
-	}
+
+
 
 	//Set labels on month part to the right month.
 	public void monthOrganizer(int year, int month, int day){
@@ -441,6 +465,7 @@ public class CalendarController implements Initializable{
 
 		setLines();
 		setDate();
+		addTimeToTimeToList();
 
 	}
 }
