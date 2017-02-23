@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -164,6 +165,9 @@ public class CalendarController implements Initializable{
 	Label day34;
 	@FXML
 	Label day35;
+
+	@FXML
+	Group hourGroup;
 
 	//Date
 	@FXML
