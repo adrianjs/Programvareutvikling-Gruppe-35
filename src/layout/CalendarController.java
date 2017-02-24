@@ -7,8 +7,7 @@ import java.util.*;
 import java.util.GregorianCalendar;
 import java.util.concurrent.TimeUnit;
 
-import calendar.TimeInterval;
-import calendar.UserCell;
+import calendar.*;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Cell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import layout.*;
@@ -128,10 +128,10 @@ public class CalendarController implements Initializable{
 
 	//*************** HENNINGS ULTRAFELT *****************//
 	List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
-	List<Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
+	List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
-	Map<TimeInterval, Label> dayTabTimeSlots = new HashMap<>();
-	Map<Label, Cell> labelMappedCells = new HashMap<>(); //Ferdig mappet celler til labels
+	Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
+	Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//****************************************************//
     //Methods starts here.
@@ -269,20 +269,17 @@ public class CalendarController implements Initializable{
 				dayTabLabels.add((Label) label);
 			}
 		}
-		System.out.println(timeToTime);
+
 		//TODO: Map the Labels to corresponding TimeIntervals
 		int hour = 8;
 		for(Label label : dayTabLabels){
-			java.util.Calendar cal = java.util.Calendar.getInstance();
-			cal.setTime(chosenDate);
-			cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
-			Date start = cal.getTime();
-			cal.set(java.util.Calendar.HOUR_OF_DAY, hour+1);
-			Date end = cal.getTime();
-			dayTabTimeSlots.put(new TimeInterval(start, end), dayTabLabels.get(hour-8));
+			Date start = setHour(chosenDate, hour);
+			Date end = setHour(chosenDate, hour+1);
+			dayTabTimeSlots.put(new TimeInterval(start, end), label);
 			hour++;
 		}
-		System.out.println(dayTabTimeSlots);
+		System.out.println(dayTabTimeSlots.values());
+		System.out.println(dayTabTimeSlots.keySet());
 
 	}
 
@@ -432,15 +429,44 @@ public class CalendarController implements Initializable{
 		setDate();
 		addTimeToTimeToList();
 		clearTimeSlots();
+		cellsAtCurrentDate.add(new UserCell(new Date(setHour(chosenDate, 8).getTime()), new Date(setHour(chosenDate, 10).getTime()),
+				"Trening", "Jeg skal trene på SIT", 5, false
+		));
+		cellsAtCurrentDate.add(new UserCell(new Date(setHour(chosenDate, 15).getTime()), new Date(setHour(chosenDate, 16).getTime()),
+				"Trening", "Jeg skal trene på SIT", 5, false
+		));
+		insertCells();
+		enterCells();
 
+	}
 
+	public Date setHour(Date date, int hour){
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		cal.setTime(date);
+		cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
+		return cal.getTime();
 	}
 
 	public void insertCells(){
     	//TODO: Handle which tab you are on
+		System.out.println(dayTabTimeSlots.keySet());
 		if(dayTab.isSelected()){
-			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet()) {
-
+			boolean stretch = false;
+			for (calendar.Cell cell : cellsAtCurrentDate){
+				for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
+				{
+					if(stretch){
+						System.out.println("Skal komme hit 1 gang");
+						labelMappedCells.put(entry.getValue(), cell);
+						stretch = false;
+					}
+					if(entry.getKey().getStartTime().equals(cell.getStartDate())){
+						labelMappedCells.put(entry.getValue(), cell);
+						if(entry.getKey().getEndTime().before(cell.getEndDate())){
+							stretch = true;
+						}
+					}
+				}
 			}
 		}else if(weekTab.isSelected()){
 				System.out.println("Week");
@@ -450,7 +476,15 @@ public class CalendarController implements Initializable{
 
 	}
 
-	public void writeToLabel(Label label, Cell cell){
+	public void enterCells(){
+		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
+		{
+			writeToLabel(entry.getKey(), entry.getValue());
+		}
+	}
+
+	public void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
+		label.setText(cell.getName());
 	}
 }

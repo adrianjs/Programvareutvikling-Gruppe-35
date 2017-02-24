@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by Henning on 24.02.2017.
  * This Class contains to Date objects, start and end, to represent a Time Interval
  */
-public class TimeInterval {
+public class TimeInterval{
     private Date startTime;
     private Date endTime;
 
@@ -30,4 +30,5 @@ public class TimeInterval {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
 }

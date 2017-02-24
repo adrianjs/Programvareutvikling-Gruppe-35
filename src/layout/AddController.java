@@ -82,7 +82,7 @@ public class AddController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
         //Discriptionfield not made in add.fxml yet..
-        UserCell cell = new UserCell(dateStart, dateEnd, act, "Discription", priorityNumber, repeat);
+        UserCell cell = new UserCell(dateStart, dateEnd, act, "Description/more details", priorityNumber, repeat);
 
     }
 
