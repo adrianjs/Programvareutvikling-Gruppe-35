@@ -113,22 +113,21 @@ public class CalendarController implements Initializable{
     // List of labels in day Tab...
     @FXML List<Label> timeToTime = new ArrayList<>();
 
+    //CountVariables
     int teller = 0;
+    int slideCount = 0;
+    User user = new User();
 
-	//UserInformation
-	User user = new User();
 
-	//Methods starts here.
+    //Methods starts here.
 
-	//Set lines for day week and month. 
-	public void setLines(){
+	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
 		week.setGridLinesVisible(true);
 		month.setGridLinesVisible(true);
 	}
 	
-	//Takes in the question from botto
-	public void askBotto(){
+    public void askBotto(){ //Takes in the question from botto
 		System.out.println("askBotto");
 		String question = null;
 		
@@ -174,14 +173,13 @@ public class CalendarController implements Initializable{
 		System.out.println("BB");
 	}
 	
+
 	//Slides the Botto field for bigger table layout
-	int yo = 0;
-	public void slidePane(){
+    public void slidePane(){
 		
 		//Make sidebar invisible when minimized. 
-		if(yo == 0){
-			
-			time.setText("");
+		if(slideCount == 0){
+            time.setText("");
 			botto1.setText("");
 			botto2.setText("");
 			//askBotto.setText("Open slide to ask (b)Otto a question");
@@ -191,11 +189,10 @@ public class CalendarController implements Initializable{
 			//askField.setVisible(false);
 			sliderButton.setText(">");
 			//sendInButton.setDisable(true);
-			yo++;
+			slideCount++;
 
 		}else{
-			
-			//Make it visible again. 
+            //Make it visible again.
 			wholeField.setPrefWidth(300);
 			leftSide.setMinWidth(250);
 			time.setText("12.48");
@@ -205,7 +202,7 @@ public class CalendarController implements Initializable{
 			//askField.setVisible(true);
 			sliderButton.setText("<");
 			//sendInButton.setDisable(false);
-			yo--;
+			slideCount--;
 		}
 		
 		
@@ -391,14 +388,38 @@ public class CalendarController implements Initializable{
         ArrayList<UserCell> userCells = new ArrayList<UserCell>();
     }
 
+    //Clear all timeslots dayPane.
+    public void clearTimeSlots(){
+        int count = 0;
+    	for(Label label : timeToTime){
+            if(count == 0){
+            }else{
+                label.setText("");
+            }
+            count++;
+        }
+	}
+	//Clear given timeslot For dayPane.
+	public void clearTimeSlot(int slot){
+        int count = 0;
+        for(Label label : timeToTime){
+            if(count == slot){
+                label.setText("");
+            }
+            count++;
+        }
 
-	@Override
+    }
+
+    @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 
 		setLines();
 		setDate();
 		addTimeToTimeToList();
+		clearTimeSlots();
+
 
 	}
 
