@@ -173,8 +173,7 @@ public class CalendarController implements Initializable{
 		System.out.println("BB");
 	}
 	
-
-	//Slides the Botto field for bigger table layout
+    //Slides the Botto field for bigger table layout
     public void slidePane(){
 		
 		//Make sidebar invisible when minimized. 
@@ -297,12 +296,7 @@ public class CalendarController implements Initializable{
 		labels.add(day35);
     }
 
-
-
-
-
-	//Set labels on month part to the right month.
-	public void monthOrganizer(int year, int month, int day){
+    public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
 		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
 		//Calendar cal = Calendar.getInstance();
@@ -312,23 +306,19 @@ public class CalendarController implements Initializable{
 		int weekOfYear = cal.get(java.util.Calendar.WEEK_OF_YEAR);
 		int weekOfMonth = cal.get(java.util.Calendar.WEEK_OF_MONTH);
 
-		//Gets the fist day at the week. --> Not done yet...
-		int firstDay = 2;
+
+		int firstDay = 2; //Gets the fist day at the week. --> Not done yet...
 		int lastDateOfMonth = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
-
-		System.out.println(firstDay + " første dag");
-		System.out.println(lastDateOfMonth + " siste dag");
-
-		//Setting the month dates to right place.
+        //System.out.println(firstDay + " første dag");
+		//System.out.println(lastDateOfMonth + " siste dag");
+        //Setting the month dates to right place.
 		int tall = 1;
 		System.out.println(labels.size());
 		for(int i = 0; i < labels.size(); i++) {
 			if ((i >= firstDay) && (tall <= lastDateOfMonth)) {
 				labels.get(i).setText(Integer.toString(tall));
-				//System.out.println("yes");
-				tall++;
-				//System.out.println("no");
-			} else {
+                tall++;
+            } else {
 				labels.get(i).setText("");
 			}
 		}
@@ -369,13 +359,10 @@ public class CalendarController implements Initializable{
 			changeDate(dato);
 			count++;
 		}
-
-	}
-
-	//Is between.
+    }
+    //Is between.
 	public boolean isBetween(Date endTime, Date startTime, Date timeToCheckStart, Date timeToCheckEnd){
-
-		if((endTime.before(timeToCheckStart))&&(startTime.after(timeToCheckEnd))){
+        if((endTime.before(timeToCheckStart))&&(startTime.after(timeToCheckEnd))){
 			return true;
 		}
 		return false;
@@ -390,15 +377,12 @@ public class CalendarController implements Initializable{
 
     //Clear all timeslots dayPane.
     public void clearTimeSlots(){
-        int count = 0;
+
     	for(Label label : timeToTime){
-            if(count == 0){
-            }else{
-                label.setText("");
-            }
-            count++;
+    	    label.setText("");
         }
 	}
+
 	//Clear given timeslot For dayPane.
 	public void clearTimeSlot(int slot){
         int count = 0;
@@ -414,8 +398,7 @@ public class CalendarController implements Initializable{
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-
-		setLines();
+        setLines();
 		setDate();
 		addTimeToTimeToList();
 		clearTimeSlots();
