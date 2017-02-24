@@ -401,4 +401,8 @@ public class CalendarController implements Initializable{
 		addTimeToTimeToList();
 
 	}
+
+	public void insertCells(){
+
+	}
 }
