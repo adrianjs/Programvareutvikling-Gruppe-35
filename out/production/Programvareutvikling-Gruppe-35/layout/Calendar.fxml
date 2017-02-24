@@ -102,7 +102,7 @@
          <children>
             <TabPane layoutY="1.0" prefHeight="626.0" prefWidth="872.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
-                <Tab text="Day">
+                <Tab fx:id="dayTab" text="Day">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="654.0">
                            <children>
@@ -207,7 +207,7 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="Week">
+                <Tab fx:id="weekTab" text="Week">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="842.0">
                            <children>
@@ -266,7 +266,7 @@
                            </children></AnchorPane>
                   </content>
                 </Tab>
-                  <Tab onSelectionChanged="#setDate" text="Month">
+                  <Tab fx:id="monthTab" onSelectionChanged="#setDate" text="Month">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>

@@ -5,7 +5,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
+import java.util.concurrent.TimeUnit;
 
+import calendar.TimeInterval;
 import calendar.UserCell;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.collections.ObservableList;
@@ -21,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import layout.*;
 
 public class CalendarController implements Initializable{
+	private Date chosenDate;
 
 	@FXML GridPane day; //DAY PANE
 	@FXML GridPane week; //WEEK PANE
@@ -98,6 +101,11 @@ public class CalendarController implements Initializable{
 	@FXML Label day34;
 	@FXML Label day35;
 
+	//Tabs
+	@FXML Tab dayTab;
+	@FXML Tab weekTab;
+	@FXML Tab monthTab;
+
 
 	//Date
 	@FXML JFXDatePicker date;
@@ -118,7 +126,14 @@ public class CalendarController implements Initializable{
     int slideCount = 0;
     User user = new User();
 
+	//*************** HENNINGS ULTRAFELT *****************//
+	List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
+	List<Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
+	Map<TimeInterval, Label> dayTabTimeSlots = new HashMap<>();
+	Map<Label, Cell> labelMappedCells = new HashMap<>(); //Ferdig mappet celler til labels
+
+	//****************************************************//
     //Methods starts here.
 
 	public void setLines(){ //Set lines for day week and month.
@@ -150,20 +165,17 @@ public class CalendarController implements Initializable{
 	
 	//On action from remove button
 	public void remove(){
-		
+        //TODO: Make remove button work
 		System.out.println("remove");
 	}
 	
 	//On action from addsubject button
 	public void addSubject(){
 		cal.changeScene("addSubject.fxml", "Add subject");
-
 	}
 	
 	//On action form IL --> Currenly no IL button on fxml-file
 	public void IL(){
-
-
 		System.out.println("IL");
 	}
 	
@@ -211,6 +223,8 @@ public class CalendarController implements Initializable{
 	public void setNewDate(){
 		LocalDate dato = date.getValue();
 		changeDate(dato);
+		chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
 	}
 
 
@@ -250,11 +264,26 @@ public class CalendarController implements Initializable{
     public void addTimeToTimeToList(){
 		ObservableList<Node> children = day.getChildren();
 		for(Node label : children){
-			if(label.getId() != null){
+			if((label.getId() != null) && (!label.getId().equals(thisday.getId()))){
 				timeToTime.add((Label) label);
+				dayTabLabels.add((Label) label);
 			}
 		}
 		System.out.println(timeToTime);
+		//TODO: Map the Labels to corresponding TimeIntervals
+		int hour = 8;
+		for(Label label : dayTabLabels){
+			java.util.Calendar cal = java.util.Calendar.getInstance();
+			cal.setTime(chosenDate);
+			cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
+			Date start = cal.getTime();
+			cal.set(java.util.Calendar.HOUR_OF_DAY, hour+1);
+			Date end = cal.getTime();
+			dayTabTimeSlots.put(new TimeInterval(start, end), dayTabLabels.get(hour-8));
+			hour++;
+		}
+		System.out.println(dayTabTimeSlots);
+
 	}
 
     //Add labels in month tab to list..
@@ -357,6 +386,7 @@ public class CalendarController implements Initializable{
 			Date input = new Date();
 			LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			changeDate(dato);
+			chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			count++;
 		}
     }
@@ -407,6 +437,20 @@ public class CalendarController implements Initializable{
 	}
 
 	public void insertCells(){
+    	//TODO: Handle which tab you are on
+		if(dayTab.isSelected()){
+			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet()) {
 
+			}
+		}else if(weekTab.isSelected()){
+				System.out.println("Week");
+		}else{ //Month is selected
+				System.out.println("Month");
+		}
+
+	}
+
+	public void writeToLabel(Label label, Cell cell){
+		//TODO: Make a nice way to write cell info to label
 	}
 }
