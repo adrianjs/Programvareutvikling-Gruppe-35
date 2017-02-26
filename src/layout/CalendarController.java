@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import calendar.*;
 import com.jfoenix.controls.JFXDatePicker;
+import com.sun.xml.internal.bind.v2.TODO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -159,8 +160,10 @@ public class CalendarController implements Initializable{
 	//On action from add button
 	public void add(){
 		//Makes the new add scene.
-		cal.changeScene("Add.fxml", "ADD");
+		AddController a = cal.changeToAdd("Add.fxml", "ADD"); //Get the instance of the add controller.
+        //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
 		System.out.println("add");
+
 	}
 	
 	//On action from remove button
@@ -171,18 +174,17 @@ public class CalendarController implements Initializable{
 	
 	//On action from addsubject button
 	public void addSubject(){
-		cal.changeScene("addSubject.fxml", "Add subject");
+		AddSubjectController a = cal.changeToAddSubject("addSubject.fxml", "Add subject");
 	}
 	
 	//On action form IL --> Currenly no IL button on fxml-file
-	public void IL(){
+	public void IL(){ //Button does not exist atm.
 		System.out.println("IL");
 	}
 	
 	//ON action from BB --> Currently no BB butto on fxml-file.
-	public void BB(){
-
-		System.out.println("BB");
+	public void BB(){//Button does not exist atm.
+        System.out.println("BB");
 	}
 	
     //Slides the Botto field for bigger table layout
