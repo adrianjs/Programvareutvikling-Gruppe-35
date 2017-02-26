@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -19,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CalendarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CalendarController">
    <bottom>
       <HBox prefHeight="78.0" prefWidth="1252.0" style="-fx-background-color: #76a4ed;" BorderPane.alignment="CENTER">
          <children>
@@ -514,7 +515,7 @@
           <AnchorPane fx:id="rightSide" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <VBox prefHeight="268.0" prefWidth="32.0" AnchorPane.bottomAnchor="379.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button id="slide" fx:id="sliderButton" layoutX="3.0" layoutY="293.0" mnemonicParsing="false" onAction="#slidePane" prefHeight="647.0" prefWidth="32.0" stylesheets="@buttonStyle.css" text="&lt;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <JFXButton fx:id="sliderButton" onAction="#slidePane" prefHeight="453.0" prefWidth="44.0" text="&lt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         </items>

@@ -1,10 +1,7 @@
 package layout;
 
 import calendar.UserCell;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class AddController implements Initializable{
 
-    @FXML TextField activity;
+    @FXML JFXTextField activity;
     @FXML JFXDatePicker date;
     @FXML JFXDatePicker startTime;
     @FXML JFXDatePicker endTime;

@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.concurrent.TimeUnit;
 
 import calendar.*;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.sun.xml.internal.bind.v2.TODO;
 import javafx.collections.ObservableList;
@@ -37,7 +38,7 @@ public class CalendarController implements Initializable{
 	@FXML AnchorPane leftSide;
 	@FXML AnchorPane rightSide;
 
-	@FXML Button sliderButton; //Slide button
+	@FXML JFXButton sliderButton; //Slide button
 
 	//Labels for leftPane --> BOTTOFIELD
 	@FXML Label botto1;
