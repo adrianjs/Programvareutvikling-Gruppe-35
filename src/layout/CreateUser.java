@@ -1,5 +1,8 @@
 package layout;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import database.Connect;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,17 +22,17 @@ import java.awt.*;
 public class CreateUser {
     public Stage dialogStage;
 
-    @FXML private TextArea description;
+    @FXML private JFXTextArea description;
 
     @FXML private Button submit;
     @FXML private Button cancel;
 
-    @FXML private TextField email;
-    @FXML private TextField firstName;
-    @FXML private TextField lastName;
-    @FXML private TextField password;
-    @FXML private TextField study;
-    @FXML private TextField department;
+    @FXML private JFXTextField email;
+    @FXML private JFXTextField firstName;
+    @FXML private JFXTextField lastName;
+    @FXML private JFXPasswordField password;
+    @FXML private JFXTextField study;
+    @FXML private JFXTextField department;
 
     @FXML private RadioButton stud;
     @FXML private RadioButton teach;
@@ -163,6 +166,9 @@ public class CreateUser {
         }
 
         if (errorMessage.length() == 0){
+            System.out.println("new user created");
+            Stage stage = (Stage) cancel.getScene().getWindow();
+            stage.close();
             return true;
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

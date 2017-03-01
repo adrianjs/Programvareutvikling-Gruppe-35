@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="764.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="764.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
    <children>
       <Label alignment="CENTER" layoutX="166.0" layoutY="32.0" text="Create a new user" textFill="#a86868">
          <font>
             <Font name="Verdana" size="47.0" />
          </font>
       </Label>
-      <TextField fx:id="email" layoutX="290.0" layoutY="137.0" prefHeight="31.0" prefWidth="388.0" />
+      <JFXTextField fx:id="email" layoutX="290.0" layoutY="138.0" prefHeight="29.0" prefWidth="380.0" />
       <Label layoutX="166.0" layoutY="142.0" text="Enter your email:" />
       <Label layoutX="166.0" layoutY="202.0" text="Firstname:" />
-      <TextField fx:id="firstName" layoutX="290.0" layoutY="197.0" prefHeight="31.0" prefWidth="195.0" />
+      <JFXTextField fx:id="firstName" layoutX="290.0" layoutY="198.0" prefHeight="29.0" prefWidth="195.0" />
       <Label layoutX="166.0" layoutY="258.0" text="Lastname:" />
-      <TextField fx:id="lastName" layoutX="290.0" layoutY="253.0" prefHeight="31.0" prefWidth="195.0" />
+      <JFXTextField fx:id="lastName" layoutX="290.0" layoutY="254.0" prefHeight="29.0" prefWidth="195.0" />
       <Label layoutX="166.0" layoutY="319.0" text="Password:" />
-      <TextField fx:id="password" layoutX="290.0" layoutY="314.0" prefHeight="31.0" prefWidth="195.0" />
+      <JFXPasswordField fx:id="password" layoutX="290.0" layoutY="315.0" prefHeight="29.0" prefWidth="195.0" />
       <Label layoutX="166.0" layoutY="374.0" text="Are you a student or teacher?" />
       <RadioButton fx:id="stud" layoutX="397.0" layoutY="374.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="91.0" text="Student">
          <toggleGroup>
@@ -37,7 +38,7 @@
          <children>
             <Label layoutX="500.0" layoutY="427.0" text="(e.g. &quot;Informatikk&quot;)" />
             <Label layoutX="166.0" layoutY="427.0" text="Name of  study: " />
-            <TextField fx:id="study" layoutX="290.0" layoutY="422.0" prefHeight="31.0" prefWidth="195.0" />
+            <JFXTextField fx:id="study" layoutX="290.0" layoutY="422.0" />
          </children>
       </Group>
       <Group fx:id="yearGroup">
@@ -58,9 +59,9 @@
          <children>
             <Label layoutX="500.0" layoutY="443.0" text="(e.g. &quot;Energi- og prosessteknikk&quot;)" />
             <Label layoutX="166.0" layoutY="444.0" text="Department:" />
-            <TextField fx:id="department" layoutX="290.0" layoutY="438.0" prefHeight="31.0" prefWidth="195.0" />
+            <JFXTextField fx:id="department" layoutX="290.0" layoutY="438.0" />
          </children>
       </Group>
-      <TextArea fx:id="description" layoutX="270.0" layoutY="479.0" prefHeight="121.0" prefWidth="254.0" promptText="Write a bit about your background... (max 255 character)" />
+      <JFXTextArea fx:id="description" layoutX="270.0" layoutY="479.0" prefHeight="121.0" prefWidth="254.0" promptText="Write a bit about your background... (max 255 character)" />
    </children>
 </Pane>
