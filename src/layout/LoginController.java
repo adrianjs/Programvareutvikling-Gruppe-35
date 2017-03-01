@@ -42,7 +42,7 @@ public class LoginController implements Initializable {
         if(validateLogin()){
             //Jumps to the Calendar window..
             stage = (Stage) openCalendar.getScene().getWindow();
-            Parent load = FXMLLoader.load(getClass().getResource("../../resources/Calendar.fxml"));
+            Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
             Scene scene = new Scene(load);
             stage.setScene(scene);
             System.out.println("login");
@@ -74,7 +74,7 @@ public class LoginController implements Initializable {
     public void newUser(){
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/makeuser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/makeuser.fxml"));
             Parent root = loader.load();
             Stage st = new Stage();
             st.setTitle("Make User");
