@@ -1,5 +1,8 @@
 package layout;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import database.Login;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,24 +24,22 @@ import java.util.*;
  */
 public class LoginController implements Initializable {
 
-    @FXML
-    TextField loginField;
-
-    @FXML
-    Button openCalendar;
-
+    @FXML JFXTextField loginField;
+    @FXML JFXPasswordField passwordField;
+    @FXML JFXButton openCalendar;
+    @FXML Label loginError;
 
     User user = new User();
     Calendar cal = new Calendar();
-
     private Stage stage;
-
-
 
     //Login and set user in userclass.
     public void login() throws IOException {
+        loginError.setText("");
         String username = loginField.getText();
+        String password = passwordField.getText();
         user.setUsername(username);
+        user.setPassword(password);
         //TODO: Make valid login
         if(validateLogin()){
             //Jumps to the Calendar window..
@@ -47,6 +49,7 @@ public class LoginController implements Initializable {
             stage.setScene(scene);
             System.out.println("login");
         }else{
+            loginError.setText("Wrong username or password");
             System.out.println("FEIL BRUKERNAVN");
         }//Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
     }
@@ -56,7 +59,7 @@ public class LoginController implements Initializable {
             Login login = new Login();
             Set<List> students = login.getStudent();
             for(List student : students){
-                if(student.get(0).equals(user.getUsername())){
+                if(student.get(0).equals(user.getUsername())&&(student.get(1).equals(user.getPassword()))){
                     return true;
                 }
             }
