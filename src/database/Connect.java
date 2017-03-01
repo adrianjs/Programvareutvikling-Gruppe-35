@@ -83,11 +83,16 @@ public class Connect {
    	test.close();
    	}
 
+    //----------------------------------------------------METODER----------------------------------------------------
+
+
+
+
     public void addStudent(String email, String firstName, String lastName, String field, int year, String pass){
         try {
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO STUDENT VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+field+"'" +
-                    ", '"+year+"', '"+pass+"')");
+            stmt.executeUpdate("INSERT INTO STUDENT VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+field+
+                    "', '"+year+"', '"+pass+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -97,18 +102,26 @@ public class Connect {
     public void addTeacher(String email, String firstName, String lastName, String department, String description, String pass){
         try {
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+department+"'" +
-                    ", '"+pass+"', '"+description+"')");
+            stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+department+
+                    "', '"+pass+"', '"+description+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
 
     }
 
+    public void addEvent(String name, Date date, boolean repeating, int priority, double startTime, double endTime, String studentEmail, String description){
+        int repeatingInt = (repeating) ? 1 : 0;
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description) VALUES('"+name+"','"+date+"','"
+                    +repeatingInt+"','"+priority+"','"+startTime+"','"+endTime+"','"+studentEmail+"','"+
+                    description+"')");
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
 
-
-
-    //----------------------------------------------------METODER----------------------------------------------------
+    }
 
 
 

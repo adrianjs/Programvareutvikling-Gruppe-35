@@ -29,7 +29,7 @@ public class LoginController implements Initializable {
     @FXML JFXButton openCalendar;
     @FXML Label loginError;
 
-    User user = new User();
+    User user = User.getInstance();
     Calendar cal = new Calendar();
     private Stage stage;
 
@@ -38,19 +38,22 @@ public class LoginController implements Initializable {
         loginError.setText("");
         String username = loginField.getText();
         String password = passwordField.getText();
+
         user.setUsername(username);
         user.setPassword(password);
         //TODO: Make valid login
         if(validateLogin()){
+
             //Jumps to the Calendar window..
             stage = (Stage) openCalendar.getScene().getWindow();
             Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
             Scene scene = new Scene(load);
             stage.setScene(scene);
-            System.out.println("login");
+            System.out.println("login successful");
+
         }else{
             loginError.setText("Wrong username or password");
-            System.out.println("FEIL BRUKERNAVN");
+            System.out.println("wrong username or password");
         }//Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
     }
 
@@ -90,7 +93,9 @@ public class LoginController implements Initializable {
 
     }
 
-
+    public User getUser(){
+        return this.user;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -6,9 +6,16 @@ package layout;
 
 public class User {
 
-    String username;
-    String password;
+    private String username;
+    private String password;
 
+    private static User instance = null;
+    public static User getInstance() {
+        if (instance == null) {
+            instance = new User();
+        }
+        return instance;
+    }
 
     public void setUsername(String username){
         this.username = username;

@@ -1,7 +1,9 @@
 package layout;
 
+import calendar.Cell;
 import calendar.UserCell;
 import com.jfoenix.controls.*;
+import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -49,13 +51,9 @@ public class AddController implements Initializable{
         errorActivity.setText("");
         errorDate.setText("");
         priorityError.setText("");
-        //Må sjekke i forhold til resten av kalenderen om det kan settes inn en aktivitet på dette tidspunktet..
-        boolean check1 = checkActivity();
-        boolean check2 = checkDate();
-        boolean check3 = checkTime();
-        boolean check4 = checkPriority();
-        //
-        if((check1 == true) && (check2 == true)&& (check3 == true) && (check4 == true)){
+        //TODO: Må sjekke i forhold til resten av kalenderen om det kan settes inn en aktivitet på dette tidspunktet..
+
+        if((checkActivity()) && (checkDate())&& (checkTime()) && (checkPriority())){
             //legg til i database.. Eventuelt sjekk opp i mot database om man kan legge til noe på dette tidspunktet.
             stage = (Stage) cancel.getScene().getWindow();
             //setter verdier, må da lagres i databasen...
@@ -66,21 +64,33 @@ public class AddController implements Initializable{
             start = startTime.getTime().getHour();
             stop = endTime.getTime().getHour();
             repeat = everyWeek.isSelected();
-            toUserCell();
+            calendar.Cell cell = toUserCell();
+            pushCell(cell);
             stage.close();
         }
+
+    }
+
+    private void pushCell(Cell cell) {
+        Connect connecter = new Connect();
+        User user = User.getInstance();
+        System.out.println(user.getUsername());
+        connecter.addEvent(cell.getName(), new java.sql.Date(cell.getStartDate().getTime()) ,
+                cell.isRepeating(), cell.getSlotPriority(),
+                cell.getStartDate().getTime(), cell.getEndDate().getTime(),
+                user.getUsername(), cell.getDescription());
     }
 
     //Send information to usercell.
-    public void toUserCell(){
+    public calendar.Cell toUserCell(){
         LocalDateTime startTime = dateSet.atTime(start, 0);
         LocalDateTime endTime = dateSet.atTime(stop, 0);
 
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
-        //Discriptionfield not made in add.fxml yet..
+        //Descriptionfield not made in add.fxml yet..
         UserCell cell = new UserCell(dateStart, dateEnd, act, "Description/more details", priorityNumber, repeat);
-
+        return cell;
     }
 
     //Must have something in the textfield... else not valid activity.

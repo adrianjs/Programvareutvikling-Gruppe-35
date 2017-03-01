@@ -90,7 +90,6 @@ public class CreateUser {
                             password.getCharacters().toString()
                     );
                 } else if (teach.isSelected()) {
-                    //TODO: Arm this to push to TEACHER not STUDENT
                     connecter.addTeacher(email.getCharacters().toString(),
                             firstName.getCharacters().toString(),
                             lastName.getCharacters().toString(),
