@@ -64,45 +64,6 @@ public class CalendarController implements Initializable{
 
 	//Labels week-Pane
 
-	//Labels month pane
-	@FXML Label day1;
-	@FXML AnchorPane monthBox1;
-
-	@FXML Label day2;
-	@FXML Label day3;
-	@FXML Label day4;
-	@FXML Label day5;
-	@FXML Label day6;
-	@FXML Label day7;
-	@FXML Label day8;
-	@FXML Label day9;
-	@FXML Label day10;
-	@FXML Label day11;
-	@FXML Label day12;
-	@FXML Label day13;
-	@FXML Label day14;
-	@FXML Label day15;
-	@FXML Label day16;
-	@FXML Label day17;
-	@FXML Label day18;
-	@FXML Label day19;
-	@FXML Label day20;
-	@FXML Label day21;
-	@FXML Label day22;
-	@FXML Label day23;
-	@FXML Label day24;
-	@FXML Label day25;
-	@FXML Label day26;
-	@FXML Label day27;
-	@FXML Label day28;
-	@FXML Label day29;
-	@FXML Label day30;
-	@FXML Label day31;
-	@FXML Label day32;
-	@FXML Label day33;
-	@FXML Label day34;
-	@FXML Label day35;
-
 	//Tabs
 	@FXML Tab dayTab;
 	@FXML Tab weekTab;
@@ -116,7 +77,7 @@ public class CalendarController implements Initializable{
 	layout.Calendar cal = new layout.Calendar();
 
 	//List to add the month labels.
-	@FXML List<Label> labels = new ArrayList<>();
+	@FXML List<Label> monthLabels = new ArrayList<>();
 
 	//Counter to only add the labels to the labels list once.
 
@@ -129,11 +90,15 @@ public class CalendarController implements Initializable{
     User user = new User();
 
 	//*************** HENNINGS ULTRAFELT *****************//
+	//DAY
 	List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
 	List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
 	Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
+
+	//MONTH
+	List<Label> monthTabLabels = new ArrayList<>(); // Hentes fra GUI
 
 	//****************************************************//
     //Methods starts here.
@@ -272,8 +237,6 @@ public class CalendarController implements Initializable{
 				dayTabLabels.add((Label) label);
 			}
 		}
-
-		//TODO: Map the Labels to corresponding TimeIntervals
 		int hour = 8;
 		for(Label label : dayTabLabels){
 			Date start = setHour(chosenDate, hour);
@@ -281,48 +244,18 @@ public class CalendarController implements Initializable{
 			dayTabTimeSlots.put(new TimeInterval(start, end), label);
 			hour++;
 		}
-		System.out.println(dayTabTimeSlots.values());
-		System.out.println(dayTabTimeSlots.keySet());
-
 	}
 
     //Add labels in month tab to list..
 	public void addLabelsToList(){
-		labels.add(day1);
-		labels.add(day2);
-		labels.add(day3);
-		labels.add(day4);
-		labels.add(day5);
-		labels.add(day6);
-		labels.add(day7);
-		labels.add(day8);
-		labels.add(day9);
-		labels.add(day10);
-		labels.add(day11);
-		labels.add(day12);
-		labels.add(day13);
-		labels.add(day14);
-		labels.add(day15);
-		labels.add(day16);
-		labels.add(day17);
-		labels.add(day18);
-		labels.add(day19);
-		labels.add(day20);
-		labels.add(day21);
-		labels.add(day22);
-		labels.add(day23);
-		labels.add(day24);
-		labels.add(day25);
-		labels.add(day26);
-		labels.add(day27);
-		labels.add(day28);
-		labels.add(day29);
-		labels.add(day30);
-		labels.add(day31);
-		labels.add(day32);
-		labels.add(day33);
-		labels.add(day34);
-		labels.add(day35);
+		ObservableList<Node> children = month.getChildren();
+		for(Node child : children){
+			if(child.getClass().equals(AnchorPane.class)){
+				//Works as long as the day number is the first child of the AnchorPane
+				AnchorPane ap = (AnchorPane) child;
+				monthLabels.add((Label) ap.getChildren().get(0));
+			}
+		}
     }
 
     public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
@@ -342,13 +275,13 @@ public class CalendarController implements Initializable{
 		//System.out.println(lastDateOfMonth + " siste dag");
         //Setting the month dates to right place.
 		int tall = 1;
-		System.out.println(labels.size());
-		for(int i = 0; i < labels.size(); i++) {
+		System.out.println(monthLabels.size());
+		for(int i = 0; i < monthLabels.size(); i++) {
 			if ((i >= firstDay) && (tall <= lastDateOfMonth)) {
-				labels.get(i).setText(Integer.toString(tall));
+				monthLabels.get(i).setText(Integer.toString(tall));
                 tall++;
             } else {
-				labels.get(i).setText("");
+				monthLabels.get(i).setText("");
 			}
 		}
 	}
@@ -427,7 +360,6 @@ public class CalendarController implements Initializable{
 
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
         setLines();
 		setDate();
 		addTimeToTimeToList();
@@ -440,7 +372,6 @@ public class CalendarController implements Initializable{
 		));
 		insertCells();
 		enterCells();
-
 	}
 
 	public Date setHour(Date date, int hour){
@@ -452,14 +383,12 @@ public class CalendarController implements Initializable{
 
 	public void insertCells(){
     	//TODO: Handle which tab you are on
-		System.out.println(dayTabTimeSlots.keySet());
 		if(dayTab.isSelected()){
 			boolean stretch = false;
 			for (calendar.Cell cell : cellsAtCurrentDate){
 				for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
 				{
 					if(stretch){
-						System.out.println("Skal komme hit 1 gang");
 						labelMappedCells.put(entry.getValue(), cell);
 						stretch = false;
 					}
