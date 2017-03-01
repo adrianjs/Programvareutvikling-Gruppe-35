@@ -161,7 +161,7 @@ public class CalendarController implements Initializable{
 	//On action from add button
 	public void add(){
 		//Makes the new add scene.
-		AddController a = cal.changeToAdd("Add.fxml", "ADD"); //Get the instance of the add controller.
+		AddController a = cal.changeToAdd("../resources/Add.fxml", "ADD"); //Get the instance of the add controller.
         //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
 		System.out.println("add");
 
@@ -175,7 +175,7 @@ public class CalendarController implements Initializable{
 	
 	//On action from addsubject button
 	public void addSubject(){
-		AddSubjectController a = cal.changeToAddSubject("addSubject.fxml", "Add subject");
+		AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 	}
 	
 	//On action form IL --> Currenly no IL button on fxml-file

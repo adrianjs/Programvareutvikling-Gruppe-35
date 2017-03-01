@@ -48,15 +48,10 @@ public class LoginController implements Initializable {
             System.out.println("login");
         }else{
             System.out.println("FEIL BRUKERNAVN");
-        }
-
-
-        //Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
-
-
+        }//Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
     }
 
-    private boolean validateLogin() {
+    private boolean validateLogin(){
         try {
             Login login = new Login();
             Set<List> students = login.getStudent();
