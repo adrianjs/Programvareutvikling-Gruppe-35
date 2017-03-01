@@ -19,7 +19,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
 
-        Parent load = FXMLLoader.load(getClass().getResource("Username.fxml"));
+        Parent load = FXMLLoader.load(getClass().getResource("../../resources/Username.fxml"));
         primaryStage.setTitle("Educational Organizer");
         main = new Scene(load);
         primaryStage.setScene(main);
