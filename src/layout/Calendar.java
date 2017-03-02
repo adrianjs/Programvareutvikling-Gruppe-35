@@ -58,6 +58,20 @@ public class Calendar extends Application {
 		return addSubject;
 	}
 
+	public WatchDayMonthTabController changeToWatchDay(String fxml, String name){
+		WatchDayMonthTabController day = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+			Parent load = loader.load();
+			day = loader.getController();
+			setStage(load, name);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return day;
+	}
+
 	public void setStage(Parent load, String name){
         Stage newStage = new Stage();
         newStage.setTitle(name);
