@@ -17,9 +17,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.Calendar;
 
 
 public class AddController implements Initializable{
@@ -75,9 +74,15 @@ public class AddController implements Initializable{
         Connect connecter = new Connect();
         User user = User.getInstance();
         System.out.println(user.getUsername());
+        java.util.Calendar calendar = Calendar.getInstance();
+        calendar.setTime(cell.getStartDate());
+        int startHour = calendar.get(Calendar.HOUR_OF_DAY);
+        calendar.setTime(cell.getEndDate());
+        int endHour = calendar.get(Calendar.HOUR_OF_DAY);
+
         connecter.addEvent(cell.getName(), new java.sql.Date(cell.getStartDate().getTime()) ,
                 cell.isRepeating(), cell.getSlotPriority(),
-                cell.getStartDate().getTime(), cell.getEndDate().getTime(),
+                startHour, endHour,
                 user.getUsername(), cell.getDescription());
     }
 

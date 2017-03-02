@@ -1,6 +1,10 @@
 package layout;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
@@ -11,6 +15,8 @@ import calendar.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.sun.xml.internal.bind.v2.TODO;
+import database.Connect;
+import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -195,7 +201,7 @@ public class CalendarController implements Initializable{
 		LocalDate dato = date.getValue();
 		changeDate(dato);
 		chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
-
+		setupDayTab();
 	}
 
 
@@ -308,8 +314,6 @@ public class CalendarController implements Initializable{
 
 	//Go to that given day when month is clicked.
 	public void monthClicked(int tall){
-
-
 		//String id = pane.getId();
 		//System.out.println(tall);
 		System.out.println("MonthClicked day-number" + tall);
@@ -348,6 +352,11 @@ public class CalendarController implements Initializable{
     	for(Label label : timeToTime){
     	    label.setText("");
         }
+        dayTabLabels.clear();
+        cellsAtCurrentDate.clear();
+        dayTabTimeSlots.clear();
+        labelMappedCells.clear();
+
 	}
 
 	//Clear given timeslot For dayPane.
@@ -366,19 +375,43 @@ public class CalendarController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
         setLines();
 		setDate();
-		addTimeToTimeToList();
-		clearTimeSlots();
-		cellsAtCurrentDate.add(new UserCell(new Date(setHour(chosenDate, 8).getTime()), new Date(setHour(chosenDate, 10).getTime()),
-				"Trening", "Jeg skal trene på SIT", 5, false
-		));
-		cellsAtCurrentDate.add(new UserCell(new Date(setHour(chosenDate, 15).getTime()), new Date(setHour(chosenDate, 16).getTime()),
-				"Trening", "Jeg skal trene på SIT", 5, false
-		));
-		insertCells();
-		enterCells();
+		setupDayTab();
 	}
 
-	public Date setHour(Date date, int hour){
+	public void setupDayTab(){
+        clearTimeSlots();
+        addTimeToTimeToList();
+        try {
+            getCells();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        insertCells();
+        enterCells();
+    }
+
+    private void getCells() throws ParseException {
+	    //TODO: Get cells from database
+        try {
+            Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
+            Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
+            for(List activity : activities){
+                SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
+                //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
+                cellsAtCurrentDate.add(new UserCell(
+                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
+                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(5))),
+                        (String) activity.get(1),
+                        (String) activity.get(8),
+                        Integer.parseInt((String) activity.get(6)),
+                        Boolean.parseBoolean((String) activity.get(3))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Date setHour(Date date, int hour){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
 		cal.setTime(date);
 		cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
@@ -390,13 +423,17 @@ public class CalendarController implements Initializable{
 		if(dayTab.isSelected()){
 			boolean stretch = false;
 			for (calendar.Cell cell : cellsAtCurrentDate){
-				for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
+                System.out.println("NEW ENTRY");
+                for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
 				{
 					if(stretch){
 						labelMappedCells.put(entry.getValue(), cell);
 						stretch = false;
+                        if(entry.getKey().getEndTime().before(cell.getEndDate())){
+                            stretch = true;
+                        }
 					}
-					if(entry.getKey().getStartTime().equals(cell.getStartDate())){
+                    if(entry.getKey().getStartTime().equals(cell.getStartDate())){
 						labelMappedCells.put(entry.getValue(), cell);
 						if(entry.getKey().getEndTime().before(cell.getEndDate())){
 							stretch = true;
