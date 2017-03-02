@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.WatchDayMonthTabController">
+   <children>
+      <BorderPane layoutX="6.0" layoutY="39.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="515.0" prefWidth="53.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <GridPane fx:id="day" prefHeight="587.0" prefWidth="872.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="151.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="715.0" minWidth="10.0" prefWidth="345.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="08:00 - 09:00" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="09:00 -10:00" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="10:00 - 11:00" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="11:00 - 12:00" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="13:00 - 14:00" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="14:00 - 15:00" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="15:00 - 16:00" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="16:00 - 17:00" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="17:00 -18:00" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1" />
+                  <Label fx:id="eightToNine" text="Eight To Nine" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="nineToTen" text="Nine to Ten" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="tenToEleven" text="Ten to eleven" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="elevenToTwelve" text="Eleven to Twelve" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="twelveToThirteen" text="Twelve to thirteen" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="thirteenToFourteen" text="Thirteen to fourteen" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="fourteenTiFifthteen" text="Fourteen to fifteen" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="fifthteenToSixteen" text="15 to 16" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label fx:id="sixteenToSeventeen" text="16 to 17" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label fx:id="seventeenToEighteen" text="17 to 18" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Label fx:id="eighteenToNineTeen" text="18 to 19" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Label fx:id="nineteenToTwenty" text="19 to 20" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label text="12:00 - 13:00" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="18:00 - 19:00" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="19:00 - 20:00" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Date:">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

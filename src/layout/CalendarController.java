@@ -111,6 +111,13 @@ public class CalendarController implements Initializable{
 
 	//****************************************************//
     //Methods starts here.
+	private static CalendarController instance = null;
+	public static CalendarController getInstance() {
+		if (instance == null) {
+			instance = new CalendarController();
+		}
+		return instance;
+	}
 
 	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
@@ -316,6 +323,7 @@ public class CalendarController implements Initializable{
 	public void monthClicked(int tall){
 		//String id = pane.getId();
 		//System.out.println(tall);
+		WatchDayMonthTabController day = cal.changeToWatchDay("../resources/watchDay.fxml", "nameeee");
 		System.out.println("MonthClicked day-number" + tall);
 		//System.out.println(id);
 	}

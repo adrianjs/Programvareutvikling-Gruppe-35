@@ -17,7 +17,7 @@
    <children>
       <BorderPane layoutX="94.0" layoutY="-12.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="424.0" prefWidth="976.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="184.0" prefWidth="977.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
                   <BorderPane prefHeight="478.0" prefWidth="976.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <center>
@@ -34,11 +34,11 @@
          <center>
             <AnchorPane prefHeight="241.0" prefWidth="496.0" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane prefHeight="207.0" prefWidth="496.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BorderPane prefHeight="202.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <center>
-                        <AnchorPane prefHeight="199.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="355.0" prefWidth="577.0" BorderPane.alignment="CENTER">
                            <children>
-                              <VBox alignment="TOP_CENTER" layoutX="-207.0" layoutY="14.0" prefHeight="207.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <VBox alignment="TOP_CENTER" layoutX="-207.0" layoutY="14.0" prefHeight="202.0" prefWidth="577.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Label alignment="CENTER" text="Login:">
                                        <font>
@@ -46,21 +46,26 @@
                                        </font>
                                     </Label>
                                     <Label fx:id="loginError" textFill="RED" />
-                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label prefHeight="21.0" prefWidth="80.0" text="Username:" />
-                                          <JFXTextField fx:id="loginField" prefHeight="29.0" prefWidth="460.0" />
+                                          <VBox prefHeight="85.0" prefWidth="577.0">
+                                             <children>
+                                                <HBox prefHeight="53.0" prefWidth="577.0">
+                                                   <children>
+                                                      <Label prefHeight="21.0" prefWidth="80.0" text="Username:" />
+                                                      <JFXTextField fx:id="loginField" prefHeight="29.0" prefWidth="460.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="37.0" prefWidth="577.0">
+                                                   <children>
+                                                      <Label prefHeight="21.0" prefWidth="80.0" text="Password:" />
+                                                      <JFXPasswordField fx:id="passwordField" prefHeight="29.0" prefWidth="460.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
                                        </children>
-                                    </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0">
-                                       <children>
-                                          <Label prefHeight="21.0" prefWidth="80.0" text="Password:" />
-                                          <JFXPasswordField fx:id="passwordField" prefHeight="29.0" prefWidth="460.0" />
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                    </HBox>
+                                    </AnchorPane>
                                     <BorderPane prefHeight="200.0" prefWidth="200.0">
                                        <center>
                                           <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">

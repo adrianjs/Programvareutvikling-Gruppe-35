@@ -13,13 +13,14 @@ public class Main extends Application{
 
     Stage window;
     Scene main;
-
+    CalendarController cal = new CalendarController();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-
+        System.out.println(CalendarController.getInstance());
         Parent load = FXMLLoader.load(getClass().getResource("../resources/Username.fxml"));
+
         primaryStage.setTitle("Educational Organizer");
         main = new Scene(load);
         primaryStage.setScene(main);
@@ -31,6 +32,7 @@ public class Main extends Application{
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }
