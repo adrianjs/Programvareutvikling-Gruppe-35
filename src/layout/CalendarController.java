@@ -79,7 +79,7 @@ public class CalendarController implements Initializable{
 	layout.Calendar cal = new layout.Calendar();
 
 	//List to add the month labels.
-	@FXML List<Label> monthLabels = new ArrayList<>();
+
 
 	//Counter to only add the labels to the labels list once.
 
@@ -100,7 +100,8 @@ public class CalendarController implements Initializable{
 	Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
-	List<Label> monthTabLabels = new ArrayList<>(); // Hentes fra GUI
+	List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
+	List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
 
 	//****************************************************//
     //Methods starts here.
@@ -255,6 +256,7 @@ public class CalendarController implements Initializable{
 			if(child.getClass().equals(AnchorPane.class)){
 				//Works as long as the day number is the first child of the AnchorPane
 				AnchorPane ap = (AnchorPane) child;
+				monthAnchorPanes.add(ap);
 				monthLabels.add((Label) ap.getChildren().get(0));
 			}
 		}
