@@ -19,7 +19,7 @@ public class Calendar extends Application {
 	public void start(Stage primStage) throws Exception {
 		// TODO Auto-generated method stub
 		this.stage = primStage;
-		/*Parent load = FXMLLoader.load(getClass().getResource("Calendar.fxml"));
+		/*Parent load = FXMLLoader.load(getClass().getResource("calendar.fxml"));
 		primStage.setTitle("Educational Organizer");
 		primStage.setScene(new Scene(load));
 		primStage.show();*/

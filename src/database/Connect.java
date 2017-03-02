@@ -1,8 +1,6 @@
 package database;
 import java.sql.*;
 
-
-
 /**
  * Created by torresrl on 21/02/2017.
  *
@@ -21,24 +19,18 @@ import java.sql.*;
  *
  */
 
-
 public class Connect {
 
-    //login info
+    //Login info
     static final String URL = "jdbc:mysql://mysql.stud.ntnu.no:3306/torresrl_eduorg";
     static final String user = "torresrl_data";
     static final  String pass = "admin";
-    
-    
 
     Connection conn = null;
     Statement stmt = null;
 
-    //når du oppreter klassen kobler den seg automatisk opp.
+    //When you instanciate the class, it automatically connects
     public Connect(){
-
-
-
         try {
             System.out.println("Connecting to database...");
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -57,8 +49,7 @@ public class Connect {
         }
     }
 
-
-    // stenger forbinelsen etter bruk
+    // Closing the connection after use
     public void close(){
         try {
             if (stmt != null) {
@@ -75,18 +66,12 @@ public class Connect {
         }
     }
 
-    
-   public static void main(String[] args) {
-   	Connect test = new Connect();
-
-
-   	test.close();
+    public static void main(String[] args) {
+   	    Connect test = new Connect();
+   	    test.close();
    	}
 
-    //----------------------------------------------------METODER----------------------------------------------------
-
-
-
+    //----------------------------------------------------METHODS----------------------------------------------------
 
     public void addStudent(String email, String firstName, String lastName, String field, int year, String pass){
         try {
@@ -120,11 +105,5 @@ public class Connect {
         } catch (SQLException se) {
             se.printStackTrace();
         }
-
     }
-
-
-
-
-
-} //slutt på Connect klassen
+} //END

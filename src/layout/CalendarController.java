@@ -2,35 +2,24 @@ package layout;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
-import java.util.concurrent.TimeUnit;
 
 import calendar.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
-import com.sun.xml.internal.bind.v2.TODO;
-import database.Connect;
 import database.Fetcher;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.control.Cell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import layout.*;
-
-import javax.jws.soap.SOAPBinding;
 
 public class CalendarController implements Initializable{
 	private Date chosenDate;
@@ -56,18 +45,6 @@ public class CalendarController implements Initializable{
 	@FXML Button sendInButton;
 
 	//Labels for Day pane.
-	@FXML Label eightToNine;
-	@FXML Label nineToTen;
-	@FXML Label tenToEleven;
-	@FXML Label elevenToTwelve;
-	@FXML Label twelveToThirteen;
-	@FXML Label thirteenToFourteen;
-	@FXML Label fourteenTiFifthteen;
-	@FXML Label fifthteenToSixteen;
-	@FXML Label sixteenToSeventeen;
-	@FXML Label seventeenToEighteen;
-	@FXML Label eighteenToNineTeen;
-	@FXML Label nineteenToTwenty;
 	@FXML Label thisday;
 
 	//Labels week-Pane
@@ -135,7 +112,7 @@ public class CalendarController implements Initializable{
 	//On action from add button
 	public void add(){
 		//Makes the new add scene.
-		AddController a = cal.changeToAdd("../resources/Add.fxml", "ADD"); //Get the instance of the add controller.
+		AddController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
         //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
 		System.out.println("add");
 
@@ -271,7 +248,6 @@ public class CalendarController implements Initializable{
     public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
 		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
-		//Calendar cal = Calendar.getInstance();
 		int yea = cal.get(java.util.Calendar.YEAR);
 		int monthe = cal.get(java.util.Calendar.MONTH);
 		int dayOfMonth = cal.get(java.util.Calendar.DAY_OF_MONTH);
