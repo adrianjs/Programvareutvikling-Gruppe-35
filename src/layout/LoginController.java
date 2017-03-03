@@ -39,7 +39,7 @@ public class LoginController implements Initializable {
 
         user.setUsername(username);
         user.setPassword(password);
-        //TODO: Make valid login
+
         if(validateLogin()){
 
             //Jumps to the Calendar window..

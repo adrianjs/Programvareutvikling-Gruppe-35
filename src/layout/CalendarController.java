@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 public class CalendarController implements Initializable{
-	private Date chosenDate;
+	Date chosenDate;
 
 	@FXML GridPane day; //DAY PANE
 	@FXML GridPane week; //WEEK PANE
@@ -72,6 +72,7 @@ public class CalendarController implements Initializable{
     //CountVariables
     int teller = 0;
     int slideCount = 0;
+    int dayClicked = 0; //Day clicked on in MonthTab
     User user = new User();
 
 	//*************** HENNINGS ULTRAFELT *****************//
@@ -104,6 +105,7 @@ public class CalendarController implements Initializable{
 	
     public void askBotto(){ //Takes in the question from botto
 		System.out.println("askBotto");
+		System.out.println(chosenDate + "Valgt dato");
 		String question = null;
 		
 		try{
@@ -182,11 +184,16 @@ public class CalendarController implements Initializable{
 
 	//Set new date from calendar
 	public void setNewDate(){
-		LocalDate dato = date.getValue();
-		changeDate(dato);
-		chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		setupDayTab();
+        LocalDate dato = date.getValue();
+        setNewDate2(dato);
+        //TODO: When date clicked in month tab, update labels in daytab as well.
+
 	}
+	public void setNewDate2(LocalDate dato){
+        changeDate(dato);
+        chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        setupDayTab();
+    }
 
 
 
@@ -284,23 +291,136 @@ public class CalendarController implements Initializable{
 		System.out.println("yo");
 	}
 
-	//When days in months are clicked, these methods will do the magic,.
-	@FXML
-	private void handleCalendarClick1(){
+	//When days in monthsTab is clicked.
+	@FXML private void handleCalendarClick1(){
 		monthClicked(1);
 	}
-	@FXML
-	private void handleCalendarClick2(){
-		monthClicked(2);
+	@FXML private void handleCalendarClick2(){ monthClicked(2); }
+    @FXML private void handleCalendarClick3(){
+        monthClicked(3);
+    }
+	@FXML private void handleCalendarClick4(){
+		monthClicked(4);
 	}
-
+	@FXML private void handleCalendarClick5(){
+		monthClicked(5);
+	}
+	@FXML private void handleCalendarClick6(){
+		monthClicked(6);
+	}
+	@FXML private void handleCalendarClick7(){
+		monthClicked(7);
+	}
+	@FXML private void handleCalendarClick8(){
+		monthClicked(8);
+	}
+	@FXML private void handleCalendarClick9(){
+		monthClicked(9);
+	}
+	@FXML private void handleCalendarClick10(){
+		monthClicked(10);
+	}
+	@FXML private void handleCalendarClick11(){
+		monthClicked(11);
+	}
+	@FXML private void handleCalendarClick12(){
+		monthClicked(12);
+	}
+	@FXML private void handleCalendarClick13(){
+		monthClicked(13);
+	}
+	@FXML private void handleCalendarClick14(){
+		monthClicked(14);
+	}
+	@FXML private void handleCalendarClick15(){
+		monthClicked(15);
+	}
+	@FXML private void handleCalendarClick16(){
+		monthClicked(16);
+	}
+	@FXML private void handleCalendarClick17(){
+		monthClicked(17);
+	}
+	@FXML private void handleCalendarClick18(){
+		monthClicked(18);
+	}
+	@FXML private void handleCalendarClick19(){
+		monthClicked(19);
+	}
+	@FXML private void handleCalendarClick20(){
+		monthClicked(20);
+	}
+	@FXML private void handleCalendarClick21(){
+		monthClicked(21);
+	}
+	@FXML private void handleCalendarClick22(){
+		monthClicked(22);
+	}
+	@FXML private void handleCalendarClick23(){
+		monthClicked(23);
+	}
+	@FXML private void handleCalendarClick24(){
+		monthClicked(24);
+	}
+	@FXML private void handleCalendarClick25(){
+		monthClicked(25);
+	}
+	@FXML private void handleCalendarClick26(){
+		monthClicked(26);
+	}
+	@FXML private void handleCalendarClick27(){
+		monthClicked(27);
+	}
+	@FXML private void handleCalendarClick28(){
+		monthClicked(28);
+	}
+	@FXML private void handleCalendarClick29(){
+		monthClicked(29);
+	}
+	@FXML private void handleCalendarClick30(){
+		monthClicked(30);
+	}
+	@FXML private void handleCalendarClick31(){
+		monthClicked(31);
+	}
+	@FXML private void handleCalendarClick32(){
+		monthClicked(32);
+	}
+	@FXML private void handleCalendarClick33(){
+		monthClicked(33);
+	}
+	@FXML private void handleCalendarClick34(){
+		monthClicked(34);
+	}
+	@FXML private void handleCalendarClick35(){
+		monthClicked(35);
+	}
 
 	//Go to that given day when month is clicked.
 	public void monthClicked(int tall){
-		//String id = pane.getId();
-		//System.out.println(tall);
-		WatchDayMonthTabController day = cal.changeToWatchDay("../resources/watchDay.fxml", "nameeee");
-		System.out.println("MonthClicked day-number" + tall);
+	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
+        String day = monthLabels.get(tall-1).getText();
+        try{
+			int dayInt = Integer.parseInt(day);
+			LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+			System.out.println(date.toString());
+			int year = date.getYear();
+			int month = date.getMonthValue();
+			System.out.println(dayInt +"day" + month + "month" + year + "year");
+			LocalDate date1 = LocalDate.of(year, month, dayInt);
+			setNewDate2(date1);
+
+			//String id = pane.getId();
+			//System.out.println(tall);
+			if(day.length() != 0){
+				WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
+
+			}
+		}catch(Exception e){
+			System.out.println(e);
+		}
+
+
 		//System.out.println(id);
 	}
 
@@ -404,7 +524,8 @@ public class CalendarController implements Initializable{
 
 	public void insertCells(){
     	//TODO: Handle which tab you are on
-		if(dayTab.isSelected()){
+		boolean y = true;
+		if(y == true){
 			boolean stretch = false;
 			for (calendar.Cell cell : cellsAtCurrentDate){
                 System.out.println("NEW ENTRY");
@@ -443,5 +564,6 @@ public class CalendarController implements Initializable{
 	public void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
+		System.out.println(cell.getName());
 	}
 }

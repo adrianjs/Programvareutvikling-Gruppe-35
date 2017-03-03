@@ -300,167 +300,167 @@
                                           <Label fx:id="day2" text="2" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick3" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day3" text="3" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick4" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day4" text="4" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick5" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day5" text="5" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick6" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day6" text="6" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick7" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day7" text="7" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick8" stylesheets="@style.css" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day8" text="8" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick9" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day9" text="9" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick10" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day10" text="10" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick11" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day11" text="11" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick12" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day12" text="12" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick13" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day13" text="13" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick14" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day14" text="14" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick15" stylesheets="@style.css" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day15" text="15" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick16" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day16" text="16" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick17" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day17" text="17" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick18" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day18" text="18" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick19" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day19" text="19" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick20" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day20" text="20" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick21" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day21" text="21" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick22" stylesheets="@style.css" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day22" text="22" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick23" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day23" text="23" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick24" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day24" text="24" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick25" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day25" text="25" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick26" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day26" text="26" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick27" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day27" text="27" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick28" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day28" text="28" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick29" stylesheets="@style.css" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day29" text="29" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick30" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day30" text="30" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick31" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day31" text="31" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick32" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day32" text="32" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick33" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day33" text="33" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick34" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day34" text="34" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick35" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day35" text="35" />
                                        </children>
