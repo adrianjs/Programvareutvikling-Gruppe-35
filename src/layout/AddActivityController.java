@@ -111,6 +111,7 @@ public class AddActivityController implements Initializable{
     }
 
     //Check if date is after today, else not valid.
+
     public boolean checkDate(){
         LocalDate tryDate = date.getValue();
         if(tryDate == null){
