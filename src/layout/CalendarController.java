@@ -104,7 +104,8 @@ public class CalendarController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        setLines();
+		System.out.println("Init");
+		setLines();
         setDate();
         setupDayTab();
         setBottoField(); //SlideFieldBotto
@@ -474,10 +475,12 @@ public class CalendarController implements Initializable{
     }
 
     public void setupDayTab(){
-        clearTimeSlots();
+		System.out.println("Setup day tab");
+		clearTimeSlots();
         addTimeToTimeToList();
         try {
-            getCells();
+			System.out.println("get cells");
+			getCells();
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -488,7 +491,8 @@ public class CalendarController implements Initializable{
     private void getCells() throws ParseException {
 	    //TODO: Get cells from database
         try {
-            Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
+			System.out.println("new fetcher");
+			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             for(List activity : activities){
                 SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
@@ -554,6 +558,8 @@ public class CalendarController implements Initializable{
 
 	public void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
+		System.out.println("Write to labels");
+		System.out.println(User.getInstance().getUsername());
 		label.setText(cell.getName());
 		System.out.println(cell.getName());
 	}

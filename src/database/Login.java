@@ -9,17 +9,15 @@ import java.util.Set;
 /**
  * Created by Henning on 22.02.2017.
  */
-public class Login {
-    private Connect connecter;
+public class Login extends Connect{
     private String query = "SELECT * FROM STUDENT";
     private Set<List> users = new HashSet<>();
 
     public Login() throws SQLException {
-        connecter = new Connect();
     }
 
     public Set getStudent() throws SQLException {
-        ResultSet m_ResultSet = connecter.stmt.executeQuery(query);
+        ResultSet m_ResultSet = stmt.executeQuery(query);
         while (m_ResultSet.next()) {
             List user = new ArrayList<>();
             user.add(m_ResultSet.getString(1));
