@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddController">
    <children>
       <BorderPane layoutX="385.0" layoutY="301.0" prefHeight="789.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -35,9 +35,9 @@
                   <HBox prefHeight="52.0" prefWidth="1042.0">
                      <children>
                         <JFXTextField fx:id="activity" prefHeight="29.0" prefWidth="212.0" />
-                        <Label fx:id="errorActivity" textFill="RED" />
                      </children>
                   </HBox>
+                  <Label fx:id="errorActivity" textFill="RED" />
                   <Label text="Date:">
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -45,9 +45,9 @@
                   <HBox prefHeight="42.0" prefWidth="568.0">
                      <children>
                         <JFXDatePicker id="cal" fx:id="date" stylesheets="@buttonStyle.css" />
-                        <Label fx:id="errorDate" textFill="RED" />
                      </children>
                   </HBox>
+                  <Label fx:id="errorDate" textFill="RED" />
                   <HBox prefHeight="48.0" prefWidth="568.0">
                      <children>
                         <JFXCheckBox fx:id="everyWeek" text="Every week on this date" />
@@ -76,10 +76,10 @@
                   <HBox prefHeight="41.0" prefWidth="912.0">
                      <children>
                         <JFXDatePicker id="cal" fx:id="endTime" showTime="true" stylesheets="@buttonStyle.css" />
-                        <Label fx:id="errorTime" textFill="RED" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <Label fx:id="errorTime" textFill="RED" />
+                  <HBox prefHeight="44.0" prefWidth="285.0">
                      <children>
                         <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="@buttonStyle.css" text="Cancel" />
                         <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="@buttonStyle.css" text="Send In">

@@ -1,5 +1,6 @@
 package layout;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -10,16 +11,19 @@ import java.util.*;
 import java.util.GregorianCalendar;
 
 import calendar.*;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.*;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 public class CalendarController implements Initializable{
 	Date chosenDate;
@@ -27,22 +31,23 @@ public class CalendarController implements Initializable{
 	@FXML GridPane day; //DAY PANE
 	@FXML GridPane week; //WEEK PANE
 	@FXML GridPane month; //MONTH PANE
-	@FXML TextField askField;//Ask field
+	@FXML JFXTextField askField;//Ask field
 	@FXML AnchorPane dayAnchor; //Anchorpane day
 
 	//AI panes.
-	@FXML SplitPane wholeField;
+	@FXML AnchorPane wholeField;
 	@FXML AnchorPane leftSide;
 	@FXML AnchorPane rightSide;
+    HamburgerBackArrowBasicTransition tran;
+    @FXML private JFXDrawer drawer;
+    AnchorPane botto;
+    @FXML JFXHamburger sliderButton; //Slide button
 
-	@FXML JFXButton sliderButton; //Slide button
+    AnchorPane rightside;
+    @FXML private JFXDrawer drawerRight;
 
-	//Labels for leftPane --> BOTTOFIELD
-	@FXML Label botto1;
-	@FXML Label botto2;
-	@FXML Label time;
-	@FXML Label askBotto;
-	@FXML Button sendInButton;
+
+	@FXML JFXButton askButton;
 
 	//Labels for Day pane.
 	@FXML Label thisday;
@@ -71,7 +76,6 @@ public class CalendarController implements Initializable{
 
     //CountVariables
     int teller = 0;
-    int slideCount = 0;
     int dayClicked = 0; //Day clicked on in MonthTab
     User user = new User();
 
@@ -89,7 +93,8 @@ public class CalendarController implements Initializable{
 
 	//****************************************************//
     //Methods starts here.
-	private static CalendarController instance = null;
+
+	private static CalendarController instance = null; //InstanceControl
 	public static CalendarController getInstance() {
 		if (instance == null) {
 			instance = new CalendarController();
@@ -97,36 +102,20 @@ public class CalendarController implements Initializable{
 		return instance;
 	}
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        setLines();
+        setDate();
+        setupDayTab();
+        setBottoField(); //SlideFieldBotto
+    }
+
 	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
 		week.setGridLinesVisible(true);
 		month.setGridLinesVisible(true);
 	}
-	
-    public void askBotto(){ //Takes in the question from botto
-		System.out.println("askBotto");
-		System.out.println(chosenDate + "Valgt dato");
-		String question = null;
-		
-		try{
-			question = askField.getText();
-			System.out.println(question);
-			// --> Do something here with the question.
 
-		}catch(Exception e){
-			System.out.println(e);
-		}
-	}
-	
-	//On action from add button
-	public void add(){
-		//Makes the new add scene.
-		AddController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
-        //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
-		System.out.println("add");
-
-	}
-	
 	//On action from remove button
 	public void remove(){
         //TODO: Make remove button work
@@ -147,40 +136,50 @@ public class CalendarController implements Initializable{
 	public void BB(){//Button does not exist atm.
         System.out.println("BB");
 	}
-	
-    //Slides the Botto field for bigger table layout
-    public void slidePane(){
-		
-		//Make sidebar invisible when minimized. 
-		if(slideCount == 0){
-            time.setText("");
-			botto1.setText("");
-			botto2.setText("");
-			//askBotto.setText("Open slide to ask (b)Otto a question");
-			wholeField.setPrefWidth(50);
-			leftSide.setMaxWidth(0);
-			leftSide.setMinWidth(0);
-			//askField.setVisible(false);
-			sliderButton.setText(">");
-			//sendInButton.setDisable(true);
-			slideCount++;
 
-		}else{
-            //Make it visible again.
-			wholeField.setPrefWidth(300);
-			leftSide.setMinWidth(250);
-			time.setText("12.48");
-			botto1.setText("Hello i am b(O)tto!");
-			botto2.setText("How can i help you?");
-			//askBotto.setText("Ask b(O)tto:");
-			//askField.setVisible(true);
-			sliderButton.setText("<");
-			//sendInButton.setDisable(false);
-			slideCount--;
-		}
-		
-		
-	}
+    //Slides the Botto field for bigger table layout
+    public void setBottoField(){
+        try {
+            botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
+            rightSide = FXMLLoader.load(getClass().getResource("../resources/add.fxml"));
+
+            tran = new HamburgerBackArrowBasicTransition(sliderButton);
+            tran.setRate(-1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void slidePane(){
+		//Make sidebar invisible when minimized.
+        drawer.setSidePane(botto);
+        tran.setRate(tran.getRate()*-1);
+        tran.play();
+        if(drawer.isShown()){
+            askButton.setText("Open Botto");
+            drawer.close();
+        }else{
+            drawer.open();
+            askButton.setText("Close Botto");
+        }
+    }
+    //On action from add button
+    public void add(){
+        //Makes the new add scene.
+//        drawerRight.setSidePane(rightSide);
+//        if(drawerRight.isShown()){
+//            drawerRight.close();
+//        }else{
+//
+//            drawerRight.setDirection(JFXDrawer.DrawerDirection.LEFT);
+//            drawerRight.open();
+//
+//        }
+        AddController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
+        //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
+        System.out.println("add");
+
+    }
 
 	//Set new date from calendar
 	public void setNewDate(){
@@ -221,8 +220,7 @@ public class CalendarController implements Initializable{
 
 	//Remove zero from string if it starts whith it.
 	public int removeZero(String tall){
-
-		if(tall.charAt(0) == '0'){
+        if(tall.charAt(0) == '0'){
 			return Character.getNumericValue(tall.charAt(1));
 		}
 		return Integer.parseInt(tall);
@@ -475,14 +473,7 @@ public class CalendarController implements Initializable{
 
     }
 
-    @Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-        setLines();
-		setDate();
-		setupDayTab();
-	}
-
-	public void setupDayTab(){
+    public void setupDayTab(){
         clearTimeSlots();
         addTimeToTimeToList();
         try {

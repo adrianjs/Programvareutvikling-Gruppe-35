@@ -44,6 +44,8 @@ public class AddController implements Initializable{
     boolean repeat;
     int priorityNumber;
 
+    CalendarController cal;
+
     //Methods
     //On action from Send-in button
     public void sendIn(){
@@ -162,11 +164,13 @@ public class AddController implements Initializable{
 
     //Close scene. On action from cancel button.
     public void cancel(){
-        stage = (Stage) cancel.getScene().getWindow();
-        stage.close();
+//        stage = (Stage) cancel.getScene().getWindow();
+//        stage.close();
+        cal.add();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        cal = CalendarController.getInstance();
         setElementsToProirityChoiceBox();
     }
 }
