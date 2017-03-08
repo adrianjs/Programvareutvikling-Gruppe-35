@@ -164,9 +164,9 @@ public class AddController implements Initializable{
 
     //Close scene. On action from cancel button.
     public void cancel(){
-//        stage = (Stage) cancel.getScene().getWindow();
-//        stage.close();
-        cal.add();
+        stage = (Stage) cancel.getScene().getWindow();
+        stage.close();
+        //cal.add();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
