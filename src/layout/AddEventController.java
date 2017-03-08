@@ -3,6 +3,7 @@ package layout;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
@@ -19,6 +20,8 @@ public class AddEventController implements Initializable{
     @FXML JFXRadioButton deadline;
     @FXML JFXRadioButton exam;
 
+    @FXML Group lectureGroup;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setToggle();
@@ -34,14 +37,18 @@ public class AddEventController implements Initializable{
     public void checkSelectedRadioButtons(){
         if(classRadio.isSelected()){
             System.out.println("Class");
+            lectureGroup.setVisible(true);
         }
         if(schoolWork.isSelected()){
+            lectureGroup.setVisible(false);
             System.out.println("Schoolwork");
         }
         if(deadline.isSelected()){
+            lectureGroup.setVisible(false);
             System.out.println("deadline");
         }
         if(exam.isSelected()){
+            lectureGroup.setVisible(false);
             System.out.println("Exam");
         }
 

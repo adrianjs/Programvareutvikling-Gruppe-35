@@ -52,7 +52,6 @@ public class TeacherCalendarController implements Initializable{
     }
 
     public void addPane(int number){
-        //Make sidebar invisible when minimized.
         if(number == 1){
             drawer2.close();
             drawer.setSidePane(add);
