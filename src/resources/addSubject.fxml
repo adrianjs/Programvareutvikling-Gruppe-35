@@ -2,54 +2,28 @@
 
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddSubjectController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddSubjectController">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <top>
-            <BorderPane prefHeight="71.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <center>
-                  <Label text="Add Subject" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Label>
-               </center>
-            </BorderPane>
-         </top>
-         <left>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-         </left>
-         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label alignment="CENTER" text="Enter subject name:">
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                  </Label>
-                  <HBox prefHeight="227.0" prefWidth="400.0">
-                     <children>
-                        <JFXComboBox fx:id="subjectPicker" editable="true" prefHeight="31.0" prefWidth="345.0" />
-                     </children>
-                  </HBox>
-                  <JFXButton id="addButtons" onAction="#addSubjectToCalendar" stylesheets="@buttonStyle.css" text="Add subject" />
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
+      <Label alignment="CENTER" layoutX="236.0" layoutY="106.0" text="Enter subject name:" />
+      <JFXComboBox fx:id="subjectPicker" editable="true" layoutX="128.0" layoutY="154.0" prefHeight="31.0" prefWidth="345.0" />
+      <JFXButton id="addButtons" layoutX="251.0" layoutY="246.0" onAction="#addSubjectToCalendar" stylesheets="@buttonStyle.css" text="Add subject" />
+      <Label layoutX="193.0" layoutY="21.0" text="Add Subject">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

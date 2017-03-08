@@ -1,4 +1,6 @@
 package database;
+import layout.User;
+
 import java.sql.*;
 
 /**
@@ -108,7 +110,7 @@ public class Connect {
 
     public void updateStudentSubjects(String subjects) throws SQLException {
         stmt = conn.createStatement();
-        stmt.executeUpdate("UPDATE STUDENTS SET subjects='"+subjects+"'");
+        stmt.executeUpdate("UPDATE STUDENT SET subjects='"+subjects+"' WHERE email='"+ User.getInstance().getUsername() +"'");
     }
 
 

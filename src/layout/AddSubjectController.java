@@ -2,6 +2,7 @@ package layout;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.skins.JFXTextFieldSkin;
 import com.sun.deploy.util.StringUtils;
 import database.Connect;
@@ -11,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import org.controlsfx.control.textfield.TextFields;
 
 import javax.swing.*;
@@ -28,25 +30,36 @@ public class AddSubjectController extends Connect implements Initializable{
     @FXML TextField subject;
     @FXML JFXButton sendInn;
     @FXML JFXComboBox subjectPicker;
+    @FXML AnchorPane anchorPane;
 
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList();
 
 
     public void addSubjectToCalendar() throws SQLException {
+        //TODO: Handle invalid subjects
         //check up against database..
         //Then add it to calendar if it exist.
         ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDENT WHERE email='"+ User.getInstance().getUsername() +"'");
         stud_sub_resultset.next();
         String subjectString = stud_sub_resultset.getString(7); //Works as long as column 7 is the students subjects
-
-        Set<String> setOfSubjects = new HashSet<>(); //Make a HashSet to deal with duplicates
-        List<String> items = Arrays.asList(subjectString.split("\\s*,\\s*"));
-        setOfSubjects.addAll(items);
-        setOfSubjects.add((String) subjectPicker.getValue()); //Adding new chosen subject
-        System.out.println(setOfSubjects);
-        subjectString = StringUtils.join(setOfSubjects, ",");
-        System.out.println(subjectString);
+        Set<String> setOfSubjects;
+        if(subjectString.isEmpty()){
+            setOfSubjects = new HashSet<>();
+        }else{
+            setOfSubjects = new HashSet<>(Arrays.asList(subjectString
+                    .split(","))); //Make a HashSet to deal with duplicates
+        }
+        if(setOfSubjects.contains(subjectPicker.getValue())){
+            JFXSnackbar bar = new JFXSnackbar(anchorPane);
+            bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " is already one of your subjects!"));
+        }else{
+            setOfSubjects.add((String) subjectPicker.getValue()); //Adding new chosen subject
+            subjectString = StringUtils.join(setOfSubjects, ",");
+            updateStudentSubjects(subjectString);
+            JFXSnackbar bar = new JFXSnackbar(anchorPane);
+            bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " was added to your subjects!"));
+        }
     }
 
     @Override
@@ -61,6 +74,8 @@ public class AddSubjectController extends Connect implements Initializable{
             e.printStackTrace();
         }
         subjectPicker.setItems(subjects.sorted());
+        //TODO: Get this to look pretty or at least the same
         TextFields.bindAutoCompletion(subjectPicker.getEditor(), subjectPicker.getItems());
+
     }
 }
