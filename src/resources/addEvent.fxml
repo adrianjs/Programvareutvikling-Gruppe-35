@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddEventController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Add event:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="123.0" text="Type of event:" />
+      <Group layoutX="14.0" layoutY="144.0">
+         <children>
+            <JFXRadioButton fx:id="classRadio" layoutY="12.0" onAction="#checkSelectedRadioButtons" text="Class" />
+            <JFXRadioButton fx:id="schoolWork" layoutX="84.0" layoutY="12.0" onAction="#checkSelectedRadioButtons" text="Schoolwork" />
+            <JFXRadioButton fx:id="deadline" layoutX="202.0" layoutY="12.0" onAction="#checkSelectedRadioButtons" text="Deadline" />
+            <JFXRadioButton fx:id="exam" layoutX="302.0" layoutY="12.0" onAction="#checkSelectedRadioButtons" text="Exam" />
+         </children>
+      </Group>
+      <JFXTextField layoutX="14.0" layoutY="87.0" prefHeight="29.0" prefWidth="380.0" />
+      <Label layoutX="20.0" layoutY="59.0" text="SubjectCode" />
+      <Group fx:id="lectureGroup" layoutX="18.0" layoutY="207.0">
+         <children>
+            <Label layoutX="2.0" text="Event description:" />
+            <JFXTextField layoutX="2.0" layoutY="35.0" prefHeight="29.0" prefWidth="380.0" />
+            <JFXDatePicker layoutX="2.0" layoutY="101.0" />
+            <Label layoutY="80.0" text="Date:" />
+            <JFXDatePicker layoutX="2.0" layoutY="181.0" showTime="true" />
+            <JFXDatePicker layoutX="249.0" layoutY="181.0" showTime="true" />
+            <Label layoutY="160.0" text="Start time" />
+            <Label layoutX="249.0" layoutY="160.0" text="End time" />
+            <JFXCheckBox layoutY="254.0" text="Repeating" />
+            <JFXButton layoutX="561.0" layoutY="289.0" text="Add" />
+            <JFXButton layoutX="627.0" layoutY="289.0" text="Cancel" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
