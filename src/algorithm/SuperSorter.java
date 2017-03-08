@@ -6,6 +6,7 @@ package algorithm;
  * SchoolWork = 97
  * deadline = 98
  * exam = 99
+ * hjemme eksamen = 95
  *
  *
  * TODO: This call will be the all mighty sorting algorithm for the calendar
