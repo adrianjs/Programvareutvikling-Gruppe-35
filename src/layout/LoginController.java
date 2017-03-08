@@ -40,38 +40,54 @@ public class LoginController implements Initializable {
         user.setUsername(username);
         user.setPassword(password);
 
-        if(validateLogin()){
+        String user = validateLogin();
+        System.out.println(user);
+        if((user == "TEACHER")||(user == "STUDENT")){
 
             //Jumps to the Calendar window..
             stage = (Stage) openCalendar.getScene().getWindow();
             //Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/calendar.fxml"));
-            loader.setController(CalendarController.getInstance());
-            Parent load = loader.load();
 
-            Scene scene = new Scene(load);
-            stage.setScene(scene);
-            System.out.println("login successful");
-
+            if(user == "STUDENT") {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/calendar.fxml"));
+                loader.setController(CalendarController.getInstance());
+                Parent load = loader.load();
+                Scene scene = new Scene(load);
+                stage.setScene(scene);
+                System.out.println("login successful");
+            }else{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
+                loader.setController(TeacherCalendarController.getInstance());
+                Parent load = loader.load();
+                Scene scene = new Scene(load);
+                stage.setScene(scene);
+                System.out.println("login successful");
+            }
         }else{
             loginError.setText("Wrong username or password");
             System.out.println("wrong username or password");
         }//Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
     }
 
-    private boolean validateLogin(){
+    private String validateLogin(){
         try {
             Login login = new Login();
             Set<List> students = login.getStudent();
+            Set<List> courseCoordinators = login.getCourseCoordinator();
             for(List student : students){
                 if(student.get(0).equals(user.getUsername())&&(student.get(1).equals(user.getPassword()))){
-                    return true;
+                    return "STUDENT";
+                }
+            }
+            for(List courseCoordinator : courseCoordinators) {
+                if (courseCoordinator.get(0).equals(user.getUsername()) && (courseCoordinator.get(1).equals(user.getPassword()))) {
+                    return "TEACHER";
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     public void newUser(){

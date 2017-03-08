@@ -11,7 +11,9 @@ import java.util.Set;
  */
 public class Login extends Connect{
     private String query = "SELECT * FROM STUDENT";
+    private String query1 = "SELECT * FROM COURSECOORDINATOR";
     private Set<List> users = new HashSet<>();
+    private Set<List> coordinators = new HashSet<>();
 
     public Login() throws SQLException {
     }
@@ -29,4 +31,15 @@ public class Login extends Connect{
         return users;
     }
 
+    public Set getCourseCoordinator() throws SQLException {
+        ResultSet set = connecter.stmt.executeQuery(query1);
+        while (set.next()){
+            List user = new ArrayList<>();
+            user.add(set.getString(1));
+            user.add(set.getString(5));
+            coordinators.add(user);
+
+        }
+        return coordinators;
+    }
 }
