@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="startet med d">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/Teacher.java" />
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" afterPath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm/SuperSorter.java" afterPath="$PROJECT_DIR$/src/algorithm/SuperSorter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layout/AddActivityController.java" afterPath="$PROJECT_DIR$/src/layout/AddActivityController.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -933,7 +929,7 @@
       <workItem from="1487848028636" duration="3072000" />
       <workItem from="1487851189239" duration="3273000" />
       <workItem from="1487927890002" duration="4525000" />
-      <workItem from="1488965270877" duration="11197000" />
+      <workItem from="1488965270877" duration="11243000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -991,11 +987,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487930314150</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="startet med data basen til læreren">
+      <created>1488978309432</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1488978309432</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34662000" />
+    <option name="totallyTimeSpent" value="34708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1095,7 +1098,8 @@
     <MESSAGE value="New .gitignore, should keep the pull-mistakes away" />
     <MESSAGE value="Made simple login verification" />
     <MESSAGE value="Cleartimeslots, and clear timeslot method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleartimeslots, and clear timeslot method" />
+    <MESSAGE value="startet med data basen til læreren" />
+    <option name="LAST_COMMIT_MESSAGE" value="startet med data basen til læreren" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1119,6 +1123,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,6 +1196,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
