@@ -13,7 +13,6 @@ import java.util.GregorianCalendar;
 import calendar.*;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
-import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,7 +22,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
 public class CalendarController implements Initializable{
 	Date chosenDate;
@@ -176,7 +174,7 @@ public class CalendarController implements Initializable{
 //            drawerRight.open();
 //
 //        }
-        AddController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
+        AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
         //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
         System.out.println("add");
 

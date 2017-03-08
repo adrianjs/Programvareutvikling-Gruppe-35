@@ -21,7 +21,7 @@ import java.util.*;
 import java.util.Calendar;
 
 
-public class AddController implements Initializable{
+public class AddActivityController implements Initializable{
 
     @FXML JFXTextField activity;
     @FXML JFXDatePicker date;
@@ -81,7 +81,6 @@ public class AddController implements Initializable{
         int startHour = calendar.get(Calendar.HOUR_OF_DAY);
         calendar.setTime(cell.getEndDate());
         int endHour = calendar.get(Calendar.HOUR_OF_DAY);
-
         connecter.addEvent(cell.getName(), new java.sql.Date(cell.getStartDate().getTime()) ,
                 cell.isRepeating(), cell.getSlotPriority(),
                 startHour, endHour,

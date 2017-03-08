@@ -30,8 +30,8 @@ public class Calendar extends Application {
     }
 
 	//Changing scene.
-	public AddController changeToAdd(String fxml, String name){
-		AddController add = null;
+	public AddActivityController changeToAdd(String fxml, String name){
+		AddActivityController add = null;
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
 			Parent load = loader.load();

@@ -26,8 +26,8 @@ public class Connect {
     static final String user = "torresrl_data";
     static final  String pass = "admin";
 
-    Connection conn = null;
-    Statement stmt = null;
+    public Connection conn = null;
+    public Statement stmt = null;
 
     //When you instanciate the class, it automatically connects
     public Connect(){
@@ -81,7 +81,6 @@ public class Connect {
         } catch (SQLException se){
             se.printStackTrace();
         }
-
     }
 
     public void addTeacher(String email, String firstName, String lastName, String department, String description, String pass){
@@ -105,6 +104,11 @@ public class Connect {
         } catch (SQLException se) {
             se.printStackTrace();
         }
+    }
+
+    public void updateStudentSubjects(String subjects) throws SQLException {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("UPDATE STUDENTS SET subjects='"+subjects+"'");
     }
 
 
