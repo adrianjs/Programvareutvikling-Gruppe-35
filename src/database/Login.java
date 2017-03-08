@@ -32,7 +32,7 @@ public class Login extends Connect{
     }
 
     public Set getCourseCoordinator() throws SQLException {
-        ResultSet set = connecter.stmt.executeQuery(query1);
+        ResultSet set = stmt.executeQuery(query1);
         while (set.next()){
             List user = new ArrayList<>();
             user.add(set.getString(1));
