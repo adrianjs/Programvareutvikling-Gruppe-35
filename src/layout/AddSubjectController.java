@@ -3,24 +3,19 @@ package layout;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXSnackbar;
-import com.jfoenix.skins.JFXTextFieldSkin;
 import com.sun.deploy.util.StringUtils;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import org.controlsfx.control.textfield.TextFields;
-
-import javax.swing.*;
-import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.logging.Logger;
+
 
 /**
  * Created by larsmade on 23.02.2017.
@@ -54,11 +49,16 @@ public class AddSubjectController extends Connect implements Initializable{
             JFXSnackbar bar = new JFXSnackbar(anchorPane);
             bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " is already one of your subjects!"));
         }else{
-            setOfSubjects.add((String) subjectPicker.getValue()); //Adding new chosen subject
-            subjectString = StringUtils.join(setOfSubjects, ",");
-            updateStudentSubjects(subjectString);
-            JFXSnackbar bar = new JFXSnackbar(anchorPane);
-            bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " was added to your subjects!"));
+            if(subjectPicker.getItems().contains(subjectPicker.getValue())){
+                setOfSubjects.add((String) subjectPicker.getValue()); //Adding new chosen subject
+                subjectString = StringUtils.join(setOfSubjects, ",");
+                updateStudentSubjects(subjectString);
+                JFXSnackbar bar = new JFXSnackbar(anchorPane);
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " was added to your subjects!"));
+            }else{
+                JFXSnackbar bar = new JFXSnackbar(anchorPane);
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " is not a valid subject!"));
+            }
         }
     }
 
