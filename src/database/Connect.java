@@ -68,10 +68,7 @@ public class Connect {
         }
     }
 
-    public static void main(String[] args) {
-   	    Connect test = new Connect();
-   	    test.close();
-   	}
+
 
     //----------------------------------------------------METHODS----------------------------------------------------
 
@@ -112,6 +109,26 @@ public class Connect {
         stmt = conn.createStatement();
         stmt.executeUpdate("UPDATE STUDENT SET subjects='"+subjects+"' WHERE email='"+ User.getInstance().getUsername() +"'");
     }
+
+
+    public void addRoom(String roomNr, int seats){
+        try{
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO ROOM VALUES('"+roomNr+"', '"+seats+"')");
+            System.out.println("rom added");
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Connect test = new Connect();
+        test.close();
+    }
+
+
+
 
 
 } //END
