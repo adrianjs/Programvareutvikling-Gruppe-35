@@ -1,4 +1,4 @@
-package layout;
+package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import layout.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +29,7 @@ public class LoginController implements Initializable {
     @FXML Label loginError;
 
     User user = User.getInstance();
-    Calendar cal = new Calendar();
+    layout.Calendar cal = new layout.Calendar();
     private Stage stage;
 
     //Login and set user in userclass.

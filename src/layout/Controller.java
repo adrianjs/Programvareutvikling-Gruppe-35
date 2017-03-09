@@ -1,5 +1,8 @@
 package layout;
 
+import controllers.add.AddActivityController;
+import controllers.add.AddSubjectController;
+
 /**
  * Created by larsmade on 24.02.2017.
  */

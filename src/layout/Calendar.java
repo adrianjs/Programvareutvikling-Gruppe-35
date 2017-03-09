@@ -3,6 +3,9 @@ package layout;
 
 import java.io.IOException;
 
+import controllers.add.AddActivityController;
+import controllers.add.AddSubjectController;
+import controllers.WatchDayMonthTabController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

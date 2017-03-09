@@ -1,6 +1,5 @@
-package layout;
+package controllers.add;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXSnackbar;
 import com.sun.deploy.util.StringUtils;
@@ -11,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import layout.User;
 import org.controlsfx.control.textfield.TextFields;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,10 +23,8 @@ import java.util.*;
 public class AddSubjectController extends Connect implements Initializable{
 
     @FXML TextField subject;
-    @FXML JFXButton sendInn;
     @FXML JFXComboBox subjectPicker;
     @FXML AnchorPane anchorPane;
-
 
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList();
@@ -53,19 +51,19 @@ public class AddSubjectController extends Connect implements Initializable{
             setOfSubjects = new HashSet<>(Arrays.asList(subjectString
                     .split(","))); //Make a HashSet to deal with duplicates
         }
-        if(setOfSubjects.contains(subject.getCharacters())){
+        if(setOfSubjects.contains(subject.getCharacters().toString())){
             JFXSnackbar bar = new JFXSnackbar(anchorPane);
-            bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " is already one of your subjects!"));
+            bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is already one of your subjects!"));
         }else{
-            if(subjectPicker.getItems().contains(subject.getCharacters())){
-                setOfSubjects.add((String) subject.getCharacters()); //Adding new chosen subject
+            if(subjectPicker.getItems().contains(subject.getCharacters().toString())){
+                setOfSubjects.add((String) subject.getCharacters().toString()); //Adding new chosen subject
                 subjectString = StringUtils.join(setOfSubjects, ",");
                 updateStudentSubjects(subjectString);
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " was added to your subjects!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was added to your subjects!"));
             }else{
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " is not a valid subject!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is not a valid subject!"));
             }
         }
     }
@@ -73,10 +71,10 @@ public class AddSubjectController extends Connect implements Initializable{
     /**
      * Sets up the ComboBox with subjects the user can pick.
      * Calls the database (DB) and gets all the subjects available from SUBJECT.
-     * Binds the subjects to the ComboBox, so that the user can write
+     * Binds the subjects to the TextField, so that the user can write
      * and get autocompletion.
-     * @param location
-     * @param resources
+     * @param location standard inheritance
+     * @param resources standard inheritance
      */
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {

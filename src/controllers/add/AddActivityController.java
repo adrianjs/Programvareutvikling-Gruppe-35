@@ -1,21 +1,21 @@
-package layout;
+package controllers.add;
 
 import calendar.Cell;
 import calendar.UserCell;
 import com.jfoenix.controls.*;
+import controllers.CalendarController;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import layout.User;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.Calendar;

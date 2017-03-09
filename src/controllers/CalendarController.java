@@ -1,4 +1,4 @@
-package layout;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,6 +13,8 @@ import java.util.GregorianCalendar;
 import calendar.*;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import controllers.add.AddActivityController;
+import controllers.add.AddSubjectController;
 import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import layout.User;
 
 public class CalendarController implements Initializable{
 	Date chosenDate;
@@ -83,7 +86,7 @@ public class CalendarController implements Initializable{
 	List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
 	Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
-	Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
+	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
 	List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI

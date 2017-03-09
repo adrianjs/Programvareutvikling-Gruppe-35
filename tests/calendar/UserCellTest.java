@@ -84,7 +84,7 @@ public class UserCellTest {
     public void setRepeating() throws Exception {
         boolean prev = cell.isRepeating();
         cell.setRepeating(true);
-        assertEquals(true, cell.isRepeating());
+        assertNotEquals(prev, cell.isRepeating());
     }
 
 }

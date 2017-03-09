@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.AddSubjectController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddSubjectController">
    <children>
       <Label alignment="CENTER" layoutX="134.0" layoutY="122.0" prefHeight="21.0" prefWidth="335.0" text="Start typing a subject name or code:" />
       <JFXComboBox fx:id="subjectPicker" layoutX="128.0" layoutY="274.0" prefHeight="31.0" prefWidth="345.0" />
