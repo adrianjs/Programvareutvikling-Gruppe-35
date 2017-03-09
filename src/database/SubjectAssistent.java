@@ -97,16 +97,61 @@ public class SubjectAssistent extends Connect {
     }
 
 
+    //---------------------------------------------SUBJECTASSISTEN ON ROOM----------------------------------------------
 
 
+    public void addStudentAssistentOnRoom( String roomNr, String studentEmail, String subjectCode){
+        try{
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO ONROOM VALUES ('"+roomNr+"', '"+studentEmail+"', '"+subjectCode+"')");
+            System.out.println("StudentAssistent on room added ");
 
-//--------------------------------------- FOR TESTING --------------------------------------
-
-    public static void main(String[] args) {
-        SubjectAssistent test = new SubjectAssistent();
-        System.out.println(test.getSubjectAssistentOnEmail("torres.lande@gmail.com"));
-        test.close();
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
     }
+
+    public ArrayList<ArrayList<String>> getStudentAssistentOnSubjectCode(String subjectCode){
+        ArrayList<ArrayList<String>> StudentAssistens = new ArrayList<ArrayList<String>>();
+        try{
+            ResultSet data = stmt.executeQuery("SELECT * FROM ONROOM WHERE ONROOM.subjectCode = '"+subjectCode+"'");
+            while(data.next()) {
+                ArrayList<String> studentAssistent = new ArrayList<>();
+
+                studentAssistent.add(data.getString("roomNr"));
+                studentAssistent.add(data.getString("studentEmail"));
+                studentAssistent.add(data.getString("subjectCode"));
+                StudentAssistens.add(studentAssistent);
+            }
+            System.out.println("onroom fetched");
+        } catch(SQLException se){
+            se.printStackTrace();
+        }
+        return StudentAssistens;
+    }
+
+
+    public ArrayList<ArrayList<String>> getStudentAssistentOnSudentEmail(String studentEmail){
+        ArrayList<ArrayList<String>> StudentAssistens = new ArrayList<>();
+        try{
+            ResultSet data = stmt.executeQuery("SELECT * FROM ONROOM WHERE ONROOM.studentEmail = '"+studentEmail+"'");
+            while(data.next()) {
+                ArrayList<String> studentAssistent = new ArrayList<>();
+
+                studentAssistent.add(data.getString("roomNr"));
+                studentAssistent.add(data.getString("studentEmail"));
+                studentAssistent.add(data.getString("subjectCode"));
+                StudentAssistens.add(studentAssistent);
+            }
+            System.out.println("onroom fetched");
+        } catch(SQLException se){
+            se.printStackTrace();
+        }
+        return StudentAssistens;
+    }
+
+
+
 
 
 }
