@@ -23,6 +23,7 @@ public class Teacher extends Connect{
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO SUBJECT VALUES('"+subjectCode+"', '"+evaluation+"'," +
                     " '"+description+"', '"+coordinatorEmail+"')");
+            System.out.println("subject added");
 
         } catch (SQLException se){
             se.printStackTrace();
@@ -67,6 +68,7 @@ public class Teacher extends Connect{
                 subjects.add(subject);
 
             }
+            System.out.println("subject fetched");
 
         } catch (SQLException se){
             se.printStackTrace();
@@ -121,7 +123,7 @@ public class Teacher extends Connect{
             stmt.executeUpdate("INSERT INTO EVENT(name, endDate, endTime, priority, description, subjectCode)" +
                     " VALUES('"+name+"', '"+deadLineDate+"', '"+time+"', 98, '"+description+"', '"+subjectCode+"')");
 
-
+            System.out.println("deadline added");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -169,6 +171,11 @@ public class Teacher extends Connect{
     }
 
 
+
+
+    // returnerer på formen [[eventID, name, startDate, endDate, reapiting, priority, description houersOfWork], [eventID, name, startDate, endDate, reapiting, priority, description houersOfWork] ]
+    // verdier som ikke skla være med i forskjelige eventer kan stå som null (som string) eller 0 for int.
+
     public ArrayList<ArrayList<String>> getEvents(String subjectCode){
         ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
         try {
@@ -186,43 +193,14 @@ public class Teacher extends Connect{
                 events.add(event);
 
             }
+
+            System.out.println("Events fetchet");
         } catch (SQLException se){
             se.printStackTrace();
         }
 
         return events;
     }
-
-
-
-
-    //----------------------------------------------------STUDASS-------------------------------------------------------
-
-    //----------------------------------------------TESTING AV METODER--------------------------------------------------
-
-
-
-    public static void main(String[] args) {
-        Teacher test = new Teacher();
-        LocalDate today = LocalDate.now();
-        java.sql.Time sTime = java.sql.Time.valueOf("11:00:00");
-        java.sql.Time eTime = java.sql.Time.valueOf("18:00:00");
-
-
-       //test.addSubject("it5001", "Mappe oppgave","Henning like at det virker","teacher@gmail.com" );
-        //test.addLecture("lecture2", today, sTime, eTime, 0, "dette er en test", "it5001");
-        //test.addSchoolWork("forbredelse", today, today, sTime, eTime,0, "les side 11-22", 2.0, "it5001");
-        //test.addDeadLine("prosjekt", today, eTime,"alle deller av prosjektet må leveres inn", "it5001");
-        //test.addExam("eksamen", today, sTime, eTime, "en heilt jævlig eksamen", "TDT999");
-        //test.addHomeExam("hjemme eksamen", today, today, sTime, eTime, "hjemme eksamen er vell mest sannsynlig dragvold fag? (CHILL)", 4.0, "TEST5132");
-
-        System.out.println(test.getEvents("it5001"));
-        test.close();
-
-
-
-    }
-
 
 
 
