@@ -34,6 +34,9 @@
                </children>
             </AnchorPane>
          </left>
+         <bottom>
+            <AnchorPane fx:id="barPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

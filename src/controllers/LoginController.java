@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
 
         user.setUsername(username);
         user.setPassword(password);
-        user.updateSubjects();
+        //user.updateSubjects();
 
         String user = validateLogin();
         System.out.println(user);

@@ -2,6 +2,7 @@ package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXSnackbar;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ public class TeacherCalendarController implements Initializable{
     @FXML JFXButton addStudass;
     @FXML JFXDrawer drawer;
     @FXML JFXDrawer drawer2;
+    @FXML AnchorPane barPane;
     AnchorPane add;
     AnchorPane studassAdd;
 
@@ -36,6 +38,9 @@ public class TeacherCalendarController implements Initializable{
         return instance;
     }
 
+    /**
+     * Onaction from addEvent button.
+     */
     public void addEvent() {
         System.out.println("Add event");
         //Slides the Botto field for bigger table layout
@@ -64,7 +69,6 @@ public class TeacherCalendarController implements Initializable{
             drawer.setSidePane(add);
             add.toFront();
             if(drawer.isShown()){
-
                 drawer.close();
             }else{
                 drawer.open();
@@ -83,10 +87,26 @@ public class TeacherCalendarController implements Initializable{
         }
     }
 
+    /**
+     * Setting text, and displaying snackbar.
+     * @param number number who desides if statement
+     * @param string what to set in snackbar
+     */
+    public void snack(int number, String string){
+        JFXSnackbar bar = new JFXSnackbar(barPane);
+        if(number == 0){
+            bar.show(string, 8000);
+        }else{
+            bar.show("No event added", 5000);
+        }
+    }
+
+    /**
+     * Onaction from addStudass button.
+     */
     public void addStudass(){
         System.out.println("add studass");
         addPane(2);
-
     }
 
 }

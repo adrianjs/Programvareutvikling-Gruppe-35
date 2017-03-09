@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -31,7 +30,7 @@
       <Label layoutX="20.0" layoutY="66.0" text="Subject code:" />
       <JFXButton id="addButtons" layoutX="578.0" layoutY="530.0" onAction="#add" stylesheets="@buttonStyle.css" text="Add" />
       <JFXButton id="addButtons" layoutX="645.0" layoutY="530.0" onAction="#cancel" stylesheets="@buttonStyle.css" text="Cancel" />
-      <Group fx:id="mainGroup" layoutX="20.0" layoutY="238.0">
+      <Group fx:id="mainGroup" layoutX="20.0" layoutY="238.0" visible="false">
          <children>
             <Label text="Event description:" />
             <JFXTextField id="fields" fx:id="description" layoutX="2.0" layoutY="28.0" prefHeight="29.0" prefWidth="436.0" stylesheets="@buttonStyle.css" />
@@ -53,12 +52,15 @@
             <JFXDatePicker id="fields" fx:id="startTime" layoutX="2.0" layoutY="199.0" showTime="true" stylesheets="@buttonStyle.css" />
          </children>
       </Group>
-      <Group fx:id="repeatingGroup" layoutX="28.0" layoutY="493.0">
-         <children>
-            <JFXCheckBox fx:id="repeating" layoutY="8.0" text="Repeating" />
-         </children>
-      </Group>
+      <Group fx:id="repeatingGroup" layoutX="28.0" layoutY="493.0" />
       <Label layoutX="249.0" layoutY="66.0" text="Event name:" />
       <JFXTextField id="fields" fx:id="eventName" layoutX="246.0" layoutY="87.0" prefHeight="29.0" prefWidth="209.0" stylesheets="@buttonStyle.css" />
+      <Group fx:id="repeatingGroup" layoutX="20.0" layoutY="492.0" visible="false">
+         <children>
+            <Label text="Repeating:" />
+            <JFXTextField id="fields" fx:id="repeating" layoutY="24.0" prefHeight="29.0" prefWidth="48.0" stylesheets="@buttonStyle.css" />
+         </children>
+      </Group>
+      <Label fx:id="errorLabel" layoutX="157.0" layoutY="535.0" textFill="RED" />
    </children>
 </AnchorPane>
