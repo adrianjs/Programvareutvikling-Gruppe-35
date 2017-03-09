@@ -50,3 +50,19 @@
 	
 }
 
+#teacherButtons{
+	-fx-background-color:  #cadae0;
+	
+}
+
+#teacherButtons:hover{
+	-fx-outer-border: white;
+	-fx-border-color: gray;
+	-fx-border-width: 1px;
+}
+
+#fields{
+	-fx-background-color:  #cadae0;
+}
+
+

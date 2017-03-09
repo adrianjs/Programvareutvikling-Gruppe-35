@@ -36,45 +36,52 @@ public class TeacherCalendarController implements Initializable{
         }
         return instance;
     }
+
     public void addEvent() {
         System.out.println("Add event");
         //Slides the Botto field for bigger table layout
         addPane(1);
     }
+
+    /**
+     * Set fxml documents to JFXdrawers.
+     */
     public void setAddField(){
         try {
             add = FXMLLoader.load(getClass().getResource("../resources/addEvent.fxml"));
             studassAdd = FXMLLoader.load(getClass().getResource("../resources/addStudass.fxml"));
         } catch (IOException e) {
-
             e.printStackTrace();
         }
     }
 
+    /**
+     * Open and closes drawers(Fxml documtents).
+     * @param number get number from on buttons onaction methods
+     */
     public void addPane(int number){
         if(number == 1){
             drawer2.close();
             drawer.setSidePane(add);
+            add.toFront();
             if(drawer.isShown()){
-                //addEvent.setText("Add event");
+
                 drawer.close();
             }else{
                 drawer.open();
-                //addEvent.setText("Close Event");
+                drawer.toFront();
             }
         }
         if(number == 2){
             drawer2.setSidePane(studassAdd);
             drawer.close();
             if(drawer2.isShown()){
-                //addStudass.setText("Add Studass");
                 drawer2.close();
             }else{
                 drawer2.open();
-                //addStudass.setText("Close Studass");
+                drawer2.toFront();
             }
         }
-
     }
 
     public void addStudass(){
