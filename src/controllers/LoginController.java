@@ -33,13 +33,14 @@ public class LoginController implements Initializable {
     private Stage stage;
 
     //Login and set user in userclass.
-    public void login() throws IOException {
+    public void login() throws IOException, SQLException {
         loginError.setText("");
         String username = loginField.getText();
         String password = passwordField.getText();
 
         user.setUsername(username);
         user.setPassword(password);
+        user.updateSubjects();
 
         String user = validateLogin();
         System.out.println(user);

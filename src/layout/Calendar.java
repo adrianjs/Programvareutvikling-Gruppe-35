@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 public class Calendar extends Application {
 
 	Stage stage;
-	Controller currentController;
 	
 	//Launch the scene. 
 	@Override

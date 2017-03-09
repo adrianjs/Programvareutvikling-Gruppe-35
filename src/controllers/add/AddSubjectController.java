@@ -41,16 +41,8 @@ public class AddSubjectController extends Connect implements Initializable{
      */
 
     public void addSubjectToCalendar() throws SQLException {
-        ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDENT WHERE email='"+ User.getInstance().getUsername() +"'");
-        stud_sub_resultset.next();
-        String subjectString = stud_sub_resultset.getString(7); //Works as long as column 7 is the students subjects
-        Set<String> setOfSubjects;
-        if(subjectString.isEmpty()){
-            setOfSubjects = new HashSet<>();
-        }else{
-            setOfSubjects = new HashSet<>(Arrays.asList(subjectString
-                    .split(","))); //Make a HashSet to deal with duplicates
-        }
+        Set<String> setOfSubjects = User.getInstance().getSubjects();
+        String subjectString;
         if(setOfSubjects.contains(subject.getCharacters().toString())){
             JFXSnackbar bar = new JFXSnackbar(anchorPane);
             bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is already one of your subjects!"));
