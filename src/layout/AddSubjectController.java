@@ -27,14 +27,22 @@ public class AddSubjectController extends Connect implements Initializable{
     @FXML JFXComboBox subjectPicker;
     @FXML AnchorPane anchorPane;
 
+
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList();
 
+    /**
+     * Inputs a new valid subject to the current users subjects.
+     * Connects to the STUDENT database (DB) and fetches the "subjects" column from the currently logged in user.
+     * Parses from a String to a HashSet (to avoid duplicates).
+     * Tries to add the subject that the user wants.
+     * Validates it against the valid subjects from SUBJECTS DB.
+     * Parses the HashSet back to a String and pushes it up to the DB.
+     * The JFXSnackbar gives feedback to the user.
+     * @throws SQLException
+     */
 
     public void addSubjectToCalendar() throws SQLException {
-        //TODO: Handle invalid subjects
-        //check up against database..
-        //Then add it to calendar if it exist.
         ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDENT WHERE email='"+ User.getInstance().getUsername() +"'");
         stud_sub_resultset.next();
         String subjectString = stud_sub_resultset.getString(7); //Works as long as column 7 is the students subjects
@@ -45,37 +53,46 @@ public class AddSubjectController extends Connect implements Initializable{
             setOfSubjects = new HashSet<>(Arrays.asList(subjectString
                     .split(","))); //Make a HashSet to deal with duplicates
         }
-        if(setOfSubjects.contains(subjectPicker.getValue())){
+        if(setOfSubjects.contains(subject.getCharacters())){
             JFXSnackbar bar = new JFXSnackbar(anchorPane);
-            bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " is already one of your subjects!"));
+            bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " is already one of your subjects!"));
         }else{
-            if(subjectPicker.getItems().contains(subjectPicker.getValue())){
-                setOfSubjects.add((String) subjectPicker.getValue()); //Adding new chosen subject
+            if(subjectPicker.getItems().contains(subject.getCharacters())){
+                setOfSubjects.add((String) subject.getCharacters()); //Adding new chosen subject
                 subjectString = StringUtils.join(setOfSubjects, ",");
                 updateStudentSubjects(subjectString);
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " was added to your subjects!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " was added to your subjects!"));
             }else{
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subjectPicker.getValue() + " is not a valid subject!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters() + " is not a valid subject!"));
             }
         }
     }
 
+    /**
+     * Sets up the ComboBox with subjects the user can pick.
+     * Calls the database (DB) and gets all the subjects available from SUBJECT.
+     * Binds the subjects to the ComboBox, so that the user can write
+     * and get autocompletion.
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {
         try {
             m_ResultSet = stmt.executeQuery("SELECT * FROM SUBJECT");
             while(m_ResultSet.next()){
-                System.out.println(m_ResultSet.getString(1));
                 subjects.add(m_ResultSet.getString(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         subjectPicker.setItems(subjects.sorted());
-        //TODO: Get this to look pretty or at least the same
-        TextFields.bindAutoCompletion(subjectPicker.getEditor(), subjectPicker.getItems());
+        TextFields.bindAutoCompletion(subject, subjectPicker.getItems());
+        subjectPicker.setOnAction(event -> {
+            subject.setText(subjectPicker.getValue().toString());
+        });
 
     }
 }

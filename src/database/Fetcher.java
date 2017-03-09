@@ -13,7 +13,7 @@ public class Fetcher extends Connect{
     private String query;
     private Set<List> results = new HashSet<>();
 
-    public Fetcher(String query) throws SQLException{
+    public Fetcher(String query){
         this.query = query;
     }
 
