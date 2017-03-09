@@ -50,11 +50,13 @@ public class Teacher extends Connect{
 
 
     // kommer ut i formen [fagkode, vurdering, beskrivelse]
-    public ArrayList<String> getSubjects(String coordinatorEmail){
-        ArrayList<String> subject = new ArrayList<String>();
+    public ArrayList<ArrayList<String>> getSubjects(String coordinatorEmail){
+        ArrayList<ArrayList<String>> subjects = new ArrayList<ArrayList<String>>();
         try {
             ResultSet data = stmt.executeQuery("SELECT * FROM SUBJECT WHERE SUBJECT.coordinatorEmail = '"+coordinatorEmail+"'");
             while (data.next()){
+                ArrayList<String> subject = new ArrayList<String>();
+
                 subject.add(data.getString("subjectCode"));
                 subject.add(data.getString("evaluation"));
                 if(data.getString("description") != null) {
@@ -62,6 +64,7 @@ public class Teacher extends Connect{
                 } else {
                     subject.add("");
                 }
+                subjects.add(subject);
 
             }
 
@@ -69,7 +72,7 @@ public class Teacher extends Connect{
             se.printStackTrace();
         }
 
-        return subject;
+        return subjects;
     }
 
 
@@ -166,6 +169,31 @@ public class Teacher extends Connect{
     }
 
 
+    public ArrayList<ArrayList<String>> getEvents(String subjectCode){
+        ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
+        try {
+            ResultSet data = stmt.executeQuery("SELECT * FROM EVENT WHERE EVENT.subjectCode = '"+subjectCode+"'");
+            while (data.next()){
+                ArrayList<String> event = new ArrayList<String>();
+                event.add(Integer.toString(data.getInt("eventID")));
+                event.add(data.getString("name"));
+                event.add("" + data.getDate("startDate"));
+                event.add("" + data.getDate("endDate"));
+                event.add(Integer.toString(data.getInt("repeating")));
+                event.add(Integer.toString(data.getInt("priority")));
+                event.add(data.getString("description"));
+                event.add(Integer.toString(data.getInt("houersOfWork")));
+                events.add(event);
+
+            }
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
+
+        return events;
+    }
+
+
 
 
     //----------------------------------------------------STUDASS-------------------------------------------------------
@@ -188,8 +216,10 @@ public class Teacher extends Connect{
         //test.addExam("eksamen", today, sTime, eTime, "en heilt jævlig eksamen", "TDT999");
         //test.addHomeExam("hjemme eksamen", today, today, sTime, eTime, "hjemme eksamen er vell mest sannsynlig dragvold fag? (CHILL)", 4.0, "TEST5132");
 
-        System.out.println(test.getSubjects("teacher@gmail.com"));
+        System.out.println(test.getEvents("it5001"));
         test.close();
+
+
 
     }
 

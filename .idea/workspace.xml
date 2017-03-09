@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="startet med data basen til læreren">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm/SuperSorter.java" afterPath="$PROJECT_DIR$/src/algorithm/SuperSorter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Teacher.java" afterPath="$PROJECT_DIR$/src/database/Teacher.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
@@ -58,7 +57,81 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4440">
               <caret line="383" column="4" lean-forward="false" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="4" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3455#3456#0" expanded="false" />
+                <element signature="e#3515#3516#0" expanded="false" />
+                <element signature="e#3597#3598#0" expanded="false" />
+                <element signature="e#3662#3663#0" expanded="false" />
+                <element signature="e#8567#8568#0" expanded="false" />
+                <element signature="e#8598#8599#0" expanded="false" />
+                <element signature="e#8681#8682#0" expanded="false" />
+                <element signature="e#8703#8704#0" expanded="false" />
+                <element signature="e#8813#8814#0" expanded="false" />
+                <element signature="e#8844#8845#0" expanded="false" />
+                <element signature="e#8888#8889#0" expanded="false" />
+                <element signature="e#8910#8911#0" expanded="false" />
+                <element signature="e#8954#8955#0" expanded="false" />
+                <element signature="e#8976#8977#0" expanded="false" />
+                <element signature="e#9020#9021#0" expanded="false" />
+                <element signature="e#9042#9043#0" expanded="false" />
+                <element signature="e#9086#9087#0" expanded="false" />
+                <element signature="e#9108#9109#0" expanded="false" />
+                <element signature="e#9152#9153#0" expanded="false" />
+                <element signature="e#9174#9175#0" expanded="false" />
+                <element signature="e#9218#9219#0" expanded="false" />
+                <element signature="e#9240#9241#0" expanded="false" />
+                <element signature="e#9285#9286#0" expanded="false" />
+                <element signature="e#9308#9309#0" expanded="false" />
+                <element signature="e#9353#9354#0" expanded="false" />
+                <element signature="e#9376#9377#0" expanded="false" />
+                <element signature="e#9421#9422#0" expanded="false" />
+                <element signature="e#9444#9445#0" expanded="false" />
+                <element signature="e#9489#9490#0" expanded="false" />
+                <element signature="e#9512#9513#0" expanded="false" />
+                <element signature="e#9557#9558#0" expanded="false" />
+                <element signature="e#9580#9581#0" expanded="false" />
+                <element signature="e#9625#9626#0" expanded="false" />
+                <element signature="e#9648#9649#0" expanded="false" />
+                <element signature="e#9693#9694#0" expanded="false" />
+                <element signature="e#9716#9717#0" expanded="false" />
+                <element signature="e#9761#9762#0" expanded="false" />
+                <element signature="e#9784#9785#0" expanded="false" />
+                <element signature="e#9829#9830#0" expanded="false" />
+                <element signature="e#9852#9853#0" expanded="false" />
+                <element signature="e#9897#9898#0" expanded="false" />
+                <element signature="e#9920#9921#0" expanded="false" />
+                <element signature="e#9965#9966#0" expanded="false" />
+                <element signature="e#9988#9989#0" expanded="false" />
+                <element signature="e#10033#10034#0" expanded="false" />
+                <element signature="e#10056#10057#0" expanded="false" />
+                <element signature="e#10101#10102#0" expanded="false" />
+                <element signature="e#10124#10125#0" expanded="false" />
+                <element signature="e#10169#10170#0" expanded="false" />
+                <element signature="e#10192#10193#0" expanded="false" />
+                <element signature="e#10237#10238#0" expanded="false" />
+                <element signature="e#10260#10261#0" expanded="false" />
+                <element signature="e#10305#10306#0" expanded="false" />
+                <element signature="e#10328#10329#0" expanded="false" />
+                <element signature="e#10373#10374#0" expanded="false" />
+                <element signature="e#10396#10397#0" expanded="false" />
+                <element signature="e#10441#10442#0" expanded="false" />
+                <element signature="e#10464#10465#0" expanded="false" />
+                <element signature="e#10509#10510#0" expanded="false" />
+                <element signature="e#10532#10533#0" expanded="false" />
+                <element signature="e#10577#10578#0" expanded="false" />
+                <element signature="e#10600#10601#0" expanded="false" />
+                <element signature="e#10645#10646#0" expanded="false" />
+                <element signature="e#10668#10669#0" expanded="false" />
+                <element signature="e#10713#10714#0" expanded="false" />
+                <element signature="e#10736#10737#0" expanded="false" />
+                <element signature="e#10849#10850#0" expanded="false" />
+                <element signature="e#10872#10873#0" expanded="false" />
+                <element signature="e#10917#10918#0" expanded="false" />
+                <element signature="e#10940#10941#0" expanded="false" />
+                <element signature="e#10985#10986#0" expanded="false" />
+                <element signature="e#11008#11009#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,9 +149,11 @@
       <file leaf-file-name="AddSubjectController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layout/AddSubjectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <folding>
+                <marker date="1489052793000" expanded="true" signature="24:149" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,24 +177,31 @@
       <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1048">
-              <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="186" column="0" lean-forward="true" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
               <folding>
-                <marker date="1488995332000" expanded="true" signature="604:735" ph="INSERT INTO SUBJECT... " />
-                <marker date="1488995332000" expanded="true" signature="1039:1157" ph="INSERT INTO SUBJECT... " />
-                <marker date="1488995332000" expanded="true" signature="1549:1626" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1488995332000" expanded="true" signature="2555:2830" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="3390:3546" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="3390:3634" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="3390:3722" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4194" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4226" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4228" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4240" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4312" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4117:4314" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="4699:4941" ph="INSERT INTO EVENT... " />
-                <marker date="1488995332000" expanded="true" signature="5489:5795" ph="INSERT INTO EVENT... " />
+                <element signature="e#1498#1517#0" expanded="true" />
+                <element signature="e#1754#1762#0" expanded="true" />
+                <element signature="e#6215#6234#0" expanded="true" />
+                <element signature="e#6455#6463#0" expanded="true" />
+                <marker date="1489052785000" expanded="true" signature="604:735" ph="INSERT INTO SUBJECT... " />
+                <marker date="1489052785000" expanded="true" signature="1039:1157" ph="INSERT INTO SUBJECT... " />
+                <marker date="1489052785000" expanded="true" signature="1583:1660" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1489052785000" expanded="true" signature="2699:2974" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="3534:3690" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="3534:3778" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="3534:3866" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4338" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4370" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4372" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4384" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4456" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4261:4458" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="4843:5085" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="5633:5939" ph="INSERT INTO EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="6300:6347" ph="SELECT FROM EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="6300:6363" ph="SELECT FROM EVENT... " />
+                <marker date="1489052785000" expanded="true" signature="6300:6365" ph="SELECT FROM EVENT... " />
               </folding>
             </state>
           </provider>
@@ -132,6 +214,7 @@
               <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <marker date="1489052793000" expanded="true" signature="419:1023" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -211,8 +294,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -344,8 +427,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -374,6 +457,118 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Fetcher.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/layout/AddSubjectController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/addSubject.fxml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Teacher">
     <configuration default="false" name="Calendar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -972,7 +1167,8 @@
       <workItem from="1487851189239" duration="3273000" />
       <workItem from="1487927890002" duration="4525000" />
       <workItem from="1488965270877" duration="11641000" />
-      <workItem from="1488991970925" duration="3332000" />
+      <workItem from="1488991970925" duration="3384000" />
+      <workItem from="1489050197176" duration="2306000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1051,15 +1247,22 @@
       <option name="project" value="LOCAL" />
       <updated>1488978492654</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="startet med data basen til læreren">
+      <created>1488995370927</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1488995370927</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38438000" />
+    <option name="totallyTimeSpent" value="40796000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1070,20 +1273,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19651501" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32802126" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19521913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14010416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15989584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1379,6 +1582,7 @@
           <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="false" />
+            <marker date="1489052793000" expanded="true" signature="419:1023" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1417,9 +1621,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/AddSubjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="195">
+          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <marker date="1489052793000" expanded="true" signature="24:149" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1427,7 +1633,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4440">
           <caret line="383" column="4" lean-forward="false" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3455#3456#0" expanded="false" />
+            <element signature="e#3515#3516#0" expanded="false" />
+            <element signature="e#3597#3598#0" expanded="false" />
+            <element signature="e#3662#3663#0" expanded="false" />
+            <element signature="e#8567#8568#0" expanded="false" />
+            <element signature="e#8598#8599#0" expanded="false" />
+            <element signature="e#8681#8682#0" expanded="false" />
+            <element signature="e#8703#8704#0" expanded="false" />
+            <element signature="e#8813#8814#0" expanded="false" />
+            <element signature="e#8844#8845#0" expanded="false" />
+            <element signature="e#8888#8889#0" expanded="false" />
+            <element signature="e#8910#8911#0" expanded="false" />
+            <element signature="e#8954#8955#0" expanded="false" />
+            <element signature="e#8976#8977#0" expanded="false" />
+            <element signature="e#9020#9021#0" expanded="false" />
+            <element signature="e#9042#9043#0" expanded="false" />
+            <element signature="e#9086#9087#0" expanded="false" />
+            <element signature="e#9108#9109#0" expanded="false" />
+            <element signature="e#9152#9153#0" expanded="false" />
+            <element signature="e#9174#9175#0" expanded="false" />
+            <element signature="e#9218#9219#0" expanded="false" />
+            <element signature="e#9240#9241#0" expanded="false" />
+            <element signature="e#9285#9286#0" expanded="false" />
+            <element signature="e#9308#9309#0" expanded="false" />
+            <element signature="e#9353#9354#0" expanded="false" />
+            <element signature="e#9376#9377#0" expanded="false" />
+            <element signature="e#9421#9422#0" expanded="false" />
+            <element signature="e#9444#9445#0" expanded="false" />
+            <element signature="e#9489#9490#0" expanded="false" />
+            <element signature="e#9512#9513#0" expanded="false" />
+            <element signature="e#9557#9558#0" expanded="false" />
+            <element signature="e#9580#9581#0" expanded="false" />
+            <element signature="e#9625#9626#0" expanded="false" />
+            <element signature="e#9648#9649#0" expanded="false" />
+            <element signature="e#9693#9694#0" expanded="false" />
+            <element signature="e#9716#9717#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#9784#9785#0" expanded="false" />
+            <element signature="e#9829#9830#0" expanded="false" />
+            <element signature="e#9852#9853#0" expanded="false" />
+            <element signature="e#9897#9898#0" expanded="false" />
+            <element signature="e#9920#9921#0" expanded="false" />
+            <element signature="e#9965#9966#0" expanded="false" />
+            <element signature="e#9988#9989#0" expanded="false" />
+            <element signature="e#10033#10034#0" expanded="false" />
+            <element signature="e#10056#10057#0" expanded="false" />
+            <element signature="e#10101#10102#0" expanded="false" />
+            <element signature="e#10124#10125#0" expanded="false" />
+            <element signature="e#10169#10170#0" expanded="false" />
+            <element signature="e#10192#10193#0" expanded="false" />
+            <element signature="e#10237#10238#0" expanded="false" />
+            <element signature="e#10260#10261#0" expanded="false" />
+            <element signature="e#10305#10306#0" expanded="false" />
+            <element signature="e#10328#10329#0" expanded="false" />
+            <element signature="e#10373#10374#0" expanded="false" />
+            <element signature="e#10396#10397#0" expanded="false" />
+            <element signature="e#10441#10442#0" expanded="false" />
+            <element signature="e#10464#10465#0" expanded="false" />
+            <element signature="e#10509#10510#0" expanded="false" />
+            <element signature="e#10532#10533#0" expanded="false" />
+            <element signature="e#10577#10578#0" expanded="false" />
+            <element signature="e#10600#10601#0" expanded="false" />
+            <element signature="e#10645#10646#0" expanded="false" />
+            <element signature="e#10668#10669#0" expanded="false" />
+            <element signature="e#10713#10714#0" expanded="false" />
+            <element signature="e#10736#10737#0" expanded="false" />
+            <element signature="e#10849#10850#0" expanded="false" />
+            <element signature="e#10872#10873#0" expanded="false" />
+            <element signature="e#10917#10918#0" expanded="false" />
+            <element signature="e#10940#10941#0" expanded="false" />
+            <element signature="e#10985#10986#0" expanded="false" />
+            <element signature="e#11008#11009#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1455,24 +1735,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+        <state relative-caret-position="359">
+          <caret line="186" column="0" lean-forward="true" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
           <folding>
-            <marker date="1488995332000" expanded="true" signature="604:735" ph="INSERT INTO SUBJECT... " />
-            <marker date="1488995332000" expanded="true" signature="1039:1157" ph="INSERT INTO SUBJECT... " />
-            <marker date="1488995332000" expanded="true" signature="1549:1626" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1488995332000" expanded="true" signature="2555:2830" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="3390:3546" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="3390:3634" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="3390:3722" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4194" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4226" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4228" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4240" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4312" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4117:4314" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="4699:4941" ph="INSERT INTO EVENT... " />
-            <marker date="1488995332000" expanded="true" signature="5489:5795" ph="INSERT INTO EVENT... " />
+            <element signature="e#1498#1517#0" expanded="true" />
+            <element signature="e#1754#1762#0" expanded="true" />
+            <element signature="e#6215#6234#0" expanded="true" />
+            <element signature="e#6455#6463#0" expanded="true" />
+            <marker date="1489052785000" expanded="true" signature="604:735" ph="INSERT INTO SUBJECT... " />
+            <marker date="1489052785000" expanded="true" signature="1039:1157" ph="INSERT INTO SUBJECT... " />
+            <marker date="1489052785000" expanded="true" signature="1583:1660" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1489052785000" expanded="true" signature="2699:2974" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="3534:3690" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="3534:3778" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="3534:3866" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4338" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4370" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4372" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4384" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4456" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4261:4458" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="4843:5085" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="5633:5939" ph="INSERT INTO EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="6300:6347" ph="SELECT FROM EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="6300:6363" ph="SELECT FROM EVENT... " />
+            <marker date="1489052785000" expanded="true" signature="6300:6365" ph="SELECT FROM EVENT... " />
           </folding>
         </state>
       </provider>
