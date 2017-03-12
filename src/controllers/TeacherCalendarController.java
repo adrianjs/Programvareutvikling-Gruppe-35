@@ -6,8 +6,12 @@ import com.jfoenix.controls.JFXSnackbar;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,9 +23,11 @@ public class TeacherCalendarController implements Initializable{
 
     @FXML JFXButton addEvent;
     @FXML JFXButton addStudass;
+    @FXML JFXButton logOut;
     @FXML JFXDrawer drawer;
     @FXML JFXDrawer drawer2;
     @FXML AnchorPane barPane;
+
     AnchorPane add;
     AnchorPane studassAdd;
 
@@ -109,4 +115,13 @@ public class TeacherCalendarController implements Initializable{
         addPane(2);
     }
 
+    public void logOut() throws IOException {
+        System.out.println("LogOut");
+        Stage s = (Stage) logOut.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/username.fxml"));
+        Parent load = loader.load();
+        Scene scene = new Scene(load);
+        s.setScene(scene);
+        System.out.println("logout successful");
+    }
 }

@@ -21,9 +21,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import layout.Main;
 import layout.User;
 
 public class CalendarController implements Initializable{
@@ -32,23 +39,18 @@ public class CalendarController implements Initializable{
 	@FXML GridPane day; //DAY PANE
 	@FXML GridPane week; //WEEK PANE
 	@FXML GridPane month; //MONTH PANE
-	@FXML JFXTextField askField;//Ask field
 	@FXML AnchorPane dayAnchor; //Anchorpane day
 
 	//AI panes.
-	@FXML AnchorPane wholeField;
-	@FXML AnchorPane leftSide;
-	@FXML AnchorPane rightSide;
     HamburgerBackArrowBasicTransition tran;
     @FXML private JFXDrawer drawer;
     AnchorPane botto;
     @FXML JFXHamburger sliderButton; //Slide button
-
     AnchorPane rightside;
-    @FXML private JFXDrawer drawerRight;
 
-
-	@FXML JFXButton askButton;
+    @FXML JFXButton askButton;
+	@FXML JFXButton logout;
+	@FXML JFXButton remove;
 
 	//Labels for Day pane.
 	@FXML Label thisday;
@@ -119,10 +121,12 @@ public class CalendarController implements Initializable{
 	}
 
 	//On action from remove button
-	public void remove(){
+	public void remove() throws IOException {
         //TODO: Make remove button work
-		System.out.println("remove");
-	}
+        System.out.println("remove");
+
+    }
+
 	
 	//On action from addsubject button
 	public void addSubject(){
@@ -139,12 +143,25 @@ public class CalendarController implements Initializable{
         System.out.println("BB");
 	}
 
+	/**
+	 * Set window back to loginScreen.
+	 * @throws Exception
+	 */
+	public void logOut() throws Exception {
+		System.out.println("LogOut");
+		Stage s = (Stage) logout.getScene().getWindow();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/username.fxml"));
+		Parent load = loader.load();
+		Scene scene = new Scene(load);
+		s.setScene(scene);
+		System.out.println("logout successful");
+	}
+
     //Slides the Botto field for bigger table layout
     public void setBottoField(){
         try {
             botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
-            rightSide = FXMLLoader.load(getClass().getResource("../resources/add.fxml"));
-
+            //rightSide = FXMLLoader.load(getClass().getResource("../resources/add.fxml")); //Not used.
             tran = new HamburgerBackArrowBasicTransition(sliderButton);
             tran.setRate(-1);
         } catch (IOException e) {
@@ -152,8 +169,27 @@ public class CalendarController implements Initializable{
         }
     }
 
+	/**
+	 * Open and close the Bot field, and set value to hamburger.
+	 */
+	int counter = 0;
     public void slidePane(){
-		//Make sidebar invisible when minimized.
+        //Opens a webside in the bottoview.
+//        if(counter == 0){
+//            try {
+//                WebView w = new WebView();
+//                WebEngine engine = w.getEngine();
+//                engine.load("http://www.ht.no/");
+//                botto.getChildren().addAll(w);
+//                Scene scene = new Scene(botto, 800, 400);
+//                Stage s = new Stage();
+//                s.setScene(scene);
+//            }catch(Exception e){
+//                System.out.println(e);
+//            }
+//
+//        }
+        counter ++;
         drawer.setSidePane(botto);
         tran.setRate(tran.getRate()*-1);
         tran.play();
@@ -167,7 +203,7 @@ public class CalendarController implements Initializable{
     }
     //On action from add button
     public void add(){
-        //Makes the new add scene.
+        //Slider in not used atm.
 //        drawerRight.setSidePane(rightSide);
 //        if(drawerRight.isShown()){
 //            drawerRight.close();
@@ -178,29 +214,34 @@ public class CalendarController implements Initializable{
 //
 //        }
         AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
-        //TODO: make getMethods in addcontrollerclass so usercells can be set directly from addconroller.
         System.out.println("add");
 
     }
 
-	//Set new date from calendar
+	/**
+	 * Set new date when date in datapicker is changed.
+	 */
 	public void setNewDate(){
         LocalDate dato = date.getValue();
         setNewDate2(dato);
-        //TODO: When date clicked in month tab, update labels in daytab as well.
-
 	}
+
+	/**
+	 *
+	 * @param dato Takes in the localdate from the setNewDate Method.
+	 */
 	public void setNewDate2(LocalDate dato){
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
         setupDayTab();
     }
 
-
-
 	//Started to make methods to change veiw when minicalendar is changed.
+	/**
+	 * The new date set from datePicker adjusted to fit monthOrganizer
+	 * @param dato date from setNewDate2.
+	 */
 	public void changeDate(LocalDate dato){
-
 		String dato1 = dato.toString();
 		thisday.setText(dato1);
         String[] split = dato1.split("-");
@@ -211,16 +252,18 @@ public class CalendarController implements Initializable{
 		int year1 = Integer.parseInt(year);
 		int month1 = removeZero(month);
 		int day1 = removeZero(day);
-
-		if(teller == 0){
+		if(teller == 0){//Only needed to do this once per instance.
 			addLabelsToList();
 			teller++;
 		}
 		monthOrganizer(year1, month1-1, day1);
-		//Make methods to get values to put in calendar. for the given day.
 	}
 
-	//Remove zero from string if it starts whith it.
+	/**
+	 * Remove 0 if it is first in the string.
+	 * @param tall
+	 * @return
+	 */
 	public int removeZero(String tall){
         if(tall.charAt(0) == '0'){
 			return Character.getNumericValue(tall.charAt(1));
@@ -259,6 +302,12 @@ public class CalendarController implements Initializable{
 		}
     }
 
+	/**
+	 * Fix the veiw of the monthTab so the dates is on the right day in relation to wich month it is.
+	 * @param year
+	 * @param month
+	 * @param day
+	 */
     public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
 		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
@@ -267,8 +316,6 @@ public class CalendarController implements Initializable{
 		int dayOfMonth = cal.get(java.util.Calendar.DAY_OF_MONTH);
 		int weekOfYear = cal.get(java.util.Calendar.WEEK_OF_YEAR);
 		int weekOfMonth = cal.get(java.util.Calendar.WEEK_OF_MONTH);
-
-
 		int firstDay = 2; //Gets the fist day at the week. --> Not done yet...
 		int lastDateOfMonth = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
         //System.out.println(firstDay + " første dag");
@@ -409,19 +456,12 @@ public class CalendarController implements Initializable{
 			System.out.println(dayInt +"day" + month + "month" + year + "year");
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
 			setNewDate2(date1);
-
-			//String id = pane.getId();
-			//System.out.println(tall);
 			if(day.length() != 0){
 				WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
-
 			}
 		}catch(Exception e){
 			System.out.println(e);
 		}
-
-
-		//System.out.println(id);
 	}
 
 	//Set initalize date.

@@ -4,10 +4,10 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -21,22 +21,18 @@
    <center>
       <AnchorPane fx:id="dayAnchor" prefHeight="649.0" prefWidth="839.0" BorderPane.alignment="CENTER">
          <children>
-            <TabPane layoutY="1.0" prefHeight="626.0" prefWidth="872.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <tabs>
-                <Tab fx:id="dayTab" text="Day">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="654.0">
+            <JFXTabPane prefHeight="659.0" prefWidth="842.0" stylesheets="@buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <tabs>
+                  <Tab fx:id="dayTab" text="Day">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="654.0">
                            <children>
                               <GridPane fx:id="day" prefHeight="587.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="147.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="715.0" minWidth="10.0" prefWidth="619.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="147.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="715.0" minWidth="10.0" prefWidth="619.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -46,44 +42,57 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
                                  <children>
                                     <Label text="08:00 - 09:00" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="09:00 -10:00" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="10:00 - 11:00" GridPane.rowIndex="3">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="11:00 - 12:00" GridPane.rowIndex="4">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="13:00 - 14:00" GridPane.rowIndex="6">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="14:00 - 15:00" GridPane.rowIndex="7">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="15:00 - 16:00" GridPane.rowIndex="8">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="16:00 - 17:00" GridPane.rowIndex="9">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="17:00 -18:00" GridPane.rowIndex="10">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1" />
                                     <Label fx:id="eightToNine" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label fx:id="nineToTen" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -103,7 +112,8 @@
                                     <Label text="12:00 - 13:00" GridPane.rowIndex="5">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label text="18:00 - 19:00" GridPane.rowIndex="11">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
@@ -126,279 +136,521 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab fx:id="weekTab" text="Week">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="842.0">
+                     </content>
+                  </Tab>
+                  <Tab fx:id="weekTab" text="Week">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="842.0">
                            <children>
                               <GridPane fx:id="week" prefHeight="614.0" prefWidth="842.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints maxHeight="232.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="308.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="334.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="364.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="232.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="308.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="334.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="6.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
                                  <children>
-                                    <Label text="Monday">
-                                       <GridPane.margin>
-                                          <Insets left="10.0" />
-                                       </GridPane.margin></Label>
-                                    <Label text="Tuesday" GridPane.columnIndex="1">
-                                       <GridPane.margin>
-                                          <Insets left="10.0" />
-                                       </GridPane.margin></Label>
-                                    <Label text="Wednesday" GridPane.columnIndex="2">
+                                    <Label text="Monday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Thursday" GridPane.columnIndex="3">
+                                    <Label text="Tuesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Friday" GridPane.columnIndex="4">
+                                    <Label text="Wednesday" GridPane.columnIndex="3">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Saturday" GridPane.columnIndex="5">
+                                    <Label text="Thursday" GridPane.columnIndex="4">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Sunday" GridPane.columnIndex="6">
+                                    <Label text="Friday" GridPane.columnIndex="5">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Saturday" GridPane.columnIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Sunday" GridPane.columnIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="08:00-09:00" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="09:00-10:00" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="10:00-11:00" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="11:00-12:00" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="12:00-13:00" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="13:00-14:00" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="14:00-15:00" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="15:00-16:00" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="16:00-17:00" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="17:00-18:00" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="18:00-19:00" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="19:00-20:00" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
                                  </children>
                               </GridPane>
-                           </children></AnchorPane>
-                  </content>
-                </Tab>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
                   <Tab fx:id="monthTab" onSelectionChanged="#setDate" text="Month">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <GridPane fx:id="month" prefHeight="611.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columnConstraints>
+                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
                                     <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="141.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                                 </rowConstraints>
                                  <children>
                                     <AnchorPane id="month" fx:id="monthBox1" onMouseClicked="#handleCalendarClick1" stylesheets="@style.css" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day1" stylesheets="@style.css" text="1" />
+                                          <Label fx:id="day1" stylesheets="@style.css" text="1">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick2" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day2" text="2" />
+                                          <Label fx:id="day2" text="2">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick3" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day3" text="3" />
+                                          <Label fx:id="day3" text="3">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick4" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day4" text="4" />
+                                          <Label fx:id="day4" text="4">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick5" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day5" text="5" />
+                                          <Label fx:id="day5" text="5">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick6" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day6" text="6" />
+                                          <Label fx:id="day6" text="6">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick7" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day7" text="7" />
+                                          <Label fx:id="day7" text="7">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick8" stylesheets="@style.css" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day8" text="8" />
+                                          <Label fx:id="day8" text="8">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick9" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day9" text="9" />
+                                          <Label fx:id="day9" text="9">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick10" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day10" text="10" />
+                                          <Label fx:id="day10" text="10">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick11" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day11" text="11" />
+                                          <Label fx:id="day11" text="11">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick12" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day12" text="12" />
+                                          <Label fx:id="day12" text="12">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick13" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day13" text="13" />
+                                          <Label fx:id="day13" text="13">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick14" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day14" text="14" />
+                                          <Label fx:id="day14" text="14">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick15" stylesheets="@style.css" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day15" text="15" />
+                                          <Label fx:id="day15" text="15">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick16" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day16" text="16" />
+                                          <Label fx:id="day16" text="16">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick17" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day17" text="17" />
+                                          <Label fx:id="day17" text="17">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick18" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day18" text="18" />
+                                          <Label fx:id="day18" text="18">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick19" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day19" text="19" />
+                                          <Label fx:id="day19" text="19">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick20" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day20" text="20" />
+                                          <Label fx:id="day20" text="20">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick21" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day21" text="21" />
+                                          <Label fx:id="day21" text="21">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick22" stylesheets="@style.css" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day22" text="22" />
+                                          <Label fx:id="day22" text="22">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick23" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day23" text="23" />
+                                          <Label fx:id="day23" text="23">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick24" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day24" text="24" />
+                                          <Label fx:id="day24" text="24">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick25" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day25" text="25" />
+                                          <Label fx:id="day25" text="25">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick26" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day26" text="26" />
+                                          <Label fx:id="day26" text="26">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick27" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day27" text="27" />
+                                          <Label fx:id="day27" text="27">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick28" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day28" text="28" />
+                                          <Label fx:id="day28" text="28">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick29" stylesheets="@style.css" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day29" text="29" />
+                                          <Label fx:id="day29" text="29">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick30" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day30" text="30" />
+                                          <Label fx:id="day30" text="30">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick31" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day31" text="31" />
+                                          <Label fx:id="day31" text="31">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick32" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day32" text="32" />
+                                          <Label fx:id="day32" text="32">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick33" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day33" text="33" />
+                                          <Label fx:id="day33" text="33">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick34" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day34" text="34" />
+                                          <Label fx:id="day34" text="34">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane id="month" onMouseClicked="#handleCalendarClick35" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day35" text="35" />
+                                          <Label fx:id="day35" text="35">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
-                                    <Label text="Monday" />
-                                    <Label text="Tuesday" GridPane.columnIndex="1" />
-                                    <Label text="Wednesday" GridPane.columnIndex="2" />
-                                    <Label text="Thursday" GridPane.columnIndex="3" />
-                                    <Label text="Friday" GridPane.columnIndex="4" />
-                                    <Label text="Saturday" GridPane.columnIndex="5" />
-                                    <Label text="Sunday" GridPane.columnIndex="6" />
+                                    <Label text="Monday">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Tuesday" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Wednesday" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Thursday" GridPane.columnIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Friday" GridPane.columnIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Saturday" GridPane.columnIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Sunday" GridPane.columnIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
                                  </children>
                               </GridPane>
-                           </children></AnchorPane>
-                    </content>
+                           </children>
+                        </AnchorPane>
+                     </content>
                   </Tab>
-              </tabs>
-            </TabPane>
+               </tabs>
+            </JFXTabPane>
          </children>
       </AnchorPane>
    </center>
@@ -415,11 +667,6 @@
          <children>
             <AnchorPane fx:id="wholeField" minHeight="0.0" minWidth="0.0" prefHeight="455.0" prefWidth="200.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXDrawer fx:id="drawerRight" defaultDrawerSize="5000.0" direction="RIGHT" prefHeight="533.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
-                     </children>
-                  </JFXDrawer>
                   <JFXDrawer fx:id="drawer" defaultDrawerSize="5000.0" prefHeight="533.0" prefWidth="0.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <VBox prefHeight="455.0" prefWidth="0.0" />
@@ -431,50 +678,19 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="455.0" prefWidth="110.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="533.0" prefWidth="112.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="455.0" prefWidth="200.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane onMouseClicked="#add" prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: green;">
-                     <children>
-                        <Label id="side" layoutX="40.0" layoutY="50.0" prefHeight="103.0" prefWidth="103.0" stylesheets="@buttonStyle.css" text="ADD" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                           <padding>
-                              <Insets left="30.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: red;">
-                     <children>
-                        <Label id="side" layoutX="19.0" layoutY="50.0" onMouseClicked="#remove" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="Remove" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: yellow;">
-                     <children>
-                        <Label id="side" layoutX="61.0" layoutY="50.0" onMouseClicked="#addSubject" prefHeight="145.0" prefWidth="145.0" stylesheets="@buttonStyle.css" text="Add subject" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <JFXButton fx:id="askButton" onAction="#slidePane" prefHeight="87.0" prefWidth="113.0" style="-fx-background-color: grey;" text="Open Botto" />
+                  <JFXButton id="sideButton" onAction="#add" prefHeight="40.0" prefWidth="129.0" stylesheets="@buttonStyle.css" text="Add" textFill="#4aab32">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="40.0" prefWidth="128.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="40.0" prefWidth="121.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="40.0" prefWidth="120.0" stylesheets="@buttonStyle.css" text="Open Botto" />
+                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="40.0" prefWidth="121.0" stylesheets="@buttonStyle.css" text="Log Out" />
                </children>
             </VBox>
          </children>
