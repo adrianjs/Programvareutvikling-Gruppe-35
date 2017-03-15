@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
@@ -93,19 +94,58 @@
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1" />
-                                    <Label fx:id="eightToNine" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label fx:id="nineToTen" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label fx:id="tenToEleven" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <Label fx:id="elevenToTwelve" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <Label fx:id="twelveToThirteen" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label fx:id="thirteenToFourteen" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <Label fx:id="fourteenTiFifthteen" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <Label fx:id="fifthteenToSixteen" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                    <Label fx:id="sixteenToSeventeen" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                    <Label fx:id="seventeenToEighteen" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                                    <Label fx:id="eighteenToNineTeen" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                                    <Label fx:id="nineteenToTwenty" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                    <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="eightToNine" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="nineToTen" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="tenToEleven" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="elevenToTwelve" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="twelveToThirteen" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="thirteenToFourteen" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fourteenTiFifthteen" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fifthteenToSixteen" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="sixteenToSeventeen" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seventeenToEighteen" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="eighteenToNineTeen" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="nineteenToTwenty" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                     <Label GridPane.columnIndex="1" GridPane.rowIndex="8" />
@@ -142,7 +182,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="842.0">
                            <children>
-                              <GridPane fx:id="week" prefHeight="614.0" prefWidth="842.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <GridPane fx:id="week" layoutY="-8.0" prefHeight="498.0" prefWidth="754.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -264,6 +304,90 @@
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
+                                    <Label fx:id="enAtte" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="enNi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label fx:id="enTi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label fx:id="enElleve" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label fx:id="enTolv" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label fx:id="enTretten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label fx:id="enFjorten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <Label fx:id="enFemten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <Label fx:id="enSeksten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Label fx:id="enSytten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                    <Label fx:id="enAtten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                    <Label fx:id="enNitten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                    <Label fx:id="toAtte" text="2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Label fx:id="toNi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Label fx:id="toTi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <Label fx:id="toElleve" text="2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                    <Label fx:id="toTolv" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                    <Label fx:id="toTretten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                    <Label fx:id="toFjorten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                    <Label fx:id="toFemten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                    <Label fx:id="toSeksten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                    <Label fx:id="toSytten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                    <Label fx:id="toAtten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                                    <Label fx:id="toNitten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                                    <Label fx:id="treAtte" text="3" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="treNi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <Label fx:id="treTi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label fx:id="treElleve" text="3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <Label fx:id="treTolv" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                    <Label fx:id="treTretten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                    <Label fx:id="treFjorten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                    <Label fx:id="treFemten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                    <Label fx:id="treSeksten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                    <Label fx:id="treSytten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                                    <Label fx:id="treAtten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                                    <Label fx:id="treNitten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                                    <Label fx:id="fireAtte" text="4" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <Label fx:id="fireNi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                    <Label fx:id="fireTi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                    <Label fx:id="fireElleve" text="4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                    <Label fx:id="fireTolv" text="4" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                    <Label fx:id="fireTretten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                                    <Label fx:id="fireFjorten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                    <Label fx:id="fireFemten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                    <Label fx:id="fireSeksten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                                    <Label fx:id="fireSytten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                                    <Label fx:id="fireAtten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                                    <Label fx:id="fireNitten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                                    <Label fx:id="femAtte" text="5" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <Label fx:id="femNi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                    <Label fx:id="femTi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                    <Label fx:id="femElleve" text="5" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                    <Label fx:id="femTolv" text="5" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                    <Label fx:id="femTretten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                                    <Label fx:id="femFjorten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                    <Label fx:id="femFemten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                    <Label fx:id="femSeksten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                                    <Label fx:id="femSytten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                                    <Label fx:id="femAtten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+                                    <Label fx:id="femNitten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                                    <Label fx:id="seksAtte" text="6" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                    <Label fx:id="seksNi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                    <Label fx:id="seksTi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                                    <Label fx:id="seksElleve" text="6" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                                    <Label fx:id="seksTolv" text="6" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                                    <Label fx:id="seksTretten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                                    <Label fx:id="seksFjorten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                                    <Label fx:id="seksFemten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                                    <Label fx:id="seksSeksten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                                    <Label fx:id="seksSytten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                                    <Label fx:id="seksAtten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+                                    <Label fx:id="seksNitten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                                    <Label fx:id="syvAtte" text="7" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                                    <Label fx:id="syvNi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                    <Label fx:id="syvTi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                                    <Label fx:id="syvElleve" text="7" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                                    <Label fx:id="syvTolv" text="7" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                                    <Label fx:id="syvTretten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                                    <Label fx:id="syvFjorten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                                    <Label fx:id="syvFemten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                                    <Label fx:id="syvSeksten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                                    <Label fx:id="syvSytten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                                    <Label fx:id="syvAtten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+                                    <Label fx:id="syvNitten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="12" />
                                  </children>
                               </GridPane>
                            </children>
@@ -290,6 +414,7 @@
                                     <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="141.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
@@ -608,6 +733,24 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane onMouseClicked="#handleCalendarClick36" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                                       <children>
+                                          <Label fx:id="day36" layoutY="4.0" text="36">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane onMouseClicked="#handleCalendarClick37" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <Label fx:id="day37" layoutY="4.0" text="37">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
                                     <Label text="Monday">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -682,15 +825,19 @@
          <children>
             <VBox prefHeight="455.0" prefWidth="200.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton id="sideButton" onAction="#add" prefHeight="40.0" prefWidth="129.0" stylesheets="@buttonStyle.css" text="Add" textFill="#4aab32">
+                  <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="@buttonStyle.css" text="Add" textFill="#4aab32">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="40.0" prefWidth="128.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="40.0" prefWidth="121.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
-                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="40.0" prefWidth="120.0" stylesheets="@buttonStyle.css" text="Open Botto" />
-                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="40.0" prefWidth="121.0" stylesheets="@buttonStyle.css" text="Log Out" />
+                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
+                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#getWeekTabCells" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Open Botto" />
+                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
+                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Log Out" />
                </children>
             </VBox>
          </children>

@@ -1,13 +1,10 @@
 #slide{
-	
-	
 	-fx-font-size: 20px;
 	-fx-font-weight: bold;
 	-fx-background-color:gray;
 } 
 
 #slide:hover{
-	
 	-fx-border-width: 3px;
 	-fx-border-color: #4d5259;
 }
@@ -28,15 +25,11 @@
 /* ADD */
 
 #cal{
-	
 	-fx-background-color:  #cadae0;
-	
 }
 
 #addButtons{
-	
 	-fx-background-color:  #cadae0; 
-	
 }
 
 #teacherButtons{

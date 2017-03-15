@@ -26,11 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import layout.Main;
 import layout.User;
 
 public class CalendarController implements Initializable{
@@ -80,7 +76,7 @@ public class CalendarController implements Initializable{
     //CountVariables
     int teller = 0;
     int dayClicked = 0; //Day clicked on in MonthTab
-    User user = new User();
+    User user = User.getInstance();
 
 	//*************** HENNINGS ULTRAFELT *****************//
 	//DAY
@@ -311,15 +307,21 @@ public class CalendarController implements Initializable{
     public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
 		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
-		int yea = cal.get(java.util.Calendar.YEAR);
-		int monthe = cal.get(java.util.Calendar.MONTH);
+        java.util.Calendar cal1 = new GregorianCalendar(year, month, 1);
 		int dayOfMonth = cal.get(java.util.Calendar.DAY_OF_MONTH);
 		int weekOfYear = cal.get(java.util.Calendar.WEEK_OF_YEAR);
-		int weekOfMonth = cal.get(java.util.Calendar.WEEK_OF_MONTH);
-		int firstDay = 2; //Gets the fist day at the week. --> Not done yet...
-		int lastDateOfMonth = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
-        //System.out.println(firstDay + " første dag");
-		//System.out.println(lastDateOfMonth + " siste dag");
+		int weekOfMonth = cal.get(cal.WEEK_OF_MONTH);
+		int dayOfWeek = cal.get(cal.DAY_OF_WEEK) -2;
+		if(dayOfWeek == -1){
+		    dayOfWeek = 6;
+        }
+		//This works for the months i have cheked --> First day;
+        int firstDay = cal1.get(cal1.DAY_OF_WEEK) -2;
+        if(firstDay == -1){
+            firstDay = 6;
+        }
+        int lastDateOfMonth = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
+        weekOrganizer(year, month+1, day, weekOfMonth, dayOfWeek);
         //Setting the month dates to right place.
 		int tall = 1;
 		System.out.println(monthLabels.size());
@@ -332,6 +334,60 @@ public class CalendarController implements Initializable{
 			}
 		}
 	}
+
+    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();
+    /**
+     * Makes a list of dates in week, so every day in the chosen week has a date connected to it.(LocalDate)
+     * Then we kan put values to labels like it is done in the daytab.
+     * @param week
+     */
+	public void weekOrganizer(int year, int month, int day, int week, int dayofWeek){
+		LocalDate date;
+	    weekCalendarList.clear();
+        date = LocalDate.of(year, month, day);
+        if(dayofWeek == 0){
+            for(int i = day; i < day+7; i++){
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 1){
+            date = date.minusDays(1);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 2){
+            date = date.minusDays(2);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 3){
+            date = date.minusDays(3);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 4){
+            date = date.minusDays(4);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 5){
+            date = date.minusDays(5);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }else if(dayofWeek == 6){
+            date = date.minusDays(6);
+            for(int i = day; i < day+7; i++) {
+                weekCalendarList.add(date);
+                date = date.plusDays(1);
+            }
+        }
+    }
 
 	//GetLabelSoMonthOrganizerCanChangeiy
 	public void StringGetLabel(String label){
@@ -442,6 +498,12 @@ public class CalendarController implements Initializable{
 	@FXML private void handleCalendarClick35(){
 		monthClicked(35);
 	}
+    @FXML private void handleCalendarClick36(){
+        monthClicked(36);
+    }
+    @FXML private void handleCalendarClick37(){
+        monthClicked(37);
+    }
 
 	//Go to that given day when month is clicked.
 	public void monthClicked(int tall){
@@ -450,10 +512,10 @@ public class CalendarController implements Initializable{
         try{
 			int dayInt = Integer.parseInt(day);
 			LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-			System.out.println(date.toString());
+			//System.out.println(date.toString());
 			int year = date.getYear();
 			int month = date.getMonthValue();
-			System.out.println(dayInt +"day" + month + "month" + year + "year");
+			//System.out.println(dayInt +"day" + month + "month" + year + "year");
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
 			setNewDate2(date1);
 			if(day.length() != 0){
@@ -512,7 +574,6 @@ public class CalendarController implements Initializable{
             }
             count++;
         }
-
     }
 
     public void setupDayTab(){
@@ -536,6 +597,7 @@ public class CalendarController implements Initializable{
 			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             for(List activity : activities){
+                System.out.println(activity + " ACTIVITY");
                 SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
                 //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
                 cellsAtCurrentDate.add(new UserCell(
@@ -603,5 +665,74 @@ public class CalendarController implements Initializable{
 		System.out.println(User.getInstance().getUsername());
 		label.setText(cell.getName());
 		System.out.println(cell.getName());
+	}
+
+
+	//****Lars Lager Stuff til weekTab*****
+
+    HashMap<Integer, List> weekLabelList = new HashMap<>();
+
+    /**
+     * Get all week tab cells, an add them to a hash
+     */
+	public void getWeekTabCells() throws ParseException {
+        List<LocalDate> dates = weekCalendarList;
+        ObservableList<Node> list = week.getChildren();
+        List<Label> label1 = new ArrayList<>();
+		List<Label> label2 = new ArrayList<>();
+		List<Label> label3 = new ArrayList<>();
+		List<Label> label4 = new ArrayList<>();
+		List<Label> label5 = new ArrayList<>();
+		List<Label> label6 = new ArrayList<>();
+		List<Label> label7 = new ArrayList<>();
+		for (Node node : list){
+            try{
+                String id = node.getId();
+				Label l = (Label) node;
+                String t = l.getText();
+				if(t.equals("1")){
+                    label1.add((Label) node);
+				}
+				else if(t.equals("2")){
+					label2.add((Label) node);
+				}
+				else if(t.equals("3")){
+					label3.add((Label) node);
+				}
+				else if(t.equals("4")){
+					label4.add((Label) node);
+				}
+				else if(t.equals("5")){
+					label5.add((Label) node);
+				}
+				else if(t.equals("6")){
+					label6.add((Label) node);
+				}
+				else if(t.equals("7")) {
+					label7.add((Label) node);
+				}
+            }catch(Exception e){}
+        }
+		weekLabelList.put(1, label1);
+		weekLabelList.put(2, label2);
+		weekLabelList.put(3, label3);
+		weekLabelList.put(4, label4);
+		weekLabelList.put(5, label5);
+		weekLabelList.put(6, label6);
+		weekLabelList.put(7, label7);
+		clearWeekTimeSlots();
+		getCells();
+    }
+
+    /**
+     * Clears All Labels in weekTab.
+     */
+    public void clearWeekTimeSlots(){
+		for (Map.Entry<Integer, List> list : weekLabelList.entrySet()){
+            for (Object label : list.getValue()) {
+                Label l = (Label) label;
+                l.setText("");
+            }
+        }
 	}
 }
