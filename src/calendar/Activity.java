@@ -7,9 +7,9 @@ import java.util.Date;
  * This is a subclass of Cell which only contains cells made by users manually.
  *
  */
-public class UserCell extends Cell {
+public class Activity extends Cell {
 
-    public UserCell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+    public Activity(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
         super(startDate, endDate, name, description, slotPriority, repeating);
     }
 }

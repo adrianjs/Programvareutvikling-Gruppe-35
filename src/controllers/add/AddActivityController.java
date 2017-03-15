@@ -1,7 +1,7 @@
 package controllers.add;
 
 import calendar.Cell;
-import calendar.UserCell;
+import calendar.Activity;
 import com.jfoenix.controls.*;
 import controllers.CalendarController;
 import database.Connect;
@@ -95,8 +95,8 @@ public class AddActivityController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
         //Descriptionfield not made in add.fxml yet..
-        UserCell cell = new UserCell(dateStart, dateEnd, act, "Description/more details", priorityNumber, repeat);
-        return cell;
+        Activity activity = new Activity(dateStart, dateEnd, act, "Description/more details", priorityNumber, repeat);
+        return activity;
     }
 
     //Must have something in the textfield... else not valid activity.

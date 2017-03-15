@@ -10,6 +10,7 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
 
+import algorithm.SuperSorter;
 import calendar.*;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
@@ -108,7 +109,15 @@ public class CalendarController implements Initializable{
         setDate();
         setupDayTab();
         setBottoField(); //SlideFieldBotto
-    }
+		try {
+			SuperSorter superSorter = new SuperSorter();
+			superSorter.dataCollect();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
@@ -549,7 +558,7 @@ public class CalendarController implements Initializable{
     public void userCellOrganize(){
 	    //Get usercells from database..
 
-        ArrayList<UserCell> userCells = new ArrayList<UserCell>();
+        ArrayList<Activity> activities = new ArrayList<Activity>();
     }
 
     //Clear all timeslots dayPane.
@@ -600,7 +609,7 @@ public class CalendarController implements Initializable{
                 System.out.println(activity + " ACTIVITY");
                 SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
                 //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
-                cellsAtCurrentDate.add(new UserCell(
+                cellsAtCurrentDate.add(new Activity(
                         setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
                         setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(5))),
                         (String) activity.get(1),

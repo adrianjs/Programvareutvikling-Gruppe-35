@@ -37,10 +37,9 @@ public class LoginController implements Initializable {
         loginError.setText("");
         String username = loginField.getText();
         String password = passwordField.getText();
-
         user.setUsername(username);
         user.setPassword(password);
-        //user.updateSubjects();
+        user.updateSubjects();
 
         String user = validateLogin();
         System.out.println(user);
