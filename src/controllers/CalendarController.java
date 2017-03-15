@@ -26,6 +26,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import layout.User;
 
@@ -77,6 +79,7 @@ public class CalendarController implements Initializable{
     int teller = 0;
     int dayClicked = 0; //Day clicked on in MonthTab
     User user = User.getInstance();
+    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();
 
 	//*************** HENNINGS ULTRAFELT *****************//
 	//DAY
@@ -108,9 +111,10 @@ public class CalendarController implements Initializable{
         setDate();
         setupDayTab();
         setBottoField(); //SlideFieldBotto
+
     }
 
-	public void setLines(){ //Set lines for day week and month.
+    public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
 		week.setGridLinesVisible(true);
 		month.setGridLinesVisible(true);
@@ -150,6 +154,7 @@ public class CalendarController implements Initializable{
 		Parent load = loader.load();
 		Scene scene = new Scene(load);
 		s.setScene(scene);
+		CalendarController.instance = null;
 		System.out.println("logout successful");
 	}
 
@@ -168,24 +173,7 @@ public class CalendarController implements Initializable{
 	/**
 	 * Open and close the Bot field, and set value to hamburger.
 	 */
-	int counter = 0;
     public void slidePane(){
-        //Opens a webside in the bottoview.
-//        if(counter == 0){
-//            try {
-//                WebView w = new WebView();
-//                WebEngine engine = w.getEngine();
-//                engine.load("http://www.ht.no/");
-//                botto.getChildren().addAll(w);
-//                Scene scene = new Scene(botto, 800, 400);
-//                Stage s = new Stage();
-//                s.setScene(scene);
-//            }catch(Exception e){
-//                System.out.println(e);
-//            }
-//
-//        }
-        counter ++;
         drawer.setSidePane(botto);
         tran.setRate(tran.getRate()*-1);
         tran.play();
@@ -199,19 +187,8 @@ public class CalendarController implements Initializable{
     }
     //On action from add button
     public void add(){
-        //Slider in not used atm.
-//        drawerRight.setSidePane(rightSide);
-//        if(drawerRight.isShown()){
-//            drawerRight.close();
-//        }else{
-//
-//            drawerRight.setDirection(JFXDrawer.DrawerDirection.LEFT);
-//            drawerRight.open();
-//
-//        }
         AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
         System.out.println("add");
-
     }
 
 	/**
@@ -252,7 +229,7 @@ public class CalendarController implements Initializable{
 			addLabelsToList();
 			teller++;
 		}
-		monthOrganizer(year1, month1-1, day1);
+        monthOrganizer(year1, month1-1, day1);
 	}
 
 	/**
@@ -324,18 +301,18 @@ public class CalendarController implements Initializable{
         weekOrganizer(year, month+1, day, weekOfMonth, dayOfWeek);
         //Setting the month dates to right place.
 		int tall = 1;
-		System.out.println(monthLabels.size());
 		for(int i = 0; i < monthLabels.size(); i++) {
 			if ((i >= firstDay) && (tall <= lastDateOfMonth)) {
 				monthLabels.get(i).setText(Integer.toString(tall));
                 tall++;
             } else {
 				monthLabels.get(i).setText("");
-			}
+            }
 		}
+		tall = 1;
 	}
 
-    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();
+
     /**
      * Makes a list of dates in week, so every day in the chosen week has a date connected to it.(LocalDate)
      * Then we kan put values to labels like it is done in the daytab.
@@ -527,15 +504,11 @@ public class CalendarController implements Initializable{
 	}
 
 	//Set initalize date.
-	int count = 0;
 	public void setDate(){
-		if(count == 0){
-			Date input = new Date();
-			LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-			changeDate(dato);
-			chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			count++;
-		}
+        Date input = new Date();
+        LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        changeDate(dato);
+        chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
     //Is between.
 	public boolean isBetween(Date endTime, Date startTime, Date timeToCheckStart, Date timeToCheckEnd){
@@ -597,7 +570,7 @@ public class CalendarController implements Initializable{
 			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             for(List activity : activities){
-                System.out.println(activity + " ACTIVITY");
+                //System.out.println(activity + " ACTIVITY");
                 SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
                 //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
                 cellsAtCurrentDate.add(new UserCell(

@@ -31,6 +31,7 @@ public class LoginController implements Initializable {
     User user = User.getInstance();
     layout.Calendar cal = new layout.Calendar();
     private Stage stage;
+    CalendarController calController = CalendarController.getInstance();
 
     //Login and set user in userclass.
     public void login() throws IOException, SQLException {
@@ -56,6 +57,7 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
+                //calController.update();
                 System.out.println("login successful");
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
@@ -63,6 +65,7 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
+                //calController.update();
                 System.out.println("login successful");
             }
         }else{
