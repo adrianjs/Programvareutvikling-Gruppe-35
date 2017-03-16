@@ -648,14 +648,12 @@ public class CalendarController extends Connect implements Initializable{
                 int day = 0; //hvilken av dagslistene det skal skrives til.
                 for (LocalDate lDate : weekCalendarList) { //Går igjennom datoer denne uken.
                     if(date.equals(lDate)){ //Om en av cellene matcher med en av datoene i weekCalendarlist.
-                        //System.out.println("Dates Match" + lDate + "DAG: " + day);
-						for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) {
+						for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) { //Går igjennom For å finne en av datoene som matcher nøkkel
+                            // for så å gå i gjennom verdiene i den hashmappen som er linket til nøkkel.
 							if(list.getKey() == lDate){
-								HashMap<TimeInterval, Label> liste = list.getValue();
-								System.out.println(liste.entrySet());
-								for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) {
-
-									if(stretch){
+								HashMap<TimeInterval, Label> liste = list.getValue(); //Setter da en ny hashmap til hashmappet som har rett nøkkel.
+								for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) { //Gjør så det samme som DayTab.. samme effekt på alle dager den uken.
+                                    if(stretch){
 										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
 										stretch = false;
 										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
@@ -675,7 +673,7 @@ public class CalendarController extends Connect implements Initializable{
                     }
                     day++;
                 }
-				printWeekCells(weekLabelMappCell);
+				printWeekCells(weekLabelMappCell); //Printer herfta direkte.
             }
 		}else{ //Month is selected
 				System.out.println("Month");
@@ -709,16 +707,16 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Get all week tab cells, an add them to a hash
      */
-	public void getWeekTabCells() throws ParseException {//EN GANG TRENGS
+	public void getWeekTabCells() throws ParseException {
         List<LocalDate> dates = weekCalendarList;
-        ObservableList<Node> list = week.getChildren();
+        ObservableList<Node> list = week.getChildren(); //Henter alle childs fra weekTab.
         List<Label> label1 = new ArrayList<>();
 		List<Label> label2 = new ArrayList<>();
 		List<Label> label3 = new ArrayList<>();
 		List<Label> label4 = new ArrayList<>();
 		List<Label> label5 = new ArrayList<>();
 		List<Label> label6 = new ArrayList<>();
-		List<Label> label7 = new ArrayList<>();
+		List<Label> label7 = new ArrayList<>(); //Legger Lablene for hver uke i en egen labelList
 		for (Node node : list){
             try{
                 String id = node.getId();
@@ -753,7 +751,7 @@ public class CalendarController extends Connect implements Initializable{
 		weekLabelList.put(4, label4);
 		weekLabelList.put(5, label5);
 		weekLabelList.put(6, label6);
-		weekLabelList.put(7, label7);
+		weekLabelList.put(7, label7); //Legger Labellistene i en egen ukes hashMap.
 		clearWeekTimeSlots();
 		mapWeekLabelsToTimeIntervals();
     }
@@ -770,6 +768,10 @@ public class CalendarController extends Connect implements Initializable{
         }
 	}
 
+    /**
+     * Skriver ut til Labels på ukesTab.
+     * @param mappedCells En liste med alle mappede celler i denne uken.
+     */
     public void printWeekCells(Map<Label, calendar.Cell> mappedCells){
         //System.out.println("Print Week Cells");
         for (Map.Entry<Label, Cell> l : mappedCells.entrySet()) {
@@ -781,27 +783,25 @@ public class CalendarController extends Connect implements Initializable{
      * Maps Labels in weekTab to right timeInterVal for every day in chosen week.
      */
 	public void mapWeekLabelsToTimeIntervals(){
-		weekDateLinkedToDay.clear();
+		weekDateLinkedToDay.clear(); //Må mappes for hver gang.
         HashMap<TimeInterval, Label> day1 = new LinkedHashMap<>();
         HashMap<TimeInterval, Label> day2 = new LinkedHashMap<>();
         HashMap<TimeInterval, Label> day3 = new LinkedHashMap<>();
         HashMap<TimeInterval, Label> day4 = new LinkedHashMap<>();
         HashMap<TimeInterval, Label> day5 = new LinkedHashMap<>();
         HashMap<TimeInterval, Label> day6 = new LinkedHashMap<>();
-        HashMap<TimeInterval, Label> day7 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day7 = new LinkedHashMap<>(); //Tidsinterval meppes til riktig labels.
         int count = 0;
         int hour = 8;
-        for(Map.Entry<Integer, List> list : weekLabelList.entrySet()){
+        for(Map.Entry<Integer, List> list : weekLabelList.entrySet()){ //Går igjennom weekLabel list, <Tall for dag, Liste for labels>
             hour = 8;
             LocalDate localDate = weekCalendarList.get(count);
-            for(Object label : list.getValue()){
-                //System.out.println("LOCALDATE: " + localDate);
-
+            for(Object label : list.getValue()){ //Går igjennom labelsene
                 Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
                 Date start = setHour(date, hour);
                 Date end = setHour(date, hour+1);
                 if(count == 0){
-                    day1.put(new TimeInterval(start, end), (Label) label);
+                    day1.put(new TimeInterval(start, end), (Label) label); //Mapper en label til et tidsintervall, bestemt av count.
                 }
                 else if(count == 1){
                     day2.put(new TimeInterval(start, end), (Label) label);
@@ -822,8 +822,8 @@ public class CalendarController extends Connect implements Initializable{
                 }
                 hour++;
             }
-            weekDateLinkedToDay.put(weekCalendarList.get(0), day1);
-            weekDateLinkedToDay.put(weekCalendarList.get(1), day2);
+            weekDateLinkedToDay.put(weekCalendarList.get(0), day1); //Mapper til En hasmap <LocalDate, HashMap<Tidsinterval, Labels>
+            weekDateLinkedToDay.put(weekCalendarList.get(1), day2); // Skal brukes for å sette ACTIVITY verdier til weekTab.
             weekDateLinkedToDay.put(weekCalendarList.get(2), day3);
             weekDateLinkedToDay.put(weekCalendarList.get(3), day4);
             weekDateLinkedToDay.put(weekCalendarList.get(4), day5);
