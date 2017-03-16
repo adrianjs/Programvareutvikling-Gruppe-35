@@ -1,5 +1,6 @@
 package calendar;
 
+import algorithm.Activity;
 import org.junit.Test;
 
 import java.util.Date;

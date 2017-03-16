@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import algorithm.Activity;
 import algorithm.SuperSorter;
 import calendar.*;
 import calendar.Cell;
@@ -29,8 +30,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import layout.*;
 

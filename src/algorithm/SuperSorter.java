@@ -1,13 +1,9 @@
 package algorithm;
 
 import calendar.Cell;
-import calendar.Activity;
-import com.sun.deploy.util.StringUtils;
 import database.Connect;
 import layout.User;
 
-import java.sql.Array;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;

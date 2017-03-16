@@ -1,4 +1,6 @@
-package calendar;
+package algorithm;
+
+import calendar.Cell;
 
 import java.util.Date;
 

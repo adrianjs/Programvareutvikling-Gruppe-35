@@ -1,7 +1,7 @@
 package controllers.add;
 
 import calendar.Cell;
-import calendar.Activity;
+import algorithm.Activity;
 import com.jfoenix.controls.*;
 import controllers.CalendarController;
 import database.Connect;
