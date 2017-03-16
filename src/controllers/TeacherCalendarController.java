@@ -45,7 +45,7 @@ public class TeacherCalendarController implements Initializable{
     }
 
     /**
-     * Onaction from addEvent button.
+     * Onaction from addActivity button.
      */
     public void addEvent() {
         System.out.println("Add event");

@@ -80,7 +80,7 @@ public class AddEventController implements Initializable{
 
     /**
      * Changes the veiw in relation to wich radiobutton who is selected.
-     * Inputfields in addEvent.fxml will change in wich radiobutton is pressed.
+     * Inputfields in addActivity.fxml will change in wich radiobutton is pressed.
      */
     public void checkSelectedRadioButtons(){//Change in relation to radiobutton click.
         if(classRadio.isSelected()){

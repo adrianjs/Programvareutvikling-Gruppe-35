@@ -93,7 +93,7 @@ public class Connect {
 
     }
 
-    public void addEvent(String name, Date date, boolean repeating, int priority, double startTime, double endTime, String studentEmail, String description){
+    public void addActivity(String name, Date date, boolean repeating, int priority, double startTime, double endTime, String studentEmail, String description){
         int repeatingInt = (repeating) ? 1 : 0;
         try {
             stmt = conn.createStatement();

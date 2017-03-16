@@ -19,6 +19,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import controllers.add.AddActivityController;
 import controllers.add.AddSubjectController;
+import database.Connect;
 import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,8 +34,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import layout.*;
 
-public class CalendarController implements Initializable{
-	Date chosenDate;
+public class CalendarController extends Connect implements Initializable{
+	private Date chosenDate;
+	private SuperSorter superSorter = new SuperSorter();
 
 	@FXML GridPane day; //DAY PANE
 	@FXML GridPane week; //WEEK PANE
@@ -114,7 +116,6 @@ public class CalendarController implements Initializable{
         setBottoField(); //SlideFieldBotto
 		try {
 			getWeekTabCells();
-            SuperSorter superSorter = new SuperSorter();
             superSorter.dataCollect();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -132,7 +133,13 @@ public class CalendarController implements Initializable{
 	//On action from remove button
 	public void remove() throws IOException {
         //TODO: Make remove button work
-        System.out.println("remove");
+		//TODO: Remove this superSorter-thing
+		Set<Cell> temp = superSorter.prioritySort(superSorter.getPrioritizedSchedule());
+		for (Cell c:temp) {
+			System.out.println(c.getSlotPriority());
+		}
+		System.out.println("remove");
+
 
     }
 
