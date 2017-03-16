@@ -23,8 +23,11 @@ public class AskBotController implements Initializable{
 
     }
 
+    /**
+     * Sets the web view for the bot
+     */
     public void setWebView(){
-        WebEngine engine =webView.getEngine();
+        WebEngine engine = webView.getEngine();
         engine.load("http://www.ht.no/");
     }
 }

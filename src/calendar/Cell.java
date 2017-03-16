@@ -21,6 +21,7 @@ public class Cell {
     private boolean repeating;
 
     public Cell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+        //System.out.println("cellmate");
         this.startDate = startDate;
         this.endDate = endDate;
         this.name = name;

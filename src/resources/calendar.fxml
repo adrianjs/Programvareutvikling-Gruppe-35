@@ -24,7 +24,7 @@
          <children>
             <JFXTabPane prefHeight="659.0" prefWidth="842.0" stylesheets="@buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <tabs>
-                  <Tab fx:id="dayTab" text="Day">
+                  <Tab fx:id="dayTab" onSelectionChanged="#insertCells" text="Day">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="654.0">
                            <children>
@@ -178,7 +178,7 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab fx:id="weekTab" text="Week">
+                  <Tab fx:id="weekTab" onSelectionChanged="#insertCells" text="Week">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="842.0">
                            <children>
@@ -304,97 +304,349 @@
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label fx:id="enAtte" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label fx:id="enNi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label fx:id="enTi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <Label fx:id="enElleve" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <Label fx:id="enTolv" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label fx:id="enTretten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <Label fx:id="enFjorten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                    <Label fx:id="enFemten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                    <Label fx:id="enSeksten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                    <Label fx:id="enSytten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                                    <Label fx:id="enAtten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                                    <Label fx:id="enNitten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                                    <Label fx:id="toAtte" text="2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                    <Label fx:id="toNi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                    <Label fx:id="toTi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                    <Label fx:id="toElleve" text="2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                    <Label fx:id="toTolv" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                    <Label fx:id="toTretten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                                    <Label fx:id="toFjorten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                                    <Label fx:id="toFemten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                    <Label fx:id="toSeksten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                                    <Label fx:id="toSytten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                                    <Label fx:id="toAtten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-                                    <Label fx:id="toNitten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-                                    <Label fx:id="treAtte" text="3" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                    <Label fx:id="treNi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                    <Label fx:id="treTi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                                    <Label fx:id="treElleve" text="3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                                    <Label fx:id="treTolv" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                                    <Label fx:id="treTretten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                                    <Label fx:id="treFjorten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                                    <Label fx:id="treFemten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                                    <Label fx:id="treSeksten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                                    <Label fx:id="treSytten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                                    <Label fx:id="treAtten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-                                    <Label fx:id="treNitten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-                                    <Label fx:id="fireAtte" text="4" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                    <Label fx:id="fireNi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                                    <Label fx:id="fireTi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                                    <Label fx:id="fireElleve" text="4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                                    <Label fx:id="fireTolv" text="4" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                                    <Label fx:id="fireTretten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                                    <Label fx:id="fireFjorten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                                    <Label fx:id="fireFemten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                                    <Label fx:id="fireSeksten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                                    <Label fx:id="fireSytten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                                    <Label fx:id="fireAtten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="11" />
-                                    <Label fx:id="fireNitten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="12" />
-                                    <Label fx:id="femAtte" text="5" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                                    <Label fx:id="femNi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                                    <Label fx:id="femTi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                                    <Label fx:id="femElleve" text="5" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                                    <Label fx:id="femTolv" text="5" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                                    <Label fx:id="femTretten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                                    <Label fx:id="femFjorten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                                    <Label fx:id="femFemten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                                    <Label fx:id="femSeksten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                                    <Label fx:id="femSytten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                                    <Label fx:id="femAtten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="11" />
-                                    <Label fx:id="femNitten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="12" />
-                                    <Label fx:id="seksAtte" text="6" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                                    <Label fx:id="seksNi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                                    <Label fx:id="seksTi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                                    <Label fx:id="seksElleve" text="6" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                                    <Label fx:id="seksTolv" text="6" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                                    <Label fx:id="seksTretten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                                    <Label fx:id="seksFjorten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                                    <Label fx:id="seksFemten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-                                    <Label fx:id="seksSeksten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                                    <Label fx:id="seksSytten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-                                    <Label fx:id="seksAtten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="11" />
-                                    <Label fx:id="seksNitten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="12" />
-                                    <Label fx:id="syvAtte" text="7" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                                    <Label fx:id="syvNi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                                    <Label fx:id="syvTi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                                    <Label fx:id="syvElleve" text="7" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                                    <Label fx:id="syvTolv" text="7" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                                    <Label fx:id="syvTretten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                                    <Label fx:id="syvFjorten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                                    <Label fx:id="syvFemten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-                                    <Label fx:id="syvSeksten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                                    <Label fx:id="syvSytten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-                                    <Label fx:id="syvAtten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="11" />
-                                    <Label fx:id="syvNitten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                                    <Label fx:id="enAtte" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enNi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enTi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enElleve" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enTolv" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enTretten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enFjorten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enFemten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enSeksten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enSytten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enAtten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="enNitten" text="1" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toAtte" text="2" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toNi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toTi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toElleve" text="2" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toTolv" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toTretten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toFjorten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toFemten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toSeksten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toSytten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toAtten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="toNitten" text="2" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treAtte" text="3" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treNi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treTi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treElleve" text="3" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treTolv" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treTretten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treFjorten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treFemten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treSeksten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treSytten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treAtten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="treNitten" text="3" GridPane.columnIndex="3" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireAtte" text="4" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireNi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireTi" text="4" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireElleve" text="4" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireTolv" text="4" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireTretten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireFjorten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireFemten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireSeksten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireSytten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireAtten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="fireNitten" text="4" GridPane.columnIndex="4" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femAtte" text="5" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femNi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femTi" text="5" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femElleve" text="5" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femTolv" text="5" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femTretten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femFjorten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femFemten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femSeksten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femSytten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femAtten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="femNitten" text="5" GridPane.columnIndex="5" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksAtte" text="6" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksNi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksTi" text="6" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksElleve" text="6" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksTolv" text="6" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksTretten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksFjorten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksFemten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksSeksten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksSytten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksAtten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="seksNitten" text="6" GridPane.columnIndex="6" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvAtte" text="7" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvNi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvTi" text="7" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvElleve" text="7" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvTolv" text="7" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvTretten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvFjorten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvFemten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvSeksten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="9">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvSytten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="10">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvAtten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="11">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
+                                    <Label fx:id="syvNitten" text="7" GridPane.columnIndex="7" GridPane.rowIndex="12">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></Label>
                                  </children>
                               </GridPane>
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab fx:id="monthTab" onSelectionChanged="#setDate" text="Month">
+                  <Tab fx:id="monthTab" text="Month">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
@@ -833,7 +1085,7 @@
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#getWeekTabCells" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#clearWeekTimeSlots" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Open Botto" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />

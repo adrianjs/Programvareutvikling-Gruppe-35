@@ -8,10 +8,12 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import algorithm.SuperSorter;
 import calendar.*;
+import calendar.Cell;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import controllers.add.AddActivityController;
@@ -30,7 +32,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import layout.User;
+import layout.*;
 
 public class CalendarController implements Initializable{
 	Date chosenDate;
@@ -80,7 +82,6 @@ public class CalendarController implements Initializable{
     int teller = 0;
     int dayClicked = 0; //Day clicked on in MonthTab
     User user = User.getInstance();
-    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();
 
 	//*************** HENNINGS ULTRAFELT *****************//
 	//DAY
@@ -113,14 +114,14 @@ public class CalendarController implements Initializable{
         setupDayTab();
         setBottoField(); //SlideFieldBotto
 		try {
-			SuperSorter superSorter = new SuperSorter();
-			superSorter.dataCollect();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
+			getWeekTabCells();
+            SuperSorter superSorter = new SuperSorter();
+            superSorter.dataCollect();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+    }
+
 
 
     public void setLines(){ //Set lines for day week and month.
@@ -163,15 +164,16 @@ public class CalendarController implements Initializable{
 		Parent load = loader.load();
 		Scene scene = new Scene(load);
 		s.setScene(scene);
-		CalendarController.instance = null;
+		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
 		System.out.println("logout successful");
 	}
 
-    //Slides the Botto field for bigger table layout
+    /**
+     * Sets the ask.fxml to the botto anchorpane
+     */
     public void setBottoField(){
         try {
             botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
-            //rightSide = FXMLLoader.load(getClass().getResource("../resources/add.fxml")); //Not used.
             tran = new HamburgerBackArrowBasicTransition(sliderButton);
             tran.setRate(-1);
         } catch (IOException e) {
@@ -373,7 +375,11 @@ public class CalendarController implements Initializable{
                 date = date.plusDays(1);
             }
         }
-    }
+		//System.out.println(weekCalendarList.toString() + "WEEKCALENDARLIST");
+		clearWeekTimeSlots();
+        mapWeekLabelsToTimeIntervals();
+
+	}
 
 	//GetLabelSoMonthOrganizerCanChangeiy
 	public void StringGetLabel(String label){
@@ -605,7 +611,7 @@ public class CalendarController implements Initializable{
 	public void insertCells(){
     	//TODO: Handle which tab you are on
 		boolean y = true;
-		if(y == true){
+		if(true){
 			boolean stretch = false;
 			for (calendar.Cell cell : cellsAtCurrentDate){
                 System.out.println("NEW ENTRY");
@@ -626,8 +632,45 @@ public class CalendarController implements Initializable{
 					}
 				}
 			}
-		}else if(weekTab.isSelected()){
-				System.out.println("Week");
+		}if(true){
+			System.out.println("SETTING NEW CELLS");
+			weekLabelMappCell.clear();
+			boolean stretch = false;
+            for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
+				Date input = cell.getStartDate();
+				LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
+                int day = 0; //hvilken av dagslistene det skal skrives til.
+                for (LocalDate lDate : weekCalendarList) { //Går igjennom datoer denne uken.
+                    if(date.equals(lDate)){ //Om en av cellene matcher med en av datoene i weekCalendarlist.
+                        //System.out.println("Dates Match" + lDate + "DAG: " + day);
+						for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) {
+							if(list.getKey() == lDate){
+								HashMap<TimeInterval, Label> liste = list.getValue();
+								System.out.println(liste.entrySet());
+								for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) {
+
+									if(stretch){
+										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
+										stretch = false;
+										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
+											stretch = true;
+										}
+									}
+									if(timeintervalMapLabel.getKey().getStartTime().equals(cell.getStartDate())){
+										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
+										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
+											stretch = true;
+										}
+									}
+								}
+							}
+						}
+
+                    }
+                    day++;
+                }
+				printWeekCells(weekLabelMappCell);
+            }
 		}else{ //Month is selected
 				System.out.println("Month");
 		}
@@ -650,14 +693,17 @@ public class CalendarController implements Initializable{
 	}
 
 
-	//****Lars Lager Stuff til weekTab*****
+	//****Lars Lager Stuff til weekTab********************************************************************************
 
-    HashMap<Integer, List> weekLabelList = new HashMap<>();
+    HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
+    Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
+    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
+    public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
 
     /**
      * Get all week tab cells, an add them to a hash
      */
-	public void getWeekTabCells() throws ParseException {
+	public void getWeekTabCells() throws ParseException {//EN GANG TRENGS
         List<LocalDate> dates = weekCalendarList;
         ObservableList<Node> list = week.getChildren();
         List<Label> label1 = new ArrayList<>();
@@ -673,8 +719,8 @@ public class CalendarController implements Initializable{
 				Label l = (Label) node;
                 String t = l.getText();
 				if(t.equals("1")){
-                    label1.add((Label) node);
-				}
+				    label1.add((Label) node);
+                }
 				else if(t.equals("2")){
 					label2.add((Label) node);
 				}
@@ -703,7 +749,7 @@ public class CalendarController implements Initializable{
 		weekLabelList.put(6, label6);
 		weekLabelList.put(7, label7);
 		clearWeekTimeSlots();
-		getCells();
+		mapWeekLabelsToTimeIntervals();
     }
 
     /**
@@ -717,4 +763,67 @@ public class CalendarController implements Initializable{
             }
         }
 	}
+
+    public void printWeekCells(Map<Label, calendar.Cell> mappedCells){
+        //System.out.println("Print Week Cells");
+        for (Map.Entry<Label, Cell> l : mappedCells.entrySet()) {
+            l.getKey().setText(l.getValue().getName());
+        }
+    }
+
+    /**
+     * Maps Labels in weekTab to right timeInterVal for every day in chosen week.
+     */
+	public void mapWeekLabelsToTimeIntervals(){
+		weekDateLinkedToDay.clear();
+        HashMap<TimeInterval, Label> day1 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day2 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day3 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day4 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day5 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day6 = new LinkedHashMap<>();
+        HashMap<TimeInterval, Label> day7 = new LinkedHashMap<>();
+        int count = 0;
+        int hour = 8;
+        for(Map.Entry<Integer, List> list : weekLabelList.entrySet()){
+            hour = 8;
+            LocalDate localDate = weekCalendarList.get(count);
+            for(Object label : list.getValue()){
+                //System.out.println("LOCALDATE: " + localDate);
+
+                Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Date start = setHour(date, hour);
+                Date end = setHour(date, hour+1);
+                if(count == 0){
+                    day1.put(new TimeInterval(start, end), (Label) label);
+                }
+                else if(count == 1){
+                    day2.put(new TimeInterval(start, end), (Label) label);
+                }
+                else if(count == 2){
+                    day3.put(new TimeInterval(start, end), (Label) label);
+                }
+                else if(count == 3){
+                    day4.put(new TimeInterval(start, end), (Label) label);
+                }
+                else if(count == 4){
+                    day5.put(new TimeInterval(start, end), (Label) label);
+                }else if(count == 5){
+                    day6.put(new TimeInterval(start, end), (Label) label);
+                }
+                else if(count == 6){
+                    day7.put(new TimeInterval(start, end), (Label) label);
+                }
+                hour++;
+            }
+            weekDateLinkedToDay.put(weekCalendarList.get(0), day1);
+            weekDateLinkedToDay.put(weekCalendarList.get(1), day2);
+            weekDateLinkedToDay.put(weekCalendarList.get(2), day3);
+            weekDateLinkedToDay.put(weekCalendarList.get(3), day4);
+            weekDateLinkedToDay.put(weekCalendarList.get(4), day5);
+            weekDateLinkedToDay.put(weekCalendarList.get(5), day6);
+            weekDateLinkedToDay.put(weekCalendarList.get(6), day7);
+            count++;
+        }
+    }
 }

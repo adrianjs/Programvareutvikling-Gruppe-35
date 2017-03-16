@@ -56,7 +56,6 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                //calController.update();
                 System.out.println("login successful");
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
@@ -64,7 +63,6 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                //calController.update();
                 System.out.println("login successful");
             }
         }else{
