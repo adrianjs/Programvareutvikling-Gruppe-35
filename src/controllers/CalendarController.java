@@ -105,6 +105,14 @@ public class CalendarController extends Connect implements Initializable{
 	Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
 
 	//****************************************************//
+    ArrayList<Label> eventLabels = new ArrayList<>(); //MonthTabEventLabels --> Used to remove text in labels in monthTab.
+
+    //Mapping used in to weekTab.
+    HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
+    Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
+    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
+    public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
+
     //Methods starts here.
 
 	private static CalendarController instance = null; //InstanceControl
@@ -316,7 +324,7 @@ public class CalendarController extends Connect implements Initializable{
 		if(dayOfWeek == -1){
 		    dayOfWeek = 6;
         }
-		//This works for the months i have cheked --> First day;
+		//This works for the months i have checked --> First day;
         int firstDay = cal1.get(cal1.DAY_OF_WEEK) -2;
         if(firstDay == -1){
             firstDay = 6;
@@ -419,119 +427,7 @@ public class CalendarController extends Connect implements Initializable{
         }
     }
 
-
-	//When days in monthsTab is clicked.
-	@FXML private void handleCalendarClick1(){
-		monthClicked(1);
-	}
-	@FXML private void handleCalendarClick2(){ monthClicked(2); }
-    @FXML private void handleCalendarClick3(){
-        monthClicked(3);
-    }
-	@FXML private void handleCalendarClick4(){
-		monthClicked(4);
-	}
-	@FXML private void handleCalendarClick5(){
-		monthClicked(5);
-	}
-	@FXML private void handleCalendarClick6(){
-		monthClicked(6);
-	}
-	@FXML private void handleCalendarClick7(){
-		monthClicked(7);
-	}
-	@FXML private void handleCalendarClick8(){
-		monthClicked(8);
-	}
-	@FXML private void handleCalendarClick9(){
-		monthClicked(9);
-	}
-	@FXML private void handleCalendarClick10(){
-		monthClicked(10);
-	}
-	@FXML private void handleCalendarClick11(){
-		monthClicked(11);
-	}
-	@FXML private void handleCalendarClick12(){
-		monthClicked(12);
-	}
-	@FXML private void handleCalendarClick13(){
-		monthClicked(13);
-	}
-	@FXML private void handleCalendarClick14(){
-		monthClicked(14);
-	}
-	@FXML private void handleCalendarClick15(){
-		monthClicked(15);
-	}
-	@FXML private void handleCalendarClick16(){
-		monthClicked(16);
-	}
-	@FXML private void handleCalendarClick17(){
-		monthClicked(17);
-	}
-	@FXML private void handleCalendarClick18(){
-		monthClicked(18);
-	}
-	@FXML private void handleCalendarClick19(){
-		monthClicked(19);
-	}
-	@FXML private void handleCalendarClick20(){
-		monthClicked(20);
-	}
-	@FXML private void handleCalendarClick21(){
-		monthClicked(21);
-	}
-	@FXML private void handleCalendarClick22(){
-		monthClicked(22);
-	}
-	@FXML private void handleCalendarClick23(){
-		monthClicked(23);
-	}
-	@FXML private void handleCalendarClick24(){
-		monthClicked(24);
-	}
-	@FXML private void handleCalendarClick25(){
-		monthClicked(25);
-	}
-	@FXML private void handleCalendarClick26(){
-		monthClicked(26);
-	}
-	@FXML private void handleCalendarClick27(){
-		monthClicked(27);
-	}
-	@FXML private void handleCalendarClick28(){
-		monthClicked(28);
-	}
-	@FXML private void handleCalendarClick29(){
-		monthClicked(29);
-	}
-	@FXML private void handleCalendarClick30(){
-		monthClicked(30);
-	}
-	@FXML private void handleCalendarClick31(){
-		monthClicked(31);
-	}
-	@FXML private void handleCalendarClick32(){
-		monthClicked(32);
-	}
-	@FXML private void handleCalendarClick33(){
-		monthClicked(33);
-	}
-	@FXML private void handleCalendarClick34(){
-		monthClicked(34);
-	}
-	@FXML private void handleCalendarClick35(){
-		monthClicked(35);
-	}
-    @FXML private void handleCalendarClick36(){
-        monthClicked(36);
-    }
-    @FXML private void handleCalendarClick37(){
-        monthClicked(37);
-    }
-
-	//Go to that given day when month is clicked.
+    //Go to that given day when month is clicked.
 	public void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();
@@ -643,129 +539,119 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 	public void insertCells(){
-    	//TODO: Handle which tab you are on
-		boolean y = true;
-		if(true){
-			boolean stretch = false;
-			for (calendar.Cell cell : cellsAtCurrentDate){
-                System.out.println("NEW ENTRY");
-                for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
-				{
-                    if(stretch){
-					    Label lab = entry.getValue();
-					    if(!lab.getText().contains("Continiue")){
-                            lab.setText("Continiue --> " + entry.getValue().getText());
-                            lab.setStyle("-fx-text-fill: royalblue ;");
-                        }
-                        labelMappedCells.put(lab, cell);
-						//lab.setText("");
-						stretch = false;
-                        if(entry.getKey().getEndTime().before(cell.getEndDate())){
-                            stretch = true;
-                        }
+		insertDayCells();
+		insertWeekCells();
+		insertMonthCells();
+	}
+
+	public void insertDayCells(){
+		boolean stretch = false;
+		for (calendar.Cell cell : cellsAtCurrentDate){
+			System.out.println("NEW ENTRY");
+			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
+			{
+				if(stretch){
+					Label lab = entry.getValue();
+					if(!lab.getText().contains("Continiue")){
+						lab.setText("Continiue --> " + entry.getValue().getText());
+						lab.setStyle("-fx-text-fill: royalblue ;");
 					}
-                    if(entry.getKey().getStartTime().equals(cell.getStartDate())){
-						Label lab = entry.getValue();
-						//lab.setUnderline(true);
-						lab.setStyle("-fx-font-weight: bold;");
-                        labelMappedCells.put(entry.getValue(), cell);
-						if(entry.getKey().getEndTime().before(cell.getEndDate())){
-							stretch = true;
-						}
+					labelMappedCells.put(lab, cell);
+					//lab.setText("");
+					stretch = false;
+					if(entry.getKey().getEndTime().before(cell.getEndDate())){
+						stretch = true;
 					}
 				}
+                stretch = insertCellHelper(entry, cell, stretch, labelMappedCells);
 			}
-		}if(true){
-			System.out.println("SETTING NEW CELLS");
-			weekLabelMappCell.clear();
-			boolean stretch = false;
-            for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
-				Date input = cell.getStartDate();
-				LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
-                int day = 0; //hvilken av dagslistene det skal skrives til.
-                for (LocalDate lDate : weekCalendarList) { //Går igjennom datoer denne uken.
-                    if(date.equals(lDate)){ //Om en av cellene matcher med en av datoene i weekCalendarlist.
-						for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) { //Går igjennom For å finne en av datoene som matcher nøkkel
-                            // for så å gå i gjennom verdiene i den hashmappen som er linket til nøkkel.
-							if(list.getKey() == lDate){
-								HashMap<TimeInterval, Label> liste = list.getValue(); //Setter da en ny hashmap til hashmappet som har rett nøkkel.
-								for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) { //Gjør så det samme som DayTab.. samme effekt på alle dager den uken.
-                                    if(stretch){
-                                        Label lab = timeintervalMapLabel.getValue(); //Continue
-                                        lab.setStyle("-fx-text-fill: royalblue ;");
-                                        weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
-                                        stretch = false;
-										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
-											stretch = true;
-										}
-									}
-									if(timeintervalMapLabel.getKey().getStartTime().equals(cell.getStartDate())){
-                                        Label lab = timeintervalMapLabel.getValue(); //First
-                                        //lab.setUnderline(true);
-                                        lab.setStyle("-fx-font-weight: bold;");
-										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
-										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
-											stretch = true;
-										}
+		}
+	}
+	public void insertWeekCells(){
+		System.out.println("SETTING NEW CELLS");
+		weekLabelMappCell.clear();
+		boolean stretch = false;
+		for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
+			Date input = cell.getStartDate();
+			LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
+			int day = 0; //hvilken av dagslistene det skal skrives til.
+			for (LocalDate lDate : weekCalendarList) { //Går igjennom datoer denne uken.
+				if(date.equals(lDate)){ //Om en av cellene matcher med en av datoene i weekCalendarlist.
+					for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) { //Går igjennom For å finne en av datoene som matcher nøkkel
+						// for så å gå i gjennom verdiene i den hashmappen som er linket til nøkkel.
+						if(list.getKey() == lDate){
+							HashMap<TimeInterval, Label> liste = list.getValue(); //Setter da en ny hashmap til hashmappet som har rett nøkkel.
+							for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) { //Gjør så det samme som DayTab.. samme effekt på alle dager den uken.
+								if(stretch){
+									Label lab = timeintervalMapLabel.getValue(); //Continue
+									lab.setStyle("-fx-text-fill: royalblue ;");
+									weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
+									stretch = false;
+									if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
+										stretch = true;
 									}
 								}
+								stretch = insertCellHelper(timeintervalMapLabel, cell, stretch, weekLabelMappCell);
 							}
 						}
-
-                    }
-                    day++;
+					}
                 }
-				printWeekCells(weekLabelMappCell); //Printer herfta direkte.
-            }
-		}if(true){ //Month is selected
-//            Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();
-//            Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>();
-            //dayMappedPane.clear();
-            //dateMappedMonth.clear();
-            System.out.println("Month");
-
-
-            for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()) {
-                ObservableList<Node> list = entry.getValue().getChildren();
-                for (Node n : list) {
-                    try {
-                        Label lab = (Label) n;
-                        if(lab.getText().contains("Event/Activity")){
-                            lab.setText("");
-                        }
-
-
-                    } catch (Exception e) {
-                    }
-                }
-            }
-
-            for (calendar.Cell cell : cellsAtCurrentDate){
-                Date startDate = cell.getStartDate();
-                LocalDate date = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
-                    JFXCheckBox box = new JFXCheckBox();
-                    if(entry.getKey().equals(date)){
-                        //IF There is something with high priority --> Can change this.
-                        Label lab = new Label();
-                        lab.setText(" " + '\n' +  " Event/Activity");
-                        lab.setStyle("-fx-text-fill: green;");
-
-
-                        box.setSelected(true);
-                        box.setLayoutY(20);
-                        box.setLayoutX(-3);
-                        box.disabledProperty();
-                        box.toBack();
-                        //box.setId("CHECK");
-                        entry.getValue().getChildren().addAll(lab);
-//                        entry.getValue().setStyle("-fx-border-color: green;" +
-//                        "-fx-border-width: 0 0 4 0;");
-                    }
-                }
-            }
+				day++;
+			}
+			printWeekCells(weekLabelMappCell); //Printer herfta direkte.
 		}
+	}
 
+
+	public void insertMonthCells(){
+		removeMonthActivityLabel();
+		System.out.println("Month");
+		for (calendar.Cell cell : cellsAtCurrentDate){
+			Date startDate = cell.getStartDate();
+			LocalDate date = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
+				if(entry.getKey().equals(date)){
+					//IF There is something with high priority --> Can change this.
+					Label lab = new Label();
+					lab.setText(" " + '\n' +  " Event/Activity");
+					lab.setStyle("-fx-text-fill: green;");
+					entry.getValue().getChildren().addAll(lab);
+					eventLabels.add(lab);
+                }
+			}
+		}
+	}
+
+    /**
+     * Week and Day insertCells uses the same method.
+     * @param map
+     * @param cell
+     * @param stretch
+     * @param mapTo
+     * @return
+     */
+	public boolean insertCellHelper(Map.Entry<TimeInterval, Label> map, Cell cell, boolean stretch, Map<Label, Cell> mapTo){
+        if(map.getKey().getStartTime().equals(cell.getStartDate())){
+            Label lab = map.getValue(); //First
+            //lab.setUnderline(true);
+            lab.setStyle("-fx-font-weight: bold;");
+            mapTo.put(map.getValue(), cell);
+            if(map.getKey().getEndTime().before(cell.getEndDate())){
+                return true;
+            }
+        }
+        return stretch;
+    }
+
+
+
+	/**
+	 * Removes Removes the month activity Labels so you new ones can be set.
+	 */
+	public void removeMonthActivityLabel(){
+		for (Label l: eventLabels) {
+			l.setText("");
+		}
 	}
 
     public void enterCells(){
@@ -785,12 +671,6 @@ public class CalendarController extends Connect implements Initializable{
 
 
 	//****Lars Lager Stuff til weekTab********************************************************************************
-
-    HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
-    Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
-    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
-    public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
-
     /**
      * Get all week tab cells, an add them to a hash
      */
@@ -918,5 +798,117 @@ public class CalendarController extends Connect implements Initializable{
             weekDateLinkedToDay.put(weekCalendarList.get(6), day7);
             count++;
         }
+    }
+
+
+    //When days in monthsTab is clicked.
+    @FXML private void handleCalendarClick1(){
+        monthClicked(1);
+    }
+    @FXML private void handleCalendarClick2(){ monthClicked(2); }
+    @FXML private void handleCalendarClick3(){
+        monthClicked(3);
+    }
+    @FXML private void handleCalendarClick4(){
+        monthClicked(4);
+    }
+    @FXML private void handleCalendarClick5(){
+        monthClicked(5);
+    }
+    @FXML private void handleCalendarClick6(){
+        monthClicked(6);
+    }
+    @FXML private void handleCalendarClick7(){
+        monthClicked(7);
+    }
+    @FXML private void handleCalendarClick8(){
+        monthClicked(8);
+    }
+    @FXML private void handleCalendarClick9(){
+        monthClicked(9);
+    }
+    @FXML private void handleCalendarClick10(){
+        monthClicked(10);
+    }
+    @FXML private void handleCalendarClick11(){
+        monthClicked(11);
+    }
+    @FXML private void handleCalendarClick12(){
+        monthClicked(12);
+    }
+    @FXML private void handleCalendarClick13(){
+        monthClicked(13);
+    }
+    @FXML private void handleCalendarClick14(){
+        monthClicked(14);
+    }
+    @FXML private void handleCalendarClick15(){
+        monthClicked(15);
+    }
+    @FXML private void handleCalendarClick16(){
+        monthClicked(16);
+    }
+    @FXML private void handleCalendarClick17(){
+        monthClicked(17);
+    }
+    @FXML private void handleCalendarClick18(){
+        monthClicked(18);
+    }
+    @FXML private void handleCalendarClick19(){
+        monthClicked(19);
+    }
+    @FXML private void handleCalendarClick20(){
+        monthClicked(20);
+    }
+    @FXML private void handleCalendarClick21(){
+        monthClicked(21);
+    }
+    @FXML private void handleCalendarClick22(){
+        monthClicked(22);
+    }
+    @FXML private void handleCalendarClick23(){
+        monthClicked(23);
+    }
+    @FXML private void handleCalendarClick24(){
+        monthClicked(24);
+    }
+    @FXML private void handleCalendarClick25(){
+        monthClicked(25);
+    }
+    @FXML private void handleCalendarClick26(){
+        monthClicked(26);
+    }
+    @FXML private void handleCalendarClick27(){
+        monthClicked(27);
+    }
+    @FXML private void handleCalendarClick28(){
+        monthClicked(28);
+    }
+    @FXML private void handleCalendarClick29(){
+        monthClicked(29);
+    }
+    @FXML private void handleCalendarClick30(){
+        monthClicked(30);
+    }
+    @FXML private void handleCalendarClick31(){
+        monthClicked(31);
+    }
+    @FXML private void handleCalendarClick32(){
+        monthClicked(32);
+    }
+    @FXML private void handleCalendarClick33(){
+        monthClicked(33);
+    }
+    @FXML private void handleCalendarClick34(){
+        monthClicked(34);
+    }
+    @FXML private void handleCalendarClick35(){
+        monthClicked(35);
+    }
+    @FXML private void handleCalendarClick36(){
+        monthClicked(36);
+    }
+    @FXML private void handleCalendarClick37(){
+        monthClicked(37);
     }
 }
