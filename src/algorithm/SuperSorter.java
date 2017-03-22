@@ -1,6 +1,10 @@
 package algorithm;
 
 import calendar.Cell;
+import calendar.Day;
+import calendar.Month;
+import calendar.Week;
+import controllers.CalendarController;
 import database.Connect;
 import layout.*;
 
@@ -8,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.*;
 import java.util.Calendar;
 
@@ -28,7 +33,8 @@ public class SuperSorter extends Connect {
     private Set<Cell> events = new HashSet<>();
     private Set<Cell> activities = new HashSet<>();
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
-
+    private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
+    private Month chosenMonth;
 
     public void dataCollect() throws SQLException, ParseException {
         String subjectArrayString = "";
@@ -105,24 +111,47 @@ public class SuperSorter extends Connect {
         }
     }
 
-    public void addToTimeSlots(){
-        addToDay();
-        addToWeek();
-        addToMonth();
-    }
+//    public void addToTimeSlots(){
+//        addToMonth();
+//    }
 
-    public void addToDay(){
-        //TODO: Sort Cells inside a single Day-object
-    }
-
-    public void addToWeek(){
-        //TODO: Sort Days inside a Week-object
-    }
-
-    public void addToMonth(){
-        //TODO: Sort Weeks inside a Month-object
-
-    }
+//    public Day addToDay(){
+//        //TODO: Sort Cells inside a single Day-object
+//        return null;
+//    }
+//
+//    public Week addToWeek(int month, Calendar cal, int weekStart){
+//        //TODO: Sort Days inside a Week-object
+//        cal.set(Calendar.DAY_OF_MONTH, 1);
+//        cal.set(Calendar.HOUR_OF_DAY, 0);
+//        cal.set(Calendar.MINUTE, 0);
+//        cal.set(Calendar.SECOND, 0);
+//
+//        System.out.println(cal.getTime());
+//
+//        for(int i=0;i<daysInMonth;i++){
+//            Day day = addToDay();
+//        }
+//
+//        System.out.println(daysInMonth);
+//        return week;
+//    }
+//
+//    public void addToMonth(){
+//        //TODO: Sort Weeks inside a Month-object
+////        Date chosenDate = CalendarController.getInstance().getChosenDate();
+//        Date chosenDate = new Date();
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(chosenDate);
+//        int month = cal.MONTH;  //0 indexed, ie january = 0
+//        chosenMonth = new Month(month, new LinkedHashSet<>());
+//        int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+//        //There are 4 weeks in a month
+//        for(int i=0;i<4;i++){
+//            Week week = addToWeek(month, cal, i*);
+//            chosenMonth.addWeekToWeeksInMonth(week);
+//        }
+//    }
 
     public Set<Cell> prioritySort(Set<Cell> set){
         //DONE: Sort on priority
@@ -135,6 +164,25 @@ public class SuperSorter extends Connect {
 
     //TODO: Implement an update option so that the algorithm does not have to run all over.
     //TODO: Save the results?
+
+    public void handleCollisionsInTime(Set<Cell> prioritizedSet){
+        for(Cell currentCell : prioritizedSet){
+            boolean collision = false;
+
+            for(Cell placedCell : scheduleWithoutCollision){
+                if(new TimeComparator().compare(placedCell, currentCell)){
+                    System.out.println("KOLLISJON!!!!!");
+                    System.out.println(currentCell.getName());
+                    System.out.println(placedCell.getName());
+                    collision = true;
+                }
+            }
+            if(!collision){
+                System.out.println("GIKK BRA");
+                scheduleWithoutCollision.add(currentCell);
+            }
+        }
+    }
 
 
     public Set<Subject> getSubjects() {
@@ -151,5 +199,17 @@ public class SuperSorter extends Connect {
 
     public Set<Cell> getPrioritizedSchedule() {
         return prioritizedSchedule;
+    }
+
+    public void run() throws SQLException, ParseException {
+        System.out.println("DATA COLLECT");
+        dataCollect();
+        System.out.println("PRIORITY SORT");
+        prioritySort(prioritizedSchedule);
+        System.out.println(prioritizedSchedule);
+        System.out.println("HANDLE COLLISION");
+        handleCollisionsInTime(prioritizedSchedule);
+        System.out.println("FINISHED");
+        System.out.println(prioritizedSchedule);
     }
 }

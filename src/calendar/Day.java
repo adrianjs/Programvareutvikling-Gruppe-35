@@ -8,23 +8,47 @@ import java.util.*;
  * TODO: Collect all Cells that spans within a single day
  */
 public class Day {
-    private Date date = new Date();
-    private List<Cell> timeSlots = new ArrayList<>();
+    private Date date;
+    private int monthOfYear;
+    private int dayOfWeek;
+    private Set<Cell> timeSlots;
 
-    public Day(Date date) {
+    public Day(Date date, int monthOfYear, int dayOfWeek, Set<Cell> timeSlots) {
         this.date = date;
+        this.monthOfYear = monthOfYear;
+        this.dayOfWeek = dayOfWeek;
+        this.timeSlots = new LinkedHashSet<>(timeSlots);
     }
 
     public Date getDate() {
         return date;
     }
 
-    public List<Cell> getTimeSlots() {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getMonthOfYear() {
+        return monthOfYear;
+    }
+
+    public void setMonthOfYear(int monthOfYear) {
+        this.monthOfYear = monthOfYear;
+    }
+
+    public int getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(int dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public Set<Cell> getTimeSlots() {
         return timeSlots;
     }
 
-    public void addCell(Cell cell){
-        timeSlots.add(cell);
-        //TODO: Sorter denne listen
+    public void setTimeSlots(Set<Cell> timeSlots) {
+        this.timeSlots = timeSlots;
     }
 }
