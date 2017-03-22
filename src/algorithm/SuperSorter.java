@@ -130,9 +130,6 @@ public class SuperSorter extends Connect {
         //DONE: Return the set
         ArrayList<Cell> listToSort = new ArrayList<>(set);
         Collections.sort(listToSort, new PriorityComparator());
-        for(int i=0;i<listToSort.size();i++){
-            System.out.println(listToSort.get(i).getSlotPriority());
-        }
         return new LinkedHashSet<>(listToSort);
     }
 

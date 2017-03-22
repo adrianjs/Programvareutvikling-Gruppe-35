@@ -8,9 +8,11 @@ import controllers.add.AddSubjectController;
 import controllers.WatchDayMonthTabController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Calendar extends Application {
@@ -40,6 +42,9 @@ public class Calendar extends Application {
 			Parent load = loader.load();
 			add = loader.getController();
 			setStage(load, name);
+			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,6 +59,9 @@ public class Calendar extends Application {
 			Parent load = loader.load();
 			addSubject = loader.getController();
 			setStage(load, name);
+			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +76,9 @@ public class Calendar extends Application {
 			Parent load = loader.load();
 			day = loader.getController();
 			setStage(load, name);
+			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,6 +92,10 @@ public class Calendar extends Application {
         newStage.setScene(new Scene(load));
 		newStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
         newStage.show();
+		//The following code centers the window
+		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+		newStage.setX((primScreenBounds.getWidth() - newStage.getWidth()) / 2);
+		newStage.setY((primScreenBounds.getHeight() - newStage.getHeight()) / 2);
 
     }
 }
