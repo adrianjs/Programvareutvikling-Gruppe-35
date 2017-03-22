@@ -643,9 +643,7 @@ public class CalendarController extends Connect implements Initializable{
         return stretch;
     }
 
-
-
-	/**
+    /**
 	 * Removes Removes the month activity Labels so you new ones can be set.
 	 */
 	public void removeMonthActivityLabel(){
