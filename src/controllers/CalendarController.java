@@ -25,12 +25,18 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import layout.*;
 
@@ -95,6 +101,8 @@ public class CalendarController extends Connect implements Initializable{
 	//MONTH
 	List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
 	List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
+	Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
+	Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
 
 	//****************************************************//
     //Methods starts here.
@@ -116,21 +124,20 @@ public class CalendarController extends Connect implements Initializable{
         setBottoField(); //SlideFieldBotto
 		try {
 			getWeekTabCells();
+			mapMonthTab();
             superSorter.dataCollect();
+            insertCells();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
     }
 
-
-
-    public void setLines(){ //Set lines for day week and month.
+	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
 		week.setGridLinesVisible(true);
 		month.setGridLinesVisible(true);
 	}
-
-	//On action from remove button
+    //On action from remove button
 	public void remove() throws IOException {
         //TODO: Make remove button work
 		//TODO: Remove this superSorter-thing
@@ -143,13 +150,11 @@ public class CalendarController extends Connect implements Initializable{
 
     }
 
-	
-	//On action from addsubject button
+    //On action from addsubject button
 	public void addSubject(){
 		AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 	}
-	
-	//On action form IL --> Currenly no IL button on fxml-file
+    //On action form IL --> Currenly no IL button on fxml-file
 	public void IL(){ //Button does not exist atm.
 		System.out.println("IL");
 	}
@@ -224,6 +229,8 @@ public class CalendarController extends Connect implements Initializable{
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
         setupDayTab();
+        mapMonthTab();
+        insertCells();
     }
 
 	//Started to make methods to change veiw when minicalendar is changed.
@@ -391,6 +398,27 @@ public class CalendarController extends Connect implements Initializable{
 	public void StringGetLabel(String label){
 		System.out.println("yo");
 	}
+
+	/**
+	 * Mappes anchorpanes in monthtab to å localdate corresponding to the right label.
+	 */
+	public void mapMonthTab(){
+        dayMappedPane.clear();
+        dateMappedMonth.clear();
+        LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int dayOfMonth = date.getDayOfMonth();
+        date = date.minusDays(dayOfMonth);
+        for(int i = 0; i < monthLabels.size(); i++){
+            dayMappedPane.put(monthLabels.get(i), monthAnchorPanes.get(i));
+            if(monthLabels.get(i).getText().length() != 0){
+                System.out.println(date);
+                date = date.plusDays(1);
+                dateMappedMonth.put(date, monthAnchorPanes.get(i));
+
+            }
+        }
+    }
+
 
 	//When days in monthsTab is clicked.
 	@FXML private void handleCalendarClick1(){
@@ -623,15 +651,24 @@ public class CalendarController extends Connect implements Initializable{
                 System.out.println("NEW ENTRY");
                 for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
 				{
-					if(stretch){
-						labelMappedCells.put(entry.getValue(), cell);
+                    if(stretch){
+					    Label lab = entry.getValue();
+					    if(!lab.getText().contains("Continiue")){
+                            lab.setText("Continiue --> " + entry.getValue().getText());
+                            lab.setStyle("-fx-text-fill: royalblue ;");
+                        }
+                        labelMappedCells.put(lab, cell);
+						//lab.setText("");
 						stretch = false;
                         if(entry.getKey().getEndTime().before(cell.getEndDate())){
                             stretch = true;
                         }
 					}
                     if(entry.getKey().getStartTime().equals(cell.getStartDate())){
-						labelMappedCells.put(entry.getValue(), cell);
+						Label lab = entry.getValue();
+						//lab.setUnderline(true);
+						lab.setStyle("-fx-font-weight: bold;");
+                        labelMappedCells.put(entry.getValue(), cell);
 						if(entry.getKey().getEndTime().before(cell.getEndDate())){
 							stretch = true;
 						}
@@ -654,13 +691,18 @@ public class CalendarController extends Connect implements Initializable{
 								HashMap<TimeInterval, Label> liste = list.getValue(); //Setter da en ny hashmap til hashmappet som har rett nøkkel.
 								for (Map.Entry<TimeInterval, Label> timeintervalMapLabel : liste.entrySet()) { //Gjør så det samme som DayTab.. samme effekt på alle dager den uken.
                                     if(stretch){
-										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
-										stretch = false;
+                                        Label lab = timeintervalMapLabel.getValue(); //Continue
+                                        lab.setStyle("-fx-text-fill: royalblue ;");
+                                        weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
+                                        stretch = false;
 										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
 											stretch = true;
 										}
 									}
 									if(timeintervalMapLabel.getKey().getStartTime().equals(cell.getStartDate())){
+                                        Label lab = timeintervalMapLabel.getValue(); //First
+                                        //lab.setUnderline(true);
+                                        lab.setStyle("-fx-font-weight: bold;");
 										weekLabelMappCell.put(timeintervalMapLabel.getValue(), cell);
 										if(timeintervalMapLabel.getKey().getEndTime().before(cell.getEndDate())){
 											stretch = true;
@@ -675,13 +717,58 @@ public class CalendarController extends Connect implements Initializable{
                 }
 				printWeekCells(weekLabelMappCell); //Printer herfta direkte.
             }
-		}else{ //Month is selected
-				System.out.println("Month");
+		}if(true){ //Month is selected
+//            Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();
+//            Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>();
+            //dayMappedPane.clear();
+            //dateMappedMonth.clear();
+            System.out.println("Month");
+
+
+            for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()) {
+                ObservableList<Node> list = entry.getValue().getChildren();
+                for (Node n : list) {
+                    try {
+                        Label lab = (Label) n;
+                        if(lab.getText().contains("Event/Activity")){
+                            lab.setText("");
+                        }
+
+
+                    } catch (Exception e) {
+                    }
+                }
+            }
+
+            for (calendar.Cell cell : cellsAtCurrentDate){
+                Date startDate = cell.getStartDate();
+                LocalDate date = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
+                    JFXCheckBox box = new JFXCheckBox();
+                    if(entry.getKey().equals(date)){
+                        //IF There is something with high priority --> Can change this.
+                        Label lab = new Label();
+                        lab.setText(" " + '\n' +  " Event/Activity");
+                        lab.setStyle("-fx-text-fill: green;");
+
+
+                        box.setSelected(true);
+                        box.setLayoutY(20);
+                        box.setLayoutX(-3);
+                        box.disabledProperty();
+                        box.toBack();
+                        //box.setId("CHECK");
+                        entry.getValue().getChildren().addAll(lab);
+//                        entry.getValue().setStyle("-fx-border-color: green;" +
+//                        "-fx-border-width: 0 0 4 0;");
+                    }
+                }
+            }
 		}
 
 	}
 
-	public void enterCells(){
+    public void enterCells(){
 		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
 		{
 			writeToLabel(entry.getKey(), entry.getValue());

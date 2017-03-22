@@ -5,9 +5,17 @@
 	-fx-border-color: gray;
 	-fx-border-width: 0 0 8 0;
 }
+/*
+#month{
+	-fx-border-color: red;
+	-fx-border-width: 0 0 8 0;
+}
 
+*/
 
-
+#weekDay{
+	-fx-font-weight: bold;
+}
 
 
 

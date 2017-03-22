@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="876.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="950.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane fx:id="dayAnchor" prefHeight="649.0" prefWidth="839.0" BorderPane.alignment="CENTER">
          <children>
@@ -54,7 +54,7 @@
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="09:00 -10:00" GridPane.rowIndex="2">
+                                    <Label text="09:00 - 10:00" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
@@ -89,7 +89,7 @@
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="17:00 -18:00" GridPane.rowIndex="10">
+                                    <Label text="17:00 - 18:00" GridPane.rowIndex="10">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
@@ -97,7 +97,10 @@
                                     <Label fx:id="thisday" text="Thisday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font></Label>
                                     <Label fx:id="eightToNine" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -209,37 +212,37 @@
                                     <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Label text="Monday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Monday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Tuesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Tuesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Wednesday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Wednesday" GridPane.columnIndex="3">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Thursday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Thursday" GridPane.columnIndex="4">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Friday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Friday" GridPane.columnIndex="5">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Saturday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Saturday" GridPane.columnIndex="6">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Sunday" GridPane.columnIndex="7">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Sunday" GridPane.columnIndex="7">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
@@ -1003,37 +1006,37 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <Label text="Monday">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Monday">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Tuesday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Tuesday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Wednesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Wednesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Thursday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Thursday" GridPane.columnIndex="3">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Friday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Friday" GridPane.columnIndex="4">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Saturday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Saturday" GridPane.columnIndex="5">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Sunday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" stylesheets="@style.css" text="Sunday" GridPane.columnIndex="6">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
@@ -1085,7 +1088,7 @@
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#setLines" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Open Botto" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />

@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import layout.*;
 
@@ -40,9 +41,16 @@ public class LoginController implements Initializable {
         String password = passwordField.getText();
         user.setUsername(username);
         user.setPassword(password);
-        user.updateSubjects();
+        try{
+            user.updateSubjects();
+        }catch(Exception e){
+            //If you login as teacher you cant update subjects.
+            System.out.println("Teacher Login");
+        }
+
 
         String user = validateLogin();
+
         System.out.println(user);
         if((user == "TEACHER")||(user == "STUDENT")){
 
@@ -56,6 +64,9 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+
+
                 System.out.println("login successful");
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
@@ -63,6 +74,7 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
                 System.out.println("login successful");
             }
         }else{

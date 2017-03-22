@@ -20,18 +20,29 @@ public class WatchDayMonthTabController implements Initializable{
     @FXML JFXListView listVeiw;
     ObservableList<String> list = FXCollections.observableArrayList();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public ObservableList<String> getList(){
+        load();
+        return list;
+    }
+
+    public void load(){
         cal = CalendarController.getInstance();
         for (Map.Entry<Label, calendar.Cell> entry : cal.labelMappedCells.entrySet())
         {
             System.out.println(entry.getKey().getText());
-            list.add(entry.getKey().getText());
+            if(!entry.getKey().getText().contains("Continiue")){
+                list.add(entry.getKey().getText() + " --> " + entry.getValue().getStartDate());
+            }
 
         }
         if(list.size() == 0){
             list.add("No activities set this day");
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        load();
         listVeiw.setItems(list);
     }
 }

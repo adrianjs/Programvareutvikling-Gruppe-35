@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Calendar extends Application {
@@ -78,6 +79,7 @@ public class Calendar extends Application {
         Stage newStage = new Stage();
         newStage.setTitle(name);
         newStage.setScene(new Scene(load));
+		newStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
         newStage.show();
 
     }

@@ -5,23 +5,31 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import controllers.TeacherCalendarController;
+import database.Connect;
 import database.Teacher;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
 /**
  * Created by larsmade on 08.03.2017.
  */
-public class AddEventController implements Initializable{
+public class AddEventController extends Connect implements Initializable{
 
     //Lecture
     @FXML Group mainGroup;
@@ -61,10 +69,25 @@ public class AddEventController implements Initializable{
 
     Teacher t = new Teacher();
 
+    private ResultSet m_ResultSet;
+    private ObservableList<String> subjects = FXCollections.observableArrayList();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setToggle();
         teach = TeacherCalendarController.getInstance();
+        //For the subject dropdown.
+        try{
+            m_ResultSet = stmt.executeQuery("SELECT * FROM SUBJECT");
+            while(m_ResultSet.next()){
+                subjects.add(m_ResultSet.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ComboBox box = new ComboBox();
+        box.setItems(subjects.sorted());
+        TextFields.bindAutoCompletion(subject, box.getItems());
+
     }
 
     /**
@@ -255,6 +278,10 @@ public class AddEventController implements Initializable{
     public boolean validateSubject(){
         String subject = this.subject.getText();
         //TODO: Validate subject to database and check if it is cannot put subject to database unless it exist.
+        if(!subjects.contains(subject)){
+            errorLabel.setText("This subject is not in database");
+            return false;
+        }
         subject1 = subject;
         return true;
     }
