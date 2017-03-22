@@ -28,6 +28,6 @@ public class AskBotController implements Initializable{
      */
     public void setWebView(){
         WebEngine engine = webView.getEngine();
-        engine.load("http://www.ht.no/");
+        engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/index.html");
     }
 }
