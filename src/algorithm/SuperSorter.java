@@ -111,17 +111,20 @@ public class SuperSorter extends Connect {
         }
     }
 
+
+
+    //TODO: DO WE NEED THIS?
 //    public void addToTimeSlots(){
 //        addToMonth();
 //    }
 
 //    public Day addToDay(){
-//        //TODO: Sort Cells inside a single Day-object
+//
 //        return null;
 //    }
 //
 //    public Week addToWeek(int month, Calendar cal, int weekStart){
-//        //TODO: Sort Days inside a Week-object
+//
 //        cal.set(Calendar.DAY_OF_MONTH, 1);
 //        cal.set(Calendar.HOUR_OF_DAY, 0);
 //        cal.set(Calendar.MINUTE, 0);
@@ -138,7 +141,7 @@ public class SuperSorter extends Connect {
 //    }
 //
 //    public void addToMonth(){
-//        //TODO: Sort Weeks inside a Month-object
+//
 ////        Date chosenDate = CalendarController.getInstance().getChosenDate();
 //        Date chosenDate = new Date();
 //        Calendar cal = Calendar.getInstance();
@@ -166,6 +169,7 @@ public class SuperSorter extends Connect {
     //TODO: Save the results?
 
     public void handleCollisionsInTime(Set<Cell> prioritizedSet){
+
         for(Cell currentCell : prioritizedSet){
             boolean collision = false;
 
@@ -178,10 +182,14 @@ public class SuperSorter extends Connect {
                 }
             }
             if(!collision){
-                System.out.println("GIKK BRA");
                 scheduleWithoutCollision.add(currentCell);
+            }else{
+                //TODO: PROMPT WHICH CELL TO PRIORITIZE, DELETE THE OTHER FROM DB.
+                //TODO: ADD PREFERRED CELL TO scheduleWithoutCollision.
             }
         }
+        System.out.println("ORIGINAL SIZE: " + prioritizedSet.size());
+        System.out.println("AFTER COLLISION HANDLING: " + scheduleWithoutCollision.size());
     }
 
 
@@ -206,10 +214,8 @@ public class SuperSorter extends Connect {
         dataCollect();
         System.out.println("PRIORITY SORT");
         prioritySort(prioritizedSchedule);
-        System.out.println(prioritizedSchedule);
         System.out.println("HANDLE COLLISION");
         handleCollisionsInTime(prioritizedSchedule);
         System.out.println("FINISHED");
-        System.out.println(prioritizedSchedule);
     }
 }

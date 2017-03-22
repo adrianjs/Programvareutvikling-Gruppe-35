@@ -3,7 +3,9 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +29,7 @@ public class AskBotController implements Initializable{
      * Sets the web view for the bot
      */
     public void setWebView(){
+        System.out.println("SETUP WEBVIEW");
         WebEngine engine = webView.getEngine();
         engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/index.html");
     }
