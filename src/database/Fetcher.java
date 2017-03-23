@@ -17,6 +17,7 @@ public class Fetcher extends Connect{
         this.query = query;
     }
 
+
     public Set<List> getUserRelatedResults(int numberOfColumns) throws SQLException{
         ResultSet m_ResultSet = stmt.executeQuery(query);
         //This works as long as username / email lies at column 8 in the DB
