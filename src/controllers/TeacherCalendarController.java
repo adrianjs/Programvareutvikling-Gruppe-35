@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -58,8 +57,8 @@ public class TeacherCalendarController implements Initializable{
      */
     public void setAddField(){
         try {
-            add = FXMLLoader.load(getClass().getResource("../resources/addEvent.fxml"));
-            studassAdd = FXMLLoader.load(getClass().getResource("../resources/addStudass.fxml"));
+            add = FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml"));
+            studassAdd = FXMLLoader.load(getClass().getResource("/resources/fxml/addStudass.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -118,7 +117,7 @@ public class TeacherCalendarController implements Initializable{
     public void logOut() throws IOException {
         System.out.println("LogOut");
         Stage s = (Stage) logOut.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/username.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/username.fxml"));
         Parent load = loader.load();
         Scene scene = new Scene(load);
         s.setScene(scene);

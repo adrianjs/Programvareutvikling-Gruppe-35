@@ -59,22 +59,22 @@ public class LoginController implements Initializable {
             //Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
 
             if(user == "STUDENT") {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/calendar.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/calendar.fxml"));
                 loader.setController(CalendarController.getInstance());
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
 
 
                 System.out.println("login successful");
             }else{
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/teacherCalendar.fxml"));
                 loader.setController(TeacherCalendarController.getInstance());
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
                 System.out.println("login successful");
             }
         }else{
@@ -107,7 +107,7 @@ public class LoginController implements Initializable {
     public void newUser(){
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/makeuser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/makeuser.fxml"));
             Parent root = loader.load();
             Stage st = new Stage();
             st.setTitle("Make User");

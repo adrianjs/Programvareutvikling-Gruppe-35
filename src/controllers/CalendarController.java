@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import algorithm.Activity;
@@ -17,26 +16,18 @@ import calendar.*;
 import calendar.Cell;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
-import controllers.add.AddActivityController;
-import controllers.add.AddSubjectController;
 import database.Connect;
 import database.Fetcher;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import layout.*;
 import layout.eventButtonWeek.activityButton;
@@ -165,7 +156,7 @@ public class CalendarController extends Connect implements Initializable{
     //On action from addsubject button
 	public void addSubject() throws IOException {
 		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
-		cal.changeScene("../resources/addSubject.fxml", "Add subject");
+		cal.changeScene("/resources/fxml/addSubject.fxml", "Add subject");
 	}
 
 	/**
@@ -175,7 +166,7 @@ public class CalendarController extends Connect implements Initializable{
 	public void logOut() throws Exception {
 		System.out.println("LogOut");
 		Stage s = (Stage) logout.getScene().getWindow();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/username.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/username.fxml"));
 		Parent load = loader.load();
 		Scene scene = new Scene(load);
 		s.setScene(scene);
@@ -190,7 +181,7 @@ public class CalendarController extends Connect implements Initializable{
     public void setBottoField(){
         try {
 
-			botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
+			botto = FXMLLoader.load(getClass().getResource("/resources/fxml/ask.fxml"));
             tran = new HamburgerBackArrowBasicTransition(sliderButton);
             tran.setRate(-1);
         } catch (Exception e) {
@@ -216,7 +207,7 @@ public class CalendarController extends Connect implements Initializable{
     //On action from add button
     public void add() throws IOException {
         //AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
-        cal.changeScene("../resources/add.fxml", "ADD");
+        cal.changeScene("/resources/fxml/add.fxml", "ADD");
 		System.out.println("add");
     }
 
@@ -441,7 +432,7 @@ public class CalendarController extends Connect implements Initializable{
 			setNewDate2(date1);
 			if(day.length() != 0){
 				//WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
-				cal.changeScene("../resources/watchDay.fxml", date1.toString());
+				cal.changeScene("fxml/watchDay.fxml", date1.toString());
 			}
 		}catch(Exception e){
 			System.out.println(e);

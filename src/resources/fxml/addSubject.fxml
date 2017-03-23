@@ -11,7 +11,7 @@
    <children>
       <Label alignment="CENTER" layoutX="134.0" layoutY="122.0" prefHeight="21.0" prefWidth="335.0" text="Start typing a subject name or code:" />
       <JFXComboBox fx:id="subjectPicker" layoutX="128.0" layoutY="274.0" prefHeight="31.0" prefWidth="345.0" />
-      <JFXButton id="addButtons" layoutX="252.0" layoutY="338.0" onAction="#addSubjectToCalendar" stylesheets="@buttonStyle.css" text="Add subject" />
+      <JFXButton id="addButtons" layoutX="252.0" layoutY="338.0" onAction="#addSubjectToCalendar" stylesheets="/css/buttonStyle.css" text="Add subject" />
       <Label layoutX="193.0" layoutY="21.0" text="Add Subject">
          <font>
             <Font size="40.0" />

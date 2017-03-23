@@ -1,7 +1,5 @@
 package layout;
 
-import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 import controllers.CalendarController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +7,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -25,11 +22,11 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         System.out.println(CalendarController.getInstance());
-        Parent load = FXMLLoader.load(getClass().getResource("../resources/username.fxml"));
+        Parent load = FXMLLoader.load(getClass().getResource("/resources/fxml/username.fxml"));
         primaryStage.setTitle("Educational Organizer");
         main = new Scene(load);
         primaryStage.setScene(main);
-        primaryStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+        primaryStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
         primaryStage.show();
         //The following code centers the window
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();

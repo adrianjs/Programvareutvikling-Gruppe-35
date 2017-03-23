@@ -26,18 +26,18 @@
             <JFXRadioButton fx:id="homeExam" layoutX="383.0" layoutY="12.0" onAction="#checkSelectedRadioButtons" text="Home Exam" />
          </children>
       </Group>
-      <JFXTextField id="fields" fx:id="subject" layoutX="20.0" layoutY="87.0" prefHeight="29.0" prefWidth="208.0" stylesheets="@buttonStyle.css" />
+      <JFXTextField id="fields" fx:id="subject" layoutX="20.0" layoutY="87.0" prefHeight="29.0" prefWidth="208.0" stylesheets="/css/buttonStyle.css" />
       <Label layoutX="20.0" layoutY="66.0" text="Subject code:" />
-      <JFXButton id="addButtons" layoutX="578.0" layoutY="530.0" onAction="#add" stylesheets="@buttonStyle.css" text="Add" />
-      <JFXButton id="addButtons" layoutX="645.0" layoutY="530.0" onAction="#cancel" stylesheets="@buttonStyle.css" text="Cancel" />
+      <JFXButton id="addButtons" layoutX="578.0" layoutY="530.0" onAction="#add" stylesheets="/css/buttonStyle.css" text="Add" />
+      <JFXButton id="addButtons" layoutX="645.0" layoutY="530.0" onAction="#cancel" stylesheets="/css/buttonStyle.css" text="Cancel" />
       <Group fx:id="mainGroup" layoutX="20.0" layoutY="238.0" visible="false">
          <children>
             <Label text="Event description:" />
-            <JFXTextField id="fields" fx:id="description" layoutX="2.0" layoutY="28.0" prefHeight="29.0" prefWidth="436.0" stylesheets="@buttonStyle.css" />
-            <JFXDatePicker id="fields" fx:id="startDate" layoutX="2.0" layoutY="112.0" stylesheets="@buttonStyle.css" />
+            <JFXTextField id="fields" fx:id="description" layoutX="2.0" layoutY="28.0" prefHeight="29.0" prefWidth="436.0" stylesheets="/css/buttonStyle.css" />
+            <JFXDatePicker id="fields" fx:id="startDate" layoutX="2.0" layoutY="112.0" stylesheets="/css/buttonStyle.css" />
             <Group fx:id="endDateGroup" layoutX="229.0" layoutY="81.0">
                <children>
-                  <JFXDatePicker id="fields" fx:id="endDate" layoutY="31.0" stylesheets="@buttonStyle.css" />
+                  <JFXDatePicker id="fields" fx:id="endDate" layoutY="31.0" stylesheets="/css/buttonStyle.css" />
                   <Label text="End date:" />
                </children>
             </Group>
@@ -46,19 +46,19 @@
             <Group fx:id="endTimeGroup" layoutX="229.0" layoutY="168.0">
                <children>
                   <Label text="End time:" />
-                  <JFXDatePicker id="fields" fx:id="endTime" layoutY="31.0" showTime="true" stylesheets="@buttonStyle.css" />
+                  <JFXDatePicker id="fields" fx:id="endTime" layoutY="31.0" showTime="true" stylesheets="/css/buttonStyle.css" />
                </children>
             </Group>
-            <JFXDatePicker id="fields" fx:id="startTime" layoutX="2.0" layoutY="199.0" showTime="true" stylesheets="@buttonStyle.css" />
+            <JFXDatePicker id="fields" fx:id="startTime" layoutX="2.0" layoutY="199.0" showTime="true" stylesheets="/css/buttonStyle.css" />
          </children>
       </Group>
       <Group fx:id="repeatingGroup" layoutX="28.0" layoutY="493.0" />
       <Label layoutX="249.0" layoutY="66.0" text="Event name:" />
-      <JFXTextField id="fields" fx:id="eventName" layoutX="246.0" layoutY="87.0" prefHeight="29.0" prefWidth="209.0" stylesheets="@buttonStyle.css" />
+      <JFXTextField id="fields" fx:id="eventName" layoutX="246.0" layoutY="87.0" prefHeight="29.0" prefWidth="209.0" stylesheets="/css/buttonStyle.css" />
       <Group fx:id="repeatingGroup" layoutX="20.0" layoutY="492.0" visible="false">
          <children>
             <Label text="Repeating:" />
-            <JFXTextField id="fields" fx:id="repeating" layoutY="24.0" prefHeight="29.0" prefWidth="48.0" stylesheets="@buttonStyle.css" />
+            <JFXTextField id="fields" fx:id="repeating" layoutY="24.0" prefHeight="29.0" prefWidth="48.0" stylesheets="/css/buttonStyle.css" />
          </children>
       </Group>
       <Label fx:id="errorLabel" layoutX="157.0" layoutY="535.0" textFill="RED" />

@@ -3,10 +3,6 @@ package layout;
 
 import java.io.IOException;
 
-import com.teamdev.jxbrowser.chromium.BrowserCore;
-import controllers.add.AddActivityController;
-import controllers.add.AddSubjectController;
-import controllers.WatchDayMonthTabController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -61,7 +57,7 @@ public class Calendar extends Application {
 		Stage newStage = new Stage();
 		newStage.setTitle(name);
 		newStage.setScene(new Scene(load));
-		newStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+		newStage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
 		newStage.show();
 		//The following code centers the window
 		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();

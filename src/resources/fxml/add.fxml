@@ -44,7 +44,7 @@
                      </VBox.margin></Label>
                   <HBox prefHeight="42.0" prefWidth="568.0">
                      <children>
-                        <JFXDatePicker id="cal" fx:id="date" stylesheets="@buttonStyle.css" />
+                        <JFXDatePicker id="cal" fx:id="date" stylesheets="/css/buttonStyle.css" />
                      </children>
                   </HBox>
                   <Label fx:id="errorDate" textFill="RED" />
@@ -66,7 +66,7 @@
                      </VBox.margin></Label>
                   <HBox prefHeight="6.0" prefWidth="912.0">
                      <children>
-                        <JFXDatePicker id="cal" fx:id="startTime" showTime="true" stylesheets="@buttonStyle.css" />
+                        <JFXDatePicker id="cal" fx:id="startTime" showTime="true" stylesheets="/css/buttonStyle.css" />
                      </children>
                   </HBox>
                   <Label text="To:">
@@ -75,14 +75,14 @@
                      </VBox.margin></Label>
                   <HBox prefHeight="41.0" prefWidth="912.0">
                      <children>
-                        <JFXDatePicker id="cal" fx:id="endTime" showTime="true" stylesheets="@buttonStyle.css" />
+                        <JFXDatePicker id="cal" fx:id="endTime" showTime="true" stylesheets="/css/buttonStyle.css" />
                      </children>
                   </HBox>
                   <Label fx:id="errorTime" textFill="RED" />
                   <HBox prefHeight="44.0" prefWidth="285.0">
                      <children>
-                        <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="@buttonStyle.css" text="Cancel" />
-                        <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="@buttonStyle.css" text="Send In">
+                        <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="/css/buttonStyle.css" text="Cancel" />
+                        <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="/css/buttonStyle.css" text="Send In">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

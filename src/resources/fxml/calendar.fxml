@@ -22,7 +22,7 @@
    <center>
       <AnchorPane fx:id="dayAnchor" prefHeight="649.0" prefWidth="839.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTabPane prefHeight="659.0" prefWidth="842.0" stylesheets="@buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <JFXTabPane prefHeight="659.0" prefWidth="842.0" stylesheets="/css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <tabs>
                   <Tab fx:id="dayTab" onSelectionChanged="#insertCells" text="Day">
                      <content>
@@ -212,37 +212,37 @@
                                     <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Monday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Monday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Tuesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Wednesday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="3">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Thursday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="4">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Friday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="5">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Saturday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="6">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Sunday" GridPane.columnIndex="7">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="7">
                                        <GridPane.margin>
                                           <Insets left="10.0" />
                                        </GridPane.margin>
@@ -673,16 +673,16 @@
                                     <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <AnchorPane id="month" fx:id="monthBox1" onMouseClicked="#handleCalendarClick1" stylesheets="@style.css" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" fx:id="monthBox1" onMouseClicked="#handleCalendarClick1" stylesheets="/css/style.css" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
-                                          <Label fx:id="day1" stylesheets="@style.css" text="1">
+                                          <Label fx:id="day1" stylesheets="/css/style.css" text="1">
                                              <padding>
                                                 <Insets left="5.0" />
                                              </padding>
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick2" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick2" stylesheets="/css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day2" text="2">
                                              <padding>
@@ -691,7 +691,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick3" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick3" stylesheets="/css/style.css" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day3" text="3">
                                              <padding>
@@ -700,7 +700,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick4" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick4" stylesheets="/css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day4" text="4">
                                              <padding>
@@ -709,7 +709,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick5" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick5" stylesheets="/css/style.css" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day5" text="5">
                                              <padding>
@@ -718,7 +718,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick6" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick6" stylesheets="/css/style.css" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day6" text="6">
                                              <padding>
@@ -727,7 +727,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick7" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick7" stylesheets="/css/style.css" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day7" text="7">
                                              <padding>
@@ -736,7 +736,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick8" stylesheets="@style.css" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick8" stylesheets="/css/style.css" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day8" text="8">
                                              <padding>
@@ -745,7 +745,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick9" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick9" stylesheets="/css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day9" text="9">
                                              <padding>
@@ -754,7 +754,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick10" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick10" stylesheets="/css/style.css" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day10" text="10">
                                              <padding>
@@ -763,7 +763,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick11" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick11" stylesheets="/css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day11" text="11">
                                              <padding>
@@ -772,7 +772,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick12" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick12" stylesheets="/css/style.css" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day12" text="12">
                                              <padding>
@@ -781,7 +781,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick13" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick13" stylesheets="/css/style.css" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day13" text="13">
                                              <padding>
@@ -790,7 +790,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick14" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick14" stylesheets="/css/style.css" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day14" text="14">
                                              <padding>
@@ -799,7 +799,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick15" stylesheets="@style.css" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick15" stylesheets="/css/style.css" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day15" text="15">
                                              <padding>
@@ -808,7 +808,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick16" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick16" stylesheets="/css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day16" text="16">
                                              <padding>
@@ -817,7 +817,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick17" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick17" stylesheets="/css/style.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day17" text="17">
                                              <padding>
@@ -826,7 +826,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick18" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick18" stylesheets="/css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day18" text="18">
                                              <padding>
@@ -835,7 +835,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick19" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick19" stylesheets="/css/style.css" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day19" text="19">
                                              <padding>
@@ -844,7 +844,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick20" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick20" stylesheets="/css/style.css" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day20" text="20">
                                              <padding>
@@ -853,7 +853,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick21" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick21" stylesheets="/css/style.css" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day21" text="21">
                                              <padding>
@@ -862,7 +862,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick22" stylesheets="@style.css" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick22" stylesheets="/css/style.css" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day22" text="22">
                                              <padding>
@@ -871,7 +871,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick23" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick23" stylesheets="/css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day23" text="23">
                                              <padding>
@@ -880,7 +880,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick24" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick24" stylesheets="/css/style.css" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day24" text="24">
                                              <padding>
@@ -889,7 +889,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick25" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick25" stylesheets="/css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day25" text="25">
                                              <padding>
@@ -898,7 +898,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick26" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick26" stylesheets="/css/style.css" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day26" text="26">
                                              <padding>
@@ -907,7 +907,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick27" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick27" stylesheets="/css/style.css" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day27" text="27">
                                              <padding>
@@ -916,7 +916,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick28" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick28" stylesheets="/css/style.css" GridPane.columnIndex="6" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day28" text="28">
                                              <padding>
@@ -925,7 +925,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick29" stylesheets="@style.css" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick29" stylesheets="/css/style.css" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day29" text="29">
                                              <padding>
@@ -934,7 +934,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick30" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick30" stylesheets="/css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day30" text="30">
                                              <padding>
@@ -943,7 +943,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick31" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick31" stylesheets="/css/style.css" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day31" text="31">
                                              <padding>
@@ -952,7 +952,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick32" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick32" stylesheets="/css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day32" text="32">
                                              <padding>
@@ -961,7 +961,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick33" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick33" stylesheets="/css/style.css" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day33" text="33">
                                              <padding>
@@ -970,7 +970,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick34" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick34" stylesheets="/css/style.css" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day34" text="34">
                                              <padding>
@@ -979,7 +979,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick35" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                    <AnchorPane id="month" onMouseClicked="#handleCalendarClick35" stylesheets="/css/style.css" GridPane.columnIndex="6" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                        <children>
                                           <Label fx:id="day35" text="35">
                                              <padding>
@@ -1006,37 +1006,37 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Monday">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Monday">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Tuesday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Wednesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Thursday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="3">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Friday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="4">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Saturday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="5">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="@style.css" text="Sunday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="6">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin>
@@ -1076,19 +1076,19 @@
          <children>
             <VBox prefHeight="455.0" prefWidth="200.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="@buttonStyle.css" text="Add" textFill="#4aab32">
+                  <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="/css/buttonStyle.css" text="Add" textFill="#4aab32">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Add subject" textFill="#eaff63" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Remove" textFill="RED" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Open Botto" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Log Out" />
+                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Log Out" />
                </children>
             </VBox>
          </children>
