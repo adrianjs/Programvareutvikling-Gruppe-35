@@ -3,7 +3,7 @@ package layout;
 
 import java.io.IOException;
 
-import com.teamdev.jxbrowser.chromium.BrowserCore;
+//import com.teamdev.jxbrowser.chromium.BrowserCore;
 import controllers.add.AddActivityController;
 import controllers.add.AddSubjectController;
 import controllers.WatchDayMonthTabController;

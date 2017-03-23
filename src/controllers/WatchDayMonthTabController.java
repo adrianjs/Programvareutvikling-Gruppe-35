@@ -15,17 +15,20 @@ import java.util.*;
  * Created by larsmade on 02.03.2017.
  */
 public class WatchDayMonthTabController implements Initializable{
-    CalendarController cal;
-    int day;
-    @FXML JFXListView listVeiw;
-    ObservableList<String> list = FXCollections.observableArrayList();
+
+    @FXML private JFXListView listVeiw;
+    private CalendarController cal;
+    private ObservableList<String> list = FXCollections.observableArrayList();
 
     public ObservableList<String> getList(){
         load();
         return list;
     }
 
-    public void load(){
+    /**
+     * Checks for aktivities and add them to listview.
+     */
+    private void load(){
         cal = CalendarController.getInstance();
         for (Map.Entry<Label, calendar.Cell> entry : cal.labelMappedCells.entrySet())
         {

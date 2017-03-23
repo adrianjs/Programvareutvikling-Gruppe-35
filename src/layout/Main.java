@@ -1,7 +1,6 @@
 package layout;
 
-import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
+
 import controllers.CalendarController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

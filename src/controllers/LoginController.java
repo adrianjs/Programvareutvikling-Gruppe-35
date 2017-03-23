@@ -29,12 +29,18 @@ public class LoginController implements Initializable {
     @FXML JFXButton openCalendar;
     @FXML Label loginError;
 
-    User user = User.getInstance();
-    layout.Calendar cal = new layout.Calendar();
+    private User user = User.getInstance();
+    private layout.Calendar cal = new layout.Calendar();
     private Stage stage;
     CalendarController calController = CalendarController.getInstance();
 
     //Login and set user in userclass.
+
+    /**
+     * Log in, and set new user to userClass.
+     * @throws IOException
+     * @throws SQLException
+     */
     public void login() throws IOException, SQLException {
         loginError.setText("");
         String username = loginField.getText();
@@ -45,19 +51,12 @@ public class LoginController implements Initializable {
             user.updateSubjects();
         }catch(Exception e){
             //If you login as teacher you cant update subjects.
-            System.out.println("Teacher Login");
         }
-
-
         String user = validateLogin();
-
-        System.out.println(user);
         if((user == "TEACHER")||(user == "STUDENT")){
-
             //Jumps to the Calendar window..
             stage = (Stage) openCalendar.getScene().getWindow();
             //Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
-
             if(user == "STUDENT") {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/calendar.fxml"));
                 loader.setController(CalendarController.getInstance());
@@ -65,9 +64,6 @@ public class LoginController implements Initializable {
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
-
-
-                System.out.println("login successful");
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/teacherCalendar.fxml"));
                 loader.setController(TeacherCalendarController.getInstance());
@@ -79,10 +75,13 @@ public class LoginController implements Initializable {
             }
         }else{
             loginError.setText("Wrong username or password");
-            System.out.println("wrong username or password");
         }//Should check after user in database here. --> Error if there is no such user / Or of no such user exist it will be a new user created.
     }
 
+    /**
+     * Validates login
+     * @return Wich user that try to log in.
+     */
     private String validateLogin(){
         try {
             Login login = new Login();
@@ -104,8 +103,10 @@ public class LoginController implements Initializable {
         return null;
     }
 
+    /**
+     * Loads the new user window
+     */
     public void newUser(){
-
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/makeuser.fxml"));
             Parent root = loader.load();
@@ -117,11 +118,8 @@ public class LoginController implements Initializable {
             st.show();
 
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.out.println("funker ikke");
             e.printStackTrace();
         }
-        System.out.println("press");
 
     }
 
