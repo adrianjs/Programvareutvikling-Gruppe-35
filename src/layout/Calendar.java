@@ -18,6 +18,9 @@ import javafx.stage.Stage;
 public class Calendar extends Application {
 
 	Stage stage;
+	FXMLLoader loader;
+	Parent load;
+
 	
 	//Launch the scene. 
 	@Override
@@ -34,19 +37,49 @@ public class Calendar extends Application {
         launch(args);
     }
 
-	//Changing scene.
-	public AddActivityController changeToAdd(String fxml, String name){
+	/**
+	 * Changes the scene
+	 * @param fxml
+	 * @param name
+	 * @throws IOException
+	 */
+	public void changeScene(String fxml, String name) throws IOException {
+		loading(fxml);
+		setStage(load, name);
+	}
+
+	/**
+	 * Loads the new FXML Document
+	 * @param fxml
+	 * @throws IOException
+	 */
+	public void loading(String fxml) throws IOException {
+		loader = new FXMLLoader(getClass().getResource(fxml));
+		load = loader.load();
+	}
+
+	public void setStage(Parent load, String name){
+		Stage newStage = new Stage();
+		newStage.setTitle(name);
+		newStage.setScene(new Scene(load));
+		newStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
+		newStage.show();
+		//The following code centers the window
+		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+		newStage.setX((primScreenBounds.getWidth() - newStage.getWidth()) / 2);
+		newStage.setY((primScreenBounds.getHeight() - newStage.getHeight()) / 2);
+	}
+
+//*************************RETURNS CONTROLLER TO CALENDARCONTROLLER ******* NOT IN USE ATM///
+	/*public AddActivityController changeToAdd(String fxml, String name){
 		AddActivityController add = null;
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-			Parent load = loader.load();
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+//			Parent load = loader.load();
+			loading(fxml);
 			add = loader.getController();
 			setStage(load, name);
-			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        } catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return add;
@@ -56,15 +89,12 @@ public class Calendar extends Application {
 	public AddSubjectController changeToAddSubject(String fxml, String name){
 		AddSubjectController addSubject = null;
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-			Parent load = loader.load();
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+//			Parent load = loader.load();
+			loading(fxml);
 			addSubject = loader.getController();
 			setStage(load, name);
-			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        } catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return addSubject;
@@ -73,30 +103,16 @@ public class Calendar extends Application {
 	public WatchDayMonthTabController changeToWatchDay(String fxml, String name){
 		WatchDayMonthTabController day = null;
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-			Parent load = loader.load();
+//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+//			Parent load = loader.load();
+			loading(fxml);
 			day = loader.getController();
 			setStage(load, name);
-			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-			stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-			stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return day;
 	}
+*/
 
-	public void setStage(Parent load, String name){
-        Stage newStage = new Stage();
-        newStage.setTitle(name);
-        newStage.setScene(new Scene(load));
-		newStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
-        newStage.show();
-		//The following code centers the window
-		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-		newStage.setX((primScreenBounds.getWidth() - newStage.getWidth()) / 2);
-		newStage.setY((primScreenBounds.getHeight() - newStage.getHeight()) / 2);
-
-    }
 }
