@@ -1084,7 +1084,7 @@
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="@buttonStyle.css" text="Add subject" textFill="#eaff63" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#setLines" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
+                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Remove" textFill="RED" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="@buttonStyle.css" text="Open Botto" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />

@@ -11,9 +11,20 @@ import java.util.Date;
  */
 public class Activity extends Cell {
 
-    int startTime;
-    int endTime;
+    private int startTime;
+    private int endTime;
 
+    /**
+     * Constructs a new Activity which is a subclass of Cell.
+     * It is the same as Cell, but it has two integers startTime and endTime too.
+     *
+     * @param startDate
+     * @param endDate
+     * @param name
+     * @param description
+     * @param slotPriority
+     * @param repeating
+     */
     public Activity(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
         super(startDate, endDate, name, description, slotPriority, repeating);
     }
@@ -26,10 +37,18 @@ public class Activity extends Cell {
         this.endTime = endTime;
     }
 
+    /**
+     * Returns the int startTime
+     * @return int startTime
+     */
     public int getStartTime(){
         return startTime;
     }
 
+    /**
+     * Returns the int endTime
+     * @return int endTime
+     */
     public int getEndTime(){
         return endTime;
     }

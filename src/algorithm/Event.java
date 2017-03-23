@@ -6,8 +6,10 @@ import java.util.Date;
 
 /**
  * Created by Henning on 15.03.2017.
+ * A subclass of Cell-object which contains some additional information.
  */
 public class Event extends Cell {
+
     private String name;
     private Date startDate;
     private Date endDate;
@@ -19,6 +21,20 @@ public class Event extends Cell {
     private int hoursOfWork;
     private String subjectCode;
 
+    /**
+     * Constructs a new Event, which is something teachers creates.
+     * An Event can be something like a delivery, quiz or exam, and is tied up to a Subject.
+     * @param name
+     * @param startDate
+     * @param endDate
+     * @param startTime
+     * @param endTime
+     * @param repeating
+     * @param priority
+     * @param description
+     * @param hoursOfWork
+     * @param subjectCode
+     */
     public Event(String name, Date startDate, Date endDate,
                  String startTime, String endTime, int repeating,
                  int priority, String description, int hoursOfWork,

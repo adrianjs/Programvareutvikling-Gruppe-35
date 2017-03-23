@@ -142,7 +142,6 @@ public class CalendarController extends Connect implements Initializable{
 		try {
 			getWeekTabCells();
 			mapMonthTab();
-            superSorter.dataCollect();
             insertCells();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -155,14 +154,10 @@ public class CalendarController extends Connect implements Initializable{
 		month.setGridLinesVisible(true);
 	}
     //On action from remove button
-	public void remove() throws IOException {
+	public void remove() throws IOException, SQLException, ParseException {
         //TODO: Make remove button work
 		//TODO: Remove this superSorter-thing
-		Set<Cell> temp = superSorter.prioritySort(superSorter.getPrioritizedSchedule());
-		for (Cell c:temp) {
-			System.out.println(c.getSlotPriority());
-		}
-		System.out.println("remove");
+		superSorter.run();
 
 
     }
