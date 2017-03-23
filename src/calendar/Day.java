@@ -13,6 +13,14 @@ public class Day {
     private int dayOfWeek;
     private Set<Cell> timeSlots;
 
+    /**
+     * Constructor for a Day objects which holds all the Cells with the same date.
+     * //TODO: Might not be used
+     * @param date
+     * @param monthOfYear
+     * @param dayOfWeek
+     * @param timeSlots
+     */
     public Day(Date date, int monthOfYear, int dayOfWeek, Set<Cell> timeSlots) {
         this.date = date;
         this.monthOfYear = monthOfYear;

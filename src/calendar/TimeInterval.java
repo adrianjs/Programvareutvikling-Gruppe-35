@@ -10,6 +10,12 @@ public class TimeInterval{
     private Date startTime;
     private Date endTime;
 
+    /**
+     * Construct a new time interval.
+     * //TODO: Might not be used
+     * @param startTime
+     * @param endTime
+     */
     public TimeInterval(Date startTime, Date endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
@@ -22,6 +28,5 @@ public class TimeInterval{
     public Date getEndTime() {
         return endTime;
     }
-
 
 }

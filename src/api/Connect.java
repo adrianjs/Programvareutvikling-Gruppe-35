@@ -15,7 +15,7 @@ import java.io.InputStream;
 /**
  * Created by torresrl on 15/03/2017.
  */
-public class connect {
+public class Connect {
     URL url;
     InputStream in;
     JsonReader reader;
@@ -23,7 +23,7 @@ public class connect {
 
 
 
-    public connect(String uri){
+    public Connect(String uri){
         try {
             url = new URL(uri);
             in = url.openStream();

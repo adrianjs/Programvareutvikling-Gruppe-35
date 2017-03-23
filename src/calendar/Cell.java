@@ -13,6 +13,7 @@ import java.util.Date;
  *  - Slot description
  */
 public class Cell {
+
     private Date startDate = new Date(); //Also used to set start time
     private Date endDate = new Date();//Also used to set end time
     private String name;
@@ -20,8 +21,17 @@ public class Cell {
     private int slotPriority;
     private boolean repeating;
 
+    /**
+     * Construct a single Cell. This super class will never be instantiated, but it can be.
+     * You should use Event or Activity.
+     * @param startDate
+     * @param endDate
+     * @param name
+     * @param description
+     * @param slotPriority
+     * @param repeating
+     */
     public Cell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
-        //System.out.println("cellmate");
         this.startDate = startDate;
         this.endDate = endDate;
         this.name = name;

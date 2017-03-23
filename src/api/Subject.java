@@ -1,24 +1,14 @@
 package api;
 
 
-import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonObject;
-import javax.json.JsonStructure;
-import javax.json.stream.JsonParser;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 
 /**
  * Created by torresrl on 15/03/2017.
  */
-public class subject extends connect {
+public class Subject extends Connect {
 
-    public subject(String subjectCode){
+    public Subject(String subjectCode){
         //super("http://date.jsontest.com");
         super("https://api.ntnu.no/rest/v/public/emne/?entityKey=emnekode:194_" + subjectCode + "_1");
     }
@@ -93,7 +83,7 @@ public class subject extends connect {
 
     public static void main(String[] args) {
 
-        subject e = new subject("TDT4140");
+        Subject e = new Subject("TDT4140");
         e.findDesApi();
         //subject test = new subject("");
         //test.test();

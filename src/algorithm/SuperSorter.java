@@ -31,6 +31,13 @@ public class SuperSorter extends Connect {
     private Month chosenMonth;
 
     public void dataCollect() throws SQLException, ParseException {
+        //TODO: Fix so that you don't call DB unnecessary many times
+        subjects.clear();
+        events.clear();
+        activities.clear();
+        prioritizedSchedule.clear();
+        scheduleWithoutCollision.clear();
+
         String subjectArrayString = "";
         for (String subject : user.getSubjects()) {
             subjectArrayString += "'" + subject + "',";

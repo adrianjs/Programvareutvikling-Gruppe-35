@@ -6,13 +6,19 @@ import java.util.Set;
 
 /**
  * Created by Henning on 16.02.2017.
- * This class will hold 4 "Week"-objects to make up a full month
- * TODO: Make this class hold 4 weeks and handle them in ways necesary
+ * This class will hold 4 Week-objects to make up a full month
+ * TODO: Make this class hold 4 weeks and handle them in ways necessary
  */
 public class Month {
     private int monthOfYear;  //0 indexed
     private Set<Week> weeksInMonth;
 
+    /**
+     * Constructs a month from int monthOfYear (0-11) and a Set containing 4 Week-objects.
+     * //TODO: Might not be used
+     * @param monthOfYear
+     * @param weeksInMonth
+     */
     public Month(int monthOfYear, Set<Week> weeksInMonth) {
         this.monthOfYear = monthOfYear;
         this.weeksInMonth = new LinkedHashSet<>(weeksInMonth);

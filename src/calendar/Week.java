@@ -13,6 +13,12 @@ public class Week {
     private int monthOfYear;
     private Set<Day> daysOfWeek;
 
+    /**
+     * Constructs a ned Week object from week in month (1-4), monthOfYear (0-11) and a Set of 7 Day-objects.
+     * @param weekInMonth
+     * @param monthOfYear
+     * @param daysOfWeek
+     */
     public Week(int weekInMonth, int monthOfYear, Set<Day> daysOfWeek) {
         this.weekInMonth = weekInMonth;
         this.monthOfYear = monthOfYear;
