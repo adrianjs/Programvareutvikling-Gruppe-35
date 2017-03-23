@@ -122,10 +122,6 @@ public class Connect {
     }
 
 
-    public static void main(String[] args) {
-        Connect test = new Connect();
-        test.close();
-    }
 
 
 
