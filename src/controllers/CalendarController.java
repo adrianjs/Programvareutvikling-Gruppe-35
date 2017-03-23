@@ -91,10 +91,17 @@ public class CalendarController extends Connect implements Initializable{
     int dayClicked = 0; //Day clicked on in MonthTab
     User user = User.getInstance();
 
+
+
+
     //liste over activitys som skal inn i kalenderen
 	ArrayList<Activity> activitys = new ArrayList<>();
 	//liste over activitys som ligger i calenderen denne uken
 	ArrayList<activityButton> oldActivityButtons = new ArrayList<>();
+	//Liste over acktiitys som har blit printet inn i listen
+    ArrayList<LocalDate> activitysDate = new ArrayList<>();
+
+
 
 
 	//*************** HENNINGS ULTRAFELT *****************//
@@ -521,6 +528,7 @@ public class CalendarController extends Connect implements Initializable{
 			System.out.println("new fetcher");
 			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
+            activitys.clear();
             for(List activity : activities){
                 //System.out.println(activity + " ACTIVITY");
 				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
@@ -602,24 +610,24 @@ public class CalendarController extends Connect implements Initializable{
 		oldActivityButtons.clear();
 
 		boolean stretch = false;
-		for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
-			Date input = cell.getStartDate();
-			LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
+		//for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
+			//Date input = cell.getStartDate();
+			//LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
 			int day = 1; //hvilken av dagslistene det skal skrives til.
 			for (LocalDate lDate : weekCalendarList) {//Går igjennom datoer denne uken.
 				for(Activity activity : activitys){
 					LocalDate dateActivity = activity.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 					if(lDate.equals(dateActivity)){
-
 						//legger til activity i week calenderen
 						activityButton event =  new activityButton(activity.getName(), activity.getDescription());
-						week.add(event.getEvent(), day, activity.getStartTime() - 7, day, activity.getEndTime()-7);
+						week.add(event.getEvent(), day, activity.getStartTime() - 7, day, activity.getEndTime() - activity.getStartTime());
 						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
+
 					}
 				}
 				day ++;
 				if(day == 8){
-					day=0;
+					day=1;
 				}
 
 
@@ -647,7 +655,7 @@ public class CalendarController extends Connect implements Initializable{
 				day++; */
 			}
 			//printWeekCells(weekLabelMappCell); //Printer herfta direkte.
-		}
+		//}
 	}
 
 

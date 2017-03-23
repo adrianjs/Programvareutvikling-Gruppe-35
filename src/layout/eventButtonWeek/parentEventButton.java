@@ -16,9 +16,10 @@ public class parentEventButton {
         event = new Button();
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
-        event.setText(name);
+        event.setText("Activity\n" +name+ "\n\nDeskription\n" + description);
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
+
 
 
     }
