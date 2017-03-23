@@ -33,7 +33,8 @@ import layout.*;
 import layout.eventButtonWeek.activityButton;
 
 public class CalendarController extends Connect implements Initializable{
-	private Date chosenDate;
+
+    private Date chosenDate;
 	private SuperSorter superSorter = new SuperSorter();
 
 	@FXML private GridPane day; //DAY PANE
@@ -44,7 +45,7 @@ public class CalendarController extends Connect implements Initializable{
 	//AI panes.
     private HamburgerBackArrowBasicTransition tran;
     @FXML private JFXDrawer drawer;
-    AnchorPane botto;
+    private AnchorPane botto;
     @FXML private JFXHamburger sliderButton; //Slide button
     AnchorPane rightside;
 
@@ -62,60 +63,50 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private Tab weekTab;
 	@FXML private Tab monthTab;
 
-
-	//Date
+    //Date
 	@FXML private JFXDatePicker date;
 
 	//To set a new scene.
-	layout.Calendar cal = new layout.Calendar();
+	private layout.Calendar cal = new layout.Calendar();
 
     // List of labels in day Tab...
-    @FXML List<Label> timeToTime = new ArrayList<>();
+    @FXML private List<Label> timeToTime = new ArrayList<>();
 
     //CountVariables
-    int teller = 0;
-    int dayClicked = 0; //Day clicked on in MonthTab
-    User user = User.getInstance();
+    private int teller = 0;
+    private int dayClicked = 0; //Day clicked on in MonthTab
+    private User user = User.getInstance();
 
+    private ArrayList<Activity> activitys = new ArrayList<>();//liste over activitys som skal inn i kalenderen
+    private ArrayList<activityButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
+    private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
-
-
-    //liste over activitys som skal inn i kalenderen
-	ArrayList<Activity> activitys = new ArrayList<>();
-	//liste over activitys som ligger i calenderen denne uken
-	ArrayList<activityButton> oldActivityButtons = new ArrayList<>();
-	//Liste over acktiitys som har blit printet inn i listen
-    ArrayList<LocalDate> activitysDate = new ArrayList<>();
-
-
-
-
-	//*************** HENNINGS ULTRAFELT *****************//
+    //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
-	List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
-	List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
+	private List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
+	private List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
-	Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
+	private Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
-	List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
-	List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
-	Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
-	Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
+	private List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
+	private List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
+	private Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
+	private Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
 
 	//****************************************************//
-    ArrayList<Label> eventLabels = new ArrayList<>(); //MonthTabEventLabels --> Used to remove text in labels in monthTab.
+    private ArrayList<Label> eventLabels = new ArrayList<>(); //MonthTabEventLabels --> Used to remove text in labels in monthTab.
 
     //Mapping used in to weekTab.
-    HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
-    Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
-    ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
+    private HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
+    private Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
+    private ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
     public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
 
     //Methods starts here.
 
-	private static CalendarController instance = null; //InstanceControl
+	private static CalendarController instance = null; //InstanceControl singelton Pattern.
 	public static CalendarController getInstance() {
 		if (instance == null) {
 			instance = new CalendarController();
@@ -125,7 +116,6 @@ public class CalendarController extends Connect implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println("Init");
 		setLines();
         setDate();
         setupDayTab();
@@ -139,22 +129,33 @@ public class CalendarController extends Connect implements Initializable{
 		}
     }
 
+    /**
+     * Set new lines to gridpanes.
+     */
 	public void setLines(){ //Set lines for day week and month.
 		day.setGridLinesVisible(true);
 		week.setGridLinesVisible(true);
 		month.setGridLinesVisible(true);
 	}
-    //On action from remove button
+
+    /**
+     * OnAction from removebutton.
+     * @throws IOException
+     * @throws SQLException
+     * @throws ParseException
+     */
 	public void remove() throws IOException, SQLException, ParseException {
         //TODO: Make remove button work
 		//TODO: Remove this superSorter-thing
 		superSorter.run();
-
-
     }
 
-    //On action from addsubject button
+    /**
+     * OnAction from addsubject-button.
+     * @throws IOException
+     */
 	public void addSubject() throws IOException {
+
 		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 		cal.changeScene("/resources/fxml/addSubject.fxml", "Add subject");
 	}
@@ -164,24 +165,20 @@ public class CalendarController extends Connect implements Initializable{
 	 * @throws Exception
 	 */
 	public void logOut() throws Exception {
-		System.out.println("LogOut");
 		Stage s = (Stage) logout.getScene().getWindow();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/username.fxml"));
 		Parent load = loader.load();
 		Scene scene = new Scene(load);
 		s.setScene(scene);
 		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
-		System.out.println("logout successful");
 	}
-    Stage stage;
-	Scene scene;
+
     /**
      * Sets the ask.fxml to the botto anchorpane
      */
-    public void setBottoField(){
+    private void setBottoField(){
         try {
-
-			botto = FXMLLoader.load(getClass().getResource("/resources/fxml/ask.fxml"));
+            botto = FXMLLoader.load(getClass().getResource("/resources/fxml/ask.fxml"));
             tran = new HamburgerBackArrowBasicTransition(sliderButton);
             tran.setRate(-1);
         } catch (Exception e) {
@@ -190,7 +187,7 @@ public class CalendarController extends Connect implements Initializable{
     }
 
 	/**
-	 * Open and close the Bot field, and set value to hamburger.
+	 * Open and close the Bot field, and set value to hamburger. OnAction from botto-Button.
 	 */
     public void slidePane(){
 		drawer.setSidePane(botto);
@@ -204,11 +201,13 @@ public class CalendarController extends Connect implements Initializable{
             askButton.setText("Close Botto");
         }
     }
-    //On action from add button
+
+    /**
+     * OnAction from addButton, opens add.fxml from Calendar.class.
+     * @throws IOException
+     */
     public void add() throws IOException {
-        //AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
         cal.changeScene("/resources/fxml/add.fxml", "ADD");
-		System.out.println("add");
     }
 
 	/**
@@ -223,7 +222,7 @@ public class CalendarController extends Connect implements Initializable{
 	 *
 	 * @param dato Takes in the localdate from the setNewDate Method.
 	 */
-	public void setNewDate2(LocalDate dato){
+	private void setNewDate2(LocalDate dato){
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
         setupDayTab();
@@ -236,7 +235,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * The new date set from datePicker adjusted to fit monthOrganizer
 	 * @param dato date from setNewDate2.
 	 */
-	public void changeDate(LocalDate dato){
+	private void changeDate(LocalDate dato){
 		String dato1 = dato.toString();
 		thisday.setText(dato1);
         String[] split = dato1.split("-");
@@ -259,7 +258,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * @param tall
 	 * @return
 	 */
-	public int removeZero(String tall){
+	private int removeZero(String tall){
         if(tall.charAt(0) == '0'){
 			return Character.getNumericValue(tall.charAt(1));
 		}
@@ -267,7 +266,11 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 	//Add labels tin day tab to list
-    public void addTimeToTimeToList(){
+
+    /**
+     * Add labels in dayTab to list.
+     */
+    private void addTimeToTimeToList(){
 		ObservableList<Node> children = day.getChildren();
 		for(Node label : children){
 			if((label.getId() != null) && (!label.getId().equals(thisday.getId()))){
@@ -284,8 +287,10 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
-    //Add labels in month tab to list..
-	public void addLabelsToList(){
+    /**
+     * Add labels in monthTab to list.
+     */
+	private void addLabelsToList(){
 		ObservableList<Node> children = month.getChildren();
 		for(Node child : children){
 			if(child.getClass().equals(AnchorPane.class)){
@@ -299,17 +304,15 @@ public class CalendarController extends Connect implements Initializable{
 
 	/**
 	 * Fix the veiw of the monthTab so the dates is on the right day in relation to wich month it is.
-	 * @param year
-	 * @param month
-	 * @param day
+	 * @param year year integer
+	 * @param month month integer
+	 * @param day day integer
 	 */
-    public void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
+    private void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
 		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
         java.util.Calendar cal1 = new GregorianCalendar(year, month, 1);
-		int dayOfMonth = cal.get(java.util.Calendar.DAY_OF_MONTH);
-		int weekOfYear = cal.get(java.util.Calendar.WEEK_OF_YEAR);
-		int weekOfMonth = cal.get(cal.WEEK_OF_MONTH);
+        int weekOfMonth = cal.get(cal.WEEK_OF_MONTH);
 		int dayOfWeek = cal.get(cal.DAY_OF_WEEK) -2;
 		if(dayOfWeek == -1){
 		    dayOfWeek = 6;
@@ -331,16 +334,18 @@ public class CalendarController extends Connect implements Initializable{
 				monthLabels.get(i).setText("");
             }
 		}
-		tall = 1;
 	}
-
 
     /**
      * Makes a list of dates in week, so every day in the chosen week has a date connected to it.(LocalDate)
-     * Then we kan put values to labels like it is done in the daytab.
-     * @param week
+     * Then we kan put values to labels like it is done in the daytab
+     * @param year year integer
+     * @param month month integer
+     * @param day day integer
+     * @param week week integer
+     * @param dayofWeek dayofweek integer
      */
-	public void weekOrganizer(int year, int month, int day, int week, int dayofWeek){
+	private void weekOrganizer(int year, int month, int day, int week, int dayofWeek){
 		LocalDate date;
 	    weekCalendarList.clear();
         date = LocalDate.of(year, month, day);
@@ -386,21 +391,14 @@ public class CalendarController extends Connect implements Initializable{
                 date = date.plusDays(1);
             }
         }
-		//System.out.println(weekCalendarList.toString() + "WEEKCALENDARLIST");
 		clearWeekTimeSlots();
         mapWeekLabelsToTimeIntervals();
+    }
 
-	}
-
-	//GetLabelSoMonthOrganizerCanChangeiy
-	public void StringGetLabel(String label){
-		System.out.println("yo");
-	}
-
-	/**
+    /**
 	 * Mappes anchorpanes in monthtab to å localdate corresponding to the right label.
 	 */
-	public void mapMonthTab(){
+	private void mapMonthTab(){
         dayMappedPane.clear();
         dateMappedMonth.clear();
         LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -412,57 +410,50 @@ public class CalendarController extends Connect implements Initializable{
                 System.out.println(date);
                 date = date.plusDays(1);
                 dateMappedMonth.put(date, monthAnchorPanes.get(i));
-
             }
         }
     }
 
     //Go to that given day when month is clicked.
-	public void monthClicked(int tall){
+
+    /**
+     * Go to the given day when month gridpane is clicked. Loads activities from this day in
+     * @param tall integer clicked.
+     */
+	private void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();
         try{
 			int dayInt = Integer.parseInt(day);
 			LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-			//System.out.println(date.toString());
 			int year = date.getYear();
 			int month = date.getMonthValue();
-			//System.out.println(dayInt +"day" + month + "month" + year + "year");
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
 			setNewDate2(date1);
 			if(day.length() != 0){
-				//WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
-				cal.changeScene("fxml/watchDay.fxml", date1.toString());
+                cal.changeScene("/resources/fxml/watchDay.fxml", date1.toString());
 			}
 		}catch(Exception e){
 			System.out.println(e);
 		}
 	}
 
-	//Set initalize date.
-	public void setDate(){
+    /**
+     * Sets the date when application starts.
+     */
+	private void setDate(){
         Date input = new Date();
         LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
-    //Is between.
-	public boolean isBetween(Date endTime, Date startTime, Date timeToCheckStart, Date timeToCheckEnd){
-        if((endTime.before(timeToCheckStart))&&(startTime.after(timeToCheckEnd))){
-			return true;
-		}
-		return false;
-	}
-
-	//GetUsercells --> Sjekke tiden på den, i tillegg til å sjekke
-    public void userCellOrganize(){
-	    //Get usercells from database..
-
-        ArrayList<Activity> activities = new ArrayList<Activity>();
-    }
 
     //Clear all timeslots dayPane.
-    public void clearTimeSlots(){
+
+    /**
+     * Clear all timeslots in dayPane
+     */
+    private void clearTimeSlots(){
 
     	for(Label label : timeToTime){
     	    label.setText("");
@@ -485,7 +476,10 @@ public class CalendarController extends Connect implements Initializable{
         }
     }
 
-    public void setupDayTab(){
+    /**
+     * Sets up the daytab.
+     */
+    private void setupDayTab(){
 		System.out.println("Setup day tab");
 		clearTimeSlots();
         addTimeToTimeToList();
@@ -499,19 +493,20 @@ public class CalendarController extends Connect implements Initializable{
         enterCells();
     }
 
+    /**
+     * Gets cells from the database
+     * @throws ParseException
+     */
     private void getCells() throws ParseException {
 	    //TODO: Get cells from database
         try {
-			System.out.println("new fetcher");
 			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             activitys.clear();
             for(List activity : activities){
                 //System.out.println(activity + " ACTIVITY");
 				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
-
-
-				//legger til alle acticity til activitys som igjen printer til calenderen.
+                //legger til alle acticity til activitys som igjen printer til calenderen.
 				Activity activityNew = new Activity(sdfm.parse((String) activity.get(2)),
 						sdfm.parse((String) activity.get(2)),
 						(String) activity.get(1),
@@ -523,8 +518,6 @@ public class CalendarController extends Connect implements Initializable{
 
 						);
 				activitys.add(activityNew);
-
-
                 //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
                 cellsAtCurrentDate.add(new Activity(
                         setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
@@ -539,7 +532,7 @@ public class CalendarController extends Connect implements Initializable{
         }
     }
 
-    public Date setHour(Date date, int hour){
+    private Date setHour(Date date, int hour){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
 		cal.setTime(date);
 		cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
@@ -552,7 +545,7 @@ public class CalendarController extends Connect implements Initializable{
 		insertMonthCells();
 	}
 
-	public void insertDayCells(){
+	private void insertDayCells(){
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){
 			System.out.println("NEW ENTRY");
@@ -577,7 +570,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 
-	public void insertWeekCells(){
+	private void insertWeekCells(){
 		System.out.println("SETTING NEW CELLS");
 
 		//for loopen sletter elementer når du skifter uke.
@@ -636,7 +629,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 
-	public void insertMonthCells(){
+	private void insertMonthCells(){
 		removeMonthActivityLabel();
 		System.out.println("Month");
 		for (calendar.Cell cell : cellsAtCurrentDate){
@@ -681,20 +674,20 @@ public class CalendarController extends Connect implements Initializable{
 	/**
 	 * Removes Removes the month activity Labels so you new ones can be set.
 	 */
-	public void removeMonthActivityLabel(){
+	private void removeMonthActivityLabel(){
 		for (Label l: eventLabels) {
 			l.setText("");
 		}
 	}
 
-    public void enterCells(){
+    private void enterCells(){
 		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
 		{
 			writeToLabel(entry.getKey(), entry.getValue());
 		}
 	}
 
-	public void writeToLabel(Label label, calendar.Cell cell){
+	private void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		System.out.println("Write to labels");
 		System.out.println(User.getInstance().getUsername());
@@ -707,7 +700,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Get all week tab cells, an add them to a hash
      */
-	public void getWeekTabCells() throws ParseException {
+	private void getWeekTabCells() throws ParseException {
         List<LocalDate> dates = weekCalendarList;
         ObservableList<Node> list = week.getChildren(); //Henter alle childs fra weekTab.
         List<Label> label1 = new ArrayList<>();
@@ -759,7 +752,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Clears All Labels in weekTab.
      */
-    public void clearWeekTimeSlots(){
+    private void clearWeekTimeSlots(){
 		for (Map.Entry<Integer, List> list : weekLabelList.entrySet()){
             for (Object label : list.getValue()) {
                 Label l = (Label) label;

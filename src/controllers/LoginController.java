@@ -63,8 +63,7 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/EO.png"))));
-                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
 
 
                 System.out.println("login successful");
@@ -74,7 +73,7 @@ public class LoginController implements Initializable {
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
-                stage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
                 System.out.println("login successful");
             }
         }else{
@@ -127,6 +126,10 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     *
+     * @return Return user
+     */
     public User getUser(){
         return this.user;
     }

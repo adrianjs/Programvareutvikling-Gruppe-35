@@ -26,7 +26,7 @@ public class Main extends Application{
         primaryStage.setTitle("Educational Organizer");
         main = new Scene(load);
         primaryStage.setScene(main);
-        primaryStage.getIcons().add(new Image((getClass().getResourceAsStream("../resources/img/EO.png"))));
+        primaryStage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
         primaryStage.show();
         //The following code centers the window
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
