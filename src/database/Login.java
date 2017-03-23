@@ -18,6 +18,11 @@ public class Login extends Connect{
     public Login() throws SQLException {
     }
 
+    /**
+     * Get all users and add it to list
+     * @return list with users
+     * @throws SQLException
+     */
     public Set getStudent() throws SQLException {
         ResultSet m_ResultSet = stmt.executeQuery(query);
         while (m_ResultSet.next()) {
@@ -31,6 +36,11 @@ public class Login extends Connect{
         return users;
     }
 
+    /**
+     * Get all course coordinators and add it to list.
+     * @return list with coursecoordinators.
+     * @throws SQLException
+     */
     public Set getCourseCoordinator() throws SQLException {
         ResultSet set = stmt.executeQuery(query1);
         while (set.next()){
@@ -38,7 +48,6 @@ public class Login extends Connect{
             user.add(set.getString(1));
             user.add(set.getString(5));
             coordinators.add(user);
-
         }
         return coordinators;
     }

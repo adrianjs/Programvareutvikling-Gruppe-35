@@ -7,9 +7,10 @@ import javafx.scene.control.Button;
  */
 public class parentEventButton {
 
-    String description;
-    String name;
-    Button event;
+    private String description;
+    private String name;
+    private Button event;
+
     public parentEventButton(String name, String description){
         this.name = name;
         this.description = description;
@@ -19,9 +20,6 @@ public class parentEventButton {
         event.setText("Activity\n" +name+ "\n\nDeskription\n" + description);
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
-
-
-
     }
 
     //returns the button that wil be shown in the calender

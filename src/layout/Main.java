@@ -18,9 +18,8 @@ import javafx.stage.Stage;
  */
 public class Main extends Application{
 
-    Stage window;
-    Scene main;
-    CalendarController cal = new CalendarController();
+    private Stage window;
+    private Scene main;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

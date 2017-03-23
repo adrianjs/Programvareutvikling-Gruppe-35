@@ -7,8 +7,5 @@ public class activityButton extends parentEventButton{
 
     public activityButton(String name, String description){
         super(name,description);
-
     }
-
-
 }

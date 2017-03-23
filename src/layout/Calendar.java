@@ -18,21 +18,14 @@ import javafx.stage.Stage;
 
 public class Calendar extends Application {
 
-	Stage stage;
-	FXMLLoader loader;
-	Parent load;
+	private Stage stage;
+	private FXMLLoader loader;
+	private Parent load;
 
-	
-	//Launch the scene. 
+	//Launch the scene.
 	@Override
 	public void start(Stage primStage) throws Exception {
-		// TODO Auto-generated method stub
 		this.stage = primStage;
-		/*Parent load = FXMLLoader.load(getClass().getResource("calendar.fxml"));
-		primStage.setTitle("Educational Organizer");
-		primStage.setScene(new Scene(load));
-		primStage.show();*/
-		
 	}
     public static void main(String[] args) {
         launch(args);
@@ -59,6 +52,11 @@ public class Calendar extends Application {
 		load = loader.load();
 	}
 
+	/**
+	 * Sets the new stage and show it.
+	 * @param load
+	 * @param name
+	 */
 	public void setStage(Parent load, String name){
 		Stage newStage = new Stage();
 		newStage.setTitle(name);
@@ -70,50 +68,4 @@ public class Calendar extends Application {
 		newStage.setX((primScreenBounds.getWidth() - newStage.getWidth()) / 2);
 		newStage.setY((primScreenBounds.getHeight() - newStage.getHeight()) / 2);
 	}
-
-//*************************RETURNS CONTROLLER TO CALENDARCONTROLLER ******* NOT IN USE ATM///
-	/*public AddActivityController changeToAdd(String fxml, String name){
-		AddActivityController add = null;
-		try {
-//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-//			Parent load = loader.load();
-			loading(fxml);
-			add = loader.getController();
-			setStage(load, name);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return add;
-
-	}
-
-	public AddSubjectController changeToAddSubject(String fxml, String name){
-		AddSubjectController addSubject = null;
-		try {
-//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-//			Parent load = loader.load();
-			loading(fxml);
-			addSubject = loader.getController();
-			setStage(load, name);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return addSubject;
-	}
-
-	public WatchDayMonthTabController changeToWatchDay(String fxml, String name){
-		WatchDayMonthTabController day = null;
-		try {
-//			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-//			Parent load = loader.load();
-			loading(fxml);
-			day = loader.getController();
-			setStage(load, name);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return day;
-	}
-*/
-
 }
