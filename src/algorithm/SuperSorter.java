@@ -209,6 +209,10 @@ public class SuperSorter extends Connect {
         return prioritizedSchedule;
     }
 
+    public Set<Cell> getScheduleWithoutCollision() {
+        return scheduleWithoutCollision;
+    }
+
     public void run() throws SQLException, ParseException {
         System.out.println("DATA COLLECT");
         dataCollect();

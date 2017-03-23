@@ -118,7 +118,14 @@ public class CalendarController extends Connect implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1) {
 		setLines();
         setDate();
-        setupDayTab();
+		try {
+			superSorter.run();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		setupDayTab();
         setBottoField(); //SlideFieldBotto
 		try {
 			getWeekTabCells();
