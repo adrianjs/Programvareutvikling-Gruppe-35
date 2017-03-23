@@ -39,6 +39,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import layout.*;
+import layout.eventButtonWeek.activityButton;
 
 public class CalendarController extends Connect implements Initializable{
 	private Date chosenDate;
@@ -89,6 +90,12 @@ public class CalendarController extends Connect implements Initializable{
     int teller = 0;
     int dayClicked = 0; //Day clicked on in MonthTab
     User user = User.getInstance();
+
+    //liste over activitys som skal inn i kalenderen
+	ArrayList<Activity> activitys = new ArrayList<>();
+	//liste over activitys som ligger i calenderen denne uken
+	ArrayList<activityButton> oldActivityButtons = new ArrayList<>();
+
 
 	//*************** HENNINGS ULTRAFELT *****************//
 	//DAY
@@ -516,7 +523,23 @@ public class CalendarController extends Connect implements Initializable{
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             for(List activity : activities){
                 //System.out.println(activity + " ACTIVITY");
-                SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
+				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
+
+
+				//legger til alle acticity til activitys som igjen printer til calenderen.
+				Activity activityNew = new Activity(sdfm.parse((String) activity.get(2)),
+						sdfm.parse((String) activity.get(2)),
+						(String) activity.get(1),
+						(String) activity.get(8),
+						Integer.parseInt((String) activity.get(6)),
+						((String) activity.get(3)).equals("1"),
+						Integer.parseInt((String) activity.get(4)),
+						Integer.parseInt((String) activity.get(5))
+
+						);
+				activitys.add(activityNew);
+
+
                 //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
                 cellsAtCurrentDate.add(new Activity(
                         setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
@@ -567,15 +590,40 @@ public class CalendarController extends Connect implements Initializable{
 			}
 		}
 	}
+
+
 	public void insertWeekCells(){
 		System.out.println("SETTING NEW CELLS");
-		weekLabelMappCell.clear();
+
+		//for loopen sletter elementer når du skifter uke.
+		for(activityButton ab : oldActivityButtons){
+			week.getChildren().remove(ab.getEvent());
+		}
+		oldActivityButtons.clear();
+
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){ //Går igjennom alle cells for denne USER
 			Date input = cell.getStartDate();
 			LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
-			int day = 0; //hvilken av dagslistene det skal skrives til.
-			for (LocalDate lDate : weekCalendarList) { //Går igjennom datoer denne uken.
+			int day = 1; //hvilken av dagslistene det skal skrives til.
+			for (LocalDate lDate : weekCalendarList) {//Går igjennom datoer denne uken.
+				for(Activity activity : activitys){
+					LocalDate dateActivity = activity.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+					if(lDate.equals(dateActivity)){
+
+						//legger til activity i week calenderen
+						activityButton event =  new activityButton(activity.getName(), activity.getDescription());
+						week.add(event.getEvent(), day, activity.getStartTime() - 7, day, activity.getEndTime()-7);
+						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
+					}
+				}
+				day ++;
+				if(day == 8){
+					day=0;
+				}
+
+
+				/*
 				if(date.equals(lDate)){ //Om en av cellene matcher med en av datoene i weekCalendarlist.
 					for (Map.Entry<LocalDate, HashMap<TimeInterval, Label>> list: weekDateLinkedToDay.entrySet()) { //Går igjennom For å finne en av datoene som matcher nøkkel
 						// for så å gå i gjennom verdiene i den hashmappen som er linket til nøkkel.
@@ -596,9 +644,9 @@ public class CalendarController extends Connect implements Initializable{
 						}
 					}
                 }
-				day++;
+				day++; */
 			}
-			printWeekCells(weekLabelMappCell); //Printer herfta direkte.
+			//printWeekCells(weekLabelMappCell); //Printer herfta direkte.
 		}
 	}
 

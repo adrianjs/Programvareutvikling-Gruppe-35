@@ -15,6 +15,7 @@ public class parentEventButton {
         this.description = description;
         event = new Button();
         event.setId("eventButton");
+        event.wrapTextProperty().setValue(true);
         event.setText(name);
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
@@ -30,6 +31,7 @@ public class parentEventButton {
     public String getName() {return name;}
 
     public String getDescription() {return description;}
+
 
 
 
