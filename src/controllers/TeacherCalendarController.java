@@ -20,21 +20,21 @@ import java.util.ResourceBundle;
  */
 public class TeacherCalendarController implements Initializable{
 
-    @FXML JFXButton addEvent;
-    @FXML JFXButton addStudass;
-    @FXML JFXButton logOut;
-    @FXML JFXDrawer drawer;
-    @FXML JFXDrawer drawer2;
-    @FXML AnchorPane barPane;
-
-    AnchorPane add;
-    AnchorPane studassAdd;
+    @FXML private JFXButton addEvent;
+    @FXML private JFXButton addStudass;
+    @FXML private JFXButton logOut;
+    @FXML private JFXDrawer drawer;
+    @FXML private JFXDrawer drawer2;
+    @FXML private AnchorPane barPane;
+    private AnchorPane add;
+    private AnchorPane studassAdd;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setAddField();
     }
 
+    //SingeltonPattern
     private static TeacherCalendarController instance = null; //InstanceControl
     public static TeacherCalendarController getInstance() {
         if (instance == null) {
@@ -47,7 +47,6 @@ public class TeacherCalendarController implements Initializable{
      * Onaction from addActivity button.
      */
     public void addEvent() {
-        System.out.println("Add event");
         //Slides the Botto field for bigger table layout
         addPane(1);
     }
@@ -55,7 +54,7 @@ public class TeacherCalendarController implements Initializable{
     /**
      * Set fxml documents to JFXdrawers.
      */
-    public void setAddField(){
+    private void setAddField(){
         try {
             add = FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml"));
             studassAdd = FXMLLoader.load(getClass().getResource("/resources/fxml/addStudass.fxml"));
@@ -68,7 +67,7 @@ public class TeacherCalendarController implements Initializable{
      * Open and closes drawers(Fxml documtents).
      * @param number get number from on buttons onaction methods
      */
-    public void addPane(int number){
+    private void addPane(int number){
         if(number == 1){
             drawer2.close();
             drawer.setSidePane(add);
@@ -114,6 +113,10 @@ public class TeacherCalendarController implements Initializable{
         addPane(2);
     }
 
+    /**
+     * Logout loads the loginscreen
+     * @throws IOException
+     */
     public void logOut() throws IOException {
         System.out.println("LogOut");
         Stage s = (Stage) logOut.getScene().getWindow();
@@ -121,6 +124,5 @@ public class TeacherCalendarController implements Initializable{
         Parent load = loader.load();
         Scene scene = new Scene(load);
         s.setScene(scene);
-        System.out.println("logout successful");
     }
 }
