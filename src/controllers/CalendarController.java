@@ -45,43 +45,38 @@ public class CalendarController extends Connect implements Initializable{
 	private Date chosenDate;
 	private SuperSorter superSorter = new SuperSorter();
 
-	@FXML GridPane day; //DAY PANE
-	@FXML GridPane week; //WEEK PANE
-	@FXML GridPane month; //MONTH PANE
-	@FXML AnchorPane dayAnchor; //Anchorpane day
+	@FXML private GridPane day; //DAY PANE
+	@FXML private GridPane week; //WEEK PANE
+	@FXML private GridPane month; //MONTH PANE
+	@FXML private AnchorPane dayAnchor; //Anchorpane day
 
 	//AI panes.
-    HamburgerBackArrowBasicTransition tran;
+    private HamburgerBackArrowBasicTransition tran;
     @FXML private JFXDrawer drawer;
     AnchorPane botto;
-    @FXML JFXHamburger sliderButton; //Slide button
+    @FXML private JFXHamburger sliderButton; //Slide button
     AnchorPane rightside;
 
-    @FXML JFXButton askButton;
-	@FXML JFXButton logout;
-	@FXML JFXButton remove;
+    @FXML private JFXButton askButton;
+	@FXML private JFXButton logout;
+	@FXML private JFXButton remove;
 
 	//Labels for Day pane.
-	@FXML Label thisday;
+	@FXML private Label thisday;
 
 	//Labels week-Pane
 
 	//Tabs
-	@FXML Tab dayTab;
-	@FXML Tab weekTab;
-	@FXML Tab monthTab;
+	@FXML private Tab dayTab;
+	@FXML private Tab weekTab;
+	@FXML private Tab monthTab;
 
 
 	//Date
-	@FXML JFXDatePicker date;
+	@FXML private JFXDatePicker date;
 
 	//To set a new scene.
 	layout.Calendar cal = new layout.Calendar();
-
-	//List to add the month labels.
-
-
-	//Counter to only add the labels to the labels list once.
 
     // List of labels in day Tab...
     @FXML List<Label> timeToTime = new ArrayList<>();
@@ -166,17 +161,9 @@ public class CalendarController extends Connect implements Initializable{
     }
 
     //On action from addsubject button
-	public void addSubject(){
-		AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
-	}
-    //On action form IL --> Currenly no IL button on fxml-file
-	public void IL(){ //Button does not exist atm.
-		System.out.println("IL");
-	}
-	
-	//ON action from BB --> Currently no BB butto on fxml-file.
-	public void BB(){//Button does not exist atm.
-        System.out.println("BB");
+	public void addSubject() throws IOException {
+		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
+		cal.changeScene("../resources/addSubject.fxml", "Add subject");
 	}
 
 	/**
@@ -193,16 +180,18 @@ public class CalendarController extends Connect implements Initializable{
 		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
 		System.out.println("logout successful");
 	}
-
+    Stage stage;
+	Scene scene;
     /**
      * Sets the ask.fxml to the botto anchorpane
      */
     public void setBottoField(){
         try {
-            botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
+
+			botto = FXMLLoader.load(getClass().getResource("../resources/ask.fxml"));
             tran = new HamburgerBackArrowBasicTransition(sliderButton);
             tran.setRate(-1);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -211,7 +200,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * Open and close the Bot field, and set value to hamburger.
 	 */
     public void slidePane(){
-        drawer.setSidePane(botto);
+		drawer.setSidePane(botto);
         tran.setRate(tran.getRate()*-1);
         tran.play();
         if(drawer.isShown()){
@@ -223,9 +212,10 @@ public class CalendarController extends Connect implements Initializable{
         }
     }
     //On action from add button
-    public void add(){
-        AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
-        System.out.println("add");
+    public void add() throws IOException {
+        //AddActivityController a = cal.changeToAdd("../resources/add.fxml", "ADD"); //Get the instance of the add controller.
+        cal.changeScene("../resources/add.fxml", "ADD");
+		System.out.println("add");
     }
 
 	/**
@@ -448,7 +438,8 @@ public class CalendarController extends Connect implements Initializable{
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
 			setNewDate2(date1);
 			if(day.length() != 0){
-				WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
+				//WatchDayMonthTabController dayVeiw = cal.changeToWatchDay("../resources/watchDay.fxml", date1.toString());
+				cal.changeScene("../resources/watchDay.fxml", date1.toString());
 			}
 		}catch(Exception e){
 			System.out.println(e);

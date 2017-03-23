@@ -24,9 +24,9 @@
          <top>
             <AnchorPane prefHeight="107.0" prefWidth="854.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton id="teacherButtons" fx:id="addEvent" layoutX="97.0" layoutY="14.0" onAction="#addEvent" prefHeight="80.0" prefWidth="170.0" stylesheets="@buttonStyle.css" text="Add Event" />
-                  <JFXButton id="teacherButtons" fx:id="addStudass" layoutX="342.0" layoutY="14.0" onAction="#addStudass" prefHeight="80.0" prefWidth="170.0" stylesheets="@buttonStyle.css" text="Add Studass" />
-                  <JFXButton id="teacherButtons" fx:id="logOut" layoutX="589.0" layoutY="14.0" onAction="#logOut" prefHeight="80.0" prefWidth="170.0" stylesheets="@buttonStyle.css" text="Log out" />
+                  <JFXButton id="teacherButtons" fx:id="addEvent" layoutX="14.0" layoutY="14.0" onAction="#addEvent" prefHeight="80.0" prefWidth="270.0" stylesheets="@buttonStyle.css" text="Add Event" />
+                  <JFXButton id="teacherButtons" fx:id="addStudass" layoutX="292.0" layoutY="14.0" onAction="#addStudass" prefHeight="80.0" prefWidth="270.0" stylesheets="@buttonStyle.css" text="Add Studass" />
+                  <JFXButton id="teacherButtons" fx:id="logOut" layoutX="571.0" layoutY="14.0" onAction="#logOut" prefHeight="80.0" prefWidth="269.0" stylesheets="@buttonStyle.css" text="Log out" />
                </children>
             </AnchorPane>
          </top>

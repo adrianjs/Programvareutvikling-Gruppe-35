@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebEngine;
@@ -31,6 +32,7 @@ public class AskBotController implements Initializable{
     public void setWebView(){
         System.out.println("SETUP WEBVIEW");
         WebEngine engine = webView.getEngine();
-        engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/index.html");
+        engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/botto.html");
+        System.out.println(engine.getUserAgent() + "UserAgent");
     }
 }
