@@ -42,9 +42,11 @@ public class SuperSorter extends Connect {
         for (String subject : user.getSubjects()) {
             subjectArrayString += "'" + subject + "',";
         }
-        subjectArrayString = subjectArrayString.substring(0, subjectArrayString.length()-1);
-        collectSubjects(subjectArrayString);
-        collectEvents(subjectArrayString);
+        if(!subjectArrayString.equals("")){
+            subjectArrayString = subjectArrayString.substring(0, subjectArrayString.length()-1);
+            collectSubjects(subjectArrayString);
+            collectEvents(subjectArrayString);
+        }
         collectActivities();
         prioritizedSchedule.addAll(events);
         prioritizedSchedule.addAll(activities);
