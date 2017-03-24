@@ -16,10 +16,13 @@ public class Cell {
 
     private Date startDate = new Date(); //Also used to set start time
     private Date endDate = new Date();//Also used to set end time
+    private String startTime;
+    private String endTime;
     private String name;
     private String description;
     private int slotPriority;
     private boolean repeating;
+    private String type;
 
     /**
      * Construct a single Cell. This super class will never be instantiated, but it can be.
@@ -31,9 +34,11 @@ public class Cell {
      * @param slotPriority
      * @param repeating
      */
-    public Cell(Date startDate, Date endDate, String name, String description, int slotPriority, boolean repeating) {
+    public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating) {
         this.startDate = startDate;
         this.endDate = endDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.name = name;
         this.description = description;
         this.slotPriority = slotPriority;
@@ -86,5 +91,29 @@ public class Cell {
 
     public void setRepeating(boolean repeating) {
         this.repeating = repeating;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

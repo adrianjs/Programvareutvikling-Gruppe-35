@@ -15,9 +15,9 @@ public class EventTest {
     @Before
     public void setUp() throws Exception {
         //Setting up a fake event that will be altered.
-        this.event = new Event("TEST", new Date(), new Date(),
-                "11", "12", 0, 20,
-                "Test description", 3, "TDT4100");
+        this.event = new Event(new Date(), new Date(),
+                "11", "12","TEST", "Test description", 20,
+                false, 3, "TDT4100");
     }
 
     @Test
@@ -60,18 +60,18 @@ public class EventTest {
 
     @Test
     public void setRepeating() throws Exception {
-        int origRepeat = this.event.getRepeating();
-        this.event.setRepeating(1);
-        assertEquals(1, this.event.getRepeating());
-        assertNotEquals(origRepeat, this.event.getRepeating());
+        boolean origRepeat = this.event.isRepeating();
+        this.event.setRepeating(true);
+        assertEquals(true, this.event.isRepeating());
+        assertNotEquals(origRepeat, this.event.isRepeating());
     }
 
     @Test
     public void setPriority() throws Exception {
-        int origPrio = this.event.getPriority();
-        this.event.setPriority(50);
-        assertEquals(50, this.event.getPriority());
-        assertNotEquals(origPrio, this.event.getPriority());
+        int origPrio = this.event.getSlotPriority();
+        this.event.setSlotPriority(50);
+        assertEquals(50, this.event.getSlotPriority());
+        assertNotEquals(origPrio, this.event.getSlotPriority());
     }
 
     @Test

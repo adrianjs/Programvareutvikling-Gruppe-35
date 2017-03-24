@@ -78,12 +78,17 @@ public class Teacher extends Connect{
                            String description, String subjectCode){
         try {
             //Converting to sql values
-            Time startTimeSql = Time.valueOf(startTime);
-            Time endTimeSql = Time.valueOf(endTime);
+//            Time startTimeSql = Time.valueOf(startTime);
+//            Time endTimeSql = Time.valueOf(endTime);
+            Integer startTimeSql = Integer.valueOf(startTime.substring(0, 2));
+            Integer endTimeSql = Integer.valueOf(endTime.substring(0, 2));
+            if(!endTime.substring(2).equals(":00:00")){
+                endTimeSql++;
+            }
             Date sqlStartDate = Date.valueOf(startDate);
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+startTimeSql+"'," +
+            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    " description, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
                     "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"')");
         } catch (SQLException se){
             se.printStackTrace();

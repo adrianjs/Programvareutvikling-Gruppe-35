@@ -1,5 +1,6 @@
 package layout.eventButtonWeek;
 
+import calendar.Cell;
 import javafx.scene.control.Button;
 
 /**
@@ -7,17 +8,15 @@ import javafx.scene.control.Button;
  */
 public class parentEventButton {
 
-    private String description;
-    private String name;
     private Button event;
+    private Cell cell;
 
-    public parentEventButton(String name, String description){
-        this.name = name;
-        this.description = description;
+    public parentEventButton( Cell cell){
+        this.cell = cell;
         event = new Button();
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
-        event.setText("Activity\n" +name+ "\n\nDeskription\n" + description);
+        event.setText(cell.getType() +"\n" + cell.getName() + "\n\n" + cell.getDescription());
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
     }
@@ -27,19 +26,7 @@ public class parentEventButton {
         return event;
     }
 
-    public String getName() {return name;}
-
-    public String getDescription() {return description;}
-
-
-
-
-
-
-
-
-
-
-
-
+    public Cell getCell() {
+        return cell;
+    }
 }

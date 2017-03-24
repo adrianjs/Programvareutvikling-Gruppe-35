@@ -77,7 +77,7 @@ public class CalendarController extends Connect implements Initializable{
     private int dayClicked = 0; //Day clicked on in MonthTab
     private User user = User.getInstance();
 
-    private ArrayList<Activity> activitys = new ArrayList<>();//liste over activitys som skal inn i kalenderen
+    private ArrayList<Cell> activitys = new ArrayList<>();//liste over activitys som skal inn i kalenderen
     private ArrayList<activityButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
@@ -510,30 +510,32 @@ public class CalendarController extends Connect implements Initializable{
 			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
             Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
             activitys.clear();
-            for(List activity : activities){
-                //System.out.println(activity + " ACTIVITY");
-				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
-                //legger til alle acticity til activitys som igjen printer til calenderen.
-				Activity activityNew = new Activity(sdfm.parse((String) activity.get(2)),
-						sdfm.parse((String) activity.get(2)),
-						(String) activity.get(1),
-						(String) activity.get(8),
-						Integer.parseInt((String) activity.get(6)),
-						((String) activity.get(3)).equals("1"),
-						Integer.parseInt((String) activity.get(4)),
-						Integer.parseInt((String) activity.get(5))
-
-						);
-				activitys.add(activityNew);
-                //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
-                cellsAtCurrentDate.add(new Activity(
-                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
-                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(5))),
-                        (String) activity.get(1),
-                        (String) activity.get(8),
-                        Integer.parseInt((String) activity.get(6)),
-                        Boolean.parseBoolean((String) activity.get(3))));
-            }
+			activitys.addAll(superSorter.getScheduleWithoutCollision());
+			cellsAtCurrentDate.addAll(superSorter.getScheduleWithoutCollision());
+//            for(List activity : activities){
+//                //System.out.println(activity + " ACTIVITY");
+//				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
+//                //legger til alle acticity til activitys som igjen printer til calenderen.
+//				Activity activityNew = new Activity(sdfm.parse((String) activity.get(2)),
+//						sdfm.parse((String) activity.get(2)),
+//						(String) activity.get(1),
+//						(String) activity.get(8),
+//						Integer.parseInt((String) activity.get(6)),
+//						((String) activity.get(3)).equals("1"),
+//						Integer.parseInt((String) activity.get(4)),
+//						Integer.parseInt((String) activity.get(5))
+//
+//						);
+//				activitys.add(activityNew);
+//                //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
+//                cellsAtCurrentDate.add(new Activity(
+//                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
+//                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(5))),
+//                        (String) activity.get(1),
+//                        (String) activity.get(8),
+//                        Integer.parseInt((String) activity.get(6)),
+//                        Boolean.parseBoolean((String) activity.get(3))));
+//            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -555,7 +557,7 @@ public class CalendarController extends Connect implements Initializable{
 	private void insertDayCells(){
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){
-			System.out.println("NEW ENTRY");
+//			System.out.println("NEW ENTRY");
 			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
 			{
 				if(stretch){
@@ -592,12 +594,12 @@ public class CalendarController extends Connect implements Initializable{
 			//LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //CELL opererer med dateObjekter --> Må gjøres om til localdate
 			int day = 1; //hvilken av dagslistene det skal skrives til.
 			for (LocalDate lDate : weekCalendarList) {//Går igjennom datoer denne uken.
-				for(Activity activity : activitys){
-					LocalDate dateActivity = activity.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+				for(Cell activity : activitys){
+					LocalDate dateActivity = (new Date(activity.getStartDate().getTime())).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 					if(lDate.equals(dateActivity)){
 						//legger til activity i week calenderen
-						activityButton event =  new activityButton(activity.getName(), activity.getDescription());
-						week.add(event.getEvent(), day, activity.getStartTime() - 7, 1, activity.getEndTime() - activity.getStartTime());
+						activityButton event =  new activityButton(activity.getName(), activity.getDescription(), activity);
+						week.add(event.getEvent(), day, Integer.valueOf(activity.getStartTime()) - 7, 1, Integer.valueOf(activity.getEndTime()) - Integer.valueOf(activity.getStartTime()));
 						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
 
 					}
@@ -640,13 +642,13 @@ public class CalendarController extends Connect implements Initializable{
 		removeMonthActivityLabel();
 		System.out.println("Month");
 		for (calendar.Cell cell : cellsAtCurrentDate){
-			Date startDate = cell.getStartDate();
+			Date startDate = new Date(cell.getStartDate().getTime());
 			LocalDate date = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
 					Label lab = new Label();
-					lab.setText(" " + '\n' +  " Event/Activity");
+					lab.setText(" " + '\n' + cell.getType());
 					lab.setStyle("-fx-text-fill: green;");
 					entry.getValue().getChildren().addAll(lab);
 					eventLabels.add(lab);
@@ -696,10 +698,10 @@ public class CalendarController extends Connect implements Initializable{
 
 	private void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
-		System.out.println("Write to labels");
-		System.out.println(User.getInstance().getUsername());
+//		System.out.println("Write to labels");
+//		System.out.println(User.getInstance().getUsername());
 		label.setText(cell.getName());
-		System.out.println(cell.getName());
+//		System.out.println(cell.getName());
 	}
 
 

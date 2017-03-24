@@ -28,7 +28,6 @@ public class SuperSorter extends Connect {
     private Set<Cell> activities = new HashSet<>();
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
     private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
-    private Month chosenMonth;
 
     public void dataCollect() throws SQLException, ParseException {
         //TODO: Fix so that you don't call DB unnecessary many times
@@ -74,14 +73,14 @@ public class SuperSorter extends Connect {
             cal.add(Calendar.MONTH, -1);
             if(new Date(m_result_set.getDate(3).getTime()).after((cal.getTime()))){
                 events.add(new Event(
-                        m_result_set.getString(2),
                         m_result_set.getDate(3),
                         m_result_set.getDate(4),
                         m_result_set.getString(5),
                         m_result_set.getString(6),
-                        m_result_set.getInt(7),
-                        m_result_set.getInt(8),
+                        m_result_set.getString(2),
                         m_result_set.getString(9),
+                        m_result_set.getInt(8),
+                        m_result_set.getBoolean(7),
                         m_result_set.getInt(10),
                         m_result_set.getString(11)
                 ));
@@ -105,6 +104,8 @@ public class SuperSorter extends Connect {
                 activities.add(new Activity(
                         startDate,
                         endDate,
+                        String.valueOf(m_result_set.getInt(5)),
+                        String.valueOf(m_result_set.getInt(6)),
                         m_result_set.getString(2),
                         m_result_set.getString(9),
                         m_result_set.getInt(7),
@@ -113,51 +114,6 @@ public class SuperSorter extends Connect {
             }
         }
     }
-
-
-
-    //TODO: DO WE NEED THIS?
-//    public void addToTimeSlots(){
-//        addToMonth();
-//    }
-
-//    public Day addToDay(){
-//
-//        return null;
-//    }
-//
-//    public Week addToWeek(int month, Calendar cal, int weekStart){
-//
-//        cal.set(Calendar.DAY_OF_MONTH, 1);
-//        cal.set(Calendar.HOUR_OF_DAY, 0);
-//        cal.set(Calendar.MINUTE, 0);
-//        cal.set(Calendar.SECOND, 0);
-//
-//        System.out.println(cal.getTime());
-//
-//        for(int i=0;i<daysInMonth;i++){
-//            Day day = addToDay();
-//        }
-//
-//        System.out.println(daysInMonth);
-//        return week;
-//    }
-//
-//    public void addToMonth(){
-//
-////        Date chosenDate = CalendarController.getInstance().getChosenDate();
-//        Date chosenDate = new Date();
-//        Calendar cal = Calendar.getInstance();
-//        cal.setTime(chosenDate);
-//        int month = cal.MONTH;  //0 indexed, ie january = 0
-//        chosenMonth = new Month(month, new LinkedHashSet<>());
-//        int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-//        //There are 4 weeks in a month
-//        for(int i=0;i<4;i++){
-//            Week week = addToWeek(month, cal, i*);
-//            chosenMonth.addWeekToWeeksInMonth(week);
-//        }
-//    }
 
     public Set<Cell> prioritySort(Set<Cell> set){
         //DONE: Sort on priority

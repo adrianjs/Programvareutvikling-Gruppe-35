@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  * Created by Henning on 02.03.2017.
  */
 public class ActivityTest {
-    Activity cell = new Activity(new Date(), new Date(), "Svømming", "Skal svømme med Lars.", 5, false);
+    Activity cell = new Activity(new Date(), new Date(), "12", "14","Svømming", "Skal svømme med Lars.", 5, false);
     @Test
     public void getStartDate() throws Exception {
         //Tests if it's the same classes.

@@ -95,7 +95,7 @@ public class AddActivityController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
         //Descriptionfield not made in add.fxml yet..
-        Activity activity = new Activity(dateStart, dateEnd, act, "Description/more details", priorityNumber, repeat);
+        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat);
         return activity;
     }
 
