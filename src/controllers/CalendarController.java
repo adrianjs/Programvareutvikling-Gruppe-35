@@ -597,7 +597,7 @@ public class CalendarController extends Connect implements Initializable{
 					if(lDate.equals(dateActivity)){
 						//legger til activity i week calenderen
 						activityButton event =  new activityButton(activity.getName(), activity.getDescription());
-						week.add(event.getEvent(), day, activity.getStartTime() - 7, day, activity.getEndTime() - activity.getStartTime());
+						week.add(event.getEvent(), day, activity.getStartTime() - 7, 1, activity.getEndTime() - activity.getStartTime());
 						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
 
 					}
