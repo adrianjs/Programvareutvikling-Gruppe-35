@@ -6,10 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/fxml/weekMoreInfo.fxml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" afterPath="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -1062,7 +1059,7 @@
       <workItem from="1489694676415" duration="1669000" />
       <workItem from="1490173393872" duration="17906000" />
       <workItem from="1490260310487" duration="24041000" />
-      <workItem from="1490688678574" duration="2692000" />
+      <workItem from="1490688678574" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1211,11 +1208,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490450765039</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="nå kan du tryke på vents å få opp mer info">
+      <created>1490691427494</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1490691427494</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127739000" />
+    <option name="totallyTimeSpent" value="127777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1298,7 +1302,8 @@
     <MESSAGE value="fikset en bug" />
     <MESSAGE value="oppdatere slik eg kan laste ned nyeste versjon" />
     <MESSAGE value="nå er den en liste som pusher events og activitys  ut i calenderen" />
-    <option name="LAST_COMMIT_MESSAGE" value="nå er den en liste som pusher events og activitys  ut i calenderen" />
+    <MESSAGE value="nå kan du tryke på vents å få opp mer info" />
+    <option name="LAST_COMMIT_MESSAGE" value="nå kan du tryke på vents å få opp mer info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
