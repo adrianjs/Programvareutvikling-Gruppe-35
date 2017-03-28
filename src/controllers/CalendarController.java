@@ -526,16 +526,6 @@ public class CalendarController extends Connect implements Initializable{
 						((String) activity.get(3)).equals("1")
 						);
 				cells.add(activityNew);
-                //TODO: This should not be put in cellsAtCurrentDate, but for test purposes it stays
-                /*
-                cellsAtCurrentDate.add(new Activity(
-                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(4))),
-                        setHour(sdfm.parse((String) activity.get(2)), Integer.parseInt((String) activity.get(5))),
-                        (String) activity.get(1),
-                        (String) activity.get(8),
-                        Integer.parseInt((String) activity.get(6)),
-                        Boolean.parseBoolean((String) activity.get(3))));
-            */
             }
 
         } catch (SQLException e) {
@@ -591,13 +581,16 @@ public class CalendarController extends Connect implements Initializable{
 
 			int day = 1; //hvilken av dagslistene det skal skrives til.
 			for (LocalDate lDate : weekCalendarList) {//Går igjennom datoer denne uken.
-				for(Cell cell : cells){
+
+                for(Cell cell : cells){
 					LocalDate dateActivity = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 					if(lDate.equals(dateActivity)){
-						//legger til activity i week calenderen
+
+					    //legger til activity i week calenderen
 						activityButton event =  new activityButton(cell.getName(), cell.getDescription());
 						week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
                                 1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+/*
 						//vis du tryker på et event kommer mer info opp:
 						event.getEvent().setOnAction( e -> {
 						    try {
@@ -613,7 +606,7 @@ public class CalendarController extends Connect implements Initializable{
                             }
 
 
-                        });
+                        });*/
 						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
 
 					}
