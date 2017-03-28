@@ -78,12 +78,12 @@
 }
 
 #eventButton{
-	-fx-background-color: #ffffff;
 	-fx-border-color: #000000;
 	-fx-font-size: 14px;
 	-fx-alignment: top-left;
 	-fx-background-insets: 0,1,1;
 	-fx-text-fill: black;
+	-fx-opacity: 0.9;
 	/*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 ); kan style kantene?*/
 }
 
