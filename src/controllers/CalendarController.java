@@ -30,7 +30,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import layout.*;
-import layout.eventButtonWeek.activityButton;
+import layout.eventButton;
 
 public class CalendarController extends Connect implements Initializable{
 
@@ -80,7 +80,7 @@ public class CalendarController extends Connect implements Initializable{
 
     //------------------------Lister som brukes til å printe ut til weeks.
     private ArrayList<Cell> cells = new ArrayList<>();//liste over activitys som skal inn i kalenderen
-    private ArrayList<activityButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
+    private ArrayList<eventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
     //*************** HENNINGS ULTRAFELT *****************//
@@ -574,7 +574,7 @@ public class CalendarController extends Connect implements Initializable{
 	private void insertWeekCells(){
 		System.out.println("SETTING NEW CELLS");
 
-		for(activityButton ab : oldActivityButtons){
+		for(eventButton ab : oldActivityButtons){
 			week.getChildren().remove(ab.getEvent());
 		}
 		oldActivityButtons.clear();
@@ -587,27 +587,12 @@ public class CalendarController extends Connect implements Initializable{
 					if(lDate.equals(dateActivity)){
 
 					    //legger til activity i week calenderen
-						activityButton event =  new activityButton(cell.getName(), cell.getDescription());
+						eventButton event =  new eventButton(cell.getName(), cell.getDescription());
 						week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
                                 1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
-/*
-						//vis du tryker på et event kommer mer info opp:
-						event.getEvent().setOnAction( e -> {
-						    try {
-						        //TODO når du tyker kommer opp nytt fxml vindu
-						        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("resources/fxml/weekMoreInfo.fxml"));
-						        Stage stage = new Stage();
-						        stage.setTitle(event.getName());
-						        stage.setScene(new Scene(root, 450, 450));
-						        stage.show();
 
-                            } catch( IOException se){
-						        se.printStackTrace();
-                            }
-
-
-                        });*/
-						oldActivityButtons.add(event); //legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
+						//legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
+						oldActivityButtons.add(event);
 
 					}
 				}
@@ -615,11 +600,7 @@ public class CalendarController extends Connect implements Initializable{
 				if(day == 8){
 					day=1;
 				}
-
-
-
 			}
-
 	}
 
 

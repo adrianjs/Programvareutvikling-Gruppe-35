@@ -1,4 +1,4 @@
-package layout.eventButtonWeek;
+package layout;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -14,13 +14,13 @@ import java.io.IOException;
 /**
  * Created by torresrl on 22/03/2017.
  */
-public class parentEventButton {
+public class eventButton {
 
     private String description;
     private String name;
     private Button event;
 
-    public parentEventButton(String name, String description){
+    public eventButton(String name, String description){
         this.name = name;
         this.description = description;
         event = new Button();
