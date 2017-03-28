@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.GregorianCalendar;
 
 import algorithm.Activity;
+import algorithm.Event;
 import algorithm.SuperSorter;
 import calendar.*;
 import calendar.Cell;
@@ -507,30 +508,10 @@ public class CalendarController extends Connect implements Initializable{
      * @throws ParseException
      */
     private void getCells() throws ParseException {
-	    //TODO: Get cells from database
-        try {
-			Fetcher fetch = new Fetcher("SELECT * FROM ACTIVITY");
-            Set<List> activities = fetch.getUserRelatedResults(10); //If 9 columns, input 10 (#columns + 1)
-            cells.clear();
-            for(List activity : activities){
-                //System.out.println(activity + " ACTIVITY");
-				SimpleDateFormat sdfm = new SimpleDateFormat("yyyy-MM-dd");
-                //legger til alle acticity til activitys som igjen printer til calenderen.
-				Activity activityNew = new Activity(sdfm.parse((String) activity.get(2)),
-						sdfm.parse((String) activity.get(2)),
-						(String) activity.get(4),
-						(String) activity.get(5),
-                        (String) activity.get(1),
-                        (String) activity.get(8),
-						Integer.parseInt((String) activity.get(6)),
-						((String) activity.get(3)).equals("1")
-						);
-				cells.add(activityNew);
-            }
+	    //TODO: endre liste når supersort er ferdig
+            cells = new ArrayList<>(superSorter.getPrioritizedSchedule());
+			cellsAtCurrentDate = new ArrayList<>(superSorter.getPrioritizedSchedule());
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     private Date setHour(Date date, int hour){
@@ -583,13 +564,26 @@ public class CalendarController extends Connect implements Initializable{
 			for (LocalDate lDate : weekCalendarList) {//Går igjennom datoer denne uken.
 
                 for(Cell cell : cells){
-					LocalDate dateActivity = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-					if(lDate.equals(dateActivity)){
+					LocalDate dateActivity;
+                	if(cell.getStartDate().getClass() == java.sql.Date.class){
+						dateActivity = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
+					} else {
+						dateActivity = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+					}
+					if(lDate.equals(dateActivity)){
 					    //legger til activity i week calenderen
-						eventButton event =  new eventButton(cell.getName(), cell.getDescription());
-						week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
-                                1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+						eventButton event;
+						if(cell.getClass() == Activity.class) {
+							event = new eventButton(cell.getName(), cell.getDescription());
+							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
+									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+						} else {
+							Event eventCell = (Event) cell;
+							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode());
+							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
+									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+						}
 
 						//legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
 						oldActivityButtons.add(event);
@@ -608,8 +602,14 @@ public class CalendarController extends Connect implements Initializable{
 		removeMonthActivityLabel();
 		System.out.println("Month");
 		for (calendar.Cell cell : cellsAtCurrentDate){
-			Date startDate = cell.getStartDate();
-			LocalDate date = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+			LocalDate date;
+			if(cell.getStartDate().getClass() == java.sql.Date.class){
+				date = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+			} else {
+				date = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+			}
+
 			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
