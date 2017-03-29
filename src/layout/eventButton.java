@@ -147,7 +147,7 @@ public class eventButton {
     public String getDescription() {return description;}
 
     private String ranColor(){
-        String [] colors = {"00F000","FF0000","00FF00","0000FF","FFFF00","00FFFF","FF00FF","C0C0C0"};
+        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
         int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
         return colors[randomNum];
     }
