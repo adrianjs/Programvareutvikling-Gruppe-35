@@ -31,6 +31,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import layout.*;
+//import layout.eventButtonWeek.activityButton;
+import scraping.GetAllSubjectsNTNU;
+import scraping.SileniumDriver;
 import layout.eventButton;
 
 public class CalendarController extends Connect implements Initializable{
@@ -154,10 +157,12 @@ public class CalendarController extends Connect implements Initializable{
      * @throws SQLException
      * @throws ParseException
      */
-	public void remove() throws IOException, SQLException, ParseException {
+	public void remove() throws IOException, SQLException, ParseException, InterruptedException {
         //TODO: Make remove button work
 		//TODO: Remove this superSorter-thing
-		superSorter.run();
+		//superSorter.run();
+
+		//sc.setFirstDateOfDay(1);
     }
 
     /**
