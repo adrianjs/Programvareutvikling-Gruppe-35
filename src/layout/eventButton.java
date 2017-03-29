@@ -4,10 +4,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -46,24 +49,31 @@ public class eventButton {
         event.setOnAction( e -> {
             //TODO når du tyker kommer opp nytt fxml vindu
             Stage stage = new Stage();
-            Group root = new Group();
-            stage.setTitle(name);
-            Scene scene = new Scene(root, 450, 450);
-
             Text nameFiled = new Text();
             nameFiled.setText(name);
             nameFiled.setFont(Font.font("Verdana", 20));
             nameFiled.setLayoutX(10);
             nameFiled.setLayoutY(25);
+            Text space = new Text();
+            Text space2 = new Text();
 
-            Text descriptionFiled = new Text();
+            TextArea descriptionFiled = new TextArea();
+            descriptionFiled.setMaxWidth(450);
+            descriptionFiled.setPrefHeight(450);
+
+            descriptionFiled.setWrapText(true);
+            descriptionFiled.setEditable(false);
             descriptionFiled.setFont(Font.font("Verdana", 15));
             descriptionFiled.setText(description);
-            descriptionFiled.setLayoutX(10);
-            descriptionFiled.setLayoutY(55);
 
 
-            root.getChildren().addAll(nameFiled,descriptionFiled);
+            VBox root = new VBox(nameFiled, descriptionFiled);
+            stage.setTitle(name);
+            Scene scene = new Scene(root, 450, 450);
+            String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();
+            scene.getStylesheets().add(css);
+
+            //root.getChildren().addAll(nameFiled,descriptionFiled);
             stage.setScene(scene);
             stage.show();
 
@@ -87,15 +97,16 @@ public class eventButton {
         event.setOnAction( e -> {
             //TODO når du tyker kommer opp nytt fxml vindu
             Stage stage = new Stage();
-            Group root = new Group();
-            stage.setTitle(name);
-            Scene scene = new Scene(root, 450, 450);
+
 
             Text nameFiled = new Text();
             nameFiled.setText(name);
             nameFiled.setFont(Font.font("Verdana", 20));
             nameFiled.setLayoutX(10);
             nameFiled.setLayoutY(25);
+            Text space = new Text();
+            Text space2 = new Text();
+
 
             Text subjectFild = new Text();
             subjectFild.setFont(Font.font("Verdana", 15));
@@ -103,14 +114,23 @@ public class eventButton {
             subjectFild.setLayoutX(10);
             subjectFild.setLayoutY(55);
 
-            Text descriptionFiled = new Text();
+            TextArea descriptionFiled = new TextArea();
+            descriptionFiled.setMaxWidth(450);
+            descriptionFiled.setPrefHeight(450);
+
+            descriptionFiled.setWrapText(true);
+            descriptionFiled.setEditable(false);
             descriptionFiled.setFont(Font.font("Verdana", 15));
             descriptionFiled.setText(description);
-            descriptionFiled.setLayoutX(10);
-            descriptionFiled.setLayoutY(70);
 
 
-            root.getChildren().addAll(nameFiled,descriptionFiled);
+            VBox root = new VBox(nameFiled,subjectFild, descriptionFiled);
+            stage.setTitle(name);
+            Scene scene = new Scene(root, 450, 450);
+            String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();
+            scene.getStylesheets().add(css);
+
+            //root.getChildren().addAll(nameFiled,descriptionFiled);
             stage.setScene(scene);
             stage.show();
 

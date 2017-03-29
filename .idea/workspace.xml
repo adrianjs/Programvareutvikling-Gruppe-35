@@ -2,13 +2,12 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/api/package.json" line="12" mnemonic="9" />
-    <bookmark url="file://$PROJECT_DIR$/src/controllers/CalendarController.java" line="544" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="stylet litt på eventButton, forsat ikke optimalt men det kan jeg se på sennere">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/css/eventButton.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layout/eventButton.java" afterPath="$PROJECT_DIR$/src/layout/eventButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/css/buttonStyle.css" afterPath="$PROJECT_DIR$/src/resources/css/buttonStyle.css" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -93,44 +92,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubjectAssistent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/SubjectAssistent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <marker date="1489061259000" expanded="true" signature="535:653" ph="INSERT INTO SUBJECTASSISTENT... " />
-                <marker date="1489061259000" expanded="true" signature="970:1054" ph="INSERT INTO SUBJECTASSISTENT... " />
-                <marker date="1489061259000" expanded="true" signature="1648:1733" ph="SELECT * FRO... SUBJECTASSISTENT" />
-                <marker date="1489061259000" expanded="true" signature="2558:2645" ph="SELECT * FRO... SUBJECTASSISTENT" />
-                <marker date="1489061259000" expanded="true" signature="3538:3617" ph="INSERT INTO ONROOM... " />
-                <marker date="1489061259000" expanded="true" signature="4022:4087" ph="SELECT * FRO... ONROOM" />
-                <marker date="1489061259000" expanded="true" signature="4870:4937" ph="SELECT * FRO... ONROOM" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <marker date="1490448092000" expanded="true" signature="575:706" ph="INSERT INTO SUBJECT... " />
-                <marker date="1490448092000" expanded="true" signature="976:1094" ph="INSERT INTO SUBJECT... " />
-                <marker date="1490448092000" expanded="true" signature="1530:1607" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1490448092000" expanded="true" signature="3281:3590" ph="INSERT INTO EVENT... " />
-                <marker date="1490448092000" expanded="true" signature="4537:4875" ph="INSERT INTO EVENT... " />
-                <marker date="1490448092000" expanded="true" signature="5474:5672" ph="INSERT INTO EVENT... " />
-                <marker date="1490448092000" expanded="true" signature="6404:6652" ph="INSERT INTO EVENT... " />
-                <marker date="1490448092000" expanded="true" signature="7550:7862" ph="INSERT INTO EVENT... " />
-                <marker date="1490448092000" expanded="true" signature="8472:8535" ph="SELECT * FRO... EVENT" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithm/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -143,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="83" column="62" lean-forward="false" selection-start-line="83" selection-start-column="62" selection-end-line="83" selection-end-column="62" />
+            <state relative-caret-position="-1407">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,11 +116,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttonStyle.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eventButton.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/css/eventButton.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="28" column="101" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buttonStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/css/buttonStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+            <state relative-caret-position="348">
+              <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -185,6 +166,7 @@
         <option value="package_json" />
         <option value="fxml" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -275,8 +257,9 @@
         <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
         <option value="$PROJECT_DIR$/src/calendar/Cell.java" />
         <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
         <option value="$PROJECT_DIR$/src/resources/css/buttonStyle.css" />
+        <option value="$PROJECT_DIR$/src/resources/css/eventButton.css" />
+        <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
       </list>
     </option>
   </component>
@@ -290,9 +273,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="14" />
     <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -373,10 +355,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fxml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,6 +504,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="FullScreen" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1154,7 +1133,7 @@
       <workItem from="1489694676415" duration="1669000" />
       <workItem from="1490173393872" duration="17906000" />
       <workItem from="1490260310487" duration="24041000" />
-      <workItem from="1490688678574" duration="11297000" />
+      <workItem from="1490688678574" duration="16643000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1331,11 +1310,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490697771705</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="lagt til farger på uke eventer/aktivitys">
+      <created>1490701079151</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1490701079151</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136344000" />
+    <option name="totallyTimeSpent" value="141690000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1347,19 +1333,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="14" width="1280" height="773" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2980198" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29726028" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19630156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1890411" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.071287125" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1452,7 +1438,9 @@
     <MESSAGE value="nå kan du tryke på vents å få opp mer info" />
     <MESSAGE value="litt ryding" />
     <MESSAGE value="fiksa litt bøgs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fiksa litt bøgs" />
+    <MESSAGE value="lagt til farger på uke eventer/aktivitys" />
+    <MESSAGE value="stylet litt på eventButton, forsat ikke optimalt men det kan jeg se på sennere" />
+    <option name="LAST_COMMIT_MESSAGE" value="stylet litt på eventButton, forsat ikke optimalt men det kan jeg se på sennere" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1641,21 +1629,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/css/buttonStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="83" column="62" lean-forward="false" selection-start-line="83" selection-start-column="62" selection-end-line="83" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="348">
+          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/css/buttonStyle.css">
+    <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state relative-caret-position="300">
+          <caret line="28" column="101" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="101" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/css/eventButton.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1407">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
