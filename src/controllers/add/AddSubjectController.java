@@ -73,7 +73,7 @@ public class AddSubjectController extends Connect implements Initializable{
         try {
             m_ResultSet = stmt.executeQuery("SELECT * FROM SUBJECT");
             while(m_ResultSet.next()){
-                subjects.add(m_ResultSet.getString(1));
+                subjects.add(m_ResultSet.getString(1) + " - " + m_ResultSet.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
