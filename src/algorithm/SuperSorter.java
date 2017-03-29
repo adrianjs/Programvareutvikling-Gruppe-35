@@ -1,18 +1,14 @@
 package algorithm;
 
 import calendar.Cell;
-import calendar.Day;
-import calendar.Month;
-import calendar.Week;
-import controllers.CalendarController;
 import database.Connect;
 import layout.*;
 
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.*;
 import java.util.Calendar;
 
@@ -28,9 +24,20 @@ public class SuperSorter extends Connect {
     private Set<Cell> activities = new HashSet<>();
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
     private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
+    private Set<Cell> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
+
+    //TODO: Implement an update option so that the algorithm does not have to run all over.
+    public void run() throws SQLException, ParseException {
+        System.out.println("DATA COLLECT");
+        dataCollect();
+        System.out.println("PRIORITY SORT");
+        prioritySort(prioritizedSchedule);
+        System.out.println("HANDLE COLLISION");
+        //handleCollisionsInTime(prioritizedSchedule);
+        System.out.println("FINISHED");
+    }
 
     public void dataCollect() throws SQLException, ParseException {
-        //TODO: Fix so that you don't call DB unnecessary many times
         subjects.clear();
         events.clear();
         activities.clear();
@@ -91,10 +98,11 @@ public class SuperSorter extends Connect {
 
     public void collectActivities() throws SQLException, ParseException {
         //TODO: Get all activities which the student have entered
-        System.out.println("KJØRER");
+//        System.out.println("KJØRER");
         ResultSet m_result_set = stmt.executeQuery("SELECT * FROM ACTIVITY WHERE studentEmail='"+user.getUsername()+"'");
         while(m_result_set.next()){
-            //CHECKS IF THE EVENT IS MORE THAN ONE MONTH OLD
+            //CHECKS IF THE ACTIVITY IS MORE THAN ONE MONTH OLD
+            //If it is, it's deleted from the DB
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.MONTH, -1);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
@@ -111,6 +119,9 @@ public class SuperSorter extends Connect {
                         m_result_set.getInt(7),
                         m_result_set.getBoolean(4)
                 ));
+            }else{
+                stmt = conn.createStatement();
+                stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID='"+m_result_set.getInt(1)+"'");
             }
         }
     }
@@ -124,31 +135,118 @@ public class SuperSorter extends Connect {
         return new LinkedHashSet<>(listToSort);
     }
 
-    //TODO: Implement an update option so that the algorithm does not have to run all over.
     //TODO: Save the results?
 
-    public void handleCollisionsInTime(Set<Cell> prioritizedSet){
-
+    public void handleCollisionsInTime(Set<Cell> prioritizedSet) throws SQLException {
         for(Cell currentCell : prioritizedSet){
             boolean collision = false;
-
+            Cell collisionCell = null;
             for(Cell placedCell : scheduleWithoutCollision){
                 if(new TimeComparator().compare(placedCell, currentCell)){
-                    System.out.println("KOLLISJON!!!!!");
-                    System.out.println(currentCell.getName());
-                    System.out.println(placedCell.getName());
+//                    System.out.println("KOLLISJON!!!!!");
+//                    System.out.println(currentCell.getName());
+//                    System.out.println(placedCell.getName());
                     collision = true;
+                    collisionCell = placedCell;
                 }
             }
             if(!collision){
                 scheduleWithoutCollision.add(currentCell);
             }else{
-                //TODO: PROMPT WHICH CELL TO PRIORITIZE, DELETE THE OTHER FROM DB.
-                //TODO: ADD PREFERRED CELL TO scheduleWithoutCollision.
+                JOptionPane.showMessageDialog(null, "Oops! There was a collision in your schedule" +
+                        " between " + currentCell.getName() + " and " + collisionCell.getName() + "!", "Collision!", JOptionPane.INFORMATION_MESSAGE);
+                if(currentCell.getSlotPriority() == collisionCell.getSlotPriority()){
+                    handleSamePriority(currentCell, collisionCell);
+                } else if(currentCell.getSlotPriority() > collisionCell.getSlotPriority()){
+                    scheduleWithoutCollision.remove(collisionCell);
+                    scheduleWithoutCollision.add(currentCell);
+                    if(collisionCell.getType().equals("activity")){
+                        handleUnprioritizedActivity(collisionCell);
+                    }else{
+                        handleUnprioritezedEvent(collisionCell);
+                    }
+                }
+                else{
+                    if(collisionCell.getType().equals("activity")){
+                        handleUnprioritizedActivity(currentCell);
+                    }else{
+                        handleUnprioritezedEvent(currentCell);
+                    }
+                }
+
             }
         }
         System.out.println("ORIGINAL SIZE: " + prioritizedSet.size());
         System.out.println("AFTER COLLISION HANDLING: " + scheduleWithoutCollision.size());
+    }
+
+    /**
+     * This method prompts the user manually if a collision of two cells also
+     * has the same priority.
+     * The user gets to choose manually.
+     */
+    public void handleSamePriority(Cell currentCell, Cell collisionCell) throws SQLException {
+        int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
+                "Choose which event you want to prioritize!\n" +
+                        "They both happen at: " + currentCell.getStartDate(), //Object message,
+                "Collision in the schedule!", //String title
+                JOptionPane.YES_NO_OPTION, //int optionType
+                JOptionPane.QUESTION_MESSAGE, //int messageType
+                null, //Icon icon,
+                new String[]{currentCell.getName(), collisionCell.getName()}, //Object[] options,
+                currentCell.getName());//Object initialValue
+        if(choice == 0 ){
+            //currentCell was chosen
+            scheduleWithoutCollision.remove(collisionCell);
+            scheduleWithoutCollision.add(currentCell);
+            if(collisionCell.getType().equals("activity")){
+                handleUnprioritizedActivity(collisionCell);
+                //deleteActivity(collisionCell);
+            }else{
+                handleUnprioritezedEvent(collisionCell);
+            }
+        }else{
+            //collisionCell/placedCell was chosen
+            if(collisionCell.getType().equals("activity")){
+                handleUnprioritizedActivity(currentCell);
+            }else{
+                handleUnprioritezedEvent(currentCell);
+            }
+        }
+    }
+
+    public void handleUnprioritizedActivity(Cell activity) throws SQLException {
+       int choice = JOptionPane.showOptionDialog(null,
+                "Do you want to delete " + activity.getName() + " from your shcedule," +
+                        "\ndo you want Educational Organizer to find somewhere to put it, \nor would you" +
+                        " like to give it a new time manually?", "Oops! Something is colliding!", JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE, null, new String[]{"Re-schedule (auto)", "Re-schedule (manual)", "Delete"},
+                "Delete");
+        System.out.println("CHOICE: " + choice);
+        if(choice == 0){
+            //TODO: RE-SCHEDULE AUTO
+            System.out.println("RE-SCHEDULE AUTO");
+        }else if(choice == 1){
+            //TODO: RE-SCHEDULE MANUAL
+            System.out.println("RE-SCHEDULE MANUAL");
+        }else{
+            System.out.println("DELETING " + activity.getName() + " FROM DB");
+            deleteActivity(activity);
+        }
+    }
+
+    public void handleUnprioritezedEvent(Cell event){
+
+    }
+
+    public void rescheduleAuto(Cell activity){
+        //TODO: Write code that automatically changes the time of an activity
+        //TODO: Change the times inside object, then push changes to DB
+    }
+
+    public void rescheduleManual(Cell activity){
+        //TODO: Prompt the user for new times to fill in to the activity
+        //TODO: Remember to push changes to DB
     }
 
     public Set<Subject> getSubjects() {
@@ -169,15 +267,5 @@ public class SuperSorter extends Connect {
 
     public Set<Cell> getScheduleWithoutCollision() {
         return scheduleWithoutCollision;
-    }
-
-    public void run() throws SQLException, ParseException {
-        System.out.println("DATA COLLECT");
-        dataCollect();
-        System.out.println("PRIORITY SORT");
-        prioritySort(prioritizedSchedule);
-        System.out.println("HANDLE COLLISION");
-        handleCollisionsInTime(prioritizedSchedule);
-        System.out.println("FINISHED");
     }
 }

@@ -614,7 +614,7 @@ public class CalendarController extends Connect implements Initializable{
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
 					Label lab = new Label();
-					lab.setText(" " + '\n' +  " Event/Activity");
+					lab.setText(" " + '\n' +  "Event/Activity");
 					lab.setStyle("-fx-text-fill: green;");
 					entry.getValue().getChildren().addAll(lab);
 					eventLabels.add(lab);

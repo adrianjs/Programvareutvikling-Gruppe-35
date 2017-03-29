@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
  */
 public class AskBotController implements Initializable{
 
-
     @FXML WebView webView;
 
     @Override
@@ -32,7 +31,8 @@ public class AskBotController implements Initializable{
     public void setWebView(){
         System.out.println("SETUP WEBVIEW");
         WebEngine engine = webView.getEngine();
-        engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/botto.html");
-        System.out.println(engine.getUserAgent() + "UserAgent");
+        engine.setJavaScriptEnabled(true);
+        engine.setUserAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36");
+        engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/index.html");
     }
 }

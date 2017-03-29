@@ -1,7 +1,10 @@
 package database;
+import calendar.Cell;
 import layout.User;
 
+import java.awt.*;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by torresrl on 21/02/2017.
@@ -76,9 +79,10 @@ public class Connect {
         try {
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO STUDENT VALUES('"+email+"','"+firstName+"', '"+lastName+"', '"+field+
-                    "', '"+year+"', '"+pass+"')");
+                    "', '"+year+"', '"+pass+"', '"+""+"')");
         } catch (SQLException se){
             se.printStackTrace();
+
         }
     }
 
@@ -121,10 +125,16 @@ public class Connect {
         }
     }
 
+    public void deleteActivity(Cell activity) throws SQLException {
+        System.out.println(activity.getName() + " " + activity.getStartDate() + " " + activity.getStartTime() + " " + activity.getEndTime() + " " + User.getInstance().getUsername());
+        stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM ACTIVITY WHERE name='"+activity.getName()+"' AND date='" +(new SimpleDateFormat("yyyy-MM-dd").format(activity.getStartDate()))+
+                "' AND startTime='" +activity.getStartTime()+"' AND endTime='"+activity.getEndTime()+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
+        System.out.println("Deleted activity: " + activity.getName());
+    }
 
+    public void deleteEvent(Cell event){
 
-
-
-
+    }
 
 } //END
