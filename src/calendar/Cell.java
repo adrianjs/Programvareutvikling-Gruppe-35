@@ -22,6 +22,7 @@ public class Cell {
     private int slotPriority;
     private boolean repeating;
     private String type;
+    private int ID;
 
     /**
      * Construct a single Cell. This super class will never be instantiated, but it can be.
@@ -33,7 +34,7 @@ public class Cell {
      * @param slotPriority
      * @param repeating
      */
-    public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating) {
+    public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.startTime = startTime;
@@ -42,6 +43,7 @@ public class Cell {
         this.description = description;
         this.slotPriority = slotPriority;
         this.repeating = repeating;
+        this.ID = ID;
     }
 
     public Date getStartDate() {
@@ -114,5 +116,13 @@ public class Cell {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

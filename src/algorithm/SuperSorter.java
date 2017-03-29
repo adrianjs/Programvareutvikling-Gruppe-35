@@ -24,7 +24,7 @@ public class SuperSorter extends Connect {
     private Set<Cell> activities = new HashSet<>();
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
     private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
-    private Set<Cell> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
+    private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
 
     //TODO: Implement an update option so that the algorithm does not have to run all over.
     public void run() throws SQLException, ParseException {
@@ -33,7 +33,7 @@ public class SuperSorter extends Connect {
         System.out.println("PRIORITY SORT");
         prioritySort(prioritizedSchedule);
         System.out.println("HANDLE COLLISION");
-        //handleCollisionsInTime(prioritizedSchedule);
+        handleCollisionsInTime(prioritizedSchedule);
         System.out.println("FINISHED");
     }
 
@@ -43,6 +43,7 @@ public class SuperSorter extends Connect {
         activities.clear();
         prioritizedSchedule.clear();
         scheduleWithoutCollision.clear();
+        droppedEvents.clear();
 
         String subjectArrayString = "";
         for (String subject : user.getSubjects()) {
@@ -51,6 +52,7 @@ public class SuperSorter extends Connect {
         if(!subjectArrayString.equals("")){
             subjectArrayString = subjectArrayString.substring(0, subjectArrayString.length()-1);
             collectSubjects(subjectArrayString);
+            collectDroppedEvents();
             collectEvents(subjectArrayString);
         }
         collectActivities();
@@ -71,6 +73,13 @@ public class SuperSorter extends Connect {
         }
     }
 
+    public void collectDroppedEvents() throws SQLException {
+        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+User.getInstance().getUsername()+"'");
+        while (m_result_set.next()){
+            droppedEvents.add(m_result_set.getInt(1));
+        }
+    }
+
     public void collectEvents(String subjectArrayString) throws SQLException {
         //DONE: Get all the schedules from students subjects
         ResultSet m_result_set = stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode IN ("+subjectArrayString+")");
@@ -78,7 +87,7 @@ public class SuperSorter extends Connect {
             //CHECKS IF THE EVENT IS MORE THAN ONE MONTH OLD
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.MONTH, -1);
-            if(new Date(m_result_set.getDate(3).getTime()).after((cal.getTime()))){
+            if(new Date(m_result_set.getDate(3).getTime()).after((cal.getTime())) && !droppedEvents.contains(m_result_set.getInt(1))){
                 events.add(new Event(
                         m_result_set.getDate(3),
                         m_result_set.getDate(4),
@@ -89,7 +98,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getInt(8),
                         m_result_set.getBoolean(7),
                         m_result_set.getInt(10),
-                        m_result_set.getString(11)
+                        m_result_set.getString(11),
+                        m_result_set.getInt(1)
                 ));
             }
         }
@@ -117,7 +127,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getString(2),
                         m_result_set.getString(9),
                         m_result_set.getInt(7),
-                        m_result_set.getBoolean(4)
+                        m_result_set.getBoolean(4),
+                        m_result_set.getInt(1)
                 ));
             }else{
                 stmt = conn.createStatement();
@@ -235,8 +246,9 @@ public class SuperSorter extends Connect {
         }
     }
 
-    public void handleUnprioritezedEvent(Cell event){
-
+    public void handleUnprioritezedEvent(Cell event) throws SQLException {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
 
     public void rescheduleAuto(Cell activity){

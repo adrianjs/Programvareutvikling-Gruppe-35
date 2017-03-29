@@ -77,9 +77,6 @@ public class Teacher extends Connect{
     public void addLecture(String name, LocalDate startDate, String startTime, String endTime, int repeating,
                            String description, String subjectCode){
         try {
-            //Converting to sql values
-//            Time startTimeSql = Time.valueOf(startTime);
-//            Time endTimeSql = Time.valueOf(endTime);
             Integer startTimeSql = Integer.valueOf(startTime.substring(0, 2));
             Integer endTimeSql = Integer.valueOf(endTime.substring(0, 2));
             if(!endTime.substring(2).equals(":00:00")){
@@ -110,14 +107,14 @@ public class Teacher extends Connect{
     public void addSchoolWork(String name, LocalDate startDate, LocalDate endDate, String startTime, String endTime,
                               int repeating, String description, Double houersOfWork, String subjectCode){
         try{//Converting to sql values.
-            Time startTimeSql = java.sql.Time.valueOf(startTime);
-            Time endTimeSql = java.sql.Time.valueOf(endTime);
+            Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
+            Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlStartDate = Date.valueOf(startDate);
             Date sqlEndDate = Date.valueOf(endDate);
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime,repeating, priority," +
-                    " description, houersOfWork, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlEndDate+"'," +
-                    "'"+startTimeSql+"','"+endTimeSql+"','"+repeating+"',97,'"+description+"','"+houersOfWork+"','"+subjectCode+"')");
+            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    " description, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
+                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -133,11 +130,12 @@ public class Teacher extends Connect{
      */
     public void addDeadLine(String name, LocalDate date, String time, String description, String subjectCode){
         try{//Converting to sql values.
-            Time timeSql = java.sql.Time.valueOf(time);
+            Integer timeSql = Integer.valueOf(time);
             Date deadLineDate = Date.valueOf(date);
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, endDate, endTime, priority, description, subjectCode)" +
-                    " VALUES('"+name+"', '"+deadLineDate+"', '"+timeSql+"', 98, '"+description+"', '"+subjectCode+"')");
+            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    " description, subjectCode) VALUES('"+name+"','"+deadLineDate+"','"+deadLineDate+"','"+timeSql+"'," +
+                    "'"+timeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -155,13 +153,13 @@ public class Teacher extends Connect{
     public void addExam(String name, LocalDate date, String startTime, String endTime,
                                String description, String subjectCode){
         try{//Converting to sql Values
-            Time startTimeSql = java.sql.Time.valueOf(startTime);
-            Time endTimeSql = java.sql.Time.valueOf(endTime);
+            Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
+            Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlDate = Date.valueOf(date);
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, startTime, endTime, priority, description," +
-                    " subjectCode) VALUES('"+name+"','"+sqlDate+"','"+startTimeSql+"','"+endTimeSql+"',99,'"+description+"'," +
-                    "'"+subjectCode+"')");
+            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    " description, subjectCode) VALUES('"+name+"','"+sqlDate+"','"+sqlDate+"','"+startTimeSql+"'," +
+                    "'"+endTimeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -181,8 +179,8 @@ public class Teacher extends Connect{
     public void addHomeExam(String name, LocalDate startDate, LocalDate endDate, String startTime, String endTime,
                                String description, Double houersOfWork, String subjectCode){
         try{//converting to sql values.
-            Time startTimeSql = java.sql.Time.valueOf(startTime);
-            Time endTimeSql = java.sql.Time.valueOf(endTime);
+            Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
+            Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlStartDate = Date.valueOf(startDate);
             Date sqlEndDate = Date.valueOf(endDate);
             stmt = conn.createStatement();

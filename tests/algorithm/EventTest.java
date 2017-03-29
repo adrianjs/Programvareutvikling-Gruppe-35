@@ -17,7 +17,7 @@ public class EventTest {
         //Setting up a fake event that will be altered.
         this.event = new Event(new Date(), new Date(),
                 "11", "12","TEST", "Test description", 20,
-                false, 3, "TDT4100");
+                false, 3, "TDT4100", 0);
     }
 
     @Test
