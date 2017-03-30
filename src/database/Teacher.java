@@ -13,7 +13,31 @@ public class Teacher extends Connect{
         super();
     }
 
+    public void addCourseCoordinator(String email, String firstName, String lastName, String department, String password, String description ){
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"', '"+firstName+"'," +
+                    " '"+lastName+"', '"+department+"', '"+password+"','"+description+"')");
+        }catch (SQLException se){
+            se.printStackTrace();
+        }
+    }
+
     //----------------------------------------------------SUBJECT-------------------------------------------------------
+
+    /**
+     * Update subject discription --> Used in Scraping.
+     * @param description subject description
+     * @param fagKode subjectcode.
+     */
+    public void updateSubject(String description, String fagKode){
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("UPDATE SUBJECT SET description ='"+description+"' WHERE subjectCode ='"+fagKode+"'");
+        }catch (SQLException se){
+            se.printStackTrace();
+        }
+    }
 
     public void addSubject(String subjectCode, String evaluation, String description, String coordinatorEmail){
         try {
