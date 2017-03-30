@@ -142,6 +142,27 @@ public class CalendarController extends Connect implements Initializable{
 		}
     }
 
+    public void refresh(){
+		setLines();
+		setDate();
+		try {
+			superSorter.run();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		setupDayTab();
+		setBottoField(); //SlideFieldBotto
+		try {
+			getWeekTabCells();
+			mapMonthTab();
+			insertCells();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
     /**
      * Set new lines to gridpanes.
      */
