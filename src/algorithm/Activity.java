@@ -22,8 +22,8 @@ public class Activity extends Cell {
      * @param slotPriority
      * @param repeating
      */
-    public Activity(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID) {
-        super(startDate, endDate, startTime, endTime, name, description, slotPriority, repeating, ID);
+    public Activity(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID, String color) {
+        super(startDate, endDate, startTime, endTime, name, description, slotPriority, repeating, ID, color);
         super.setType("activity");
     }
 

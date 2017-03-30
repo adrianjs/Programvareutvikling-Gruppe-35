@@ -27,8 +27,8 @@ public class Event extends Cell {
      * @param hoursOfWork
      * @param subjectCode
      */
-    public Event(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int hoursOfWork, String subjectCode, int ID) {
-        super(startDate, endDate, startTime, endTime, name, description, slotPriority, repeating, ID);
+    public Event(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int hoursOfWork, String subjectCode, int ID, String color) {
+        super(startDate, endDate, startTime, endTime, name, description, slotPriority, repeating, ID, color);
         this.hoursOfWork = hoursOfWork;
         this.subjectCode = subjectCode;
         super.setType("event");

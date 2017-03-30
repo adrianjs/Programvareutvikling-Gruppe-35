@@ -101,9 +101,9 @@ public class Connect {
         int repeatingInt = (repeating) ? 1 : 0;
         try {
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description) VALUES('"+name+"','"+date+"','"
+            stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('"+name+"','"+date+"','"
                     +repeatingInt+"','"+priority+"','"+startTime+"','"+endTime+"','"+studentEmail+"','"+
-                    description+"')");
+                    description+"', '"+"008080"+"')");
         } catch (SQLException se) {
             se.printStackTrace();
         }

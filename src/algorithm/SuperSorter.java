@@ -99,7 +99,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getBoolean(7),
                         m_result_set.getInt(10),
                         m_result_set.getString(11),
-                        m_result_set.getInt(1)
+                        m_result_set.getInt(1),
+                        m_result_set.getString(12)
                 ));
             }
         }
@@ -128,7 +129,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getString(9),
                         m_result_set.getInt(7),
                         m_result_set.getBoolean(4),
-                        m_result_set.getInt(1)
+                        m_result_set.getInt(1),
+                        m_result_set.getString(10)
                 ));
             }else{
                 stmt = conn.createStatement();

@@ -23,6 +23,7 @@ public class Cell {
     private boolean repeating;
     private String type;
     private int ID;
+    private String color;
 
     /**
      * Construct a single Cell. This super class will never be instantiated, but it can be.
@@ -34,7 +35,7 @@ public class Cell {
      * @param slotPriority
      * @param repeating
      */
-    public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID) {
+    public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID, String color) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.startTime = startTime;
@@ -44,6 +45,8 @@ public class Cell {
         this.slotPriority = slotPriority;
         this.repeating = repeating;
         this.ID = ID;
+        this.color = color;
+
     }
 
     public Date getStartDate() {
@@ -125,4 +128,6 @@ public class Cell {
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    public String getColor(){ return color;}
 }
