@@ -14,6 +14,11 @@ import java.util.Calendar;
 
 /**
  * Created by Henning on 16.02.2017.
+ * eksamen = 99
+ * deadline = 98
+ * skolearbeid = 97
+ * lecture = 96
+ * homeEksamen = 95
  *
  * TODO: This call will be the all mighty sorting algorithm for the calendar
  */

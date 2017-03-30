@@ -49,7 +49,7 @@ public class eventButton {
         event.setText(name+ "\n\n" + description);
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
-        event.setStyle("-fx-background-color: #" + ranColor());
+        event.setStyle("-fx-background-color: #" + cell.getColor());
 
 
         //vis du tryker på et event kommer mer info opp:
@@ -109,7 +109,7 @@ public class eventButton {
         event.setText(name+ "\n\n" + description);
         event.setMaxHeight(Double.MAX_VALUE);
         event.setMaxWidth(Double.MAX_VALUE);
-        event.setStyle("-fx-background-color: #" +ranColor());
+        event.setStyle("-fx-background-color: #" +cell.getColor());
 
         //vis du tryker på et event kommer mer info opp:
         event.setOnAction( e -> {

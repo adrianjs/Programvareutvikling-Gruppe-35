@@ -97,10 +97,8 @@ public class AddActivityController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
         //Descriptionfield not made in add.fxml yet..
-        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
-        int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
 
-        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat, 0, colors[randomNum]);
+        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat, 0, "E91E63");
         return activity;
     }
 

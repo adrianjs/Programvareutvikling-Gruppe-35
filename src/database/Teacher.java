@@ -143,7 +143,7 @@ public class Teacher extends Connect{
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                     " description, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"', '"+color+"')");
+                    "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -165,7 +165,7 @@ public class Teacher extends Connect{
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                     " description, subjectCode, color) VALUES('"+name+"','"+deadLineDate+"','"+deadLineDate+"','"+timeSql+"'," +
-                    "'"+timeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"', '"+color+"')");
+                    "'"+timeSql+"','"+0+"',98,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -190,7 +190,7 @@ public class Teacher extends Connect{
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                     " description, subjectCode, color) VALUES('"+name+"','"+sqlDate+"','"+sqlDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"', '"+color+"')");
+                    "'"+endTimeSql+"','"+0+"',99,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }

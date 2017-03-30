@@ -103,7 +103,7 @@ public class Connect {
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('"+name+"','"+date+"','"
                     +repeatingInt+"','"+priority+"','"+startTime+"','"+endTime+"','"+studentEmail+"','"+
-                    description+"', '"+"008080"+"')");
+                    description+"', '"+"00EE00"+"')");
         } catch (SQLException se) {
             se.printStackTrace();
         }
