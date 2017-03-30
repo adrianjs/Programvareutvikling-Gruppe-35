@@ -67,6 +67,7 @@ public class AddActivityController implements Initializable{
             repeat = everyWeek.isSelected();
             calendar.Cell cell = toUserCell();
             pushCell(cell);
+            CalendarController.getInstance().refresh();
             stage.close();
         }
 
