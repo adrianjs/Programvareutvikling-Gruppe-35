@@ -15,7 +15,7 @@ public class Event extends Connect {
     public void deleteEvent(int id, String email){
         try {
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT VALUES('"+id+"', '"+email+"'");
+            stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT VALUES('"+id+"', '"+email+"')");
         }catch (SQLException se){
             se.printStackTrace();
         }
