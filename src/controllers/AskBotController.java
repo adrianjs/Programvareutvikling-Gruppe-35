@@ -34,5 +34,7 @@ public class AskBotController implements Initializable{
         engine.setJavaScriptEnabled(true);
         engine.setUserAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36");
         engine.load("http://folk.ntnu.no/adrianjs/(b)Otto/index.html");
+        System.out.println(engine.getOnError());
+        engine.setOnAlert(event -> System.out.println("EVENT DATA: " + event.getData()));
     }
 }

@@ -2,7 +2,6 @@ package database;
 
 import layout.User;
 
-import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 

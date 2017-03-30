@@ -1,10 +1,16 @@
 package algorithm;
 
 import calendar.Cell;
+import com.jfoenix.controls.JFXDatePicker;
 import database.Connect;
+import javafx.scene.control.*;
+import javafx.scene.control.Dialog;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import layout.*;
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -26,7 +32,6 @@ public class SuperSorter extends Connect {
     private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
 
-    //TODO: Implement an update option so that the algorithm does not have to run all over.
     public void run() throws SQLException, ParseException {
         System.out.println("DATA COLLECT");
         dataCollect();
@@ -35,6 +40,23 @@ public class SuperSorter extends Connect {
         System.out.println("HANDLE COLLISION");
         handleCollisionsInTime(prioritizedSchedule);
         System.out.println("FINISHED");
+
+        JFXDatePicker startTimePicker = new JFXDatePicker();
+        JFXDatePicker endTimePicker = new JFXDatePicker();
+        JFXDatePicker datePicker = new JFXDatePicker();
+        startTimePicker.setShowTime(true);
+        endTimePicker.setShowTime(true);
+        Object[] params = {startTimePicker, endTimePicker, datePicker};
+        javafx.scene.control.Dialog dialog = new Dialog();
+        dialog.setTitle("Choose a new time");
+        HBox hbox = new HBox();
+        hbox.getChildren().addAll(startTimePicker, endTimePicker, datePicker);
+        dialog.setGraphic(hbox);
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
+//        dialog.show();
+//
+
+//        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
     }
 
     public void dataCollect() throws SQLException, ParseException {
@@ -146,8 +168,6 @@ public class SuperSorter extends Connect {
         return new LinkedHashSet<>(listToSort);
     }
 
-    //TODO: Save the results?
-
     public void handleCollisionsInTime(Set<Cell> prioritizedSet) throws SQLException {
         for(Cell currentCell : prioritizedSet){
             boolean collision = false;
@@ -256,9 +276,44 @@ public class SuperSorter extends Connect {
         //TODO: Change the times inside object, then push changes to DB
     }
 
-    public void rescheduleManual(Cell activity){
+    public void rescheduleManual(Cell activity) throws SQLException {
         //TODO: Prompt the user for new times to fill in to the activity
+        Cell newActivity = activity;
+        String startTime;
+        String endTime;
+        Date date;
+        //TODO: Make a dialog window, that prompts for wanted
+//        JFXDatePicker startTimePicker = new JFXDatePicker();
+//        JFXDatePicker endTimePicker = new JFXDatePicker();
+//        JFXDatePicker datePicker = new JFXDatePicker();
+//        startTimePicker.setShowTime(true);
+//        endTimePicker.setShowTime(true);
+//        Object[] params = {startTimePicker, endTimePicker, datePicker};
+//
+//        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
+
         //TODO: Remember to push changes to DB
+        deleteActivity(activity);
+        addActivity(newActivity.getName(),
+                new java.sql.Date(activity.getStartDate().getTime()),
+                activity.isRepeating(),
+                activity.getSlotPriority(),
+                Integer.valueOf(activity.getStartTime().substring(0,2)),
+                Integer.valueOf(activity.getEndTime().substring(0,2)),
+                user.getUsername(),
+                activity.getDescription());
+    }
+
+    public void resetDroppedEvents() throws SQLException {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"'");
+        droppedEvents.clear();
+    }
+
+    public void resetDroppedEvent(Cell event) throws SQLException {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"' AND eventId='"+event.getID()+"'");
+        droppedEvents.remove(event);
     }
 
     public Set<Subject> getSubjects() {

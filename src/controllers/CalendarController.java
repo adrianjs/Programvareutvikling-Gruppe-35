@@ -147,18 +147,14 @@ public class CalendarController extends Connect implements Initializable{
 		setDate();
 		try {
 			superSorter.run();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		setupDayTab();
-		setBottoField(); //SlideFieldBotto
-		try {
+			setupDayTab();
+			setBottoField(); //SlideFieldBotto
 			getWeekTabCells();
 			mapMonthTab();
 			insertCells();
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 	}
@@ -180,9 +176,6 @@ public class CalendarController extends Connect implements Initializable{
      */
 	public void remove() throws IOException, SQLException, ParseException, InterruptedException {
         //TODO: Make remove button work
-		//TODO: Remove this superSorter-thing
-		//superSorter.run();
-
 		//sc.setFirstDateOfDay(1);
     }
 
