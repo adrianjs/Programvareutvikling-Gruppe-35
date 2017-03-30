@@ -20,6 +20,11 @@ import java.util.Calendar;
 
 /**
  * Created by Henning on 16.02.2017.
+ * eksamen = 99
+ * deadline = 98
+ * skolearbeid = 97
+ * lecture = 96
+ * homeEksamen = 95
  *
  * TODO: This call will be the all mighty sorting algorithm for the calendar
  */
@@ -121,7 +126,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getBoolean(7),
                         m_result_set.getInt(10),
                         m_result_set.getString(11),
-                        m_result_set.getInt(1)
+                        m_result_set.getInt(1),
+                        m_result_set.getString(12)
                 ));
             }
         }
@@ -150,7 +156,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getString(9),
                         m_result_set.getInt(7),
                         m_result_set.getBoolean(4),
-                        m_result_set.getInt(1)
+                        m_result_set.getInt(1),
+                        m_result_set.getString(10)
                 ));
             }else{
                 stmt = conn.createStatement();

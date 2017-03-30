@@ -35,10 +35,8 @@ public class GetAllSubjectsNTNU {
             String s = split[split.length -1];
             s = s.substring(1, s.length() - 1);
             if(s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
-                if(s.equals("TDT4100")||s.equals("TDT4140")||s.equals("TDT4180")||s.equals("TDT4150")||s.equals("TDT4142")||s.equals("TDT4265")){
-                    System.out.println("Do not add to list");
-                    liste.add(s);
-                }
+                liste.add(s);
+
             }
         }
         driver.quit();

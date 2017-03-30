@@ -21,3 +21,13 @@
     -fx-highlight-fill: #7ecfff;
 }
 
+#deleteBtn {
+    -fx-border-color: #000000;
+    -fx-font-size: 14px;
+    -fx-alignment: top-left;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-opacity: 0.9;
+    -fx-background-color: red;
+    -fx-alignment: center;
+}

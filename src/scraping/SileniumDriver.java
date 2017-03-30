@@ -34,6 +34,15 @@ public class SileniumDriver {
     private String subjectCode1 = "";
     private String department = "";
     private String evaluattion = "";
+    private String subjectDescription;
+
+    //For Exam
+    private LocalDate startDate = null;
+    private String typeOfExam = "";
+    private String weight = "";
+    private String aid = "";
+    private String startTime = "";
+    private String endTime = "";
     /**
      * Start the webdriver with Firefoxdriver.
      */
@@ -96,7 +105,6 @@ public class SileniumDriver {
             List<WebElement> list = w.findElements(By.tagName("td"));
             sendToTeacher(list);
         }
-        //driver.quit();
     }
 
     /**
@@ -244,7 +252,7 @@ public class SileniumDriver {
         subjectDescription();
     }
 
-    private String subjectDescription;
+
     private void subjectDescription(){
         WebElement element = driver.findElement(By.id("course-details"));
         WebElement element1 = element.findElement(By.tagName("h1"));
@@ -309,44 +317,148 @@ public class SileniumDriver {
     }
 
     private void setNewExam(){
+        //(String name, LocalDate date, String startTime, String endTime,String description, String subjectCode)
+        if(typeOfExam.contains("Skriftlig")){
+            new Teacher().addExam(typeOfExam, startDate,startTime,endTime,"Vekting: "+ weight+ " Hjelpemiddelkode: "
+                    + aid, subjectCode1);
+        }else{
+            System.out.println("This is not a writing exam: " + typeOfExam);
+        }
 
     }
 
+    /**
+     * Scrapes the NTNU emne OM-EKSAMEN side. To get the relevant exam information.
+     */
+    private void scrapeExamInfo(){
+        WebElement element = driver.findElement(By.id("omEksamen"));
+        WebElement element1 = element.findElement(By.tagName("tbody"));
+        List<WebElement> examInfo = element1.findElements(By.tagName("tr"));
+        List<WebElement> info = null;
+        for (WebElement e:examInfo
+             ) {
+
+            if(e.getText().contains("Skriftlig")){
+                System.out.println(e.getText());
+                info = e.findElements(By.tagName("td"));
+                break;
+            }
+        }
+        typeOfExam = info.get(1).getText();
+        weight = info.get(2).getText();
+        aid = info.get(3).getText();
+        startDate = makeLocalDate(info.get(4).getText());
+        startTime = makeStartTime(info.get(5).getText());
+        System.out.println("STARTTIME: " + startTime);
+        endTime = "13";
+    }
+
+    private String makeStartTime(String startTime){
+        String[] split = startTime.split(":");
+        return split[0];
+    }
+    /**
+     * Makes the date from NTNU-side to a localDate.
+     * @param date Date from NTNU
+     * @return LocalDate
+     */
+    private LocalDate makeLocalDate(String date){
+        String[] split = date.split("\\.");
+        int day = removeZero(split[0]);
+        int month = removeZero(split[1]);
+        int year = removeZero(split[2]);
+        return LocalDate.of(year, month, day);
+    }
+
+    /**
+     * Removes zero from start of string if existing.
+     * @param tall numbered string.
+     * @return integer
+     */
+    private int removeZero(String tall){
+        if(tall.charAt(0) == '0'){
+            return Character.getNumericValue(tall.charAt(1));
+        }
+        return Integer.parseInt(tall);
+    }
+
     //*************************For å scrape en side*************FØLG rekkefølgen der så skal det gå smuud//
-    public void drive(String fagkode) throws InterruptedException {
+
+    /**
+     * Scrapes the websides in right order.
+     * @param fagkode Subjectcode
+     * @throws InterruptedException Some of NTNU-sides dont have all information.
+     */
+    private void drive(String fagkode) throws InterruptedException {
         //NB BEFORE SCRAPING: SOME SUBJECTS HAVE SAME COURSECOORDINATOR, CAN CAUSE PROBLEMS..
         subjectCode1 = fagkode;
-//        //Gets subject information.
-        startSileniumDriver();
-        getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
-        goToEmneInfo();
-        quitDriver();
-//        //Get courseCoordinator email.
-//        startSileniumDriver();
-//        getWebsite(emailSide);
-//        CourseCoordinator();
-//        setNewCourseCoordinator();
-        setNewSubject(); //Subject must be set after courseCoordinator.
-//        quitDriver();
-        //Get EXAM-DATE.
+        //Gets subject information.
+        try{
+            startSileniumDriver();
+            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
+            goToEmneInfo();
+            quitDriver();
+        }catch (Exception e){
+            quitDriver();
+            System.out.println("Failed to get subject information");
+            e.printStackTrace();
+        }
 
-        startSileniumDriver();
-        getWebsite("https://www.ntnu.no/studier/emner/"+fagkode+"#tab=omEksamen");
+        //Get courseCoordinator email.
+        try{
+            startSileniumDriver();
+            getWebsite(emailSide);
+            CourseCoordinator();
+            setNewCourseCoordinator();
+            setNewSubject(); //Subject must be set after courseCoordinator.
+            quitDriver();
+        }catch(Exception e){
+            quitDriver();
+            System.out.println("Failed to get course coordinator Email.");
+            e.printStackTrace();
+        }
+
+
+        //Get writing Exam.
+        try{
+            startSileniumDriver();
+            getWebsite("https://www.ntnu.no/studier/emner/"+fagkode+"#tab=omEksamen");
+            scrapeExamInfo();
+            setNewExam();
+            quitDriver();
+        }catch(Exception e){//If all information i not there, it is probaly not a writing exam.
+            quitDriver();
+            System.out.println("All information for Exam not found");
+            e.printStackTrace();
+        }
+
+
         //Get lectures.
-//        startSileniumDriver();
-//        getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
-//        scrapeNtnuTimeSlots();
-//        relevantListSorter();
-//        lecturesToDatabase();
-//        quitDriver();
+        try{
+            startSileniumDriver();
+            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
+            scrapeNtnuTimeSlots();
+            relevantListSorter();
+            lecturesToDatabase();
+            quitDriver();
+        }catch (Exception e){
+            System.out.println("Failed to get Lecture");
+            quitDriver();
+            e.printStackTrace();
+        }
+//
     }
 
 
     public static void main(String[] args) throws InterruptedException {
-        GetAllSubjectsNTNU subjects = new GetAllSubjectsNTNU();
-		List<String> liste = subjects.startSileniumDriver();
+        //Add one subject.
 //        SileniumDriver sc = new SileniumDriver();
-//        sc.drive("TDT4102");
+//        sc.drive("TDT4215");
+
+        //Get ALL NTNU subjects.
+        GetAllSubjectsNTNU subjects = new GetAllSubjectsNTNU();
+		List<String> liste = subjects.startSileniumDriver(); //List of NTNU subjects.
+
         for (String s : liste) {
             SileniumDriver sc = new SileniumDriver();
             sc.drive(s);
@@ -358,8 +470,6 @@ public class SileniumDriver {
             }catch(Exception e){
                 System.out.println("Could not quit driver");
             }
-
-
         }
     }
 }

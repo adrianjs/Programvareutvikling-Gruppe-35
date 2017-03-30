@@ -3,6 +3,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by torresrl on 08/03/2017.
@@ -12,6 +13,8 @@ public class Teacher extends Connect{
     public Teacher(){
         super();
     }
+
+    String color;
 
     public void addCourseCoordinator(String email, String firstName, String lastName, String department, String password, String description ){
         try {
@@ -103,14 +106,15 @@ public class Teacher extends Connect{
         try {
             Integer startTimeSql = Integer.valueOf(startTime.substring(0, 2));
             Integer endTimeSql = Integer.valueOf(endTime.substring(0, 2));
+            color = "FF9200";
             if(!endTime.substring(2).equals(":00:00")){
                 endTimeSql++;
             }
             Date sqlStartDate = Date.valueOf(startDate);
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"')");
+                    " description, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
+                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -135,10 +139,11 @@ public class Teacher extends Connect{
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlStartDate = Date.valueOf(startDate);
             Date sqlEndDate = Date.valueOf(endDate);
+            color = "260591";
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"')");
+                    " description, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
+                    "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -156,10 +161,11 @@ public class Teacher extends Connect{
         try{//Converting to sql values.
             Integer timeSql = Integer.valueOf(time);
             Date deadLineDate = Date.valueOf(date);
+            color = "FF0000";
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode) VALUES('"+name+"','"+deadLineDate+"','"+deadLineDate+"','"+timeSql+"'," +
-                    "'"+timeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"')");
+                    " description, subjectCode, color) VALUES('"+name+"','"+deadLineDate+"','"+deadLineDate+"','"+timeSql+"'," +
+                    "'"+timeSql+"','"+0+"',98,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -180,10 +186,11 @@ public class Teacher extends Connect{
             Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlDate = Date.valueOf(date);
+            color = "FF0000";
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode) VALUES('"+name+"','"+sqlDate+"','"+sqlDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+0+"',96,'"+description+"', '"+subjectCode+"')");
+                    " description, subjectCode, color) VALUES('"+name+"','"+sqlDate+"','"+sqlDate+"','"+startTimeSql+"'," +
+                    "'"+endTimeSql+"','"+0+"',99,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -207,10 +214,11 @@ public class Teacher extends Connect{
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlStartDate = Date.valueOf(startDate);
             Date sqlEndDate = Date.valueOf(endDate);
+            color = "FFE800";
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, priority," +
-                    " description, houersOfWork, subjectCode) VALUES('"+name+"','"+sqlStartDate+"','"+sqlEndDate+"'," +
-                    "'"+startTimeSql+"','"+endTimeSql+"',95,'"+description+"','"+houersOfWork+"','"+subjectCode+"')");
+                    " description, houersOfWork, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlEndDate+"'," +
+                    "'"+startTimeSql+"','"+endTimeSql+"',95,'"+description+"','"+houersOfWork+"','"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -239,5 +247,12 @@ public class Teacher extends Connect{
             se.printStackTrace();
         }
         return events;
+    }
+
+
+    private String ranColor(){
+        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
+        int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
+        return colors[randomNum];
     }
 }

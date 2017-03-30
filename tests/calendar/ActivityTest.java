@@ -4,6 +4,7 @@ import algorithm.Activity;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +12,11 @@ import static org.junit.Assert.*;
  * Created by Henning on 02.03.2017.
  */
 public class ActivityTest {
-    Activity cell = new Activity(new Date(), new Date(), "12", "14","Svømming", "Skal svømme med Lars.", 5, false, 0);
+    String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
+    int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
+
+
+    Activity cell = new Activity(new Date(), new Date(), "12", "14","Svømming", "Skal svømme med Lars.", 5, false, 0, colors[randomNum]);
     @Test
     public void getStartDate() throws Exception {
         //Tests if it's the same classes.

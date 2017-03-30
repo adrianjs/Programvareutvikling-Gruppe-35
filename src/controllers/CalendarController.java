@@ -594,12 +594,12 @@ public class CalendarController extends Connect implements Initializable{
 					    //legger til activity i week calenderen
 						eventButton event;
 						if(cell.getClass() == Activity.class) {
-							event = new eventButton(cell.getName(), cell.getDescription());
+							event = new eventButton(cell.getName(), cell.getDescription(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 						} else {
 							Event eventCell = (Event) cell;
-							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode());
+							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 						}

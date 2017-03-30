@@ -3,6 +3,7 @@ package controllers.add;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXSnackbar;
 import com.sun.deploy.util.StringUtils;
+import controllers.CalendarController;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,6 +54,7 @@ public class AddSubjectController extends Connect implements Initializable{
                 updateStudentSubjects(subjectString);
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was added to your subjects!"));
+                CalendarController.getInstance().refresh();
             }else{
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is not a valid subject!"));

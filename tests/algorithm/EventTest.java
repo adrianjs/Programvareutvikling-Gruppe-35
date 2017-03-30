@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.*;
 
@@ -14,10 +15,11 @@ public class EventTest {
     private Event event;
     @Before
     public void setUp() throws Exception {
+
         //Setting up a fake event that will be altered.
         this.event = new Event(new Date(), new Date(),
                 "11", "12","TEST", "Test description", 20,
-                false, 3, "TDT4100", 0);
+                false, 3, "TDT4100", 0, "009688");
     }
 
     @Test

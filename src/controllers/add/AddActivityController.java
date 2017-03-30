@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.Calendar;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class AddActivityController implements Initializable{
@@ -67,6 +68,7 @@ public class AddActivityController implements Initializable{
             repeat = everyWeek.isSelected();
             calendar.Cell cell = toUserCell();
             pushCell(cell);
+            CalendarController.getInstance().refresh();
             stage.close();
         }
 
@@ -95,7 +97,8 @@ public class AddActivityController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
         //Descriptionfield not made in add.fxml yet..
-        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat, 0);
+
+        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat, 0, "E91E63");
         return activity;
     }
 
