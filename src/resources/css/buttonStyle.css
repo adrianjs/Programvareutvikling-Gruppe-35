@@ -24,8 +24,9 @@
 
 /* ADD */
 
+
 #cal{
-	-fx-background-color:  #cadae0;
+	-fx-background-color:  #d0d3d8;
 }
 
 #addButtons{
@@ -86,4 +87,8 @@
 	-fx-opacity: 0.9;
 	/*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 ); kan style kantene?*/
 }
+
+/*Add activity buttons*/
+
+
 

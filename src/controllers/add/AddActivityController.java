@@ -34,8 +34,9 @@ public class AddActivityController implements Initializable{
     @FXML Label errorActivity;
     @FXML Label errorDate;
     @FXML Label errorTime;
-    @FXML ChoiceBox priority;
+    @FXML JFXComboBox priority;
     @FXML Label priorityError;
+    @FXML JFXTextField desc;
     Stage stage;
     //Time set.
     String act;
@@ -44,6 +45,7 @@ public class AddActivityController implements Initializable{
     int stop;
     boolean repeat;
     int priorityNumber;
+    String description;
 
     CalendarController cal;
 
@@ -66,6 +68,7 @@ public class AddActivityController implements Initializable{
             start = startTime.getTime().getHour();
             stop = endTime.getTime().getHour();
             repeat = everyWeek.isSelected();
+            description = desc.getText();
             calendar.Cell cell = toUserCell();
             pushCell(cell);
             CalendarController.getInstance().refresh();
@@ -96,9 +99,11 @@ public class AddActivityController implements Initializable{
 
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
-        //Descriptionfield not made in add.fxml yet..
 
-        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, "Description/more details", priorityNumber, repeat, 0, "E91E63");
+        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
+        int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
+
+        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, description, priorityNumber, repeat, 0, colors[randomNum]);
         return activity;
     }
 

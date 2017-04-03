@@ -3,21 +3,56 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddSubjectController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddSubjectController">
    <children>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="122.0" prefHeight="21.0" prefWidth="335.0" text="Start typing a subject name or code:" />
-      <JFXComboBox fx:id="subjectPicker" layoutX="128.0" layoutY="274.0" prefHeight="31.0" prefWidth="345.0" />
-      <JFXButton id="addButtons" layoutX="252.0" layoutY="338.0" onAction="#addSubjectToCalendar" stylesheets="/css/buttonStyle.css" text="Add subject" />
-      <Label layoutX="193.0" layoutY="21.0" text="Add Subject">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="subject" layoutX="129.0" layoutY="171.0" prefHeight="29.0" prefWidth="345.0" />
-      <Label layoutX="248.0" layoutY="243.0" text="Or just pick one:" />
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="294.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" text="Start typing a subject name or code:" textAlignment="CENTER" />
+                        <JFXTextField id="cal" fx:id="subject" alignment="TOP_LEFT" maxWidth="400.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" text="Or just pick one:">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXComboBox id="cal" fx:id="subjectPicker" prefHeight="31.0" prefWidth="400.0" />
+                        <JFXButton id="addButtons" alignment="CENTER" contentDisplay="CENTER" onAction="#addSubjectToCalendar" stylesheets="/css/buttonStyle.css" text="Add subject">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="106.0" prefWidth="579.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="24.0" prefHeight="106.0" prefWidth="600.0" text="Add Subject" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <AnchorPane BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
    </children>
 </AnchorPane>

@@ -1055,7 +1055,7 @@
    <top>
       <AnchorPane prefHeight="58.0" prefWidth="1054.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <JFXDatePicker fx:id="date" layoutX="305.0" layoutY="10.0" onAction="#setNewDate" prefHeight="38.0" prefWidth="236.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="335.0" AnchorPane.topAnchor="10.0" />
+            <JFXDatePicker fx:id="date" defaultColor="#808080d9" layoutX="305.0" layoutY="10.0" onAction="#setNewDate" prefHeight="38.0" prefWidth="236.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="335.0" AnchorPane.topAnchor="10.0" />
             <JFXHamburger fx:id="sliderButton" layoutX="14.0" layoutY="19.0" onMouseClicked="#slidePane" />
          </children>
       </AnchorPane>
@@ -1082,11 +1082,12 @@
                      </font>
                   </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Add subject" textFill="#eaff63" />
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Add subject" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="remove" onAction="#remove" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Remove" textFill="RED" />
-                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#1500ff" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Log Out" />
                </children>

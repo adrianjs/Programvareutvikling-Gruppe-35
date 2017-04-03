@@ -36,15 +36,9 @@ public class GetAllSubjectsNTNU {
             s = s.substring(1, s.length() - 1);
             if(s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
                 liste.add(s);
-
             }
         }
         driver.quit();
         return liste;
-    }//HA401314
-
-    public static void main(String[] args) throws InterruptedException {
-        GetAllSubjectsNTNU ntnu = new GetAllSubjectsNTNU();
-        ntnu.startSileniumDriver();
     }
 }

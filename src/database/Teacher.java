@@ -198,14 +198,14 @@ public class Teacher extends Connect{
 
     /**
      * Adding new home exam to database.
-     * @param name
-     * @param startDate
-     * @param endDate
-     * @param startTime
-     * @param endTime
-     * @param description
-     * @param houersOfWork
-     * @param subjectCode
+     * @param name name
+     * @param startDate startDate
+     * @param endDate endDate
+     * @param startTime startTime
+     * @param endTime endTime
+     * @param description description
+     * @param houersOfWork hours
+     * @param subjectCode subjectcode
      */
     public void addHomeExam(String name, LocalDate startDate, LocalDate endDate, String startTime, String endTime,
                                String description, Double houersOfWork, String subjectCode){
