@@ -283,6 +283,7 @@ public class SileniumDriver {
                     }
                 }
             }catch(Exception err){
+                System.out.println("Failed to find EMAIL-Webside");
             }
         }
         return "";
@@ -392,31 +393,31 @@ public class SileniumDriver {
     private void drive(String fagkode) throws InterruptedException {
         //NB BEFORE SCRAPING: SOME SUBJECTS HAVE SAME COURSECOORDINATOR, CAN CAUSE PROBLEMS..
         subjectCode1 = fagkode;
-        //Gets subject information.
-        try{
-            startSileniumDriver();
-            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
-            goToEmneInfo();
-            quitDriver();
-        }catch (Exception e){
-            quitDriver();
-            System.out.println("Failed to get subject information");
-            e.printStackTrace();
-        }
+//        //Gets subject information.
+//        try{
+//            startSileniumDriver();
+//            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
+//            goToEmneInfo();
+//            quitDriver();
+//        }catch (Exception e){
+//            quitDriver();
+//            System.out.println("Failed to get subject information");
+//            e.printStackTrace();
+//        }
 
-        //Get courseCoordinator email.
-        try{
-            startSileniumDriver();
-            getWebsite(emailSide);
-            CourseCoordinator();
-            setNewCourseCoordinator();
-            setNewSubject(); //Subject must be set after courseCoordinator.
-            quitDriver();
-        }catch(Exception e){
-            quitDriver();
-            System.out.println("Failed to get course coordinator Email.");
-            e.printStackTrace();
-        }
+//        //Get courseCoordinator email.
+//        try{
+//            startSileniumDriver();
+//            getWebsite(emailSide);
+//            CourseCoordinator();
+//            setNewCourseCoordinator();
+//            setNewSubject(); //Subject must be set after courseCoordinator.
+//            quitDriver();
+//        }catch(Exception e){
+//            quitDriver();
+//            System.out.println("Failed to get course coordinator Email.");
+//            e.printStackTrace();
+//        }
 
 
         //Get writing Exam.
@@ -433,19 +434,19 @@ public class SileniumDriver {
         }
 
 
-        //Get lectures.
-        try{
-            startSileniumDriver();
-            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
-            scrapeNtnuTimeSlots();
-            relevantListSorter();
-            lecturesToDatabase();
-            quitDriver();
-        }catch (Exception e){
-            System.out.println("Failed to get Lecture");
-            quitDriver();
-            e.printStackTrace();
-        }
+//        //Get lectures.
+//        try{
+//            startSileniumDriver();
+//            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
+//            scrapeNtnuTimeSlots();
+//            relevantListSorter();
+//            lecturesToDatabase();
+//            quitDriver();
+//        }catch (Exception e){
+//            System.out.println("Failed to get Lecture");
+//            quitDriver();
+//            e.printStackTrace();
+//        }
 //
     }
 

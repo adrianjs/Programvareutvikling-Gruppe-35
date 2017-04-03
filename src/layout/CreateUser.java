@@ -1,6 +1,7 @@
 package layout;
 
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import database.Connect;
@@ -41,14 +42,19 @@ public class CreateUser {
     @FXML private Group fieldTeach;
 
     @FXML private Group yearGroup;
-    @FXML private RadioButton firsty;
-    @FXML private RadioButton secondy;
-    @FXML private RadioButton thirdy;
-    @FXML private RadioButton fourthy;
-    @FXML private RadioButton fifthy;
+    @FXML private JFXRadioButton firsty;
+    @FXML private JFXRadioButton secondy;
+    @FXML private JFXRadioButton thirdy;
+    @FXML private JFXRadioButton fourthy;
+    @FXML private JFXRadioButton fifthy;
+
+    private ToggleGroup studTeacher = new ToggleGroup();
 
 
     public void initialize(){
+        stud.setToggleGroup(studTeacher);
+        teach.setToggleGroup(studTeacher);
+
         description.setVisible(false);
         fieldStud.setVisible(false);
         fieldTeach.setVisible(false);
@@ -104,6 +110,7 @@ public class CreateUser {
         });
 
     }
+
 
     public void setDialogStage(Stage dialogStage){ this.dialogStage = dialogStage; }
 
@@ -176,7 +183,6 @@ public class CreateUser {
             alert.setContentText(errorMessage);
             alert.showAndWait();
             return false;
-
         }
     }
 }

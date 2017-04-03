@@ -117,6 +117,7 @@ public class LoginController implements Initializable {
             Stage st = new Stage();
             st.setTitle("Make User");
             CreateUser controller = loader.getController();
+            //System.out.println("Controller: " + controller);
             controller.setDialogStage(st);
             st.setScene(new Scene(root));
             st.show();
