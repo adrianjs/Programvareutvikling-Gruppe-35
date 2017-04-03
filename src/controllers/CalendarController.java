@@ -100,6 +100,7 @@ public class CalendarController extends Connect implements Initializable{
 	private List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
 	private Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
 	private Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
+    private ArrayList<LocalDate> doubleDate = new ArrayList<>(); // holder telling på datoer som er 2 ganger;
 
 	//****************************************************//
     private ArrayList<Label> eventLabels = new ArrayList<>(); //MonthTabEventLabels --> Used to remove text in labels in monthTab.
@@ -636,7 +637,7 @@ public class CalendarController extends Connect implements Initializable{
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
 
-					if(usedDate.contains(entry.getKey())){
+					if(usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())){
 						Label oldLabel = (Label) entry.getValue().getChildren().get(2);
 						entry.getValue().getChildren().remove(2);
 
@@ -646,12 +647,9 @@ public class CalendarController extends Connect implements Initializable{
 						lab.setStyle("-fx-text-fill: green;");
 						entry.getValue().getChildren().addAll(lab);
 						eventLabels.add(lab);
-
-
-
-
-
-
+						if(!doubleDate.contains(entry.getKey())){
+                            doubleDate.add(entry.getKey());
+                        }
 
 
 					} else {
@@ -662,7 +660,8 @@ public class CalendarController extends Connect implements Initializable{
 						eventLabels.add(lab);
 						usedDate.add(entry.getKey());
 
-					}
+
+                    }
 
 
 
