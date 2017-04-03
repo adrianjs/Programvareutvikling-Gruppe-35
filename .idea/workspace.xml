@@ -4,9 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/api/package.json" line="12" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/layout/monthEventButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Event.java" afterPath="$PROJECT_DIR$/src/database/Event.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -59,13 +60,97 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/Event.java">
+      <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="644" column="36" lean-forward="false" selection-start-line="644" selection-start-column="36" selection-end-line="644" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1491223305000" expanded="false" signature="26966:26976" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="26992:26998" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27110:27120" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27136:27142" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27188:27198" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27214:27220" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27266:27276" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27292:27298" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27344:27354" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27370:27376" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27422:27432" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27448:27454" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27500:27510" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27526:27532" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27578:27588" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27604:27610" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27657:27667" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27684:27690" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27737:27747" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27764:27770" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27817:27827" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27844:27850" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27897:27907" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="27924:27930" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="27977:27987" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28004:28010" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28057:28067" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28084:28090" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28137:28147" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28164:28170" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28217:28227" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28244:28250" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28297:28307" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28324:28330" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28377:28387" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28404:28410" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28457:28467" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28484:28490" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28537:28547" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28564:28570" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28617:28627" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28644:28650" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28697:28707" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28724:28730" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28777:28787" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28804:28810" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28857:28867" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28884:28890" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="28937:28947" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="28964:28970" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29017:29027" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29044:29050" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29097:29107" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29124:29130" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29177:29187" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29204:29210" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29257:29267" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29284:29290" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29337:29347" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29364:29370" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29417:29427" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29444:29450" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29497:29507" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29524:29530" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29577:29587" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29604:29610" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29657:29667" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29684:29690" ph=" }" />
+                <marker date="1491223305000" expanded="false" signature="29737:29747" ph=" { " />
+                <marker date="1491223305000" expanded="false" signature="29764:29770" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monthEventButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layout/monthEventButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+                <element signature="e#351#352#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,116 +159,11 @@
       <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-320">
+            <state relative-caret-position="1215">
               <caret line="111" column="65" lean-forward="false" selection-start-line="111" selection-start-column="65" selection-end-line="111" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-              <folding>
-                <marker date="1490872050000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
-                <marker date="1490872050000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
-                <marker date="1490872050000" expanded="true" signature="3361:3640" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1490872050000" expanded="true" signature="3361:3643" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1490872050000" expanded="true" signature="3361:3654" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1490872050000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1490872050000" expanded="true" signature="3892:3987" ph="UPDATE STUDE... " />
-                <marker date="1490872050000" expanded="true" signature="4138:4188" ph="INSERT INTO ROOM... " />
-                <marker date="1490872050000" expanded="true" signature="4641:4940" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="638" column="72" lean-forward="false" selection-start-line="638" selection-start-column="57" selection-end-line="638" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/database/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <marker date="1490873155000" expanded="true" signature="320:348" ph="INSERT INTO NOTATTENDINGEVEN... " />
-                <marker date="1490873155000" expanded="true" signature="320:349" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:351" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:356" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:357" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:368" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:378" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490873155000" expanded="true" signature="320:381" ph="INSERT INTO NOTATTENDINGEVENT... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="27" />
-              <folding>
-                <marker date="1490871761000" expanded="true" signature="551:710" ph="INSERT INTO COURSECOORDINATOR... " />
-                <marker date="1490871761000" expanded="true" signature="1230:1312" ph="UPDATE SUBJE... " />
-                <marker date="1490871761000" expanded="true" signature="1602:1733" ph="INSERT INTO SUBJECT... " />
-                <marker date="1490871761000" expanded="true" signature="2003:2121" ph="INSERT INTO SUBJECT... " />
-                <marker date="1490871761000" expanded="true" signature="2557:2634" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1490871761000" expanded="true" signature="4185:4503" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="4185:4514" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="5515:5844" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="6470:6783" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="7569:7869" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="7569:7880" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="8832:9153" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="8832:9164" ph="INSERT INTO EVENT... " />
-                <marker date="1490871761000" expanded="true" signature="9774:9837" ph="SELECT * FRO... EVENT" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuperSorter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-              <folding>
-                <marker date="1490871761000" expanded="true" signature="2619:2686" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1490871761000" expanded="true" signature="3097:3186" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-                <marker date="1490871761000" expanded="true" signature="3491:3556" ph="SELECT * FRO... EVENT" />
-                <marker date="1490871761000" expanded="true" signature="4808:4874" ph="SELECT * FRO... ACTIVITY" />
-                <marker date="1490871761000" expanded="true" signature="6133:6199" ph="DELETE FROM " />
-                <marker date="1490871761000" expanded="true" signature="11547:11667" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1490871761000" expanded="true" signature="12451:12458" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeComparator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/TimeComparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -224,6 +204,8 @@
       <find>insert</find>
       <find>cellsAtCurrentDate</find>
       <find>getcells</find>
+      <find>eventLabels</find>
+      <find>entry</find>
       <find>dateMappedMonth</find>
     </findStrings>
   </component>
@@ -244,7 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/calendar/UserCell.java" />
         <option value="$PROJECT_DIR$/src/calendar/Day.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/database/Run.java" />
@@ -279,7 +260,6 @@
         <option value="$PROJECT_DIR$/src/resources/fxml/weekMoreInfo.fxml" />
         <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
         <option value="$PROJECT_DIR$/src/resources/css/buttonStyle.css" />
-        <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
         <option value="$PROJECT_DIR$/src/database/Activity.java" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddSubjectController.java" />
@@ -295,6 +275,8 @@
         <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
         <option value="$PROJECT_DIR$/src/database/Connect.java" />
         <option value="$PROJECT_DIR$/src/database/Event.java" />
+        <option value="$PROJECT_DIR$/src/layout/monthEventButton.java" />
+        <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
       </list>
     </option>
   </component>
@@ -308,8 +290,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -399,57 +381,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,7 +436,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/algorithm/SuperSorter.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/AskBotController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/CalendarController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Fetcher.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -512,6 +447,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/botto.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1218,7 +1154,7 @@
       <workItem from="1489694676415" duration="1669000" />
       <workItem from="1490173393872" duration="17906000" />
       <workItem from="1490260310487" duration="24041000" />
-      <workItem from="1490688678574" duration="33654000" />
+      <workItem from="1490688678574" duration="40350000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1430,7 +1366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490872380922</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
+      <created>1490873283184</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1490873283184</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1442,7 +1385,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158701000" />
+    <option name="totallyTimeSpent" value="165397000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1454,7 +1397,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1466,13 +1409,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07123288" sideWeight="0.5072698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2780822" sideWeight="0.49434572" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07123288" sideWeight="0.4927302" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2009901" sideWeight="0.49434572" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07029703" sideWeight="0.4927302" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19466881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1943557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22859451" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1844,16 +1787,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="375">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding>
-            <marker date="1490871761000" expanded="true" signature="2619:2686" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1490871761000" expanded="true" signature="3097:3186" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-            <marker date="1490871761000" expanded="true" signature="3491:3556" ph="SELECT * FRO... EVENT" />
-            <marker date="1490871761000" expanded="true" signature="4808:4874" ph="SELECT * FRO... ACTIVITY" />
-            <marker date="1490871761000" expanded="true" signature="6133:6199" ph="DELETE FROM " />
-            <marker date="1490871761000" expanded="true" signature="11547:11667" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490871761000" expanded="true" signature="12451:12458" ph="{...}" />
+            <marker date="1491216953000" expanded="true" signature="14515:14521" ph="{...}" />
+            <marker date="1491216953000" expanded="true" signature="14916:14923" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1894,7 +1832,7 @@
         <state relative-caret-position="375">
           <caret line="25" column="107" lean-forward="false" selection-start-line="25" selection-start-column="107" selection-end-line="25" selection-end-column="107" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1905,6 +1843,24 @@
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1490873155000" expanded="true" signature="320:348" ph="INSERT INTO NOTATTENDINGEVEN... " />
+            <marker date="1490873155000" expanded="true" signature="320:349" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:351" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:356" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:357" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:368" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:378" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1490873155000" expanded="true" signature="320:381" ph="INSERT INTO NOTATTENDINGEVENT... " />
           </folding>
         </state>
       </provider>
@@ -1927,19 +1883,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
+    <entry file="file://$PROJECT_DIR$/src/layout/CreateUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="638" column="72" lean-forward="false" selection-start-line="638" selection-start-column="57" selection-end-line="638" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-320">
+        <state relative-caret-position="1215">
           <caret line="111" column="65" lean-forward="false" selection-start-line="111" selection-start-column="65" selection-end-line="111" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1947,20 +1901,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Event.java">
+    <entry file="file://$PROJECT_DIR$/src/layout/monthEventButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <marker date="1490873155000" expanded="true" signature="320:348" ph="INSERT INTO NOTATTENDINGEVEN... " />
-            <marker date="1490873155000" expanded="true" signature="320:349" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:351" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:356" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:357" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:368" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:378" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:381" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="644" column="36" lean-forward="false" selection-start-line="644" selection-start-column="36" selection-end-line="644" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1491223305000" expanded="false" signature="26966:26976" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="26992:26998" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27110:27120" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27136:27142" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27188:27198" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27214:27220" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27266:27276" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27292:27298" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27344:27354" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27370:27376" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27422:27432" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27448:27454" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27500:27510" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27526:27532" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27578:27588" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27604:27610" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27657:27667" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27684:27690" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27737:27747" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27764:27770" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27817:27827" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27844:27850" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27897:27907" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="27924:27930" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="27977:27987" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28004:28010" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28057:28067" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28084:28090" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28137:28147" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28164:28170" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28217:28227" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28244:28250" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28297:28307" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28324:28330" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28377:28387" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28404:28410" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28457:28467" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28484:28490" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28537:28547" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28564:28570" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28617:28627" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28644:28650" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28697:28707" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28724:28730" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28777:28787" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28804:28810" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28857:28867" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28884:28890" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="28937:28947" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="28964:28970" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29017:29027" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29044:29050" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29097:29107" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29124:29130" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29177:29187" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29204:29210" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29257:29267" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29284:29290" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29337:29347" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29364:29370" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29417:29427" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29444:29450" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29497:29507" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29524:29530" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29577:29587" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29604:29610" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29657:29667" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29684:29690" ph=" }" />
+            <marker date="1491223305000" expanded="false" signature="29737:29747" ph=" { " />
+            <marker date="1491223305000" expanded="false" signature="29764:29770" ph=" }" />
           </folding>
         </state>
       </provider>

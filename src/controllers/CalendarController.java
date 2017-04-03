@@ -620,6 +620,8 @@ public class CalendarController extends Connect implements Initializable{
 	private void insertMonthCells(){
 		removeMonthActivityLabel();
 		System.out.println("Month");
+		ArrayList<LocalDate> usedDate = new ArrayList<>();
+
 		for (calendar.Cell cell : cellsAtCurrentDate){
 			LocalDate date;
 			if(cell.getStartDate().getClass() == java.sql.Date.class){
@@ -629,14 +631,42 @@ public class CalendarController extends Connect implements Initializable{
 				date = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			}
 
+
 			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
-					Label lab = new Label();
-					lab.setText(" " + '\n' +  "Event/Activity");
-					lab.setStyle("-fx-text-fill: green;");
-					entry.getValue().getChildren().addAll(lab);
-					eventLabels.add(lab);
+
+					if(usedDate.contains(entry.getKey())){
+						Label oldLabel = (Label) entry.getValue().getChildren().get(2);
+						entry.getValue().getChildren().remove(2);
+
+						String oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
+						Label lab = new Label();
+						lab.setText(oldLabelToString );
+						lab.setStyle("-fx-text-fill: green;");
+						entry.getValue().getChildren().addAll(lab);
+						eventLabels.add(lab);
+
+
+
+
+
+
+
+
+					} else {
+						Label lab = new Label();
+						lab.setText(" " + '\n' + cell.getName());
+						lab.setStyle("-fx-text-fill: green;");
+						entry.getValue().getChildren().addAll(lab);
+						eventLabels.add(lab);
+						usedDate.add(entry.getKey());
+
+					}
+
+
+
+
                 }
 			}
 		}
