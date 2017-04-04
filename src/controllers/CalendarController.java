@@ -640,8 +640,22 @@ public class CalendarController extends Connect implements Initializable{
 					if(usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())){
                         Label oldLabel = (Label) entry.getValue().getChildren().get(1);
                         entry.getValue().getChildren().remove(1);
-                        String oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
+
+                        String[] checkLength = oldLabel.toString().split("\n");
                         Label lab = new Label();
+                        String oldLabelToString = "\n";
+                        if(checkLength.length <= 4){
+                            oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
+                        } else {
+                            for(int i = 1; i < 4; i ++){
+								oldLabelToString += checkLength[i] + "\n";
+
+                            }
+							oldLabelToString += "Click to get more...";
+                        }
+
+
+
                         lab.setText(oldLabelToString);
                         lab.setStyle("-fx-text-fill: green;");
                         entry.getValue().getChildren().addAll(lab);
