@@ -179,8 +179,8 @@ public class CalendarController extends Connect implements Initializable{
      * @throws ParseException
      */
 	public void restore() throws IOException, SQLException, ParseException, InterruptedException {
-        //TODO: Make remove button work
-		//sc.setFirstDateOfDay(1);
+        //TODO: Make Restore work
+		cal.changeScene("/resources/fxml/restore.fxml", "Restore dropped events");
 		System.out.println("RESTORE");
 	}
 
