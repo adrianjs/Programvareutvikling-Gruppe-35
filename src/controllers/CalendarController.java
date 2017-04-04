@@ -638,15 +638,15 @@ public class CalendarController extends Connect implements Initializable{
 					//IF There is something with high priority --> Can change this.
 
 					if(usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())){
-						Label oldLabel = (Label) entry.getValue().getChildren().get(2);
-						entry.getValue().getChildren().remove(2);
+                        Label oldLabel = (Label) entry.getValue().getChildren().get(1);
+                        entry.getValue().getChildren().remove(1);
+                        String oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
+                        Label lab = new Label();
+                        lab.setText(oldLabelToString);
+                        lab.setStyle("-fx-text-fill: green;");
+                        entry.getValue().getChildren().addAll(lab);
+                        eventLabels.add(lab);
 
-						String oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
-						Label lab = new Label();
-						lab.setText(oldLabelToString );
-						lab.setStyle("-fx-text-fill: green;");
-						entry.getValue().getChildren().addAll(lab);
-						eventLabels.add(lab);
 						if(!doubleDate.contains(entry.getKey())){
                             doubleDate.add(entry.getKey());
                         }
