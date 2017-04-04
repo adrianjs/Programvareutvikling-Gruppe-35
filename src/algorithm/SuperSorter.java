@@ -189,7 +189,7 @@ public class SuperSorter extends Connect {
             Cell collisionCell = null;
             for(Cell placedCell : scheduleWithoutCollision){
                 if(new TimeComparator().compare(placedCell, currentCell)){
-                    System.out.println("KOLLISJON!!!!!");
+                    System.out.println("KOLLISJON!");
                     System.out.println(currentCell.getName());
                     System.out.println(placedCell.getName());
                     collision = true;
@@ -213,7 +213,7 @@ public class SuperSorter extends Connect {
                     }
                 }
                 else{
-                    if(collisionCell.getType().equals("activity")){
+                    if(currentCell.getType().equals("activity")){
                         handleUnprioritizedActivity(currentCell);
                     }else{
                         handleUnprioritezedEvent(currentCell);
