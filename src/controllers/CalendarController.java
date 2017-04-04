@@ -531,8 +531,8 @@ public class CalendarController extends Connect implements Initializable{
      */
     private void getCells() throws ParseException {
 	    //TODO: endre liste når supersort er ferdig
-            cells = new ArrayList<>(superSorter.getPrioritizedSchedule());
-			cellsAtCurrentDate = new ArrayList<>(superSorter.getPrioritizedSchedule());
+            cells = new ArrayList<>(superSorter.getScheduleWithoutCollision());
+			cellsAtCurrentDate = new ArrayList<>(superSorter.getScheduleWithoutCollision());
 
     }
 

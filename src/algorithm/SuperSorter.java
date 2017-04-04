@@ -26,7 +26,6 @@ import java.util.Calendar;
  * lecture = 96
  * homeEksamen = 95
  *
- * TODO: This call will be the all mighty sorting algorithm for the calendar
  * TODO: Deadline skal ikke sorteres. Den skal kunne ligge oppå annet!
  */
 public class SuperSorter extends Connect {
@@ -37,38 +36,24 @@ public class SuperSorter extends Connect {
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
     private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
+    private Set<Cell> deadlines = new LinkedHashSet<>();
 
     public void run() throws SQLException, ParseException {
         System.out.println("DATA COLLECT");
         dataCollect();
         System.out.println("PRIORITY SORT");
         prioritizedSchedule = prioritySort(prioritizedSchedule);
+        System.out.println("PICKING OUT DEADLINES");
+        pickOutDeadlines(prioritizedSchedule);
         System.out.println("HANDLE COLLISION");
         handleCollisionsInTime(prioritizedSchedule);
+        System.out.println("APPLY DEADLINES");
+        applyDeadlines();
         System.out.println("FINISHED");
 
-
-
-
-
-
-//        JFXDatePicker startTimePicker = new JFXDatePicker();
-//        JFXDatePicker endTimePicker = new JFXDatePicker();
-//        JFXDatePicker datePicker = new JFXDatePicker();
-//        startTimePicker.setShowTime(true);
-//        endTimePicker.setShowTime(true);
-//        Object[] params = {startTimePicker, endTimePicker, datePicker};
-//        javafx.scene.control.Dialog dialog = new Dialog();
-//        dialog.setTitle("Choose a new time");
-//        HBox hbox = new HBox();
-//        hbox.getChildren().addAll(startTimePicker, endTimePicker, datePicker);
-//        dialog.setGraphic(hbox);
-//        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
-////        dialog.show();
-////
-//
-////        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
     }
+
+
 
     public void dataCollect() throws SQLException, ParseException {
         subjects.clear();
@@ -77,6 +62,7 @@ public class SuperSorter extends Connect {
         prioritizedSchedule.clear();
         scheduleWithoutCollision.clear();
         droppedEvents.clear();
+        deadlines.clear();
 
         user.updateSubjects();
 
@@ -181,6 +167,20 @@ public class SuperSorter extends Connect {
         ArrayList<Cell> listToSort = new ArrayList<>(set);
         Collections.sort(listToSort, new PriorityComparator());
         return new LinkedHashSet<>(listToSort);
+    }
+
+    public void pickOutDeadlines(Set<Cell> cells){
+        Set<Cell> originalList = new LinkedHashSet<>(cells);
+        for(Cell cell : originalList){
+            if(cell.getSlotPriority() == 98){
+                deadlines.add(cell);
+                prioritizedSchedule.remove(cell);
+            }
+        }
+    }
+
+    public void applyDeadlines() {
+        scheduleWithoutCollision.addAll(deadlines);
     }
 
     public void handleCollisionsInTime(Set<Cell> prioritizedSet) throws SQLException {
@@ -350,4 +350,6 @@ public class SuperSorter extends Connect {
     public Set<Cell> getScheduleWithoutCollision() {
         return scheduleWithoutCollision;
     }
+
+    public Set<Cell> getDeadlines(){ return deadlines; }
 }

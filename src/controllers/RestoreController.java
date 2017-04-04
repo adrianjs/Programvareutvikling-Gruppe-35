@@ -5,7 +5,6 @@ import algorithm.SuperSorter;
 import calendar.Cell;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
-import com.sun.deploy.util.StringUtils;
 import database.Connect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -77,7 +76,6 @@ public class RestoreController extends Connect implements Initializable{
     }
 
     public void restoreChosen() throws SQLException, ParseException {
-        //TODO: For event chosen, run resetDroppedEvent
         List<JFXCheckBox> selectedBoxes = new ArrayList<>();
         for(CheckBox box : checkBoxes){
             if(!box.isSelected()){
