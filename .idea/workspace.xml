@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/api/package.json" line="12" mnemonic="9" />
-    <bookmark url="file://$PROJECT_DIR$/src/controllers/CalendarController.java" line="653" mnemonic="7" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="deadline kliker ikke">
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="same instance of calendarcontroller">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" afterPath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/fxml/calendar.fxml" afterPath="$PROJECT_DIR$/src/resources/fxml/calendar.fxml" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -17,6 +15,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1491249463379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>layout.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -28,95 +31,150 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="torresrl_eduorg@mysql.stud.ntnu.no" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-  </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="hideWarnings" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Programvareutvikling-Gruppe-35" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="WatchDayMonthTabController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="botto.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/botto.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="193" column="25" lean-forward="false" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="111" column="65" lean-forward="false" selection-start-line="111" selection-start-column="65" selection-end-line="111" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="604" column="28" lean-forward="false" selection-start-line="604" selection-start-column="28" selection-end-line="604" selection-end-column="28" />
+            <state relative-caret-position="352">
+              <caret line="127" column="73" lean-forward="false" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1491303254778" expanded="false" signature="27959:27969" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28181:28191" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28259:28269" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28337:28347" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28415:28425" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28493:28503" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28571:28581" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28650:28660" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28730:28740" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28810:28820" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28890:28900" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="28970:28980" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29050:29060" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29130:29140" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29210:29220" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29290:29300" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29370:29380" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29450:29460" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29530:29540" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29610:29620" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29690:29700" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29770:29780" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29850:29860" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="29930:29940" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30010:30020" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30090:30100" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30170:30180" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30250:30260" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30330:30340" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30410:30420" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30490:30500" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30570:30580" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30650:30660" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30730:30740" ph=" { " />
+                <marker date="1491303254778" expanded="false" signature="30810:30820" ph=" { " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/calendar/Cell.java">
+      <file leaf-file-name="TeacherCalendarController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/TeacherCalendarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
+            <state relative-caret-position="220">
+              <caret line="155" column="14" lean-forward="false" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
+              <folding>
+                <marker date="1491301327221" expanded="true" signature="2174:2260" ph="SELECT * FRO... SUBJECT" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teacherCalendar.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/fxml/teacherCalendar.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="93" column="17" lean-forward="false" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuperSorter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+      <file leaf-file-name="addEvent.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/fxml/addEvent.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            <state relative-caret-position="424">
+              <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="171" column="4" lean-forward="true" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
               <folding>
-                <marker date="1491298242000" expanded="true" signature="3579:3646" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1491298242000" expanded="true" signature="4057:4146" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-                <marker date="1491298242000" expanded="true" signature="4451:4516" ph="SELECT * FRO... EVENT" />
-                <marker date="1491298242000" expanded="true" signature="5768:5834" ph="SELECT * FRO... ACTIVITY" />
-                <marker date="1491298242000" expanded="true" signature="7093:7159" ph="DELETE FROM " />
-                <marker date="1491298242000" expanded="true" signature="12476:12596" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1491298242000" expanded="true" signature="14195:14268" ph="DELETE FROM " />
-                <marker date="1491298242000" expanded="true" signature="14445:14550" ph="DELETE FROM " />
-                <marker date="1491298242000" expanded="true" signature="14590:14596" ph="{...}" />
-                <marker date="1491298242000" expanded="true" signature="14991:14998" ph="{...}" />
+                <marker date="1491218254680" expanded="true" signature="551:710" ph="INSERT INTO COURSECOORDINATOR... " />
+                <marker date="1491218254680" expanded="true" signature="1230:1312" ph="UPDATE SUBJE... " />
+                <marker date="1491218254680" expanded="true" signature="1602:1733" ph="INSERT INTO SUBJECT... " />
+                <marker date="1491218254680" expanded="true" signature="2003:2121" ph="INSERT INTO SUBJECT... " />
+                <marker date="1491218254680" expanded="true" signature="2557:2634" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1491218254680" expanded="true" signature="4185:4514" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="5515:5792" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="5515:5844" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="6470:6783" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="7569:7880" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="7829:7880" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="8903:9235" ph="INSERT INTO EVENT... " />
+                <marker date="1491218254680" expanded="true" signature="9845:9908" ph="SELECT * FRO... EVENT" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layout/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+              <folding>
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#872#873#0" expanded="true" />
+                <marker date="1491303252649" expanded="true" signature="988:1049" ph="SELECT * FRO... STUDTAKESUB" />
+                <marker date="1491303252649" expanded="false" signature="1249:1260" ph=" { " />
+                <marker date="1491303252649" expanded="false" signature="1276:1282" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddEventController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="155" column="66" lean-forward="false" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,9 +184,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package_json" />
-        <option value="fxml" />
-        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -138,33 +193,29 @@
       <find>grid</find>
       <find>get</find>
       <find>connect</find>
-      <find>date</find>
-      <find>dato</find>
-      <find>weekLabelMappCell</find>
-      <find>printWeekCells</find>
-      <find>Activity</find>
-      <find>remove</find>
-      <find>system.out</find>
-      <find>weekCalendarList</find>
-      <find>activitys</find>
-      <find>setdate</find>
-      <find>initia</find>
-      <find>initialize</find>
-      <find>initiali</find>
-      <find>addsubject</find>
-      <find>activityButton</find>
-      <find>superSorter</find>
+      <find>fxml/</find>
       <find>insert</find>
-      <find>cellsAtCurrentDate</find>
-      <find>getcells</find>
-      <find>eventLabels</find>
-      <find>entry</find>
-      <find>start</find>
-      <find>dateMappedMonth</find>
+      <find>remove</find>
+      <find>is</find>
+      <find>gecko</find>
+      <find>driver.qu</find>
+      <find>add</find>
+      <find>driver.qui</find>
+      <find>gotoEmne</find>
+      <find>descr</find>
+      <find>removezero</find>
+      <find>split</find>
+      <find>removeZero</find>
+      <find>insertCells</find>
+      <find>month</find>
+      <find>jfxr</find>
+      <find>cancel</find>
+      <find>priority</find>
+      <find>cellsatcurrentdate</find>
+      <find>sna</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -180,8 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/database/Run.java" />
         <option value="$PROJECT_DIR$/src/layout/add/Add.java" />
         <option value="$PROJECT_DIR$/src/layout/add/AddController.java" />
         <option value="$PROJECT_DIR$/src/layout/calendarVeiw/Calendar.java" />
@@ -189,47 +238,49 @@
         <option value="$PROJECT_DIR$/src/layout/mainStart/LoginController.java" />
         <option value="$PROJECT_DIR$/src/layout/mainStart/Main.java" />
         <option value="$PROJECT_DIR$/src/layout/Add.java" />
-        <option value="$PROJECT_DIR$/src/layout/AddController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/layout/Calendar.fxml" />
+        <option value="$PROJECT_DIR$/src/layout/Controller.java" />
         <option value="$PROJECT_DIR$/src/layout/User.java" />
+        <option value="$PROJECT_DIR$/src/resources/Username.fxml" />
+        <option value="$PROJECT_DIR$/src/resources/watchDay.fxml" />
+        <option value="$PROJECT_DIR$/src/layout/WatchDayMonthTabController.java" />
+        <option value="$PROJECT_DIR$/src/resources/ask.fxml" />
+        <option value="$PROJECT_DIR$/src/layout/AddController.java" />
+        <option value="$PROJECT_DIR$/src/resources/teacherCalendar.fxml" />
+        <option value="$PROJECT_DIR$/src/layout/CeacherCalendarController.java" />
         <option value="$PROJECT_DIR$/src/layout/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/database/Login.java" />
+        <option value="$PROJECT_DIR$/src/resources/addEvent.fxml" />
+        <option value="$PROJECT_DIR$/src/resources/addStudass.fxml" />
         <option value="$PROJECT_DIR$/src/layout/CalendarController.java" />
-        <option value="$PROJECT_DIR$/src/resources/add.fxml" />
-        <option value="$PROJECT_DIR$/src/layout/AddActivityController.java" />
-        <option value="$PROJECT_DIR$/src/database/SubjectAssistent.java" />
-        <option value="$PROJECT_DIR$/src/api/connectGet.java" />
-        <option value="$PROJECT_DIR$/src/api/subject.java" />
-        <option value="$PROJECT_DIR$/src/api/connect.java" />
-        <option value="$PROJECT_DIR$/src/api/package.json" />
-        <option value="$PROJECT_DIR$/src/layout/calenderEvent.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButton/activityButton.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButton/parentEventButton.java" />
+        <option value="$PROJECT_DIR$/src/layout/TeacherCalendarController.java" />
+        <option value="$PROJECT_DIR$/src/layout/AddEventController.java" />
         <option value="$PROJECT_DIR$/src/resources/buttonStyle.css" />
-        <option value="$PROJECT_DIR$/src/layout/Calendar.java" />
-        <option value="$PROJECT_DIR$/src/layout/Main.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/activityButton.java" />
-        <option value="$PROJECT_DIR$/src/resources/fxml/weekMoreInfo.fxml" />
-        <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
-        <option value="$PROJECT_DIR$/src/resources/css/buttonStyle.css" />
-        <option value="$PROJECT_DIR$/src/database/Activity.java" />
-        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/add/AddSubjectController.java" />
-        <option value="$PROJECT_DIR$/src/resources/css/eventButton.css" />
+        <option value="$PROJECT_DIR$/src/controllers/Browser.java" />
         <option value="$PROJECT_DIR$/src/calendar/Cell.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/Activity.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/Event.java" />
-        <option value="$PROJECT_DIR$/tests/calendar/ActivityTest.java" />
-        <option value="$PROJECT_DIR$/tests/algorithm/EventTest.java" />
+        <option value="$PROJECT_DIR$/src/resources/dynamicLines.css" />
+        <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
+        <option value="$PROJECT_DIR$/src/layout/eventButtonWeek/activityButton.java" />
+        <option value="$PROJECT_DIR$/src/database/Login.java" />
+        <option value="$PROJECT_DIR$/src/database/Fetcher.java" />
+        <option value="$PROJECT_DIR$/src/layout/Calendar.java" />
+        <option value="$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java" />
+        <option value="$PROJECT_DIR$/src/layout/Main.java" />
+        <option value="$PROJECT_DIR$/src/scraping/ScrapeToDatabase.java" />
+        <option value="$PROJECT_DIR$/src/scraping/GetAllSubjects.java" />
+        <option value="$PROJECT_DIR$/src/controllers/AskBotController.java" />
         <option value="$PROJECT_DIR$/src/database/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/SuperSorter.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
-        <option value="$PROJECT_DIR$/src/database/Connect.java" />
-        <option value="$PROJECT_DIR$/src/database/Event.java" />
-        <option value="$PROJECT_DIR$/src/layout/monthEventButton.java" />
+        <option value="$PROJECT_DIR$/src/scraping/GetAllSubjectsNTNU.java" />
+        <option value="$PROJECT_DIR$/src/scraping/SileniumDriver.java" />
+        <option value="$PROJECT_DIR$/src/resources/fxml/add.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" />
-        <option value="$PROJECT_DIR$/src/resources/botto.html" />
+        <option value="$PROJECT_DIR$/src/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/resources/fxml/makeuser.fxml" />
+        <option value="$PROJECT_DIR$/src/layout/CreateUser.java" />
+        <option value="$PROJECT_DIR$/src/resources/fxml/addEvent.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
+        <option value="$PROJECT_DIR$/src/resources/fxml/teacherCalendar.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/TeacherCalendarController.java" />
         <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
       </list>
     </option>
@@ -244,8 +295,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -263,8 +316,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
@@ -317,7 +382,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scraping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fxml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,7 +458,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,10 +477,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="add" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,15 +512,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,27 +546,23 @@
     <property name="project.structure.proportion" value="0.15753424" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/selenium-server-standalone-3.3.1.jar!/" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
-    <property name="FullScreen" value="true" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="monthor&#9;PSI&#9;JAVA://controllers.CalendarController#monthOrganizer&#10;setNe&#9;PSI&#9;JAVA://layout.CalendarController#setNewDate&#10;monthcli&#9;PSI&#9;JAVA://layout.CalendarController#monthClicked&#10;clicked&#9;PSI&#9;JAVA://layout.CalendarController#dayClicked&#10;ta&#9;PSI&#9;JAVA://layout.CalendarController#dayTabLabels" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\scraping" />
+      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout" />
+      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout\mainStart" />
+      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout\style" />
+      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout\calendarVeiw" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources/fxml" />
-      <recent name="$PROJECT_DIR$/src/controllers" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout" />
-      <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src\layout\mainStart" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -467,7 +580,8 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/algorithm/SuperSorter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/add/AddSubjectController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/calendar/Cell.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/CalendarController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Connect.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/layout/User.java</PATH>
         </FILE-GROUP>
@@ -566,6 +680,46 @@
     </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="layout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="layout.mainStart.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Programvareutvikling-Gruppe-35" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="database.Run" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Programvareutvikling-Gruppe-35" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -586,14 +740,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Connect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="GetAllSubjectsNTNU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="scraping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="database.Connect" />
+      <option name="MAIN_CLASS_NAME" value="scraping.GetAllSubjectsNTNU" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -606,14 +760,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="SubjectAssistent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SileniumDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="scraping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="database.SubjectAssistent" />
+      <option name="MAIN_CLASS_NAME" value="scraping.SileniumDriver" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -624,52 +778,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Programvareutvikling-Gruppe-35" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="subject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="api.subject" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Programvareutvikling-Gruppe-35" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="EventTest.setHoursOfWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algorithm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Programvareutvikling-Gruppe-35" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="algorithm" />
-      <option name="MAIN_CLASS_NAME" value="algorithm.EventTest" />
-      <option name="METHOD_NAME" value="setHoursOfWork" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -988,49 +1096,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -1083,56 +1154,26 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Connect" />
-      <item index="2" class="java.lang.String" itemvalue="Application.SubjectAssistent" />
-      <item index="3" class="java.lang.String" itemvalue="Application.subject" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.EventTest.setHoursOfWork" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Run" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.GetAllSubjectsNTNU" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SileniumDriver" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EventTest.setHoursOfWork" />
-        <item index="2" class="java.lang.String" itemvalue="Application.subject" />
-        <item index="3" class="java.lang.String" itemvalue="Application.SubjectAssistent" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Connect" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SileniumDriver" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GetAllSubjectsNTNU" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Run" />
       </list>
     </recent_temporary>
   </component>
@@ -1143,6 +1184,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1166,24 +1210,35 @@
       <workItem from="1487846203214" duration="1105000" />
       <workItem from="1487848028636" duration="3072000" />
       <workItem from="1487851189239" duration="3273000" />
-      <workItem from="1487927890002" duration="4525000" />
-      <workItem from="1488965270877" duration="11641000" />
-      <workItem from="1488991970925" duration="3384000" />
-      <workItem from="1489050197176" duration="10559000" />
-      <workItem from="1489332557324" duration="350000" />
-      <workItem from="1489342204949" duration="91000" />
-      <workItem from="1489392981104" duration="3214000" />
-      <workItem from="1489400215982" duration="1897000" />
-      <workItem from="1489415122569" duration="5002000" />
-      <workItem from="1489491213238" duration="1525000" />
-      <workItem from="1489569729859" duration="5705000" />
-      <workItem from="1489586495177" duration="57000" />
-      <workItem from="1489652317852" duration="33000" />
-      <workItem from="1489652483244" duration="14508000" />
-      <workItem from="1489694676415" duration="1669000" />
-      <workItem from="1490173393872" duration="17906000" />
-      <workItem from="1490260310487" duration="24041000" />
-      <workItem from="1490688678574" duration="48064000" />
+      <workItem from="1487927890002" duration="17911000" />
+      <workItem from="1488217326142" duration="1217000" />
+      <workItem from="1488359616272" duration="12712000" />
+      <workItem from="1488445737334" duration="13976000" />
+      <workItem from="1488535194770" duration="8873000" />
+      <workItem from="1488576632795" duration="25991000" />
+      <workItem from="1488964321301" duration="39268000" />
+      <workItem from="1489069822601" duration="5000" />
+      <workItem from="1489070687673" duration="36360000" />
+      <workItem from="1489414634395" duration="43000" />
+      <workItem from="1489414738574" duration="15991000" />
+      <workItem from="1489492673313" duration="926000" />
+      <workItem from="1489499555205" duration="28503000" />
+      <workItem from="1489597299819" duration="6367000" />
+      <workItem from="1489607410108" duration="3612000" />
+      <workItem from="1489655197202" duration="16961000" />
+      <workItem from="1489677313986" duration="5470000" />
+      <workItem from="1489952152163" duration="396000" />
+      <workItem from="1489954804203" duration="478000" />
+      <workItem from="1490085860032" duration="27444000" />
+      <workItem from="1490170624415" duration="727000" />
+      <workItem from="1490173538271" duration="19795000" />
+      <workItem from="1490260154048" duration="34069000" />
+      <workItem from="1490520429178" duration="2021000" />
+      <workItem from="1490529350445" duration="6660000" />
+      <workItem from="1490604513518" duration="49021000" />
+      <workItem from="1490861434386" duration="17066000" />
+      <workItem from="1490957894907" duration="283000" />
+      <workItem from="1490985340626" duration="35726000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1241,229 +1296,242 @@
       <option name="project" value="LOCAL" />
       <updated>1487930314150</updated>
     </task>
-    <task id="LOCAL-00009" summary="startet med data basen til læreren">
-      <created>1488978309432</created>
+    <task id="LOCAL-00009" summary="Change in clearcells method">
+      <created>1487934550814</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1488978309432</updated>
+      <updated>1487934550814</updated>
     </task>
-    <task id="LOCAL-00010" summary="startet med data basen til læreren">
-      <created>1488978346667</created>
+    <task id="LOCAL-00010" summary="the right instance of add class available in calendarController class in the add method.">
+      <created>1488110468117</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1488978346667</updated>
+      <updated>1488110468117</updated>
     </task>
-    <task id="LOCAL-00011" summary="startet med data basen til læreren">
-      <created>1488978492654</created>
+    <task id="LOCAL-00011" summary="Sliderbutton from jphoenix added">
+      <created>1488112716632</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1488978492654</updated>
+      <updated>1488112716632</updated>
     </task>
-    <task id="LOCAL-00012" summary="startet med data basen til læreren">
-      <created>1488995370927</created>
+    <task id="LOCAL-00012" summary="Add, and addsubject made">
+      <created>1488360861759</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1488995370927</updated>
+      <updated>1488360861759</updated>
     </task>
-    <task id="LOCAL-00013" summary="startet med data basen til læreren">
-      <created>1489052811456</created>
+    <task id="LOCAL-00013" summary="Login with password">
+      <created>1488364445181</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1489052811456</updated>
+      <updated>1488364445181</updated>
     </task>
-    <task id="LOCAL-00014" summary="data base funksjoner for subjectassistent er added">
-      <created>1489056663166</created>
+    <task id="LOCAL-00014" summary="Password field, in create user">
+      <created>1488369084556</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1489056663166</updated>
+      <updated>1488369084556</updated>
     </task>
-    <task id="LOCAL-00015" summary="data base funksjoner for subjectassistent er added">
-      <created>1489056705728</created>
+    <task id="LOCAL-00015" summary="same instance of calendarcontroller">
+      <created>1488454888639</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1489056705728</updated>
+      <updated>1488454888639</updated>
     </task>
-    <task id="LOCAL-00016" summary="data base funksjoner for subjectassistent er added">
-      <created>1489061274488</created>
+    <task id="LOCAL-00016" summary="Glemte å pushe på torsdag, gjoer det nå">
+      <created>1488561053103</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1489061274488</updated>
+      <updated>1488561053103</updated>
     </task>
-    <task id="LOCAL-00017" summary="data base funksjoner for subjectassistent er added">
-      <created>1489062634393</created>
+    <task id="LOCAL-00017" summary="change of gui">
+      <created>1488964816076</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1489062634393</updated>
+      <updated>1488964816076</updated>
     </task>
-    <task id="LOCAL-00018" summary="data base funksjoner for subjectassistent er added">
-      <created>1490264249059</created>
+    <task id="LOCAL-00018" summary="fixed possible to close add.fxml from cancel-button">
+      <created>1488966033295</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1490264249059</updated>
+      <updated>1488966033295</updated>
     </task>
-    <task id="LOCAL-00019" summary="data base funksjoner for subjectassistent er added">
-      <created>1490274897442</created>
+    <task id="LOCAL-00019" summary="Possible to login as coursecoordinator">
+      <created>1488968929727</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1490274897442</updated>
+      <updated>1488968929727</updated>
     </task>
-    <task id="LOCAL-00020" summary="fikset en bug">
-      <created>1490345604786</created>
+    <task id="LOCAL-00020" summary="minor fix">
+      <created>1488969237615</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1490345604786</updated>
+      <updated>1488969237615</updated>
     </task>
-    <task id="LOCAL-00021" summary="nå er den en liste som pusher events og activitys  ut i calenderen">
-      <created>1490450765039</created>
+    <task id="LOCAL-00021" summary="added controller for addEvent">
+      <created>1488974945202</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1490450765039</updated>
+      <updated>1488974945202</updated>
     </task>
-    <task id="LOCAL-00022" summary="nå kan du tryke på vents å få opp mer info">
-      <created>1490691427494</created>
+    <task id="LOCAL-00022" summary="minor fix">
+      <created>1488977086278</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1490691427494</updated>
+      <updated>1488977086278</updated>
     </task>
-    <task id="LOCAL-00023" summary="nå kan du tryke på vents å få opp mer info">
-      <created>1490691441051</created>
+    <task id="LOCAL-00023" summary="started to validate addEvent.">
+      <created>1489058179599</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1490691441051</updated>
+      <updated>1489058179599</updated>
     </task>
-    <task id="LOCAL-00024" summary="litt ryding">
-      <created>1490691992740</created>
+    <task id="LOCAL-00024" summary="AddEvent finished, exept subjectfield.">
+      <created>1489080750864</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1490691992740</updated>
+      <updated>1489080750864</updated>
     </task>
-    <task id="LOCAL-00025" summary="fiksa litt bøgs">
-      <created>1490697771705</created>
+    <task id="LOCAL-00025" summary="Little change in GUI">
+      <created>1489336379273</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1490697771705</updated>
+      <updated>1489336379273</updated>
     </task>
-    <task id="LOCAL-00026" summary="lagt til farger på uke eventer/aktivitys">
-      <created>1490701079151</created>
+    <task id="LOCAL-00026" summary="Little week tab on gui">
+      <created>1489569164236</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1490701079151</updated>
+      <updated>1489569164236</updated>
     </task>
-    <task id="LOCAL-00027" summary="stylet litt på eventButton, forsat ikke optimalt men det kan jeg se på sennere">
-      <created>1490778950224</created>
+    <task id="LOCAL-00027" summary="Log in over again problem fixed">
+      <created>1489573022047</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1490778950224</updated>
+      <updated>1489573022047</updated>
     </task>
-    <task id="LOCAL-00028" summary="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
-      <created>1490867513347</created>
+    <task id="LOCAL-00028" summary="same instance of calendarcontroller">
+      <created>1489655896436</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1490867513347</updated>
+      <updated>1489655896436</updated>
     </task>
-    <task id="LOCAL-00029" summary="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
-      <created>1490870833309</created>
+    <task id="LOCAL-00029" summary="Commented for weekTab-code">
+      <created>1489657207302</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1490870833309</updated>
+      <updated>1489657207302</updated>
     </task>
-    <task id="LOCAL-00030" summary="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
-      <created>1490872380922</created>
+    <task id="LOCAL-00030" summary="Month tab stuff">
+      <created>1490174133319</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1490872380922</updated>
+      <updated>1490174133319</updated>
     </task>
-    <task id="LOCAL-00031" summary="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)">
-      <created>1490873283184</created>
+    <task id="LOCAL-00031" summary="Clean Up Insert Cells Method.">
+      <created>1490178740457</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1490873283184</updated>
+      <updated>1490178740457</updated>
     </task>
-    <task id="LOCAL-00032" summary="fiksa slik at månder viser vilke aktiviteter som er der">
-      <created>1491223355140</created>
+    <task id="LOCAL-00032" summary="Bot is added to web view">
+      <created>1490181874347</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1491223355140</updated>
+      <updated>1490181874347</updated>
     </task>
-    <task id="LOCAL-00033" summary="fiksa slik at månder viser vilke aktiviteter som er der">
-      <created>1491223896042</created>
+    <task id="LOCAL-00033" summary="Botto fixed">
+      <created>1490273950028</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1491223896042</updated>
+      <updated>1490273950028</updated>
     </task>
-    <task id="LOCAL-00034" summary="fiksa bug">
-      <created>1491294876855</created>
+    <task id="LOCAL-00034" summary="CleanUp">
+      <created>1490276921463</created>
       <option name="number" value="00034" />
       <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1491294876855</updated>
+      <updated>1490276921463</updated>
     </task>
-    <task id="LOCAL-00035" summary="la til validering på addd activity">
-      <created>1491295954015</created>
+    <task id="LOCAL-00035" summary="cleanUp">
+      <created>1490277786731</created>
       <option name="number" value="00035" />
       <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1491295954015</updated>
+      <updated>1490277786731</updated>
     </task>
-    <task id="LOCAL-00036" summary="fikset sånn evnts i månder ikke går over til andre dager">
-      <created>1491297719112</created>
+    <task id="LOCAL-00036" summary="CleanUp">
+      <created>1490282861238</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1491297719112</updated>
+      <updated>1490282861238</updated>
     </task>
-    <task id="LOCAL-00037" summary="fikset sånn evnts i månder ikke går over til andre dager">
-      <created>1491298388673</created>
+    <task id="LOCAL-00037" summary="Scraper stuff">
+      <created>1490788896785</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1491298388673</updated>
+      <updated>1490788896786</updated>
     </task>
-    <task id="LOCAL-00038" summary="ny font botto">
-      <created>1491298740051</created>
+    <task id="LOCAL-00038" summary="Scraper can scrape Exam information.">
+      <created>1490869367752</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1491298740051</updated>
+      <updated>1490869367752</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Made all scemes look basicly the same">
+      <created>1491218698253</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1491218698253</updated>
+    </task>
+    <task id="LOCAL-00040" summary="work on teacherTab">
+      <created>1491297110366</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1491297110366</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Snackbar added to teacher">
+      <created>1491301358590</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1491301358590</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="EventTest_setHoursOfWork - 2017.03.29 at 12h 53m 22s.xml">
-      <configuration name="EventTest.setHoursOfWork" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EventTest_setHoursOfWork - 2017.03.29 at 13h 02m 07s.xml">
-      <configuration name="EventTest.setHoursOfWork" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173111000" />
+    <option name="totallyTimeSpent" value="446812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1475,38 +1543,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29726028" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07123288" sideWeight="0.5072698" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2780822" sideWeight="0.49434572" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.069863014" sideWeight="0.4927302" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29483038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22859451" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2355606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5069686" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20708154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1520,24 +1589,25 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2980198" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36415362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.071287125" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24878837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30464327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49573562" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5069686" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11051502" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1565,35 +1635,36 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class." />
-    <MESSAGE value="Added more classes for the calendar." />
-    <MESSAGE value="Added a query example in the files &quot;Run&quot; and &quot;Login&quot;" />
-    <MESSAGE value="IntelliJ nekta mæ å last ned." />
-    <MESSAGE value="New .gitignore, should keep the pull-mistakes away" />
-    <MESSAGE value="Made simple login verification" />
-    <MESSAGE value="Cleartimeslots, and clear timeslot method" />
-    <MESSAGE value="startet med data basen til læreren" />
-    <MESSAGE value="data base funksjoner for subjectassistent er added" />
-    <MESSAGE value="fikset en bug" />
-    <MESSAGE value="oppdatere slik eg kan laste ned nyeste versjon" />
-    <MESSAGE value="nå er den en liste som pusher events og activitys  ut i calenderen" />
-    <MESSAGE value="nå kan du tryke på vents å få opp mer info" />
-    <MESSAGE value="litt ryding" />
-    <MESSAGE value="fiksa litt bøgs" />
-    <MESSAGE value="lagt til farger på uke eventer/aktivitys" />
-    <MESSAGE value="stylet litt på eventButton, forsat ikke optimalt men det kan jeg se på sennere" />
-    <MESSAGE value="då skal delte knappene virke (litten feil med event, men tror det er i sort funkjsonen)" />
-    <MESSAGE value="fiksa slik at månder viser vilke aktiviteter som er der" />
-    <MESSAGE value="fiksa bug" />
-    <MESSAGE value="la til validering på addd activity" />
-    <MESSAGE value="fikset sånn evnts i månder ikke går over til andre dager" />
-    <MESSAGE value="ny font botto" />
-    <MESSAGE value="deadline kliker ikke" />
-    <option name="LAST_COMMIT_MESSAGE" value="deadline kliker ikke" />
+    <MESSAGE value="Password field, in create user" />
+    <MESSAGE value="Glemte å pushe på torsdag, gjoer det nå" />
+    <MESSAGE value="change of gui" />
+    <MESSAGE value="fixed possible to close add.fxml from cancel-button" />
+    <MESSAGE value="Possible to login as coursecoordinator" />
+    <MESSAGE value="added controller for addEvent" />
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="started to validate addEvent." />
+    <MESSAGE value="AddEvent finished, exept subjectfield." />
+    <MESSAGE value="Little change in GUI" />
+    <MESSAGE value="Little week tab on gui" />
+    <MESSAGE value="Log in over again problem fixed" />
+    <MESSAGE value="same instance of calendarcontroller" />
+    <MESSAGE value="Commented for weekTab-code" />
+    <MESSAGE value="Month tab stuff" />
+    <MESSAGE value="Clean Up Insert Cells Method." />
+    <MESSAGE value="Bot is added to web view" />
+    <MESSAGE value="Botto fixed" />
+    <MESSAGE value="cleanUp" />
+    <MESSAGE value="CleanUp" />
+    <MESSAGE value="Scraper stuff" />
+    <MESSAGE value="Scraper can scrape Exam information." />
+    <MESSAGE value="Made all scemes look basicly the same" />
+    <MESSAGE value="work on teacherTab" />
+    <MESSAGE value="Snackbar added to teacher" />
+    <option name="LAST_COMMIT_MESSAGE" value="Snackbar added to teacher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1602,439 +1673,391 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/fxml/add.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="96" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/fxml/addSubject.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/fxml/watchDay.fxml">
+    <entry file="file://$PROJECT_DIR$/src/layout/CalendarController.java" />
+    <entry file="file://$PROJECT_DIR$/src/layout/TeacherCalendarController.java" />
+    <entry file="file://$PROJECT_DIR$/src/layout/AddEventController.java" />
+    <entry file="file://$PROJECT_DIR$/src/layout/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/Programvareutvikling-Gruppe-35.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/fxml/weekMoreInfo.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/weekMoreInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/eventButtonWeek/activityButton.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/addEvent.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/resources/addStudass.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/controllers/Browser.java" />
+    <entry file="file://$PROJECT_DIR$/src/calendar/UserCell.java" />
+    <entry file="file://$PROJECT_DIR$/src/calendar/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="246">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/rt.jar!/java/util/Map.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/calendar.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/calendar/TimeInterval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/EO.png" />
+    <entry file="file://$PROJECT_DIR$/src/algorithm/PriorityComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
+    <entry file="file://$PROJECT_DIR$/src/api/Connect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="396">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="95" column="44" lean-forward="true" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1491303252627" expanded="true" signature="1880:1947" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1491303252627" expanded="true" signature="2437:2502" ph="SELECT * FRO... EVENT" />
+            <marker date="1491303252627" expanded="true" signature="3597:3663" ph="SELECT * FRO... ACTIVITY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/buttonStyle.css" />
+    <entry file="file://$PROJECT_DIR$/src/layout/eventButtonWeek/parentEventButton.java" />
+    <entry file="file://$PROJECT_DIR$/src/layout/eventButtonWeek/eventButton.java" />
+    <entry file="file://$PROJECT_DIR$/src/layout/eventButtonWeek/activityButton.java" />
+    <entry file="file://$PROJECT_DIR$/src/database/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding>
+            <marker date="1490276874562" expanded="true" signature="247:268" ph="SELECT * FRO... STUDENT" />
+            <marker date="1490276874562" expanded="true" signature="300:331" ph="SELECT * FRO... COURSECOORDINATOR" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/Fetcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="154">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/database/FetcherTest.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="-133">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/database/LoginTest.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/username.fxml" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/scene/image/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="183">
+          <caret line="1109" column="0" lean-forward="false" selection-start-line="1109" selection-start-column="0" selection-end-line="1109" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="2531" column="0" lean-forward="false" selection-start-line="2531" selection-start-column="0" selection-end-line="2531" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="25" lean-forward="false" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="101" />
+        <state relative-caret-position="183">
+          <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/SubjectAssistent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1489062775759" expanded="true" signature="535:653" ph="INSERT INTO SUBJECTASSISTENT... " />
+            <marker date="1489062775759" expanded="true" signature="970:1054" ph="INSERT INTO SUBJECTASSISTENT... " />
+            <marker date="1489062775759" expanded="true" signature="1648:1733" ph="SELECT * FRO... SUBJECTASSISTENT" />
+            <marker date="1489062775759" expanded="true" signature="2558:2645" ph="SELECT * FRO... SUBJECTASSISTENT" />
+            <marker date="1489062775759" expanded="true" signature="3538:3617" ph="INSERT INTO ONROOM... " />
+            <marker date="1489062775759" expanded="true" signature="4022:4087" ph="SELECT * FRO... ONROOM" />
+            <marker date="1489062775759" expanded="true" signature="4870:4937" ph="SELECT * FRO... ONROOM" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/dynamicLines.css" />
+    <entry file="file://$PROJECT_DIR$/src/algorithm/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1962" column="0" lean-forward="false" selection-start-line="1962" selection-start-column="0" selection-end-line="1962" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/215ab4bc/326cdb09-9dde-491b-b4c1-113fe8269467/torresrl_eduorg.NOTATTENDINGEVENT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1586">
+          <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <marker date="1491303252646" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
+            <marker date="1491303252646" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1491303252646" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
+            <marker date="1491303252646" expanded="true" signature="3892:3987" ph="UPDATE STUDE... " />
+            <marker date="1491303252646" expanded="true" signature="4412:4462" ph="INSERT INTO ROOM... " />
+            <marker date="1491303252646" expanded="true" signature="4915:5214" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/215ab4bc/326cdb09-9dde-491b-b4c1-113fe8269467/torresrl_eduorg.ONROOM">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/scraping/SileniumDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="285" column="57" lean-forward="false" selection-start-line="285" selection-start-column="57" selection-end-line="285" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scraping/GetAllSubjectsNTNU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="566">
+          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/fxml/add.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <marker date="1490290223000" expanded="true" signature="247:268" ph="SELECT * FRO... STUDENT" />
-            <marker date="1490290223000" expanded="true" signature="300:331" ph="SELECT * FRO... COURSECOORDINATOR" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddSubjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="56" column="59" lean-forward="false" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
-          <folding>
-            <marker date="1491298242000" expanded="true" signature="3381:3402" ph="SELECT * FRO... SUBJECT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/css/buttonStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="85" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/SubjectAssistent.java">
+    <entry file="file://$PROJECT_DIR$/src/resources/fxml/makeuser.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="92" />
+        <state relative-caret-position="553">
+          <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
           <folding>
-            <marker date="1489061259000" expanded="true" signature="535:653" ph="INSERT INTO SUBJECTASSISTENT... " />
-            <marker date="1489061259000" expanded="true" signature="970:1054" ph="INSERT INTO SUBJECTASSISTENT... " />
-            <marker date="1489061259000" expanded="true" signature="1648:1733" ph="SELECT * FRO... SUBJECTASSISTENT" />
-            <marker date="1489061259000" expanded="true" signature="2558:2645" ph="SELECT * FRO... SUBJECTASSISTENT" />
-            <marker date="1489061259000" expanded="true" signature="3538:3617" ph="INSERT INTO ONROOM... " />
-            <marker date="1489061259000" expanded="true" signature="4022:4087" ph="SELECT * FRO... ONROOM" />
-            <marker date="1489061259000" expanded="true" signature="4870:4937" ph="SELECT * FRO... ONROOM" />
+            <marker date="1491218558131" expanded="true" signature="9229:9382" ph="..." />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/css/eventButton.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1491298242000" expanded="true" signature="956:1006" ph="SELECT * FRO... STUDENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="164" column="66" lean-forward="false" selection-start-line="164" selection-start-column="66" selection-end-line="164" selection-end-column="66" />
-          <folding>
-            <marker date="1491297725000" expanded="true" signature="2314:2335" ph="SELECT * FRO... SUBJECT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/calendar/ActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="135" lean-forward="false" selection-start-line="18" selection-start-column="135" selection-end-line="18" selection-end-column="135" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/algorithm/EventTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <marker date="1490862698000" expanded="true" signature="312:360" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/PriorityComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/TimeComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="27" />
-          <folding>
-            <marker date="1491223366000" expanded="true" signature="551:710" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1491223366000" expanded="true" signature="1230:1312" ph="UPDATE SUBJE... " />
-            <marker date="1491223366000" expanded="true" signature="1602:1733" ph="INSERT INTO SUBJECT... " />
-            <marker date="1491223366000" expanded="true" signature="2003:2121" ph="INSERT INTO SUBJECT... " />
-            <marker date="1491223366000" expanded="true" signature="2557:2634" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1491223366000" expanded="true" signature="4185:4503" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="4185:4514" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="5515:5844" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="6470:6783" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="7569:7869" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="7569:7880" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="8903:9224" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="8903:9235" ph="INSERT INTO EVENT... " />
-            <marker date="1491223366000" expanded="true" signature="9845:9908" ph="SELECT * FRO... EVENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="107" lean-forward="false" selection-start-line="25" selection-start-column="107" selection-end-line="25" selection-end-column="107" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1490873155000" expanded="true" signature="320:348" ph="INSERT INTO NOTATTENDINGEVEN... " />
-            <marker date="1490873155000" expanded="true" signature="320:349" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:351" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:356" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:357" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:368" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:378" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1490873155000" expanded="true" signature="320:381" ph="INSERT INTO NOTATTENDINGEVENT... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <marker date="1491298242000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
-            <marker date="1491298242000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1491298242000" expanded="true" signature="3361:3640" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1491298242000" expanded="true" signature="3361:3643" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1491298242000" expanded="true" signature="3361:3654" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1491298242000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1491298242000" expanded="true" signature="3892:3987" ph="UPDATE STUDE... " />
-            <marker date="1491298242000" expanded="true" signature="4662:4712" ph="INSERT INTO ROOM... " />
-            <marker date="1491298242000" expanded="true" signature="5165:5464" ph="DELETE FROM " />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/CreateUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="440">
+          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="119" column="14" lean-forward="false" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/AskBotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/add/AddActivityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="160" column="34" lean-forward="true" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
+        <state relative-caret-position="190">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/package.json">
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddSubjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/monthEventButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="86" column="11" lean-forward="true" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
+            <marker date="1491298258251" expanded="true" signature="3381:3402" ph="SELECT * FRO... SUBJECT" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
+    <entry file="file://$PROJECT_DIR$/src/layout/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/botto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="193" column="25" lean-forward="false" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="111" column="65" lean-forward="false" selection-start-line="111" selection-start-column="65" selection-end-line="111" selection-end-column="65" />
+        <state relative-caret-position="880">
+          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <marker date="1491303252649" expanded="true" signature="988:1049" ph="SELECT * FRO... STUDTAKESUB" />
+            <marker date="1491303252649" expanded="false" signature="1249:1260" ph=" { " />
+            <marker date="1491303252649" expanded="false" signature="1276:1282" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="423">
+          <caret line="171" column="4" lean-forward="true" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
           <folding>
-            <marker date="1491298242000" expanded="true" signature="3579:3646" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1491298242000" expanded="true" signature="4057:4146" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-            <marker date="1491298242000" expanded="true" signature="4451:4516" ph="SELECT * FRO... EVENT" />
-            <marker date="1491298242000" expanded="true" signature="5768:5834" ph="SELECT * FRO... ACTIVITY" />
-            <marker date="1491298242000" expanded="true" signature="7093:7159" ph="DELETE FROM " />
-            <marker date="1491298242000" expanded="true" signature="12476:12596" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1491298242000" expanded="true" signature="14195:14268" ph="DELETE FROM " />
-            <marker date="1491298242000" expanded="true" signature="14445:14550" ph="DELETE FROM " />
-            <marker date="1491298242000" expanded="true" signature="14590:14596" ph="{...}" />
-            <marker date="1491298242000" expanded="true" signature="14991:14998" ph="{...}" />
+            <marker date="1491218254680" expanded="true" signature="551:710" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1491218254680" expanded="true" signature="1230:1312" ph="UPDATE SUBJE... " />
+            <marker date="1491218254680" expanded="true" signature="1602:1733" ph="INSERT INTO SUBJECT... " />
+            <marker date="1491218254680" expanded="true" signature="2003:2121" ph="INSERT INTO SUBJECT... " />
+            <marker date="1491218254680" expanded="true" signature="2557:2634" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1491218254680" expanded="true" signature="4185:4514" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="5515:5792" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="5515:5844" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="6470:6783" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="7569:7880" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="7829:7880" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="8903:9235" ph="INSERT INTO EVENT... " />
+            <marker date="1491218254680" expanded="true" signature="9845:9908" ph="SELECT * FRO... EVENT" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/calendar/Cell.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
+        <state relative-caret-position="256">
+          <caret line="155" column="66" lean-forward="false" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="66" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/fxml/addEvent.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/fxml/teacherCalendar.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="93" column="17" lean-forward="false" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/TeacherCalendarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="155" column="14" lean-forward="false" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
+          <folding>
+            <marker date="1491301327221" expanded="true" signature="2174:2260" ph="SELECT * FRO... SUBJECT" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="604" column="28" lean-forward="false" selection-start-line="604" selection-start-column="28" selection-end-line="604" selection-end-column="28" />
+        <state relative-caret-position="352">
+          <caret line="127" column="73" lean-forward="false" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1491303254778" expanded="false" signature="27959:27969" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28181:28191" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28259:28269" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28337:28347" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28415:28425" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28493:28503" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28571:28581" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28650:28660" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28730:28740" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28810:28820" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28890:28900" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="28970:28980" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29050:29060" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29130:29140" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29210:29220" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29290:29300" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29370:29380" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29450:29460" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29530:29540" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29610:29620" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29690:29700" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29770:29780" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29850:29860" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="29930:29940" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30010:30020" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30090:30100" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30170:30180" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30250:30260" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30330:30340" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30410:30420" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30490:30500" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30570:30580" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30650:30660" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30730:30740" ph=" { " />
+            <marker date="1491303254778" expanded="false" signature="30810:30820" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -2096,7 +2119,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

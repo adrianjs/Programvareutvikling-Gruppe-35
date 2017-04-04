@@ -1074,7 +1074,24 @@
    <right>
       <AnchorPane prefHeight="533.0" prefWidth="112.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="455.0" prefWidth="200.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="604.0" prefWidth="122.0" style="-fx-background-color: d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Logged in as:">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="username" text="Username">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="335.0" prefWidth="122.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="/css/buttonStyle.css" text="Add" textFill="#4aab32">
                      <font>
@@ -1085,7 +1102,8 @@
                   <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Add subject" textFill="RED">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></JFXButton>
+                     </font>
+                  </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#1500ff" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
