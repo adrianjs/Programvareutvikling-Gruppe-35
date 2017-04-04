@@ -90,5 +90,11 @@
 
 /*Add activity buttons*/
 
+/*Text*/
+
+#text{
+	-fx-font-weight: bold;
+}
+
 
 

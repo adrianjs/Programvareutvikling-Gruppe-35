@@ -1,9 +1,6 @@
 package controllers.add;
 
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import controllers.TeacherCalendarController;
 import database.Connect;
 import database.Teacher;
@@ -15,6 +12,7 @@ import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import layout.User;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
@@ -38,8 +36,7 @@ public class AddEventController extends Connect implements Initializable{
     @FXML Group repeatingGroup;
 
     //Inputfields
-    final ToggleGroup group = new ToggleGroup();
-    @FXML JFXTextField subject;
+    private final ToggleGroup group = new ToggleGroup();
     @FXML JFXTextField eventName;
     @FXML JFXRadioButton classRadio;
     @FXML JFXRadioButton schoolWork;
@@ -53,47 +50,41 @@ public class AddEventController extends Connect implements Initializable{
     @FXML JFXDatePicker endTime;
     @FXML JFXTextField repeating;
     @FXML Label errorLabel;
-    TeacherCalendarController teach;
+    @FXML JFXComboBox subjectsDropDown;
+    private TeacherCalendarController teach;
 
     //Values
-    String subject1;
-    String eventName1;
-    String description1;
-    LocalDate startDate1;
-    LocalDate endDate1;
-    int repeating1;
-    int startHour;
-    int startMinute;
-    int endHour;
-    int endMinute;
+    private String subject1;
+    private String eventName1;
+    private String description1;
+    private LocalDate startDate1;
+    private LocalDate endDate1;
+    private int repeating1;
+    private int startHour;
+    private int startMinute;
+    private int endHour;
+    private int endMinute;
 
-    Teacher t = new Teacher();
+    private Teacher t = new Teacher();
 
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setToggle();
         teach = TeacherCalendarController.getInstance();
-        //For the subject dropdown.
-        try{
-            m_ResultSet = stmt.executeQuery("SELECT * FROM SUBJECT");
-            while(m_ResultSet.next()){
-                subjects.add(m_ResultSet.getString(1));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        subjects = TeacherCalendarController.getInstance().getSubject();
         ComboBox box = new ComboBox();
         box.setItems(subjects.sorted());
-        TextFields.bindAutoCompletion(subject, box.getItems());
-
+        subjectsDropDown.setItems(subjects.sorted());
     }
+
 
     /**
      * Set radiobuttons in one group.
      */
-    public void setToggle(){
+    private void setToggle(){
         classRadio.setToggleGroup(group);
         schoolWork.setToggleGroup(group);
         deadline.setToggleGroup(group);
@@ -151,17 +142,17 @@ public class AddEventController extends Connect implements Initializable{
             boolean startTime = validateStartTime();
             boolean endTime = validateeEndTime();
             boolean startTbeforeEndT = false;
-            if(startTime == true && endTime == true){
+            if(startTime && endTime){
                 startTbeforeEndT = validateStartTimeBeforeEndTime();
             }
             boolean rep = validateRepeating();
-            if(subject == true && name == true && description == true && start == true && startTbeforeEndT == true && rep == true){
+            if(subject && name && description && start && startTbeforeEndT && rep){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour + ":00:00";
                 String endTimeString = endHour + ":00:00";
                 t.addLecture(eventName1, startDate1, startTimeString, endTimeString, repeating1, description1, subject1);
-                teach.addEvent();
+                teach.cancel();
                 teach.snack(0, "New Lecture entered to database");
             }
         }
@@ -170,26 +161,26 @@ public class AddEventController extends Connect implements Initializable{
             boolean startDate = validateStartDate();
             boolean endDate = validateEndDate();
             boolean startToEnd = false;
-            if(startDate == true && endDate == true){
+            if(startDate && endDate){
                 startToEnd =validateStartBeforeEnd();
             }
             boolean startTime = validateStartTime();
             boolean endTime = validateeEndTime();
             boolean startToEndT = false;
-            if(startTime == true && endTime == true){
+            if(startTime && endTime){
                 startToEndT = validateStartTimeBeforeEndTime();
             }
             boolean desc = validateDescription();
             boolean subject = validateSubject();
             boolean rep = validateRepeating();
-            if(name == true && startToEnd == true && startToEnd == true && desc == true && subject == true && rep == true){
+            if(name && startToEnd && startToEnd && desc && subject && rep){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
-                String startTimeString = starthour + ":00:00";
-                String endTimeString = endHour + ":00:00";
+                String startTimeString = starthour;
+                String endTimeString = endHour;
                 t.addSchoolWork(eventName1, startDate1, endDate1, startTimeString, endTimeString, repeating1, description1, (double) 0, subject1 );
                 System.out.println("New schoolwork entered to database");
-                teach.addEvent();
+                teach.cancel();
                 teach.snack(0, "New schoolwork entered to database");
             }
         }
@@ -199,13 +190,14 @@ public class AddEventController extends Connect implements Initializable{
             boolean time = validateStartTime();
             boolean desc = validateDescription();
             boolean subject = validateSubject();
-            if(name == true && date == true && time == true && desc == true && subject == true){
+            if(name && date && time && desc && subject){
                 System.out.println("all good deadline");
                 String starthour = changeHour(this.startHour);
-                String startTimeString = starthour + ":00:00";
+                //String startTimeString = starthour + ":00:00";
+                String startTimeString = starthour;
                 t.addDeadLine(eventName1, startDate1, startTimeString, description1, subject1);
                 System.out.println("New deadline entered to database");
-                teach.addEvent();
+                teach.cancel();
                 teach.snack(0, "New deadline entered to database");
             }
 
@@ -216,18 +208,18 @@ public class AddEventController extends Connect implements Initializable{
             boolean startTime = validateStartTime();
             boolean endTime = validateeEndTime();
             boolean startToEndT = false;
-            if(startTime == true && endTime == true){
+            if(startTime && endTime){
                 startToEndT = validateStartTimeBeforeEndTime();
             }
             boolean desc = validateDescription();
             boolean subject = validateSubject();
-            if(name == true && date == true && startToEndT == true && desc == true && subject == true){
+            if(name && date && startToEndT && desc && subject){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
-                String startTimeString = starthour + ":00:00";
-                String endTimeString = endHour + ":00:00";
+                String startTimeString = starthour;
+                String endTimeString = endHour;
                 t.addExam(eventName1, startDate1, startTimeString, endTimeString, description1, subject1);
-                teach.addEvent();
+                teach.cancel();
                 teach.snack(0, "New exam entered to database");
             }
         }
@@ -236,24 +228,24 @@ public class AddEventController extends Connect implements Initializable{
             boolean startDate = validateStartDate();
             boolean endDate = validateEndDate();
             boolean startToEndD = false;
-            if(startDate == true && endDate == true){
+            if(startDate && endDate){
                 startToEndD = validateStartBeforeEnd();
             }
             boolean startTime = validateStartTime();
             boolean endTime = validateeEndTime();
             boolean startToEndT = false;
-            if(startTime == true && endTime == true){
+            if(startTime && endTime){
                 startToEndT = validateStartTimeBeforeEndTime();
             }
             boolean desc = validateDescription();
             boolean subject = validateSubject();
-            if(name == true && startToEndD == true && startToEndT == true && desc == true && subject == true){
+            if(name && startToEndD && startToEndT && desc && subject){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
-                String startTimeString = starthour + ":00:00";
-                String endTimeString = endHour + ":00:00";
+                String startTimeString = starthour;
+                String endTimeString = endHour;
                 t.addHomeExam(eventName1, startDate1, endDate1, startTimeString, endTimeString, description1, (double) 0, subject1);
-                teach.addEvent();
+                teach.cancel();
                 teach.snack(0, "New homeExam entered to database");
             }
         }
@@ -270,13 +262,13 @@ public class AddEventController extends Connect implements Initializable{
     public void cancel(){//Onaction from cancel-button
         System.out.println("cancel");
         teach.snack(1, "");
-        teach.addEvent();
+        teach.cancel();
 
     }
 
     //Validate methods --> Validates all fields in add event controller.
-    public boolean validateSubject(){
-        String subject = this.subject.getText();
+    private boolean validateSubject(){
+        String subject = subjectsDropDown.getValue().toString();
         //TODO: Validate subject to database and check if it is cannot put subject to database unless it exist.
         if(!subjects.contains(subject)){
             errorLabel.setText("This subject is not in database");
@@ -286,7 +278,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateEventName(){
+    private boolean validateEventName(){
         String name = eventName.getText();
         if(name.length() == 0){
             errorLabel.setText("Must have an event name");
@@ -297,7 +289,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateDescription(){
+    private boolean validateDescription(){
         String description = this.description.getText();
         if(description.length() == 0){
             errorLabel.setText("Must have a description");
@@ -310,7 +302,7 @@ public class AddEventController extends Connect implements Initializable{
         }
     }
 
-    public boolean validateStartDate(){
+    private boolean validateStartDate(){
         LocalDate start = startDate.getValue();
         if(start == null){
             errorLabel.setText("Must have a start date");
@@ -329,7 +321,7 @@ public class AddEventController extends Connect implements Initializable{
         }
     }
 
-    public boolean validateEndDate(){
+    private boolean validateEndDate(){
         LocalDate end = endDate.getValue();
         if(end == null){
             errorLabel.setText("Must have a end date");
@@ -349,7 +341,7 @@ public class AddEventController extends Connect implements Initializable{
 
     }
 
-    public boolean validateStartBeforeEnd(){
+    private boolean validateStartBeforeEnd(){
         if(startDate1.isAfter(endDate1)){
             errorLabel.setText("Start must be before end");
             System.out.println("start must be before end");
@@ -358,7 +350,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateStartTime(){
+    private boolean validateStartTime(){
         int hour = 0;
         int minute = 0;
         try {
@@ -374,7 +366,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateeEndTime(){
+    private boolean validateeEndTime(){
         int hour = 0;
         int minute = 0;
         try {
@@ -390,7 +382,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateStartTimeBeforeEndTime(){
+    private boolean validateStartTimeBeforeEndTime(){
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
             System.out.println("starthour must be before end hour");
@@ -399,7 +391,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    public boolean validateRepeating(){
+    private boolean validateRepeating(){
         String rep = repeating.getText();
         if(rep.length() == 0){
             errorLabel.setText("Must have a value in rep field");
@@ -420,13 +412,17 @@ public class AddEventController extends Connect implements Initializable{
 
     /**
      * Set a 0 if ther is only one integer in hour so it can set string to right format.
-     * @param hour
+     * @param hour integer of hour parameter
      * @return Right formated string for database.
      */
-    public String changeHour(int hour){
+    private String changeHour(int hour){
         String string = Integer.toString(hour);
         if(string.length() == 1){
             return "0"+ string;
         }return string;
+    }
+
+    public String getSubjects(){
+        return subjects.toString();
     }
 }
