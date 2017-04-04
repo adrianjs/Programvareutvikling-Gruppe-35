@@ -178,10 +178,11 @@ public class CalendarController extends Connect implements Initializable{
      * @throws SQLException
      * @throws ParseException
      */
-	public void remove() throws IOException, SQLException, ParseException, InterruptedException {
+	public void restore() throws IOException, SQLException, ParseException, InterruptedException {
         //TODO: Make remove button work
 		//sc.setFirstDateOfDay(1);
-    }
+		System.out.println("RESTORE");
+	}
 
     /**
      * OnAction from addsubject-button.

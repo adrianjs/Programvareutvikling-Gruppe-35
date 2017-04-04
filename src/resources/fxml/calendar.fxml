@@ -1107,6 +1107,8 @@
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#1500ff" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
+                  <JFXButton id="sideButton" onAction="#restore" prefHeight="70.0" prefWidth="124.0" stylesheets="@../css/buttonStyle.css" text="Restore" />
+                  <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Log Out" />
                </children>
             </VBox>
