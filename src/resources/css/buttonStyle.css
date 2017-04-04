@@ -97,4 +97,17 @@
 }
 
 
+/*SnackBar*/
+
+/*.jfx-snackbar-content {
+	-fx-background-color: BLACK;
+	}*/
+.jfx-snackbar-toast {
+	-fx-text-fill: RED;
+	-fx-font-size: 30; 
+	}
+.jfx-snackbar-action {
+	-fx-text-fill: #ff4081;
+	}
+
 
