@@ -45,6 +45,7 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private GridPane week; //WEEK PANE
 	@FXML private GridPane month; //MONTH PANE
 	@FXML private AnchorPane dayAnchor; //Anchorpane day
+	@FXML private Label username;
 
 	//AI panes.
     private HamburgerBackArrowBasicTransition tran;
@@ -59,6 +60,7 @@ public class CalendarController extends Connect implements Initializable{
 
 	//Labels for Day pane.
 	@FXML private Label thisday;
+
 
 	//Labels week-Pane
 
@@ -123,6 +125,7 @@ public class CalendarController extends Connect implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+		username.setText(User.getInstance().getUsername().split("@")[0]);
 		setLines();
         setDate();
 		try {
