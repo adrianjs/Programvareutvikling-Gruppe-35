@@ -150,6 +150,10 @@ public class AddActivityController implements Initializable{
             errorTime.setText("Start must be before end");
             return false;
         }
+        if(start < 8 || stop < 8){
+            priorityError.setText("You can not have plans before 8 clock");
+            return false;
+        }
         return true;
     }
 
