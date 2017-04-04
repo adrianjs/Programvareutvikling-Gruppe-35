@@ -644,10 +644,10 @@ public class CalendarController extends Connect implements Initializable{
                         String[] checkLength = oldLabel.toString().split("\n");
                         Label lab = new Label();
                         String oldLabelToString = "\n";
-                        if(checkLength.length <= 4){
+                        if(checkLength.length <= 3){
                             oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
                         } else {
-                            for(int i = 1; i < 4; i ++){
+                            for(int i = 1; i < 3; i ++){
 								oldLabelToString += checkLength[i] + "\n";
 
                             }
