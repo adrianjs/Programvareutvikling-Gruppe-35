@@ -114,6 +114,16 @@ public class Connect {
         stmt.executeUpdate("UPDATE STUDENT SET subjects='"+subjects+"' WHERE email='"+ User.getInstance().getUsername() +"'");
     }
 
+    public void addStudentSubject(String subject) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate("INSERT INTO STUDTAKESUB(subjectCode, studentEmail) VALUES('"+subject+"','"+User.getInstance().getUsername()+"')");
+    }
+
+    public void removeStudentSubject(String subject) throws SQLException {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM STUDTAKESUB WHERE subjectCode='"+subject+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
+    }
+
 
     public void addRoom(String roomNr, int seats){
         try{

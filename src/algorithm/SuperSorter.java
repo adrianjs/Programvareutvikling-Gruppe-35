@@ -38,6 +38,7 @@ public class SuperSorter extends Connect {
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
 
     public void run() throws SQLException, ParseException {
+//        removeStudentSubject("TDT4100");
         System.out.println("DATA COLLECT");
         dataCollect();
         System.out.println("PRIORITY SORT");
@@ -71,6 +72,8 @@ public class SuperSorter extends Connect {
         prioritizedSchedule.clear();
         scheduleWithoutCollision.clear();
         droppedEvents.clear();
+
+        user.updateSubjects();
 
         String subjectArrayString = "";
         for (String subject : user.getSubjects()) {

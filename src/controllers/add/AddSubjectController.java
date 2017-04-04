@@ -28,8 +28,9 @@ public class AddSubjectController extends Connect implements Initializable{
     @FXML AnchorPane anchorPane;
 
     private ResultSet m_ResultSet;
-    private ObservableList<String> subjects = FXCollections.observableArrayList();
+    private ObservableList<String> subjects = FXCollections.observableArrayList(); //Is used to set items in dropdown
 
+    //TODO: FIX DENNE DOKUMENTSJONEN. DEN ER NÅ FEIL.
     /**
      * Inputs a new valid subject to the current users subjects.
      * Connects to the STUDENT database (DB) and fetches the "subjects" column from the currently logged in user.
@@ -42,16 +43,19 @@ public class AddSubjectController extends Connect implements Initializable{
      */
 
     public void addSubjectToCalendar() throws SQLException {
+        User.getInstance().updateSubjects();
         Set<String> setOfSubjects = User.getInstance().getSubjects();
-        String subjectString;
-        if(setOfSubjects.contains(subject.getCharacters().toString())){
+        System.out.println(setOfSubjects);
+        String chosenSubject;
+        chosenSubject = subject.getCharacters().toString().split("\\s+")[0];
+        if(setOfSubjects.contains(chosenSubject)){
             JFXSnackbar bar = new JFXSnackbar(anchorPane);
             bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is already one of your subjects!"));
         }else{
             if(subjectPicker.getItems().contains(subject.getCharacters().toString())){
-                setOfSubjects.add((String) subject.getCharacters().toString()); //Adding new chosen subject
-                subjectString = StringUtils.join(setOfSubjects, ",");
-                updateStudentSubjects(subjectString);
+                setOfSubjects.add(chosenSubject); //Adding new chosen subject
+                addStudentSubject(chosenSubject);
+                User.getInstance().updateSubjects();
                 JFXSnackbar bar = new JFXSnackbar(anchorPane);
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was added to your subjects!"));
                 CalendarController.getInstance().refresh();

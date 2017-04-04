@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -43,14 +44,11 @@ public class User extends Connect{
     }
 
     public void updateSubjects() throws SQLException {
-        ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDENT WHERE email='"+ username +"'");
-        stud_sub_resultset.next();
-        String subjectString = stud_sub_resultset.getString(7); //Works as long as column 7 is the students subjects
-        if(subjectString.isEmpty()){
-            subjects = new HashSet<>();
-        }else{
-            subjects = new HashSet<>(Arrays.asList(subjectString
-                    .split(","))); //Make a HashSet to deal with duplicates
+        ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDTAKESUB WHERE studentEmail='"+ username +"'");
+        subjects = new LinkedHashSet<>();
+        while(stud_sub_resultset.next()){
+            subjects.add(stud_sub_resultset.getString(1));
+            System.out.println("HAR SUBJECTS: " + subjects);
         }
     }
 
