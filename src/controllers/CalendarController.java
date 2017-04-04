@@ -339,7 +339,6 @@ public class CalendarController extends Connect implements Initializable{
 	 * @param day day integer
 	 */
     private void monthOrganizer(int year, int month, int day){ //Set labels on month part to the right month.
-		System.out.println(year + " " + month + " " + day);
 		java.util.Calendar cal = new GregorianCalendar(year, month, day);
         java.util.Calendar cal1 = new GregorianCalendar(year, month, 1);
         int weekOfMonth = cal.get(cal.WEEK_OF_MONTH);
@@ -437,7 +436,6 @@ public class CalendarController extends Connect implements Initializable{
         for(int i = 0; i < monthLabels.size(); i++){
             dayMappedPane.put(monthLabels.get(i), monthAnchorPanes.get(i));
             if(monthLabels.get(i).getText().length() != 0){
-                System.out.println(date);
                 date = date.plusDays(1);
                 dateMappedMonth.put(date, monthAnchorPanes.get(i));
             }
@@ -550,7 +548,6 @@ public class CalendarController extends Connect implements Initializable{
 	private void insertDayCells(){
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){
-			System.out.println("NEW ENTRY");
 			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
 			{
 				if(stretch){
@@ -610,7 +607,7 @@ public class CalendarController extends Connect implements Initializable{
 							Event eventCell = (Event) cell;
 							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
-									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+									1, Integer.parseInt(cell.getEndTime()) - (Integer.parseInt(cell.getStartTime())));
 						}
 
 						//legge evnte i en liste slik vi vettt vilken som er i calanderen denne uken
@@ -734,10 +731,7 @@ public class CalendarController extends Connect implements Initializable{
 
 	private void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
-		System.out.println("Write to labels");
-		System.out.println(User.getInstance().getUsername());
 		label.setText(cell.getName());
-		System.out.println(cell.getName());
 	}
 
 

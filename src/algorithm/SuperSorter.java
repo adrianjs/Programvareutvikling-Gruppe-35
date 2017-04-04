@@ -27,6 +27,7 @@ import java.util.Calendar;
  * homeEksamen = 95
  *
  * TODO: This call will be the all mighty sorting algorithm for the calendar
+ * TODO: Deadline skal ikke sorteres. Den skal kunne ligge oppå annet!
  */
 public class SuperSorter extends Connect {
     private User user = User.getInstance(); //This is the currently logged in user.
@@ -38,31 +39,35 @@ public class SuperSorter extends Connect {
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
 
     public void run() throws SQLException, ParseException {
-//        removeStudentSubject("TDT4100");
         System.out.println("DATA COLLECT");
         dataCollect();
         System.out.println("PRIORITY SORT");
-        prioritySort(prioritizedSchedule);
+        prioritizedSchedule = prioritySort(prioritizedSchedule);
         System.out.println("HANDLE COLLISION");
         handleCollisionsInTime(prioritizedSchedule);
         System.out.println("FINISHED");
 
-        JFXDatePicker startTimePicker = new JFXDatePicker();
-        JFXDatePicker endTimePicker = new JFXDatePicker();
-        JFXDatePicker datePicker = new JFXDatePicker();
-        startTimePicker.setShowTime(true);
-        endTimePicker.setShowTime(true);
-        Object[] params = {startTimePicker, endTimePicker, datePicker};
-        javafx.scene.control.Dialog dialog = new Dialog();
-        dialog.setTitle("Choose a new time");
-        HBox hbox = new HBox();
-        hbox.getChildren().addAll(startTimePicker, endTimePicker, datePicker);
-        dialog.setGraphic(hbox);
-        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
-//        dialog.show();
-//
 
-//        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
+
+
+
+
+//        JFXDatePicker startTimePicker = new JFXDatePicker();
+//        JFXDatePicker endTimePicker = new JFXDatePicker();
+//        JFXDatePicker datePicker = new JFXDatePicker();
+//        startTimePicker.setShowTime(true);
+//        endTimePicker.setShowTime(true);
+//        Object[] params = {startTimePicker, endTimePicker, datePicker};
+//        javafx.scene.control.Dialog dialog = new Dialog();
+//        dialog.setTitle("Choose a new time");
+//        HBox hbox = new HBox();
+//        hbox.getChildren().addAll(startTimePicker, endTimePicker, datePicker);
+//        dialog.setGraphic(hbox);
+//        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
+////        dialog.show();
+////
+//
+////        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
     }
 
     public void dataCollect() throws SQLException, ParseException {
@@ -184,9 +189,9 @@ public class SuperSorter extends Connect {
             Cell collisionCell = null;
             for(Cell placedCell : scheduleWithoutCollision){
                 if(new TimeComparator().compare(placedCell, currentCell)){
-//                    System.out.println("KOLLISJON!!!!!");
-//                    System.out.println(currentCell.getName());
-//                    System.out.println(placedCell.getName());
+                    System.out.println("KOLLISJON!!!!!");
+                    System.out.println(currentCell.getName());
+                    System.out.println(placedCell.getName());
                     collision = true;
                     collisionCell = placedCell;
                 }

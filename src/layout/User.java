@@ -48,7 +48,6 @@ public class User extends Connect{
         subjects = new LinkedHashSet<>();
         while(stud_sub_resultset.next()){
             subjects.add(stud_sub_resultset.getString(1));
-            System.out.println("HAR SUBJECTS: " + subjects);
         }
     }
 

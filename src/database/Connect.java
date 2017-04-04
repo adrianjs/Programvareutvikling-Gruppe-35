@@ -109,11 +109,6 @@ public class Connect {
         }
     }
 
-    public void updateStudentSubjects(String subjects) throws SQLException {
-        stmt = conn.createStatement();
-        stmt.executeUpdate("UPDATE STUDENT SET subjects='"+subjects+"' WHERE email='"+ User.getInstance().getUsername() +"'");
-    }
-
     public void addStudentSubject(String subject) throws SQLException{
         stmt = conn.createStatement();
         stmt.executeUpdate("INSERT INTO STUDTAKESUB(subjectCode, studentEmail) VALUES('"+subject+"','"+User.getInstance().getUsername()+"')");

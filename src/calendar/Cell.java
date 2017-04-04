@@ -1,5 +1,6 @@
 package calendar;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -36,8 +37,18 @@ public class Cell {
      * @param repeating
      */
     public Cell(Date startDate, Date endDate, String startTime, String endTime, String name, String description, int slotPriority, boolean repeating, int ID, String color) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+        if(startDate instanceof java.sql.Date){
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(new Date(startDate.getTime()));
+            cal.set(Calendar.HOUR, Integer.parseInt(startTime));
+            this.startDate = cal.getTime();
+            cal.setTime(new Date(endDate.getTime()));
+            cal.set(Calendar.HOUR, Integer.parseInt(endTime));
+            this.endDate = cal.getTime();
+        }else{
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
         this.startTime = startTime;
         this.endTime = endTime;
         this.name = name;
