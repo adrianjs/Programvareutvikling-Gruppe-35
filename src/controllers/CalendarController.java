@@ -598,7 +598,15 @@ public class CalendarController extends Connect implements Initializable{
 							event = new eventButton(cell.getName(), cell.getDescription(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
-						} else {
+						} else if(cell.getSlotPriority() == 98){
+
+							Event eventCell = (Event) cell;
+							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
+							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7);
+
+						}
+
+						else {
 							Event eventCell = (Event) cell;
 							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
