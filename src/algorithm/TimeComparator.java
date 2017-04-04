@@ -25,11 +25,6 @@ public class TimeComparator{
      * @throws NullPointerException
      */
     public boolean isOverLaped(Date start1, Date end1, Date start2, Date end2) throws NullPointerException{
-
-        System.out.println("O1 STARTDATE: " + start1);
-        System.out.println("O2 STARTDATE: " + start2);
-        System.out.println("O1 ENDDATE: " + end1);
-        System.out.println("O2 ENDDATE: " + end2);
         if ((start1.before(start2) && end1.after(start2)) ||
                 (start1.before(end2) && end1.after(end2)) ||
                 (start1.before(start2) && end1.after(end2)) ||
