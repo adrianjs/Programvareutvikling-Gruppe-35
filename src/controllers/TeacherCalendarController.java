@@ -153,6 +153,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     public void snack(int number, String string){
         JFXSnackbar bar = new JFXSnackbar(barPane);
         if(number == 0){
+            //bar.setStyle("-fx-text-fill: red;");
             bar.show(string, 8000);
         }else{
             bar.show("No event added", 5000);

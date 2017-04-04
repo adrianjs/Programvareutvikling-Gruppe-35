@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
+<?import java.net.URL?>
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="544.0" prefWidth="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -88,4 +89,7 @@
          </center>
       </BorderPane>
    </children>
+   <stylesheets>
+      <URL value="@/css/buttonStyle.css" />
+   </stylesheets>
 </AnchorPane>
