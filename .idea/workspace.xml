@@ -7,7 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/botto.html" afterPath="$PROJECT_DIR$/src/resources/botto.html" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -46,120 +46,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="649" column="48" lean-forward="false" selection-start-line="649" selection-start-column="48" selection-end-line="649" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1491298324000" expanded="false" signature="27841:27851" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="27867:27873" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="27985:27995" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28011:28017" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28063:28073" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28089:28095" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28141:28151" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28167:28173" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28219:28229" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28245:28251" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28297:28307" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28323:28329" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28375:28385" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28401:28407" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28453:28463" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28479:28485" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28532:28542" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28559:28565" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28612:28622" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28639:28645" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28692:28702" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28719:28725" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28772:28782" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28799:28805" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28852:28862" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28879:28885" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="28932:28942" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="28959:28965" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29012:29022" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29039:29045" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29092:29102" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29119:29125" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29172:29182" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29199:29205" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29252:29262" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29279:29285" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29332:29342" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29359:29365" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29412:29422" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29439:29445" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29492:29502" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29519:29525" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29572:29582" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29599:29605" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29652:29662" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29679:29685" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29732:29742" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29759:29765" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29812:29822" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29839:29845" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29892:29902" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29919:29925" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="29972:29982" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="29999:30005" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30052:30062" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30079:30085" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30132:30142" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30159:30165" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30212:30222" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30239:30245" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30292:30302" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30319:30325" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30372:30382" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30399:30405" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30452:30462" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30479:30485" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30532:30542" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30559:30565" ph=" }" />
-                <marker date="1491298324000" expanded="false" signature="30612:30622" ph=" { " />
-                <marker date="1491298324000" expanded="false" signature="30639:30645" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WatchDayMonthTabController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="-65">
               <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monthEventButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/monthEventButton.java">
+      <file leaf-file-name="botto.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/botto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#325#326#0" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="111" column="65" lean-forward="false" selection-start-line="111" selection-start-column="65" selection-end-line="111" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-450">
+              <caret line="193" column="25" lean-forward="false" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/calendar/Day.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/database/Run.java" />
         <option value="$PROJECT_DIR$/src/layout/add/Add.java" />
@@ -274,6 +175,7 @@
         <option value="$PROJECT_DIR$/src/layout/monthEventButton.java" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" />
         <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
+        <option value="$PROJECT_DIR$/src/resources/botto.html" />
       </list>
     </option>
   </component>
@@ -343,6 +245,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1172,7 +1092,7 @@
       <workItem from="1489694676415" duration="1669000" />
       <workItem from="1490173393872" duration="17906000" />
       <workItem from="1490260310487" duration="24041000" />
-      <workItem from="1490688678574" duration="46148000" />
+      <workItem from="1490688678574" duration="46465000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1426,7 +1346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491297719112</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fikset sånn evnts i månder ikke går over til andre dager">
+      <created>1491298388673</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1491298388673</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1438,7 +1365,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171195000" />
+    <option name="totallyTimeSpent" value="171512000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1966,14 +1893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/monthEventButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -2063,6 +1982,22 @@
             <marker date="1491298324000" expanded="false" signature="30612:30622" ph=" { " />
             <marker date="1491298324000" expanded="false" signature="30639:30645" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/botto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="193" column="25" lean-forward="false" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
