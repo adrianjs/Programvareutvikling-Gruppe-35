@@ -71,8 +71,8 @@ public class AddActivityController implements Initializable{
             description = desc.getText();
             calendar.Cell cell = toUserCell();
             pushCell(cell);
-            CalendarController.getInstance().refresh();
             stage.close();
+            CalendarController.getInstance().refresh();
         }
 
     }

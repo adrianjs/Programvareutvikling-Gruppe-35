@@ -160,6 +160,7 @@ public class CalendarController extends Connect implements Initializable{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		date.setValue(chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
     }
 
     public void refresh(){

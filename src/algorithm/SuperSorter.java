@@ -4,6 +4,7 @@ import calendar.Cell;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.skins.JFXTimePickerContent;
 import controllers.CalendarController;
 import database.Connect;
 import javafx.geometry.*;
@@ -23,6 +24,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.Calendar;
 
@@ -58,44 +62,6 @@ public class SuperSorter extends Connect {
         System.out.println("APPLY DEADLINES");
         applyDeadlines();
         System.out.println("FINISHED");
-
-//        Dialog dialog = new Dialog();
-//        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
-//        stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/img/EO.png"))));
-//        javafx.stage.Window window = dialog.getDialogPane().getScene().getWindow();
-//        window.setOnCloseRequest(event -> dialog.close());
-//        JFXDatePicker datePicker = new JFXDatePicker();
-//        JFXDatePicker startTimePicker = new JFXDatePicker();
-//        startTimePicker.setShowTime(true);
-//        JFXDatePicker endTimePicker = new JFXDatePicker();
-//        endTimePicker.setShowTime(true);
-//        JFXButton okButton = new JFXButton("OK");
-//        JFXButton cancelButton = new JFXButton("Cancel");
-//        okButton.setStyle("-fx-background-color:  #cadae0; ");
-//        cancelButton.setStyle("-fx-background-color:  #cadae0; ");
-//
-//        HBox hBox1 = new HBox(new Label("Enter a new date:           "), datePicker);
-//        hBox1.setAlignment(Pos.CENTER);
-//        HBox hBox2 = new HBox(new Label("Enter a new start time:   "), startTimePicker);
-//        hBox2.setAlignment(Pos.CENTER);
-//        HBox hBox3 = new HBox(new Label("Enter a new end date:    "), endTimePicker);
-//        hBox3.setAlignment(Pos.CENTER);
-//        HBox hBox4 = new HBox(okButton, cancelButton);
-//        hBox4.setAlignment(Pos.CENTER);
-//        hBox4.setTranslateY(20);
-//        hBox4.setMargin(okButton, new Insets(0,20,0,0));
-//        VBox vBox = new VBox(new Label("Select New Times for your Activity"), hBox1, hBox2, hBox3, hBox4);
-//
-//        dialog.setGraphic(vBox);
-//
-//        ((Stage) dialog.getDialogPane().getScene().getWindow()).setMaxWidth(400);
-//        dialog.show();
-//        okButton.setOnAction(event -> {
-//            System.out.println("Hello!");
-//        });
-//        cancelButton.setOnAction(event -> {
-//
-//        });
     }
 
 
@@ -228,8 +194,8 @@ public class SuperSorter extends Connect {
         scheduleWithoutCollision.addAll(deadlines);
     }
 
-    public void handleCollisionsInTime(Set<Cell> prioritizedSet) throws SQLException {
-        for(Cell currentCell : prioritizedSet){
+    public void handleCollisionsInTime(Set<Cell> prioritizedSchedule) throws SQLException, IOException, ParseException {
+        for(Cell currentCell : prioritizedSchedule){
             boolean collision = false;
             Cell collisionCell = null;
             for(Cell placedCell : scheduleWithoutCollision){
@@ -264,10 +230,9 @@ public class SuperSorter extends Connect {
                         handleUnprioritezedEvent(currentCell);
                     }
                 }
-
             }
         }
-        System.out.println("ORIGINAL SIZE: " + prioritizedSet.size());
+        System.out.println("ORIGINAL SIZE: " + prioritizedSchedule.size());
         System.out.println("AFTER COLLISION HANDLING: " + scheduleWithoutCollision.size());
     }
 
@@ -286,7 +251,7 @@ public class SuperSorter extends Connect {
      * has the same priority.
      * The user gets to choose manually.
      */
-    public void handleSamePriority(Cell currentCell, Cell collisionCell) throws SQLException {
+    public void handleSamePriority(Cell currentCell, Cell collisionCell) throws SQLException, IOException, ParseException {
         int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
                 "Choose which event you want to prioritize!\n" +
                         "They both happen at: " + currentCell.getStartDate(), //Object message,
@@ -302,7 +267,7 @@ public class SuperSorter extends Connect {
             scheduleWithoutCollision.add(currentCell);
             if(collisionCell.getType().equals("activity")){
                 handleUnprioritizedActivity(collisionCell);
-                //deleteActivity(collisionCell);
+                deleteActivity(collisionCell);
             }else{
                 handleUnprioritezedEvent(collisionCell);
             }
@@ -316,7 +281,7 @@ public class SuperSorter extends Connect {
         }
     }
 
-    public void handleUnprioritizedActivity(Cell activity) throws SQLException {
+    public void handleUnprioritizedActivity(Cell activity) throws SQLException, IOException, ParseException {
        int choice = JOptionPane.showOptionDialog(null,
                 "Do you want to delete " + activity.getName() + " from your shcedule," +
                         "\ndo you want Educational Organizer to find somewhere to put it, \nor would you" +
@@ -329,6 +294,7 @@ public class SuperSorter extends Connect {
             System.out.println("RE-SCHEDULE AUTO");
         }else if(choice == 1){
             //TODO: RE-SCHEDULE MANUAL
+            rescheduleManual(activity);
             System.out.println("RE-SCHEDULE MANUAL");
         }else{
             System.out.println("DELETING " + activity.getName() + " FROM DB");
@@ -346,26 +312,9 @@ public class SuperSorter extends Connect {
         //TODO: Change the times inside object, then push changes to DB
     }
 
-    public void rescheduleManual(Cell activity) throws SQLException, IOException {
-        //TODO: Prompt the user for new times to fill in to the activity
-        Cell newActivity = activity;
-        String startTime;
-        String endTime;
-        Date date;
-        //TODO: Make a dialog window, that prompts for wanted
-        CalendarController calCtrl = CalendarController.getInstance();
-        Dialog dialog = setupDialog(activity);
-        dialog.showAndWait();
+    public void rescheduleManual(Cell activity) throws SQLException, IOException, ParseException {
+        setupDialog(activity);
 
-        deleteActivity(activity);
-        addActivity(newActivity.getName(),
-                new java.sql.Date(activity.getStartDate().getTime()),
-                activity.isRepeating(),
-                activity.getSlotPriority(),
-                Integer.valueOf(activity.getStartTime().substring(0,2)),
-                Integer.valueOf(activity.getEndTime().substring(0,2)),
-                user.getUsername(),
-                activity.getDescription());
     }
 
     public void resetDroppedEvents() throws SQLException {
@@ -380,21 +329,22 @@ public class SuperSorter extends Connect {
         droppedEvents.remove(event);
     }
 
-    public Dialog setupDialog(Cell activity){
+    public void setupDialog(Cell activity) throws SQLException, IOException, ParseException {
         Dialog dialog = new Dialog();
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/img/EO.png"))));
         javafx.stage.Window window = dialog.getDialogPane().getScene().getWindow();
         window.setOnCloseRequest(event -> dialog.close());
+
         JFXDatePicker datePicker = new JFXDatePicker();
         JFXDatePicker startTimePicker = new JFXDatePicker();
         startTimePicker.setShowTime(true);
         JFXDatePicker endTimePicker = new JFXDatePicker();
         endTimePicker.setShowTime(true);
-        JFXButton okButton = new JFXButton("OK");
-        JFXButton cancelButton = new JFXButton("Cancel");
-        okButton.setStyle("-fx-background-color:  #cadae0; ");
-        cancelButton.setStyle("-fx-background-color:  #cadae0; ");
+
+        datePicker.setValue(activity.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        startTimePicker.setTime(activity.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalTime());
+        endTimePicker.setTime(activity.getEndDate().toInstant().atZone(ZoneId.systemDefault()).toLocalTime());
 
         HBox hBox1 = new HBox(new Label("Enter a new date:           "), datePicker);
         hBox1.setAlignment(Pos.CENTER);
@@ -402,28 +352,42 @@ public class SuperSorter extends Connect {
         hBox2.setAlignment(Pos.CENTER);
         HBox hBox3 = new HBox(new Label("Enter a new end date:    "), endTimePicker);
         hBox3.setAlignment(Pos.CENTER);
-        HBox hBox4 = new HBox(okButton, cancelButton);
-        hBox4.setAlignment(Pos.CENTER);
-        hBox4.setTranslateY(20);
-        hBox4.setMargin(okButton, new Insets(0,20,0,0));
-        VBox vBox = new VBox(new Label("Select New Times for your Activity"), hBox1, hBox2, hBox3, hBox4);
 
-        dialog.setGraphic(vBox);
-
+        VBox vBox = new VBox(new Label("Select New Times for your Activity"), hBox1, hBox2, hBox3);
         ((Stage) dialog.getDialogPane().getScene().getWindow()).setMaxWidth(400);
+        dialog.getDialogPane().setContent(vBox);
+        dialog.getDialogPane().getButtonTypes().setAll(new ButtonType("OK", ButtonBar.ButtonData.OK_DONE));
+        dialog.setTitle("Choose a new time");
+        Optional<ButtonType> result = dialog.showAndWait();
 
-        okButton.setOnAction(event -> {
-            //TODO: If one of them are empty, show error
+        if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
+            System.out.println("OK IS PRESSED!");
+            changeTime(activity, datePicker.getValue(), startTimePicker.getTime(), endTimePicker.getTime());
+            CalendarController.getInstance().refresh();
+        }
+    }
 
-        });
+    private void changeTime(Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
+        Cell newActivity = activity;
+        Date startDate;
+        System.out.println("LOCAL TIMES: " + time1 +  " " + time2);
+        String startTime = time1.toString();
+        String endTime = time2.toString();
 
-        cancelButton.setOnAction(event -> {
-            //TODO: User old values
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        startDate = cal.getTime();
 
-        });
+        deleteActivity(activity);
 
-        return dialog;
-
+        addActivity(newActivity.getName(),
+                new java.sql.Date(startDate.getTime()),
+                newActivity.isRepeating(),
+                newActivity.getSlotPriority(),
+                Integer.valueOf(startTime.substring(0,2)),
+                Integer.valueOf(endTime.substring(0,2)),
+                user.getUsername(),
+                newActivity.getDescription());
     }
 
     public Set<Subject> getSubjects() {
