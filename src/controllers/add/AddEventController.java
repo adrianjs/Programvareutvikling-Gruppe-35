@@ -45,6 +45,9 @@ public class AddEventController extends Connect implements Initializable{
     @FXML JFXRadioButton deadline;
     @FXML JFXRadioButton exam;
     @FXML JFXRadioButton homeExam;
+//    @FXML JFXRadioButton kahoot;
+//    @FXML JFXRadioButton extra;
+//    @FXML JFXRadioButton examLecture;
     @FXML JFXTextField description;
     @FXML JFXDatePicker startDate;
     @FXML JFXDatePicker endDate;

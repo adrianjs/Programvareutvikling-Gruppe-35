@@ -547,12 +547,18 @@ public class CalendarController extends Connect implements Initializable{
 		return cal.getTime();
 	}
 
+	/**
+	 * Insert cells in day, week, and month tab.
+	 */
 	public void insertCells(){
 		insertDayCells();
 		insertWeekCells();
 		insertMonthCells();
 	}
 
+	/**
+	 * Insert cells at dayTab.
+	 */
 	private void insertDayCells(){
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){
@@ -576,9 +582,11 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
-
+	/**
+	 * Insert cells at weekTab.
+	 */
 	private void insertWeekCells(){
-		System.out.println("SETTING NEW CELLS");
+		//System.out.println("SETTING NEW CELLS");
 
 		for(eventButton ab : oldActivityButtons){
 			week.getChildren().remove(ab.getEvent());
@@ -630,7 +638,9 @@ public class CalendarController extends Connect implements Initializable{
 			}
 	}
 
-
+	/**
+	 * Insert cells in month tab.
+	 */
 	private void insertMonthCells(){
 		removeMonthActivityLabel();
 		System.out.println("Month");
@@ -640,12 +650,9 @@ public class CalendarController extends Connect implements Initializable{
 			LocalDate date;
 			if(cell.getStartDate().getClass() == java.sql.Date.class){
 				date = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
 			} else {
 				date = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			}
-
-
 			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
@@ -666,19 +673,13 @@ public class CalendarController extends Connect implements Initializable{
                             }
 							oldLabelToString += "Click to get more...";
                         }
-
-
-
-                        lab.setText(oldLabelToString);
+						lab.setText(oldLabelToString);
                         lab.setStyle("-fx-text-fill: green;");
                         entry.getValue().getChildren().addAll(lab);
                         eventLabels.add(lab);
-
 						if(!doubleDate.contains(entry.getKey())){
                             doubleDate.add(entry.getKey());
                         }
-
-
 					} else {
 						Label lab = new Label();
 						lab.setText(" " + '\n' + cell.getName());
@@ -686,26 +687,20 @@ public class CalendarController extends Connect implements Initializable{
 						entry.getValue().getChildren().addAll(lab);
 						eventLabels.add(lab);
 						usedDate.add(entry.getKey());
-
-
-                    }
-
-
-
-
-                }
+					}
+				}
 			}
 		}
 	}
 
-    /**
-     * Week and Day insertCells uses the same method.
-     * @param map
-     * @param cell
-     * @param stretch
-     * @param mapTo
-     * @return
-     */
+	/**
+	 * Help-Method for inserting mapped cells.
+	 * @param map Map
+	 * @param cell Cell
+	 * @param stretch how long the event is
+	 * @param mapTo Map
+	 * @return stretch.
+	 */
 	public boolean insertCellHelper(Map.Entry<TimeInterval, Label> map, Cell cell, boolean stretch, Map<Label, Cell> mapTo){
         if(map.getKey().getStartTime().equals(cell.getStartDate())){
             Label lab = map.getValue(); //First
@@ -730,6 +725,9 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
+	/**
+	 * Set cells to labels.
+	 */
     private void enterCells(){
 		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
 		{
@@ -737,6 +735,11 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
+	/**
+	 * Writes to label
+	 * @param label label
+	 * @param cell cell.
+	 */
 	private void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
