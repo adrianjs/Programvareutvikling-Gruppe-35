@@ -22,7 +22,7 @@
    <center>
       <AnchorPane fx:id="dayAnchor" prefHeight="649.0" prefWidth="839.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTabPane prefHeight="659.0" prefWidth="842.0" stylesheets="/css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <JFXTabPane fx:id="tabs" prefHeight="659.0" prefWidth="842.0" stylesheets="/css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <tabs>
                   <Tab fx:id="dayTab" onSelectionChanged="#insertCells" text="Day">
                      <content>
