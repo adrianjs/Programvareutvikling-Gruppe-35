@@ -107,8 +107,15 @@ public class eventButton {
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
         event.setText(name+ "\n\n" + description);
-        event.setMaxHeight(Double.MAX_VALUE);
-        event.setMaxWidth(Double.MAX_VALUE);
+        if(cell.getSlotPriority() == 98){
+            event.setMaxWidth(Double.MAX_VALUE);
+            event.setMaxHeight(Double.MIN_VALUE);
+
+        } else {
+            event.setMaxHeight(Double.MAX_VALUE);
+            event.setMaxWidth(Double.MAX_VALUE);
+        }
+
         event.setStyle("-fx-background-color: #" +cell.getColor());
 
         //vis du tryker på et event kommer mer info opp:

@@ -137,9 +137,21 @@ public class Connect {
                 "' AND startTime='" +activity.getStartTime()+"' AND endTime='"+activity.getEndTime()+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
         System.out.println("Deleted activity: " + activity.getName());
     }
+/*
+    public void deleteEvent(){
+    try {
+        stmt = conn.createStatement();
+        stmt.executeUpdate("DELETE FROM EVENT WHERE EVENT.eventID > 215");
+    } catch (SQLException se){
+        se.printStackTrace();
+    }
 
-    public void deleteEvent(Cell event){
 
     }
+
+    public static void main(String[] args) {
+        Connect con = new Connect();
+        con.deleteEvent();
+    }*/
 
 } //END

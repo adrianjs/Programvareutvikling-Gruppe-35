@@ -1,6 +1,9 @@
 package database;
+import com.gargoylesoftware.htmlunit.javascript.host.intl.DateTimeFormat;
+
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
@@ -9,6 +12,18 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by torresrl on 08/03/2017.
  */
 public class Teacher extends Connect{
+
+    //sjekke slik at reapiting vil vare mellom disse datoene
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+    private String endSpringString = "01/05/2017";
+    private String startSpringString = "01/01/2017";
+    private String endFallString = "01/12/2017";
+    private String startFallString = "01/08/2017";
+    private LocalDate endSpring = LocalDate.parse(endSpringString, formatter);
+    private LocalDate startSpring = LocalDate.parse(startSpringString, formatter);
+    private LocalDate endFall = LocalDate.parse(endFallString, formatter);
+    private LocalDate startFall = LocalDate.parse(startFallString, formatter);
+
 
     public Teacher(){
         super();
@@ -110,11 +125,42 @@ public class Teacher extends Connect{
             if(!endTime.substring(2).equals(":00:00")){
                 endTimeSql++;
             }
-            Date sqlStartDate = Date.valueOf(startDate);
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+repeating+"',96,'"+description+"', '"+subjectCode+"', '"+color+"')");
+            if(repeating == 0) {
+                Date sqlStartDate = Date.valueOf(startDate);
+                stmt = conn.createStatement();
+                stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                        " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                        "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
+            } else if (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
+                Date sqlStartDate;
+                stmt = conn.createStatement();
+                int counter = 0;
+                while (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
+                    sqlStartDate = Date.valueOf(startDate);
+                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
+                    startDate = startDate.plusWeeks(1);
+
+
+                }
+
+
+            } else if (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
+                Date sqlStartDate;
+                stmt = conn.createStatement();
+                int counter = 0;
+                while (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
+                    sqlStartDate = Date.valueOf(startDate);
+                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
+                    startDate = startDate.plusWeeks(1);
+
+
+                }
+
+            }
         } catch (SQLException se){
             se.printStackTrace();
         }
@@ -137,13 +183,44 @@ public class Teacher extends Connect{
         try{//Converting to sql values.
             Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
-            Date sqlStartDate = Date.valueOf(startDate);
-            Date sqlEndDate = Date.valueOf(endDate);
             color = "260591";
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                    " description, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
-                    "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+subjectCode+"', '"+color+"')");
+            if(repeating == 0) {
+                Date sqlStartDate = Date.valueOf(startDate);
+                Date sqlEndDate = Date.valueOf(endDate);
+                stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                        " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                        "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
+            } else if(startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
+                Date sqlStartDate;
+                Date sqlEndDate;
+
+                while(startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5) {
+
+                    sqlStartDate = Date.valueOf(startDate);
+                    sqlEndDate = Date.valueOf(endDate);
+                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
+                    startDate = startDate.plusWeeks(1);
+                    endDate = endDate.plusWeeks(1);
+                }
+
+            } else if(startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
+                Date sqlStartDate;
+                Date sqlEndDate;
+
+                while(startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12) {
+                    sqlStartDate = Date.valueOf(startDate);
+                    sqlEndDate = Date.valueOf(endDate);
+                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
+                    startDate = startDate.plusWeeks(1);
+                    endDate = endDate.plusWeeks(1);
+                }
+
+            }
         } catch (SQLException se){
             se.printStackTrace();
         }

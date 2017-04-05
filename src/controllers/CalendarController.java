@@ -602,7 +602,7 @@ public class CalendarController extends Connect implements Initializable{
 
 							Event eventCell = (Event) cell;
 							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
-							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7);
+							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,1,2);
 
 						}
 
