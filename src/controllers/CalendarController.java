@@ -458,7 +458,6 @@ public class CalendarController extends Connect implements Initializable{
      * Go to the given day when month gridpane is clicked. Loads activities from this day in
      * @param tall integer clicked.
      */
-    //TODO få denne til å flyte dge bor til day, med denne datoen
 	private void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();

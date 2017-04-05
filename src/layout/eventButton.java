@@ -37,7 +37,7 @@ public class eventButton {
     private String name;
     private String subjectCode;
     private Button event;
-
+    private String eventType = "";
 
     //Setter opp hvis det er activitet
     public eventButton(String name, String description, Cell cell){
@@ -54,7 +54,6 @@ public class eventButton {
 
         //vis du tryker på et event kommer mer info opp:
         event.setOnAction( e -> {
-            //TODO når du tyker kommer opp nytt fxml vindu
             Stage stage = new Stage();
             Text nameFiled = new Text();
 
@@ -116,11 +115,23 @@ public class eventButton {
             event.setMaxWidth(Double.MAX_VALUE);
         }
 
+        if(cell.getSlotPriority() == 99){
+            eventType = "exam";
+        } else if(cell.getSlotPriority() == 98) {
+            eventType = "deadline";
+        } else if(cell.getSlotPriority() == 97) {
+            eventType = "home work";
+        } else if(cell.getSlotPriority() == 96) {
+            eventType = "lecture";
+        } else if(cell.getSlotPriority() == 95) {
+            eventType = "home exam";
+        }
+
         event.setStyle("-fx-background-color: #" +cell.getColor());
 
         //vis du tryker på et event kommer mer info opp:
         event.setOnAction( e -> {
-            //TODO når du tyker kommer opp nytt fxml vindu
+
             Stage stage = new Stage();
 
 
@@ -130,7 +141,12 @@ public class eventButton {
             nameFiled.setLayoutX(10);
             nameFiled.setLayoutY(25);
 
-
+            //Todo denne er ikke ferdig
+            Text type = new Text();
+            type.setFont(Font.font("Verdana", 15));
+            type.setText("Event type: " + eventType);
+            type.setLayoutX(10);
+            type.setLayoutY(55);
 
             Text subjectFild = new Text();
             subjectFild.setFont(Font.font("Verdana", 15));
@@ -160,7 +176,7 @@ public class eventButton {
             });
 
 
-            VBox root = new VBox(nameFiled,subjectFild, descriptionFiled, deleteBtn);
+            VBox root = new VBox(nameFiled,subjectFild,type, descriptionFiled, deleteBtn);
             stage.setTitle(name);
             Scene scene = new Scene(root, 450, 450);
             String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();
