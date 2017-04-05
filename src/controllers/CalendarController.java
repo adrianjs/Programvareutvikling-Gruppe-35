@@ -49,9 +49,9 @@ public class CalendarController extends Connect implements Initializable{
 
 	//AI panes.
     private HamburgerBackArrowBasicTransition tran;
+	private AnchorPane botto;
     @FXML private JFXDrawer drawer;
-    private AnchorPane botto;
-    @FXML private JFXHamburger sliderButton; //Slide button
+	@FXML private JFXHamburger sliderButton; //Slide button
     AnchorPane rightside;
 
     @FXML private JFXButton askButton;
@@ -130,9 +130,9 @@ public class CalendarController extends Connect implements Initializable{
         setDate();
 		try {
 			superSorter.run();
-		} catch (SQLException e) {
-			e.printStackTrace();
 		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		setupDayTab();
@@ -172,30 +172,28 @@ public class CalendarController extends Connect implements Initializable{
 		month.setGridLinesVisible(true);
 	}
 
-    /**
-     * OnAction from removebutton.
-     * @throws IOException
-     * @throws SQLException
-     * @throws ParseException
-     */
-	public void remove() throws IOException, SQLException, ParseException, InterruptedException {
-        //TODO: Make remove button work
-		//sc.setFirstDateOfDay(1);
-    }
+	/**
+	 * On action from restore button. Loads the restore.fxml
+	 * @throws IOException if the fxml fails to load.
+	 */
+	public void restore() throws IOException {
+        //TODO: Make Restore work
+		cal.changeScene("/resources/fxml/restore.fxml", "Restore dropped events");
+		System.out.println("RESTORE");
+	}
 
     /**
-     * OnAction from addsubject-button.
-     * @throws IOException
+     * OnAction from addsubject-button, opens the addsubject.fxml
+     * @throws IOException if fxml fails to load.
      */
 	public void addSubject() throws IOException {
-
 		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 		cal.changeScene("/resources/fxml/addSubject.fxml", "Add subject");
 	}
 
 	/**
-	 * Set window back to loginScreen.
-	 * @throws Exception
+	 * Set window back to loginScreen, switches to username.fxml.
+	 * @throws Exception if fxml fails to load.
 	 */
 	public void logOut() throws Exception {
 		Stage s = (Stage) logout.getScene().getWindow();
@@ -207,7 +205,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
     /**
-     * Sets the ask.fxml to the botto anchorpane
+     * Sets the ask.fxml to the botto anchorpane, makes a new hamburger.
      */
     private void setBottoField(){
         try {
@@ -220,7 +218,7 @@ public class CalendarController extends Connect implements Initializable{
     }
 
 	/**
-	 * Open and close the Bot field, and set value to hamburger. OnAction from botto-Button.
+	 * Open and close the botto, and set value to hamburger. OnAction from botto-Button.
 	 */
     public void slidePane(){
 		drawer.setSidePane(botto);
@@ -237,7 +235,7 @@ public class CalendarController extends Connect implements Initializable{
 
     /**
      * OnAction from addButton, opens add.fxml from Calendar.class.
-     * @throws IOException
+     * @throws IOException if add.fxml fail to load.
      */
     public void add() throws IOException {
         cal.changeScene("/resources/fxml/add.fxml", "ADD");
@@ -252,7 +250,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 	/**
-	 *
+	 *Set chosendate to the right date, and sets the calendar to the right position.
 	 * @param dato Takes in the localdate from the setNewDate Method.
 	 */
 	private void setNewDate2(LocalDate dato){
@@ -288,8 +286,8 @@ public class CalendarController extends Connect implements Initializable{
 
 	/**
 	 * Remove 0 if it is first in the string.
-	 * @param tall
-	 * @return
+	 * @param tall String formed as a number
+	 * @return converted string to int.
 	 */
 	private int removeZero(String tall){
         if(tall.charAt(0) == '0'){
@@ -479,9 +477,7 @@ public class CalendarController extends Connect implements Initializable{
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
-    //Clear all timeslots dayPane.
-
-    /**
+	/**
      * Clear all timeslots in dayPane
      */
     private void clearTimeSlots(){
@@ -496,7 +492,10 @@ public class CalendarController extends Connect implements Initializable{
 
 	}
 
-	//Clear given timeslot For dayPane.
+	/**
+	 * Clear a given timeslot in dayPane.
+	 * @param slot numbered slot.
+	 */
 	public void clearTimeSlot(int slot){
         int count = 0;
         for(Label label : timeToTime){
@@ -526,15 +525,21 @@ public class CalendarController extends Connect implements Initializable{
 
     /**
      * Gets cells from the database
-     * @throws ParseException
+     * @throws ParseException if it fail to get cells from database.
      */
     private void getCells() throws ParseException {
 	    //TODO: endre liste når supersort er ferdig
-            cells = new ArrayList<>(superSorter.getPrioritizedSchedule());
-			cellsAtCurrentDate = new ArrayList<>(superSorter.getPrioritizedSchedule());
+            cells = new ArrayList<>(superSorter.getScheduleWithoutCollision());
+			cellsAtCurrentDate = new ArrayList<>(superSorter.getScheduleWithoutCollision());
 
     }
 
+	/**
+	 * Set hour of day to calendar object
+	 * @param date date of given day
+	 * @param hour hour of given day.
+	 * @return Date with time object.
+	 */
     private Date setHour(Date date, int hour){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
 		cal.setTime(date);
@@ -542,12 +547,18 @@ public class CalendarController extends Connect implements Initializable{
 		return cal.getTime();
 	}
 
+	/**
+	 * Insert cells in day, week, and month tab.
+	 */
 	public void insertCells(){
 		insertDayCells();
 		insertWeekCells();
 		insertMonthCells();
 	}
 
+	/**
+	 * Insert cells at dayTab.
+	 */
 	private void insertDayCells(){
 		boolean stretch = false;
 		for (calendar.Cell cell : cellsAtCurrentDate){
@@ -571,9 +582,11 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
-
+	/**
+	 * Insert cells at weekTab.
+	 */
 	private void insertWeekCells(){
-		System.out.println("SETTING NEW CELLS");
+		//System.out.println("SETTING NEW CELLS");
 
 		for(eventButton ab : oldActivityButtons){
 			week.getChildren().remove(ab.getEvent());
@@ -625,7 +638,9 @@ public class CalendarController extends Connect implements Initializable{
 			}
 	}
 
-
+	/**
+	 * Insert cells in month tab.
+	 */
 	private void insertMonthCells(){
 		removeMonthActivityLabel();
 		System.out.println("Month");
@@ -635,12 +650,9 @@ public class CalendarController extends Connect implements Initializable{
 			LocalDate date;
 			if(cell.getStartDate().getClass() == java.sql.Date.class){
 				date = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
 			} else {
 				date = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			}
-
-
 			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
 				if(entry.getKey().equals(date)){
 					//IF There is something with high priority --> Can change this.
@@ -661,19 +673,13 @@ public class CalendarController extends Connect implements Initializable{
                             }
 							oldLabelToString += "Click to get more...";
                         }
-
-
-
-                        lab.setText(oldLabelToString);
+						lab.setText(oldLabelToString);
                         lab.setStyle("-fx-text-fill: green;");
                         entry.getValue().getChildren().addAll(lab);
                         eventLabels.add(lab);
-
 						if(!doubleDate.contains(entry.getKey())){
                             doubleDate.add(entry.getKey());
                         }
-
-
 					} else {
 						Label lab = new Label();
 						lab.setText(" " + '\n' + cell.getName());
@@ -681,26 +687,20 @@ public class CalendarController extends Connect implements Initializable{
 						entry.getValue().getChildren().addAll(lab);
 						eventLabels.add(lab);
 						usedDate.add(entry.getKey());
-
-
-                    }
-
-
-
-
-                }
+					}
+				}
 			}
 		}
 	}
 
-    /**
-     * Week and Day insertCells uses the same method.
-     * @param map
-     * @param cell
-     * @param stretch
-     * @param mapTo
-     * @return
-     */
+	/**
+	 * Help-Method for inserting mapped cells.
+	 * @param map Map
+	 * @param cell Cell
+	 * @param stretch how long the event is
+	 * @param mapTo Map
+	 * @return stretch.
+	 */
 	public boolean insertCellHelper(Map.Entry<TimeInterval, Label> map, Cell cell, boolean stretch, Map<Label, Cell> mapTo){
         if(map.getKey().getStartTime().equals(cell.getStartDate())){
             Label lab = map.getValue(); //First
@@ -725,6 +725,9 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
+	/**
+	 * Set cells to labels.
+	 */
     private void enterCells(){
 		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
 		{
@@ -732,6 +735,11 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
+	/**
+	 * Writes to label
+	 * @param label label
+	 * @param cell cell.
+	 */
 	private void writeToLabel(Label label, calendar.Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());

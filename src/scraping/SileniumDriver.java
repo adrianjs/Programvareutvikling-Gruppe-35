@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by larsmade on 23.03.2017.
+ * Scrapes the NTNU sides --> Check out Drive Method to see how it it set up.
  */
 
 
@@ -252,7 +253,9 @@ public class SileniumDriver {
         subjectDescription();
     }
 
-
+    /**
+     * Get the subject description.
+     */
     private void subjectDescription(){
         WebElement element = driver.findElement(By.id("course-details"));
         WebElement element1 = element.findElement(By.tagName("h1"));
@@ -305,18 +308,27 @@ public class SileniumDriver {
         department = dep.getText();
     }
 
+    /**
+     * Sets new coursecoordinator to the databas.
+     */
     private void setNewCourseCoordinator(){
         //String email, String firstName, String lastName, String department, String description
         String[] name = courseCoordinator.split(" ");
         new Teacher().addCourseCoordinator(eMail, name[0], name[name.length-1], department,"123", "Description");
     }
 
+    /**
+     * Sets new Subject to the database.
+     */
     private void setNewSubject(){
         System.out.println(subjectCode + "SUBJECTCODE");
         new Teacher().updateSubject(subjectDescription, subjectCode1); // --> IF SUBJECT DESCRIPTION IS BEEING UPDATED.
 //        new Teacher().addSubject(subjectCode1, subjectDescription, evaluattion, eMail); //IF NEW SUBJECT IS SET TO DATABASE
     }
 
+    /**
+     * Sets new exam to the database.
+     */
     private void setNewExam(){
         //(String name, LocalDate date, String startTime, String endTime,String description, String subjectCode)
         if(typeOfExam.contains("Skriftlig")){
@@ -354,6 +366,11 @@ public class SileniumDriver {
         endTime = "13";
     }
 
+    /**
+     * Removes starttime minutes.
+     * @param startTime startTime
+     * @return starttime without minutes
+     */
     private String makeStartTime(String startTime){
         String[] split = startTime.split(":");
         return split[0];

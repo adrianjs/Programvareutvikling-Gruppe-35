@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -70,8 +71,8 @@
                                        <center>
                                           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <JFXButton fx:id="openCalendar" onAction="#login" text="Login" />
-                                                <JFXButton onAction="#newUser" text="New User">
+                                                <JFXButton id="addButtons" fx:id="openCalendar" onAction="#login" text="Login" />
+                                                <JFXButton id="addButtons" onAction="#newUser" text="New User">
                                                    <HBox.margin>
                                                       <Insets left="10.0" />
                                                    </HBox.margin>
@@ -100,4 +101,7 @@
          </center>
       </BorderPane>
    </children>
+   <stylesheets>
+      <URL value="@/css/buttonStyle.css" />
+   </stylesheets>
 </AnchorPane>

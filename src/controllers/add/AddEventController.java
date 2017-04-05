@@ -26,6 +26,8 @@ import java.util.ResourceBundle;
 
 /**
  * Created by larsmade on 08.03.2017.
+ * Controller for addEvent.fxml.
+ * Check all the parametert so right information is put in database.
  */
 public class AddEventController extends Connect implements Initializable{
 
@@ -43,6 +45,9 @@ public class AddEventController extends Connect implements Initializable{
     @FXML JFXRadioButton deadline;
     @FXML JFXRadioButton exam;
     @FXML JFXRadioButton homeExam;
+//    @FXML JFXRadioButton kahoot;
+//    @FXML JFXRadioButton extra;
+//    @FXML JFXRadioButton examLecture;
     @FXML JFXTextField description;
     @FXML JFXDatePicker startDate;
     @FXML JFXDatePicker endDate;
@@ -267,6 +272,11 @@ public class AddEventController extends Connect implements Initializable{
     }
 
     //Validate methods --> Validates all fields in add event controller.
+
+    /**
+     * Validates that subject is correct.
+     * @return boolean
+     */
     private boolean validateSubject(){
         String subject = subjectsDropDown.getValue().toString();
         //TODO: Validate subject to database and check if it is cannot put subject to database unless it exist.
@@ -278,6 +288,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validate that eventname is set
+     * @return boolean
+     */
     private boolean validateEventName(){
         String name = eventName.getText();
         if(name.length() == 0){
@@ -289,6 +303,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validate that descriotion is set.
+     * @return boolean
+     */
     private boolean validateDescription(){
         String description = this.description.getText();
         if(description.length() == 0){
@@ -302,6 +320,10 @@ public class AddEventController extends Connect implements Initializable{
         }
     }
 
+    /**
+     * Validate that startdate is set, and that startdate is after today.
+     * @return boolean
+     */
     private boolean validateStartDate(){
         LocalDate start = startDate.getValue();
         if(start == null){
@@ -321,6 +343,10 @@ public class AddEventController extends Connect implements Initializable{
         }
     }
 
+    /**
+     * Validates that end-date is set, and that end date is after today
+     * @return boolean
+     */
     private boolean validateEndDate(){
         LocalDate end = endDate.getValue();
         if(end == null){
@@ -341,6 +367,10 @@ public class AddEventController extends Connect implements Initializable{
 
     }
 
+    /**
+     * Validate that starttime is before endtime.
+     * @return boolean
+     */
     private boolean validateStartBeforeEnd(){
         if(startDate1.isAfter(endDate1)){
             errorLabel.setText("Start must be before end");
@@ -350,6 +380,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validate that a startime is set.
+     * @return boolean.
+     */
     private boolean validateStartTime(){
         int hour = 0;
         int minute = 0;
@@ -366,6 +400,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validates that an endtime is set.
+     * @return boolean
+     */
     private boolean validateeEndTime(){
         int hour = 0;
         int minute = 0;
@@ -382,6 +420,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validates that strattime is before end time.
+     * @return boolean
+     */
     private boolean validateStartTimeBeforeEndTime(){
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
@@ -391,6 +433,10 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
+    /**
+     * Validate repeating field.
+     * @return boolean.
+     */
     private boolean validateRepeating(){
         String rep = repeating.getText();
         if(rep.length() == 0){
@@ -422,6 +468,10 @@ public class AddEventController extends Connect implements Initializable{
         }return string;
     }
 
+    /**
+     * Get subjects related to this teacher
+     * @return subjects.
+     */
     public String getSubjects(){
         return subjects.toString();
     }
