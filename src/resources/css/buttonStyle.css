@@ -111,3 +111,21 @@
 	}
 
 
+/* Next and previous buttons*/
+
+#next{
+	-fx-border-radius: 0 40 40 0;
+	-fx-background-radius: 0 40 40 0;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+#previous{
+	-fx-border-radius: 40 0 0 40;
+	-fx-background-radius: 40 0 0 40;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+}
+

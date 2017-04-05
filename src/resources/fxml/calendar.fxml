@@ -6,6 +6,7 @@
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -13,6 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
@@ -1055,8 +1057,26 @@
    <top>
       <AnchorPane prefHeight="58.0" prefWidth="1054.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <JFXDatePicker fx:id="date" defaultColor="#808080d9" layoutX="305.0" layoutY="10.0" onAction="#setNewDate" prefHeight="38.0" prefWidth="236.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="335.0" AnchorPane.topAnchor="10.0" />
             <JFXHamburger fx:id="sliderButton" layoutX="14.0" layoutY="19.0" onMouseClicked="#slidePane" />
+            <HBox alignment="CENTER" layoutX="54.0" prefHeight="58.0" prefWidth="826.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ButtonBar prefHeight="58.0" prefWidth="560.0">
+                     <buttons>
+                        <JFXButton id="previous" alignment="TOP_RIGHT" maxWidth="100.0" prefHeight="31.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Previous">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXDatePicker fx:id="date" defaultColor="#808080d9" onAction="#setNewDate" prefHeight="38.0" prefWidth="323.0" style="-fx-background-color: white;" />
+                        <JFXButton id="next" alignment="TOP_LEFT" maxWidth="100.0" prefHeight="20.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Next">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
    </top>
