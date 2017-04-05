@@ -141,7 +141,6 @@ public class eventButton {
             nameFiled.setLayoutX(10);
             nameFiled.setLayoutY(25);
 
-            //Todo denne er ikke ferdig
             Text type = new Text();
             type.setFont(Font.font("Verdana", 15));
             type.setText("Event type: " + eventType);
