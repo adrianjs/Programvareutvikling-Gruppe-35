@@ -189,7 +189,7 @@ public class Teacher extends Connect{
                 Date sqlStartDate = Date.valueOf(startDate);
                 Date sqlEndDate = Date.valueOf(endDate);
                 stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                        " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                        " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlEndDate + "','" + startTimeSql + "'," +
                         "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
             } else if(startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
                 Date sqlStartDate;
@@ -200,7 +200,7 @@ public class Teacher extends Connect{
                     sqlStartDate = Date.valueOf(startDate);
                     sqlEndDate = Date.valueOf(endDate);
                     stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlEndDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
                     endDate = endDate.plusWeeks(1);
@@ -214,7 +214,7 @@ public class Teacher extends Connect{
                     sqlStartDate = Date.valueOf(startDate);
                     sqlEndDate = Date.valueOf(endDate);
                     stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
-                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
+                            " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlEndDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',97,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
                     endDate = endDate.plusWeeks(1);

@@ -84,10 +84,16 @@ public class CalendarController extends Connect implements Initializable{
     private User user = User.getInstance();
 
 
-    //------------------------Lister som brukes til å printe ut til weeks.
+    //------------------------Lister som brukes til å printe ut til Days----------------------------------------.
+	private ArrayList<eventButton> oldDays = new ArrayList<>();
+
+
+    //------------------------Lister som brukes til å printe ut til weeks----------------------------------------.
     private ArrayList<Cell> cells = new ArrayList<>();//liste over activitys som skal inn i kalenderen
     private ArrayList<eventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
+
+
 
     //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
@@ -247,6 +253,7 @@ public class CalendarController extends Connect implements Initializable{
 	public void setNewDate(){
         LocalDate dato = date.getValue();
         setNewDate2(dato);
+
 	}
 
 	/**
@@ -301,6 +308,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Add labels in dayTab to list.
      */
+    /*
     private void addTimeToTimeToList(){
 		ObservableList<Node> children = day.getChildren();
 		for(Node label : children){
@@ -316,7 +324,7 @@ public class CalendarController extends Connect implements Initializable{
 			dayTabTimeSlots.put(new TimeInterval(start, end), label);
 			hour++;
 		}
-	}
+	}*/
 
     /**
      * Add labels in monthTab to list.
@@ -512,7 +520,7 @@ public class CalendarController extends Connect implements Initializable{
     private void setupDayTab(){
 		System.out.println("Setup day tab");
 		clearTimeSlots();
-        addTimeToTimeToList();
+        //addTimeToTimeToList();
         try {
 			System.out.println("get cells");
 			getCells();
@@ -560,25 +568,43 @@ public class CalendarController extends Connect implements Initializable{
 	 * Insert cells at dayTab.
 	 */
 	private void insertDayCells(){
-		boolean stretch = false;
-		for (calendar.Cell cell : cellsAtCurrentDate){
-			for (Map.Entry<TimeInterval, Label> entry : dayTabTimeSlots.entrySet())
-			{
-				if(stretch){
-					Label lab = entry.getValue();
-					if(!lab.getText().contains("Continiue")){
-						lab.setText("Continiue --> " + entry.getValue().getText());
-						lab.setStyle("-fx-text-fill: royalblue ;");
-					}
-					labelMappedCells.put(lab, cell);
-					//lab.setText("");
-					stretch = false;
-					if(entry.getKey().getEndTime().before(cell.getEndDate())){
-						stretch = true;
-					}
-				}
-                stretch = insertCellHelper(entry, cell, stretch, labelMappedCells);
+		for (eventButton oldDay : oldDays){
+			day.getChildren().remove(oldDay);
+		}
+		oldDays.clear();
+		if(chosenDate != null ){
+		LocalDate dateActivity;
+		LocalDate chosenDateL = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		for (Cell cell : cells) {
+			if (cell.getStartDate().getClass() == java.sql.Date.class) {
+				dateActivity = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+			} else {
+				dateActivity = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			}
+
+			if (dateActivity.equals(chosenDateL)) {
+				eventButton eb;
+				if(cell.getClass() == Activity.class) {
+					eb = new eventButton(cell.getName(), cell.getDescription(), cell);
+					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
+							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+				}else if(cell.getSlotPriority() == 98){
+					Event eventCell = (Event) cell;
+					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell);
+					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
+							1, 2);
+				} else {
+					Event eventCell = (Event) cell;
+					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell);
+					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
+							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
+				}
+
+				oldDays.add(eb);
+			}
+		}
+
 		}
 	}
 
