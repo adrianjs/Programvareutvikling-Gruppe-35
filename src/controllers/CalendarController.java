@@ -49,9 +49,9 @@ public class CalendarController extends Connect implements Initializable{
 
 	//AI panes.
     private HamburgerBackArrowBasicTransition tran;
+	private AnchorPane botto;
     @FXML private JFXDrawer drawer;
-    private AnchorPane botto;
-    @FXML private JFXHamburger sliderButton; //Slide button
+	@FXML private JFXHamburger sliderButton; //Slide button
     AnchorPane rightside;
 
     @FXML private JFXButton askButton;
@@ -130,9 +130,9 @@ public class CalendarController extends Connect implements Initializable{
         setDate();
 		try {
 			superSorter.run();
-		} catch (SQLException e) {
-			e.printStackTrace();
 		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		setupDayTab();
@@ -172,31 +172,28 @@ public class CalendarController extends Connect implements Initializable{
 		month.setGridLinesVisible(true);
 	}
 
-    /**
-     * OnAction from removebutton.
-     * @throws IOException
-     * @throws SQLException
-     * @throws ParseException
-     */
-	public void restore() throws IOException, SQLException, ParseException, InterruptedException {
+	/**
+	 * On action from restore button. Loads the restore.fxml
+	 * @throws IOException if the fxml fails to load.
+	 */
+	public void restore() throws IOException {
         //TODO: Make Restore work
 		cal.changeScene("/resources/fxml/restore.fxml", "Restore dropped events");
 		System.out.println("RESTORE");
 	}
 
     /**
-     * OnAction from addsubject-button.
-     * @throws IOException
+     * OnAction from addsubject-button, opens the addsubject.fxml
+     * @throws IOException if fxml fails to load.
      */
 	public void addSubject() throws IOException {
-
 		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 		cal.changeScene("/resources/fxml/addSubject.fxml", "Add subject");
 	}
 
 	/**
-	 * Set window back to loginScreen.
-	 * @throws Exception
+	 * Set window back to loginScreen, switches to username.fxml.
+	 * @throws Exception if fxml fails to load.
 	 */
 	public void logOut() throws Exception {
 		Stage s = (Stage) logout.getScene().getWindow();
@@ -208,7 +205,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
     /**
-     * Sets the ask.fxml to the botto anchorpane
+     * Sets the ask.fxml to the botto anchorpane, makes a new hamburger.
      */
     private void setBottoField(){
         try {
@@ -221,7 +218,7 @@ public class CalendarController extends Connect implements Initializable{
     }
 
 	/**
-	 * Open and close the Bot field, and set value to hamburger. OnAction from botto-Button.
+	 * Open and close the botto, and set value to hamburger. OnAction from botto-Button.
 	 */
     public void slidePane(){
 		drawer.setSidePane(botto);
@@ -238,7 +235,7 @@ public class CalendarController extends Connect implements Initializable{
 
     /**
      * OnAction from addButton, opens add.fxml from Calendar.class.
-     * @throws IOException
+     * @throws IOException if add.fxml fail to load.
      */
     public void add() throws IOException {
         cal.changeScene("/resources/fxml/add.fxml", "ADD");
@@ -253,7 +250,7 @@ public class CalendarController extends Connect implements Initializable{
 	}
 
 	/**
-	 *
+	 *Set chosendate to the right date, and sets the calendar to the right position.
 	 * @param dato Takes in the localdate from the setNewDate Method.
 	 */
 	private void setNewDate2(LocalDate dato){
@@ -289,8 +286,8 @@ public class CalendarController extends Connect implements Initializable{
 
 	/**
 	 * Remove 0 if it is first in the string.
-	 * @param tall
-	 * @return
+	 * @param tall String formed as a number
+	 * @return converted string to int.
 	 */
 	private int removeZero(String tall){
         if(tall.charAt(0) == '0'){
@@ -480,9 +477,7 @@ public class CalendarController extends Connect implements Initializable{
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
-    //Clear all timeslots dayPane.
-
-    /**
+	/**
      * Clear all timeslots in dayPane
      */
     private void clearTimeSlots(){
@@ -497,7 +492,10 @@ public class CalendarController extends Connect implements Initializable{
 
 	}
 
-	//Clear given timeslot For dayPane.
+	/**
+	 * Clear a given timeslot in dayPane.
+	 * @param slot numbered slot.
+	 */
 	public void clearTimeSlot(int slot){
         int count = 0;
         for(Label label : timeToTime){
@@ -527,7 +525,7 @@ public class CalendarController extends Connect implements Initializable{
 
     /**
      * Gets cells from the database
-     * @throws ParseException
+     * @throws ParseException if it fail to get cells from database.
      */
     private void getCells() throws ParseException {
 	    //TODO: endre liste når supersort er ferdig
@@ -536,6 +534,12 @@ public class CalendarController extends Connect implements Initializable{
 
     }
 
+	/**
+	 * Set hour of day to calendar object
+	 * @param date date of given day
+	 * @param hour hour of given day.
+	 * @return Date with time object.
+	 */
     private Date setHour(Date date, int hour){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
 		cal.setTime(date);

@@ -12,10 +12,12 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by larsmade on 27.03.2017.
+ * Scrapes All NTNU subjects and puts it in a list.
+ * NB! Must Link To geckoDriver Manually.
  */
 public class GetAllSubjectsNTNU {
 
-    private WebDriver driver;
+
 
     /**
      * Returns a list of all subjects on NTNU.
@@ -23,8 +25,8 @@ public class GetAllSubjectsNTNU {
      * @throws InterruptedException If driver gets intteruppted.
      */
     public List<String> startSileniumDriver() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH har ikke fått det til å funke ved å sette en relativ en......
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH must change in case uf use.
+        WebDriver driver = new FirefoxDriver();
         driver.get("https://www.ntnu.no/studier/emnesok/-/course_list/listall");
         WebElement elemtent = driver.findElement(By.className("allCourses"));
         List<WebElement> li = elemtent.findElements(By.tagName("li"));
