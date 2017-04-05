@@ -50,7 +50,6 @@ public class SuperSorter extends Connect {
         System.out.println("APPLY DEADLINES");
         applyDeadlines();
         System.out.println("FINISHED");
-
     }
 
 
@@ -200,7 +199,7 @@ public class SuperSorter extends Connect {
                 scheduleWithoutCollision.add(currentCell);
             }else{
                 JOptionPane.showMessageDialog(null, "Oops! There was a collision in your schedule" +
-                        " between " + currentCell.getName() + " and " + collisionCell.getName() + "!", "Collision!", JOptionPane.INFORMATION_MESSAGE);
+                        " between " + stringFormatterForCell(currentCell) + " and " + stringFormatterForCell(collisionCell) + "!", "Collision!", JOptionPane.INFORMATION_MESSAGE);
                 if(currentCell.getSlotPriority() == collisionCell.getSlotPriority()){
                     handleSamePriority(currentCell, collisionCell);
                 } else if(currentCell.getSlotPriority() > collisionCell.getSlotPriority()){
@@ -226,6 +225,16 @@ public class SuperSorter extends Connect {
         System.out.println("AFTER COLLISION HANDLING: " + scheduleWithoutCollision.size());
     }
 
+    public String stringFormatterForCell(Cell cell){
+        String output;
+        if(cell instanceof Activity){
+            output = cell.getName();
+        }else{
+            output = cell.getName() + " - " + ((Event) cell).getSubjectCode();
+        }
+        return output;
+    }
+
     /**
      * This method prompts the user manually if a collision of two cells also
      * has the same priority.
@@ -239,8 +248,8 @@ public class SuperSorter extends Connect {
                 JOptionPane.YES_NO_OPTION, //int optionType
                 JOptionPane.QUESTION_MESSAGE, //int messageType
                 null, //Icon icon,
-                new String[]{currentCell.getName(), collisionCell.getName()}, //Object[] options,
-                currentCell.getName());//Object initialValue
+                new String[]{stringFormatterForCell(currentCell), stringFormatterForCell(collisionCell)}, //Object[] options,
+                stringFormatterForCell(currentCell));//Object initialValue
         if(choice == 0 ){
             //currentCell was chosen
             scheduleWithoutCollision.remove(collisionCell);
