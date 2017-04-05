@@ -1,16 +1,24 @@
 package algorithm;
 
 import calendar.Cell;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDialog;
+import controllers.CalendarController;
 import database.Connect;
+import javafx.geometry.*;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.Dialog;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
 import layout.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -38,7 +46,7 @@ public class SuperSorter extends Connect {
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
     private Set<Cell> deadlines = new LinkedHashSet<>();
 
-    public void run() throws SQLException, ParseException {
+    public void run() throws SQLException, ParseException, IOException {
         System.out.println("DATA COLLECT");
         dataCollect();
         System.out.println("PRIORITY SORT");
@@ -50,6 +58,44 @@ public class SuperSorter extends Connect {
         System.out.println("APPLY DEADLINES");
         applyDeadlines();
         System.out.println("FINISHED");
+
+//        Dialog dialog = new Dialog();
+//        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+//        stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/img/EO.png"))));
+//        javafx.stage.Window window = dialog.getDialogPane().getScene().getWindow();
+//        window.setOnCloseRequest(event -> dialog.close());
+//        JFXDatePicker datePicker = new JFXDatePicker();
+//        JFXDatePicker startTimePicker = new JFXDatePicker();
+//        startTimePicker.setShowTime(true);
+//        JFXDatePicker endTimePicker = new JFXDatePicker();
+//        endTimePicker.setShowTime(true);
+//        JFXButton okButton = new JFXButton("OK");
+//        JFXButton cancelButton = new JFXButton("Cancel");
+//        okButton.setStyle("-fx-background-color:  #cadae0; ");
+//        cancelButton.setStyle("-fx-background-color:  #cadae0; ");
+//
+//        HBox hBox1 = new HBox(new Label("Enter a new date:           "), datePicker);
+//        hBox1.setAlignment(Pos.CENTER);
+//        HBox hBox2 = new HBox(new Label("Enter a new start time:   "), startTimePicker);
+//        hBox2.setAlignment(Pos.CENTER);
+//        HBox hBox3 = new HBox(new Label("Enter a new end date:    "), endTimePicker);
+//        hBox3.setAlignment(Pos.CENTER);
+//        HBox hBox4 = new HBox(okButton, cancelButton);
+//        hBox4.setAlignment(Pos.CENTER);
+//        hBox4.setTranslateY(20);
+//        hBox4.setMargin(okButton, new Insets(0,20,0,0));
+//        VBox vBox = new VBox(new Label("Select New Times for your Activity"), hBox1, hBox2, hBox3, hBox4);
+//
+//        dialog.setGraphic(vBox);
+//
+//        ((Stage) dialog.getDialogPane().getScene().getWindow()).setMaxWidth(400);
+//        dialog.show();
+//        okButton.setOnAction(event -> {
+//            System.out.println("Hello!");
+//        });
+//        cancelButton.setOnAction(event -> {
+//
+//        });
     }
 
 
@@ -300,23 +346,17 @@ public class SuperSorter extends Connect {
         //TODO: Change the times inside object, then push changes to DB
     }
 
-    public void rescheduleManual(Cell activity) throws SQLException {
+    public void rescheduleManual(Cell activity) throws SQLException, IOException {
         //TODO: Prompt the user for new times to fill in to the activity
         Cell newActivity = activity;
         String startTime;
         String endTime;
         Date date;
         //TODO: Make a dialog window, that prompts for wanted
-//        JFXDatePicker startTimePicker = new JFXDatePicker();
-//        JFXDatePicker endTimePicker = new JFXDatePicker();
-//        JFXDatePicker datePicker = new JFXDatePicker();
-//        startTimePicker.setShowTime(true);
-//        endTimePicker.setShowTime(true);
-//        Object[] params = {startTimePicker, endTimePicker, datePicker};
-//
-//        JOptionPane.showConfirmDialog(null, params, "TEST", JOptionPane.PLAIN_MESSAGE);
+        CalendarController calCtrl = CalendarController.getInstance();
+        Dialog dialog = setupDialog(activity);
+        dialog.showAndWait();
 
-        //TODO: Remember to push changes to DB
         deleteActivity(activity);
         addActivity(newActivity.getName(),
                 new java.sql.Date(activity.getStartDate().getTime()),
@@ -338,6 +378,52 @@ public class SuperSorter extends Connect {
         stmt = conn.createStatement();
         stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"' AND eventId='"+event.getID()+"'");
         droppedEvents.remove(event);
+    }
+
+    public Dialog setupDialog(Cell activity){
+        Dialog dialog = new Dialog();
+        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/img/EO.png"))));
+        javafx.stage.Window window = dialog.getDialogPane().getScene().getWindow();
+        window.setOnCloseRequest(event -> dialog.close());
+        JFXDatePicker datePicker = new JFXDatePicker();
+        JFXDatePicker startTimePicker = new JFXDatePicker();
+        startTimePicker.setShowTime(true);
+        JFXDatePicker endTimePicker = new JFXDatePicker();
+        endTimePicker.setShowTime(true);
+        JFXButton okButton = new JFXButton("OK");
+        JFXButton cancelButton = new JFXButton("Cancel");
+        okButton.setStyle("-fx-background-color:  #cadae0; ");
+        cancelButton.setStyle("-fx-background-color:  #cadae0; ");
+
+        HBox hBox1 = new HBox(new Label("Enter a new date:           "), datePicker);
+        hBox1.setAlignment(Pos.CENTER);
+        HBox hBox2 = new HBox(new Label("Enter a new start time:   "), startTimePicker);
+        hBox2.setAlignment(Pos.CENTER);
+        HBox hBox3 = new HBox(new Label("Enter a new end date:    "), endTimePicker);
+        hBox3.setAlignment(Pos.CENTER);
+        HBox hBox4 = new HBox(okButton, cancelButton);
+        hBox4.setAlignment(Pos.CENTER);
+        hBox4.setTranslateY(20);
+        hBox4.setMargin(okButton, new Insets(0,20,0,0));
+        VBox vBox = new VBox(new Label("Select New Times for your Activity"), hBox1, hBox2, hBox3, hBox4);
+
+        dialog.setGraphic(vBox);
+
+        ((Stage) dialog.getDialogPane().getScene().getWindow()).setMaxWidth(400);
+
+        okButton.setOnAction(event -> {
+            //TODO: If one of them are empty, show error
+
+        });
+
+        cancelButton.setOnAction(event -> {
+            //TODO: User old values
+
+        });
+
+        return dialog;
+
     }
 
     public Set<Subject> getSubjects() {

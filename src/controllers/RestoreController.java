@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import layout.User;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -75,7 +76,7 @@ public class RestoreController extends Connect implements Initializable{
 
     }
 
-    public void restoreChosen() throws SQLException, ParseException {
+    public void restoreChosen() throws SQLException, ParseException, IOException {
         List<JFXCheckBox> selectedBoxes = new ArrayList<>();
         for(CheckBox box : checkBoxes){
             if(!box.isSelected()){
@@ -97,7 +98,7 @@ public class RestoreController extends Connect implements Initializable{
         superSorter.run();
     }
 
-    public void restoreAll() throws SQLException, ParseException {
+    public void restoreAll() throws SQLException, ParseException, IOException {
         superSorter.resetDroppedEvents();
         Stage stage = (Stage) restoreAll.getScene().getWindow();
         stage.close();

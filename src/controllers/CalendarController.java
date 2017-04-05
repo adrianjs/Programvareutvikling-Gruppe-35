@@ -128,6 +128,13 @@ public class CalendarController extends Connect implements Initializable{
 		}
 		return instance;
 	}
+	public Scene getScene(){
+		return askButton.getScene();
+	}
+
+	public void changeScene(String s1, String s2) throws IOException {
+		cal.changeScene(s1, s2);
+	}
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -137,6 +144,8 @@ public class CalendarController extends Connect implements Initializable{
 		try {
 			superSorter.run();
 		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -165,6 +174,8 @@ public class CalendarController extends Connect implements Initializable{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
