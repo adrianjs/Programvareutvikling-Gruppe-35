@@ -36,6 +36,7 @@ public class AddEventController extends Connect implements Initializable{
     @FXML Group endDateGroup;
     @FXML Group endTimeGroup;
     @FXML Group repeatingGroup;
+    @FXML Group hoursOfWOrk;
 
     //Inputfields
     private final ToggleGroup group = new ToggleGroup();
@@ -53,9 +54,10 @@ public class AddEventController extends Connect implements Initializable{
     @FXML JFXDatePicker endDate;
     @FXML JFXDatePicker startTime;
     @FXML JFXDatePicker endTime;
-    @FXML JFXTextField repeating;
+    @FXML JFXCheckBox repeating;
     @FXML Label errorLabel;
     @FXML JFXComboBox subjectsDropDown;
+    @FXML JFXTextField hours;
     private TeacherCalendarController teach;
 
     //Values
@@ -69,6 +71,7 @@ public class AddEventController extends Connect implements Initializable{
     private int startMinute;
     private int endHour;
     private int endMinute;
+    private int hoursWork;
 
     private Teacher t = new Teacher();
 
@@ -85,6 +88,16 @@ public class AddEventController extends Connect implements Initializable{
         subjectsDropDown.setItems(subjects.sorted());
     }
 
+
+    private void clearScheme(){
+        description.setText("");
+        startDate.setValue(null);
+        endDate.setValue(null);
+        repeating.setSelected(false);
+        errorLabel.setText("");
+        subjectsDropDown.setValue(null);
+        hours.setText("");
+    }
 
     /**
      * Set radiobuttons in one group.
@@ -106,29 +119,35 @@ public class AddEventController extends Connect implements Initializable{
             mainGroup.setVisible(true);
             repeatingGroup.setVisible(true);
             endDateGroup.setVisible(false);
+            hoursOfWOrk.setVisible(false);
         }
         if(schoolWork.isSelected()){
             mainGroup.setVisible(true);
             repeatingGroup.setVisible(true);
             endDateGroup.setVisible(true);
+            endTimeGroup.setVisible(true);
+            hoursOfWOrk.setVisible(true);
         }
         if(deadline.isSelected()){
             mainGroup.setVisible(true);
             repeatingGroup.setVisible(false);
             endDateGroup.setVisible(false);
             endTimeGroup.setVisible(false);
+            hoursOfWOrk.setVisible(false);
         }
         if(exam.isSelected()){
             mainGroup.setVisible(true);
             repeatingGroup.setVisible(false);
             endDateGroup.setVisible(false);
             endTimeGroup.setVisible(true);
+            hoursOfWOrk.setVisible(false);
         }
         if(homeExam.isSelected()){
             mainGroup.setVisible(true);
             endDateGroup.setVisible(true);
             endTimeGroup.setVisible(true);
             repeatingGroup.setVisible(false);
+            hoursOfWOrk.setVisible(false);
         }
     }
 
@@ -178,12 +197,13 @@ public class AddEventController extends Connect implements Initializable{
             boolean desc = validateDescription();
             boolean subject = validateSubject();
             boolean rep = validateRepeating();
-            if(name && startToEnd && startToEnd && desc && subject && rep){
+            boolean hour = validateHoursOfWork();
+            if(name && startToEnd && startToEnd && desc && subject && rep && hour){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour;
                 String endTimeString = endHour;
-                t.addSchoolWork(eventName1, startDate1, endDate1, startTimeString, endTimeString, repeating1, description1, (double) 0, subject1 );
+                t.addSchoolWork(eventName1, startDate1, endDate1, startTimeString, endTimeString, repeating1, description1, (double) hoursWork, subject1 );
                 System.out.println("New schoolwork entered to database");
                 teach.cancel();
                 teach.snack(0, "New schoolwork entered to database");
@@ -266,6 +286,7 @@ public class AddEventController extends Connect implements Initializable{
      */
     public void cancel(){//Onaction from cancel-button
         System.out.println("cancel");
+        clearScheme();
         teach.snack(1, "");
         teach.cancel();
 
@@ -278,7 +299,15 @@ public class AddEventController extends Connect implements Initializable{
      * @return boolean
      */
     private boolean validateSubject(){
-        String subject = subjectsDropDown.getValue().toString();
+        String subject;
+        try{
+            subject = subjectsDropDown.getValue().toString();
+        }catch (Exception e){
+            errorLabel.setText("Must set subject");
+            System.out.println("Must have subject");
+            return false;
+        }
+
         //TODO: Validate subject to database and check if it is cannot put subject to database unless it exist.
         if(!subjects.contains(subject)){
             errorLabel.setText("This subject is not in database");
@@ -390,6 +419,11 @@ public class AddEventController extends Connect implements Initializable{
         try {
             hour = startTime.getTime().getHour();
             minute = startTime.getTime().getMinute();
+            if(hour < 8 || hour > 20){
+                errorLabel.setText("Starttime must be between 08:00 - 20:00");
+                System.out.println("Starttime must be between 08:00 - 20:00");
+                return false;
+            }
         }catch (Exception e){
             errorLabel.setText("Must have a start time");
             System.out.println("Must have a start time");
@@ -410,6 +444,11 @@ public class AddEventController extends Connect implements Initializable{
         try {
             hour = endTime.getTime().getHour();
             minute = endTime.getTime().getMinute();
+            if(hour < 8 || hour > 20){
+                errorLabel.setText("endTime must be between 08:00 - 20:00");
+                System.out.println("endTime must be between 08:00 - 20:00");
+                return false;
+            }
         }catch (Exception e){
             errorLabel.setText("Must have a end time");
             System.out.println("Must have a end time");
@@ -438,21 +477,30 @@ public class AddEventController extends Connect implements Initializable{
      * @return boolean.
      */
     private boolean validateRepeating(){
-        String rep = repeating.getText();
-        if(rep.length() == 0){
-            errorLabel.setText("Must have a value in rep field");
-            System.out.println("must have a value in rep field");
+        boolean rep = repeating.isSelected();
+        if(!rep){
+            repeating1 = 0;
+        }
+        repeating1 = 1;
+        return true;
+    }
+
+    private boolean validateHoursOfWork(){
+        String hour = hours.getText();
+        if(hour.length() == 0){
+
+            errorLabel.setText("Must have a value in hours of Work field");
+            System.out.println("Must have a value in hours of Work field");
             return false;
         }
-        int number = 0;
+        int hourInt = 0;
         try {
-            number = Integer.parseInt(rep);
+            hourInt = Integer.parseInt(hour);
         }catch (Exception e){
-            errorLabel.setText("Must be an integer in rep field");
-            System.out.println("must be an integer in rep field");
-            return false;
+            errorLabel.setText("Must have a integer value in hours of work field");
+            System.out.println("Must have a integer value in hours of work field");
         }
-        repeating1 = number;
+        hoursWork = hourInt;
         return true;
     }
 
