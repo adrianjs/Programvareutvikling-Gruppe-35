@@ -68,6 +68,7 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private Tab dayTab;
 	@FXML private Tab weekTab;
 	@FXML private Tab monthTab;
+	@FXML private JFXTabPane tabs;
 
     //Date
 	@FXML private JFXDatePicker date;
@@ -457,22 +458,20 @@ public class CalendarController extends Connect implements Initializable{
      * Go to the given day when month gridpane is clicked. Loads activities from this day in
      * @param tall integer clicked.
      */
+    //TODO få denne til å flyte dge bor til day, med denne datoen
 	private void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();
-        try{
-			int dayInt = Integer.parseInt(day);
-			LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-			int year = date.getYear();
-			int month = date.getMonthValue();
-			LocalDate date1 = LocalDate.of(year, month, dayInt);
-			setNewDate2(date1);
-			if(day.length() != 0){
-                cal.changeScene("/resources/fxml/watchDay.fxml", date1.toString());
-			}
-		}catch(Exception e){
-			System.out.println(e);
-		}
+        int dayInt = Integer.parseInt(day);
+        LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year = date.getYear();
+        int month = date.getMonthValue();
+        LocalDate date1 = LocalDate.of(year, month, dayInt);
+        setNewDate2(date1);
+        tabs.getSelectionModel().select(dayTab);
+
+
+
 	}
 
     /**
@@ -569,7 +568,7 @@ public class CalendarController extends Connect implements Initializable{
 	 */
 	private void insertDayCells(){
 		for (eventButton oldDay : oldDays){
-			day.getChildren().remove(oldDay);
+			day.getChildren().remove(oldDay.getEvent());
 		}
 		oldDays.clear();
 		if(chosenDate != null ){
