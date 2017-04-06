@@ -304,6 +304,9 @@ public class CalendarController extends Connect implements Initializable{
         insertCells();
     }
 
+    private void timeLayout(){
+
+    }
 	//Started to make methods to change veiw when minicalendar is changed.
 	/**
 	 * The new date set from datePicker adjusted to fit monthOrganizer
@@ -503,10 +506,7 @@ public class CalendarController extends Connect implements Initializable{
         LocalDate date1 = LocalDate.of(year, month, dayInt);
         setNewDate2(date1);
         tabs.getSelectionModel().select(dayTab);
-
-
-
-	}
+    }
 
     /**
      * Sets the date when application starts.
