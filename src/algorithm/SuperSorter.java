@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import layout.*;
@@ -210,8 +211,16 @@ public class SuperSorter extends Connect {
             if(!collision){
                 scheduleWithoutCollision.add(currentCell);
             }else{
-                JOptionPane.showMessageDialog(null, "Oops! There was a collision in your schedule" +
-                        " between " + stringFormatterForCell(currentCell) + " and " + stringFormatterForCell(collisionCell) + "!", "Collision!", JOptionPane.INFORMATION_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Oops! There was a collision in you schedule between " +
+                        stringFormatterForCell(currentCell) + " and " + stringFormatterForCell(collisionCell) + "!");
+                alert.setTitle("Collision");
+//                alert.setResizable(true);
+                alert.getDialogPane().setPrefSize(600, 220);
+                alert.setHeaderText("(b)Otto has discovered a collision!");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
+                alert.showAndWait();
+
                 if(currentCell.getSlotPriority() == collisionCell.getSlotPriority()){
                     handleSamePriority(currentCell, collisionCell);
                 } else if(currentCell.getSlotPriority() > collisionCell.getSlotPriority()){
@@ -252,16 +261,22 @@ public class SuperSorter extends Connect {
      * The user gets to choose manually.
      */
     public void handleSamePriority(Cell currentCell, Cell collisionCell) throws SQLException, IOException, ParseException {
-        int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
-                "Choose which event you want to prioritize!\n" +
-                        "They both happen at: " + currentCell.getStartDate(), //Object message,
-                "Collision in the schedule!", //String title
-                JOptionPane.YES_NO_OPTION, //int optionType
-                JOptionPane.QUESTION_MESSAGE, //int messageType
-                null, //Icon icon,
-                new String[]{stringFormatterForCell(currentCell), stringFormatterForCell(collisionCell)}, //Object[] options,
-                stringFormatterForCell(currentCell));//Object initialValue
-        if(choice == 0 ){
+        Dialog dialog = new Dialog();
+        dialog.getDialogPane().setPrefSize(600, 220);
+        dialog.setTitle("Handle priority");
+        dialog.setHeaderText("Choose which event/activity you want to prioritize!");
+        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
+        dialog.setContentText("They both happen on : " + currentCell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate() +
+                "\n" + currentCell.getName() + "starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
+                "\n" + collisionCell.getName() + "starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
+        dialog.getDialogPane().getButtonTypes().setAll(
+                new ButtonType(currentCell.getName(), ButtonBar.ButtonData.OK_DONE),
+                new ButtonType(collisionCell.getName(), ButtonBar.ButtonData.CANCEL_CLOSE)
+        );
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
             //currentCell was chosen
             scheduleWithoutCollision.remove(collisionCell);
             scheduleWithoutCollision.add(currentCell);
@@ -282,22 +297,34 @@ public class SuperSorter extends Connect {
     }
 
     public void handleUnprioritizedActivity(Cell activity) throws SQLException, IOException, ParseException {
-       int choice = JOptionPane.showOptionDialog(null,
-                "Do you want to delete " + activity.getName() + " from your shcedule," +
-                        "\ndo you want Educational Organizer to find somewhere to put it, \nor would you" +
-                        " like to give it a new time manually?", "Oops! Something is colliding!", JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE, null, new String[]{"Re-schedule (auto)", "Re-schedule (manual)", "Delete"},
-                "Delete");
-        System.out.println("CHOICE: " + choice);
-        if(choice == 0){
+        Dialog dialog = new Dialog();
+        dialog.getDialogPane().setPrefSize(600, 220);
+        dialog.setTitle("Choose an option");
+        dialog.setHeaderText("How do you want to handle " + activity.getName() + "?");
+        Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
+        dialog.setContentText("Do you:\n1. Want to delete " + activity.getName() + " from your schedule?" +
+                "\n2. Want b(Otto) to find somewhere to put it? \n3. Want to give it a new time manually?");
+        dialog.getDialogPane().getButtonTypes().setAll(
+                new ButtonType("Reschedule (auto)", ButtonBar.ButtonData.OK_DONE),
+                new ButtonType("Reschedule (manual)", ButtonBar.ButtonData.CANCEL_CLOSE),
+                new ButtonType("Delete", ButtonBar.ButtonData.APPLY)
+        );
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
+            //Reschedule auto
             //TODO: RE-SCHEDULE AUTO
             System.out.println("RE-SCHEDULE AUTO");
-        }else if(choice == 1){
-            //TODO: RE-SCHEDULE MANUAL
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Coming soon...");
+            alert.showAndWait();
+
+        }else if(result.get().getButtonData().equals(ButtonBar.ButtonData.CANCEL_CLOSE)){
+            //Reschedule manual
             rescheduleManual(activity);
-            System.out.println("RE-SCHEDULE MANUAL");
+
         }else{
-            System.out.println("DELETING " + activity.getName() + " FROM DB");
+            //Delete
             deleteActivity(activity);
         }
     }
