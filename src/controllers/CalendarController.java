@@ -302,6 +302,7 @@ public class CalendarController extends Connect implements Initializable{
 	private void setNewDate2(LocalDate dato){
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        date.setValue(dato);
         setupDayTab();
         mapMonthTab();
         insertCells();
