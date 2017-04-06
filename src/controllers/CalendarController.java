@@ -19,7 +19,9 @@ import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import database.Connect;
 import database.Fetcher;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,8 +32,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import layout.*;
 //import layout.eventButtonWeek.activityButton;
+import layout.Calendar;
 import scraping.GetAllSubjectsNTNU;
 import scraping.SileniumDriver;
 import layout.eventButton;
@@ -143,26 +147,18 @@ public class CalendarController extends Connect implements Initializable{
 		username.setText(User.getInstance().getUsername().split("@")[0]);
 		setLines();
         setDate();
-		try {
-			superSorter.run();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		setupDayTab();
-        setBottoField(); //SlideFieldBotto
+		setBottoField(); //SlideFieldBotto
 		try {
 			getWeekTabCells();
 			mapMonthTab();
-            insertCells();
+			insertCells();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		date.setValue(chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-    }
+
+	}
 
     public void refresh(){
 		setLines();
@@ -1042,4 +1038,5 @@ public class CalendarController extends Connect implements Initializable{
     @FXML private void handleCalendarClick37(){
         monthClicked(37);
     }
+
 }

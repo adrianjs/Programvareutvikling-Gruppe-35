@@ -64,10 +64,9 @@ public class LoginController implements Initializable {
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
-
-
-
                 System.out.println("login successful");
+                CalendarController calCtrl = CalendarController.getInstance();
+                calCtrl.refresh();
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/teacherCalendar.fxml"));
                 loader.setController(TeacherCalendarController.getInstance());

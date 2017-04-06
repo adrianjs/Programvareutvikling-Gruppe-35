@@ -268,8 +268,8 @@ public class SuperSorter extends Connect {
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
         dialog.setContentText("They both happen on : " + currentCell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate() +
-                "\n" + currentCell.getName() + "starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
-                "\n" + collisionCell.getName() + "starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
+                "\n" + currentCell.getName() + " starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
+                "\n" + collisionCell.getName() + " starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
         dialog.getDialogPane().getButtonTypes().setAll(
                 new ButtonType(currentCell.getName(), ButtonBar.ButtonData.OK_DONE),
                 new ButtonType(collisionCell.getName(), ButtonBar.ButtonData.CANCEL_CLOSE)
