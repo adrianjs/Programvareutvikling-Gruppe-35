@@ -58,6 +58,7 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private JFXButton logout;
 	@FXML private JFXButton remove;
 
+
 	//Labels for Day pane.
 	@FXML private Label thisday;
 
@@ -180,6 +181,31 @@ public class CalendarController extends Connect implements Initializable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void next(){
+		LocalDate dato = date.getValue();
+		if(dayTab.isSelected()){
+			dato = dato.plusDays(1);
+		}else if(weekTab.isSelected()){
+    		dato = dato.plusWeeks(1);
+		}else{
+			dato = dato.plusMonths(1);
+		}
+		setNewDate2(dato);
+		date.setValue(dato);
+	}
+	public void previous(){
+		LocalDate dato = date.getValue();
+		if(dayTab.isSelected()){
+			dato = dato.minusDays(1);
+		}else if(weekTab.isSelected()){
+			dato = dato.minusWeeks(1);
+		}else{
+			dato = dato.minusMonths(1);
+		}
+		setNewDate2(dato);
+		date.setValue(dato);
 	}
 
     /**
@@ -491,6 +517,7 @@ public class CalendarController extends Connect implements Initializable{
 	private void setDate(){
         Date input = new Date();
         LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        date.setValue(dato);
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
