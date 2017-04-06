@@ -73,11 +73,11 @@ public class SileniumDriver {
      * @throws InterruptedException if not sucsessfull
      */
     private void scrapeNtnuTimeSlots() throws InterruptedException{
-        try{
-            timeTable.clear();
-        }catch(Exception e){
-            System.out.println("TimeTable was Empty");
-        }
+//        if(!timeTable.isEmpty()){
+//            timeTable.clear();
+//            System.out.println("timetable is empty");
+//        }
+        System.out.println("YOMAN");
         WebElement element = driver.findElement(By.id("timeplan"));
         timeTable = element.findElements(By.tagName("tr"));
     }
@@ -86,9 +86,10 @@ public class SileniumDriver {
      * Sort into lectures, and labs/exerzises.
      */
     private void relevantListSorter(){
-        lectures.clear();
+        //lectures.clear();
+        System.out.println(timeTable.toString() + "TIMETABLEEEEEE");
         for(WebElement w : timeTable){
-            if(w.getText().contains("Forelesning")){
+            if(w.getText().contains("Forelesning") || w.getText().contains("Forlesning")){
                 lectures.add(w);
             }
 //            if(w.getText().contains("Laboratorieøvelse")){ //Use if we want labs to be set to database.
@@ -105,6 +106,7 @@ public class SileniumDriver {
             System.out.println(w.getText());
             discription = w.getText();
             List<WebElement> list = w.findElements(By.tagName("td"));
+            System.out.println("hello");
             sendToTeacher(list);
         }
     }
@@ -243,7 +245,7 @@ public class SileniumDriver {
         WebElement element = driver.findElement(By.className("assessment"));
         List<WebElement> el = element.findElements(By.tagName("td"));
         evaluattion = el.get(0).getText();
-
+        System.out.println(evaluattion + "Evaluation");
         String title = getSubjectCode(driver.getTitle());
         System.out.println(title + "TITLE");
         subjectCode = title;
@@ -323,8 +325,9 @@ public class SileniumDriver {
      */
     private void setNewSubject(){
         System.out.println(subjectCode + "SUBJECTCODE");
-        new Teacher().updateSubject(subjectDescription, subjectCode1); // --> IF SUBJECT DESCRIPTION IS BEEING UPDATED.
-//        new Teacher().addSubject(subjectCode1, subjectDescription, evaluattion, eMail); //IF NEW SUBJECT IS SET TO DATABASE
+
+        //new Teacher().updateSubject(evaluattion, subjectCode1); // --> IF SUBJECT DESCRIPTION IS BEEING UPDATED.
+        new Teacher().addSubject(subjectCode1, evaluattion, subjectDescription, eMail); //IF NEW SUBJECT IS SET TO DATABASE
     }
 
     /**
@@ -411,34 +414,35 @@ public class SileniumDriver {
     private void drive(String fagkode) throws InterruptedException {
         //NB BEFORE SCRAPING: SOME SUBJECTS HAVE SAME COURSECOORDINATOR, CAN CAUSE PROBLEMS..
         subjectCode1 = fagkode;
-//        //Gets subject information.
-//        try{
-//            startSileniumDriver();
-//            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
-//            goToEmneInfo();
-//            quitDriver();
-//        }catch (Exception e){
-//            quitDriver();
-//            System.out.println("Failed to get subject information");
-//            e.printStackTrace();
-//        }
+        //Gets subject information.
+        try{
+            startSileniumDriver();
+            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=omEmnet");
+            goToEmneInfo();
+            quitDriver();
+        }catch (Exception e){
+            quitDriver();
+            System.out.println("Failed to get subject information");
+            e.printStackTrace();
+        }
+//
+        //Get courseCoordinator email.
+        try{
+            startSileniumDriver();
+            getWebsite(emailSide);
+            CourseCoordinator();
+            setNewCourseCoordinator();
+            setNewSubject(); //Subject must be set after courseCoordinator.
 
-//        //Get courseCoordinator email.
-//        try{
-//            startSileniumDriver();
-//            getWebsite(emailSide);
-//            CourseCoordinator();
-//            setNewCourseCoordinator();
-//            setNewSubject(); //Subject must be set after courseCoordinator.
-//            quitDriver();
-//        }catch(Exception e){
-//            quitDriver();
-//            System.out.println("Failed to get course coordinator Email.");
-//            e.printStackTrace();
-//        }
+            quitDriver();
+        }catch(Exception e){
+            quitDriver();
+            System.out.println("Failed to get course coordinator Email.");
+            e.printStackTrace();
+        }
 
 
-        //Get writing Exam.
+//        //Get writing Exam.
         try{
             startSileniumDriver();
             getWebsite("https://www.ntnu.no/studier/emner/"+fagkode+"#tab=omEksamen");
@@ -452,27 +456,27 @@ public class SileniumDriver {
         }
 
 
-//        //Get lectures.
-//        try{
-//            startSileniumDriver();
-//            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
-//            scrapeNtnuTimeSlots();
-//            relevantListSorter();
-//            lecturesToDatabase();
-//            quitDriver();
-//        }catch (Exception e){
-//            System.out.println("Failed to get Lecture");
-//            quitDriver();
-//            e.printStackTrace();
-//        }
-//
+        //Get lectures.
+        try{
+            startSileniumDriver();
+            getWebsite("https://www.ntnu.no/studier/emner/"+ fagkode +"#tab=timeplan");
+            scrapeNtnuTimeSlots();
+            relevantListSorter();
+            lecturesToDatabase();
+            quitDriver();
+        }catch (Exception e){
+            System.out.println("Failed to get Lecture");
+            quitDriver();
+            e.printStackTrace();
+        }
+
     }
 
 
     public static void main(String[] args) throws InterruptedException {
         //Add one subject.
 //        SileniumDriver sc = new SileniumDriver();
-//        sc.drive("TDT4215");
+//        sc.drive("TTM4135");
 
         //Get ALL NTNU subjects.
         GetAllSubjectsNTNU subjects = new GetAllSubjectsNTNU();

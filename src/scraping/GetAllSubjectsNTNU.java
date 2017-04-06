@@ -36,7 +36,9 @@ public class GetAllSubjectsNTNU {
             String[] split = st.split(" ");
             String s = split[split.length -1];
             s = s.substring(1, s.length() - 1);
-            if(s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
+            if(s.contains("BK") || s.contains("TTM") || s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
+                System.out.println(s + "SUBJECT");
+            }else{
                 liste.add(s);
             }
         }

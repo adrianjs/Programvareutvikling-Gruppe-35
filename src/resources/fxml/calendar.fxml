@@ -1062,13 +1062,13 @@
                <children>
                   <ButtonBar prefHeight="58.0" prefWidth="560.0">
                      <buttons>
-                        <JFXButton id="previous" alignment="TOP_RIGHT" maxWidth="100.0" prefHeight="31.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Previous">
+                        <JFXButton id="previous" alignment="TOP_RIGHT" maxWidth="100.0" onAction="#previous" prefHeight="31.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Previous">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </JFXButton>
                         <JFXDatePicker fx:id="date" defaultColor="#808080d9" onAction="#setNewDate" prefHeight="38.0" prefWidth="323.0" style="-fx-background-color: white;" />
-                        <JFXButton id="next" alignment="TOP_LEFT" maxWidth="100.0" prefHeight="20.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Next">
+                        <JFXButton id="next" alignment="TOP_LEFT" maxWidth="100.0" onAction="#next" prefHeight="20.0" style="-fx-background-color: #969aa3;" stylesheets="@../css/buttonStyle.css" text="Next">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

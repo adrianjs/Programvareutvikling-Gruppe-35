@@ -48,10 +48,10 @@ public class Teacher extends Connect{
      * @param description subject description
      * @param fagKode subjectcode.
      */
-    public void updateSubject(String description, String fagKode){
+    public void updateSubject(String evaluation, String fagKode){
         try {
             stmt = conn.createStatement();
-            stmt.executeUpdate("UPDATE SUBJECT SET description ='"+description+"' WHERE subjectCode ='"+fagKode+"'");
+            stmt.executeUpdate("UPDATE SUBJECT SET evaluation ='"+evaluation+"' WHERE subjectCode ='"+fagKode+"'");
         }catch (SQLException se){
             se.printStackTrace();
         }
