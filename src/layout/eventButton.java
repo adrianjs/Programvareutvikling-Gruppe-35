@@ -113,6 +113,7 @@ public class eventButton {
         } else {
             event.setMaxHeight(Double.MAX_VALUE);
             event.setMaxWidth(Double.MAX_VALUE);
+
         }
 
         if(cell.getSlotPriority() == 99){
