@@ -2,7 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDrawer?>
-<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="544.0" prefWidth="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -38,20 +37,22 @@
                      <children>
                         <Group fx:id="topButtons" visible="false">
                            <children>
-                              <JFXButton id="teacherButtons" fx:id="addEvent" layoutX="1.0" layoutY="1.0" onAction="#addEvent" prefHeight="50.0" prefWidth="270.0" stylesheets="/css/buttonStyle.css" text="Add Event">
+                              <JFXButton id="teacherButtons" fx:id="addEvent" layoutY="1.0" onAction="#addEvent" prefHeight="60.0" prefWidth="200.0" stylesheets="/css/buttonStyle.css" text="Add Event">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font size="20.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton id="teacherButtons" fx:id="logOut" layoutX="350.0" layoutY="1.0" onAction="#logOut" prefHeight="50.0" prefWidth="269.0" stylesheets="/css/buttonStyle.css" text="Log out">
+                              <JFXButton id="teacherButtons" layoutX="206.0" layoutY="1.0" onAction="#feedback" prefHeight="60.0" prefWidth="200.0" stylesheets="@../css/buttonStyle.css" text="Check Schoolwork">
                                  <font>
-                                    <Font size="25.0" />
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton id="teacherButtons" fx:id="logOut" layoutX="411.0" layoutY="1.0" onAction="#logOut" prefHeight="60.0" prefWidth="200.0" stylesheets="/css/buttonStyle.css" text="Log out">
+                                 <font>
+                                    <Font size="20.0" />
                                  </font>
                               </JFXButton>
                            </children>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
                         </Group>
                      </children>
                   </HBox>
@@ -70,16 +71,17 @@
                      <children>
                         <Group fx:id="mainButtons">
                            <children>
-                              <JFXButton id="teacherButtons" buttonType="RAISED" layoutX="125.0" layoutY="1.0" onAction="#addEvent" prefHeight="150.0" prefWidth="250.0" stylesheets="@../css/buttonStyle.css" text="Add Event">
+                              <JFXButton id="teacherButtons" buttonType="RAISED" layoutX="125.0" layoutY="1.0" onAction="#addEvent" prefHeight="107.0" prefWidth="150.0" stylesheets="@../css/buttonStyle.css" text="Add Event">
                                  <font>
-                                    <Font size="30.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton id="teacherButtons" buttonType="RAISED" layoutX="440.0" layoutY="1.0" onAction="#logOut" prefHeight="150.0" prefWidth="250.0" stylesheets="@../css/buttonStyle.css" text="Log out">
+                              <JFXButton id="teacherButtons" buttonType="RAISED" layoutX="499.0" layoutY="-2.0" onAction="#logOut" prefHeight="115.0" prefWidth="150.0" stylesheets="@../css/buttonStyle.css" text="Log out">
                                  <font>
-                                    <Font size="30.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </JFXButton>
+                              <JFXButton id="teacherButtons" buttonType="RAISED" layoutX="312.0" onAction="#feedback" prefHeight="109.0" prefWidth="150.0" stylesheets="@../css/buttonStyle.css" text="Check Schoolwork" />
                            </children>
                         </Group>
                      </children>

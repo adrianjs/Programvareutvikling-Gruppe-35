@@ -198,7 +198,7 @@ public class AddEventController extends Connect implements Initializable{
             boolean subject = validateSubject();
             boolean rep = validateRepeating();
             boolean hour = validateHoursOfWork();
-            if(name && startToEnd && startToEnd && desc && subject && rep && hour){
+            if(name && startToEnd && startToEnd && desc && subject && hour){
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour;
@@ -480,6 +480,7 @@ public class AddEventController extends Connect implements Initializable{
         boolean rep = repeating.isSelected();
         if(!rep){
             repeating1 = 0;
+            return false;
         }
         repeating1 = 1;
         return true;

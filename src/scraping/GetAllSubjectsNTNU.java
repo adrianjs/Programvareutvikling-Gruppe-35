@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class GetAllSubjectsNTNU {
 
 
-
+    boolean check = false;
     /**
      * Returns a list of all subjects on NTNU.
      * @return List of all NTNU subjects.
@@ -36,11 +36,17 @@ public class GetAllSubjectsNTNU {
             String[] split = st.split(" ");
             String s = split[split.length -1];
             s = s.substring(1, s.length() - 1);
-            if(s.contains("BK") || s.contains("TTM") || s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
-                System.out.println(s + "SUBJECT");
-            }else{
-                liste.add(s);
+            if(s.contains("IMT6001")){
+                check = true;
             }
+            if(check){
+                if(s.contains("BK") || s.contains("TTM") || s.contains("TDT")){ //CHOOSES WICH SUBJECTS TO SCRAPE TO DATABASE.
+                    System.out.println(s + "SUBJECT");
+                }else{
+                    liste.add(s);
+                }
+            }
+            //FM3001
         }
         driver.quit();
         return liste;

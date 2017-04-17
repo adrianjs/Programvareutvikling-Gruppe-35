@@ -38,7 +38,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     @FXML private AnchorPane barPane;
     @FXML private AnchorPane centerPane;
     private AnchorPane add;
-    private AnchorPane studassAdd;
+    private AnchorPane feedback;
     @FXML private Label userName;
     @FXML private Group mainButtons;
     @FXML private Group topButtons;
@@ -84,6 +84,10 @@ public class TeacherCalendarController extends Connect implements Initializable{
         addPane(1);
     }
 
+    public void feedback(){
+        addPane(2);
+    }
+
     public void cancel(){
         topButtons.setVisible(false);
         mainButtons.setVisible(true);
@@ -98,7 +102,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     private void setAddField(){
         try {
             add = FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml"));
-            studassAdd = FXMLLoader.load(getClass().getResource("/resources/fxml/addStudass.fxml"));
+            feedback = FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -114,7 +118,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
             slide(drawer, number);
         }
         if(number == 2){
-            drawer.setSidePane(studassAdd);
+            drawer.setSidePane(feedback);
             slide(drawer, number);
         }
     }

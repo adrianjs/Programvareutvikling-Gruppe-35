@@ -2,18 +2,23 @@ package layout;
 
 import algorithm.Activity;
 import algorithm.SuperSorter;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import controllers.CalendarController;
+import database.Event;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.*;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -38,6 +43,7 @@ public class eventButton {
     private String subjectCode;
     private Button event;
     private String eventType = "";
+    private int eventId = 0;
 
     //Setter opp hvis det er activitet
     public eventButton(String name, String description, Cell cell){
@@ -98,10 +104,12 @@ public class eventButton {
     }
 
 // setter opp hvis det er event
-    public eventButton(String name, String description, String subjecCode, Cell cell){
+    public eventButton(String name, String description, String subjecCode, Cell cell, int id){
+        //TODO: Get event ID here.
         this.name = name;
         this.description = description;
         this.subjectCode = subjecCode;
+        this.eventId = id;
         event = new Button();
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
@@ -163,6 +171,49 @@ public class eventButton {
             descriptionFiled.setFont(Font.font("Verdana", 15));
             descriptionFiled.setText(description);
 
+            //IF FEEDBACKBUTTON IS WNATED ON SCHOOLSUBJECTS --> IS ONE OF THE USERSTORIES.
+
+            VBox vbox = new VBox();
+
+            vbox.setStyle("-fx-background-color: gray;");
+            vbox.setPadding(new Insets(5,5,5,5));
+
+            //If event is schoolwork, student should be able to say how long they used on it.
+            if(eventType.contains("home work")){
+                Label lab = new Label();
+                Label errorLab = new Label();
+                errorLab.setStyle("-fx-text-fill: red;");
+                lab.setText("Hours made on school-work:");
+                JFXComboBox combo = new JFXComboBox((FXCollections.observableArrayList("1", "2", "3", "4", "5")));
+                combo.setPrefWidth(Double.MAX_VALUE);
+                combo.setStyle("-fx-background-color: #969aa3;");
+                JFXButton feedback = new JFXButton();
+                feedback.setId("feedback");
+                feedback.setText("Send feedback");
+                feedback.setStyle("-fx-background-color: #969aa3;");
+                feedback.setPrefWidth(Double.MAX_VALUE);
+                feedback.setOnAction(fd -> {
+                    errorLab.setText("");
+                    String hours;
+                    try{
+                        hours = combo.getValue().toString();
+                        boolean work = new Event().schoolWorkFeedBack(eventId, User.getInstance().getUsername(), Integer.parseInt(hours));
+                        if(!work){
+                            errorLab.setText("Can only give feedback once");
+                        }else{
+                            errorLab.setText("Feedback sent");
+                        }
+                    }catch (Exception exe){
+                        errorLab.setText("Must set a value befor you send in");
+                    }
+                });
+                vbox.getChildren().addAll(errorLab, lab, combo, feedback);
+                vbox.setMargin(lab, new Insets(0,0,5,0));
+                vbox.setMargin(combo, new Insets(0,0,5,0));
+                vbox.setMargin(feedback, new Insets(0,0,5,0));
+
+            }
+
             Button deleteBtn = new Button();
             deleteBtn.setId("deleteBtn");
             deleteBtn.setText("Delete");
@@ -175,13 +226,18 @@ public class eventButton {
 
             });
 
-
-            VBox root = new VBox(nameFiled,subjectFild,type, descriptionFiled, deleteBtn);
+            VBox root;
+            if (eventType.contains("home work")){
+                root = new VBox(nameFiled,subjectFild,type, descriptionFiled, vbox, deleteBtn);
+            }
+            else{
+                root = new VBox(nameFiled,subjectFild,type, descriptionFiled, deleteBtn);
+            }
             stage.setTitle(name);
             Scene scene = new Scene(root, 450, 450);
             String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();
             scene.getStylesheets().add(css);
-
+            stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
             stage.setScene(scene);
             stage.show();
 

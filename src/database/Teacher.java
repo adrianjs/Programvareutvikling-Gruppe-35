@@ -1,10 +1,12 @@
 package database;
+import algorithm.Subject;
 import com.gargoylesoftware.htmlunit.javascript.host.intl.DateTimeFormat;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -45,7 +47,7 @@ public class Teacher extends Connect{
 
     /**
      * Update subject discription --> Used in Scraping.
-     * @param description subject description
+     * @param evaluation subject description
      * @param fagKode subjectcode.
      */
     public void updateSubject(String evaluation, String fagKode){
@@ -331,5 +333,31 @@ public class Teacher extends Connect{
         String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
         int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
         return colors[randomNum];
+    }
+
+    /**
+     * Get events whith right subjectcode where the id of subject match the id colnum at feedback-table
+     * @param subject Subjectcode
+     * @return List with feedbacks from a given subject.
+     * @throws SQLException If there is none feedback in this subject on homework.
+     */
+    public ArrayList<ArrayList<String>> getStudentFeedBack(String subject) throws SQLException {
+        //Schoolwork som denne læreren har satt inn. trenger kun id. Ta med dato.
+        ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
+        stmt = conn.createStatement();
+        ResultSet set = stmt.executeQuery("SELECT FEEDBACK.Feedback, EVENT.startDate, EVENT.description, EVENT.houersOfWork FROM FEEDBACK " +
+                        "INNER JOIN EVENT ON FEEDBACK.ID=EVENT.eventID WHERE EVENT.subjectCode = '"+subject+"';");
+//        "SELECT * FROM EVENT WHERE subjectCode = '"+subject+"' AND priority = '"+96+"'"
+
+        while (set.next()){
+            ArrayList<String> event = new ArrayList<>();
+            event.add(Integer.toString(set.getInt(1)));
+            event.add(set.getString(2));
+            event.add(set.getString(3));
+            event.add(Integer.toString(set.getInt(4)));
+            events.add(event);
+
+        }
+        return events;
     }
 }

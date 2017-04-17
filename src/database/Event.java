@@ -20,4 +20,16 @@ public class Event extends Connect {
             se.printStackTrace();
         }
     }
+
+
+    public boolean schoolWorkFeedBack(int id, String email, int hoursUsed){
+        try{
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO FEEDBACK VALUES('"+id+"', '"+email+"', '"+hoursUsed+"')");
+            return true;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+    }
 }

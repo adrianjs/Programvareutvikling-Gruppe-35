@@ -215,40 +215,61 @@
                                     <RowConstraints maxHeight="1.7976931348623157E308" minHeight="43.0" percentHeight="7.5" prefHeight="30.0" vgrow="NEVER" />
                                  </rowConstraints>
                                  <children>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Monday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" fx:id="monday" prefHeight="30.0" prefWidth="305.0" stylesheets="/css/style.css" text="Monday" GridPane.columnIndex="1">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" fx:id="tuesday" prefHeight="30.0" prefWidth="301.0" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" fx:id="wednesday" prefHeight="30.0" prefWidth="314.0" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="3">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" fx:id="thursday" prefHeight="30.0" prefWidth="260.0" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="4">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" fx:id="friday" prefHeight="30.0" prefWidth="270.0" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="5">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" fx:id="saturday" prefHeight="30.0" prefWidth="293.0" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="6">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="7">
+                                    <Label id="weekDay" fx:id="sunday" prefHeight="30.0" prefWidth="299.0" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="7">
                                        <GridPane.margin>
-                                          <Insets left="10.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
                                     </Label>
                                     <Label text="08:00-09:00" GridPane.rowIndex="1">
                                        <GridPane.margin>
@@ -313,7 +334,8 @@
                                     <Label fx:id="enAtte" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label fx:id="enNi" text="1" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -361,7 +383,8 @@
                                     <Label fx:id="toAtte" text="2" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label fx:id="toNi" text="2" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -409,7 +432,8 @@
                                     <Label fx:id="treAtte" text="3" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
-                                       </GridPane.margin></Label>
+                                       </GridPane.margin>
+                                    </Label>
                                     <Label fx:id="treNi" text="3" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -685,8 +709,11 @@
                                        <children>
                                           <Label fx:id="day1" stylesheets="/css/style.css" text="1">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -694,8 +721,11 @@
                                        <children>
                                           <Label fx:id="day2" text="2">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -703,8 +733,11 @@
                                        <children>
                                           <Label fx:id="day3" text="3">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -712,8 +745,11 @@
                                        <children>
                                           <Label fx:id="day4" text="4">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -721,8 +757,11 @@
                                        <children>
                                           <Label fx:id="day5" text="5">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -730,8 +769,11 @@
                                        <children>
                                           <Label fx:id="day6" text="6">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -739,8 +781,11 @@
                                        <children>
                                           <Label fx:id="day7" text="7">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -748,8 +793,11 @@
                                        <children>
                                           <Label fx:id="day8" text="8">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -757,8 +805,11 @@
                                        <children>
                                           <Label fx:id="day9" text="9">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -766,8 +817,11 @@
                                        <children>
                                           <Label fx:id="day10" text="10">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -775,8 +829,11 @@
                                        <children>
                                           <Label fx:id="day11" text="11">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -784,8 +841,11 @@
                                        <children>
                                           <Label fx:id="day12" text="12">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -793,8 +853,11 @@
                                        <children>
                                           <Label fx:id="day13" text="13">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -802,8 +865,11 @@
                                        <children>
                                           <Label fx:id="day14" text="14">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -811,8 +877,11 @@
                                        <children>
                                           <Label fx:id="day15" text="15">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -820,8 +889,11 @@
                                        <children>
                                           <Label fx:id="day16" text="16">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -829,8 +901,11 @@
                                        <children>
                                           <Label fx:id="day17" text="17">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -838,8 +913,11 @@
                                        <children>
                                           <Label fx:id="day18" text="18">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -847,8 +925,11 @@
                                        <children>
                                           <Label fx:id="day19" text="19">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -856,8 +937,11 @@
                                        <children>
                                           <Label fx:id="day20" text="20">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -865,8 +949,11 @@
                                        <children>
                                           <Label fx:id="day21" text="21">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -874,8 +961,11 @@
                                        <children>
                                           <Label fx:id="day22" text="22">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -883,8 +973,11 @@
                                        <children>
                                           <Label fx:id="day23" text="23">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -892,8 +985,11 @@
                                        <children>
                                           <Label fx:id="day24" text="24">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -901,8 +997,11 @@
                                        <children>
                                           <Label fx:id="day25" text="25">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -910,8 +1009,11 @@
                                        <children>
                                           <Label fx:id="day26" text="26">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -919,8 +1021,11 @@
                                        <children>
                                           <Label fx:id="day27" text="27">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -928,8 +1033,11 @@
                                        <children>
                                           <Label fx:id="day28" text="28">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -937,8 +1045,11 @@
                                        <children>
                                           <Label fx:id="day29" text="29">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -946,8 +1057,11 @@
                                        <children>
                                           <Label fx:id="day30" text="30">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -955,8 +1069,11 @@
                                        <children>
                                           <Label fx:id="day31" text="31">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -964,8 +1081,11 @@
                                        <children>
                                           <Label fx:id="day32" text="32">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -973,8 +1093,11 @@
                                        <children>
                                           <Label fx:id="day33" text="33">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -982,8 +1105,11 @@
                                        <children>
                                           <Label fx:id="day34" text="34">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -991,8 +1117,11 @@
                                        <children>
                                           <Label fx:id="day35" text="35">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -1000,8 +1129,11 @@
                                        <children>
                                           <Label fx:id="day36" layoutY="4.0" text="36">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
@@ -1009,45 +1141,69 @@
                                        <children>
                                           <Label fx:id="day37" layoutY="4.0" text="37">
                                              <padding>
-                                                <Insets left="5.0" />
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                              </padding>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Monday">
+                                    <Label id="weekDay" prefHeight="115.0" prefWidth="354.0" stylesheets="/css/style.css" text="Monday">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="1">
+                                    <Label id="weekDay" prefHeight="88.0" prefWidth="183.0" stylesheets="/css/style.css" text="Tuesday" GridPane.columnIndex="1">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="2">
+                                    <Label id="weekDay" prefHeight="145.0" prefWidth="254.0" stylesheets="/css/style.css" text="Wednesday" GridPane.columnIndex="2">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="3">
+                                    <Label id="weekDay" prefHeight="115.0" prefWidth="205.0" stylesheets="/css/style.css" text="Thursday" GridPane.columnIndex="3">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="4">
+                                    <Label id="weekDay" prefHeight="144.0" prefWidth="243.0" stylesheets="/css/style.css" text="Friday" GridPane.columnIndex="4">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="5">
+                                    <Label id="weekDay" prefHeight="177.0" prefWidth="270.0" stylesheets="/css/style.css" text="Saturday" GridPane.columnIndex="5">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
-                                    <Label id="weekDay" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="6">
+                                    <Label id="weekDay" prefHeight="154.0" prefWidth="238.0" stylesheets="/css/style.css" text="Sunday" GridPane.columnIndex="6">
                                        <GridPane.margin>
-                                          <Insets left="5.0" />
+                                          <Insets />
                                        </GridPane.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
                                     </Label>
                                  </children>
                               </GridPane>
@@ -1119,7 +1275,7 @@
             </VBox>
             <VBox prefHeight="335.0" prefWidth="122.0" style="-fx-background-color: #d0d2d3;" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="/css/buttonStyle.css" text="Add" textFill="#4aab32">
+                  <JFXButton id="sideButton" onAction="#add" prefHeight="70.0" prefWidth="123.0" stylesheets="/css/buttonStyle.css" text="Add activity" textFill="#4aab32">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -1131,7 +1287,7 @@
                      </font>
                   </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#ff9200" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#ff5722" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" onAction="#restore" prefHeight="70.0" prefWidth="124.0" stylesheets="@../css/buttonStyle.css" text="Restore" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />

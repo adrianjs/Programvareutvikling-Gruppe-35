@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="745.0" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FeedbackController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Hours students used on your schoolwork: ">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <JFXComboBox id="addButtons" fx:id="subjectsDropDown" layoutX="14.0" layoutY="49.0" prefHeight="31.0" prefWidth="147.0" />
+      <JFXButton id="addButtons" fx:id="checkButton" layoutX="171.0" layoutY="49.0" onAction="#check" prefHeight="31.0" prefWidth="82.0" text="Check" />
+      <JFXButton id="addButtons" layoutX="675.0" layoutY="552.0" onAction="#cancel" text="Close" />
+      <TableView fx:id="table" layoutX="14.0" layoutY="104.0" prefHeight="429.0" prefWidth="715.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="158.0" text="Date" />
+          <TableColumn fx:id="estHour" prefWidth="81.0" text="Estimate" />
+            <TableColumn fx:id="feedBack" minWidth="0.0" prefWidth="89.0" text="Feedback" />
+            <TableColumn fx:id="desc" minWidth="7.0" prefWidth="386.0" text="Event description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,5 +1,6 @@
 package controllers;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -9,6 +10,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
+import java.util.List;
+import javafx.geometry.*;
 
 import algorithm.Activity;
 import algorithm.Event;
@@ -25,10 +28,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -42,7 +47,7 @@ import layout.eventButton;
 
 public class CalendarController extends Connect implements Initializable{
 
-    private Date chosenDate;
+    private Date chosenDate = new Date();
 	private SuperSorter superSorter = new SuperSorter();
 
 	@FXML private GridPane day; //DAY PANE
@@ -302,10 +307,57 @@ public class CalendarController extends Connect implements Initializable{
         setupDayTab();
         mapMonthTab();
         insertCells();
+        timeLayout();
     }
 
-    private void timeLayout(){
+    private int dayOfWeek = 0;
+	private int dayOfMonth = 0;
+	@FXML private Label monday;
+	@FXML private Label tuesday;
+	@FXML private Label wednesday;
+	@FXML private Label thursday;
+	@FXML private Label friday;
+	@FXML private Label saturday;
+	@FXML private Label sunday;
 
+    private void timeLayout(){
+        Date date = new Date();
+        LocalDate ldate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        dayOfWeek = ldate.getDayOfWeek().getValue();
+        dayOfMonth = ldate.getDayOfMonth();
+
+        monday.setStyle("-fx-background-color: white;");
+        tuesday.setStyle("-fx-background-color: white;");
+        wednesday.setStyle("-fx-background-color: white;");
+        thursday.setStyle("-fx-background-color: white;");
+        friday.setStyle("-fx-background-color: white;");
+        saturday.setStyle("-fx-background-color: white;");
+        sunday.setStyle("-fx-background-color: white;");
+
+        if(weekCalendarList.contains(ldate)){
+            if (dayOfWeek == 1){
+                monday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }else if(dayOfWeek == 2){
+                tuesday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }else if(dayOfWeek == 3){
+                wednesday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }else if(dayOfWeek == 4){
+                thursday.setStyle("-fx-background-color: red;" +
+                        "-fx-text-fill: white;");
+            }else if(dayOfWeek == 5){
+                friday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }else if(dayOfWeek == 6){
+                saturday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }else if(dayOfWeek == 7){
+                sunday.setStyle("-fx-background-color: red;" +
+						"-fx-text-fill: white;");
+            }
+        }
     }
 	//Started to make methods to change veiw when minicalendar is changed.
 	/**
@@ -406,6 +458,17 @@ public class CalendarController extends Connect implements Initializable{
 		for(int i = 0; i < monthLabels.size(); i++) {
 			if ((i >= firstDay) && (tall <= lastDateOfMonth)) {
 				monthLabels.get(i).setText(Integer.toString(tall));
+				monthLabels.get(i).setStyle("-fx-background-color: white;");
+				LocalDate ldate = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+				int chosenMonthValue = ldate.getMonthValue();
+				Date thisDate = new Date();
+				LocalDate ldateThis = thisDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+				int thisMontValue = ldateThis.getMonthValue();
+
+				if(tall == dayOfMonth && chosenMonthValue==thisMontValue){
+				    monthLabels.get(i).setStyle("-fx-background-color: red;" +
+							"-fx-text-fill: white;");
+                }
                 tall++;
             } else {
 				monthLabels.get(i).setText("");
@@ -517,6 +580,7 @@ public class CalendarController extends Connect implements Initializable{
         date.setValue(dato);
         changeDate(dato);
         chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		timeLayout();
     }
 
 	/**
@@ -625,12 +689,12 @@ public class CalendarController extends Connect implements Initializable{
 							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 				}else if(cell.getSlotPriority() == 98){
 					Event eventCell = (Event) cell;
-					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell);
+					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
 					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
 							1, 2);
 				} else {
 					Event eventCell = (Event) cell;
-					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell);
+					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
 					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
 							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 				}
@@ -674,14 +738,14 @@ public class CalendarController extends Connect implements Initializable{
 						} else if(cell.getSlotPriority() == 98){
 
 							Event eventCell = (Event) cell;
-							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
+							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,1,2);
 
 						}
 
 						else {
 							Event eventCell = (Event) cell;
-							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell);
+							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - (Integer.parseInt(cell.getStartTime())));
 						}
@@ -734,7 +798,9 @@ public class CalendarController extends Connect implements Initializable{
 							oldLabelToString += "Click to get more...";
                         }
 						lab.setText(oldLabelToString);
-                        lab.setStyle("-fx-text-fill: green;");
+                        lab.setStyle("-fx-text-fill: green;" +
+								"-fx-font-size: 14;");
+                        lab.setPadding(new Insets(0, 3, 0, 3));
                         entry.getValue().getChildren().addAll(lab);
                         eventLabels.add(lab);
 						if(!doubleDate.contains(entry.getKey())){
@@ -743,7 +809,9 @@ public class CalendarController extends Connect implements Initializable{
 					} else {
 						Label lab = new Label();
 						lab.setText(" " + '\n' + cell.getName());
-						lab.setStyle("-fx-text-fill: green;");
+						lab.setStyle("-fx-text-fill: green;" +
+								"-fx-font-size: 14;");
+						lab.setPadding(new Insets(0, 3, 0, 3));
 						entry.getValue().getChildren().addAll(lab);
 						eventLabels.add(lab);
 						usedDate.add(entry.getKey());
