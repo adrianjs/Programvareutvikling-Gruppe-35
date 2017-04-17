@@ -137,20 +137,20 @@ public class TeacherCalendarController extends Connect implements Initializable{
 
     private void slide(JFXDrawer drawe, int number){
 //         && number == 1
-        if(drawe.isShown()) {
+        if(drawe.isShown()&& number == 1) {
             drawe.close();
             topButtons.setVisible(true);
             mainButtons.setVisible(false);
             drawe.open();
             userName.setVisible(false);
         }
-//        else if(drawe.isShown() && number == 2) {
-//            drawe.close();
-//            topButtons.setVisible(true);
-//            mainButtons.setVisible(false);
-//            userName.setVisible(false);
-//            drawe.open();
-//        }
+        else if(drawe.isShown() && number == 2) {
+            drawe.close();
+            topButtons.setVisible(true);
+            mainButtons.setVisible(false);
+            userName.setVisible(false);
+            drawe.open();
+        }
         else{
             topButtons.setVisible(true);
             mainButtons.setVisible(false);

@@ -40,7 +40,8 @@ public class addTeachingSubjectController implements Initializable{
         if(checkSubjectCode() && checkEvaluation() && checkDescription() ){
             new Teacher().addSubject(code, eva, description ,User.getInstance().getUsername());
             teach.snack(2, "The subject: "+ code + " is added to the database");
-            teach.close();
+            teach.cancel();
+
         }
         else{
             //teach.cancel();
