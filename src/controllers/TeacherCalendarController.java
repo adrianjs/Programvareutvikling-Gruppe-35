@@ -39,6 +39,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     @FXML private AnchorPane centerPane;
     private AnchorPane add;
     private AnchorPane feedback;
+    private AnchorPane addTsbubject;
     @FXML private Label userName;
     @FXML private Group mainButtons;
     @FXML private Group topButtons;
@@ -88,12 +89,18 @@ public class TeacherCalendarController extends Connect implements Initializable{
         addPane(2);
     }
 
+    public void addTeachingSubject(){
+        addPane(3);
+    }
+
     public void cancel(){
         topButtons.setVisible(false);
         mainButtons.setVisible(true);
         drawer.close();
         centerPane.toFront();
         userName.setVisible(true);
+        teachingSubjects.setText("Teaching subjects: " + getSubject().toString());
+
     }
 
     /**
@@ -103,6 +110,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
         try {
             add = FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml"));
             feedback = FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml"));
+            addTsbubject = FXMLLoader.load(getClass().getResource("/resources/fxml/addTeachingSubject.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -121,23 +129,29 @@ public class TeacherCalendarController extends Connect implements Initializable{
             drawer.setSidePane(feedback);
             slide(drawer, number);
         }
+        if(number == 3){
+            drawer.setSidePane(addTsbubject);
+            slide(drawer, number);
+        }
     }
 
     private void slide(JFXDrawer drawe, int number){
-        if(drawe.isShown() && number == 1) {
+//         && number == 1
+        if(drawe.isShown()) {
             drawe.close();
             topButtons.setVisible(true);
             mainButtons.setVisible(false);
             drawe.open();
             userName.setVisible(false);
         }
-        else if(drawe.isShown() && number == 2) {
-            drawe.close();
-            topButtons.setVisible(true);
-            mainButtons.setVisible(false);
-            userName.setVisible(false);
-            drawe.open();
-        }else{
+//        else if(drawe.isShown() && number == 2) {
+//            drawe.close();
+//            topButtons.setVisible(true);
+//            mainButtons.setVisible(false);
+//            userName.setVisible(false);
+//            drawe.open();
+//        }
+        else{
             topButtons.setVisible(true);
             mainButtons.setVisible(false);
             userName.setVisible(false);
@@ -158,6 +172,9 @@ public class TeacherCalendarController extends Connect implements Initializable{
         JFXSnackbar bar = new JFXSnackbar(barPane);
         if(number == 0){
             //bar.setStyle("-fx-text-fill: red;");
+            bar.show(string, 8000);
+        }
+        else if(number == 2){
             bar.show(string, 8000);
         }else{
             bar.show("No event added", 5000);
