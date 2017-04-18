@@ -58,15 +58,25 @@ public class ConnectTest {
     }
 
     @Test
-    public void addAndRemoveActivity(){
+    public void addAndRemoveActivity() throws SQLException {
         algorithm.Activity activity = new Activity(new Date(), new Date(),
                 "11", "12",
                 "testAct", "testAct",
                 5, false,
                 10, "FFFFFF");
         Connect connect = new Connect();
-//        connect.addActivity(activity.getName(), new java.sql.Date(activity.getStartDate().getTime()), activity.isRepeating(), activity.getSlotPriority()
-//        , activity.getStartTime(), activity.getEndTime(), User.getInstance().getUsername(), activity.getDescription());
+        connect.addStudent("testStud@test.com", "test", "test", "test", 1, "test");
+        User.getInstance().setUsername("testStud@test.com");
+        connect.addActivity(activity.getName(), new java.sql.Date(activity.getStartDate().getTime()),
+                activity.isRepeating(), activity.getSlotPriority(),
+                Double.parseDouble(activity.getStartTime()), Double.parseDouble(activity.getEndTime()),
+                User.getInstance().getUsername(), activity.getDescription());
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM ACTIVITY WHERE name='testAct'");
+        m_result_set.next();
+        assertEquals("testAct", m_result_set.getString(2));
+        connect.deleteActivity(activity);
+        connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
+        connect.close();
     }
 
 }
