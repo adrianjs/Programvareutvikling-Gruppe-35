@@ -121,7 +121,6 @@ public class Connect {
 
 
     public void deleteActivity(Cell activity) throws SQLException {
-        System.out.println(activity.getName() + " " + activity.getStartDate() + " " + activity.getStartTime() + " " + activity.getEndTime() + " " + User.getInstance().getUsername());
         stmt = conn.createStatement();
         stmt.executeUpdate("DELETE FROM ACTIVITY WHERE name='"+activity.getName()+"' AND date='" +(new SimpleDateFormat("yyyy-MM-dd").format(activity.getStartDate()))+
                 "' AND startTime='" +activity.getStartTime()+"' AND endTime='"+activity.getEndTime()+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
