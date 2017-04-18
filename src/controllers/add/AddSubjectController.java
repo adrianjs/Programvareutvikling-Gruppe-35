@@ -72,7 +72,6 @@ public class AddSubjectController extends Connect implements Initializable{
         try {
             System.out.println("Remove student subject");
             new Connect().removeStudentSubject(chosenSubject);
-
         }catch (SQLException e){
             e.printStackTrace();
         }
