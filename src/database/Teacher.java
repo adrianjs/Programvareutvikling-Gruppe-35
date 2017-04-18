@@ -59,14 +59,16 @@ public class Teacher extends Connect{
         }
     }
 
-    public void addSubject(String subjectCode, String evaluation, String description, String coordinatorEmail){
+    public boolean addSubject(String subjectCode, String evaluation, String description, String coordinatorEmail){
         try {
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO SUBJECT VALUES('"+subjectCode+"', '"+evaluation+"'," +
                     " '"+description+"', '"+coordinatorEmail+"')");
         }catch (SQLException se){
             se.printStackTrace();
+            return false;
         }
+        return true;
     }
 
     public void addSubject(String subjectCode, String evaluation, String coordinatorEmail){

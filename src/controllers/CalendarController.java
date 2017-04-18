@@ -240,6 +240,10 @@ public class CalendarController extends Connect implements Initializable{
 		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
 	}
 
+	public Date getChosenDate(){
+		return chosenDate;
+	}
+
     /**
      * Sets the ask.fxml to the botto anchorpane, makes a new hamburger.
      */
