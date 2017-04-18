@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
@@ -15,8 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -42,13 +42,13 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <JFXTextField id="cal" fx:id="email" maxWidth="400.0" prefHeight="29.0" prefWidth="417.0" />
+                              <JFXTextField id="cal" fx:id="email" alignment="CENTER" maxWidth="400.0" prefHeight="29.0" prefWidth="417.0" />
                               <Label text="Password:">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <JFXPasswordField id="cal" fx:id="password" maxWidth="400.0" prefHeight="29.0" prefWidth="195.0" />
+                              <JFXPasswordField id="cal" fx:id="password" alignment="CENTER" maxWidth="400.0" prefHeight="29.0" prefWidth="195.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Label text="Are you a student or teacher?" />
@@ -67,7 +67,7 @@
                                              <children>
                                                 <Label layoutX="441.0" layoutY="323.0" text="(e.g. &quot;Energi- og prosessteknikk&quot;)" />
                                                 <Label layoutX="163.0" layoutY="323.0" text="Department:" />
-                                                <JFXTextField id="cal" fx:id="department" layoutX="259.0" layoutY="312.0" />
+                                                <JFXTextField id="cal" fx:id="department" alignment="CENTER" layoutX="259.0" layoutY="312.0" />
                                                 <JFXTextArea fx:id="description" layoutX="163.0" layoutY="377.0" prefHeight="121.0" prefWidth="484.0" promptText="Write a bit about your background... (max 255 character)" style="-fx-background-color: gray;" />
                                              </children>
                                           </Group>
@@ -79,7 +79,7 @@
                                              <children>
                                                 <Label layoutX="500.0" layoutY="427.0" text="(e.g. &quot;Informatikk&quot;)" />
                                                 <Label layoutX="166.0" layoutY="426.0" text="Name of  study: " />
-                                                <JFXTextField fx:id="study" layoutX="290.0" layoutY="422.0" />
+                                                <JFXTextField fx:id="study" alignment="CENTER" layoutX="290.0" layoutY="422.0" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets />
@@ -108,12 +108,15 @@
                               </AnchorPane>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <JFXButton id="cal" fx:id="cancel" text="Cancel" />
                                     <JFXButton id="cal" fx:id="submit" text="Submit">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </JFXButton>
+                                    <JFXButton id="cal" fx:id="cancel" text="Cancel">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin></JFXButton>
                                  </children>
                               </HBox>
                            </children>

@@ -98,7 +98,7 @@ public class eventButton {
         event = new Button();
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
-        event.setText(name+ "\n\n" + description);
+        event.setText(name + "  -  " + subjecCode + "\n\n" + description);
         if(cell.getSlotPriority() == 98){
             event.setMaxWidth(Double.MAX_VALUE);
             event.setMaxHeight(Double.MIN_VALUE);

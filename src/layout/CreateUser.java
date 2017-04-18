@@ -13,15 +13,23 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Henning on 22.02.2017.
  */
 public class CreateUser {
     public Stage dialogStage;
+    private boolean success = false;
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @FXML private JFXTextArea description;
 
@@ -106,6 +114,7 @@ public class CreateUser {
                 } else {
                     System.out.println("You have to choose student or teacher!");
                 }
+                success = true;
             }
         });
 
@@ -137,6 +146,9 @@ public class CreateUser {
             errorMessage += "Email must be filled in.\n";
         } else if(email.getText().length() > 55){
             errorMessage += "Email length must be less than 55 characters.\n";
+        }
+        if(!validateEmailFormat(email.getText())){
+            errorMessage += "Email is on wrong format.\n";
         }
         if (firstName.getText() == null || firstName.getText().length() == 0){
             errorMessage += "First name must be filled in.\n";
@@ -181,8 +193,20 @@ public class CreateUser {
             alert.setTitle("Invalid fields");
             alert.setHeaderText("Please fix these errors:");
             alert.setContentText(errorMessage);
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(this.getClass().getResource("/img/EO.png").toString()));
             alert.showAndWait();
             return false;
         }
+    }
+
+    public boolean getSuccess(){
+        return success;
+    }
+
+    public boolean validateEmailFormat(String email){
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }

@@ -40,18 +40,18 @@ public class Cell {
         if(startDate instanceof java.sql.Date){
             Calendar cal = Calendar.getInstance();
             cal.setTime(new Date(startDate.getTime()));
-            cal.set(Calendar.HOUR, Integer.parseInt(startTime));
+            cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(startTime));
             this.startDate = cal.getTime();
             cal.setTime(new Date(endDate.getTime()));
-            cal.set(Calendar.HOUR, Integer.parseInt(endTime));
+            cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(endTime));
             this.endDate = cal.getTime();
         }else{
             Calendar cal = Calendar.getInstance();
             cal.setTime(startDate);
-            cal.set(Calendar.HOUR, Integer.parseInt(startTime));
+            cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(startTime));
             this.startDate = cal.getTime();
             cal.setTime(endDate);
-            cal.set(Calendar.HOUR, Integer.parseInt(endTime));
+            cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(endTime));
             this.endDate = cal.getTime();
         }
         this.startTime = startTime;

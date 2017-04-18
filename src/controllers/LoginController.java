@@ -2,6 +2,7 @@ package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import database.Login;
 import javafx.fxml.FXML;
@@ -11,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import layout.*;
 
@@ -28,6 +31,7 @@ public class LoginController implements Initializable {
     @FXML JFXPasswordField passwordField;
     @FXML JFXButton openCalendar;
     @FXML Label loginError;
+    @FXML AnchorPane snackBarPane;
 
     private User user = User.getInstance();
     private layout.Calendar cal = new layout.Calendar();
@@ -116,15 +120,24 @@ public class LoginController implements Initializable {
             Stage st = new Stage();
             st.setTitle("Make User");
             CreateUser controller = loader.getController();
+            st.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
             //System.out.println("Controller: " + controller);
             controller.setDialogStage(st);
             st.setScene(new Scene(root));
-            st.show();
+            st.showAndWait();
+            if(controller.getSuccess()){
+                showNewUserSnackbar();
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    }
+
+    public void showNewUserSnackbar(){
+        JFXSnackbar jfxSnackbar = new JFXSnackbar(snackBarPane);
+        jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent("Your new user is now in the system! Try to login!"));
     }
 
     /**
