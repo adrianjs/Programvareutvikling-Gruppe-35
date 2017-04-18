@@ -14,7 +14,7 @@ public class Activity extends Connect {
         super();
     }
 
-    public void delteActivity(int id){
+    public void deleteActivity(int id){
         try {
             stmt = conn.createStatement();
             stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID = '"+id+"'");

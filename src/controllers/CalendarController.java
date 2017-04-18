@@ -1,17 +1,14 @@
 package controllers;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.GregorianCalendar;
 import java.util.List;
-import javafx.geometry.*;
 
 import algorithm.Activity;
 import algorithm.Event;
@@ -21,10 +18,7 @@ import calendar.Cell;
 import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import database.Connect;
-import database.Fetcher;
-import javafx.application.Platform;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,12 +31,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import layout.*;
 //import layout.eventButtonWeek.activityButton;
-import layout.Calendar;
-import scraping.GetAllSubjectsNTNU;
-import scraping.SileniumDriver;
 import layout.eventButton;
 
 public class CalendarController extends Connect implements Initializable{
