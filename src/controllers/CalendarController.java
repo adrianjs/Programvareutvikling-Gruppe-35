@@ -224,7 +224,7 @@ public class CalendarController extends Connect implements Initializable{
      */
 	public void addSubject() throws IOException {
 		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
-		cal.changeScene("/resources/fxml/addSubject.fxml", "Add subject");
+		cal.changeScene("/resources/fxml/addSubject.fxml", "Manage subjects");
 	}
 
 	/**
@@ -278,7 +278,7 @@ public class CalendarController extends Connect implements Initializable{
      * @throws IOException if add.fxml fail to load.
      */
     public void add() throws IOException {
-        cal.changeScene("/resources/fxml/add.fxml", "ADD");
+        cal.changeScene("/resources/fxml/add.fxml", "Add Activity");
     }
 
 	/**
