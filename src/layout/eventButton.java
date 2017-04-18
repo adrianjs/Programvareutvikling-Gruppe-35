@@ -171,26 +171,26 @@ public class eventButton {
             descriptionFiled.setFont(Font.font("Verdana", 15));
             descriptionFiled.setText(description);
 
-            //IF FEEDBACKBUTTON IS WNATED ON SCHOOLSUBJECTS --> IS ONE OF THE USERSTORIES.
 
+            //FEEDBACKMULIGHET FOR SKOLEARBEID.
             VBox vbox = new VBox();
-
             vbox.setStyle("-fx-background-color: gray;");
-            vbox.setPadding(new Insets(5,5,5,5));
+            vbox.setPadding(new Insets(8,8,8,8));
 
             //If event is schoolwork, student should be able to say how long they used on it.
             if(eventType.contains("home work")){
                 Label lab = new Label();
+                lab.setStyle("-fx-font-weight: bold;");
                 Label errorLab = new Label();
                 errorLab.setStyle("-fx-text-fill: red;");
                 lab.setText("Hours made on school-work:");
                 JFXComboBox combo = new JFXComboBox((FXCollections.observableArrayList("1", "2", "3", "4", "5")));
                 combo.setPrefWidth(Double.MAX_VALUE);
-                combo.setStyle("-fx-background-color: #969aa3;");
+                combo.setStyle("-fx-background-color: #cadae0;");
                 JFXButton feedback = new JFXButton();
                 feedback.setId("feedback");
                 feedback.setText("Send feedback");
-                feedback.setStyle("-fx-background-color: #969aa3;");
+                feedback.setStyle("-fx-background-color: #cadae0;");
                 feedback.setPrefWidth(Double.MAX_VALUE);
                 feedback.setOnAction(fd -> {
                     errorLab.setText("");
@@ -207,12 +207,12 @@ public class eventButton {
                         errorLab.setText("Must set a value befor you send in");
                     }
                 });
-                vbox.getChildren().addAll(errorLab, lab, combo, feedback);
-                vbox.setMargin(lab, new Insets(0,0,5,0));
-                vbox.setMargin(combo, new Insets(0,0,5,0));
-                vbox.setMargin(feedback, new Insets(0,0,5,0));
-
+                vbox.getChildren().addAll(lab, combo, feedback, errorLab);
+                vbox.setMargin(lab, new Insets(0,0,8,0));
+                vbox.setMargin(combo, new Insets(0,0,8,0));
+                vbox.setMargin(feedback, new Insets(0,0,8,0));
             }
+
 
             Button deleteBtn = new Button();
             deleteBtn.setId("deleteBtn");

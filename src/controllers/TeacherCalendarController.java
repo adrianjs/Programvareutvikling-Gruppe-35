@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 
 /**
  * Created by larsmade on 08.03.2017.
+ * Controller class for the main teacher view. teacherCalendar.fxml.
  */
 public class TeacherCalendarController extends Connect implements Initializable{
 
@@ -64,6 +65,10 @@ public class TeacherCalendarController extends Connect implements Initializable{
         return instance;
     }
 
+    /**
+     * Get subjects that user user current are teaching in.
+     * @return teaching subjects.
+     */
     public ObservableList<String> getSubject(){
         subjects.clear();
         try{
@@ -85,14 +90,23 @@ public class TeacherCalendarController extends Connect implements Initializable{
         addPane(1);
     }
 
+    /**
+     * On action from check Feedback-button
+     */
     public void feedback(){
         addPane(2);
     }
 
+    /**
+     * On action from add Subject button.
+     */
     public void addTeachingSubject(){
         addPane(3);
     }
 
+    /**
+     * On action from cancel-button.
+     */
     public void cancel(){
         topButtons.setVisible(false);
         mainButtons.setVisible(true);
@@ -104,7 +118,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     }
 
     /**
-     * Set fxml documents to JFXdrawers.
+     * Sets fxml-documents to anchorpanes, which can be set to the drawer when needed.
      */
     private void setAddField(){
         try {
@@ -117,7 +131,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     }
 
     /**
-     * Open and closes drawers(Fxml documtents).
+     * Add pane to the drawer based on wich button is clicked.
      * @param number get number from on buttons onaction methods
      */
     private void addPane(int number){
@@ -135,8 +149,12 @@ public class TeacherCalendarController extends Connect implements Initializable{
         }
     }
 
+    /**
+     * Makes topbuttonbar-visible if a document is open, and the main buttons if fxml document is closed.
+     * @param drawe the drawer.
+     * @param number number of fxml document.
+     */
     private void slide(JFXDrawer drawe, int number){
-//         && number == 1
         if(drawe.isShown()&& number == 1) {
             drawe.close();
             topButtons.setVisible(true);
@@ -144,13 +162,14 @@ public class TeacherCalendarController extends Connect implements Initializable{
             drawe.open();
             userName.setVisible(false);
         }
-        else if(drawe.isShown() && number == 2) {
+        else if(drawe.isShown() && ((number == 2)||(number == 3))) {
             drawe.close();
             topButtons.setVisible(true);
             mainButtons.setVisible(false);
             userName.setVisible(false);
             drawe.open();
         }
+
         else{
             topButtons.setVisible(true);
             mainButtons.setVisible(false);
@@ -175,6 +194,8 @@ public class TeacherCalendarController extends Connect implements Initializable{
             bar.show(string, 8000);
         }
         else if(number == 2){
+            bar.show(string, 8000);
+        }else if(number == 3){
             bar.show(string, 8000);
         }else{
             bar.show("No event added", 5000);

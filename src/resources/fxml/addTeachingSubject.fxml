@@ -7,21 +7,21 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.addTeachingSubjectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="745.0" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.addTeachingSubjectController">
    <children>
-      <Label layoutX="36.0" layoutY="32.0" text="Add Subject">
+      <Label layoutX="36.0" layoutY="32.0" text="Add Subject:">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="subjectCode" layoutX="33.0" layoutY="107.0" />
-      <JFXButton layoutX="531.0" layoutY="550.0" onAction="#addSubject" text="Add subject" />
-      <JFXButton layoutX="649.0" layoutY="550.0" onAction="#cancel" text="Cancel" />
-      <Label fx:id="errorLabel" layoutX="33.0" layoutY="370.0" textFill="RED" />
-      <JFXTextField fx:id="evaluation" layoutX="33.0" layoutY="197.0" prefHeight="29.0" prefWidth="300.0" />
-      <Label layoutX="33.0" layoutY="85.0" text="Subject-code:" />
-      <Label layoutX="33.0" layoutY="177.0" text="Evaluation:" />
-      <Label layoutX="36.0" layoutY="270.0" text="Description:" />
-      <JFXTextField fx:id="desc" layoutX="31.0" layoutY="291.0" prefHeight="29.0" prefWidth="300.0" />
+      <JFXTextField id="fields" fx:id="subjectCode" layoutX="31.0" layoutY="137.0" />
+      <JFXButton id="teacherButtons" layoutX="587.0" layoutY="550.0" onAction="#addSubject" text="Add " />
+      <JFXButton id="teacherButtons" layoutX="650.0" layoutY="550.0" onAction="#cancel" text="Cancel" />
+      <Label fx:id="errorLabel" layoutX="36.0" layoutY="555.0" textFill="RED" />
+      <JFXTextField id="fields" fx:id="evaluation" layoutX="33.0" layoutY="197.0" prefHeight="29.0" prefWidth="300.0" />
+      <Label id="text" layoutX="30.0" layoutY="116.0" text="Subject-code:" />
+      <Label id="text" layoutX="33.0" layoutY="177.0" text="Evaluation:" />
+      <Label id="text" layoutX="30.0" layoutY="238.0" text="Description:" />
+      <JFXTextField id="fields" fx:id="desc" layoutX="33.0" layoutY="259.0" prefHeight="29.0" prefWidth="300.0" />
    </children>
 </AnchorPane>

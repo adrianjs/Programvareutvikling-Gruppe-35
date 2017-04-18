@@ -66,6 +66,18 @@ public class AddSubjectController extends Connect implements Initializable{
         }
     }
 
+    public void removeSubject(){
+        String chosenSubject;
+        chosenSubject = subject.getCharacters().toString().split("\\s+")[0];
+        try {
+            System.out.println("Remove student subject");
+            new Connect().removeStudentSubject(chosenSubject);
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Sets up the ComboBox with subjects the user can pick.
      * Calls the database (DB) and gets all the subjects available from SUBJECT.
