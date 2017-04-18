@@ -34,7 +34,7 @@ public class FeedbackController implements Initializable{
     int avg = 0;
     ArrayList<ArrayList<String>> events;
 
-    //TODO: FIX ADD SCHOOLWORK FOR REPEATING BUG
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         teach = TeacherCalendarController.getInstance();

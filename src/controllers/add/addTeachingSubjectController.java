@@ -1,6 +1,5 @@
 package controllers.add;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import controllers.TeacherCalendarController;
 import database.Teacher;
@@ -18,7 +17,6 @@ import java.util.ResourceBundle;
  */
 public class addTeachingSubjectController implements Initializable{
 
-
     @FXML JFXTextField subjectCode;
     @FXML JFXTextField evaluation;
     @FXML JFXTextField desc;
@@ -34,7 +32,9 @@ public class addTeachingSubjectController implements Initializable{
         teach = TeacherCalendarController.getInstance();
     }
 
-
+    /**
+     * On action from Add button in fxml file.
+     */
     public void addSubject(){
         errorLabel.setText("");
         if(checkSubjectCode() && checkEvaluation() && checkDescription() ){
@@ -43,12 +43,12 @@ public class addTeachingSubjectController implements Initializable{
             teach.cancel();
 
         }
-        else{
-            //teach.cancel();
-            //TODO: INFO TO SNACKBAR.
-        }
     }
 
+    /**
+     * Check if something is typed in subjectcode-field.
+     * @return true/false
+     */
     private boolean checkSubjectCode(){
         code = subjectCode.getText();
         if(code.length() == 0){
@@ -58,6 +58,10 @@ public class addTeachingSubjectController implements Initializable{
         return true;
     }
 
+    /**
+     * Check if something is typed in evaluation-field
+     * @return true/false
+     */
     private boolean checkEvaluation(){
         eva = evaluation.getText();
         if(eva.length() == 0){
@@ -67,6 +71,10 @@ public class addTeachingSubjectController implements Initializable{
         return true;
     }
 
+    /**
+     * Check if something is typed in description-field.
+     * @return true/false
+     */
     private boolean checkDescription(){
         description = desc.getText();
         if(description.length() == 0){
@@ -76,7 +84,11 @@ public class addTeachingSubjectController implements Initializable{
         return true;
     }
 
+    /**
+     * On action from cancel button in fxml.
+     */
     public void cancel(){
         teach.cancel();
+        teach.snack(3, "No subject added");
     }
 }
