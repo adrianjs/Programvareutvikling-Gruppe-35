@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/database/activityTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" afterPath="$PROJECT_DIR$/Programvareutvikling-Gruppe-35.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Activity.java" afterPath="$PROJECT_DIR$/src/database/Activity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/fxml/username.fxml" afterPath="$PROJECT_DIR$/src/resources/fxml/username.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Teacher.java" afterPath="$PROJECT_DIR$/src/database/Teacher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layout/eventButton.java" afterPath="$PROJECT_DIR$/src/layout/eventButton.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -65,99 +63,135 @@
     <favorites_list name="Programvareutvikling-Gruppe-35" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.828866">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="activityTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/database/activityTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8">
-                  <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Fetcher.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/database/Fetcher.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                    <element signature="e#271#272#0" expanded="false" />
-                    <element signature="e#305#306#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/database/Event.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-                  <folding>
-                    <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/database/Activity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <marker date="1492419741000" expanded="true" signature="393:441" ph="DELETE FROM " />
-                    <marker date="1492419741000" expanded="true" signature="676:731" ph="SELECT * FRO... ACTIVITY" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="991">
-                  <caret line="151" column="4" lean-forward="false" selection-start-line="151" selection-start-column="4" selection-end-line="154" selection-end-column="7" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <marker date="1491381728000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
-                    <marker date="1491381728000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
-                    <marker date="1491381728000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
-                    <marker date="1491381728000" expanded="true" signature="3886:3997" ph="INSERT INTO STUDTAKESUB... " />
-                    <marker date="1491381728000" expanded="true" signature="4150:4261" ph="DELETE FROM " />
-                    <marker date="1491381728000" expanded="true" signature="4412:4462" ph="INSERT INTO ROOM... " />
-                    <marker date="1491381728000" expanded="true" signature="4915:5214" ph="DELETE FROM " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EventTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/algorithm/EventTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="29">
-                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="838">
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+              <folding>
+                <marker date="1492528222000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
+                <marker date="1492528222000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
+                <marker date="1492528222000" expanded="true" signature="3361:3646" ph="INSERT INTO ACTIVITY... " />
+                <marker date="1492528222000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
+                <marker date="1492528222000" expanded="true" signature="3886:3997" ph="INSERT INTO STUDTAKESUB... " />
+                <marker date="1492528222000" expanded="true" signature="4150:4261" ph="DELETE FROM " />
+                <marker date="1492528222000" expanded="true" signature="4408:4707" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <marker date="1492445930000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
+                <marker date="1492445930000" expanded="true" signature="633:700" ph="INSERT INTO FEEDBACK... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fetcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Fetcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+              <folding>
+                <marker date="1490290223000" expanded="true" signature="247:268" ph="SELECT * FRO... STUDENT" />
+                <marker date="1490290223000" expanded="true" signature="300:331" ph="SELECT * FRO... COURSECOORDINATOR" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/algorithm/EventTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventButton.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="157" column="59" lean-forward="false" selection-start-line="157" selection-start-column="59" selection-end-line="157" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="366" column="27" lean-forward="false" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
+              <folding>
+                <marker date="1492530077000" expanded="true" signature="1385:1544" ph="INSERT INTO COURSECOORDINATOR... " />
+                <marker date="1492530077000" expanded="true" signature="2062:2142" ph="UPDATE SUBJE... " />
+                <marker date="1492530077000" expanded="true" signature="2435:2566" ph="INSERT INTO SUBJECT... " />
+                <marker date="1492530077000" expanded="true" signature="2883:3001" ph="INSERT INTO SUBJECT... " />
+                <marker date="1492530077000" expanded="true" signature="3437:3514" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1492530077000" expanded="true" signature="5110:5483" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="5878:6259" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="6736:7117" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="8254:8625" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="9030:9409" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="9944:10323" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="11090:11403" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="12189:12500" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="13523:13855" ph="INSERT INTO EVENT... " />
+                <marker date="1492530077000" expanded="true" signature="14465:14528" ph="SELECT * FRO... EVENT" />
+                <marker date="1492530077000" expanded="true" signature="16180:16389" ph="SELECT FEEDB... FEEDBACK" />
+                <marker date="1492530077000" expanded="true" signature="17023:17118" ph="SELECT coord... SUBJECT" />
+                <marker date="1492530077000" expanded="true" signature="17023:17138" ph="SELECT coord... SUBJECT" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1492528222000" expanded="true" signature="394:442" ph="DELETE FROM " />
+                <marker date="1492528222000" expanded="true" signature="677:732" ph="SELECT * FRO... ACTIVITY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -177,7 +211,6 @@
       <find>is</find>
       <find>gecko</find>
       <find>driver.qu</find>
-      <find>add</find>
       <find>driver.qui</find>
       <find>gotoEmne</find>
       <find>descr</find>
@@ -194,6 +227,8 @@
       <find>insertCellHelper</find>
       <find>insertCells()</find>
       <find>insertDayCells()</find>
+      <find>add</find>
+      <find>subjectFild</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +247,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/layout/mainStart/Main.java" />
         <option value="$PROJECT_DIR$/src/layout/Add.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/layout/Calendar.fxml" />
@@ -253,16 +287,17 @@
         <option value="$PROJECT_DIR$/src/resources/fxml/makeuser.fxml" />
         <option value="$PROJECT_DIR$/src/layout/CreateUser.java" />
         <option value="$PROJECT_DIR$/src/resources/fxml/addEvent.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
         <option value="$PROJECT_DIR$/src/resources/fxml/teacherCalendar.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/TeacherCalendarController.java" />
-        <option value="$PROJECT_DIR$/src/database/Teacher.java" />
         <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-        <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
         <option value="$PROJECT_DIR$/src/resources/fxml/username.fxml" />
         <option value="$PROJECT_DIR$/src/database/Activity.java" />
         <option value="$PROJECT_DIR$/tests/database/activity.java" />
+        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
         <option value="$PROJECT_DIR$/tests/database/activityTest.java" />
+        <option value="$PROJECT_DIR$/src/database/subject.java" />
+        <option value="$PROJECT_DIR$/src/database/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
       </list>
     </option>
   </component>
@@ -276,8 +311,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -295,7 +330,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -400,24 +435,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -454,7 +471,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="calendar" />
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,8 +517,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -524,10 +563,27 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/algorithm/SuperSorter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/algorithm/TimeComparator.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/calendar/Cell.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/AskBotController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/CalendarController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/FeedbackController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/LoginController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/TeacherCalendarController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/add/AddActivityController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/add/AddSubjectController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Activity.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Connect.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/Teacher.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/layout/CreateUser.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/layout/eventButton.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/css/buttonStyle.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/addSubject.fxml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/calendar.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/makeuser.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/teacherCalendar.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/username.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/database/LoginTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/database/activityTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -535,6 +591,18 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/controlsfx-8.40.12/license.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/controllers/add/addTeachingSubjectController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/fxml/addTeachingSubject.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/scraping/GetAllSubjectsNTNU.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/scraping/SileniumDriver.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resources/scraping/geckodriver.exe</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/algorithm/ActivityTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/algorithm/PriorityComparatorTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/algorithm/SubjectTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/algorithm/TimeComparatorTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/database/ConnectTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/database/TeacherTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -542,6 +610,16 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/api/Connect.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/api/Subject.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/calendar/Day.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/calendar/Month.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/calendar/Week.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/database/SubjectAssistent.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/scraping/GetAllSubjectsNTNU.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/scraping/SileniumDriver.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/scraping/geckodriver.exe</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tests/calendar/ActivityTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -623,7 +701,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -632,26 +710,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="layout.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Programvareutvikling-Gruppe-35" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Activity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="database.Activity" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -735,6 +793,26 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Teacher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="database.Teacher" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Programvareutvikling-Gruppe-35" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1186,18 +1264,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Activity" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.activityTest.testAddAndRemove" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.activityTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.activityTest.testAddAndRemove" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.activityTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Teacher" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.activityTest.testAddAndRemove" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.activityTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Activity" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Teacher" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.activityTest.testAddAndRemove" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.activityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1265,7 +1343,9 @@
       <workItem from="1490985340626" duration="35726000" />
       <workItem from="1491383330071" duration="525000" />
       <workItem from="1491383945551" duration="4544000" />
-      <workItem from="1491392306697" duration="11289000" />
+      <workItem from="1491392306697" duration="11873000" />
+      <workItem from="1492427189954" duration="164000" />
+      <workItem from="1492445914174" duration="3596000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1568,7 +1648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491393268668</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="har nå testet add og remvove activity">
+      <created>1492425287802</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1492425287802</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1604,7 +1691,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463170000" />
+    <option name="totallyTimeSpent" value="467514000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1616,37 +1703,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3849315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35544553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21647818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14696486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49303135" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5069686" order="4" side_tool="true" content_ui="tabs" />
     </layout>
@@ -1708,7 +1795,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed possible to close add.fxml from cancel-button" />
     <MESSAGE value="Possible to login as coursecoordinator" />
     <MESSAGE value="added controller for addEvent" />
     <MESSAGE value="minor fix" />
@@ -1733,7 +1819,8 @@
     <MESSAGE value="day calenderen er oppdatert" />
     <MESSAGE value="nå står det vilke type event det er" />
     <MESSAGE value="tokk vekk en todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="tokk vekk en todo" />
+    <MESSAGE value="har nå testet add og remvove activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="har nå testet add og remvove activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1746,17 +1833,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/jre/lib/rt.jar!/java/util/Map.class" />
-    <entry file="file://$PROJECT_DIR$/src/resources/calendar.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/calendar/TimeInterval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/EO.png" />
     <entry file="file://$PROJECT_DIR$/src/algorithm/PriorityComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1779,7 +1855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1800,7 +1875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="285" column="57" lean-forward="false" selection-start-line="285" selection-start-column="57" selection-end-line="285" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1808,7 +1882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
           <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1816,7 +1889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1827,7 +1899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="553">
           <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1894,18 +1965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="155" column="58" lean-forward="false" selection-start-line="155" selection-start-column="58" selection-end-line="155" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#18186#18187#0" expanded="false" />
-            <element signature="e#18228#18229#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/fxml/addEvent.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -1921,7 +1980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
           <caret line="93" column="17" lean-forward="false" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1934,7 +1992,7 @@
           <caret line="155" column="14" lean-forward="false" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1491301726000" expanded="true" signature="2174:2260" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1492528222000" expanded="true" signature="2174:2260" ph="SELECT * FRO... SUBJECT" />
           </folding>
         </state>
       </provider>
@@ -1944,46 +2002,13 @@
         <state relative-caret-position="30">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="e#2010#2011#0" expanded="false" />
-            <element signature="e#2042#2043#0" expanded="false" />
-            <element signature="e#2090#2091#0" expanded="false" />
-            <element signature="e#2132#2133#0" expanded="false" />
-            <element signature="e#2164#2165#0" expanded="false" />
             <element signature="e#2194#2195#0" expanded="false" />
-            <element signature="e#2238#2239#0" expanded="false" />
             <element signature="e#2276#2277#0" expanded="false" />
-            <element signature="e#2307#2308#0" expanded="false" />
-            <element signature="e#2334#2335#0" expanded="false" />
-            <element signature="e#2374#2375#0" expanded="false" />
-            <element signature="e#2406#2407#0" expanded="false" />
-            <element signature="e#2444#2445#0" expanded="false" />
-            <element signature="e#2478#2479#0" expanded="false" />
-            <element signature="e#2532#2533#0" expanded="false" />
-            <element signature="e#2578#2579#0" expanded="false" />
-            <element signature="e#2614#2615#0" expanded="false" />
-            <element signature="e#2649#2650#0" expanded="false" />
-            <element signature="e#2702#2703#0" expanded="false" />
-            <element signature="e#2750#2751#0" expanded="false" />
-            <element signature="e#2786#2787#0" expanded="false" />
             <element signature="e#2818#2819#0" expanded="false" />
-            <element signature="e#2869#2870#0" expanded="false" />
-            <element signature="e#2911#2912#0" expanded="false" />
-            <element signature="e#2947#2948#0" expanded="false" />
-            <element signature="e#2979#2980#0" expanded="false" />
-            <element signature="e#3029#3030#0" expanded="false" />
             <element signature="e#3071#3072#0" expanded="false" />
             <element signature="e#3105#3106#0" expanded="false" />
-            <element signature="e#3135#3136#0" expanded="false" />
             <element signature="e#3181#3182#0" expanded="false" />
-            <element signature="e#3219#3220#0" expanded="false" />
             <element signature="e#3250#3251#0" expanded="false" />
-            <element signature="e#3277#3278#0" expanded="false" />
-            <element signature="e#3317#3318#0" expanded="false" />
-            <element signature="e#3349#3350#0" expanded="false" />
-            <element signature="e#3375#3376#0" expanded="false" />
-            <element signature="e#3400#3401#0" expanded="false" />
-            <element signature="e#3433#3434#0" expanded="false" />
-            <element signature="e#3461#3462#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1996,108 +2021,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#6463#6464#0" expanded="false" />
-            <element signature="e#6491#6492#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/fxml/username.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/database/FetcherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/calendar/ActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3015">
-          <caret line="210" column="32" lean-forward="false" selection-start-line="210" selection-start-column="32" selection-end-line="210" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1058#1059#0" expanded="false" />
-            <element signature="e#1081#1082#0" expanded="false" />
-            <element signature="e#3254#3273#0" expanded="false" />
-            <element signature="e#3510#3518#0" expanded="false" />
-            <element signature="e#14282#14301#0" expanded="false" />
-            <element signature="e#14522#14530#0" expanded="false" />
-            <marker date="1491468890000" expanded="true" signature="1336:1495" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1491468890000" expanded="true" signature="2014:2094" ph="UPDATE SUBJE... " />
-            <marker date="1491468890000" expanded="true" signature="2384:2515" ph="INSERT INTO SUBJECT... " />
-            <marker date="1491468890000" expanded="true" signature="2785:2903" ph="INSERT INTO SUBJECT... " />
-            <marker date="1491468890000" expanded="true" signature="3339:3416" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1491468890000" expanded="true" signature="5012:5385" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="5780:6161" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="6638:7019" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="8156:8527" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="8932:9311" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="9846:10225" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="10992:11305" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="12091:12402" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="13425:13757" ph="INSERT INTO EVENT... " />
-            <marker date="1491468890000" expanded="true" signature="14367:14430" ph="SELECT * FRO... EVENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1490290223000" expanded="true" signature="247:268" ph="SELECT * FRO... STUDENT" />
-            <marker date="1490290223000" expanded="true" signature="300:331" ph="SELECT * FRO... COURSECOORDINATOR" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Fetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#271#272#0" expanded="false" />
-            <element signature="e#305#306#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/Event.java">
@@ -2121,14 +2052,14 @@
         <state relative-caret-position="-1679">
           <caret line="108" column="44" lean-forward="false" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
           <folding>
-            <marker date="1491476458000" expanded="true" signature="3456:3523" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1491476458000" expanded="true" signature="3934:4023" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-            <marker date="1491476458000" expanded="true" signature="4328:4393" ph="SELECT * FRO... EVENT" />
-            <marker date="1491476458000" expanded="true" signature="5645:5711" ph="SELECT * FRO... ACTIVITY" />
-            <marker date="1491476458000" expanded="true" signature="6970:7036" ph="DELETE FROM " />
-            <marker date="1491476458000" expanded="true" signature="14703:14823" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1491476458000" expanded="true" signature="15302:15375" ph="DELETE FROM " />
-            <marker date="1491476458000" expanded="true" signature="15552:15657" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="3456:3523" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1492528222000" expanded="true" signature="3934:4023" ph="SELECT * FRO... NOTATTENDINGEVENT" />
+            <marker date="1492528222000" expanded="true" signature="4328:4393" ph="SELECT * FRO... EVENT" />
+            <marker date="1492528222000" expanded="true" signature="5645:5711" ph="SELECT * FRO... ACTIVITY" />
+            <marker date="1492528222000" expanded="true" signature="6970:7036" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="14703:14823" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1492528222000" expanded="true" signature="15110:15183" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="15360:15465" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -2137,15 +2068,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1649">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid16442.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9075">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/controllers/eventControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281">
+          <caret line="155" column="58" lean-forward="false" selection-start-line="155" selection-start-column="58" selection-end-line="155" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/calendar/ActivityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/database/FetcherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/database/activityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="64" lean-forward="false" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
           <folding>
-            <marker date="1489061259000" expanded="true" signature="535:653" ph="INSERT INTO SUBJECTASSISTENT... " />
-            <marker date="1489061259000" expanded="true" signature="970:1054" ph="INSERT INTO SUBJECTASSISTENT... " />
-            <marker date="1489061259000" expanded="true" signature="1648:1733" ph="SELECT * FRO... SUBJECTASSISTENT" />
-            <marker date="1489061259000" expanded="true" signature="2558:2645" ph="SELECT * FRO... SUBJECTASSISTENT" />
-            <marker date="1489061259000" expanded="true" signature="3538:3617" ph="INSERT INTO ONROOM... " />
-            <marker date="1489061259000" expanded="true" signature="4022:4087" ph="SELECT * FRO... ONROOM" />
-            <marker date="1489061259000" expanded="true" signature="4870:4937" ph="SELECT * FRO... ONROOM" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/algorithm/EventTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492528222000" expanded="true" signature="394:442" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="677:732" ph="SELECT * FRO... ACTIVITY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding>
+            <marker date="1490290223000" expanded="true" signature="247:268" ph="SELECT * FRO... STUDENT" />
+            <marker date="1490290223000" expanded="true" signature="300:331" ph="SELECT * FRO... COURSECOORDINATOR" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2154,65 +2165,84 @@
         <state relative-caret-position="105">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <marker date="1490873155000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1492445930000" expanded="true" signature="320:379" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1492445930000" expanded="true" signature="633:700" ph="INSERT INTO FEEDBACK... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hs_err_pid16442.log">
+    <entry file="file://$PROJECT_DIR$/src/database/Fetcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9075">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1492419741000" expanded="true" signature="393:441" ph="DELETE FROM " />
-            <marker date="1492419741000" expanded="true" signature="676:731" ph="SELECT * FRO... ACTIVITY" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="991">
-          <caret line="151" column="4" lean-forward="false" selection-start-line="151" selection-start-column="4" selection-end-line="154" selection-end-column="7" />
+        <state relative-caret-position="838">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1491381728000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
-            <marker date="1491381728000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1491381728000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1491381728000" expanded="true" signature="3886:3997" ph="INSERT INTO STUDTAKESUB... " />
-            <marker date="1491381728000" expanded="true" signature="4150:4261" ph="DELETE FROM " />
-            <marker date="1491381728000" expanded="true" signature="4412:4462" ph="INSERT INTO ROOM... " />
-            <marker date="1491381728000" expanded="true" signature="4915:5214" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="2373:2512" ph="INSERT INTO STUDENT... " />
+            <marker date="1492528222000" expanded="true" signature="2821:2972" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1492528222000" expanded="true" signature="3361:3646" ph="INSERT INTO ACTIVITY... " />
+            <marker date="1492528222000" expanded="true" signature="3361:3657" ph="INSERT INTO ACTIVITY... " />
+            <marker date="1492528222000" expanded="true" signature="3886:3997" ph="INSERT INTO STUDTAKESUB... " />
+            <marker date="1492528222000" expanded="true" signature="4150:4261" ph="DELETE FROM " />
+            <marker date="1492528222000" expanded="true" signature="4408:4707" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/algorithm/EventTest.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="16497">
+          <caret line="1785" column="0" lean-forward="false" selection-start-line="1785" selection-start-column="0" selection-end-line="1785" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="366" column="27" lean-forward="false" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1492530077000" expanded="true" signature="1385:1544" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1492530077000" expanded="true" signature="2062:2142" ph="UPDATE SUBJE... " />
+            <marker date="1492530077000" expanded="true" signature="2435:2566" ph="INSERT INTO SUBJECT... " />
+            <marker date="1492530077000" expanded="true" signature="2883:3001" ph="INSERT INTO SUBJECT... " />
+            <marker date="1492530077000" expanded="true" signature="3437:3514" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1492530077000" expanded="true" signature="5110:5483" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="5878:6259" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="6736:7117" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="8254:8625" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="9030:9409" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="9944:10323" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="11090:11403" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="12189:12500" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="13523:13855" ph="INSERT INTO EVENT... " />
+            <marker date="1492530077000" expanded="true" signature="14465:14528" ph="SELECT * FRO... EVENT" />
+            <marker date="1492530077000" expanded="true" signature="16180:16389" ph="SELECT FEEDB... FEEDBACK" />
+            <marker date="1492530077000" expanded="true" signature="17023:17118" ph="SELECT coord... SUBJECT" />
+            <marker date="1492530077000" expanded="true" signature="17023:17138" ph="SELECT coord... SUBJECT" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/database/activityTest.java">
+    <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/eventButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="157" column="59" lean-forward="false" selection-start-line="157" selection-start-column="59" selection-end-line="157" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

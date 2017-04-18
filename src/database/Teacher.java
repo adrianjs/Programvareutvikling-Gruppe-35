@@ -362,4 +362,21 @@ public class Teacher extends Connect{
         }
         return events;
     }
+
+    public String getTeacher(String subjectCode){
+        String corrdinator = "";
+        try {
+            stmt = conn.createStatement();
+            ResultSet set = stmt.executeQuery("SELECT SUBJECT.coordinatorEmail, SUBJECT.subjectCode FROM SUBJECT WHERE SUBJECT.subjectCode = '" + subjectCode + "'");
+            while (set.next()) {
+                corrdinator = set.getString("coordinatorEmail");
+                return corrdinator;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return corrdinator;
+    }
+
 }

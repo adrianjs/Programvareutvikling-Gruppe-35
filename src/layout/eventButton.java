@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import controllers.CalendarController;
 import database.Event;
+import database.Teacher;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -26,6 +27,7 @@ public class eventButton {
     private String description;
     private String name;
     private String subjectCode;
+    private String coordinator;
     private Button event;
     private String eventType = "";
     private int eventId = 0;
@@ -95,6 +97,11 @@ public class eventButton {
         this.description = description;
         this.subjectCode = subjecCode;
         this.eventId = id;
+        Teacher coor = new Teacher();
+        this.coordinator = coor.getTeacher(subjecCode);
+        coor.close();
+
+
         event = new Button();
         event.setId("eventButton");
         event.wrapTextProperty().setValue(true);
@@ -146,6 +153,10 @@ public class eventButton {
             subjectFild.setText("Subject Code: " + subjecCode);
             subjectFild.setLayoutX(10);
             subjectFild.setLayoutY(55);
+
+            Text coordinatorText = new Text();
+            coordinatorText.setFont(Font.font("Verdana", 10));
+            coordinatorText.setText("contact info: " + coordinator);
 
             TextArea descriptionFiled = new TextArea();
             descriptionFiled.setMaxWidth(450);
@@ -213,10 +224,10 @@ public class eventButton {
 
             VBox root;
             if (eventType.contains("home work")){
-                root = new VBox(nameFiled,subjectFild,type, descriptionFiled, vbox, deleteBtn);
+                root = new VBox(nameFiled,subjectFild,type,coordinatorText, descriptionFiled, vbox, deleteBtn);
             }
             else{
-                root = new VBox(nameFiled,subjectFild,type, descriptionFiled, deleteBtn);
+                root = new VBox(nameFiled,subjectFild,type,coordinatorText, descriptionFiled, deleteBtn);
             }
             stage.setTitle(name);
             Scene scene = new Scene(root, 450, 450);
