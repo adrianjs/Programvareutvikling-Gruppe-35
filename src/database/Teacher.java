@@ -331,11 +331,6 @@ public class Teacher extends Connect{
     }
 
 
-    private String ranColor(){
-        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
-        int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
-        return colors[randomNum];
-    }
 
     /**
      * Get events whith right subjectcode where the id of subject match the id colnum at feedback-table

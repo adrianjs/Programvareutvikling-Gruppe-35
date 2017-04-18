@@ -1,6 +1,8 @@
 package database;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by torresrl on 30/03/2017.
@@ -32,4 +34,24 @@ public class Event extends Connect {
             return false;
         }
     }
+
+    public String getLastAddedDes(){
+        String outData = "";
+        try{
+            ResultSet data = stmt.executeQuery("SELECT * FROM EVENT ORDER BY eventID DESC LIMIT 1");
+            while(data.next()){
+                outData = data.getString(9);
+                return outData;
+            }
+
+        } catch (SQLException se){
+            se.printStackTrace();
+        }
+
+
+        return outData;
+
+    }
+
+
 }
