@@ -1,37 +1,22 @@
 package layout;
 
-import algorithm.Activity;
-import algorithm.SuperSorter;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import controllers.CalendarController;
 import database.Event;
 import javafx.collections.FXCollections;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.*;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import database.*;
 
-import java.awt.*;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.concurrent.ThreadLocalRandom;
 import calendar.Cell;
-
-import static java.awt.Color.red;
 
 /**
  * Created by torresrl on 22/03/2017.
@@ -83,7 +68,7 @@ public class eventButton {
             deleteBtn.setPrefWidth(Double.MAX_VALUE);
             deleteBtn.setOnAction( es -> {
                 database.Activity delAct = new database.Activity();
-                delAct.delteActivity(cell.getID());
+                delAct.deleteActivity(cell.getID());
                 CalendarController.getInstance().refresh();
                 stage.close();
 

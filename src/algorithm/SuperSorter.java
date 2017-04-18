@@ -38,8 +38,6 @@ import java.util.Calendar;
  * skolearbeid = 97
  * lecture = 96
  * homeEksamen = 95
- *
- * TODO: Deadline skal ikke sorteres. Den skal kunne ligge oppå annet!
  */
 public class SuperSorter extends Connect {
     private User user = User.getInstance(); //This is the currently logged in user.
@@ -141,8 +139,6 @@ public class SuperSorter extends Connect {
     }
 
     public void collectActivities() throws SQLException, ParseException {
-        //TODO: Get all activities which the student have entered
-//        System.out.println("KJØRER");
         ResultSet m_result_set = stmt.executeQuery("SELECT * FROM ACTIVITY WHERE studentEmail='"+user.getUsername()+"'");
         while(m_result_set.next()){
             //CHECKS IF THE ACTIVITY IS MORE THAN ONE MONTH OLD
@@ -314,10 +310,7 @@ public class SuperSorter extends Connect {
         Optional<ButtonType> result = dialog.showAndWait();
         if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
             //Reschedule auto
-            //TODO: RE-SCHEDULE AUTO
-            System.out.println("RE-SCHEDULE AUTO");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Coming soon...");
-            alert.showAndWait();
+            rescheduleAuto(activity);
 
         }else if(result.get().getButtonData().equals(ButtonBar.ButtonData.CANCEL_CLOSE)){
             //Reschedule manual
@@ -337,11 +330,13 @@ public class SuperSorter extends Connect {
     public void rescheduleAuto(Cell activity){
         //TODO: Write code that automatically changes the time of an activity
         //TODO: Change the times inside object, then push changes to DB
+        System.out.println("RE-SCHEDULE AUTO");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Coming soon...");
+        alert.showAndWait();
     }
 
     public void rescheduleManual(Cell activity) throws SQLException, IOException, ParseException {
         setupDialog(activity);
-
     }
 
     public void resetDroppedEvents() throws SQLException {

@@ -1,10 +1,8 @@
 package database;
 
 import org.junit.Test;
-import org.junit.Before;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -39,7 +37,7 @@ public class activityTest {
                 "og den skal slettes", lastAddedActivity.get(8));
         IdTestActivity = (int) lastAddedActivity.get(0);
 
-        getTest.delteActivity(IdTestActivity);
+        getTest.deleteActivity(IdTestActivity);
         lastAddedActivity = getTest.getLastActivity();
         assertNotEquals(IdTestActivity, lastAddedActivity.get(0));
         getTest.close();

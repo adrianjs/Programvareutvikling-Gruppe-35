@@ -103,7 +103,7 @@ public class Connect {
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('"+name+"','"+date+"','"
                     +repeatingInt+"','"+priority+"','"+startTime+"','"+endTime+"','"+studentEmail+"','"+
-                    description+"', '"+"00EE00"+"')");
+                    description+"', '"+"75bc1b"+"')");
         } catch (SQLException se) {
             se.printStackTrace();
         }
@@ -120,16 +120,6 @@ public class Connect {
     }
 
 
-    public void addRoom(String roomNr, int seats){
-        try{
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO ROOM VALUES('"+roomNr+"', '"+seats+"')");
-            System.out.println("rom added");
-        } catch (SQLException se){
-            se.printStackTrace();
-        }
-    }
-
     public void deleteActivity(Cell activity) throws SQLException {
         System.out.println(activity.getName() + " " + activity.getStartDate() + " " + activity.getStartTime() + " " + activity.getEndTime() + " " + User.getInstance().getUsername());
         stmt = conn.createStatement();
@@ -137,21 +127,5 @@ public class Connect {
                 "' AND startTime='" +activity.getStartTime()+"' AND endTime='"+activity.getEndTime()+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
         System.out.println("Deleted activity: " + activity.getName());
     }
-/*
-    public void deleteEvent(){
-    try {
-        stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM EVENT WHERE EVENT.eventID > 215");
-    } catch (SQLException se){
-        se.printStackTrace();
-    }
-
-
-    }
-
-    public static void main(String[] args) {
-        Connect con = new Connect();
-        con.deleteEvent();
-    }*/
 
 } //END
