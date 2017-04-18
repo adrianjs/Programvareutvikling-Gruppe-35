@@ -184,5 +184,8 @@ public class AddActivityController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         cal = CalendarController.getInstance();
         setElementsToProirityChoiceBox();
+        Date input = CalendarController.getInstance().getChosenDate();
+        LocalDate todayDate = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        date.setValue(todayDate);
     }
 }

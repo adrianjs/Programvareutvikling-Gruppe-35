@@ -38,16 +38,17 @@ public class addTeachingSubjectController implements Initializable{
     public void addSubject(){
         errorLabel.setText("");
         if(checkSubjectCode() && checkEvaluation() && checkDescription() ){
-            try{
-                new Teacher().addSubject(code, eva, description ,User.getInstance().getUsername());
+            boolean bol = new Teacher().addSubject(code, eva, description ,User.getInstance().getUsername());
+            if(bol){
                 teach.snack(2, "The subject: "+ code + " is added to the database");
                 teach.cancel();
-            }catch (Exception e){
-                errorLabel.setText("Someone else is alerady teaching this subject");
+            }else{
+                errorLabel.setText("Subject is alerady taken");
             }
 
         }
     }
+
 
     /**
      * Check if something is typed in subjectcode-field.
