@@ -72,6 +72,12 @@ public class AddSubjectController extends Connect implements Initializable{
         try {
             System.out.println("Remove student subject");
             new Connect().removeStudentSubject(chosenSubject);
+            JFXSnackbar bar = new JFXSnackbar(anchorPane);
+            if(subject.getCharacters().toString().length() != 0){
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was removed!"));
+                CalendarController.getInstance().refresh();
+            }
+
         }catch (SQLException e){
             e.printStackTrace();
         }

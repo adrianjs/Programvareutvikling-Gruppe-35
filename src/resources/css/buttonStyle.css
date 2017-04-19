@@ -1,5 +1,5 @@
 #slide{
-	-fx-font-size: 20px;
+	-fx-font-size: 13px;
 	-fx-font-weight: bold;
 	-fx-background-color:gray;
 } 
@@ -71,12 +71,15 @@
 #sideButton:hover{
 	
 	-fx-border-color: #4d5259;
-	-fx-border-width: 0 0 4 0;
+	-fx-border-width: 0 0 2 0;
 }
 
 #sideButton{
 	-fx-font-weight: bold;
+	-fx-font-size: 13px;
 }
+
+/* EVENT Buttons*/
 
 #eventButton{
 	-fx-border-color: #000000;
