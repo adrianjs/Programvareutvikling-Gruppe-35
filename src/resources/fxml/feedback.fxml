@@ -15,8 +15,8 @@
             <Font size="24.0" />
          </font></Label>
       <JFXComboBox id="addButtons" fx:id="subjectsDropDown" layoutX="14.0" layoutY="49.0" prefHeight="31.0" prefWidth="147.0" />
-      <JFXButton id="addButtons" fx:id="checkButton" layoutX="171.0" layoutY="49.0" onAction="#check" prefHeight="31.0" prefWidth="82.0" text="Check" />
-      <JFXButton id="addButtons" layoutX="675.0" layoutY="552.0" onAction="#cancel" text="Close" />
+      <JFXButton id="addButtons" fx:id="checkButton" buttonType="RAISED" layoutX="171.0" layoutY="49.0" onAction="#check" prefHeight="31.0" prefWidth="82.0" text="Check" />
+      <JFXButton id="addButtons" buttonType="RAISED" layoutX="650.0" layoutY="550.0" onAction="#cancel" text="Cancel" />
       <TableView fx:id="table" layoutX="14.0" layoutY="104.0" prefHeight="429.0" prefWidth="715.0">
         <columns>
           <TableColumn fx:id="date" prefWidth="158.0" text="Date" />
