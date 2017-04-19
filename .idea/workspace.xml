@@ -1294,7 +1294,7 @@
       <workItem from="1491383945551" duration="4544000" />
       <workItem from="1491392306697" duration="11873000" />
       <workItem from="1492427189954" duration="164000" />
-      <workItem from="1492445914174" duration="10507000" />
+      <workItem from="1492445914174" duration="10515000" />
     </task>
     <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
       <created>1487244184469</created>
@@ -1625,7 +1625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492593067354</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="testet event adderen til Teacher databasen">
+      <created>1492593083754</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1492593083754</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1661,7 +1668,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="474425000" />
+    <option name="totallyTimeSpent" value="474433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
