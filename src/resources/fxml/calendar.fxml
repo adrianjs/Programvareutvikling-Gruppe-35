@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ButtonBar?>
@@ -1219,7 +1218,6 @@
    <top>
       <AnchorPane prefHeight="58.0" prefWidth="1054.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <JFXHamburger fx:id="sliderButton" layoutX="14.0" layoutY="19.0" onMouseClicked="#slidePane" />
             <HBox alignment="CENTER" layoutX="54.0" prefHeight="58.0" prefWidth="826.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ButtonBar prefHeight="58.0" prefWidth="560.0">
@@ -1256,7 +1254,7 @@
    <right>
       <AnchorPane prefHeight="533.0" prefWidth="112.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="BOTTOM_CENTER" prefHeight="604.0" prefWidth="122.0" style="-fx-background-color: d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="BOTTOM_CENTER" layoutX="-15.0" prefHeight="604.0" prefWidth="137.0" style="-fx-background-color: d0d2d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label text="Logged in as:">
                      <font>
@@ -1281,11 +1279,7 @@
                      </font>
                   </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Manage Subject" textFill="RED">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="121.0" stylesheets="@../css/buttonStyle.css" text="Manage Subject" textFill="RED" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
                   <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Botto" textFill="#ff5722" />
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
