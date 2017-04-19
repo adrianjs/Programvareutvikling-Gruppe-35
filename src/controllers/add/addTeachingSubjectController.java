@@ -54,7 +54,7 @@ public class addTeachingSubjectController implements Initializable{
      * Check if something is typed in subjectcode-field.
      * @return true/false
      */
-    private boolean checkSubjectCode(){
+    public boolean checkSubjectCode(){
         code = subjectCode.getText();
         if(code.length() == 0){
             errorLabel.setText("Must set something to Subjectcode field");
@@ -67,7 +67,7 @@ public class addTeachingSubjectController implements Initializable{
      * Check if something is typed in evaluation-field
      * @return true/false
      */
-    private boolean checkEvaluation(){
+    public boolean checkEvaluation(){
         eva = evaluation.getText();
         if(eva.length() == 0){
             errorLabel.setText("Must set something to evaluation field");
@@ -80,7 +80,7 @@ public class addTeachingSubjectController implements Initializable{
      * Check if something is typed in description-field.
      * @return true/false
      */
-    private boolean checkDescription(){
+    public boolean checkDescription(){
         description = desc.getText();
         if(description.length() == 0){
             errorLabel.setText("Must set something to description field");

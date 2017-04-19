@@ -41,7 +41,6 @@ public class Event extends Connect {
             ResultSet data = stmt.executeQuery("SELECT * FROM EVENT ORDER BY eventID DESC LIMIT 1");
             while(data.next()){
                 outData = data.getString(9);
-                return outData;
             }
 
         } catch (SQLException se){
