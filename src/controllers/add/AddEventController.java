@@ -298,7 +298,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validates that subject is correct.
      * @return boolean
      */
-    private boolean validateSubject(){
+    public boolean validateSubject(){
         String subject;
         try{
             subject = subjectsDropDown.getValue().toString();
@@ -321,7 +321,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate that eventname is set
      * @return boolean
      */
-    private boolean validateEventName(){
+    public boolean validateEventName(){
         String name = eventName.getText();
         if(name.length() == 0){
             errorLabel.setText("Must have an event name");
@@ -336,7 +336,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate that descriotion is set.
      * @return boolean
      */
-    private boolean validateDescription(){
+    public boolean validateDescription(){
         String description = this.description.getText();
         if(description.length() == 0){
             errorLabel.setText("Must have a description");
@@ -353,7 +353,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate that startdate is set, and that startdate is after today.
      * @return boolean
      */
-    private boolean validateStartDate(){
+    public boolean validateStartDate(){
         LocalDate start = startDate.getValue();
         if(start == null){
             errorLabel.setText("Must have a start date");
@@ -376,7 +376,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validates that end-date is set, and that end date is after today
      * @return boolean
      */
-    private boolean validateEndDate(){
+    public boolean validateEndDate(){
         LocalDate end = endDate.getValue();
         if(end == null){
             errorLabel.setText("Must have a end date");
@@ -400,7 +400,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate that starttime is before endtime.
      * @return boolean
      */
-    private boolean validateStartBeforeEnd(){
+    public boolean validateStartBeforeEnd(){
         if(startDate1.isAfter(endDate1)){
             errorLabel.setText("Start must be before end");
             System.out.println("start must be before end");
@@ -413,7 +413,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate that a startime is set.
      * @return boolean.
      */
-    private boolean validateStartTime(){
+    public boolean validateStartTime(){
         int hour = 0;
         int minute = 0;
         try {
@@ -438,7 +438,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validates that an endtime is set.
      * @return boolean
      */
-    private boolean validateeEndTime(){
+    public boolean validateeEndTime(){
         int hour = 0;
         int minute = 0;
         try {
@@ -463,7 +463,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validates that strattime is before end time.
      * @return boolean
      */
-    private boolean validateStartTimeBeforeEndTime(){
+    public boolean validateStartTimeBeforeEndTime(){
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
             System.out.println("starthour must be before end hour");
@@ -476,7 +476,7 @@ public class AddEventController extends Connect implements Initializable{
      * Validate repeating field.
      * @return boolean.
      */
-    private boolean validateRepeating(){
+    public boolean validateRepeating(){
         boolean rep = repeating.isSelected();
         if(!rep){
             repeating1 = 0;
@@ -486,7 +486,7 @@ public class AddEventController extends Connect implements Initializable{
         return true;
     }
 
-    private boolean validateHoursOfWork(){
+    public boolean validateHoursOfWork(){
         String hour = hours.getText();
         if(hour.length() == 0){
 
