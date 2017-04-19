@@ -1,97 +1,32 @@
-
-
 <html>
 <head>
   <title>(b)Otto</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var accessToken = "403fc320307a4ef988a5d8eb883838e9",
+      var accessToken = "403fc320307a4ef988a5d8eb883838e9",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
-      $askBtn,
-      $recBtn,
-      recognition,
-      messageRecording = "Recording...",
-      messageCouldntHear = "I couldn't hear you, could you say that again?",
-      messageInternalError = "Oh no, there has been an internal server error",
+      course,
       messageSorry = "I'm sorry, I don't have the answer to that yet.";
 
-    $(document).ready(function(){
-      $speechInput = $("#speech");
-      $recBtn = $("#rec");
-      $askBtn = $("#ask");
+      $(document).ready(function(){
+        $speechInput = $("#speech");
 
       $speechInput.keypress(function(event) {
-        if (event.which == 13) {
+        if (event.which === 13) {
           event.preventDefault();
           send();
           document.getElementById('speech').value = '';
         }
       });
-      // $askBtn.on("click", function() {
-      //   send();
-      // })
-      // $recBtn.on("click", function(event) {
-      //   switchRecognition();
-      // });
+
       $(".debug__btn").on("click", function() {
         $(this).next().toggleClass("is-active");
-        return false;
+          return false;
+        });
       });
-    });
 
-    // function startRecognition() {
-    //   recognition = new webkitSpeechRecognition();
-    //   recognition.continuous = false;
-    //     recognition.interimResults = false;
-    //
-    //   recognition.onstart = function(event) {
-    //     respond(messageRecording);
-    //     updateRec();
-    //   };
-    //   recognition.onresult = function(event) {
-    //     recognition.onend = null;
-    //
-    //     var text = "";
-    //       for (var i = event.resultIndex; i < event.results.length; ++i){
-    //         text += event.results[i][0].transcript;
-    //       }
-    //       setInput(text);
-    //     stopRecognition();
-    //   };
-    //   recognition.onend = function() {
-    //     respond(messageCouldntHear);
-    //     stopRecognition();
-    //   };
-    //   recognition.lang = "en-US";
-    //   recognition.start();
-    // }
-    //
-    // function stopRecognition(){
-    //   if (recognition) {
-    //     recognition.stop();
-    //     recognition = null;
-    //   }
-    //   updateRec();
-    // }
-    //
-    // function switchRecognition(){
-    //   if (recognition){
-    //     stopRecognition();
-    //   } else {
-    //     startRecognition();
-    //   }
-    // }
-
-    // function setInput(text){
-    //   $speechInput.val(text);
-    //   send();
-    // }
-
-    // function updateRec(){
-    //   $recBtn.text(recognition ? "Stop" : "Speak");
-    // }
 
     function send(){
       var text = $speechInput.val();
@@ -115,147 +50,216 @@
     }
 
     function prepareResponse(val){
-      var debugJSON = JSON.stringify(val, undefined, 2),
-        spokenResponse = val.result.speech;
-
-      respond(spokenResponse);
-      debugRespond(debugJSON);
-    }
-
-    function debugRespond(val){
-      $("#response").text(val);
+        var spokenResponse = val.result.speech;
+        if (val.result.action === "get_professor" || val.result.action === "get_course_professor"){
+            getProfessorName(val.result.parameters.courses);
+        } else if (val.result.action === "get_exam" || val.result.action === "get_course_exam"){
+            getExamDate(val.result.parameters.courses);
+        } else if (val.result.action === "get_lecture" || val.result.action === "get_course_lecture") {
+            getLectureTimes(val.result.parameters.courses);
+        } else {
+            respond(spokenResponse);
+        }
     }
 
     function respond(val){
-      if (val == ""){
-        val = messageSorry;
-      }
+        if (val === ""){
+          val = messageSorry;
+        }
 
-      // if (val !== messageRecording) {
-      //   var msg = new SpeechSynthesisUtterance();
-      //   msg.voiceURI = "native";
-      //   msg.text = val;
-      //   msg.lang = "en-US";
-      //   // window.speechSynthesis.speak(msg);
-      // }
+        $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+    }
 
-      $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+    function getProfessorName(value){
+        course = value.toUpperCase();
+
+        switch (course){
+            case "TDT4140":
+                respond("The professor of " + course + " is Pekka Kalevi Abrahamsson. He can be reached at pekka.abrahamsson@ntnu.no.");
+                break;
+            case "TDT4145":
+                respond("The professors of " + course + " are Roger Midstraum and Svein Erik Bratsberg. They can be reached at roger.midtstraum@ntnu.no and sveinbra@ntnu.no, respectively.");
+                break;
+            case "TDT4100":
+                respond("The professor of " + course + " is Hallvard Trætteberg. He can be reached at hal@ntnu.no.")
+                break;
+            case "TDT4180":
+                respond("The professors of " + course + " are Yngve Dahl and Hallvard Trætteberg. They can be reached at yngveda@ntnu.no and hal@ntnu.no, respectively.");
+                break;
+            case "TTM4100":
+                respond("The professor of " + course + " is Kjersti Moldeklev. She can be reached at kjersti.moldeklev@ntnu.no.");
+                break;
+            case "TDT4186":
+                respond("The professor of " + course + " is Mads Nygård. He can be reached at mads.nygaard@ntnu.no.");
+                break;
+            default:
+                respond("I don't know the answer to that question yet. I'm still learning!");
+    }}
+
+    function getExamDate(value){
+        course = value.toUpperCase();
+
+        switch (course) {
+            case "TDT4140":
+                respond("There is no exam in " + course + ". The only assessment is a project.");
+                break;
+            case "TDT4145":
+                respond("The exam for " + course + " is on 07.06.2017.");
+                break;
+            case "TDT4180":
+                respond("The exam for " + course + " is on 02.06.2017.");
+                break;
+            case "TDT4100":
+                respond("The exam for " + course + " is on 16.05.2017.");
+                break;
+            case "TTM4100":
+                respond("The exam for " + course + " is on 22.05.2017.");
+                break;
+            case "TDT4186":
+                respond("The exam for " + course + " is on 23.05.2017.");
+                break;
+            default:
+                respond("I don't know the answer to that question yet. I'm still learning!");
+        }
+    }
+
+    function getLectureTimes(value){
+        course = value.toUpperCase();
+
+        switch (course){
+            case "TDT4145":
+                respond("The lectures in " + course + " are: \n Mondays 10:15 - 12:00 in R1 \n Tuesdays 08:15 - 10:00 in F1 ");
+                break;
+            case "TDT4180":
+                respond("The lectures in " + course + " are: \n Practical lectures: Wednesdays 16:15 - 18:00 in S3 \n Theoretical lectures: Fridays 12:15 - 14:00 in S3");
+                break;
+            case "TDT4100":
+                respond("The lectures in " + course + " are: \n Tuesdays 14:15 - 16:00 in F1 \n Fridays 12:15 - 14:00 in R1");
+                break;
+            case "TTM4100":
+                respond("The lectures in " + course + " are: \n Thursdays 12:15 - 15:00 in R1 \n Fridays 08:15 - 12:00 in R1");
+                break;
+            case "TDT4140":
+                respond("The lectures in " + course + " are: \n Tuesdays 16:15 - 18:00 in R1 \n Fridays 14:15 - 16:00 in R1");
+                break;
+            case "TDT4186":
+                respond("The lectures in " + course + " are: \n Mondays 12:15 - 14:00 in EL3 \n Tuesdays 14:15 - 16:00 in R1");
+                break;
+            default:
+                respond("I don't know the answer to that question yet. I'm still learning!");
+        }
     }
   </script>
   <style type="text/css">
     html {
-      box-sizing: border-box;
+        box-sizing: border-box;
     }
     *, *:before, *:after{
-      box-sizing: inherit;
+        box-sizing: inherit;
     }
     body {
-      background-color: grey;
-      font-family: 'Arial', sans-serif;
-      font-size: 22px;
-      margin: 0;
+        background-color: grey;
+        font-family: 'Arial', sans-serif;
+        font-size: 22px;
+        margin: 0;
     }
     .container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
     }
     input {
-      background-color: gainsboro;
-      border: 2px solid black;
-      border-radius: 20px 20px 0 20px;
-      color: black;
-      font-family: "Arial";
-      font-size: 22px;
-      line-height: 43px;
-      padding: 0 0.75em;
-      width: 400px;
-      -webkit-transition: all 0.35s ease-in;
+        background-color: gainsboro;
+        border: 2px solid black;
+        border-radius: 20px 20px 0 20px;
+        color: black;
+        font-family: "Arial", sans-serif;
+        font-size: 22px;
+        line-height: 43px;
+        padding: 0 0.75em;
+        width: 400px;
+        -webkit-transition: all 0.35s ease-in;
     }
-    input:active, input:focus, textarea.active, textarea.focus {
-      outline: 0;
+    input:active, input:focus, textarea:active, textarea:focus {
+        outline: 0;
     }
     textarea {
-      background-color: #070F24;
-      border: 1px solid #122435;
-      color: #606B88;
-      padding: 0.5em;
-      width: 100%;
-      -webkit-transition: all 0.35s ease-in;
+        background-color: #070F24;
+        border: 1px solid #122435;
+        color: #606B88;
+        padding: 0.5em;
+        width: 100%;
+        -webkit-transition: all 0.35s ease-in;
     }
     .btn {
-      background-color: gainsboro;
-      border: 2px solid black;
-      border-radius: 5px;
-      color: black;
-      cursor: pointer;
-      display: inline-block;
-      font-family: "Arial";
-      font-size: 22px;
-      line-height: 45px;
-      padding: 0 0.75em;
-      text-align: center;
-      -webkit-transition: all 0.35s ease-in;
+        background-color: gainsboro;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Arial", sans-serif;
+        font-size: 22px;
+        line-height: 45px;
+        padding: 0 0.75em;
+        text-align: center;
+        -webkit-transition: all 0.35s ease-in;
     }
     .btn:hover {
-      background-color: black;
-      color: white;
+        background-color: black;
+        color: white;
     }
     .debug {
-      bottom: 0;
-      position: fixed;
-      right: 0;
+        bottom: 0;
+        position: fixed;
+        right: 0;
     }
     .debug__content {
-      font-size: 14px;
-      max-height: 0;
-      overflow: hidden;
-      -webkit-transition: all 0.35s ease-in;
+        font-size: 14px;
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.35s ease-in;
     }
     .debug__content.is-active {
-      display: block;
-      max-height: 500px;
+        display: block;
+        max-height: 500px;
     }
     .debug__btn {
-      width: 100%;
+        width: 100%;
     }
     .spoken-response {
-      max-height: 0;
-      overflow: hidden;
-      -webkit-transition: all 0.35s ease-in;
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.35s ease-in;
     }
     .spoken-response.is-active {
-      max-height: 400px;
-      max-width: 400px;
-      border: 2px solid black;
-      border-radius: 20px 20px 20px 0;
+        max-height: 400px;
+        max-width: 400px;
+        border: 2px solid black;
+        border-radius: 20px 20px 20px 0;
     }
     .spoken-response__text {
-      background-color: #75bc1b;
-      color: black;
-      padding: 1em;
+        background-color: #75bc1b;
+        color: black;
+        padding: 1em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <input id="speech" type="text">
-    <!-- <button id="ask" class="btn">Ask (b)Otto</button> -->
-    <!-- <button id="rec" class="btn">Speak</button> -->
-    <div id="spokenResponse" class="spoken-response">
-      <div class="spoken-response__text"></div>
+    <div class="container">
+        <input id="speech" type="text">
+        <div id="spokenResponse" class="spoken-response">
+          <div class="spoken-response__text"></div>
+        </div>
     </div>
-  </div>
-  <div class="debug">
-    <div class="debug__btn btn">
-      Debug JSON results
+    <div class="debug">
+        <div class="debug__btn btn">
+          Debug JSON results
+        </div>
+      <div class="debug__content">
+          <textarea id="response" cols="40" rows="20"></textarea>
+      </div>
     </div>
-    <div class="debug__content">
-      <textarea id="response" cols="40" rows="20"></textarea>
-    </div>
-  </div>
-
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css" />
 </body>
 </html>
