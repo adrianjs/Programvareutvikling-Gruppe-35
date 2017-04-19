@@ -3,12 +3,14 @@ package controllers.add;
 import com.jfoenix.controls.*;
 
 import javafx.embed.swing.JFXPanel;
+import javafx.scene.control.Label;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -21,7 +23,9 @@ public class AddActivityControllerTest {
     private AddActivityController AAC;
     private Date date;
     private LocalDate testDate;
-    private LocalDateTime testTime;
+    private LocalDateTime testDateTime;
+    private LocalTime testTime;
+
 
 
 
@@ -32,9 +36,12 @@ public class AddActivityControllerTest {
         date = new Date();
         testDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         AAC = new AddActivityController();
-        testTime = LocalDateTime.now(ZoneId.of("UTC"));
-
-
+        testDateTime = LocalDateTime.of(2017, 4,11,12,00);
+        testTime = testDateTime.toLocalTime();
+        AAC.errorActivity = new Label();
+        AAC.errorDate = new Label();
+        AAC.errorTime = new Label();
+        AAC.priorityError = new Label();
     }
 
 
@@ -43,6 +50,8 @@ public class AddActivityControllerTest {
 
         AAC.activity = new JFXTextField(" hei");
        assertEquals(true, AAC.checkActivity());
+        AAC.activity = new JFXTextField("");
+        assertEquals(false, AAC.checkActivity());
     }
 
     @Test
@@ -52,20 +61,37 @@ public class AddActivityControllerTest {
         assertEquals(true, AAC.checkDate());
         AAC.date.setValue(testDate.plusDays(5));
         assertEquals(true, AAC.checkDate());
+        AAC.date.setValue(testDate.minusDays(5));
+        assertEquals(false, AAC.checkDate());
 
 
     }
 
     @Test
     public void checkTimeTest(){
+
         AAC.startTime = new JFXDatePicker();
         AAC.endTime = new JFXDatePicker();
         AAC.startTime.setValue(testDate);
         AAC.endTime.setValue(testDate);
-        System.out.println(AAC.startTime.getTime());
-        //assertEquals(false, AAC.checkTime());
+        AAC.startTime.setTime(testTime);
+        AAC.endTime.setTime(testTime.minusHours(1));
+        assertEquals(false, AAC.checkTime());
+        AAC.startTime.setTime(testTime.minusHours(9));
+        assertEquals(false, AAC.checkTime());
+        AAC.startTime.setTime(testTime.minusHours(2));
+        assertEquals(true, AAC.checkTime());
 
 
 
     }
 }
+
+
+
+
+
+
+
+
+

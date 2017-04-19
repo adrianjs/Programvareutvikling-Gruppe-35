@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -109,8 +109,8 @@
           <file leaf-file-name="AddActivityControllerTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+                <state relative-caret-position="162">
+                  <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -174,8 +174,8 @@
           <file leaf-file-name="AddActivityController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/controllers/add/AddActivityController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32">
-                  <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="23" />
+                <state relative-caret-position="-913">
+                  <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -306,8 +306,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1227,14 +1227,7 @@
       <workItem from="1491383945551" duration="4544000" />
       <workItem from="1491392306697" duration="11873000" />
       <workItem from="1492427189954" duration="164000" />
-      <workItem from="1492445914174" duration="19415000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added some directories (&quot;algoritm&quot; and &quot;calendar&quot;), and made a simple Cell class.">
-      <created>1487244184469</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1487244184469</updated>
+      <workItem from="1492445914174" duration="21144000" />
     </task>
     <task id="LOCAL-00002" summary="Added more classes for the calendar.">
       <created>1487246743927</created>
@@ -1572,43 +1565,50 @@
       <option name="project" value="LOCAL" />
       <updated>1492593092595</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="testet event adderen til Teacher databasen">
+      <created>1492604104276</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1492604104283</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 13h 27m 11s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 15m 10s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 13h 27m 31s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 16m 09s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 13h 28m 42s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 16m 41s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 13h 29m 22s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 17m 20s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 13h 36m 03s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 19m 00s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 14h 02m 12s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 19m 47s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 14h 03m 28s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 20m 29s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 14h 09m 37s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 21m 20s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 14h 11m 42s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 22m 00s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddActivityControllerTest - 2017.04.19 at 14h 14m 09s.xml">
+    <history-entry file="AddActivityControllerTest - 2017.04.19 at 15h 22m 27s.xml">
       <configuration name="AddActivityControllerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483333000" />
+    <option name="totallyTimeSpent" value="485062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1620,7 +1620,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1640,7 +1640,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33013698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23861386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260274" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5169628" sideWeight="0.5069686" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2210,8 +2210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
