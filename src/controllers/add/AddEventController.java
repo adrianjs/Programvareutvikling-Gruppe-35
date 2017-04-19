@@ -500,6 +500,7 @@ public class AddEventController extends Connect implements Initializable{
         }catch (Exception e){
             errorLabel.setText("Must have a integer value in hours of work field");
             System.out.println("Must have a integer value in hours of work field");
+            return false;
         }
         hoursWork = hourInt;
         return true;

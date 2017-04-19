@@ -81,6 +81,7 @@ public class AddEventControllerTest {
         AEC.errorLabel = new Label();
         AEC.subjectsDropDown = new JFXComboBox();
         AEC.hours = new JFXTextField();
+        AEC.repeating = new JFXCheckBox();
 
 
         date = new Date();
@@ -150,7 +151,47 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartTime());
         AEC.startTime.setTime(testTime.minusHours(9));
         assertEquals(false, AEC.validateStartTime());
-        
+        AEC.startTime.setTime(testTime);
+        assertEquals(true, AEC.validateStartTime());
+
+    }
+
+    @Test
+    public void testValidateEndTime(){
+        assertEquals(false, AEC.validateeEndTime());
+        AEC.endTime.setTime(testTime.minusHours(9));
+        assertEquals(false, AEC.validateeEndTime());
+        AEC.endTime.setTime(testTime);
+        assertEquals(true, AEC.validateeEndTime());
+
+    }
+
+    @Test
+    public void testValidateStartTimeBeforeEndTime(){
+        AEC.startTime.setTime(testTime.plusHours(1));
+        AEC.endTime.setTime(testTime);
+        AEC.validateeEndTime();
+        AEC.validateStartTime();
+        assertEquals(false, AEC.validateStartTimeBeforeEndTime());
+        AEC.endTime.setTime(testTime.plusHours(3));
+        AEC.validateeEndTime();
+        assertEquals(true, AEC.validateStartTimeBeforeEndTime());
+    }
+
+    @Test
+    public void testValidateRepeating(){
+        assertEquals(false, AEC.validateRepeating());
+        AEC.repeating.setSelected(true);
+        assertEquals(true, AEC.validateRepeating());
+    }
+
+    @Test
+    public void testValidateHoursOfWork(){
+        assertEquals(false, AEC.validateHoursOfWork());
+        AEC.hours.setText("test");
+        assertEquals(false, AEC.validateHoursOfWork());
+        AEC.hours.setText("2");
+        assertEquals(true, AEC.validateHoursOfWork());
     }
 
 
