@@ -82,6 +82,7 @@ public class AddEventControllerTest {
         AEC.subjectsDropDown = new JFXComboBox();
         AEC.hours = new JFXTextField();
         AEC.repeating = new JFXCheckBox();
+        AEC.subjects.add("AAR4335");
 
 
         date = new Date();
@@ -95,7 +96,79 @@ public class AddEventControllerTest {
 
     }
 
-    //TODO: husk og teste subject
+    @Test
+    public void testCheckSelectedRadioButtons(){
+        AEC.classRadio.setSelected(true);
+        AEC.schoolWork.setSelected(false);
+        AEC.deadline.setSelected(false);
+        AEC.exam.setSelected(false);
+        AEC.homeExam.setSelected(false);
+
+        AEC.checkSelectedRadioButtons();
+        assertEquals(true, AEC.mainGroup.isVisible());
+        assertEquals(true, AEC.repeatingGroup.isVisible());
+        assertEquals(false, AEC.endDateGroup.isVisible());
+        assertEquals(false, AEC.hoursOfWOrk.isVisible());
+
+        AEC.classRadio.setSelected(false);
+        AEC.schoolWork.setSelected(true);
+
+        AEC.checkSelectedRadioButtons();
+        assertEquals(true, AEC.mainGroup.isVisible());
+        assertEquals(true, AEC.repeatingGroup.isVisible());
+        assertEquals(true, AEC.endDateGroup.isVisible());
+        assertEquals(true, AEC.endTime.isVisible());
+        assertEquals(true, AEC.hoursOfWOrk.isVisible());
+
+        AEC.schoolWork.setSelected(false);
+        AEC.deadline.setSelected(true);
+
+        AEC.checkSelectedRadioButtons();
+        assertEquals(true, AEC.mainGroup.isVisible());
+        assertEquals(false, AEC.repeatingGroup.isVisible());
+        assertEquals(false, AEC.endDateGroup.isVisible());
+        assertEquals(true, AEC.endTime.isVisible());
+        assertEquals(false, AEC.hoursOfWOrk.isVisible());
+
+        AEC.deadline.setSelected(false);
+        AEC.exam.setSelected(true);
+
+        AEC.checkSelectedRadioButtons();
+        assertEquals(true, AEC.mainGroup.isVisible());
+        assertEquals(false, AEC.repeatingGroup.isVisible());
+        assertEquals(false, AEC.endDateGroup.isVisible());
+        assertEquals(true, AEC.endTime.isVisible());
+        assertEquals(false, AEC.hoursOfWOrk.isVisible());
+
+        AEC.exam.setSelected(false);
+        AEC.homeExam.setSelected(true);
+
+        AEC.checkSelectedRadioButtons();
+        assertEquals(true, AEC.mainGroup.isVisible());
+        assertEquals(false, AEC.repeatingGroup.isVisible());
+        assertEquals(true, AEC.endDateGroup.isVisible());
+        assertEquals(true, AEC.endTime.isVisible());
+        assertEquals(false, AEC.hoursOfWOrk.isVisible());
+
+        AEC.homeExam.setSelected(false);
+
+    }
+
+    @Test
+    public void testGetSubjects(){
+        assertEquals("[AAR4335]", AEC.getSubjects());
+    }
+
+    @Test
+    public void testValidateSubject(){
+        assertEquals(false, AEC.validateSubject());
+        AEC.subjectsDropDown.setValue("TDT999");
+        assertEquals(false, AEC.validateSubject());
+        AEC.subjectsDropDown.setValue("AAR4335");
+        assertEquals(true, AEC.validateSubject());
+
+
+    }
 
     @Test
     public void testValidateEventName(){
@@ -142,7 +215,9 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartBeforeEnd());
         AEC.endDate.setValue(testDate.plusDays(2));
         AEC.startDate.setValue(testDate);
-        assertEquals(true, AEC.validateEndDate());
+        AEC.validateEndDate();
+        AEC.validateStartDate();
+        assertEquals(true, AEC.validateStartBeforeEnd());
 
     }
 
@@ -180,7 +255,7 @@ public class AddEventControllerTest {
 
     @Test
     public void testValidateRepeating(){
-        assertEquals(false, AEC.validateRepeating());
+        assertEquals(0, AEC.repeating1 );
         AEC.repeating.setSelected(true);
         assertEquals(true, AEC.validateRepeating());
     }
@@ -195,6 +270,25 @@ public class AddEventControllerTest {
     }
 
 
+    //todo on inteliseren
+    /*
+    @Test
+    public void testAad(){
+        AEC.add();
+        assertEquals("Must select a radiobutton",AEC.errorLabel.getText());
+        AEC.subjectsDropDown.setValue("AAR4335");
+        AEC.eventName.setText("test");
+        AEC.description.setText("Hvis denne leiger i databasen slet den!");
+        AEC.startDate.setValue(testDate);
+        AEC.endDate.setValue(testDate.plusDays(2));
+        AEC.startTime.setTime(testTime);
+        AEC.endTime.setTime(testTime.plusHours(2));
+        AEC.hours.setText("2");
+        AEC.classRadio.setSelected(true);
+        AEC.add();
+
+    }
+*/
 
 
 

@@ -66,7 +66,7 @@ public class AddEventController extends Connect implements Initializable{
     private String description1;
     private LocalDate startDate1;
     private LocalDate endDate1;
-    private int repeating1;
+    public int repeating1;
     private int startHour;
     private int startMinute;
     private int endHour;
@@ -76,7 +76,7 @@ public class AddEventController extends Connect implements Initializable{
     private Teacher t = new Teacher();
 
     private ResultSet m_ResultSet;
-    private ObservableList<String> subjects = FXCollections.observableArrayList();
+    public ObservableList<String> subjects = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -168,9 +168,14 @@ public class AddEventController extends Connect implements Initializable{
             boolean startTbeforeEndT = false;
             if(startTime && endTime){
                 startTbeforeEndT = validateStartTimeBeforeEndTime();
+
             }
             boolean rep = validateRepeating();
+
+
             if(subject && name && description && start && startTbeforeEndT && rep){
+                System.out.println(1);
+
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour + ":00:00";
@@ -480,7 +485,6 @@ public class AddEventController extends Connect implements Initializable{
         boolean rep = repeating.isSelected();
         if(!rep){
             repeating1 = 0;
-            return false;
         }
         repeating1 = 1;
         return true;
