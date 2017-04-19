@@ -22,7 +22,6 @@ public class AskBotController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Controller class Botto");
         setWebView();
-
     }
 
     /**
@@ -37,7 +36,5 @@ public class AskBotController implements Initializable{
         engine.load("https://botto-project.herokuapp.com");
         System.out.println(engine.getOnError());
         engine.setOnAlert(event -> System.out.println("EVENT DATA: " + event.getData()));
-
-
     }
 }

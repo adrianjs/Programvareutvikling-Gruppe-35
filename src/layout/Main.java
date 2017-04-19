@@ -2,6 +2,7 @@ package layout;
 
 import controllers.CalendarController;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
@@ -32,6 +33,9 @@ public class Main extends Application{
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
         primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 2);
+        primaryStage.setOnCloseRequest(event -> {
+            System.exit(0);
+        });
 
     }
     public Stage getWindow(){
