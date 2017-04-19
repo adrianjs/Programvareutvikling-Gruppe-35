@@ -34,6 +34,7 @@ import javafx.stage.Stage;
 import layout.*;
 //import layout.eventButtonWeek.activityButton;
 import layout.eventButton;
+import org.controlsfx.tools.Platform;
 
 public class CalendarController extends Connect implements Initializable{
 
@@ -152,7 +153,6 @@ public class CalendarController extends Connect implements Initializable{
 			e.printStackTrace();
 		}
 		date.setValue(chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-
 	}
 
     public void refresh(){

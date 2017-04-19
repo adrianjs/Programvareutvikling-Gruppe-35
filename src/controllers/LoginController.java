@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import database.Login;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -71,6 +72,9 @@ public class LoginController implements Initializable {
                 System.out.println("login successful");
                 CalendarController calCtrl = CalendarController.getInstance();
                 calCtrl.refresh();
+                stage.setOnCloseRequest(event -> {
+                    System.exit(0);
+                });
             }else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/teacherCalendar.fxml"));
                 loader.setController(TeacherCalendarController.getInstance());
@@ -79,6 +83,9 @@ public class LoginController implements Initializable {
                 stage.setScene(scene);
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
                 System.out.println("login successful");
+                stage.setOnCloseRequest(event -> {
+                    System.exit(0);
+                });
             }
         }else{
             loginError.setText("Wrong username or password");
