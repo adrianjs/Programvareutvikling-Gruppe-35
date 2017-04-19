@@ -33,8 +33,8 @@ public class AskBotController implements Initializable{
         WebEngine engine = webView.getEngine();
         engine.setJavaScriptEnabled(true);
         engine.setUserAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36");
-        //String url = this.getClass().getResource("../resources/botto.html").toExternalForm();
-        engine.load("https://botto-project.herokuapp.com");
+        String url = this.getClass().getResource("../resources/botto.html").toExternalForm();
+        engine.load(url);
         System.out.println(engine.getOnError());
         engine.setOnAlert(event -> System.out.println("EVENT DATA: " + event.getData()));
 
