@@ -47,11 +47,9 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private Label username;
 
 	//AI panes.
-    private HamburgerBackArrowBasicTransition tran;
 	private AnchorPane botto;
     @FXML private JFXDrawer drawer;
-	@FXML private JFXHamburger sliderButton; //Slide button
-    AnchorPane rightside;
+	AnchorPane rightside;
 
     @FXML private JFXButton askButton;
 	@FXML private JFXButton logout;
@@ -60,7 +58,6 @@ public class CalendarController extends Connect implements Initializable{
 
 	//Labels for Day pane.
 	@FXML private Label thisday;
-
 
 	//Labels week-Pane
 
@@ -240,6 +237,10 @@ public class CalendarController extends Connect implements Initializable{
 		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
 	}
 
+	/**
+	 * Used by other classes(add.fxml) to set the chosen date in datepicker fied.
+	 * @return this date.
+	 */
 	public Date getChosenDate(){
 		return chosenDate;
 	}
@@ -250,9 +251,7 @@ public class CalendarController extends Connect implements Initializable{
     private void setBottoField(){
         try {
             botto = FXMLLoader.load(getClass().getResource("/resources/fxml/ask.fxml"));
-            tran = new HamburgerBackArrowBasicTransition(sliderButton);
-            tran.setRate(-1);
-        } catch (Exception e) {
+		} catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -262,9 +261,7 @@ public class CalendarController extends Connect implements Initializable{
 	 */
     public void slidePane(){
 		drawer.setSidePane(botto);
-        tran.setRate(tran.getRate()*-1);
-        tran.play();
-        if(drawer.isShown()){
+		if(drawer.isShown()){
             askButton.setText("Open Botto");
             drawer.close();
         }else{
@@ -304,7 +301,7 @@ public class CalendarController extends Connect implements Initializable{
         timeLayout();
     }
 
-    private int dayOfWeek = 0;
+
 	private int dayOfMonth = 0;
 	@FXML private Label monday;
 	@FXML private Label tuesday;
@@ -314,7 +311,11 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML private Label saturday;
 	@FXML private Label sunday;
 
+	/**
+	 * Set changes the color of today so you know which day it is.
+	 */
     private void timeLayout(){
+		int dayOfWeek = 0;
         Date date = new Date();
         LocalDate ldate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         dayOfWeek = ldate.getDayOfWeek().getValue();
@@ -390,9 +391,9 @@ public class CalendarController extends Connect implements Initializable{
 
 	//Add labels tin day tab to list
 
-    /**
-     * Add labels in dayTab to list.
-     */
+//    /**
+//     * Add labels in dayTab to list.
+//     */
     /*
     private void addTimeToTimeToList(){
 		ObservableList<Node> children = day.getChildren();
