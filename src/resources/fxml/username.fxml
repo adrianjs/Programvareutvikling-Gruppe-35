@@ -51,6 +51,7 @@
                                        <children>
                                           <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" />
                                                 <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="577.0">
                                                    <children>
                                                       <Label prefHeight="21.0" prefWidth="80.0" text="Username:" />
@@ -69,7 +70,7 @@
                                     </AnchorPane>
                                     <BorderPane prefHeight="200.0" prefWidth="200.0">
                                        <center>
-                                          <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                          <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                                              <children>
                                                 <JFXButton id="addButtons" fx:id="openCalendar" onAction="#login" text="Login" />
                                                 <JFXButton id="addButtons" onAction="#newUser" text="New User">

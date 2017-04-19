@@ -71,21 +71,12 @@ public class Teacher extends Connect{
         return true;
     }
 
-    public void addSubject(String subjectCode, String evaluation, String coordinatorEmail){
-        try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO SUBJECT VALUES('"+subjectCode+"', '"+evaluation+"'," +
-                    " NULL, '"+coordinatorEmail+"')");
-        } catch (SQLException se){
-            se.printStackTrace();
-        }
-    }
-
     /**
      * Kommer ut i formen [fagkode, vurdering, beskrivelse]
      * @param coordinatorEmail
      * @return
      */
+    //THIS IS USED! BOUND TO BUTTON IN FXML
     public ArrayList<ArrayList<String>> getSubjects(String coordinatorEmail){
         ArrayList<ArrayList<String>> subjects = new ArrayList<ArrayList<String>>();
         try {
@@ -307,6 +298,7 @@ public class Teacher extends Connect{
 
     // returnerer på formen [[eventID, name, startDate, endDate, reapiting, priority, description houersOfWork], [eventID, name, startDate, endDate, reapiting, priority, description houersOfWork] ]
     // verdier som ikke skla være med i forskjelige eventer kan stå som null (som string) eller 0 for int.
+    //THIS IS USED! BOUND TO BUTTON IN FXML
     public ArrayList<ArrayList<String>> getEvents(String subjectCode){
         ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
         try {
