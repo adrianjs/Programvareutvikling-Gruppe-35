@@ -32,7 +32,6 @@ import java.util.ResourceBundle;
 public class TeacherCalendarController extends Connect implements Initializable{
 
     @FXML JFXButton addEvent;
-    //@FXML private JFXButton addStudass;
     @FXML JFXButton logOut;
     @FXML JFXDrawer drawer;
     @FXML JFXDrawer drawer2;
