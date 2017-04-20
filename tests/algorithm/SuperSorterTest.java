@@ -73,8 +73,10 @@ public class SuperSorterTest {
     @Test
     public void testOfRemovingDeadlines() throws SQLException, ParseException {
         superSorter.dataCollect();
-        Teacher teacher = new Teacher();
-
+        superSorter.pickOutDeadlines(superSorter.getPrioritizedSchedule());
+        if(!superSorter.getDeadlines().isEmpty()){
+            superSorter.applyDeadlines();
+        }
     }
 
     @After

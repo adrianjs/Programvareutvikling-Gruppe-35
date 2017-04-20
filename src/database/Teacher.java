@@ -45,20 +45,6 @@ public class Teacher extends Connect{
 
     //----------------------------------------------------SUBJECT-------------------------------------------------------
 
-    /**
-     * Update subject discription --> Used in Scraping.
-     * @param evaluation subject description
-     * @param fagKode subjectcode.
-     */
-    public void updateSubject(String evaluation, String fagKode){
-        try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("UPDATE SUBJECT SET evaluation ='"+evaluation+"' WHERE subjectCode ='"+fagKode+"'");
-        }catch (SQLException se){
-            se.printStackTrace();
-        }
-    }
-
     public boolean addSubject(String subjectCode, String evaluation, String description, String coordinatorEmail){
         try {
             stmt = conn.createStatement();
@@ -139,8 +125,6 @@ public class Teacher extends Connect{
 
 
                 }
-
-
             } else if (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
                 Date sqlStartDate;
                 stmt = conn.createStatement();
@@ -151,10 +135,7 @@ public class Teacher extends Connect{
                             " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
-
-
                 }
-
             }
         } catch (SQLException se){
             se.printStackTrace();

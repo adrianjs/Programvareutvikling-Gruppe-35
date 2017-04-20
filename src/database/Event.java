@@ -42,15 +42,9 @@ public class Event extends Connect {
             while(data.next()){
                 outData = data.getString(9);
             }
-
         } catch (SQLException se){
             se.printStackTrace();
         }
-
-
         return outData;
-
     }
-
-
 }
