@@ -46,10 +46,10 @@ public class AddActivityControllerTest {
         AAC = new AddActivityController();
         testDateTime = LocalDateTime.of(2017, 4,11,12,00);
         testTime = testDateTime.toLocalTime();
-        AAC.errorActivity = new Label();
-        AAC.errorDate = new Label();
+        //AAC.errorActivity = new Label();
+        //AAC.errorDate = new Label();
         AAC.errorTime = new Label();
-        AAC.priorityError = new Label();
+        //AAC.priorityError = new Label();
         AAC.date = new JFXDatePicker();
         AAC.activity = new JFXTextField(" hei");
         AAC.startTime = new JFXDatePicker();
