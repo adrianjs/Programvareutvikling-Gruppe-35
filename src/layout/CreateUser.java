@@ -36,25 +36,25 @@ public class CreateUser {
     @FXML private Button submit;
     @FXML private Button cancel;
 
-    @FXML private JFXTextField email;
-    @FXML private JFXTextField firstName;
-    @FXML private JFXTextField lastName;
-    @FXML private JFXPasswordField password;
-    @FXML private JFXTextField study;
-    @FXML private JFXTextField department;
+    @FXML JFXTextField email;
+    @FXML JFXTextField firstName;
+    @FXML JFXTextField lastName;
+    @FXML JFXPasswordField password;
+    @FXML JFXTextField study;
+    @FXML JFXTextField department;
 
-    @FXML private RadioButton stud;
-    @FXML private RadioButton teach;
+    @FXML RadioButton stud;
+    @FXML RadioButton teach;
 
-    @FXML private Group fieldStud;
-    @FXML private Group fieldTeach;
+    @FXML Group fieldStud;
+    @FXML Group fieldTeach;
 
-    @FXML private Group yearGroup;
-    @FXML private JFXRadioButton firsty;
-    @FXML private JFXRadioButton secondy;
-    @FXML private JFXRadioButton thirdy;
-    @FXML private JFXRadioButton fourthy;
-    @FXML private JFXRadioButton fifthy;
+    @FXML Group yearGroup;
+    @FXML JFXRadioButton firsty;
+    @FXML JFXRadioButton secondy;
+    @FXML JFXRadioButton thirdy;
+    @FXML JFXRadioButton fourthy;
+    @FXML JFXRadioButton fifthy;
 
     private ToggleGroup studTeacher = new ToggleGroup();
 
@@ -132,7 +132,7 @@ public class CreateUser {
             return 3;
         }else if(fourthy.isSelected()){
             return 4;
-        }else if(fifthy.isScaleShape()){
+        }else if(fifthy.isSelected()){
             return 5;
         }else{
             return 0;

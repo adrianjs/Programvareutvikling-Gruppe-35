@@ -34,10 +34,13 @@ public class LoginController implements Initializable {
     @FXML Label loginError;
     @FXML AnchorPane snackBarPane;
 
-    private User user = User.getInstance();
+    public User user = User.getInstance();
     private layout.Calendar cal = new layout.Calendar();
-    private Stage stage;
+    Stage stage;
     CalendarController calController = CalendarController.getInstance();
+    JFXSnackbar jfxSnackbar;
+    FXMLLoader loader;
+    String test = "denne stringen er til testing";
 
     //Login and set user in userclass.
 
@@ -57,13 +60,17 @@ public class LoginController implements Initializable {
         }catch(Exception e){
             //If you login as teacher you cant update subjects.
         }
+        System.out.println(user.getUsername());
+        System.out.println(user.getPassword());
         String user = validateLogin();
+        System.out.println("user: "+user);
         if((user == "TEACHER")||(user == "STUDENT")){
             //Jumps to the Calendar window..
-            stage = (Stage) openCalendar.getScene().getWindow();
+                stage = (Stage) openCalendar.getScene().getWindow();
+
             //Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
             if(user == "STUDENT") {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/calendar.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/resources/fxml/calendar.fxml"));
                 loader.setController(CalendarController.getInstance());
                 Parent load = loader.load();
                 Scene scene = new Scene(load);
@@ -72,6 +79,7 @@ public class LoginController implements Initializable {
                 System.out.println("login successful");
                 CalendarController calCtrl = CalendarController.getInstance();
                 calCtrl.refresh();
+                test = "student";
                 stage.setOnCloseRequest(event -> {
                     System.exit(0);
                 });
@@ -82,6 +90,7 @@ public class LoginController implements Initializable {
                 Scene scene = new Scene(load);
                 stage.setScene(scene);
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
+                test = "teacher";
                 System.out.println("login successful");
                 stage.setOnCloseRequest(event -> {
                     System.exit(0);
@@ -96,7 +105,7 @@ public class LoginController implements Initializable {
      * Validates login
      * @return Wich user that try to log in.
      */
-    private String validateLogin(){
+    public String validateLogin(){
         try {
             Login login = new Login();
             Set<List> students = login.getStudent();
@@ -143,8 +152,9 @@ public class LoginController implements Initializable {
     }
 
     public void showNewUserSnackbar(){
-        JFXSnackbar jfxSnackbar = new JFXSnackbar(snackBarPane);
+        jfxSnackbar = new JFXSnackbar(snackBarPane);
         jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent("Your new user is now in the system! Try to login!"));
+        jfxSnackbar.setId("forTesting");
     }
 
     /**

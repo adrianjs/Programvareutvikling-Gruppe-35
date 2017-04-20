@@ -33,6 +33,7 @@ public class Login extends Connect{
             user.add(m_ResultSet.getString(3));
             users.add(user);
         }
+        System.out.println("getStudent: done");
         return users;
     }
 

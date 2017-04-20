@@ -16,6 +16,8 @@ import java.util.*;
  */
 public class WatchDayMonthTabController implements Initializable{
 
+    //Todo tror denne kan starte Calender controller
+
     @FXML private JFXListView listVeiw;
     private CalendarController cal;
     private ObservableList<String> list = FXCollections.observableArrayList();
