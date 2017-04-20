@@ -209,7 +209,6 @@ public class AddEventController extends Connect implements Initializable{
                 String startTimeString = starthour;
                 String endTimeString = endHour;
                 t.addSchoolWork(eventName1, startDate1, endDate1, startTimeString, endTimeString, repeating1, description1, (double) hoursWork, subject1 );
-                System.out.println("New schoolwork entered to database");
                 teach.cancel();
                 teach.snack(0, "New schoolwork entered to database");
             }
@@ -226,7 +225,6 @@ public class AddEventController extends Connect implements Initializable{
                 //String startTimeString = starthour + ":00:00";
                 String startTimeString = starthour;
                 t.addDeadLine(eventName1, startDate1, startTimeString, description1, subject1);
-                System.out.println("New deadline entered to database");
                 teach.cancel();
                 teach.snack(0, "New deadline entered to database");
             }
@@ -298,7 +296,6 @@ public class AddEventController extends Connect implements Initializable{
     }
 
     //Validate methods --> Validates all fields in add event controller.
-
     /**
      * Validates that subject is correct.
      * @return boolean
@@ -309,11 +306,8 @@ public class AddEventController extends Connect implements Initializable{
             subject = subjectsDropDown.getValue().toString();
         }catch (Exception e){
             errorLabel.setText("Must set subject");
-            System.out.println("Must have subject");
             return false;
         }
-
-        //TODO: Validate subject to database and check if it is cannot put subject to database unless it exist.
         if(!subjects.contains(subject)){
             errorLabel.setText("This subject is not in database");
             return false;
@@ -330,7 +324,6 @@ public class AddEventController extends Connect implements Initializable{
         String name = eventName.getText();
         if(name.length() == 0){
             errorLabel.setText("Must have an event name");
-            System.out.println("Must have an event name");
             return false;
         }
         eventName1 = name;
@@ -345,7 +338,6 @@ public class AddEventController extends Connect implements Initializable{
         String description = this.description.getText();
         if(description.length() == 0){
             errorLabel.setText("Must have a description");
-            System.out.println("must have a description");
             return false;
         }
         else{
@@ -362,14 +354,12 @@ public class AddEventController extends Connect implements Initializable{
         LocalDate start = startDate.getValue();
         if(start == null){
             errorLabel.setText("Must have a start date");
-            System.out.println("Must have a start date");
             return false;
         }
         Date today = new Date();
         LocalDate thisdate = today.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         if(start.isBefore(thisdate)){
             errorLabel.setText("Start-date must be after today");
-            System.out.println("StartDate must be after today");
             return false;
         }else {
             startDate1 = start;
@@ -385,14 +375,12 @@ public class AddEventController extends Connect implements Initializable{
         LocalDate end = endDate.getValue();
         if(end == null){
             errorLabel.setText("Must have a end date");
-            System.out.println("Must have a end date");
             return false;
         }
         Date today = new Date();
         LocalDate thisdate = today.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         if(end.isBefore(thisdate)){
             errorLabel.setText("End must be after today");
-            System.out.println("end must be after today");
             return false;
         }else{
             endDate1 = end;
@@ -408,7 +396,6 @@ public class AddEventController extends Connect implements Initializable{
     public boolean validateStartBeforeEnd(){
         if(startDate1.isAfter(endDate1)){
             errorLabel.setText("Start must be before end");
-            System.out.println("start must be before end");
             return false;
         }
         return true;
@@ -426,12 +413,10 @@ public class AddEventController extends Connect implements Initializable{
             minute = startTime.getTime().getMinute();
             if(hour < 8 || hour > 20){
                 errorLabel.setText("Starttime must be between 08:00 - 20:00");
-                System.out.println("Starttime must be between 08:00 - 20:00");
                 return false;
             }
         }catch (Exception e){
             errorLabel.setText("Must have a start time");
-            System.out.println("Must have a start time");
             return false;
         }
         startHour = hour;
@@ -451,12 +436,10 @@ public class AddEventController extends Connect implements Initializable{
             minute = endTime.getTime().getMinute();
             if(hour < 8 || hour > 20){
                 errorLabel.setText("endTime must be between 08:00 - 20:00");
-                System.out.println("endTime must be between 08:00 - 20:00");
                 return false;
             }
         }catch (Exception e){
             errorLabel.setText("Must have a end time");
-            System.out.println("Must have a end time");
             return false;
         }
         endHour = hour;
@@ -471,7 +454,6 @@ public class AddEventController extends Connect implements Initializable{
     public boolean validateStartTimeBeforeEndTime(){
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
-            System.out.println("starthour must be before end hour");
             return false;
         }
         return true;
@@ -495,7 +477,6 @@ public class AddEventController extends Connect implements Initializable{
         if(hour.length() == 0){
 
             errorLabel.setText("Must have a value in hours of Work field");
-            System.out.println("Must have a value in hours of Work field");
             return false;
         }
         int hourInt = 0;
@@ -503,7 +484,6 @@ public class AddEventController extends Connect implements Initializable{
             hourInt = Integer.parseInt(hour);
         }catch (Exception e){
             errorLabel.setText("Must have a integer value in hours of work field");
-            System.out.println("Must have a integer value in hours of work field");
             return false;
         }
         hoursWork = hourInt;

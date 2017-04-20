@@ -31,8 +31,6 @@ import java.util.ResourceBundle;
  */
 public class TeacherCalendarController extends Connect implements Initializable{
 
-    @FXML JFXButton addEvent;
-    //@FXML private JFXButton addStudass;
     @FXML JFXButton logOut;
     @FXML JFXDrawer drawer;
     @FXML JFXDrawer drawer2;
@@ -46,7 +44,6 @@ public class TeacherCalendarController extends Connect implements Initializable{
     @FXML Group topButtons;
     @FXML HBox topBox;
     @FXML Label teachingSubjects;
-
     JFXSnackbar bar;
 
     private ObservableList<String> subjects = FXCollections.observableArrayList();
@@ -207,8 +204,6 @@ public class TeacherCalendarController extends Connect implements Initializable{
             bar.show("No event added", 5000);
         }
     }
-
-
 
     /**
      * Logout loads the loginscreen
