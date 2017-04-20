@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 
 public class Calendar extends Application {
 
-	private Stage stage;
-	private FXMLLoader loader;
-	private Parent load;
+	 Stage stage;
+	 FXMLLoader loader;
+	 Parent load;
 
 	//Launch the scene.
 	@Override
