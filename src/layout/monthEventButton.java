@@ -12,7 +12,9 @@ public class monthEventButton {
     Button btn;
     public monthEventButton(Cell cell){
         this.cell = cell;
+        btn = new Button();
         btn.setText(cell.getName());
+
 
     }
 
