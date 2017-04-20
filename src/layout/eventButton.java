@@ -175,7 +175,7 @@ public class eventButton {
 
             //FEEDBACKMULIGHET FOR SKOLEARBEID.
             VBox vbox = new VBox();
-            vbox.setStyle("-fx-background-color: gray;");
+            vbox.setStyle("-fx-background-color: white;");
             vbox.setPadding(new Insets(8,8,8,8));
 
             //If event is schoolwork, student should be able to say how long they used on it.
@@ -187,11 +187,11 @@ public class eventButton {
                 lab.setText("Hours made on school-work:");
                 JFXComboBox combo = new JFXComboBox((FXCollections.observableArrayList("1", "2", "3", "4", "5")));
                 combo.setPrefWidth(Double.MAX_VALUE);
-                combo.setStyle("-fx-background-color: #cadae0;");
+                combo.setStyle("-fx-background-color: #d0d3d8;");
                 JFXButton feedback = new JFXButton();
                 feedback.setId("feedback");
                 feedback.setText("Send feedback");
-                feedback.setStyle("-fx-background-color: #cadae0;");
+                feedback.setStyle("-fx-background-color: #d0d3d8;");
                 feedback.setPrefWidth(Double.MAX_VALUE);
                 feedback.setOnAction(fd -> {
                     errorLab.setText("");
@@ -234,6 +234,11 @@ public class eventButton {
             else{
                 root = new VBox(nameFiled,subjectFild,type,coordinatorText, descriptionFiled, deleteBtn);
             }
+            root.setPadding(new Insets(5,5,5,5));
+            root.setMargin(nameFiled, new Insets(0,0,8,0));
+            root.setMargin(subjectFild, new Insets(0,0,8,0));
+            root.setMargin(type, new Insets(0,0,8,0));
+            root.setMargin(descriptionFiled, new Insets(0,0,8,0));
             stage.setTitle(name);
             Scene scene = new Scene(root, 450, 450);
             String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();

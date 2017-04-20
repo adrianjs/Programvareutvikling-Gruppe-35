@@ -19,10 +19,10 @@
       <JFXButton id="addButtons" buttonType="RAISED" layoutX="650.0" layoutY="550.0" onAction="#cancel" text="Cancel" />
       <TableView fx:id="table" layoutX="14.0" layoutY="104.0" prefHeight="429.0" prefWidth="715.0">
         <columns>
-          <TableColumn fx:id="date" prefWidth="158.0" text="Date" />
-          <TableColumn fx:id="estHour" prefWidth="81.0" text="Estimate" />
-            <TableColumn fx:id="feedBack" minWidth="0.0" prefWidth="89.0" text="Feedback" />
-            <TableColumn fx:id="desc" minWidth="7.0" prefWidth="386.0" text="Event description" />
+          <TableColumn id="header" fx:id="date" prefWidth="158.0" text="Date" />
+          <TableColumn id="header" fx:id="estHour" prefWidth="81.0" text="Estimate" />
+            <TableColumn id="header" fx:id="feedBack" minWidth="0.0" prefWidth="89.0" text="Feedback" />
+            <TableColumn id="header" fx:id="desc" minWidth="7.0" prefWidth="386.0" text="Event description" />
         </columns>
       </TableView>
    </children>

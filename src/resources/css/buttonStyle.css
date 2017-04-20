@@ -130,5 +130,9 @@
   /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
 
+/* Table view*/
 
+#table{
+	-fx-background-color: #d0d3d8;
+}
 
