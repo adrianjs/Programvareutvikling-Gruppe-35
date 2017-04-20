@@ -26,6 +26,7 @@ public class AddSubjectController extends Connect implements Initializable{
     @FXML TextField subject;
     @FXML JFXComboBox subjectPicker;
     @FXML AnchorPane anchorPane;
+    JFXSnackbar bar;
 
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList(); //Is used to set items in dropdown
@@ -47,21 +48,28 @@ public class AddSubjectController extends Connect implements Initializable{
         Set<String> setOfSubjects = User.getInstance().getSubjects();
         System.out.println(setOfSubjects);
         String chosenSubject;
+        bar = new JFXSnackbar(anchorPane);
         chosenSubject = subject.getCharacters().toString().split("\\s+")[0];
         if(setOfSubjects.contains(chosenSubject)){
-            JFXSnackbar bar = new JFXSnackbar(anchorPane);
             bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is already one of your subjects!"));
+            bar.setId("1");
         }else{
+
             if(subjectPicker.getItems().contains(subject.getCharacters().toString())){
                 setOfSubjects.add(chosenSubject); //Adding new chosen subject
                 addStudentSubject(chosenSubject);
                 User.getInstance().updateSubjects();
-                JFXSnackbar bar = new JFXSnackbar(anchorPane);
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was added to your subjects!"));
-                CalendarController.getInstance().refresh();
+                bar.setId("2");
+                try {
+                    CalendarController.getInstance().refresh();
+                } catch (NullPointerException e){
+                    System.out.println("denne funksjonen virker ikke når vi tester");
+                }
             }else{
-                JFXSnackbar bar = new JFXSnackbar(anchorPane);
+                bar.setId("3");
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " is not a valid subject!"));
+
             }
         }
     }
@@ -72,10 +80,15 @@ public class AddSubjectController extends Connect implements Initializable{
         try {
             System.out.println("Remove student subject");
             new Connect().removeStudentSubject(chosenSubject);
-            JFXSnackbar bar = new JFXSnackbar(anchorPane);
+            bar = new JFXSnackbar(anchorPane);
             if(subject.getCharacters().toString().length() != 0){
+                bar.setId("4");
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was removed!"));
-                CalendarController.getInstance().refresh();
+                try {
+                    CalendarController.getInstance().refresh();
+                } catch (NullPointerException e){
+                    System.out.println("denne funksjonen virker ikke når vi tester");
+                }
             }
 
         }catch (SQLException e){

@@ -41,20 +41,20 @@ public class CalendarController extends Connect implements Initializable{
     private Date chosenDate = new Date();
 	private SuperSorter superSorter = new SuperSorter();
 
-	@FXML private GridPane day; //DAY PANE
-	@FXML private GridPane week; //WEEK PANE
-	@FXML private GridPane month; //MONTH PANE
-	@FXML private AnchorPane dayAnchor; //Anchorpane day
-	@FXML private Label username;
+	@FXML GridPane day; //DAY PANE
+	@FXML GridPane week; //WEEK PANE
+	@FXML GridPane month; //MONTH PANE
+	@FXML AnchorPane dayAnchor; //Anchorpane day
+	@FXML Label username;
 
 	//AI panes.
 	private AnchorPane botto;
     @FXML private JFXDrawer drawer;
 	AnchorPane rightside;
 
-    @FXML private JFXButton askButton;
-	@FXML private JFXButton logout;
-	@FXML private JFXButton remove;
+    @FXML JFXButton askButton;
+	@FXML JFXButton logout;
+	@FXML JFXButton remove;
 
 
 	//Labels for Day pane.
@@ -63,10 +63,10 @@ public class CalendarController extends Connect implements Initializable{
 	//Labels week-Pane
 
 	//Tabs
-	@FXML private Tab dayTab;
-	@FXML private Tab weekTab;
-	@FXML private Tab monthTab;
-	@FXML private JFXTabPane tabs;
+	@FXML Tab dayTab;
+	@FXML Tab weekTab;
+	@FXML Tab monthTab;
+	@FXML JFXTabPane tabs;
 
     //Date
 	@FXML private JFXDatePicker date;
@@ -382,7 +382,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * @param tall String formed as a number
 	 * @return converted string to int.
 	 */
-	private int removeZero(String tall){
+	public int removeZero(String tall){
         if(tall.charAt(0) == '0'){
 			return Character.getNumericValue(tall.charAt(1));
 		}
