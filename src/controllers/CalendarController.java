@@ -75,7 +75,7 @@ public class CalendarController extends Connect implements Initializable{
 	private layout.Calendar cal = new layout.Calendar();
 
     // List of labels in day Tab...
-    @FXML private List<Label> timeToTime = new ArrayList<>();
+    @FXML List<Label> timeToTime = new ArrayList<>();
 
     //CountVariables
     private int teller = 0;
@@ -99,7 +99,7 @@ public class CalendarController extends Connect implements Initializable{
 	private List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
 	private List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
-	private Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
+	private  Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
@@ -389,28 +389,7 @@ public class CalendarController extends Connect implements Initializable{
 		return Integer.parseInt(tall);
 	}
 
-	//Add labels tin day tab to list
 
-//    /**
-//     * Add labels in dayTab to list.
-//     */
-    /*
-    private void addTimeToTimeToList(){
-		ObservableList<Node> children = day.getChildren();
-		for(Node label : children){
-			if((label.getId() != null) && (!label.getId().equals(thisday.getId()))){
-				timeToTime.add((Label) label);
-				dayTabLabels.add((Label) label);
-			}
-		}
-		int hour = 8;
-		for(Label label : dayTabLabels){
-			Date start = setHour(chosenDate, hour);
-			Date end = setHour(chosenDate, hour+1);
-			dayTabTimeSlots.put(new TimeInterval(start, end), label);
-			hour++;
-		}
-	}*/
 
     /**
      * Add labels in monthTab to list.
@@ -597,6 +576,8 @@ public class CalendarController extends Connect implements Initializable{
 	 * Clear a given timeslot in dayPane.
 	 * @param slot numbered slot.
 	 */
+
+
 	public void clearTimeSlot(int slot){
         int count = 0;
         for(Label label : timeToTime){
@@ -824,6 +805,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * @param mapTo Map
 	 * @return stretch.
 	 */
+	/*
 	public boolean insertCellHelper(Map.Entry<TimeInterval, Label> map, Cell cell, boolean stretch, Map<Label, Cell> mapTo){
         if(map.getKey().getStartTime().equals(cell.getStartDate())){
             Label lab = map.getValue(); //First
@@ -835,7 +817,7 @@ public class CalendarController extends Connect implements Initializable{
             }
         }
         return stretch;
-    }
+    }*/
 
 
 

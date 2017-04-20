@@ -31,21 +31,23 @@ import java.util.ResourceBundle;
  */
 public class TeacherCalendarController extends Connect implements Initializable{
 
-    @FXML private JFXButton addEvent;
+    @FXML JFXButton addEvent;
     //@FXML private JFXButton addStudass;
-    @FXML private JFXButton logOut;
-    @FXML private JFXDrawer drawer;
-    @FXML private JFXDrawer drawer2;
-    @FXML private AnchorPane barPane;
-    @FXML private AnchorPane centerPane;
-    private AnchorPane add;
-    private AnchorPane feedback;
-    private AnchorPane addTsbubject;
-    @FXML private Label userName;
-    @FXML private Group mainButtons;
-    @FXML private Group topButtons;
-    @FXML private HBox topBox;
-    @FXML private Label teachingSubjects;
+    @FXML JFXButton logOut;
+    @FXML JFXDrawer drawer;
+    @FXML JFXDrawer drawer2;
+    @FXML AnchorPane barPane;
+    @FXML AnchorPane centerPane;
+    AnchorPane add;
+    AnchorPane feedback;
+    AnchorPane addTsbubject;
+    @FXML Label userName;
+    @FXML Group mainButtons;
+    @FXML Group topButtons;
+    @FXML HBox topBox;
+    @FXML Label teachingSubjects;
+
+    JFXSnackbar bar;
 
     private ObservableList<String> subjects = FXCollections.observableArrayList();
 
@@ -188,27 +190,25 @@ public class TeacherCalendarController extends Connect implements Initializable{
      * @param string what to set in snackbar
      */
     public void snack(int number, String string){
-        JFXSnackbar bar = new JFXSnackbar(barPane);
+        bar = new JFXSnackbar(barPane);
         if(number == 0){
             //bar.setStyle("-fx-text-fill: red;");
+            bar.setId("1");
             bar.show(string, 8000);
         }
         else if(number == 2){
+            bar.setId("2");
             bar.show(string, 8000);
         }else if(number == 3){
+            bar.setId("3");
             bar.show(string, 8000);
         }else{
+            bar.setId("4");
             bar.show("No event added", 5000);
         }
     }
 
-    /**
-     * Onaction from addStudass button.
-     */
-    public void addStudass(){
-        System.out.println("add studass");
-        addPane(2);
-    }
+
 
     /**
      * Logout loads the loginscreen

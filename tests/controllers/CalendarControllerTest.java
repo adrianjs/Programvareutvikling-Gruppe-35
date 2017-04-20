@@ -2,6 +2,7 @@ package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.embed.swing.JFXPanel;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import org.junit.Before;
@@ -62,6 +63,23 @@ public class CalendarControllerTest {
         assertEquals(true, con.week.isVisible());
         assertEquals(true, con.month.isVisible());
     }
+
+    @Test
+    public void testClearTimeSlot(){
+        Label testL1 = new Label();
+        Label testL2 = new Label();
+        testL1.setText("hei");
+        testL2.setText("hei");
+        con.timeToTime.add(testL1);
+        con.timeToTime.add(testL2);
+        con.clearTimeSlot(0);
+        con.clearTimeSlot(1);
+        for(Label testL : con.timeToTime){
+            assertEquals("", testL.getText());
+        }
+    }
+
+
 
 
 }
