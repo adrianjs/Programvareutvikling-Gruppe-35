@@ -2,12 +2,15 @@ package controllers;
 
 import com.jfoenix.controls.JFXDrawer;
 import javafx.embed.swing.JFXPanel;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -82,6 +85,14 @@ public class TeacherCalendarControllerTest {
         con.snack(4, "test");
         assertEquals("4", con.bar.getId());
 
+    }
+
+    @Test
+    public void testSetAddField() throws IOException{
+        con.setAddField();
+        assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml")).getClass(), con.add.getClass());
+        assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml")).getClass(), con.feedback.getClass());
+        assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/addTeachingSubject.fxml")).getClass(), con.addTsbubject.getClass());
     }
 
 

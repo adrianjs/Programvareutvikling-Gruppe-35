@@ -122,7 +122,7 @@ public class TeacherCalendarController extends Connect implements Initializable{
     /**
      * Sets fxml-documents to anchorpanes, which can be set to the drawer when needed.
      */
-    private void setAddField(){
+    public void setAddField(){
         try {
             add = FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml"));
             feedback = FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml"));

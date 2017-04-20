@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" line="44" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" line="47" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TeacherCalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/TeacherCalendarController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -27,7 +25,7 @@
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$AddEventControllerTest.coverage" NAME="AddEventControllerTest Coverage Results" MODIFIED="1492620613546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.add.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1492688269698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1492689479651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>*</FILTER>
       <FILTER>algorithm.*</FILTER>
       <FILTER>calendar.*</FILTER>
@@ -95,8 +93,8 @@
           <file leaf-file-name="TeacherCalendarControllerTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+                <state relative-caret-position="498">
+                  <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -123,10 +121,10 @@
           <file leaf-file-name="TeacherCalendarController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/controllers/TeacherCalendarController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="379">
-                  <caret line="205" column="24" lean-forward="false" selection-start-line="205" selection-start-column="24" selection-end-line="205" selection-end-column="24" />
+                <state relative-caret-position="150">
+                  <caret line="128" column="66" lean-forward="false" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="107" />
                   <folding>
-                    <marker date="1492688860000" expanded="true" signature="2298:2384" ph="SELECT * FRO... SUBJECT" />
+                    <marker date="1492688991000" expanded="true" signature="2298:2384" ph="SELECT * FRO... SUBJECT" />
                   </folding>
                 </state>
               </provider>
@@ -490,7 +488,7 @@
       <recent name="C:\Users\larsmade\IdeaProjects\Programvareutvikling-Gruppe-35\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TeacherCalendarControllerTest">
+  <component name="RunManager" selected="JUnit.All in Programvareutvikling-Gruppe-35">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -557,32 +555,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AddSubjectControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="controllers.add.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Programvareutvikling-Gruppe-35" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="controllers.add" />
-      <option name="MAIN_CLASS_NAME" value="controllers.add.AddSubjectControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="CalendarControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -623,6 +595,32 @@
       <option name="MAIN_CLASS_NAME" value="controllers.TeacherCalendarControllerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TeacherCalendarControllerTest.addEventFeedBackTeachingSubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Programvareutvikling-Gruppe-35" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="controllers" />
+      <option name="MAIN_CLASS_NAME" value="controllers.TeacherCalendarControllerTest" />
+      <option name="METHOD_NAME" value="addEventFeedBackTeachingSubject" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1085,17 +1083,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AddSubjectControllerTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest.addEventFeedBackTeachingSubject" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AddSubjectControllerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TeacherCalendarControllerTest.addEventFeedBackTeachingSubject" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -1168,14 +1166,7 @@
       <workItem from="1492445914174" duration="34773000" />
       <workItem from="1492632372831" duration="1462000" />
       <workItem from="1492635113612" duration="14000" />
-      <workItem from="1492673147060" duration="13153000" />
-    </task>
-    <task id="LOCAL-00009" summary="Change in clearcells method">
-      <created>1487934550814</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1487934550814</updated>
+      <workItem from="1492673147060" duration="13777000" />
     </task>
     <task id="LOCAL-00010" summary="the right instance of add class available in calendarController class in the add method.">
       <created>1488110468117</created>
@@ -1513,43 +1504,50 @@
       <option name="project" value="LOCAL" />
       <updated>1492685084043</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="flere tester">
+      <created>1492688881812</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1492688881813</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 34m 40s.xml">
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 48m 26s.xml">
       <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 37m 42s.xml">
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 52m 25s.xml">
       <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 38m 01s.xml">
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.20 at 13h 58m 10s.xml">
       <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 27m 27s.xml">
+    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 52m 32s.xml">
       <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 27m 47s.xml">
+    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 54m 58s.xml">
       <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 29m 21s.xml">
+    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 56m 01s.xml">
       <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 33m 55s.xml">
+    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 56m 55s.xml">
       <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 41m 46s.xml">
+    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 57m 36s.xml">
       <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 46m 06s.xml">
-      <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
+    <history-entry file="TeacherCalendarControllerTest_addEventFeedBackTeachingSubject - 2017.04.20 at 13h 53m 25s.xml">
+      <configuration name="TeacherCalendarControllerTest.addEventFeedBackTeachingSubject" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherCalendarControllerTest - 2017.04.20 at 13h 47m 47s.xml">
-      <configuration name="TeacherCalendarControllerTest" configurationId="JUnit" />
+    <history-entry file="TeacherCalendarControllerTest_addEventFeedBackTeachingSubject - 2017.04.20 at 13h 53m 45s.xml">
+      <configuration name="TeacherCalendarControllerTest.addEventFeedBackTeachingSubject" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513320000" />
+    <option name="totallyTimeSpent" value="513944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1562,7 +1560,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1581,11 +1579,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21917808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3739726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32574257" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51534736" sideWeight="0.5069686" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51534736" sideWeight="0.5069686" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32772276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37075928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37075928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2146,18 +2144,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/TeacherCalendarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="205" column="24" lean-forward="false" selection-start-line="205" selection-start-column="24" selection-end-line="205" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="128" column="66" lean-forward="false" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="107" />
           <folding>
-            <marker date="1492688860000" expanded="true" signature="2298:2384" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1492688991000" expanded="true" signature="2298:2384" ph="SELECT * FRO... SUBJECT" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        <state relative-caret-position="498">
+          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
