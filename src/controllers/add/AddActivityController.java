@@ -31,11 +31,8 @@ public class AddActivityController implements Initializable{
     @FXML JFXButton cancel;
     @FXML JFXButton sendInn;
     @FXML JFXCheckBox everyWeek;
-    @FXML Label errorActivity;
-    @FXML Label errorDate;
     @FXML Label errorTime;
     @FXML JFXComboBox priority;
-    @FXML Label priorityError;
     @FXML JFXTextField desc;
     Stage stage;
     //Time set.
@@ -51,14 +48,13 @@ public class AddActivityController implements Initializable{
 
     //Methods
     //On action from Send-in button
-    public void sendIn(){
-        errorActivity.setText("");
-        errorDate.setText("");
-        priorityError.setText("");
-        //TODO: Må sjekke i forhold til resten av kalenderen om det kan settes inn en aktivitet på dette tidspunktet..
 
+    /**
+     * Onaction from add in button.
+     */
+    public void sendIn(){
+        errorTime.setText("");
         if((checkActivity()) && (checkDate())&& (checkTime()) && (checkPriority())){
-            //legg til i database.. Eventuelt sjekk opp i mot database om man kan legge til noe på dette tidspunktet.
             stage = (Stage) cancel.getScene().getWindow();
             //setter verdier, må da lagres i databasen...
             act = activity.getText();
@@ -70,7 +66,6 @@ public class AddActivityController implements Initializable{
             repeat = everyWeek.isSelected();
             description = desc.getText();
             calendar.Cell cell = toUserCell();
-
             pushCell(cell);
             stage.close();
             CalendarController.getInstance().refresh();
@@ -78,6 +73,10 @@ public class AddActivityController implements Initializable{
 
     }
 
+    /**
+     * Push cell to database.
+     * @param cell usercell.
+     */
     private void pushCell(Cell cell) {
         Connect connecter = new Connect();
         User user = User.getInstance();
@@ -93,7 +92,10 @@ public class AddActivityController implements Initializable{
                 user.getUsername(), cell.getDescription());
     }
 
-    //Send information to usercell.
+    /**
+     * Send in information to userCell.
+     * @return activity.
+     */
     public calendar.Cell toUserCell(){
         LocalDateTime startTime = dateSet.atTime(start, 0);
         LocalDateTime endTime = dateSet.atTime(stop, 0);
@@ -108,35 +110,42 @@ public class AddActivityController implements Initializable{
         return activity;
     }
 
-    //Must have something in the textfield... else not valid activity.
+    /**
+     * Checks the activity name.
+     * @return boolean
+     */
     public boolean checkActivity(){
-
         String activ = activity.getText();
         if(activ.length() == 0){
-            errorActivity.setText("Must have an activity name");
+            errorTime.setText("Must have an activity name");
             return false;
         }
         return true;
     }
 
-    //Check if date is after today, else not valid.
-
+    /**
+     * Check if date is after today, else not valid.
+     * @return boolean
+     */
     public boolean checkDate(){
         LocalDate tryDate = date.getValue();
         if(tryDate == null){
-           errorDate.setText("Must hav a a date");
+           errorTime.setText("Must hav a a date");
            return false;
        }
         Date today = new Date();
         LocalDate thisdate = today.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         if(tryDate.isBefore(thisdate)){
-            errorDate.setText("Date must be after today");
+            errorTime.setText("Date must be after today");
             return false;
         }
         return true;
     }
 
-    //Time must be set, and start must be before.
+    /**
+     * Time must be set, starttime must be earlier than end-time.
+     * @return boolean
+     */
     public boolean checkTime(){
         int start = 0;
         int stop = 0;
@@ -152,12 +161,16 @@ public class AddActivityController implements Initializable{
             return false;
         }
         if(start < 8 || stop < 8){
-            priorityError.setText("You can not have plans before 8 clock");
+            errorTime.setText("You can not have plans before 8 clock");
             return false;
         }
         return true;
     }
 
+    /**
+     * Checks the prioritynumber.
+     * @return boolean
+     */
     public boolean checkPriority(){
         String priorityValue = "";
         int priorityNumber = 0;
@@ -165,21 +178,25 @@ public class AddActivityController implements Initializable{
             priorityValue = priority.getValue().toString();
             priorityNumber = Integer.parseInt(priorityValue);
         }catch(Exception e){
-            priorityError.setText("Must have priority");
+            errorTime.setText("Must have priority");
             return false;
         }
         return true;
     }
 
+    /**
+     * Sets the numver to priority combobox.
+     */
     public void setElementsToProirityChoiceBox(){
         priority.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
     }
 
-    //Close scene. On action from cancel button.
+    /**
+     * Closes the scene, onaction from canelbutton.
+     */
     public void cancel(){
         stage = (Stage) cancel.getScene().getWindow();
         stage.close();
-        //cal.add();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {

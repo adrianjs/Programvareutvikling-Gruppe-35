@@ -20,9 +20,9 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="294.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label alignment="CENTER" text="Start typing a subject name or code:" textAlignment="CENTER" />
+                        <Label id="text" alignment="CENTER" text="Start typing a subject name or code:" textAlignment="CENTER" />
                         <JFXTextField id="cal" fx:id="subject" alignment="TOP_LEFT" maxWidth="400.0" prefWidth="200.0" />
-                        <Label alignment="CENTER" text="Or just pick one:">
+                        <Label id="text" alignment="CENTER" text="Or just pick one:">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>

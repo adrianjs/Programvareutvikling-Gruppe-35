@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddActivityController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="406.0" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddActivityController">
    <children>
       <BorderPane layoutX="385.0" layoutY="301.0" prefHeight="647.0" prefWidth="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -32,51 +32,61 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="567.0" prefWidth="406.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label alignment="CENTER" text="Type of activity:" />
+                        <Label id="text" alignment="CENTER" text="Type of activity:" />
                         <JFXTextField id="cal" fx:id="activity" alignment="TOP_LEFT" maxWidth="300.0" stylesheets="@../css/buttonStyle.css">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </JFXTextField>
                         <Label fx:id="errorActivity" textFill="RED" />
-                        <Label text="Description: " />
+                        <Label id="text" text="Description: " />
                         <JFXTextField id="cal" fx:id="desc" maxWidth="300.0" prefHeight="29.0" prefWidth="320.0" stylesheets="@../css/buttonStyle.css" />
-                        <Label text="Date:">
+                        <Label id="text" text="Date:">
                            <VBox.margin>
                               <Insets top="15.0" />
                            </VBox.margin>
                         </Label>
                         <JFXDatePicker id="cal" fx:id="date" defaultColor="GREY" maxWidth="300.0" prefHeight="30.0" prefWidth="320.0" stylesheets="/css/buttonStyle.css" />
                         <Label fx:id="errorDate" textFill="RED" />
-                        <JFXCheckBox fx:id="everyWeek" text="Repeating">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </JFXCheckBox>
-                        <Label text="Priority:">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <JFXComboBox id="cal" fx:id="priority" prefHeight="31.0" prefWidth="100.0" stylesheets="@../css/buttonStyle.css" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label id="text" text="Priority:">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXComboBox id="cal" fx:id="priority" prefHeight="31.0" prefWidth="100.0" stylesheets="@../css/buttonStyle.css" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="90.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <JFXCheckBox id="text" fx:id="everyWeek" text="Repeating" />
+                           </children>
+                        </HBox>
                         <Label fx:id="priorityError" textFill="RED" />
-                        <Label text="From:">
+                        <Label id="text" text="From:">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
                         <JFXDatePicker id="cal" fx:id="startTime" defaultColor="GREY" maxWidth="300.0" prefHeight="30.0" prefWidth="320.0" showTime="true" stylesheets="/css/buttonStyle.css" />
-                        <Label text="To:">
+                        <Label id="text" text="To:">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
                         <JFXDatePicker id="cal" fx:id="endTime" defaultColor="GREY" maxWidth="300.0" prefHeight="30.0" prefWidth="320.0" showTime="true" stylesheets="/css/buttonStyle.css" />
-                        <Label fx:id="errorTime" textFill="RED" />
+                        <Label fx:id="errorTime" textFill="RED">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin></Label>
                         <HBox alignment="CENTER" prefHeight="44.0" prefWidth="256.0">
                            <children>
                               <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="/css/buttonStyle.css" text="Cancel" />
-                              <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="/css/buttonStyle.css" text="Send In">
+                              <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="/css/buttonStyle.css" text="Add">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
