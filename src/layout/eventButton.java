@@ -29,8 +29,9 @@ public class eventButton {
     private String subjectCode;
     private String coordinator;
     private Button event;
-    private String eventType = "";
+    String eventType = "";
     private int eventId = 0;
+
 
     //Setter opp hvis det er activitet
     public eventButton(String name, String description, Cell cell){
@@ -47,7 +48,8 @@ public class eventButton {
 
         //vis du tryker på et event kommer mer info opp:
         event.setOnAction( e -> {
-            Stage stage = new Stage();
+
+
             Text nameFiled = new Text();
 
             nameFiled.setText(name);
@@ -68,6 +70,9 @@ public class eventButton {
             deleteBtn.setId("deleteBtn");
             deleteBtn.setText("Delete");
             deleteBtn.setPrefWidth(Double.MAX_VALUE);
+
+
+            Stage stage = new Stage();
             deleteBtn.setOnAction( es -> {
                 database.Activity delAct = new database.Activity();
                 delAct.deleteActivity(cell.getID());
@@ -249,11 +254,7 @@ public class eventButton {
 
     public String getDescription() {return description;}
 
-    private String ranColor(){
-        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
-        int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
-        return colors[randomNum];
-    }
+
 
 
 
