@@ -335,6 +335,24 @@ public class SuperSorter extends Connect {
         alert.showAndWait();
     }
 
+    public void findNewTime(Cell activity){
+        boolean validTime = false;
+
+        //Display animation
+        while(!validTime){
+            //Change time, Dont set after 20 or before 08, backwards first, then forward.
+
+            validTime = detectCollision(activity);
+        }
+        //New time found. Remove animation.
+
+    }
+
+    public boolean detectCollision(Cell activity){
+
+        return true;
+    }
+
     public void rescheduleManual(Cell activity) throws SQLException, IOException, ParseException {
         setupDialog(activity);
     }

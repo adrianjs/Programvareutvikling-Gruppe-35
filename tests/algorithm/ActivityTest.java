@@ -1,13 +1,13 @@
 package algorithm;
 
-import algorithm.Activity;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * Created by Henning on 02.03.2017.

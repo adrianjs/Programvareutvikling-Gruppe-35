@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.sun.tools.doclets.internal.toolkit.util.DocPath.parent;
+//import static com.sun.tools.doclets.internal.toolkit.util.DocPath.parent;
 import static org.junit.Assert.assertEquals;
 
 /**

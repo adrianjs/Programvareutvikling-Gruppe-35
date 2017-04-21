@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import layout.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,7 +53,7 @@ public class LoginControllerTest {
     public void testValidateLogin(){
         con.user.setUsername("bull");
         con.user.setPassword("123");
-        assertEquals(null,con.validateLogin());
+        assertEquals(null, con.validateLogin());
         con.loginField.setText("larsmade@stud.ntnu.no");
         con.passwordField.setText("123");
         con.user.setUsername("larsmade@stud.ntnu.no");
