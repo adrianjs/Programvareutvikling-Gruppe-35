@@ -126,15 +126,15 @@ public class eventButton {
         }
 
         if(cell.getSlotPriority() == 99){
-            eventType = "exam";
+            eventType = "Exam";
         } else if(cell.getSlotPriority() == 98) {
-            eventType = "deadline";
+            eventType = "Deadline";
         } else if(cell.getSlotPriority() == 97) {
             eventType = "home work";
         } else if(cell.getSlotPriority() == 96) {
-            eventType = "lecture";
+            eventType = "Lecture";
         } else if(cell.getSlotPriority() == 95) {
-            eventType = "home exam";
+            eventType = "Home exam";
         }
 
         event.setStyle("-fx-background-color: #" +cell.getColor());
@@ -188,7 +188,7 @@ public class eventButton {
                 lab.setStyle("-fx-font-weight: bold;");
                 Label errorLab = new Label();
                 errorLab.setStyle("-fx-text-fill: red;");
-                lab.setText("Hours made on school-work:");
+                lab.setText("Hours spent on schoolwork:");
                 JFXComboBox combo = new JFXComboBox((FXCollections.observableArrayList("1", "2", "3", "4", "5")));
                 combo.setPrefWidth(Double.MAX_VALUE);
                 combo.setStyle("-fx-background-color: #d0d3d8;");
