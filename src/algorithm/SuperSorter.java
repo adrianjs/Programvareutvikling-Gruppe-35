@@ -38,7 +38,7 @@ public class SuperSorter extends Connect {
     private Set<Cell> events = new HashSet<>();
     private Set<Cell> activities = new HashSet<>();
     private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
-    private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
+    private List<Cell> scheduleWithoutCollision = new ArrayList<>(); //This is both sorted and has collisions handled.
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
     private Set<Cell> deadlines = new LinkedHashSet<>();
 
@@ -55,8 +55,6 @@ public class SuperSorter extends Connect {
         applyDeadlines();
         System.out.println("FINISHED");
     }
-
-
 
     public void dataCollect() throws SQLException, ParseException {
         subjects.clear();
@@ -184,8 +182,8 @@ public class SuperSorter extends Connect {
         scheduleWithoutCollision.addAll(deadlines);
     }
 
-    public void handleCollisionsInTime(Set<Cell> prioritizedSchedule) throws SQLException, IOException, ParseException {
-        for(Cell currentCell : prioritizedSchedule){
+    public void handleCollisionsInTime(Set<Cell> cells) throws SQLException, IOException, ParseException {
+        for(Cell currentCell : cells){
             boolean collision = false;
             Cell collisionCell = null;
             for(Cell placedCell : scheduleWithoutCollision){
@@ -320,68 +318,80 @@ public class SuperSorter extends Connect {
         stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
 
-    public void rescheduleAuto(Cell activity){
+    public void rescheduleAuto(Cell cell) throws SQLException {
         //TODO: Write code that automatically changes the time of an activity
         //TODO: Change the times inside object, then push changes to DB
         System.out.println("RE-SCHEDULE AUTO");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Coming soon...");
-        alert.showAndWait();
+//        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Coming soon...");
+//        alert.showAndWait();
+        findNewTime(cell);
+        CalendarController.getInstance().refresh();
     }
 
-    public void findNewTime(Cell activity) throws SQLException {
-        Date originalStartDate = activity.getStartDate();
-        Date originalEndDate = activity.getEndDate();
-        String originalStartTime = activity.getStartTime();
-        String originalEndTime = activity.getEndTime();
+    public void findNewTime(Cell cell) throws SQLException {
+        System.out.println("FIND NEW TIME");
+        Cell originalCell;
+        if(cell.getType().equals("event")){
+            System.out.println("IT's AN EVENT");
+            originalCell = new Event((Event) cell);
+        }else{
+            System.out.println("IT's AN ACTIVITY");
+            originalCell = new Activity((Activity) cell);
+        }
+
+        Date originalStartDate = cell.getStartDate();
+        Date originalEndDate = cell.getEndDate();
+        String originalStartTime = cell.getStartTime();
+        String originalEndTime = cell.getEndTime();
 
         Date today = new Date();
-        Date currentDate = activity.getStartDate();
+        Date currentDate = cell.getStartDate();
         Date lastPossible;
-        if(activity.getType().equals("event") && activity.getSlotPriority()==97){
-            lastPossible = getClosestLecture(activity);
-        }else {lastPossible = getLastPossibleDate();}
+        if(cell.getSlotPriority()==97){
+            lastPossible = getClosestLecture((Event) cell);
+        }else {lastPossible = getLastPossibleDate(cell);}
 
-        Integer startTime = Integer.parseInt(activity.getStartTime());
-        Integer endTime = Integer.parseInt(activity.getEndTime());
+        Integer startTime = Integer.parseInt(cell.getStartTime());
+        Integer endTime = Integer.parseInt(cell.getEndTime());
         Integer diff = endTime - startTime;
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentDate);
-        cal.set(Calendar.HOUR_OF_DAY, startTime);
         boolean validTime = false;
         boolean direction = false;
 
         //Display animation
         while(!validTime && !direction){
-            //Change time, Dont set after 20 or before 08, backwards first
-            if(startTime >=9){
+            if(startTime > 8){
+                //One hour back
                 startTime--;
                 endTime--;
             } else{
+                //One day back, at end of day
                 endTime = 20;
                 startTime = endTime - diff;
                 cal.set(Calendar.DAY_OF_MONTH, -1);
 
             }
             cal.set(Calendar.HOUR_OF_DAY, startTime);
-            activity.setStartTime(startTime.toString());
-            activity.setEndTime(endTime.toString());
-            activity.setStartDate(cal.getTime());
+            cell.setStartTime(startTime.toString());
+            cell.setEndTime(endTime.toString());
+            cell.setStartDate(cal.getTime());
             cal.set(Calendar.HOUR_OF_DAY, endTime);
-            activity.setEndDate(cal.getTime());
+            cell.setEndDate(cal.getTime());
 
-            validTime = detectCollision(activity);
+            validTime = detectCollision(cell);
 
             //If reached today, then turn.
-            if(activity.getStartDate().before(today)){
+            if(cell.getStartDate().before(today)){
                 //Turns the direction to go
                 direction = true;
             }
         }
 
-        activity.setStartDate(originalStartDate);
-        activity.setEndDate(originalEndDate);
-        activity.setStartTime(originalStartTime);
-        activity.setEndTime(originalEndTime);
+        cell.setStartDate(originalStartDate);
+        cell.setEndDate(originalEndDate);
+        cell.setStartTime(originalStartTime);
+        cell.setEndTime(originalEndTime);
 
         while(!validTime && direction){
             if(endTime<=19){
@@ -392,49 +402,79 @@ public class SuperSorter extends Connect {
                 startTime = 8;
                 endTime = startTime + diff;
             }
-            validTime = detectCollision(activity);
+            cal.set(Calendar.HOUR_OF_DAY, startTime);
+            cell.setStartTime(startTime.toString());
+            cell.setEndTime(endTime.toString());
+            cell.setStartDate(cal.getTime());
+            cal.set(Calendar.HOUR_OF_DAY, endTime);
+            cell.setEndDate(cal.getTime());
+
+            validTime = detectCollision(cell);
         }
 
-        //If no new time (might happen, only option is to delete)
-        if(activity.getStartDate().after(lastPossible)){
+        //If no new time (might happen, only option is to delete). Remove animation.
+        if(cell.getStartDate().after(lastPossible)){
             //TODO: Prompt with that it will be deleted
-            //deleteActivity(activity);
+            if(cell.getType().equals("event")){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "We could not find a new timeslot for this event!\nIt will now be deleted!" +
+                        "It can be restored by using the \"restore\" panel");
+                alert.showAndWait();
+                handleUnprioritizedEvent(cell);
+
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "We could not find a new timeslot for this activity!\nIt will now be deleted!");
+                alert.showAndWait();
+                deleteActivity(cell);
+            }
+        }else{
+            //New time found. Remove animation.
+            //Display new time
+            //changeTime();  Fill out correctly
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "New time found!\n\n"+cell.getStartDate().toString()+ "  at  " +
+                    cell.getStartTime() + " -> " + cell.getEndTime());
+            alert.showAndWait();
+            changeTime(originalCell, cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+                    LocalTime.of(startTime, 0), LocalTime.of(endTime, 0));
         }
-        //New time found. Remove animation.
-        //changeTime();  Fill out correctly
-
-
     }
 
-    public Date getLastPossibleDate() {
-        //One month ahead
+    public Date getLastPossibleDate(Cell cell) {
+        //One month ahead of the event
         Calendar cal = Calendar.getInstance();
+        cal.setTime(cell.getStartDate());
         cal.set(Calendar.MONTH, 1);
         return cal.getTime();
     }
 
-    public void changeTimeLocally(Cell activity){
-
-    }
-
-    public Date getClosestLecture(Cell schoolWork){
-        Date date = new Date();
-        //Get from database, first lecture, where ID > schoolworkID, in same subject
-        //Get starttime and endtime, and date
+    public Date getClosestLecture(Event schoolWork) throws SQLException {
+        Date date;
         Calendar cal = Calendar.getInstance();
-
+        //Get from database, first lecture, where ID > schoolworkID, in same subject, where priority is 96 (lecture)
+        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode='"+schoolWork.getSubjectCode()+"'" +
+                "AND eventID > "+schoolWork.getID()+" AND priority=96 LIMIT 1");
+        m_result_set.next();
+        date = new Date(m_result_set.getDate("startDate").getTime());
+        Integer startTime = Integer.parseInt(m_result_set.getString("startTime"));
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, startTime);
         date = cal.getTime();
         return date;
 
     }
 
-    public boolean detectCollision(Cell activity){
-
+    public boolean detectCollision(Cell cell){
+        System.out.println("DETECT COLLISION");
+        for(Cell placedCell : scheduleWithoutCollision){
+            if(new TimeComparator().compare(placedCell, cell)){
+                return false;
+            }
+        }
         return true;
     }
 
     public void rescheduleManual(Cell activity) throws SQLException, IOException, ParseException {
         setupDialog(activity);
+        CalendarController.getInstance().refresh();
     }
 
     public void resetDroppedEvents() throws SQLException {
@@ -483,7 +523,6 @@ public class SuperSorter extends Connect {
         if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
             System.out.println("OK IS PRESSED!");
             changeTime(activity, datePicker.getValue(), startTimePicker.getTime(), endTimePicker.getTime());
-            CalendarController.getInstance().refresh();
         }
     }
 
@@ -526,7 +565,7 @@ public class SuperSorter extends Connect {
         return prioritizedSchedule;
     }
 
-    public Set<Cell> getScheduleWithoutCollision() {
+    public List<Cell> getScheduleWithoutCollision() {
         return scheduleWithoutCollision;
     }
 

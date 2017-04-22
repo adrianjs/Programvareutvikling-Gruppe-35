@@ -34,6 +34,12 @@ public class Event extends Cell {
         super.setType("event");
     }
 
+    public Event(Event event){
+        super(event);
+        this.hoursOfWork = event.getHoursOfWork();
+        this.subjectCode = event.getSubjectCode();
+    }
+
     public int getHoursOfWork() {
         return hoursOfWork;
     }

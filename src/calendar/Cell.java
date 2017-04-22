@@ -62,6 +62,20 @@ public class Cell {
         this.repeating = repeating;
         this.ID = ID;
         this.color = color;
+    }
+
+    public Cell(Cell cell){
+        this.startDate = cell.getStartDate();
+        this.endDate = cell.getEndDate();
+        this.startTime = cell.getStartTime();
+        this.endTime = cell.getEndTime();
+        this.name = cell.getName();
+        this.description = cell.getDescription();
+        this.slotPriority = cell.getSlotPriority();
+        this.repeating = cell.isRepeating();
+        this.ID = cell.getID();
+        this.color = cell.getColor();
+        this.type = cell.getType();
 
     }
 

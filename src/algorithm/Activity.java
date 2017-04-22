@@ -27,4 +27,8 @@ public class Activity extends Cell {
         super.setType("activity");
     }
 
+    public Activity(Activity activity){
+        super(activity);
+    }
+
 }
