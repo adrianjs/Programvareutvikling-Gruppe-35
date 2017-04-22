@@ -107,14 +107,14 @@ public class CalendarController extends Connect implements Initializable{
 
     //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
-	private List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
+	public List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
 	public List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
 	private  Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
-	private List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
+	public List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
 	private List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
 	private Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
 	public Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
@@ -541,7 +541,7 @@ public class CalendarController extends Connect implements Initializable{
      * Go to the given day when month gridpane is clicked. Loads activities from this day in
      * @param tall integer clicked.
      */
-	private void monthClicked(int tall){
+	public void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();
         try{
@@ -550,8 +550,10 @@ public class CalendarController extends Connect implements Initializable{
 			int year = date.getYear();
 			int month = date.getMonthValue();
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
-			setNewDate2(date1);
 			tabs.getSelectionModel().select(dayTab);
+			setNewDate2(date1);
+
+
 		}catch (Exception e){
 			System.out.println("");
 		}
@@ -991,113 +993,113 @@ public class CalendarController extends Connect implements Initializable{
 
 
     //When days in monthsTab is clicked.
-    @FXML private void handleCalendarClick1(){
+    @FXML void handleCalendarClick1(){
         monthClicked(1);
     }
-    @FXML private void handleCalendarClick2(){ monthClicked(2); }
-    @FXML private void handleCalendarClick3(){
+    @FXML void handleCalendarClick2(){ monthClicked(2); }
+    @FXML void handleCalendarClick3(){
         monthClicked(3);
     }
-    @FXML private void handleCalendarClick4(){
+    @FXML void handleCalendarClick4(){
         monthClicked(4);
     }
-    @FXML private void handleCalendarClick5(){
+    @FXML void handleCalendarClick5(){
         monthClicked(5);
     }
-    @FXML private void handleCalendarClick6(){
+    @FXML void handleCalendarClick6(){
         monthClicked(6);
     }
-    @FXML private void handleCalendarClick7(){
+    @FXML void handleCalendarClick7(){
         monthClicked(7);
     }
-    @FXML private void handleCalendarClick8(){
+    @FXML void handleCalendarClick8(){
         monthClicked(8);
     }
-    @FXML private void handleCalendarClick9(){
+    @FXML void handleCalendarClick9(){
         monthClicked(9);
     }
-    @FXML private void handleCalendarClick10(){
+    @FXML void handleCalendarClick10(){
         monthClicked(10);
     }
-    @FXML private void handleCalendarClick11(){
+    @FXML void handleCalendarClick11(){
         monthClicked(11);
     }
-    @FXML private void handleCalendarClick12(){
+    @FXML void handleCalendarClick12(){
         monthClicked(12);
     }
-    @FXML private void handleCalendarClick13(){
+    @FXML void handleCalendarClick13(){
         monthClicked(13);
     }
-    @FXML private void handleCalendarClick14(){
+    @FXML void handleCalendarClick14(){
         monthClicked(14);
     }
-    @FXML private void handleCalendarClick15(){
+    @FXML void handleCalendarClick15(){
         monthClicked(15);
     }
-    @FXML private void handleCalendarClick16(){
+    @FXML void handleCalendarClick16(){
         monthClicked(16);
     }
-    @FXML private void handleCalendarClick17(){
+    @FXML void handleCalendarClick17(){
         monthClicked(17);
     }
-    @FXML private void handleCalendarClick18(){
+    @FXML void handleCalendarClick18(){
         monthClicked(18);
     }
-    @FXML private void handleCalendarClick19(){
+    @FXML void handleCalendarClick19(){
         monthClicked(19);
     }
-    @FXML private void handleCalendarClick20(){
+    @FXML void handleCalendarClick20(){
         monthClicked(20);
     }
-    @FXML private void handleCalendarClick21(){
+    @FXML void handleCalendarClick21(){
         monthClicked(21);
     }
-    @FXML private void handleCalendarClick22(){
+    @FXML void handleCalendarClick22(){
         monthClicked(22);
     }
-    @FXML private void handleCalendarClick23(){
+    @FXML void handleCalendarClick23(){
         monthClicked(23);
     }
-    @FXML private void handleCalendarClick24(){
+    @FXML void handleCalendarClick24(){
         monthClicked(24);
     }
-    @FXML private void handleCalendarClick25(){
+    @FXML void handleCalendarClick25(){
         monthClicked(25);
     }
-    @FXML private void handleCalendarClick26(){
+    @FXML void handleCalendarClick26(){
         monthClicked(26);
     }
-    @FXML private void handleCalendarClick27(){
+    @FXML void handleCalendarClick27(){
         monthClicked(27);
     }
-    @FXML private void handleCalendarClick28(){
+    @FXML void handleCalendarClick28(){
         monthClicked(28);
     }
-    @FXML private void handleCalendarClick29(){
+    @FXML void handleCalendarClick29(){
         monthClicked(29);
     }
-    @FXML private void handleCalendarClick30(){
+    @FXML void handleCalendarClick30(){
         monthClicked(30);
     }
-    @FXML private void handleCalendarClick31(){
+    @FXML void handleCalendarClick31(){
         monthClicked(31);
     }
-    @FXML private void handleCalendarClick32(){
+    @FXML void handleCalendarClick32(){
         monthClicked(32);
     }
-    @FXML private void handleCalendarClick33(){
+    @FXML void handleCalendarClick33(){
         monthClicked(33);
     }
-    @FXML private void handleCalendarClick34(){
+    @FXML void handleCalendarClick34(){
         monthClicked(34);
     }
-    @FXML private void handleCalendarClick35(){
+    @FXML void handleCalendarClick35(){
         monthClicked(35);
     }
-    @FXML private void handleCalendarClick36(){
+    @FXML void handleCalendarClick36(){
         monthClicked(36);
     }
-    @FXML private void handleCalendarClick37(){
+    @FXML void handleCalendarClick37(){
         monthClicked(37);
     }
 

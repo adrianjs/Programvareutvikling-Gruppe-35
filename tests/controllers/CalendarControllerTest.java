@@ -105,6 +105,12 @@ public class CalendarControllerTest {
         for(Label testL : con.timeToTime){
             assertEquals("", testL.getText());
         }
+
+        con.clearTimeSlots();
+        assertEquals(0, con.dayTabLabels.size());
+        assertEquals(0, con.cellsAtCurrentDate.size());
+        assertEquals(0, con.dayTabLabels.size());
+        assertEquals(0, con.labelMappedCells.size());
     }
 
 
@@ -136,7 +142,9 @@ public class CalendarControllerTest {
     @Test
     public void testSetDate(){
         Date date = new Date();
+        con.setDate();
         assertEquals(date.getDate(), con.getChosenDate().getDate());
+
 
 
     }
@@ -178,6 +186,66 @@ public class CalendarControllerTest {
 
     }
 
+    @Test
+    public void testMonthClicked(){
+        for( int i = 1; i <= 37 ; i++){
+            Label testLabel = new Label();
+            testLabel.setText(""+i);
+            con.monthLabels.add(testLabel);
+            con.monthClicked(i);
+
+        }
+
+
+        assertEquals(false, con.monthTab.isSelected());
+        assertEquals(false, con.weekTab.isSelected());
+        assertEquals(false, con.dayTab.isSelected());
+
+
+        con.handleCalendarClick1();
+        con.handleCalendarClick2();
+        con.handleCalendarClick3();
+        con.handleCalendarClick4();
+        con.handleCalendarClick5();
+        con.handleCalendarClick6();
+        con.handleCalendarClick7();
+        con.handleCalendarClick8();
+        con.handleCalendarClick9();
+        con.handleCalendarClick10();
+        con.handleCalendarClick11();
+        con.handleCalendarClick12();
+        con.handleCalendarClick13();
+        con.handleCalendarClick14();
+        con.handleCalendarClick15();
+        con.handleCalendarClick16();
+        con.handleCalendarClick17();
+        con.handleCalendarClick18();
+        con.handleCalendarClick19();
+        con.handleCalendarClick20();
+        con.handleCalendarClick21();
+        con.handleCalendarClick22();
+        con.handleCalendarClick23();
+        con.handleCalendarClick24();
+        con.handleCalendarClick25();
+        con.handleCalendarClick26();
+        con.handleCalendarClick27();
+        con.handleCalendarClick28();
+        con.handleCalendarClick29();
+        con.handleCalendarClick30();
+        con.handleCalendarClick31();
+        con.handleCalendarClick32();
+        con.handleCalendarClick33();
+        con.handleCalendarClick34();
+        con.handleCalendarClick35();
+        con.handleCalendarClick36();
+        con.handleCalendarClick37();
+
+
+
+
+
+
+    }
 
 
 
