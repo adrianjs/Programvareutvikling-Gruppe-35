@@ -4,10 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" line="47" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="flere tester">
+    <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -174,8 +172,8 @@
           <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="470">
-                  <caret line="552" column="52" lean-forward="false" selection-start-line="552" selection-start-column="52" selection-end-line="552" selection-end-column="52" />
+                <state relative-caret-position="95">
+                  <caret line="818" column="92" lean-forward="true" selection-start-line="818" selection-start-column="92" selection-end-line="818" selection-end-column="92" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#32884#32885#0" expanded="true" />
@@ -1245,14 +1243,7 @@
       <workItem from="1492673147060" duration="29760000" />
       <workItem from="1492854029380" duration="5020000" />
       <workItem from="1492860928983" duration="427000" />
-      <workItem from="1492864179045" duration="16892000" />
-    </task>
-    <task id="LOCAL-00018" summary="fixed possible to close add.fxml from cancel-button">
-      <created>1488966033295</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1488966033295</updated>
+      <workItem from="1492864179045" duration="16945000" />
     </task>
     <task id="LOCAL-00019" summary="Possible to login as coursecoordinator">
       <created>1488968929727</created>
@@ -1590,7 +1581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492887619946</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="flere tester">
+      <created>1492890059558</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1492890059558</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1626,7 +1624,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="552266000" />
+    <option name="totallyTimeSpent" value="552319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1639,7 +1637,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1654,15 +1652,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23366337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23366337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24059406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32574257" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29233226" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29233226" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32772276" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30298188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30298188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -2035,7 +2033,7 @@
         <state relative-caret-position="234">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2080,9 +2078,9 @@
         <state relative-caret-position="238">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1113#1114#0" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+            <element signature="e#1159#1160#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2124,16 +2122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="680" column="50" lean-forward="false" selection-start-line="680" selection-start-column="46" selection-end-line="680" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3045">
@@ -2157,6 +2145,32 @@
         <state relative-caret-position="525">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="818" column="92" lean-forward="true" selection-start-line="818" selection-start-column="92" selection-end-line="818" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#32884#32885#0" expanded="true" />
+            <element signature="e#32915#32916#0" expanded="true" />
+            <element signature="e#32954#32955#0" expanded="true" />
+            <element signature="e#32985#32986#0" expanded="true" />
+            <element signature="e#33024#33025#0" expanded="true" />
+            <element signature="e#33055#33056#0" expanded="true" />
+            <element signature="e#33094#33095#0" expanded="true" />
+            <element signature="e#33125#33126#0" expanded="true" />
+            <element signature="e#33164#33165#0" expanded="true" />
+            <element signature="e#33195#33196#0" expanded="true" />
+            <element signature="e#33234#33235#0" expanded="true" />
+            <element signature="e#33265#33266#0" expanded="true" />
+            <element signature="e#33304#33305#0" expanded="true" />
+            <element signature="e#33335#33336#0" expanded="true" />
+            <element signature="e#33375#33376#0" expanded="true" />
+            <element signature="e#33407#33408#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
