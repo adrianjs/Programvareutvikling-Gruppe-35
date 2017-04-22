@@ -1,26 +1,16 @@
 package controllers;
 
-import java.awt.*;
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.*;
-import java.util.GregorianCalendar;
-import java.util.List;
-
 import algorithm.Activity;
 import algorithm.Event;
 import algorithm.SuperSorter;
-import calendar.*;
 import calendar.Cell;
-import com.jfoenix.controls.*;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import calendar.TimeInterval;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXTabPane;
 import database.Connect;
 import javafx.collections.ObservableList;
-import javafx.css.Styleable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,21 +18,28 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Tab;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import layout.*;
-//import layout.eventButtonWeek.activityButton;
+import layout.User;
 import layout.eventButton;
-import org.controlsfx.tools.Platform;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.*;
+
+//import layout.eventButtonWeek.activityButton;
 
 public class CalendarController extends Connect implements Initializable{
 
     private Date chosenDate = new Date();
-    private Date thisDate = new Date();
+	private Date thisDate = new Date();
 	private SuperSorter superSorter = new SuperSorter();
 
 	@FXML GridPane day; //DAY PANE
@@ -62,7 +59,7 @@ public class CalendarController extends Connect implements Initializable{
 
 
 	//Labels for Day pane.
-	@FXML private Label thisday;
+	@FXML Label thisday;
 
 	//Labels week-Pane
 
@@ -73,10 +70,10 @@ public class CalendarController extends Connect implements Initializable{
 	@FXML JFXTabPane tabs;
 
     //Date
-	@FXML private JFXDatePicker date;
+	@FXML JFXDatePicker date;
 
 	//To set a new scene.
-	private layout.Calendar cal = new layout.Calendar();
+	public layout.Calendar cal = new layout.Calendar();
 
     // List of labels in day Tab...
     @FXML List<Label> timeToTime = new ArrayList<>();
@@ -88,13 +85,13 @@ public class CalendarController extends Connect implements Initializable{
 
     //WeekTab style-variables
 	private int dayOfMonth = 0;
-	@FXML private Label monday;
-	@FXML private Label tuesday;
-	@FXML private Label wednesday;
-	@FXML private Label thursday;
-	@FXML private Label friday;
-	@FXML private Label saturday;
-	@FXML private Label sunday;
+	@FXML Label monday;
+	@FXML Label tuesday;
+	@FXML Label wednesday;
+	@FXML Label thursday;
+	@FXML Label friday;
+	@FXML Label saturday;
+	@FXML Label sunday;
 
 
     //------------------------Lister som brukes til å printe ut til Days----------------------------------------.
@@ -102,7 +99,7 @@ public class CalendarController extends Connect implements Initializable{
 
 
     //------------------------Lister som brukes til å printe ut til weeks----------------------------------------.
-    private ArrayList<Cell> cells = new ArrayList<>();//liste over activitys som skal inn i kalenderen
+    public ArrayList<Cell> cells = new ArrayList<>();//liste over activitys som skal inn i kalenderen
     private ArrayList<eventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
@@ -111,7 +108,7 @@ public class CalendarController extends Connect implements Initializable{
     //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
 	private List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
-	private List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
+	public List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
 	private  Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
@@ -129,7 +126,7 @@ public class CalendarController extends Connect implements Initializable{
     //Mapping used in to weekTab.
     private HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
     private Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
-    private ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
+    public ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
     public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
 
     //Methods starts here.
@@ -323,7 +320,7 @@ public class CalendarController extends Connect implements Initializable{
 	/**
 	 * Set changes the color of today so you know which day it is.
 	 */
-    private void timeLayout(){
+    public void timeLayout(){
 		Date date = new Date();
         LocalDate ldate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         int dayOfWeek = ldate.getDayOfWeek().getValue();
@@ -336,7 +333,7 @@ public class CalendarController extends Connect implements Initializable{
         saturday.setStyle("-fx-background-color: white;");
         sunday.setStyle("-fx-background-color: white;");
 
-        if(weekCalendarList.contains(ldate)){
+		if(weekCalendarList.contains(ldate)){
             if (dayOfWeek == 1){
                 monday.setStyle("-fx-background-color: red;" +
 						"-fx-text-fill: white;");
@@ -564,7 +561,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Sets the date when application starts.
      */
-	private void setDate(){
+	public void setDate(){
         Date input = new Date();
         LocalDate dato = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         date.setValue(dato);

@@ -3,14 +3,12 @@ package controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import layout.User;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -24,6 +22,8 @@ import static org.junit.Assert.assertEquals;
 public class LoginControllerTest {
 
     LoginController con;
+    @Rule
+    public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
 
     @Before
     public void setup(){
@@ -35,6 +35,7 @@ public class LoginControllerTest {
         con.openCalendar   = new JFXButton();
         con.loginError     = new Label();
         con.snackBarPane   = new AnchorPane();
+
     }
 
 
@@ -51,9 +52,7 @@ public class LoginControllerTest {
 
     @Test
     public void testValidateLogin(){
-        con.user.setUsername("bull");
-        con.user.setPassword("123");
-        assertEquals(null, con.validateLogin());
+
         con.loginField.setText("larsmade@stud.ntnu.no");
         con.passwordField.setText("123");
         con.user.setUsername("larsmade@stud.ntnu.no");
@@ -63,9 +62,7 @@ public class LoginControllerTest {
 
     @Test
     public void testLogin() throws IOException, SQLException {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+
                 try {
                     con.loginField.setText("larsmade@stud.ntnu.no");
                     con.passwordField.setText("123");
@@ -85,8 +82,7 @@ public class LoginControllerTest {
                 } catch(Exception e){
                     e.printStackTrace();
                 }
-            }
-        });
+
 
 
 

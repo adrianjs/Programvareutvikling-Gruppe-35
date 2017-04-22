@@ -88,7 +88,7 @@ public class TeacherCalendarControllerTest {
     }
 
     @Test
-    public void testSetAddField() throws IOException{
+    public void testSetAddField() throws IOException {
         con.setAddField();
         assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/addEvent.fxml")).getClass(), con.add.getClass());
         assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml")).getClass(), con.feedback.getClass());

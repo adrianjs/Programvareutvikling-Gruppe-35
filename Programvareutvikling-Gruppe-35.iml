@@ -34,5 +34,7 @@
     <orderEntry type="library" exported="" name="javax.json-api-1.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
     <orderEntry type="library" exported="" name="controlsfx-8.40 (2)" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="junit-jupiter-api-5.0.0-M3" level="project" />
+    <orderEntry type="library" exported="" name="opentest4j-1.0.0-M1" level="project" />
   </component>
 </module>
