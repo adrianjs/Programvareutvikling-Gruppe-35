@@ -59,7 +59,7 @@ public class AddSubjectController extends Connect implements Initializable{
                 setOfSubjects.add(chosenSubject); //Adding new chosen subject
                 addStudentSubject(chosenSubject);
                 User.getInstance().updateSubjects();
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was added to your subjects!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString().split("-")[0] + " was added to your subjects!"));
                 bar.setId("2");
                 try {
                     CalendarController.getInstance().refresh();
@@ -83,7 +83,7 @@ public class AddSubjectController extends Connect implements Initializable{
             bar = new JFXSnackbar(anchorPane);
             if(subject.getCharacters().toString().length() != 0){
                 bar.setId("4");
-                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString() + " was removed!"));
+                bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString().split("-")[0] + " was removed!"));
                 try {
                     CalendarController.getInstance().refresh();
                 } catch (NullPointerException e){
