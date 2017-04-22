@@ -77,18 +77,17 @@ public class RestoreController extends Connect implements Initializable{
     }
 
     public void restoreChosen() throws SQLException, ParseException, IOException {
-        List<JFXCheckBox> selectedBoxes = new ArrayList<>();
+        List<CheckBox> selectedBoxes = new ArrayList<>();
         for(CheckBox box : checkBoxes){
-            if(!box.isSelected()){
-                checkBoxes.remove(box);
+            if(box.isSelected()){
+                selectedBoxes.add(box);
             }
         }
-        for(JFXCheckBox box : checkBoxes){
-            if(box.isSelected()){
-                for(Cell event : events){
-                    if(box.getId().equals(String.valueOf(event.getID()))){
-                        superSorter.resetDroppedEvent(event);
-                    }
+        checkBoxes.removeAll(selectedBoxes);
+        for(CheckBox box : selectedBoxes){
+            for(Cell event : events){
+                if(box.getId().equals(String.valueOf(event.getID()))){
+                    superSorter.resetDroppedEvent(event);
                 }
             }
         }

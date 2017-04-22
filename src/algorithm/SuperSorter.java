@@ -1,25 +1,18 @@
 package algorithm;
 
 import calendar.Cell;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.skins.JFXTimePickerContent;
 import controllers.CalendarController;
 import database.Connect;
 import javafx.geometry.*;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import layout.*;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -225,14 +218,14 @@ public class SuperSorter extends Connect {
                     if(collisionCell.getType().equals("activity")){
                         handleUnprioritizedActivity(collisionCell);
                     }else{
-                        handleUnprioritezedEvent(collisionCell);
+                        handleUnprioritizedEvent(collisionCell);
                     }
                 }
                 else{
                     if(currentCell.getType().equals("activity")){
                         handleUnprioritizedActivity(currentCell);
                     }else{
-                        handleUnprioritezedEvent(currentCell);
+                        handleUnprioritizedEvent(currentCell);
                     }
                 }
             }
@@ -280,14 +273,14 @@ public class SuperSorter extends Connect {
                 handleUnprioritizedActivity(collisionCell);
                 deleteActivity(collisionCell);
             }else{
-                handleUnprioritezedEvent(collisionCell);
+                handleUnprioritizedEvent(collisionCell);
             }
         }else{
             //collisionCell/placedCell was chosen
             if(collisionCell.getType().equals("activity")){
                 handleUnprioritizedActivity(currentCell);
             }else{
-                handleUnprioritezedEvent(currentCell);
+                handleUnprioritizedEvent(currentCell);
             }
         }
     }
@@ -322,7 +315,7 @@ public class SuperSorter extends Connect {
         }
     }
 
-    public void handleUnprioritezedEvent(Cell event) throws SQLException {
+    public void handleUnprioritizedEvent(Cell event) throws SQLException {
         stmt = conn.createStatement();
         stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
@@ -335,16 +328,103 @@ public class SuperSorter extends Connect {
         alert.showAndWait();
     }
 
-    public void findNewTime(Cell activity){
+    public void findNewTime(Cell activity) throws SQLException {
+        Date originalStartDate = activity.getStartDate();
+        Date originalEndDate = activity.getEndDate();
+        String originalStartTime = activity.getStartTime();
+        String originalEndTime = activity.getEndTime();
+
+        Date today = new Date();
+        Date currentDate = activity.getStartDate();
+        Date lastPossible;
+        if(activity.getType().equals("event") && activity.getSlotPriority()==97){
+            lastPossible = getClosestLecture(activity);
+        }else {lastPossible = getLastPossibleDate();}
+
+        Integer startTime = Integer.parseInt(activity.getStartTime());
+        Integer endTime = Integer.parseInt(activity.getEndTime());
+        Integer diff = endTime - startTime;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(currentDate);
+        cal.set(Calendar.HOUR_OF_DAY, startTime);
         boolean validTime = false;
+        boolean direction = false;
 
         //Display animation
-        while(!validTime){
-            //Change time, Dont set after 20 or before 08, backwards first, then forward.
+        while(!validTime && !direction){
+            //Change time, Dont set after 20 or before 08, backwards first
+            if(startTime >=9){
+                startTime--;
+                endTime--;
+            } else{
+                endTime = 20;
+                startTime = endTime - diff;
+                cal.set(Calendar.DAY_OF_MONTH, -1);
+
+            }
+            cal.set(Calendar.HOUR_OF_DAY, startTime);
+            activity.setStartTime(startTime.toString());
+            activity.setEndTime(endTime.toString());
+            activity.setStartDate(cal.getTime());
+            cal.set(Calendar.HOUR_OF_DAY, endTime);
+            activity.setEndDate(cal.getTime());
 
             validTime = detectCollision(activity);
+
+            //If reached today, then turn.
+            if(activity.getStartDate().before(today)){
+                //Turns the direction to go
+                direction = true;
+            }
+        }
+
+        activity.setStartDate(originalStartDate);
+        activity.setEndDate(originalEndDate);
+        activity.setStartTime(originalStartTime);
+        activity.setEndTime(originalEndTime);
+
+        while(!validTime && direction){
+            if(endTime<=19){
+                startTime++;
+                endTime++;
+            }
+            else{
+                startTime = 8;
+                endTime = startTime + diff;
+            }
+            validTime = detectCollision(activity);
+        }
+
+        //If no new time (might happen, only option is to delete)
+        if(activity.getStartDate().after(lastPossible)){
+            //TODO: Prompt with that it will be deleted
+            //deleteActivity(activity);
         }
         //New time found. Remove animation.
+        //changeTime();  Fill out correctly
+
+
+    }
+
+    public Date getLastPossibleDate() {
+        //One month ahead
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.MONTH, 1);
+        return cal.getTime();
+    }
+
+    public void changeTimeLocally(Cell activity){
+
+    }
+
+    public Date getClosestLecture(Cell schoolWork){
+        Date date = new Date();
+        //Get from database, first lecture, where ID > schoolworkID, in same subject
+        //Get starttime and endtime, and date
+        Calendar cal = Calendar.getInstance();
+
+        date = cal.getTime();
+        return date;
 
     }
 
