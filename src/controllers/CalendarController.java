@@ -1,5 +1,6 @@
 package controllers;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -19,6 +20,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import database.Connect;
 import javafx.collections.ObservableList;
+import javafx.css.Styleable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,8 +30,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import layout.*;
 //import layout.eventButtonWeek.activityButton;
@@ -39,6 +42,7 @@ import org.controlsfx.tools.Platform;
 public class CalendarController extends Connect implements Initializable{
 
     private Date chosenDate = new Date();
+    private Date thisDate = new Date();
 	private SuperSorter superSorter = new SuperSorter();
 
 	@FXML GridPane day; //DAY PANE
@@ -78,9 +82,19 @@ public class CalendarController extends Connect implements Initializable{
     @FXML List<Label> timeToTime = new ArrayList<>();
 
     //CountVariables
-    private int teller = 0;
+    private int counter = 0;
     private int dayClicked = 0; //Day clicked on in MonthTab
     private User user = User.getInstance();
+
+    //WeekTab style-variables
+	private int dayOfMonth = 0;
+	@FXML private Label monday;
+	@FXML private Label tuesday;
+	@FXML private Label wednesday;
+	@FXML private Label thursday;
+	@FXML private Label friday;
+	@FXML private Label saturday;
+	@FXML private Label sunday;
 
 
     //------------------------Lister som brukes til å printe ut til Days----------------------------------------.
@@ -171,29 +185,36 @@ public class CalendarController extends Connect implements Initializable{
 		}
 	}
 
+	/**
+	 * On action from next button in calendar.fxml, jumps to next day/week/month.
+	 */
 	public void next(){
-		LocalDate dato = date.getValue();
+		LocalDate locDate = date.getValue();
 		if(dayTab.isSelected()){
-			dato = dato.plusDays(1);
+			locDate = locDate.plusDays(1);
 		}else if(weekTab.isSelected()){
-    		dato = dato.plusWeeks(1);
+    		locDate = locDate.plusWeeks(1);
 		}else{
-			dato = dato.plusMonths(1);
+			locDate = locDate.plusMonths(1);
 		}
-		setNewDate2(dato);
-		date.setValue(dato);
+		setNewDate2(locDate);
+		date.setValue(locDate);
 	}
+
+	/**
+	 * On action from previous button in calendar.fxml, jumps to previos day/week/month
+	 */
 	public void previous(){
-		LocalDate dato = date.getValue();
+		LocalDate locDate = date.getValue();
 		if(dayTab.isSelected()){
-			dato = dato.minusDays(1);
+			locDate = locDate.minusDays(1);
 		}else if(weekTab.isSelected()){
-			dato = dato.minusWeeks(1);
+			locDate = locDate.minusWeeks(1);
 		}else{
-			dato = dato.minusMonths(1);
+			locDate = locDate.minusMonths(1);
 		}
-		setNewDate2(dato);
-		date.setValue(dato);
+		setNewDate2(locDate);
+		date.setValue(locDate);
 	}
 
     /**
@@ -212,7 +233,6 @@ public class CalendarController extends Connect implements Initializable{
 	public void restore() throws IOException {
         //TODO: Make Restore work
 		cal.changeScene("/resources/fxml/restore.fxml", "Restore dropped events");
-		System.out.println("RESTORE");
 	}
 
     /**
@@ -220,7 +240,6 @@ public class CalendarController extends Connect implements Initializable{
      * @throws IOException if fxml fails to load.
      */
 	public void addSubject() throws IOException {
-		//AddSubjectController a = cal.changeToAddSubject("../resources/addSubject.fxml", "Add subject");
 		cal.changeScene("/resources/fxml/addSubject.fxml", "Manage subjects");
 	}
 
@@ -234,7 +253,7 @@ public class CalendarController extends Connect implements Initializable{
 		Parent load = loader.load();
 		Scene scene = new Scene(load);
 		s.setScene(scene);
-		CalendarController.instance = null; //Set instance to null so you can log in again as an other user.
+		CalendarController.instance = null; //Sets instance to null so new user can log in.
 	}
 
 	/**
@@ -262,11 +281,11 @@ public class CalendarController extends Connect implements Initializable{
     public void slidePane(){
 		drawer.setSidePane(botto);
 		if(drawer.isShown()){
-            askButton.setText("Open Botto");
+            askButton.setText("Open Bot");
             drawer.close();
         }else{
             drawer.open();
-            askButton.setText("Close Botto");
+            askButton.setText("Close Bot");
         }
     }
 
@@ -282,46 +301,34 @@ public class CalendarController extends Connect implements Initializable{
 	 * Set new date when date in datapicker is changed.
 	 */
 	public void setNewDate(){
-        LocalDate dato = date.getValue();
-        setNewDate2(dato);
-
+        LocalDate locDate = date.getValue();
+        setNewDate2(locDate);
 	}
 
 	/**
 	 *Set chosendate to the right date, and sets the calendar to the right position.
-	 * @param dato Takes in the localdate from the setNewDate Method.
+	 * @param locDate Takes in the localdate from the setNewDate Method.
 	 */
-	private void setNewDate2(LocalDate dato){
-        changeDate(dato);
-        chosenDate = Date.from(dato.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        date.setValue(dato);
+	private void setNewDate2(LocalDate locDate){
+        changeDate(locDate);
+        chosenDate = Date.from(locDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        date.setValue(locDate);
+        changeDate(locDate);
         setupDayTab();
         mapMonthTab();
         insertCells();
         timeLayout();
     }
 
-
-	private int dayOfMonth = 0;
-	@FXML private Label monday;
-	@FXML private Label tuesday;
-	@FXML private Label wednesday;
-	@FXML private Label thursday;
-	@FXML private Label friday;
-	@FXML private Label saturday;
-	@FXML private Label sunday;
-
 	/**
 	 * Set changes the color of today so you know which day it is.
 	 */
     private void timeLayout(){
-		int dayOfWeek = 0;
-        Date date = new Date();
+		Date date = new Date();
         LocalDate ldate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        dayOfWeek = ldate.getDayOfWeek().getValue();
+        int dayOfWeek = ldate.getDayOfWeek().getValue();
         dayOfMonth = ldate.getDayOfMonth();
-
-        monday.setStyle("-fx-background-color: white;");
+		monday.setStyle("-fx-background-color: white;");
         tuesday.setStyle("-fx-background-color: white;");
         wednesday.setStyle("-fx-background-color: white;");
         thursday.setStyle("-fx-background-color: white;");
@@ -354,15 +361,15 @@ public class CalendarController extends Connect implements Initializable{
             }
         }
     }
-	//Started to make methods to change veiw when minicalendar is changed.
+
 	/**
 	 * The new date set from datePicker adjusted to fit monthOrganizer
-	 * @param dato date from setNewDate2.
+	 * @param locDate date from setNewDate2.
 	 */
-	private void changeDate(LocalDate dato){
-		String dato1 = dato.toString();
-		thisday.setText(dato1);
-        String[] split = dato1.split("-");
+	private void changeDate(LocalDate locDate){
+		String choseDate = locDate.toString();
+		thisday.setText(choseDate);
+        String[] split = choseDate.split("-");
         String year = split[0];
 		String month = split[1];
 		String day = split[2];
@@ -370,23 +377,23 @@ public class CalendarController extends Connect implements Initializable{
 		int year1 = Integer.parseInt(year);
 		int month1 = removeZero(month);
 		int day1 = removeZero(day);
-		if(teller == 0){//Only needed to do this once per instance.
+		if(counter == 0){//Only needed to do this once per instance.
 			addLabelsToList();
-			teller++;
+			counter++;
 		}
         monthOrganizer(year1, month1-1, day1);
 	}
 
 	/**
 	 * Remove 0 if it is first in the string.
-	 * @param tall String formed as a number
+	 * @param number String formed as a number
 	 * @return converted string to int.
 	 */
-	public int removeZero(String tall){
-        if(tall.charAt(0) == '0'){
-			return Character.getNumericValue(tall.charAt(1));
+	public int removeZero(String number){
+        if(number.charAt(0) == '0'){
+			return Character.getNumericValue(number.charAt(1));
 		}
-		return Integer.parseInt(tall);
+		return Integer.parseInt(number);
 	}
 
 
@@ -428,22 +435,26 @@ public class CalendarController extends Connect implements Initializable{
         int lastDateOfMonth = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
         weekOrganizer(year, month+1, day, weekOfMonth, dayOfWeek);
         //Setting the month dates to right place.
-		int tall = 1;
+		int number = 1;
 		for(int i = 0; i < monthLabels.size(); i++) {
-			if ((i >= firstDay) && (tall <= lastDateOfMonth)) {
-				monthLabels.get(i).setText(Integer.toString(tall));
-				monthLabels.get(i).setStyle("-fx-background-color: white;");
+			if ((i >= firstDay) && (number <= lastDateOfMonth)) {
+				monthLabels.get(i).setText(Integer.toString(number));
+				monthLabels.get(i).setStyle("-fx-background-color: white;" +
+				"-fx-underline: true;");
 				LocalDate ldate = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 				int chosenMonthValue = ldate.getMonthValue();
-				Date thisDate = new Date();
 				LocalDate ldateThis = thisDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 				int thisMontValue = ldateThis.getMonthValue();
 
-				if(tall == dayOfMonth && chosenMonthValue==thisMontValue){
+				if(number == dayOfMonth && chosenMonthValue == thisMontValue){
 				    monthLabels.get(i).setStyle("-fx-background-color: red;" +
-							"-fx-text-fill: white;");
+							"-fx-text-fill: white;" +
+							" -fx-border-radius: 40 40 40 40;" +
+							"-fx-background-radius: 40 40 40 40;" +
+							"-fx-underline: true;");
+				    monthLabels.get(i).setPadding(new Insets(2,4,2,4));
                 }
-                tall++;
+                number++;
             } else {
 				monthLabels.get(i).setText("");
             }
@@ -536,13 +547,18 @@ public class CalendarController extends Connect implements Initializable{
 	private void monthClicked(int tall){
 	    dayClicked = tall; //So the value can be used in WatchDayMonthTabController.
         String day = monthLabels.get(tall-1).getText();
-        int dayInt = Integer.parseInt(day);
-        LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        LocalDate date1 = LocalDate.of(year, month, dayInt);
-        setNewDate2(date1);
-        tabs.getSelectionModel().select(dayTab);
+        try{
+			int dayInt = Integer.parseInt(day);
+			LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+			int year = date.getYear();
+			int month = date.getMonthValue();
+			LocalDate date1 = LocalDate.of(year, month, dayInt);
+			setNewDate2(date1);
+			tabs.getSelectionModel().select(dayTab);
+		}catch (Exception e){
+			System.out.println("");
+		}
+
     }
 
     /**
@@ -592,11 +608,11 @@ public class CalendarController extends Connect implements Initializable{
      * Sets up the daytab.
      */
     private void setupDayTab(){
-		System.out.println("Setup day tab");
+		//System.out.println("Setup day tab");
 		clearTimeSlots();
         //addTimeToTimeToList();
         try {
-			System.out.println("get cells");
+			//System.out.println("get cells");
 			getCells();
         } catch (ParseException e) {
             e.printStackTrace();
@@ -613,8 +629,7 @@ public class CalendarController extends Connect implements Initializable{
 	    //TODO: endre liste når supersort er ferdig
             cells = new ArrayList<>(superSorter.getScheduleWithoutCollision());
 			cellsAtCurrentDate = new ArrayList<>(superSorter.getScheduleWithoutCollision());
-
-    }
+	}
 
 	/**
 	 * Set hour of day to calendar object
@@ -746,45 +761,51 @@ public class CalendarController extends Connect implements Initializable{
 		System.out.println("Month");
 		ArrayList<LocalDate> usedDate = new ArrayList<>();
 
-		for (calendar.Cell cell : cellsAtCurrentDate){
+		for (calendar.Cell cell : cellsAtCurrentDate) {
 			LocalDate date;
-			if(cell.getStartDate().getClass() == java.sql.Date.class){
+			if (cell.getStartDate().getClass() == java.sql.Date.class) {
 				date = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			} else {
 				date = cell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 			}
-			for(Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()){
-				if(entry.getKey().equals(date)){
+			for (Map.Entry<LocalDate, AnchorPane> entry : dateMappedMonth.entrySet()) {
+				if (entry.getKey().equals(date)) {
 					//IF There is something with high priority --> Can change this.
-
-					if(usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())){
-                        Label oldLabel = (Label) entry.getValue().getChildren().get(1);
-                        entry.getValue().getChildren().remove(1);
-
-                        String[] checkLength = oldLabel.toString().split("\n");
-                        Label lab = new Label();
-                        String oldLabelToString = "\n";
-                        if(checkLength.length <= 3){
-                            oldLabelToString = oldLabel.getText() + "\n" + cell.getName();
-                        } else {
-                            for(int i = 1; i < 3; i ++){
-								oldLabelToString += checkLength[i] + "\n";
-
-                            }
-							oldLabelToString += "Click to get more...";
-                        }
+					if (usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())) {
+						Label oldLabel = (Label) entry.getValue().getChildren().get(1);
+						entry.getValue().getChildren().remove(1);
+						String[] checkLength = oldLabel.toString().split("\n");
+						Label lab = new Label();
+						String oldLabelToString = "\n";
+						if (checkLength.length <= 3) {
+							String cellName = cell.getName();
+							if (cellName.length() > 15) {
+								cellName = cellName.substring(0, 15) + "...";
+							}
+							oldLabelToString = oldLabel.getText() + "\n" + cellName;
+						} else {
+							for (int i = 1; i < 3; i++) {
+								String length = checkLength[i];
+								oldLabelToString += length + "\n";
+							}
+							oldLabelToString += "Click for more...";
+						}
 						lab.setText(oldLabelToString);
-                        lab.setStyle("-fx-text-fill: green;" +
+						lab.setStyle("-fx-text-fill: green;" +
 								"-fx-font-size: 14;");
-                        lab.setPadding(new Insets(0, 3, 0, 3));
-                        entry.getValue().getChildren().addAll(lab);
-                        eventLabels.add(lab);
-						if(!doubleDate.contains(entry.getKey())){
-                            doubleDate.add(entry.getKey());
-                        }
+						lab.setPadding(new Insets(0, 0, 0, 5));
+						entry.getValue().getChildren().addAll(lab);
+						eventLabels.add(lab);
+						if (!doubleDate.contains(entry.getKey())) {
+							doubleDate.add(entry.getKey());
+						}
 					} else {
 						Label lab = new Label();
-						lab.setText(" " + '\n' + cell.getName());
+						String cellName = cell.getName();
+						if(cellName.length() > 15){
+							cellName = cellName.substring(0,15) + "...";
+						}
+						lab.setText(" " + '\n' + cellName);
 						lab.setStyle("-fx-text-fill: green;" +
 								"-fx-font-size: 14;");
 						lab.setPadding(new Insets(0, 3, 0, 3));
@@ -849,7 +870,6 @@ public class CalendarController extends Connect implements Initializable{
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
 	}
-
 
 	//****Lars Lager Stuff til weekTab********************************************************************************
     /**

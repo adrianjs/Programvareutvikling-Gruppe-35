@@ -83,7 +83,11 @@ public class eventButton {
             });
 
             VBox root = new VBox(nameFiled, descriptionFiled,deleteBtn);
+            root.setPadding(new Insets(5,5,5,5));
+            root.setMargin(nameFiled, new Insets(0,0,8,0));
+            root.setMargin(descriptionFiled, new Insets(0,0,8,0));
             stage.setTitle(name);
+            stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
             Scene scene = new Scene(root, 450, 450);
             String css = this.getClass().getResource("/resources/css/eventButton.css").toExternalForm();
             scene.getStylesheets().add(css);
