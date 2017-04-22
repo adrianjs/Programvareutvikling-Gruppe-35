@@ -258,8 +258,8 @@ public class SuperSorter extends Connect {
                 "\n" + currentCell.getName() + " starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
                 "\n" + collisionCell.getName() + " starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
         dialog.getDialogPane().getButtonTypes().setAll(
-                new ButtonType(currentCell.getName(), ButtonBar.ButtonData.OK_DONE),
-                new ButtonType(collisionCell.getName(), ButtonBar.ButtonData.CANCEL_CLOSE)
+                new ButtonType(currentCell.getName() +"-"+ ((Event) currentCell).getSubjectCode(), ButtonBar.ButtonData.OK_DONE),
+                new ButtonType(collisionCell.getName() +"-"+ ((Event) collisionCell).getSubjectCode(), ButtonBar.ButtonData.CANCEL_CLOSE)
         );
 
         Optional<ButtonType> result = dialog.showAndWait();

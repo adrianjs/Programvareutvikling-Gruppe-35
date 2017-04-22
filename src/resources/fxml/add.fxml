@@ -50,9 +50,9 @@
                         <Label fx:id="errorDate" textFill="RED" />
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="130.0">
                                  <children>
-                                    <Label id="text" text="Priority:">
+                                    <Label id="text" text="Priority(5=High):">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
@@ -60,10 +60,10 @@
                                     <JFXComboBox id="cal" fx:id="priority" prefHeight="31.0" prefWidth="100.0" stylesheets="@../css/buttonStyle.css" />
                                  </children>
                                  <HBox.margin>
-                                    <Insets right="90.0" />
+                                    <Insets right="40.0" />
                                  </HBox.margin>
                               </VBox>
-                              <JFXCheckBox id="text" fx:id="everyWeek" text="Repeating" />
+                              <JFXCheckBox id="text" fx:id="everyWeek" text="Repeating weeks" />
                            </children>
                         </HBox>
                         <Label fx:id="priorityError" textFill="RED" />

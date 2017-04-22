@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CreateUser">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,12 +26,12 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="567.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" text="Firstname:">
+                              <Label alignment="CENTER" text="First name:">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin></Label>
                               <JFXTextField id="cal" fx:id="firstName" alignment="CENTER" maxWidth="400.0" prefHeight="29.0" prefWidth="195.0" />
-                              <Label alignment="CENTER" text="Lastname:">
+                              <Label alignment="CENTER" text="Last name:">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
