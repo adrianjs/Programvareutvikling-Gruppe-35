@@ -117,7 +117,7 @@ public class CalendarController extends Connect implements Initializable{
 	private List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
 	private List<AnchorPane> monthAnchorPanes = new ArrayList<>(); // Hentes fra GUI
 	private Map<Label, AnchorPane> dayMappedPane = new LinkedHashMap<>();// Lages i metode.
-	private Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
+	public Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
     private ArrayList<LocalDate> doubleDate = new ArrayList<>(); // holder telling på datoer som er 2 ganger;
 
 	//****************************************************//
@@ -398,7 +398,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
      * Add labels in monthTab to list.
      */
-	private void addLabelsToList(){
+	public void addLabelsToList(){
 		ObservableList<Node> children = month.getChildren();
 		for(Node child : children){
 			if(child.getClass().equals(AnchorPane.class)){
@@ -520,7 +520,7 @@ public class CalendarController extends Connect implements Initializable{
     /**
 	 * Mappes anchorpanes in monthtab to å localdate corresponding to the right label.
 	 */
-	private void mapMonthTab(){
+	public void mapMonthTab(){
         dayMappedPane.clear();
         dateMappedMonth.clear();
         LocalDate date = chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -573,7 +573,7 @@ public class CalendarController extends Connect implements Initializable{
 	/**
      * Clear all timeslots in dayPane
      */
-    private void clearTimeSlots(){
+    public void clearTimeSlots(){
 
     	for(Label label : timeToTime){
     	    label.setText("");

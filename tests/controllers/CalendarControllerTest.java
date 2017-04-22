@@ -66,12 +66,6 @@ public class CalendarControllerTest {
 
 
 
-
-
-
-
-
-
     }
 
     @Test
@@ -147,12 +141,26 @@ public class CalendarControllerTest {
 
     }
 
+    @Test
+    public void testAddLabelsToList(){
+
+        con.addLabelsToList();
+
+    }
 
     @Test
+    public void testMapMonthTab(){
+        con.mapMonthTab();
+
+    }
+
+
+    @Test // ikke ferdig
     public void testInsertCells(){
         // cells ligger cellene som skal settes inn arrayList med celler
         //skal legges inn i day
         con.weekCalendarList.add(datel);
+        con.mapMonthTab();
 
 
         Event cell = new Event(date, date, "13", "14", "test", "detter er en test",
@@ -169,4 +177,12 @@ public class CalendarControllerTest {
 
 
     }
+
+
+
+
+
+
+
+
 }
