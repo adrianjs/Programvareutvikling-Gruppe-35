@@ -122,11 +122,6 @@ public class AddActivityControllerTest {
         assertEquals("test",lastAdded.get(1));
         database.deleteActivity((int) lastAdded.get(0));
     }
-
-    @After
-    public void close(){
-        //database.close();
-    }
 */
 
 }

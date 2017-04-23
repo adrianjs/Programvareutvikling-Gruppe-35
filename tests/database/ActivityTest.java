@@ -39,11 +39,5 @@ public class ActivityTest {
         getTest.deleteActivity(IdTestActivity);
         lastAddedActivity = getTest.getLastActivity();
         assertNotEquals(IdTestActivity, lastAddedActivity.get(0));
-        add.close();
-
-
-
-
     }
-
 }

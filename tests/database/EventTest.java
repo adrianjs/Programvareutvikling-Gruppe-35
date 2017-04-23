@@ -51,7 +51,6 @@ public class EventTest {
         connect.stmt.execute("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='testStud@test.com' AND eventId=18");
         connect.removeStudentSubject("TDT4100");
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
-        connect.close();
     }
 
 }

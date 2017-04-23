@@ -148,7 +148,6 @@ public class TeacherTest {
         connect.stmt.execute("DELETE FROM SUBJECT WHERE coordinatorEmail='testTeach@test.com'");
         connect.stmt.execute("DELETE FROM COURSECOORDINATOR WHERE email='testTeach@test.com'");
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
-        connect.close();
     }
 
 }
