@@ -188,6 +188,9 @@ public class CalendarControllerTest {
 
     @Test
     public void testMonthClicked(){
+        Tab dayTab = con.dayTab;
+        Date testDate = con.getChosenDate();
+
         for( int i = 1; i <= 37 ; i++){
             Label testLabel = new Label();
             testLabel.setText(""+i);
@@ -195,7 +198,6 @@ public class CalendarControllerTest {
             con.monthClicked(i);
 
         }
-
 
         assertEquals(false, con.monthTab.isSelected());
         assertEquals(false, con.weekTab.isSelected());

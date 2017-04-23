@@ -1,5 +1,6 @@
 package layout;
 
+import calendar.Cell;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import controllers.CalendarController;
@@ -11,13 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.*;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import java.util.concurrent.ThreadLocalRandom;
-import calendar.Cell;
 
 /**
  * Created by torresrl on 22/03/2017.
@@ -28,7 +26,7 @@ public class eventButton {
     private String name;
     private String subjectCode;
     private String coordinator;
-    private Button event;
+    Button event;
     String eventType = "";
     private int eventId = 0;
 

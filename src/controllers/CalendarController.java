@@ -307,7 +307,7 @@ public class CalendarController extends Connect implements Initializable{
 	 * @param locDate Takes in the localdate from the setNewDate Method.
 	 */
 	private void setNewDate2(LocalDate locDate){
-        changeDate(locDate);
+        System.out.println(locDate);
         chosenDate = Date.from(locDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         date.setValue(locDate);
         changeDate(locDate);

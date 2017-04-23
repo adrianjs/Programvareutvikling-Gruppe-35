@@ -1,15 +1,15 @@
 package layout;
 
 import calendar.Cell;
-import javafx.application.Platform;
+import controllers.JavaFXThreadingRule;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.control.Button;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-
 import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -21,6 +21,10 @@ public class eventButtonTest {
     Cell cell;
     Date date;
     Button event1;
+
+    @Rule
+    public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
+
 
     @Before
     public void setup(){
@@ -35,9 +39,6 @@ public class eventButtonTest {
 
     }
 
-    //@Rule public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
-    //sjekk ut for testing av javafx
-    //http://andrewtill.blogspot.no/2012/10/junit-rule-for-javafx-controller-testing.html
 
 
 
@@ -56,19 +57,48 @@ public class eventButtonTest {
 
     @Test
     public void testEventType(){
-        assertEquals("exam", eb.eventType);
+        assertEquals("Exam", eb.eventType);
         cell.setSlotPriority(98);
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
-        assertEquals("deadline", eb.eventType);
+        assertEquals("Deadline", eb.eventType);
         cell.setSlotPriority(97);
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
         assertEquals("home work", eb.eventType);
         cell.setSlotPriority(96);
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
-        assertEquals("lecture", eb.eventType);
+        assertEquals("Lecture", eb.eventType);
         cell.setSlotPriority(95);
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
-        assertEquals("home exam", eb.eventType);
+        assertEquals("Home exam", eb.eventType);
+    }
+
+
+    @Test
+    public void testEventOnAction(){
+        eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
+        eb.event.fire();
+        assertEquals(cell.getName(), eb.getName());
+        assertEquals(cell.getDescription(), eb.getDescription());
+    }
+
+    @Test
+    public void testHomeWorkOnAction(){
+        cell.setSlotPriority(97);
+        eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
+        eb.event.fire();
+        assertEquals(cell.getName(), eb.getName());
+        assertEquals(cell.getDescription(), eb.getDescription());
+    }
+
+
+    @Test
+    public void testActivityOnAction(){
+        eb = new eventButton(cell.getName(), cell.getDescription(), cell);
+        eb.event.fire();
+        assertEquals(cell.getName(), eb.getName());
+        assertEquals(cell.getDescription(), eb.getDescription());
+
+
     }
 
 
