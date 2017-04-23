@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import layout.*;
@@ -204,6 +205,10 @@ public class SuperSorter extends Connect {
 //                alert.setResizable(true);
                 alert.getDialogPane().setPrefSize(600, 220);
                 alert.setHeaderText("(b)Otto has discovered a collision!");
+                ImageView imageView = new ImageView(new Image("resources/img/botto.png"));
+                imageView.setFitHeight(100);
+                imageView.setFitWidth(100);
+                alert.setGraphic(imageView);
                 Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
                 alert.showAndWait();
