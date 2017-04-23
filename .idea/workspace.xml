@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CalendarController.java" afterPath="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layout/eventButton.java" afterPath="$PROJECT_DIR$/src/layout/eventButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/layout/eventButtonTest.java" afterPath="$PROJECT_DIR$/tests/layout/eventButtonTest.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -129,8 +125,8 @@
           <file leaf-file-name="eventButtonTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/layout/eventButtonTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="85" column="33" lean-forward="false" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+                <state relative-caret-position="363">
+                  <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -1283,14 +1279,7 @@
       <workItem from="1492854029380" duration="5020000" />
       <workItem from="1492860928983" duration="427000" />
       <workItem from="1492864179045" duration="18668000" />
-      <workItem from="1492893834436" duration="1537000" />
-    </task>
-    <task id="LOCAL-00020" summary="minor fix">
-      <created>1488969237615</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1488969237615</updated>
+      <workItem from="1492893834436" duration="1560000" />
     </task>
     <task id="LOCAL-00021" summary="added controller for addEvent">
       <created>1488974945202</created>
@@ -1628,7 +1617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492890111197</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="flere tester">
+      <created>1492940686724</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1492940686724</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1664,7 +1660,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="555579000" />
+    <option name="totallyTimeSpent" value="555602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2231,8 +2227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/layout/eventButtonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="85" column="33" lean-forward="false" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+        <state relative-caret-position="363">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding />
         </state>
       </provider>
