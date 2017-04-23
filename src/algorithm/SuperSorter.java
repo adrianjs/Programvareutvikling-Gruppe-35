@@ -199,11 +199,11 @@ public class SuperSorter extends Connect {
             if(!collision){
                 scheduleWithoutCollision.add(currentCell);
             }else{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Oops! There was a collision in you schedule between " +
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "There was a collision in your schedule between " +
                         stringFormatterForCell(currentCell) + " and " + stringFormatterForCell(collisionCell) + "!");
                 alert.setTitle("Collision");
 //                alert.setResizable(true);
-                alert.getDialogPane().setPrefSize(600, 220);
+                alert.getDialogPane().setPrefSize(750, 220);
                 alert.setHeaderText("(b)Otto has discovered a collision!");
                 ImageView imageView = new ImageView(new Image("resources/img/botto.png"));
                 imageView.setFitHeight(100);
