@@ -9,7 +9,8 @@ import java.util.Set;
 /**
  * Created by Henning on 22.02.2017.
  */
-public class Login extends Connect{
+public class Login{
+    private Connect connect = Connect.getInstance();
     private String query = "SELECT * FROM STUDENT";
     private String query1 = "SELECT * FROM COURSECOORDINATOR";
     private Set<List> users = new HashSet<>();
@@ -24,7 +25,7 @@ public class Login extends Connect{
      * @throws SQLException
      */
     public Set getStudent() throws SQLException {
-        ResultSet m_ResultSet = stmt.executeQuery(query);
+        ResultSet m_ResultSet = connect.stmt.executeQuery(query);
         while (m_ResultSet.next()) {
             List user = new ArrayList<>();
             user.add(m_ResultSet.getString(1));
@@ -43,7 +44,7 @@ public class Login extends Connect{
      * @throws SQLException
      */
     public Set getCourseCoordinator() throws SQLException {
-        ResultSet set = stmt.executeQuery(query1);
+        ResultSet set = connect.stmt.executeQuery(query1);
         while (set.next()){
             List user = new ArrayList<>();
             user.add(set.getString(1));

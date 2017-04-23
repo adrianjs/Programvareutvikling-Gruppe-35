@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
  * Controller for addEvent.fxml.
  * Check all the parametert so right information is put in database.
  */
-public class AddEventController extends Connect implements Initializable{
+public class AddEventController implements Initializable{
 
     //Lecture
     @FXML Group mainGroup;

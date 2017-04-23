@@ -78,8 +78,8 @@ public class LoginController implements Initializable {
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
                 System.out.println("login successful");
                 CalendarController calCtrl = CalendarController.getInstance();
-                //TODO: SE PÅ DENNE
-                //calCtrl.refresh();
+//                //TODO: SE PÅ DENNE
+                calCtrl.refresh();
                 test = "student";
                 stage.setOnCloseRequest(event -> {
                     System.exit(0);

@@ -13,8 +13,9 @@ import java.util.Set;
  * Created by larsmade on 21.02.2017.
  */
 
-public class User extends Connect{
+public class User{
 
+    private Connect connect = Connect.getInstance();
     private String username;
     private String password;
     private Set<String> subjects;
@@ -44,7 +45,7 @@ public class User extends Connect{
     }
 
     public void updateSubjects() throws SQLException {
-        ResultSet stud_sub_resultset = stmt.executeQuery("SELECT * FROM STUDTAKESUB WHERE studentEmail='"+ username +"'");
+        ResultSet stud_sub_resultset = connect.stmt.executeQuery("SELECT * FROM STUDTAKESUB WHERE studentEmail='"+ username +"'");
         subjects = new LinkedHashSet<>();
         while(stud_sub_resultset.next()){
             subjects.add(stud_sub_resultset.getString(1));

@@ -8,7 +8,8 @@ import java.util.*;
 /**
  * Created by Henning on 02.03.2017.
  */
-public class Fetcher extends Connect{
+public class Fetcher{
+    private Connect connect = Connect.getInstance();
     private String query;
     private Set<List> results = new HashSet<>();
 
@@ -18,7 +19,7 @@ public class Fetcher extends Connect{
 
 
     public Set<List> getUserRelatedResults(int numberOfColumns) throws SQLException{
-        ResultSet m_ResultSet = stmt.executeQuery(query);
+        ResultSet m_ResultSet = connect.stmt.executeQuery(query);
         //This works as long as username / email lies at column 8 in the DB
         while(m_ResultSet.next()){
             if(m_ResultSet.getString(8).equals(User.getInstance().getUsername())) {

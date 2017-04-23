@@ -21,13 +21,14 @@ import java.util.*;
 /**
  * Created by larsmade on 23.02.2017.
  */
-public class AddSubjectController extends Connect implements Initializable{
+public class AddSubjectController implements Initializable{
 
     @FXML TextField subject;
     @FXML JFXComboBox subjectPicker;
     @FXML AnchorPane anchorPane;
     JFXSnackbar bar;
 
+    private Connect connect = Connect.getInstance();
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList(); //Is used to set items in dropdown
 
@@ -57,7 +58,7 @@ public class AddSubjectController extends Connect implements Initializable{
 
             if(subjectPicker.getItems().contains(subject.getCharacters().toString())){
                 setOfSubjects.add(chosenSubject); //Adding new chosen subject
-                addStudentSubject(chosenSubject);
+                connect.addStudentSubject(chosenSubject);
                 User.getInstance().updateSubjects();
                 bar.enqueue(new JFXSnackbar.SnackbarEvent(subject.getCharacters().toString().split("-")[0] + " was added to your subjects!"));
                 bar.setId("2");
@@ -107,7 +108,7 @@ public class AddSubjectController extends Connect implements Initializable{
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {
         try {
-            m_ResultSet = stmt.executeQuery("SELECT * FROM SUBJECT");
+            m_ResultSet = connect.stmt.executeQuery("SELECT * FROM SUBJECT");
             while(m_ResultSet.next()){
                 subjects.add(m_ResultSet.getString(1) + " - " + m_ResultSet.getString(3));
             }
