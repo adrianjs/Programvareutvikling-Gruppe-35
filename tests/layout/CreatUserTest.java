@@ -144,7 +144,7 @@ public class CreatUserTest {
 
     }
 
-
+        /*
     @Test
     public void testStudOnAction(){
         cu.stud.fire();
@@ -152,7 +152,7 @@ public class CreatUserTest {
         assertEquals(true, cu.yearGroup.isVisible());
         assertEquals(false, cu.fieldTeach.isVisible());
         assertEquals(false, cu.description.isVisible());
-    }
+    }       */
 
 
 
