@@ -21,6 +21,8 @@ import java.util.regex.Pattern;
  * Created by Henning on 22.02.2017.
  */
 public class CreateUser {
+
+    private Connect connect = Connect.getInstance();
     public Stage dialogStage;
     private boolean success = false;
     private static final String EMAIL_PATTERN =
@@ -88,11 +90,10 @@ public class CreateUser {
         });
         submit.setOnAction(event -> {
             if (isInputValid()) {
-                Connect connecter = new Connect();
                 System.out.println(stud.isSelected());
                 System.out.println(teach.isSelected());
                 if (stud.isSelected()) {
-                    connecter.addStudent(email.getCharacters().toString(),
+                    connect.addStudent(email.getCharacters().toString(),
                             firstName.getCharacters().toString(),
                             lastName.getCharacters().toString(),
                             study.getCharacters().toString(),
@@ -100,7 +101,7 @@ public class CreateUser {
                             password.getCharacters().toString()
                     );
                 } else if (teach.isSelected()) {
-                    connecter.addTeacher(email.getCharacters().toString(),
+                    connect.addTeacher(email.getCharacters().toString(),
                             firstName.getCharacters().toString(),
                             lastName.getCharacters().toString(),
                             department.getCharacters().toString(),

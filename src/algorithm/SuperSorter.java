@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import layout.*;
@@ -32,7 +33,8 @@ import java.util.Calendar;
  * lecture = 96
  * homeEksamen = 95
  */
-public class SuperSorter extends Connect {
+public class SuperSorter{
+    private Connect connect = Connect.getInstance();
     private User user = User.getInstance(); //This is the currently logged in user.
     private Set<Subject> subjects = new HashSet<>();
     private Set<Cell> events = new HashSet<>();
@@ -84,7 +86,7 @@ public class SuperSorter extends Connect {
 
     public void collectSubjects(String subjectArrayString) throws SQLException {
         //DONE: Get all the subjects that the student attends
-        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM SUBJECT WHERE subjectCode IN ("+subjectArrayString+")");
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM SUBJECT WHERE subjectCode IN ("+subjectArrayString+")");
         while(m_result_set.next()){
             subjects.add(new Subject(
                     m_result_set.getString(1),
@@ -96,7 +98,7 @@ public class SuperSorter extends Connect {
     }
 
     public void collectDroppedEvents() throws SQLException {
-        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+User.getInstance().getUsername()+"'");
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+User.getInstance().getUsername()+"'");
         while (m_result_set.next()){
             droppedEvents.add(m_result_set.getInt(1));
         }
@@ -104,7 +106,7 @@ public class SuperSorter extends Connect {
 
     public void collectEvents(String subjectArrayString) throws SQLException {
         //DONE: Get all the schedules from students subjects
-        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode IN ("+subjectArrayString+")");
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode IN ("+subjectArrayString+")");
         while(m_result_set.next()){
             //CHECKS IF THE EVENT IS MORE THAN ONE MONTH OLD
             Calendar cal = Calendar.getInstance();
@@ -130,7 +132,7 @@ public class SuperSorter extends Connect {
     }
 
     public void collectActivities() throws SQLException, ParseException {
-        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM ACTIVITY WHERE studentEmail='"+user.getUsername()+"'");
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM ACTIVITY WHERE studentEmail='"+user.getUsername()+"'");
         while(m_result_set.next()){
             //CHECKS IF THE ACTIVITY IS MORE THAN ONE MONTH OLD
             //If it is, it's deleted from the DB
@@ -153,8 +155,8 @@ public class SuperSorter extends Connect {
                         m_result_set.getString(10)
                 ));
             }else{
-                stmt = conn.createStatement();
-                stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID='"+m_result_set.getInt(1)+"'");
+                connect.stmt = connect.conn.createStatement();
+                connect.stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID='"+m_result_set.getInt(1)+"'");
             }
         }
     }
@@ -198,12 +200,16 @@ public class SuperSorter extends Connect {
             if(!collision){
                 scheduleWithoutCollision.add(currentCell);
             }else{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Oops! There was a collision in you schedule between " +
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "There was a collision in your schedule between " +
                         stringFormatterForCell(currentCell) + " and " + stringFormatterForCell(collisionCell) + "!");
                 alert.setTitle("Collision");
 //                alert.setResizable(true);
-                alert.getDialogPane().setPrefSize(600, 220);
+                alert.getDialogPane().setPrefSize(750, 220);
                 alert.setHeaderText("(b)Otto has discovered a collision!");
+                ImageView imageView = new ImageView(new Image("resources/img/botto.png"));
+                imageView.setFitHeight(100);
+                imageView.setFitWidth(100);
+                alert.setGraphic(imageView);
                 Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
                 alert.showAndWait();
@@ -269,7 +275,7 @@ public class SuperSorter extends Connect {
             scheduleWithoutCollision.add(currentCell);
             if(collisionCell.getType().equals("activity")){
                 handleUnprioritizedActivity(collisionCell);
-                deleteActivity(collisionCell);
+                connect.deleteActivity(collisionCell);
             }else{
                 handleUnprioritizedEvent(collisionCell);
             }
@@ -309,13 +315,13 @@ public class SuperSorter extends Connect {
 
         }else{
             //Delete
-            deleteActivity(activity);
+            connect.deleteActivity(activity);
         }
     }
 
     public void handleUnprioritizedEvent(Cell event) throws SQLException {
-        stmt = conn.createStatement();
-        stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
+        connect.stmt = connect.conn.createStatement();
+        connect.stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
 
     public void rescheduleAuto(Cell cell) throws SQLException {
@@ -424,7 +430,7 @@ public class SuperSorter extends Connect {
             }else{
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "We could not find a new timeslot for this activity!\nIt will now be deleted!");
                 alert.showAndWait();
-                deleteActivity(cell);
+                connect.deleteActivity(cell);
             }
         }else{
             //New time found. Remove animation.
@@ -450,7 +456,7 @@ public class SuperSorter extends Connect {
         Date date;
         Calendar cal = Calendar.getInstance();
         //Get from database, first lecture, where ID > schoolworkID, in same subject, where priority is 96 (lecture)
-        ResultSet m_result_set = stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode='"+schoolWork.getSubjectCode()+"'" +
+        ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM EVENT WHERE subjectCode='"+schoolWork.getSubjectCode()+"'" +
                 "AND eventID > "+schoolWork.getID()+" AND priority=96 LIMIT 1");
         m_result_set.next();
         date = new Date(m_result_set.getDate("startDate").getTime());
@@ -478,14 +484,14 @@ public class SuperSorter extends Connect {
     }
 
     public void resetDroppedEvents() throws SQLException {
-        stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"'");
+        connect.stmt = connect.conn.createStatement();
+        connect.stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"'");
         droppedEvents.clear();
     }
 
     public void resetDroppedEvent(Cell event) throws SQLException {
-        stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"' AND eventId='"+event.getID()+"'");
+        connect.stmt = connect.conn.createStatement();
+        connect.stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"' AND eventId='"+event.getID()+"'");
         droppedEvents.remove(event);
     }
 
@@ -537,9 +543,9 @@ public class SuperSorter extends Connect {
         cal.setTime(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         startDate = cal.getTime();
 
-        deleteActivity(activity);
+        connect.deleteActivity(activity);
 
-        addActivity(newActivity.getName(),
+        connect.addActivity(newActivity.getName(),
                 new java.sql.Date(startDate.getTime()),
                 newActivity.isRepeating(),
                 newActivity.getSlotPriority(),

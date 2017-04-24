@@ -24,13 +24,13 @@ import java.util.*;
 /**
  * Created by Henning on 04.04.2017.
  */
-public class RestoreController extends Connect implements Initializable{
+public class RestoreController implements Initializable{
     @FXML JFXButton restoreChosen;
     @FXML JFXButton restoreAll;
     @FXML JFXButton cancel;
     @FXML ScrollPane eventScrollPane;
 
-
+    private Connect connect = Connect.getInstance();
     private SuperSorter superSorter = new SuperSorter();
     private List<Integer> eventIds = new ArrayList<>();
     private List<JFXCheckBox> checkBoxes = new ArrayList<>();
@@ -39,8 +39,8 @@ public class RestoreController extends Connect implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            stmt = conn.createStatement();
-            ResultSet m_result_set = stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+ User.getInstance().getUsername()+"'");
+            connect.stmt = connect.conn.createStatement();
+            ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+ User.getInstance().getUsername()+"'");
             while(m_result_set.next()){
                 eventIds.add(m_result_set.getInt(1));
             }
@@ -49,7 +49,7 @@ public class RestoreController extends Connect implements Initializable{
                 values += "'" + i.toString() + "',";
             }
             values = values.substring(0, values.length()-1);
-            m_result_set = stmt.executeQuery("SELECT * FROM EVENT WHERE eventID IN ("+values+")");
+            m_result_set = connect.stmt.executeQuery("SELECT * FROM EVENT WHERE eventID IN ("+values+")");
             VBox vBox = new VBox();
             while(m_result_set.next()){
                 events.add(new Event(m_result_set.getDate(3),

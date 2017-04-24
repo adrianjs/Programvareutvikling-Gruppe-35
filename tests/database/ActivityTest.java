@@ -20,10 +20,9 @@ public class ActivityTest {
         ArrayList lastAddedActivity;
         int IdTestActivity;
         Date date = new Date(2017-04-17);
-        Connect add = new Connect();
+        Connect add = Connect.getInstance();
         add.addActivity("Activity test", date, false, 1, 13.0, 14.0, "larsmade@stud.ntnu.no",
                 "denne activiteten er kun for testting hvis den ligger i databasen har noe gale skjedd og den skal slettes");
-        add.close();
 
         Activity getTest = new Activity();
         lastAddedActivity = getTest.getLastActivity();
@@ -40,11 +39,5 @@ public class ActivityTest {
         getTest.deleteActivity(IdTestActivity);
         lastAddedActivity = getTest.getLastActivity();
         assertNotEquals(IdTestActivity, lastAddedActivity.get(0));
-        getTest.close();
-
-
-
-
     }
-
 }

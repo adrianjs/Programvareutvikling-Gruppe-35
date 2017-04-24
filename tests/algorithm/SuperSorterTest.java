@@ -95,8 +95,6 @@ public class SuperSorterTest {
         connect.removeStudentSubject("TDT4145");
 
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
-        connect.close();
-
     }
 
 }

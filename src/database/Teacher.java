@@ -13,7 +13,9 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by torresrl on 08/03/2017.
  */
-public class Teacher extends Connect{
+public class Teacher{
+
+    private Connect connect = Connect.getInstance();
 
     //sjekke slik at reapiting vil vare mellom disse datoene
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
@@ -35,8 +37,8 @@ public class Teacher extends Connect{
 
     public void addCourseCoordinator(String email, String firstName, String lastName, String department, String password, String description ){
         try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"', '"+firstName+"'," +
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("INSERT INTO COURSECOORDINATOR VALUES('"+email+"', '"+firstName+"'," +
                     " '"+lastName+"', '"+department+"', '"+password+"','"+description+"')");
         }catch (SQLException se){
             se.printStackTrace();
@@ -47,8 +49,8 @@ public class Teacher extends Connect{
 
     public boolean addSubject(String subjectCode, String evaluation, String description, String coordinatorEmail){
         try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO SUBJECT VALUES('"+subjectCode+"', '"+evaluation+"'," +
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("INSERT INTO SUBJECT VALUES('"+subjectCode+"', '"+evaluation+"'," +
                     " '"+description+"', '"+coordinatorEmail+"')");
         }catch (SQLException se){
             se.printStackTrace();
@@ -66,7 +68,7 @@ public class Teacher extends Connect{
     public ArrayList<ArrayList<String>> getSubjects(String coordinatorEmail){
         ArrayList<ArrayList<String>> subjects = new ArrayList<ArrayList<String>>();
         try {
-            ResultSet data = stmt.executeQuery("SELECT * FROM SUBJECT WHERE SUBJECT.coordinatorEmail = '"+coordinatorEmail+"'");
+            ResultSet data = connect.stmt.executeQuery("SELECT * FROM SUBJECT WHERE SUBJECT.coordinatorEmail = '"+coordinatorEmail+"'");
             while (data.next()){
                 ArrayList<String> subject = new ArrayList<String>();
                 subject.add(data.getString("subjectCode"));
@@ -108,17 +110,17 @@ public class Teacher extends Connect{
             }
             if(repeating == 0) {
                 Date sqlStartDate = Date.valueOf(startDate);
-                stmt = conn.createStatement();
-                stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                connect.stmt = connect.conn.createStatement();
+                connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                         " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
                         "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
             } else if (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
                 Date sqlStartDate;
-                stmt = conn.createStatement();
+                connect.stmt = connect.conn.createStatement();
                 int counter = 0;
                 while (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
                     sqlStartDate = Date.valueOf(startDate);
-                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                             " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
@@ -127,11 +129,11 @@ public class Teacher extends Connect{
                 }
             } else if (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
                 Date sqlStartDate;
-                stmt = conn.createStatement();
+                connect.stmt = connect.conn.createStatement();
                 int counter = 0;
                 while (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
                     sqlStartDate = Date.valueOf(startDate);
-                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                             " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
@@ -160,11 +162,11 @@ public class Teacher extends Connect{
             Integer startTimeSql = Integer.valueOf(startTime.substring(0,2));
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             color = "260591";
-            stmt = conn.createStatement();
+            connect.stmt = connect.conn.createStatement();
             if(repeating == 0) {
                 Date sqlStartDate = Date.valueOf(startDate);
                 Date sqlEndDate = Date.valueOf(endDate);
-                stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                         " description, houersOfWork, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
                         "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+houersOfWork+"', '"+subjectCode+"', '"+color+"')");
             } else if(startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
@@ -175,7 +177,7 @@ public class Teacher extends Connect{
 
                     sqlStartDate = Date.valueOf(startDate);
                     sqlEndDate = Date.valueOf(endDate);
-                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                             " description, houersOfWork, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
                             "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+houersOfWork+"', '"+subjectCode+"', '"+color+"')");
                     startDate = startDate.plusWeeks(1);
@@ -189,7 +191,7 @@ public class Teacher extends Connect{
                 while(startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12) {
                     sqlStartDate = Date.valueOf(startDate);
                     sqlEndDate = Date.valueOf(endDate);
-                    stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+                    connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                             " description, houersOfWork, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlStartDate+"','"+startTimeSql+"'," +
                             "'"+endTimeSql+"','"+repeating+"',97,'"+description+"', '"+houersOfWork+"', '"+subjectCode+"', '"+color+"')");
                     startDate = startDate.plusWeeks(1);
@@ -215,8 +217,8 @@ public class Teacher extends Connect{
             Integer timeSql = Integer.valueOf(time);
             Date deadLineDate = Date.valueOf(date);
             color = "FF0000";
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                     " description, subjectCode, color) VALUES('"+name+"','"+deadLineDate+"','"+deadLineDate+"','"+timeSql+"'," +
                     "'"+timeSql+"','"+0+"',98,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
@@ -240,8 +242,8 @@ public class Teacher extends Connect{
             Integer endTimeSql = Integer.valueOf(endTime.substring(0,2));
             Date sqlDate = Date.valueOf(date);
             color = "FF0000";
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, repeating, priority," +
                     " description, subjectCode, color) VALUES('"+name+"','"+sqlDate+"','"+sqlDate+"','"+startTimeSql+"'," +
                     "'"+endTimeSql+"','"+0+"',99,'"+description+"', '"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
@@ -268,8 +270,8 @@ public class Teacher extends Connect{
             Date sqlStartDate = Date.valueOf(startDate);
             Date sqlEndDate = Date.valueOf(endDate);
             color = "FFE800";
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, priority," +
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("INSERT INTO EVENT(name, startDate, endDate, startTime, endTime, priority," +
                     " description, houersOfWork, subjectCode, color) VALUES('"+name+"','"+sqlStartDate+"','"+sqlEndDate+"'," +
                     "'"+startTimeSql+"','"+endTimeSql+"',95,'"+description+"','"+houersOfWork+"','"+subjectCode+"', '"+color+"')");
         } catch (SQLException se){
@@ -283,7 +285,7 @@ public class Teacher extends Connect{
     public ArrayList<ArrayList<String>> getEvents(String subjectCode){
         ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
         try {
-            ResultSet data = stmt.executeQuery("SELECT * FROM EVENT WHERE EVENT.subjectCode = '"+subjectCode+"'");
+            ResultSet data = connect.stmt.executeQuery("SELECT * FROM EVENT WHERE EVENT.subjectCode = '"+subjectCode+"'");
             while (data.next()){
                 ArrayList<String> event = new ArrayList<String>();
                 event.add(Integer.toString(data.getInt("eventID")));
@@ -314,8 +316,8 @@ public class Teacher extends Connect{
     public ArrayList<ArrayList<String>> getStudentFeedBack(String subject) throws SQLException {
         //Schoolwork som denne læreren har satt inn. trenger kun id. Ta med dato.
         ArrayList<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
-        stmt = conn.createStatement();
-        ResultSet set = stmt.executeQuery("SELECT FEEDBACK.Feedback, EVENT.startDate, EVENT.description, EVENT.houersOfWork FROM FEEDBACK " +
+        connect.stmt = connect.conn.createStatement();
+        ResultSet set = connect.stmt.executeQuery("SELECT FEEDBACK.Feedback, EVENT.startDate, EVENT.description, EVENT.houersOfWork FROM FEEDBACK " +
                         "INNER JOIN EVENT ON FEEDBACK.ID=EVENT.eventID WHERE EVENT.subjectCode = '"+subject+"';");
 //        "SELECT * FROM EVENT WHERE subjectCode = '"+subject+"' AND priority = '"+96+"'"
 
@@ -334,8 +336,8 @@ public class Teacher extends Connect{
     public String getTeacher(String subjectCode){
         String corrdinator = "";
         try {
-            stmt = conn.createStatement();
-            ResultSet set = stmt.executeQuery("SELECT SUBJECT.coordinatorEmail, SUBJECT.subjectCode FROM SUBJECT WHERE SUBJECT.subjectCode = '" + subjectCode + "'");
+            connect.stmt = connect.conn.createStatement();
+            ResultSet set = connect.stmt.executeQuery("SELECT SUBJECT.coordinatorEmail, SUBJECT.subjectCode FROM SUBJECT WHERE SUBJECT.subjectCode = '" + subjectCode + "'");
             while (set.next()) {
                 corrdinator = set.getString("coordinatorEmail");
                 return corrdinator;

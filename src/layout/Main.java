@@ -22,7 +22,6 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        System.out.println(CalendarController.getInstance());
         Parent load = FXMLLoader.load(getClass().getResource("/resources/fxml/username.fxml"));
         primaryStage.setTitle("Educational Organizer");
         main = new Scene(load);

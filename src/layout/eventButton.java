@@ -106,8 +106,6 @@ public class eventButton {
         this.eventId = id;
         Teacher coor = new Teacher();
         this.coordinator = coor.getTeacher(subjecCode);
-        coor.close();
-
 
         event = new Button();
         event.setId("eventButton");

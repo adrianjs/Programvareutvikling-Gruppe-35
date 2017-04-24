@@ -36,7 +36,7 @@ import java.util.*;
 
 //import layout.eventButtonWeek.activityButton;
 
-public class CalendarController extends Connect implements Initializable{
+public class CalendarController implements Initializable{
 
     private Date chosenDate = new Date();
 	private Date thisDate = new Date();
@@ -151,28 +151,29 @@ public class CalendarController extends Connect implements Initializable{
 		username.setText(User.getInstance().getUsername().split("@")[0]);
 		setLines();
         setDate();
-		setupDayTab();
-		setBottoField(); //SlideFieldBotto
 		try {
+			setupDayTab();
 			getWeekTabCells();
 			mapMonthTab();
-			insertCells();
-		} catch (Exception e) {
+			setBottoField(); //SlideFieldBotto
+			superSorter.run();
+		}catch (ParseException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		date.setValue(chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 	}
 
     public void refresh(){
-		setLines();
-		setDate();
 		try {
-			superSorter.run();
+			timeLayout();
 			setupDayTab();
-			setBottoField(); //SlideFieldBotto
 			getWeekTabCells();
 			mapMonthTab();
-			insertCells();
+			superSorter.run();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -196,7 +197,9 @@ public class CalendarController extends Connect implements Initializable{
 		}
 		setNewDate2(locDate);
 		date.setValue(locDate);
+		refresh();
 	}
+
 
 	/**
 	 * On action from previous button in calendar.fxml, jumps to previos day/week/month
@@ -212,6 +215,7 @@ public class CalendarController extends Connect implements Initializable{
 		}
 		setNewDate2(locDate);
 		date.setValue(locDate);
+		refresh();
 	}
 
     /**
@@ -228,7 +232,6 @@ public class CalendarController extends Connect implements Initializable{
 	 * @throws IOException if the fxml fails to load.
 	 */
 	public void restore() throws IOException {
-        //TODO: Make Restore work
 		cal.changeScene("/resources/fxml/restore.fxml", "Restore dropped events");
 	}
 
@@ -311,10 +314,6 @@ public class CalendarController extends Connect implements Initializable{
         chosenDate = Date.from(locDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         date.setValue(locDate);
         changeDate(locDate);
-        setupDayTab();
-        mapMonthTab();
-        insertCells();
-        timeLayout();
     }
 
 	/**
@@ -552,6 +551,7 @@ public class CalendarController extends Connect implements Initializable{
 			LocalDate date1 = LocalDate.of(year, month, dayInt);
 			tabs.getSelectionModel().select(dayTab);
 			setNewDate2(date1);
+			refresh();
 
 
 		}catch (Exception e){

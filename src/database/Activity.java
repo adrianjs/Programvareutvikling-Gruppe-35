@@ -8,7 +8,8 @@ import java.util.Objects;
 /**
  * Created by torresrl on 30/03/2017.
  */
-public class Activity extends Connect {
+public class Activity{
+    private Connect connect = Connect.getInstance();
 
     public Activity(){
         super();
@@ -16,8 +17,8 @@ public class Activity extends Connect {
 
     public void deleteActivity(int id){
         try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID = '"+id+"'");
+            connect.stmt = connect.conn.createStatement();
+            connect.stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID = '"+id+"'");
         }catch (SQLException se){
             se.printStackTrace();
         }
@@ -26,7 +27,7 @@ public class Activity extends Connect {
     public ArrayList getLastActivity(){
         ArrayList outData = new ArrayList();
         try{
-            ResultSet data = stmt.executeQuery("SELECT * FROM ACTIVITY ORDER BY activityID DESC LIMIT 1");
+            ResultSet data = connect.stmt.executeQuery("SELECT * FROM ACTIVITY ORDER BY activityID DESC LIMIT 1");
             while(data.next()){
                 outData.add(data.getInt(1));
                 outData.add(data.getString(2));

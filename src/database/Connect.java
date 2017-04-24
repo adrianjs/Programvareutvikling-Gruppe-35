@@ -35,6 +35,14 @@ public class Connect {
     public Statement stmt = null;
 
     //When you instanciate the class, it automatically connects
+    private static Connect instance = null; //InstanceControl singelton Pattern.
+    public static Connect getInstance() {
+        if (instance == null) {
+            instance = new Connect();
+        }
+        return instance;
+    }
+
     public Connect(){
         try {
             System.out.println("Connecting to database...");

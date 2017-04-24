@@ -51,15 +51,15 @@ public class TeacherTest {
         coordinator.addLecture("test", date, "12.00", "13.00",0,
                 "145387465126655323","AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
         coordinator.addLecture("test", date, "12.00", "13.00",5,
                 "145387465126655323","AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
         coordinator.addLecture("test", LocalDate.now().plusMonths(5), "12.00", "13.00",5,
                 "145387465126655323","AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
     }
 
     @Test
@@ -68,15 +68,15 @@ public class TeacherTest {
         coordinator.addSchoolWork("test", date, date, "12.00", "13.00",0,
                 "145387465126655323", 5.0,"AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
         coordinator.addSchoolWork("test", date, date, "12.00", "13.00",5,
                 "145387465126655323", 5.0,"AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
         coordinator.addSchoolWork("test", LocalDate.now().plusMonths(5), LocalDate.now().plusMonths(5), "12.00", "13.00",5,
                 "145387465126655323", 5.0,"AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
     }
 
     @Test
@@ -85,7 +85,7 @@ public class TeacherTest {
         coordinator.addDeadLine("test", date, "13",
                 "145387465126655323","AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
     }
 
     @Test
@@ -94,7 +94,7 @@ public class TeacherTest {
         coordinator.addExam("test", date, "12.00", "13.00",
                 "145387465126655323","AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
     }
 
     @Test
@@ -103,7 +103,7 @@ public class TeacherTest {
         coordinator.addHomeExam("test", date, date, "12.00", "13.00",
                 "145387465126655323", 5.0,"AAR4335");
         assertEquals("145387465126655323", event.getLastAddedDes());
-        event.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
+        connect.stmt.execute("DELETE FROM EVENT WHERE description  ='145387465126655323'");
     }
 
     @Test
@@ -148,9 +148,6 @@ public class TeacherTest {
         connect.stmt.execute("DELETE FROM SUBJECT WHERE coordinatorEmail='testTeach@test.com'");
         connect.stmt.execute("DELETE FROM COURSECOORDINATOR WHERE email='testTeach@test.com'");
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
-        connect.close();
-        coordinator.close();
-        event.close();
     }
 
 }

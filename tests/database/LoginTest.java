@@ -58,7 +58,6 @@ public class LoginTest {
     public void breakDown() throws SQLException {
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
         connect.stmt.execute("DELETE FROM COURSECOORDINATOR WHERE email='testTeach@test.com'");
-        connect.close();
     }
 
 }

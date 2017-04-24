@@ -70,7 +70,6 @@ public class AddSubjectControllerTest {
     @After
     public void close() throws SQLException {
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
-        connect.close();
     }
 
 
