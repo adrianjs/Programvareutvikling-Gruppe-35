@@ -2,6 +2,7 @@ package layout;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
@@ -30,6 +31,7 @@ public class CreatUserTest {
          cu.password = new JFXPasswordField();
          cu.study        = new JFXTextField();
          cu.department   = new JFXTextField();
+         cu.description = new JFXTextArea();
 
          cu.firsty  = new JFXRadioButton();
          cu.secondy = new JFXRadioButton();
@@ -43,6 +45,16 @@ public class CreatUserTest {
 
          cu.stud  = new RadioButton();
          cu.teach = new RadioButton();
+
+
+
+        cu.description.setVisible(false);
+        cu.fieldStud.setVisible(false);
+        cu.fieldTeach.setVisible(false);
+        cu.yearGroup.setVisible(false);
+
+
+
     }
     
     @Test
@@ -130,6 +142,16 @@ public class CreatUserTest {
         });
 
 
+    }
+
+
+    @Test
+    public void testStudOnAction(){
+        cu.stud.fire();
+        assertEquals(true, cu.fieldStud.isVisible());
+        assertEquals(true, cu.yearGroup.isVisible());
+        assertEquals(false, cu.fieldTeach.isVisible());
+        assertEquals(false, cu.description.isVisible());
     }
 
 

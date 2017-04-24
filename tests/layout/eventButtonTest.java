@@ -76,6 +76,7 @@ public class eventButtonTest {
     @Test
     public void testEventOnAction(){
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
+        eb.event = new Button();
         eb.event.fire();
         assertEquals(cell.getName(), eb.getName());
         assertEquals(cell.getDescription(), eb.getDescription());
@@ -83,8 +84,10 @@ public class eventButtonTest {
 
     @Test
     public void testHomeWorkOnAction(){
+
         cell.setSlotPriority(97);
         eb = new eventButton(cell.getName(), cell.getDescription(), "TDT4140", cell, 333);
+        eb.event = new Button();
         eb.event.fire();
         assertEquals(cell.getName(), eb.getName());
         assertEquals(cell.getDescription(), eb.getDescription());
@@ -94,6 +97,7 @@ public class eventButtonTest {
     @Test
     public void testActivityOnAction(){
         eb = new eventButton(cell.getName(), cell.getDescription(), cell);
+        eb.event = new Button();
         eb.event.fire();
         assertEquals(cell.getName(), eb.getName());
         assertEquals(cell.getDescription(), eb.getDescription());
