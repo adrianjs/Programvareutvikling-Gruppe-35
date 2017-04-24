@@ -1,7 +1,6 @@
 package database;
 
-import algorithm.*;
-import algorithm.Activity;
+import calendar.Activity;
 import layout.User;
 import org.junit.Test;
 
@@ -17,7 +16,7 @@ import static org.junit.Assert.*;
 public class ConnectTest {
 
     @Test
-    public void setupAndCloseConnectionTest() throws SQLException {
+    public void testSetupAndCloseConnection() throws SQLException {
         Connect connect = new Connect();
         assertNotEquals(null, connect.conn);
         connect.close();
@@ -25,7 +24,7 @@ public class ConnectTest {
     }
 
     @Test
-    public void addingNewUsersTest() throws SQLException {
+    public void testAddingNewUsers() throws SQLException {
         Connect connect = new Connect();
         connect.addStudent("testStud@test.com", "test", "test", "test", 1, "test");
         connect.addTeacher("testTeach@test.com", "test", "test", "test", "test", "test");
@@ -44,7 +43,7 @@ public class ConnectTest {
     }
 
     @Test
-    public void addAndRemoveSubjectsToStudent() throws SQLException {
+    public void testAddAndRemoveSubjectsToStudent() throws SQLException {
         Connect connect = new Connect();
         connect.addStudent("testStud@test.com", "test", "test", "test", 1, "test");
         User.getInstance().setUsername("testStud@test.com");
@@ -58,8 +57,8 @@ public class ConnectTest {
     }
 
     @Test
-    public void addAndRemoveActivity() throws SQLException {
-        algorithm.Activity activity = new Activity(new Date(), new Date(),
+    public void testAddAndRemoveActivity() throws SQLException {
+        Activity activity = new Activity(new Date(), new Date(),
                 "11", "12",
                 "testAct", "testAct",
                 5, false,

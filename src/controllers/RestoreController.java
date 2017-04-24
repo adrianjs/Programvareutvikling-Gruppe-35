@@ -1,6 +1,6 @@
 package controllers;
 
-import algorithm.Event;
+import calendar.Event;
 import algorithm.SuperSorter;
 import calendar.Cell;
 import com.jfoenix.controls.JFXButton;

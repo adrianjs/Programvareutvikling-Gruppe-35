@@ -67,7 +67,7 @@ public class AddActivityControllerTest {
 
 
         //AAC.cancel = new JFXButton();
-       
+
 
     }
 

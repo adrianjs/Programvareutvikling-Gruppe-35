@@ -22,17 +22,14 @@ public class addTeachingSubjectControllerTest {
     public void setup(){
         new JFXPanel();
         con = new addTeachingSubjectController();
-
         con.subjectCode = new JFXTextField();
         con.evaluation = new JFXTextField();
         con.desc       = new JFXTextField();
         con.errorLabel = new Label();
-
     }
     
     @Test
     public void testCheckSubjectCode(){
-
         assertEquals(false, con.checkSubjectCode() );
         con.subjectCode.setText("AAR4335");
         assertEquals(true, con.checkSubjectCode() );
@@ -40,7 +37,6 @@ public class addTeachingSubjectControllerTest {
 
     @Test
     public void testCheckEvaluation(){
-
         assertEquals(false, con.checkEvaluation() );
         con.evaluation.setText("examen");
         assertEquals(true, con.checkEvaluation() );
@@ -48,7 +44,6 @@ public class addTeachingSubjectControllerTest {
 
     @Test
     public void testCheckDescription(){
-
         assertEquals(false, con.checkDescription() );
         con.desc.setText("Dette er en test");
         assertEquals(true, con.checkDescription() );

@@ -1,10 +1,10 @@
 package controllers;
 
-import algorithm.Activity;
-import algorithm.Event;
+import calendar.Activity;
+import calendar.Event;
 import algorithm.SuperSorter;
 import calendar.Cell;
-import calendar.TimeInterval;
+import algorithm.TimeInterval;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDrawer;
@@ -23,7 +23,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import layout.User;
-import layout.eventButton;
+import layout.EventButton;
 
 import java.io.IOException;
 import java.net.URL;
@@ -94,12 +94,12 @@ public class CalendarController implements Initializable{
 
 
     //------------------------Lister som brukes til å printe ut til Days----------------------------------------.
-	private ArrayList<eventButton> oldDays = new ArrayList<>();
+	private ArrayList<EventButton> oldDays = new ArrayList<>();
 
 
     //------------------------Lister som brukes til å printe ut til weeks----------------------------------------.
     public ArrayList<Cell> cells = new ArrayList<>();//liste over activitys som skal inn i kalenderen
-    private ArrayList<eventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
+    private ArrayList<EventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
 
@@ -107,10 +107,10 @@ public class CalendarController implements Initializable{
     //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
 	public List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
-	public List<calendar.Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
+	public List<Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
 
 	private  Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
-	public Map<Label, calendar.Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
+	public Map<Label, Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
 	//MONTH
 	public List<Label> monthLabels = new ArrayList<>();; // Hentes fra GUI
@@ -126,7 +126,7 @@ public class CalendarController implements Initializable{
     private HashMap<Integer, List> weekLabelList = new HashMap<>(); //FROM GUI
     private Map<LocalDate, HashMap<TimeInterval, Label>> weekDateLinkedToDay = new LinkedHashMap<>();
     public ArrayList<LocalDate> weekCalendarList = new ArrayList<LocalDate>();//Dates this week.
-    public Map<Label, calendar.Cell> weekLabelMappCell = new LinkedHashMap<>();
+    public Map<Label, Cell> weekLabelMappCell = new LinkedHashMap<>();
 
     //Methods starts here.
 
@@ -281,6 +281,7 @@ public class CalendarController implements Initializable{
 	 * Open and close the botto, and set value to hamburger. OnAction from botto-Button.
 	 */
     public void slidePane(){
+    	botto.setStyle("-fx-border-color: #75bc1b; -fx-border-width: 5px");
 		drawer.setSidePane(botto);
 		if(drawer.isShown()){
             askButton.setText("Open Bot");
@@ -659,7 +660,7 @@ public class CalendarController implements Initializable{
 	 * Insert cells at dayTab.
 	 */
 	private void insertDayCells(){
-		for (eventButton oldDay : oldDays){
+		for (EventButton oldDay : oldDays){
 			day.getChildren().remove(oldDay.getEvent());
 		}
 		oldDays.clear();
@@ -675,19 +676,19 @@ public class CalendarController implements Initializable{
 			}
 
 			if (dateActivity.equals(chosenDateL)) {
-				eventButton eb;
+				EventButton eb;
 				if(cell.getClass() == Activity.class) {
-					eb = new eventButton(cell.getName(), cell.getDescription(), cell);
+					eb = new EventButton(cell.getName(), cell.getDescription(), cell);
 					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
 							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 				}else if(cell.getSlotPriority() == 98){
 					Event eventCell = (Event) cell;
-					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
+					eb = new EventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
 					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
 							1, 2);
 				} else {
 					Event eventCell = (Event) cell;
-					eb = new eventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
+					eb = new EventButton(cell.getName(), cell.getDescription(),eventCell.getSubjectCode(), cell, cell.getID());
 					day.add(eb.getEvent(), 1, Integer.parseInt(cell.getStartTime()) - 7,
 							1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 				}
@@ -705,7 +706,7 @@ public class CalendarController implements Initializable{
 	private void insertWeekCells(){
 		//System.out.println("SETTING NEW CELLS");
 
-		for(eventButton ab : oldActivityButtons){
+		for(EventButton ab : oldActivityButtons){
 			week.getChildren().remove(ab.getEvent());
 		}
 		oldActivityButtons.clear();
@@ -723,22 +724,22 @@ public class CalendarController implements Initializable{
 					}
 					if(lDate.equals(dateActivity)){
 					    //legger til activity i week calenderen
-						eventButton event;
+						EventButton event;
 						if(cell.getClass() == Activity.class) {
-							event = new eventButton(cell.getName(), cell.getDescription(), cell);
+							event = new EventButton(cell.getName(), cell.getDescription(), cell);
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - Integer.parseInt(cell.getStartTime()));
 						} else if(cell.getSlotPriority() == 98){
 
 							Event eventCell = (Event) cell;
-							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
+							event = new EventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,1,2);
 
 						}
 
 						else {
 							Event eventCell = (Event) cell;
-							event = new eventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
+							event = new EventButton(cell.getName(), cell.getDescription(), eventCell.getSubjectCode(), cell, cell.getID());
 							week.add(event.getEvent(), day, Integer.parseInt(cell.getStartTime()) - 7,
 									1, Integer.parseInt(cell.getEndTime()) - (Integer.parseInt(cell.getStartTime())));
 						}
@@ -763,7 +764,7 @@ public class CalendarController implements Initializable{
 		System.out.println("Month");
 		ArrayList<LocalDate> usedDate = new ArrayList<>();
 
-		for (calendar.Cell cell : cellsAtCurrentDate) {
+		for (Cell cell : cellsAtCurrentDate) {
 			LocalDate date;
 			if (cell.getStartDate().getClass() == java.sql.Date.class) {
 				date = new Date(cell.getStartDate().getTime()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -880,7 +881,7 @@ public class CalendarController implements Initializable{
      * Set cells to labels.
 	 */
     private void enterCells(){
-		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
+		for (Map.Entry<Label, Cell> entry : labelMappedCells.entrySet())
 		{
 			writeToLabel(entry.getKey(), entry.getValue());
 		}
@@ -891,7 +892,7 @@ public class CalendarController implements Initializable{
 	 * @param label label
 	 * @param cell cell.
 	 */
-	private void writeToLabel(Label label, calendar.Cell cell){
+	private void writeToLabel(Label label, Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
 	}

@@ -37,17 +37,13 @@ public class AddSubjectControllerTest {
     public void setup() {
         new JFXPanel();
         con = new AddSubjectController();
-
-
         connect = new Connect();
         connect.addStudent("testStud@test.com", "test", "test", "test", 1,
                 "test");
         con.subject = new TextField();
-
         user = User.getInstance();
         user.setUsername("testStud@test.com");
         CC = CalendarController.getInstance();
-
         con.subjectPicker = new JFXComboBox();
         con.anchorPane = new AnchorPane();
 
@@ -70,11 +66,11 @@ public class AddSubjectControllerTest {
 
     }
 
-    
+
     @Test
     public void testInitalization(){
         con.initialize(null,null);
-       
+
     }
 
 

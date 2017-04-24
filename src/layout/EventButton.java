@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 /**
  * Created by torresrl on 22/03/2017.
  */
-public class eventButton {
+public class EventButton {
 
     private String description;
     private String name;
@@ -32,7 +32,7 @@ public class eventButton {
 
 
     //Setter opp hvis det er activitet
-    public eventButton(String name, String description, Cell cell){
+    public EventButton(String name, String description, Cell cell){
         this.name = name;
         this.description = description;
         event = new Button();
@@ -98,7 +98,7 @@ public class eventButton {
     }
 
 // setter opp hvis det er event
-    public eventButton(String name, String description, String subjecCode, Cell cell, int id){
+    public EventButton(String name, String description, String subjecCode, Cell cell, int id){
         //TODO: Get event ID here.
         this.name = name;
         this.description = description;

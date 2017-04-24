@@ -25,16 +25,15 @@ public class TeacherCalendarControllerTest {
     public void setup(){
         new JFXPanel();
         con = new TeacherCalendarController();
-
-        con.drawer  = new JFXDrawer();
+        con.drawer = new JFXDrawer();
         con.drawer2 = new JFXDrawer();
-        con.add          = new AnchorPane();
-        con.feedback     = new AnchorPane();
+        con.add = new AnchorPane();
+        con.feedback = new AnchorPane();
         con.addTsbubject = new AnchorPane();
-        con.userName         = new Label();
-        con.mainButtons      = new Group();
-        con.topButtons       = new Group();
-        con.topBox           = new HBox();
+        con.userName = new Label();
+        con.mainButtons = new Group();
+        con.topButtons = new Group();
+        con.topBox = new HBox();
         con.teachingSubjects = new Label();
         con.centerPane = new AnchorPane();
         con.barPane = new AnchorPane();
@@ -43,7 +42,7 @@ public class TeacherCalendarControllerTest {
     }
 
     @Test
-    public void addEventFeedBackTeachingSubject(){
+    public void testAddEventFeedBackTeachingSubject(){
 
         con.addEvent(); // 1
         assertEquals(con.drawer.getSidePane().get(0), con.add);
@@ -62,8 +61,6 @@ public class TeacherCalendarControllerTest {
         assertEquals(true, con.topButtons.isVisible());
         assertEquals(false, con.mainButtons.isVisible());
         assertEquals(false, con.userName.isVisible());
-
-
     }
 
     @Test
@@ -72,7 +69,6 @@ public class TeacherCalendarControllerTest {
         assertEquals(false, con.topButtons.isVisible());
         assertEquals(true, con.mainButtons.isVisible());
         assertEquals(true, con.userName.isVisible());
-
     }
 
     @Test
@@ -85,7 +81,6 @@ public class TeacherCalendarControllerTest {
         assertEquals("3", con.bar.getId());
         con.snack(4, "test");
         assertEquals("4", con.bar.getId());
-
     }
 
     @Test

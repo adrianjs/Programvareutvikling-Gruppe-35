@@ -83,16 +83,10 @@ public class AddEventControllerTest {
         AEC.repeating = new JFXCheckBox();
         AEC.subjects.add("AAR4335");
 
-
         date = new Date();
         testDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         testDateTime = LocalDateTime.of(2017, 4,11,12,00);
         testTime = testDateTime.toLocalTime();
-
-
-
-
-
     }
 
     @Test
@@ -202,7 +196,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateEndDate());
         AEC.endDate.setValue(testDate.plusDays(2));
         assertEquals(true, AEC.validateEndDate());
-
     }
 
     @Test
@@ -217,7 +210,6 @@ public class AddEventControllerTest {
         AEC.validateEndDate();
         AEC.validateStartDate();
         assertEquals(true, AEC.validateStartBeforeEnd());
-
     }
 
     @Test
@@ -227,7 +219,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartTime());
         AEC.startTime.setTime(testTime);
         assertEquals(true, AEC.validateStartTime());
-
     }
 
     @Test
@@ -237,7 +228,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateeEndTime());
         AEC.endTime.setTime(testTime);
         assertEquals(true, AEC.validateeEndTime());
-
     }
 
     @Test
@@ -267,7 +257,6 @@ public class AddEventControllerTest {
         AEC.hours.setText("2");
         assertEquals(true, AEC.validateHoursOfWork());
     }
-
 
     //todo on inteliseren
 

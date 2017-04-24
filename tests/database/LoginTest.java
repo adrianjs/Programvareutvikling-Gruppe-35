@@ -30,7 +30,7 @@ public class LoginTest {
     }
 
     @Test
-    public void checkIfDBContainsUser() throws SQLException {
+    public void testCheckIfDBContainsUser() throws SQLException {
         boolean contains = false;
         Login login = new Login();
         Set<ArrayList> students = login.getStudent();
@@ -55,7 +55,7 @@ public class LoginTest {
 
 
     @After
-    public void breakDown() throws SQLException {
+    public void tearDown() throws SQLException {
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
         connect.stmt.execute("DELETE FROM COURSECOORDINATOR WHERE email='testTeach@test.com'");
     }

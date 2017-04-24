@@ -29,15 +29,12 @@ public class LoginControllerTest {
     public void setup(){
         new JFXPanel();
         con = new LoginController();
-
-        con.loginField     = new JFXTextField();
-        con.passwordField  = new JFXPasswordField();
-        con.openCalendar   = new JFXButton();
-        con.loginError     = new Label();
-        con.snackBarPane   = new AnchorPane();
-
+        con.loginField = new JFXTextField();
+        con.passwordField = new JFXPasswordField();
+        con.openCalendar = new JFXButton();
+        con.loginError = new Label();
+        con.snackBarPane = new AnchorPane();
     }
-
 
     @Test
     public void testGetUser(){
@@ -52,7 +49,6 @@ public class LoginControllerTest {
 
     @Test
     public void testValidateLogin(){
-
         con.loginField.setText("larsmade@stud.ntnu.no");
         con.passwordField.setText("123");
         con.user.setUsername("larsmade@stud.ntnu.no");
@@ -62,36 +58,22 @@ public class LoginControllerTest {
 
     @Test
     public void testLogin() throws IOException, SQLException {
-
-                try {
-                    con.loginField.setText("larsmade@stud.ntnu.no");
-                    con.passwordField.setText("123");
-                    con.stage = new Stage();
-                    con.login();
-                    assertEquals("student", con.test);
-                    con.loginField.setText("larsmade@stud.ntnu.no");
-                    con.passwordField.setText("12345");
-                    con.login();
-                    assertEquals("Wrong username or password", con.loginError.getText());
-                    con.loginField.setText("a.helvoort@ntnu.no");
-                    con.passwordField.setText("123");
-                    con.login();
-                    assertEquals("teacher", con.test);
-
-
-                } catch(Exception e){
-                    e.printStackTrace();
-                }
-
-
-
-
+        try {
+            con.loginField.setText("larsmade@stud.ntnu.no");
+            con.passwordField.setText("123");
+            con.stage = new Stage();
+            con.login();
+            assertEquals("student", con.test);
+            con.loginField.setText("larsmade@stud.ntnu.no");
+            con.passwordField.setText("12345");
+            con.login();
+            assertEquals("Wrong username or password", con.loginError.getText());
+            con.loginField.setText("a.helvoort@ntnu.no");
+            con.passwordField.setText("123");
+            con.login();
+            assertEquals("teacher", con.test);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
-
-
-
-
-
-
-
 }

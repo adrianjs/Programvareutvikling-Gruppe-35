@@ -11,18 +11,15 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by torresrl on 20/04/2017.
  */
-public class testFeedbackElement {
+public class FeedbackElementTest {
 
     FeedbackElement FBE;
-
 
     @Before
     public void setup() {
         new JFXPanel();
-
         FBE = new FeedbackElement("11.04.1994", "testE", "testA", "testD");
     }
-
 
     @Test
     public void testGetAvg(){
@@ -67,5 +64,4 @@ public class testFeedbackElement {
         FBE.setEstimate("testEE");
         assertEquals("testEE", FBE.getEstimate());
     }
-
 }

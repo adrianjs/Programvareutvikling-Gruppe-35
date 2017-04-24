@@ -1,7 +1,7 @@
 package controllers;
 
-import algorithm.Activity;
-import algorithm.Event;
+import calendar.Activity;
+import calendar.Event;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTabPane;
@@ -23,6 +23,7 @@ import static org.junit.Assert.assertEquals;
  * Created by torresrl on 19/04/2017.
  */
 public class CalendarControllerTest {
+
     CalendarController con;
     Date date;
     LocalDate datel;
@@ -30,17 +31,12 @@ public class CalendarControllerTest {
     @Rule
     public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
 
-
-
     @Before
     public void setUp() throws Exception {
         new JFXPanel();
         con = new CalendarController();
         date = new Date();
         datel = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-
-
         con.askButton = new JFXButton();
         con.logout    = new JFXButton();
         con.remove    = new JFXButton();
@@ -63,16 +59,12 @@ public class CalendarControllerTest {
 
         con.date = new JFXDatePicker();
         con.thisday = new Label();
-
-
-
     }
 
     @Test
     public void testCurrentDate(){
         assertEquals(date.getMinutes(), con.getChosenDate().getMinutes());
         assertEquals(date.getHours(), con.getChosenDate().getHours());
-
     }
 
     @Test
@@ -81,7 +73,6 @@ public class CalendarControllerTest {
         assertEquals(1, test);
         test = con.removeZero("123");
         assertEquals(123, test);
-
     }
 
     @Test
@@ -105,7 +96,6 @@ public class CalendarControllerTest {
         for(Label testL : con.timeToTime){
             assertEquals("", testL.getText());
         }
-
         con.clearTimeSlots();
         assertEquals(0, con.dayTabLabels.size());
         assertEquals(0, con.cellsAtCurrentDate.size());
@@ -113,21 +103,15 @@ public class CalendarControllerTest {
         assertEquals(0, con.labelMappedCells.size());
     }
 
-
-
     @Test
     public void testAskBotto(){
         assertEquals(con.askButton.getScene(), con.getScene());
-
     }
 
     @Test
     public void testTimeLayout(){
-
         con.weekCalendarList.clear();
         con.timeLayout();
-
-
         assertEquals("-fx-background-color: white;", con.monday.getStyle());
         assertEquals("-fx-background-color: white;", con.tuesday.getStyle());
         assertEquals("-fx-background-color: white;", con.wednesday.getStyle());
@@ -135,33 +119,24 @@ public class CalendarControllerTest {
         assertEquals("-fx-background-color: white;", con.friday.getStyle());
         assertEquals("-fx-background-color: white;", con.saturday.getStyle());
         assertEquals("-fx-background-color: white;", con.sunday.getStyle());
-
     }
-
 
     @Test
     public void testSetDate(){
         Date date = new Date();
         con.setDate();
         assertEquals(date.getDate(), con.getChosenDate().getDate());
-
-
-
     }
 
     @Test
     public void testAddLabelsToList(){
-
         con.addLabelsToList();
-
     }
 
     @Test
     public void testMapMonthTab(){
         con.mapMonthTab();
-
     }
-
 
     @Test // ikke ferdig
     public void testInsertCells(){
@@ -182,8 +157,6 @@ public class CalendarControllerTest {
         con.cells.add(activity);
         con.insertCells();
         assertEquals(true, con.day.getChildren().size() == 2);
-
-
     }
 
     @Test
@@ -196,13 +169,11 @@ public class CalendarControllerTest {
             testLabel.setText(""+i);
             con.monthLabels.add(testLabel);
             con.monthClicked(i);
-
         }
 
         assertEquals(false, con.monthTab.isSelected());
         assertEquals(false, con.weekTab.isSelected());
         assertEquals(false, con.dayTab.isSelected());
-
 
         con.handleCalendarClick1();
         con.handleCalendarClick2();
@@ -241,18 +212,5 @@ public class CalendarControllerTest {
         con.handleCalendarClick35();
         con.handleCalendarClick36();
         con.handleCalendarClick37();
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
 }
