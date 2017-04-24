@@ -281,6 +281,7 @@ public class CalendarController implements Initializable{
 	 * Open and close the botto, and set value to hamburger. OnAction from botto-Button.
 	 */
     public void slidePane(){
+    	botto.setStyle("-fx-border-color: #75bc1b; -fx-border-width: 5px");
 		drawer.setSidePane(botto);
 		if(drawer.isShown()){
             askButton.setText("Open Bot");
