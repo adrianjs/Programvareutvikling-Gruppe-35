@@ -31,8 +31,8 @@ public class CreateUser {
 
     @FXML JFXTextArea description;
 
-    @FXML private Button submit;
-    @FXML private Button cancel;
+    @FXML Button submit;
+    @FXML Button cancel;
 
     @FXML JFXTextField email;
     @FXML JFXTextField firstName;
@@ -181,9 +181,14 @@ public class CreateUser {
         }
 
         if (errorMessage.length() == 0){
-            System.out.println("new user created");
-            Stage stage = (Stage) cancel.getScene().getWindow();
-            stage.close();
+            try {
+                System.out.println("new user created");
+                Stage stage = (Stage) cancel.getScene().getWindow();
+                stage.close();
+            } catch(NullPointerException se){
+                  System.out.println("denne er her for testing, Hvis du ikke tester se CreateUser -> is InputValid og" +
+                          " ned til if settningen hvor error messange har lengde mindre en null");
+                }
             return true;
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
