@@ -63,8 +63,7 @@ public class AddActivityControllerTest {
         AAC.desc = new JFXTextField();
         AAC.initialize(null, null);
         AAC.dateSet = testDate;
-        AAC.user.getInstance().setUsername("larsmade@stud.ntnu.no");;
-
+        AAC.user.getInstance().setUsername("larsmade@stud.ntnu.no");
 
         //AAC.cancel = new JFXButton();
 

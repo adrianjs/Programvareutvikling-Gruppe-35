@@ -1,14 +1,13 @@
 package controllers.add;
 
+import calendar.Activity;
 import calendar.Cell;
-import algorithm.Activity;
 import com.jfoenix.controls.*;
 import controllers.CalendarController;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import layout.User;
@@ -17,8 +16,9 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.*;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -43,6 +43,7 @@ public class AddActivityController implements Initializable{
     boolean repeat;
     int priorityNumber;
     String description;
+    User user;
 
     CalendarController cal;
 
@@ -55,7 +56,11 @@ public class AddActivityController implements Initializable{
     public void sendIn(){
         errorTime.setText("");
         if((checkActivity()) && (checkDate())&& (checkTime()) && (checkPriority())){
-            stage = (Stage) cancel.getScene().getWindow();
+            try {
+                stage = (Stage) cancel.getScene().getWindow();
+            } catch (NullPointerException e){
+
+            }
             //setter verdier, må da lagres i databasen...
             act = activity.getText();
             dateSet = date.getValue();
@@ -67,8 +72,14 @@ public class AddActivityController implements Initializable{
             description = desc.getText();
             Cell cell = toUserCell();
             pushCell(cell);
-            stage.close();
-            CalendarController.getInstance().refresh();
+            try {
+                stage.close();
+                CalendarController.getInstance().refresh();
+            } catch (NullPointerException e){
+
+            }
+
+
         }
 
     }
