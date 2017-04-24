@@ -266,23 +266,32 @@ public class SuperSorter{
         dialog.setGraphic(imageView);
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
+        String subjectCodeCurrent = "";
+        String subjectCodeCollision= "";
+        try{
+            subjectCodeCurrent = ((Event) currentCell).getSubjectCode();
+            subjectCodeCollision = ((Event) collisionCell).getSubjectCode();
+        }catch(Exception e){
+            assert true;
+        }
+
         dialog.setContentText("They both happen on : " + currentCell.getStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate() +
-                "\n" + currentCell.getName()+ " - "+ ((Event) currentCell).getSubjectCode() + " starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
-                "\n" + collisionCell.getName() +" - " + ((Event) collisionCell).getSubjectCode()+ " starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
+                "\n" + currentCell.getName()+ " - "+ subjectCodeCurrent + " starts at : " + currentCell.getStartTime() + " and ends at : " + currentCell.getEndTime() +
+                "\n" + collisionCell.getName() +" - " + subjectCodeCollision+ " starts at : " + collisionCell.getStartTime() + " and ends at : " + collisionCell.getEndTime());
         if(currentCell.getClass().equals(Event.class) && collisionCell.getClass().equals(Event.class)){
             dialog.getDialogPane().getButtonTypes().setAll(
-                    new ButtonType(currentCell.getName() +" - "+ ((Event) currentCell).getSubjectCode(), ButtonBar.ButtonData.OK_DONE),
-                    new ButtonType(collisionCell.getName() +" - "+ ((Event) collisionCell).getSubjectCode(), ButtonBar.ButtonData.CANCEL_CLOSE)
+                    new ButtonType(currentCell.getName() +" - "+ subjectCodeCurrent, ButtonBar.ButtonData.OK_DONE),
+                    new ButtonType(collisionCell.getName() +" - "+ subjectCodeCollision, ButtonBar.ButtonData.CANCEL_CLOSE)
             );
         }else if(currentCell.getClass().equals(Event.class) && collisionCell.getClass().equals(Activity.class)){
             dialog.getDialogPane().getButtonTypes().setAll(
-                    new ButtonType(currentCell.getName() +" - "+ ((Event) currentCell).getSubjectCode(), ButtonBar.ButtonData.OK_DONE),
+                    new ButtonType(currentCell.getName() +" - "+ subjectCodeCurrent, ButtonBar.ButtonData.OK_DONE),
                     new ButtonType(collisionCell.getName(), ButtonBar.ButtonData.CANCEL_CLOSE)
             );
         }else if(currentCell.getClass().equals(Activity.class) && collisionCell.getClass().equals(Event.class)){
             dialog.getDialogPane().getButtonTypes().setAll(
                     new ButtonType(currentCell.getName(), ButtonBar.ButtonData.OK_DONE),
-                    new ButtonType(collisionCell.getName() +" - "+ ((Event) collisionCell).getSubjectCode(), ButtonBar.ButtonData.CANCEL_CLOSE)
+                    new ButtonType(collisionCell.getName() +" - "+ subjectCodeCollision, ButtonBar.ButtonData.CANCEL_CLOSE)
             );
         }else {
             dialog.getDialogPane().getButtonTypes().setAll(
