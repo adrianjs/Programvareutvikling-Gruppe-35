@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXTabPane;
-import database.Connect;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -152,11 +151,11 @@ public class CalendarController implements Initializable{
 		setLines();
         setDate();
 		try {
+			superSorter.run();
 			setupDayTab();
 			getWeekTabCells();
 			mapMonthTab();
 			setBottoField(); //SlideFieldBotto
-			superSorter.run();
 			setNewDate2(thisDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 		}catch (ParseException e) {
 			e.printStackTrace();
@@ -171,12 +170,12 @@ public class CalendarController implements Initializable{
 
     public void refresh(){
 		try {
+			superSorter.run();
 			timeLayout();
 			setupDayTab();
 			getWeekTabCells();
 			mapMonthTab();
-			superSorter.run();
-			insertCells();
+			insertMonthCells();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -775,51 +774,68 @@ public class CalendarController implements Initializable{
 				if (entry.getKey().equals(date)) {
 					//IF There is something with high priority --> Can change this.
 					if (usedDate.contains(entry.getKey()) || doubleDate.contains(entry.getKey())) {
-						Label oldLabel = (Label) entry.getValue().getChildren().get(1);
-						entry.getValue().getChildren().remove(1);
-						String[] checkLength = oldLabel.toString().split("\n");
-						Label lab = new Label();
-						String oldLabelToString = "\n";
-						if (checkLength.length <= 3) {
-							String cellName = cell.getName();
-							if (cellName.length() > 15) {
-								cellName = cellName.substring(0, 15) + "...";
-							}
-							oldLabelToString = oldLabel.getText() + "\n" + cellName;
-						} else {
-							for (int i = 1; i < 3; i++) {
-								String length = checkLength[i];
-								oldLabelToString += length + "\n";
-							}
-							oldLabelToString += "Click for more...";
-						}
-						lab.setText(oldLabelToString);
-						lab.setStyle("-fx-text-fill: green;" +
-								"-fx-font-size: 14;");
-						lab.setPadding(new Insets(0, 0, 0, 5));
-						entry.getValue().getChildren().addAll(lab);
-						eventLabels.add(lab);
-						if (!doubleDate.contains(entry.getKey())) {
-							doubleDate.add(entry.getKey());
-						}
+					    try{
+                            Label oldLabel = (Label) entry.getValue().getChildren().get(1);
+                            entry.getValue().getChildren().remove(1);
+                            String[] checkLength = oldLabel.toString().split("\n");
+                            Label lab = new Label();
+                            String oldLabelToString = "\n";
+                            if (checkLength.length <= 3) {
+                                String cellName = cell.getName();
+                                if (cellName.length() > 15) {
+                                    cellName = cellName.substring(0, 15) + "...";
+                                }
+                                oldLabelToString = oldLabel.getText() + "\n" + cellName;
+                            } else {
+                                for (int i = 1; i < 3; i++) {
+                                    String length = checkLength[i];
+                                    oldLabelToString += length + "\n";
+                                }
+                                oldLabelToString += "Click for more...";
+                            }
+                            lab.setText(oldLabelToString);
+                            lab.setStyle("-fx-text-fill: #75bc1b;" +
+                                    "-fx-font-size: 14;");
+                            lab.setPadding(new Insets(0, 0, 0, 5));
+                            entry.getValue().getChildren().addAll(lab);
+                            lab.setId("deletable");
+                            eventLabels.add(lab);
+                            if (!doubleDate.contains(entry.getKey())) {
+                                doubleDate.add(entry.getKey());
+                            }
+                        }catch (Exception e){
+                            newLabel(cell, entry, usedDate);
+                        }
+
 					} else {
-						Label lab = new Label();
-						String cellName = cell.getName();
-						if(cellName.length() > 15){
-							cellName = cellName.substring(0,15) + "...";
-						}
-						lab.setText(" " + '\n' + cellName);
-						lab.setStyle("-fx-text-fill: green;" +
-								"-fx-font-size: 14;");
-						lab.setPadding(new Insets(0, 3, 0, 3));
-						entry.getValue().getChildren().addAll(lab);
-						eventLabels.add(lab);
-						usedDate.add(entry.getKey());
+						newLabel(cell, entry, usedDate);
 					}
 				}
 			}
 		}
 	}
+
+    /**
+     * Creates a new label
+     * @param cell cell from insert monthcells method
+     * @param entry entry from insert monthcells method
+     * @param usedDate useddate from insert monthcells method
+     */
+	private void newLabel(Cell cell, Map.Entry<LocalDate, AnchorPane> entry, ArrayList<LocalDate> usedDate){
+        Label lab = new Label();
+        String cellName = cell.getName();
+        if(cellName.length() > 15){
+            cellName = cellName.substring(0,15) + "...";
+        }
+        lab.setText(" " + '\n' + cellName);
+        lab.setStyle("-fx-text-fill: #75bc1b;" +
+                "-fx-font-size: 14;");
+        lab.setPadding(new Insets(0, 3, 0, 3));
+        entry.getValue().getChildren().addAll(lab);
+        lab.setId("deletable");
+        eventLabels.add(lab);
+        usedDate.add(entry.getKey());
+    }
 
 	/**
 	 * Help-Method for inserting mapped cells.
@@ -843,19 +859,25 @@ public class CalendarController implements Initializable{
         return stretch;
     }*/
 
-
-
-	/**
-	 * Removes Removes the month activity Labels so you new ones can be set.
+    /**
+	 * Removes the labels in the month anchorpanes, where id is set to deletable, prevents labels to lay on top on each other.
 	 */
 	private void removeMonthActivityLabel(){
-		for (Label l: eventLabels) {
+        for (Label l: eventLabels) {
 			l.setText("");
-		}
+			if(l.getId().contains("deletable")){
+                AnchorPane par = (AnchorPane) l.getParent();
+                try{
+                    par.getChildren().remove(l);
+                }catch(Exception e){
+                    assert true;
+                }
+            }
+        }
 	}
 
-	/**
-	 * Set cells to labels.
+    /**
+     * Set cells to labels.
 	 */
     private void enterCells(){
 		for (Map.Entry<Label, calendar.Cell> entry : labelMappedCells.entrySet())
