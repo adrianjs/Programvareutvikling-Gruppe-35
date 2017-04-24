@@ -1,4 +1,4 @@
-package calendar;
+package algorithm;
 
 import java.util.Date;
 

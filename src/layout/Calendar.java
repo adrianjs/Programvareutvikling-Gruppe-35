@@ -2,10 +2,7 @@ package layout;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import algorithm.Activity;
-import controllers.CalendarController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;

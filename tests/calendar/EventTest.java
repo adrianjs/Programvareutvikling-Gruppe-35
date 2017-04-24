@@ -1,10 +1,10 @@
-package algorithm;
+package calendar;
 
+import calendar.Event;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.*;
 
@@ -23,7 +23,13 @@ public class EventTest {
     }
 
     @Test
-    public void setName() throws Exception {
+    public void testConstructNewEventFromEvent(){
+        Event event = new Event(this.event);
+        assertEquals(this.event.getName(), event.getName());
+    }
+
+    @Test
+    public void testSetName() throws Exception {
         String origName = this.event.getName();
         this.event.setName("Other than TEST");
         assertEquals("Other than TEST", this.event.getName());
@@ -31,21 +37,21 @@ public class EventTest {
     }
 
     @Test
-    public void setStartDate() throws Exception {
+    public void testSetStartDate() throws Exception {
         Date origDate = this.event.getStartDate();
         this.event.setStartDate(new Date());
         assertNotEquals(origDate.getTime(), this.event.getStartDate());
     }
 
     @Test
-    public void setEndDate() throws Exception {
+    public void testSetEndDate() throws Exception {
         Date origDate = this.event.getEndDate();
         this.event.setEndDate(new Date());
         assertNotEquals(origDate.getTime(), this.event.getEndDate());
     }
 
     @Test
-    public void setStartTime() throws Exception {
+    public void testSetStartTime() throws Exception {
         String origTime = this.event.getStartTime();
         this.event.setStartTime("09");
         assertEquals("09", this.event.getStartTime());
@@ -53,7 +59,7 @@ public class EventTest {
     }
 
     @Test
-    public void setEndTime() throws Exception {
+    public void testSetEndTime() throws Exception {
         String origTime = this.event.getEndTime();
         this.event.setEndTime("15");
         assertEquals("15", this.event.getEndTime());
@@ -61,7 +67,7 @@ public class EventTest {
     }
 
     @Test
-    public void setRepeating() throws Exception {
+    public void testSetRepeating() throws Exception {
         boolean origRepeat = this.event.isRepeating();
         this.event.setRepeating(true);
         assertEquals(true, this.event.isRepeating());
@@ -69,7 +75,7 @@ public class EventTest {
     }
 
     @Test
-    public void setPriority() throws Exception {
+    public void testSetPriority() throws Exception {
         int origPrio = this.event.getSlotPriority();
         this.event.setSlotPriority(50);
         assertEquals(50, this.event.getSlotPriority());
@@ -77,7 +83,7 @@ public class EventTest {
     }
 
     @Test
-    public void setDescription() throws Exception {
+    public void testSetDescription() throws Exception {
         String origDesc = this.event.getDescription();
         this.event.setDescription("Some other description");
         assertEquals("Some other description", this.event.getDescription());
@@ -85,7 +91,7 @@ public class EventTest {
     }
 
     @Test
-    public void setHoursOfWork() throws Exception {
+    public void testSetHoursOfWork() throws Exception {
         int origHours = this.event.getHoursOfWork();
         this.event.setHoursOfWork(6);
         assertEquals(6, this.event.getHoursOfWork());
@@ -93,7 +99,7 @@ public class EventTest {
     }
 
     @Test
-    public void setSubjectCode() throws Exception {
+    public void testSetSubjectCode() throws Exception {
         String origCode = this.event.getSubjectCode();
         this.event.setSubjectCode("IT2509");
         assertEquals("IT2509", this.event.getSubjectCode());

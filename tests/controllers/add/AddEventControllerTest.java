@@ -84,16 +84,10 @@ public class AddEventControllerTest {
         AEC.repeating = new JFXCheckBox();
         AEC.subjects.add("AAR4335");
 
-
         date = new Date();
         testDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         testDateTime = LocalDateTime.of(2017, 4,11,12,00);
         testTime = testDateTime.toLocalTime();
-
-
-
-
-
     }
 
     @Test
@@ -151,7 +145,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.hoursOfWOrk.isVisible());
 
         AEC.homeExam.setSelected(false);
-
     }
 
     @Test
@@ -166,8 +159,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateSubject());
         AEC.subjectsDropDown.setValue("AAR4335");
         assertEquals(true, AEC.validateSubject());
-
-
     }
 
     @Test
@@ -175,7 +166,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateEventName());
         AEC.eventName.setText("test");
         assertEquals(true, AEC.validateEventName());
-
     }
 
     @Test
@@ -183,7 +173,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateDescription());
         AEC.description.setText("test");
         assertEquals(true, AEC.validateDescription());
-
     }
 
     @Test
@@ -193,7 +182,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartDate());
         AEC.startDate.setValue(testDate.plusDays(2));
         assertEquals(true, AEC.validateStartDate());
-
     }
 
     @Test
@@ -203,7 +191,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateEndDate());
         AEC.endDate.setValue(testDate.plusDays(2));
         assertEquals(true, AEC.validateEndDate());
-
     }
 
     @Test
@@ -218,7 +205,6 @@ public class AddEventControllerTest {
         AEC.validateEndDate();
         AEC.validateStartDate();
         assertEquals(true, AEC.validateStartBeforeEnd());
-
     }
 
     @Test
@@ -228,7 +214,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartTime());
         AEC.startTime.setTime(testTime);
         assertEquals(true, AEC.validateStartTime());
-
     }
 
     @Test
@@ -238,7 +223,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateeEndTime());
         AEC.endTime.setTime(testTime);
         assertEquals(true, AEC.validateeEndTime());
-
     }
 
     @Test
@@ -269,7 +253,6 @@ public class AddEventControllerTest {
         assertEquals(true, AEC.validateHoursOfWork());
     }
 
-
     //todo on inteliseren
     /*
     @Test
@@ -289,15 +272,4 @@ public class AddEventControllerTest {
 
     }
 */
-
-
-
-
-
-
-
-
-
-
-
 }

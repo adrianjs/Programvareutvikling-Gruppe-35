@@ -1,7 +1,7 @@
 package controllers;
 
+import calendar.Cell;
 import com.jfoenix.controls.JFXListView;
-import controllers.CalendarController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -32,7 +32,7 @@ public class WatchDayMonthTabController implements Initializable{
      */
     private void load(){
         cal = CalendarController.getInstance();
-        for (Map.Entry<Label, calendar.Cell> entry : cal.labelMappedCells.entrySet())
+        for (Map.Entry<Label, Cell> entry : cal.labelMappedCells.entrySet())
         {
             System.out.println(entry.getKey().getText());
             if(!entry.getKey().getText().contains("Continiue")){

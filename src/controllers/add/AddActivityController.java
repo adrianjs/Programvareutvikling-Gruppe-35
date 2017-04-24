@@ -1,14 +1,13 @@
 package controllers.add;
 
 import calendar.Cell;
-import algorithm.Activity;
+import calendar.Activity;
 import com.jfoenix.controls.*;
 import controllers.CalendarController;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import layout.User;
@@ -65,7 +64,7 @@ public class AddActivityController implements Initializable{
             stop = endTime.getTime().getHour();
             repeat = everyWeek.isSelected();
             description = desc.getText();
-            calendar.Cell cell = toUserCell();
+            Cell cell = toUserCell();
             pushCell(cell);
             stage.close();
             CalendarController.getInstance().refresh();
@@ -96,7 +95,7 @@ public class AddActivityController implements Initializable{
      * Send in information to userCell.
      * @return activity.
      */
-    public calendar.Cell toUserCell(){
+    public Cell toUserCell(){
         LocalDateTime startTime = dateSet.atTime(start, 0);
         LocalDateTime endTime = dateSet.atTime(stop, 0);
 

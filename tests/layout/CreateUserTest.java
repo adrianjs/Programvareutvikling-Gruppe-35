@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by torresrl on 20/04/2017.
  */
-public class CreatUserTest {
+public class CreateUserTest {
 
     CreateUser cu;
     Connect connect;
@@ -32,7 +32,6 @@ public class CreatUserTest {
     @Rule
     public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
 
-    
     @Before
     public void setup(){
          new JFXPanel();
@@ -59,28 +58,17 @@ public class CreatUserTest {
          cu.submit = new Button();
          cu.cancel = new Button();
 
-
          cu.stud  = new RadioButton();
          cu.teach = new RadioButton();
          cu.initialize();
          connect = new Connect();
 
-
-        cu.email      .setText("torres.lande@gmail.com");
-        cu.firstName  .setText("test");
-        cu.lastName   .setText("test");
-        cu.password   .setText("test");
-        cu.study      .setText("test");
-        cu.department .setText("test");
-
-
-
-        /*cu.description.setVisible(false);
-        cu.fieldStud.setVisible(false);
-        cu.fieldTeach.setVisible(false);
-        cu.yearGroup.setVisible(false);  */
-
-
+         cu.email      .setText("torres.lande@gmail.com");
+         cu.firstName  .setText("test");
+         cu.lastName   .setText("test");
+         cu.password   .setText("test");
+         cu.study      .setText("test");
+         cu.department .setText("test");
 
     }
     
@@ -115,24 +103,18 @@ public class CreatUserTest {
         assertEquals(0, cu.getSchoolYear());
     }
 
-
     @Test
     public void testIsInputValid1(){
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-
                 assertEquals(false, cu.isInputValid());
-
             }
-           });
-
-
+        });
     }
 
     @Test
     public void testIsInputValid2() {
-
         cu.email      .setText("torres.lande@gmail.com");
         cu.firstName  .setText("jnejknfjneofnrejnfklernjgrnerjgknerngkjngkjmekjgnrjkgntjkgnrtjkgnkjrtengkjtrngkjrtngjkrntjkngrtkn");
         cu.lastName   .setText("jnejknfjneofnrejnfklernjgrnerjgknerngkjngkjmekjgnrjkgntjkgnrtjkgnkjrtengkjtrngkjrtngjkrntjkngrtkn");
@@ -146,13 +128,10 @@ public class CreatUserTest {
                 assertEquals(false, cu.isInputValid());
             }
         });
-
-
     }
 
     @Test
     public void testIsInputValid3() {
-
         cu.email      .setText("torres.lande@gmail.com");
         cu.firstName  .setText("test");
         cu.lastName   .setText("test");
@@ -160,17 +139,13 @@ public class CreatUserTest {
         cu.study      .setText("test");
         cu.department .setText("test");
 
-
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 assertEquals(true, cu.isInputValid());
             }
         });
-
-
     }
-
 
     @Test
     public void testStudOnAction(){
@@ -188,9 +163,7 @@ public class CreatUserTest {
         assertEquals(false, cu.yearGroup.isVisible());
         assertEquals(true, cu.fieldTeach.isVisible());
         assertEquals(true, cu.description.isVisible());
-
     }
-
 
     @Test
     public void testSubmitOnAction() throws SQLException{
@@ -213,8 +186,6 @@ public class CreatUserTest {
         assertEquals("testTeach@test.com", m_result_set.getString(1));
 
         connect.stmt.execute("DELETE FROM COURSECOORDINATOR WHERE email='testTeach@test.com'");
-
-
     }
 
     @After

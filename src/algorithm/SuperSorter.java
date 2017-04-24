@@ -1,6 +1,7 @@
 package algorithm;
 
-import calendar.Cell;
+import calendar.Activity;
+import calendar.Event;
 import com.jfoenix.controls.JFXDatePicker;
 import controllers.CalendarController;
 import database.Connect;
@@ -37,12 +38,12 @@ public class SuperSorter{
     private Connect connect = Connect.getInstance();
     private User user = User.getInstance(); //This is the currently logged in user.
     private Set<Subject> subjects = new HashSet<>();
-    private Set<Cell> events = new HashSet<>();
-    private Set<Cell> activities = new HashSet<>();
-    private Set<Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
-    private Set<Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
+    private Set<calendar.Cell> events = new HashSet<>();
+    private Set<calendar.Cell> activities = new HashSet<>();
+    private Set<calendar.Cell> prioritizedSchedule = new LinkedHashSet<>();  //This contains both Events and Activities
+    private Set<calendar.Cell> scheduleWithoutCollision = new LinkedHashSet<>(); //This is both sorted and has collisions handled.
     private Set<Integer> droppedEvents = new LinkedHashSet<>(); //This should contain all the events the user does not want to attend.
-    private Set<Cell> deadlines = new LinkedHashSet<>();
+    private Set<calendar.Cell> deadlines = new LinkedHashSet<>();
 
     public void run() throws SQLException, ParseException, IOException {
         System.out.println("DATA COLLECT");
@@ -161,18 +162,18 @@ public class SuperSorter{
         }
     }
 
-    public Set<Cell> prioritySort(Set<Cell> set){
+    public Set<calendar.Cell> prioritySort(Set<calendar.Cell> set){
         //DONE: Sort on priority
         //DONE: Merge the two Sets of only Cells
         //DONE: Return the set
-        ArrayList<Cell> listToSort = new ArrayList<>(set);
+        ArrayList<calendar.Cell> listToSort = new ArrayList<>(set);
         Collections.sort(listToSort, new PriorityComparator());
         return new LinkedHashSet<>(listToSort);
     }
 
-    public void pickOutDeadlines(Set<Cell> cells){
-        Set<Cell> originalList = new LinkedHashSet<>(cells);
-        for(Cell cell : originalList){
+    public void pickOutDeadlines(Set<calendar.Cell> cells){
+        Set<calendar.Cell> originalList = new LinkedHashSet<>(cells);
+        for(calendar.Cell cell : originalList){
             if(cell.getSlotPriority() == 98){
                 deadlines.add(cell);
                 prioritizedSchedule.remove(cell);
@@ -184,15 +185,15 @@ public class SuperSorter{
         scheduleWithoutCollision.addAll(deadlines);
     }
 
-    public void handleCollisionsInTime(Set<Cell> prioritizedSchedule) throws SQLException, IOException, ParseException {
-        Cell currentCell;
-        Cell placedCell;
-        Cell collisionCell;
-        for(Iterator<Cell> prioIterator = this.prioritizedSchedule.iterator(); prioIterator.hasNext();){
+    public void handleCollisionsInTime(Set<calendar.Cell> prioritizedSchedule) throws SQLException, IOException, ParseException {
+        calendar.Cell currentCell;
+        calendar.Cell placedCell;
+        calendar.Cell collisionCell;
+        for(Iterator<calendar.Cell> prioIterator = this.prioritizedSchedule.iterator(); prioIterator.hasNext();){
             currentCell = prioIterator.next();
             boolean collision = false;
             collisionCell = null;
-            for(Iterator<Cell> scheduleIterator = scheduleWithoutCollision.iterator(); scheduleIterator.hasNext();){
+            for(Iterator<calendar.Cell> scheduleIterator = scheduleWithoutCollision.iterator(); scheduleIterator.hasNext();){
                 placedCell = scheduleIterator.next();
                 if(new TimeComparator().compare(placedCell, currentCell)){
                     collision = true;
@@ -239,7 +240,7 @@ public class SuperSorter{
         }
     }
 
-    public String stringFormatterForCell(Cell cell){
+    public String stringFormatterForCell(calendar.Cell cell){
         String output;
         if(cell instanceof Activity){
             output = cell.getName();
@@ -254,7 +255,7 @@ public class SuperSorter{
      * has the same priority.
      * The user gets to choose manually.
      */
-    public void handleSamePriority(Cell currentCell, Cell collisionCell) throws SQLException, IOException, ParseException {
+    public void handleSamePriority(calendar.Cell currentCell, calendar.Cell collisionCell) throws SQLException, IOException, ParseException {
         Dialog dialog = new Dialog();
         dialog.getDialogPane().setPrefSize(600, 220);
         dialog.setTitle("Handle priority");
@@ -307,7 +308,7 @@ public class SuperSorter{
         }
     }
 
-    public void handleUnprioritizedActivity(Cell activity) throws SQLException, IOException, ParseException {
+    public void handleUnprioritizedActivity(calendar.Cell activity) throws SQLException, IOException, ParseException {
         Dialog dialog = new Dialog();
         dialog.getDialogPane().setPrefSize(600, 220);
         dialog.setTitle("Choose an option");
@@ -337,18 +338,18 @@ public class SuperSorter{
         }
     }
 
-    public void handleUnprioritizedEvent(Cell event) throws SQLException {
+    public void handleUnprioritizedEvent(calendar.Cell event) throws SQLException {
         connect.stmt = connect.conn.createStatement();
         connect.stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
 
-    public void rescheduleAuto(Cell cell) throws SQLException {
+    public void rescheduleAuto(calendar.Cell cell) throws SQLException {
         findNewTime(cell);
         CalendarController.getInstance().refresh();
     }
 
-    public void findNewTime(Cell cell) throws SQLException {
-        Cell originalCell;
+    public void findNewTime(calendar.Cell cell) throws SQLException {
+        calendar.Cell originalCell;
         if(cell.getType().equals("event")){
             originalCell = new Event((Event) cell);
         }else{
@@ -482,7 +483,7 @@ public class SuperSorter{
         }
     }
 
-    public Date getLastPossibleDate(Cell cell) {
+    public Date getLastPossibleDate(calendar.Cell cell) {
         //One month ahead of the event
         Calendar cal = Calendar.getInstance();
         cal.setTime(cell.getStartDate());
@@ -506,8 +507,8 @@ public class SuperSorter{
 
     }
 
-    public boolean detectCollision(Cell cell){
-        for(Cell placedCell : scheduleWithoutCollision){
+    public boolean detectCollision(calendar.Cell cell){
+        for(calendar.Cell placedCell : scheduleWithoutCollision){
             if(new TimeComparator().compare(placedCell, cell)){
                 return false;
             }
@@ -515,7 +516,7 @@ public class SuperSorter{
         return true;
     }
 
-    public void rescheduleManual(Cell activity) throws SQLException, IOException, ParseException {
+    public void rescheduleManual(calendar.Cell activity) throws SQLException, IOException, ParseException {
         setupDialog(activity);
         CalendarController.getInstance().refresh();
     }
@@ -526,13 +527,13 @@ public class SuperSorter{
         droppedEvents.clear();
     }
 
-    public void resetDroppedEvent(Cell event) throws SQLException {
+    public void resetDroppedEvent(calendar.Cell event) throws SQLException {
         connect.stmt = connect.conn.createStatement();
         connect.stmt.executeUpdate("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='"+user.getUsername()+"' AND eventId='"+event.getID()+"'");
         droppedEvents.remove(event);
     }
 
-    public void setupDialog(Cell activity) throws SQLException, IOException, ParseException {
+    public void setupDialog(calendar.Cell activity) throws SQLException, IOException, ParseException {
         Dialog dialog = new Dialog();
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new javafx.scene.image.Image((getClass().getResourceAsStream("/img/EO.png"))));
@@ -568,8 +569,8 @@ public class SuperSorter{
         }
     }
 
-    private void changeTime(Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
-        Cell newActivity = activity;
+    private void changeTime(calendar.Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
+        calendar.Cell newActivity = activity;
         Date startDate;
         String startTime = time1.toString();
         String endTime = time2.toString();
@@ -594,21 +595,21 @@ public class SuperSorter{
         return subjects;
     }
 
-    public Set<Cell> getEvents() {
+    public Set<calendar.Cell> getEvents() {
         return events;
     }
 
-    public Set<Cell> getActivities() {
+    public Set<calendar.Cell> getActivities() {
         return activities;
     }
 
-    public Set<Cell> getPrioritizedSchedule() {
+    public Set<calendar.Cell> getPrioritizedSchedule() {
         return prioritizedSchedule;
     }
 
-    public Set<Cell> getScheduleWithoutCollision() {
+    public Set<calendar.Cell> getScheduleWithoutCollision() {
         return scheduleWithoutCollision;
     }
 
-    public Set<Cell> getDeadlines(){ return deadlines; }
+    public Set<calendar.Cell> getDeadlines(){ return deadlines; }
 }

@@ -31,21 +31,15 @@ public class AddSubjectControllerTest {
     public void setup() {
         new JFXPanel();
         con = new AddSubjectController();
-
-
         connect = new Connect();
         connect.addStudent("testStud@test.com", "test", "test", "test", 1,
                 "test");
         con.subject = new TextField();
-
         user = User.getInstance();
         user.setUsername("testStud@test.com");
         CC = CalendarController.getInstance();
-
         con.subjectPicker = new JFXComboBox();
         con.anchorPane = new AnchorPane();
-
-
     }
 
     @Test
@@ -60,18 +54,10 @@ public class AddSubjectControllerTest {
         assertEquals("1",con.bar.getId());
         con.removeSubject();
         assertEquals("4",con.bar.getId());
-
     }
-
-
-
-
 
     @After
     public void close() throws SQLException {
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
     }
-
-
-
 }

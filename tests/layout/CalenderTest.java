@@ -13,9 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Created by torresrl on 20/04/2017.
  */
-public class calenderTest {
-
-
+public class CalenderTest {
 
     Calendar cal;
 
@@ -30,23 +28,7 @@ public class calenderTest {
 
     @Test
     public void testLoading() throws IOException {
-
         cal.loading("/resources/fxml/feedback.fxml");
         assertEquals(new FXMLLoader(getClass().getResource("/resources/fxml/feedback.fxml")).getClass(), cal.loader.getClass());
-
-
-
     }
-
-/*
-    @Test
-    public void testSetStage(){
-        Platform.runLater(new Runnable() {
-
-            @Override
-            public void run() {
-
-            }
-        });
-    }*/
 }

@@ -31,13 +31,6 @@ public class AddActivityControllerTest {
     private LocalTime testTime;
     private Activity database;
 
-
-    
-
-
-
-
-
     @Before
     public void setup(){
         new JFXPanel();
@@ -58,15 +51,11 @@ public class AddActivityControllerTest {
        // database = new Activity();
         AAC.everyWeek = new JFXCheckBox();
         AAC.desc = new JFXTextField();
-       
-
     }
-
 
     @Test
     public void testChectActivity() throws Exception{
-
-       assertEquals(true, AAC.checkActivity());
+        assertEquals(true, AAC.checkActivity());
         AAC.activity = new JFXTextField("");
         assertEquals(false, AAC.checkActivity());
     }
@@ -80,8 +69,6 @@ public class AddActivityControllerTest {
         assertEquals(true, AAC.checkDate());
         AAC.date.setValue(testDate.minusDays(5));
         assertEquals(false, AAC.checkDate());
-
-
     }
 
     @Test
@@ -95,7 +82,6 @@ public class AddActivityControllerTest {
         assertEquals(false, AAC.checkTime());
         AAC.startTime.setTime(testTime.minusHours(2));
         assertEquals(true, AAC.checkTime());
-
     }
 
     @Test
@@ -103,7 +89,6 @@ public class AddActivityControllerTest {
         assertEquals(false, AAC.checkPriority());
         AAC.priority.setValue(3);
         assertEquals(true, AAC.checkPriority());
-
     }
 
  /*   @Test

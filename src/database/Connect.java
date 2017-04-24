@@ -2,7 +2,6 @@ package database;
 import calendar.Cell;
 import layout.User;
 
-import java.awt.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 

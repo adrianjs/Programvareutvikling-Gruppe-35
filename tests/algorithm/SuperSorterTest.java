@@ -1,12 +1,8 @@
 package algorithm;
 
+import calendar.Activity;
 import calendar.Cell;
 import database.Connect;
-import database.Teacher;
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import layout.User;
 import org.junit.After;
 import org.junit.Before;
@@ -18,7 +14,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 import static org.junit.Assert.*;
 

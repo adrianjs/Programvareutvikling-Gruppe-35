@@ -26,7 +26,7 @@ public class EventTest {
     }
 
     @Test
-    public void droppingAnEventTest() throws SQLException {
+    public void testDroppingAnEvent() throws SQLException {
         event = new Event();
         event.deleteEvent(18, User.getInstance().getUsername());
         ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='testStud@test.com'");
@@ -35,7 +35,7 @@ public class EventTest {
     }
 
     @Test
-    public void addingFeedbackTooEvent() throws SQLException {
+    public void testAddingFeedbackTooEvent() throws SQLException {
         event = new Event();
         event.schoolWorkFeedBack(27474, User.getInstance().getUsername(), 3);
         ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM FEEDBACK WHERE Username='testStud@test.com'");

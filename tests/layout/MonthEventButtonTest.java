@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by torresrl on 20/04/2017.
  */
-public class monthEventButtonTest {
+public class MonthEventButtonTest {
 
     monthEventButton meb;
     Cell cell;
@@ -26,13 +26,10 @@ public class monthEventButtonTest {
                 99, false, 333, "F44336");
 
         meb = new monthEventButton(cell);
-
-
     }
 
     @Test
     public void testGetButton(){
         assertEquals(meb.btn.getText(), meb.getEvent().getText());
     }
-
 }

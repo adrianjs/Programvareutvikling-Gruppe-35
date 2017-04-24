@@ -24,7 +24,7 @@ public class FetcherTest {
         fetcher = new Fetcher("SELECT * FROM ACTIVITY");
     }
     @Test
-    public void getAllActivitiesFromDatabase() throws SQLException {
+    public void testGetAllActivitiesFromDatabase() throws SQLException {
         Set<List> results = fetcher.getUserRelatedResults(5); //Trying to get the first 5 columns
         assertNotEquals(new HashSet<List>(), results); //Checks that the set is not empty
     }
