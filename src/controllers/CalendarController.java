@@ -157,6 +157,7 @@ public class CalendarController implements Initializable{
 			mapMonthTab();
 			setBottoField(); //SlideFieldBotto
 			superSorter.run();
+			setNewDate2(thisDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 		}catch (ParseException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -165,6 +166,7 @@ public class CalendarController implements Initializable{
 			e.printStackTrace();
 		}
 		date.setValue(chosenDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
 	}
 
     public void refresh(){
@@ -174,6 +176,7 @@ public class CalendarController implements Initializable{
 			getWeekTabCells();
 			mapMonthTab();
 			superSorter.run();
+			insertCells();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -303,6 +306,7 @@ public class CalendarController implements Initializable{
 	public void setNewDate(){
         LocalDate locDate = date.getValue();
         setNewDate2(locDate);
+        refresh();
 	}
 
 	/**
