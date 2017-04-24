@@ -151,11 +151,11 @@ public class CalendarController implements Initializable{
 		setLines();
         setDate();
 		try {
+			superSorter.run();
 			setupDayTab();
 			getWeekTabCells();
 			mapMonthTab();
 			setBottoField(); //SlideFieldBotto
-			superSorter.run();
 			setNewDate2(thisDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 		}catch (ParseException e) {
 			e.printStackTrace();
@@ -170,11 +170,11 @@ public class CalendarController implements Initializable{
 
     public void refresh(){
 		try {
-            timeLayout();
+			superSorter.run();
+			timeLayout();
 			setupDayTab();
 			getWeekTabCells();
 			mapMonthTab();
-			superSorter.run();
 			insertMonthCells();
 		} catch (SQLException e) {
 			e.printStackTrace();
