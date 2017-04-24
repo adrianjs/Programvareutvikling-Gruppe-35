@@ -188,8 +188,6 @@ public class SuperSorter{
         Cell currentCell;
         Cell placedCell;
         Cell collisionCell;
-        System.out.println(prioritizedSchedule);
-        System.out.println(this.prioritizedSchedule);
         for(Iterator<Cell> prioIterator = this.prioritizedSchedule.iterator(); prioIterator.hasNext();){
             currentCell = prioIterator.next();
             boolean collision = false;
@@ -239,8 +237,6 @@ public class SuperSorter{
                 }
             }
         }
-        System.out.println("ORIGINAL SIZE: " + prioritizedSchedule.size());
-        System.out.println("AFTER COLLISION HANDLING: " + scheduleWithoutCollision.size());
     }
 
     public String stringFormatterForCell(Cell cell){
@@ -347,23 +343,15 @@ public class SuperSorter{
     }
 
     public void rescheduleAuto(Cell cell) throws SQLException {
-        //TODO: Write code that automatically changes the time of an activity
-        //TODO: Change the times inside object, then push changes to DB
-        System.out.println("RE-SCHEDULE AUTO");
-        System.out.println("FIND NEW TIME LINE");
         findNewTime(cell);
-        System.out.println("REFRESH LINE");
         CalendarController.getInstance().refresh();
     }
 
     public void findNewTime(Cell cell) throws SQLException {
-        System.out.println("FIND NEW TIME");
         Cell originalCell;
         if(cell.getType().equals("event")){
-            System.out.println("IT's AN EVENT");
             originalCell = new Event((Event) cell);
         }else{
-            System.out.println("IT's AN ACTIVITY");
             originalCell = new Activity((Activity) cell);
         }
 
@@ -373,9 +361,7 @@ public class SuperSorter{
         String originalEndTime = cell.getEndTime();
 
         Date today = new Date();
-        System.out.println("TODAY: " + today);
         Date currentDate = cell.getStartDate();
-        System.out.println("CURRENT DATE: " + currentDate);
         Date lastPossible;
         if(cell.getSlotPriority()==97){
             lastPossible = getClosestLecture((Event) cell);
@@ -501,7 +487,6 @@ public class SuperSorter{
         Calendar cal = Calendar.getInstance();
         cal.setTime(cell.getStartDate());
         cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) + 1);
-        System.out.println("LAST POSSIBLE: " + cal.getTime());
         return cal.getTime();
     }
 
@@ -522,14 +507,11 @@ public class SuperSorter{
     }
 
     public boolean detectCollision(Cell cell){
-        System.out.println("DETECT COLLISION");
         for(Cell placedCell : scheduleWithoutCollision){
             if(new TimeComparator().compare(placedCell, cell)){
-                System.out.println("Found collision");
                 return false;
             }
         }
-        System.out.println("No collision");
         return true;
     }
 
@@ -582,7 +564,6 @@ public class SuperSorter{
         Optional<ButtonType> result = dialog.showAndWait();
 
         if(result.get().getButtonData().equals(ButtonBar.ButtonData.OK_DONE)){
-            System.out.println("OK IS PRESSED!");
             changeTime(activity, datePicker.getValue(), startTimePicker.getTime(), endTimePicker.getTime());
         }
     }
@@ -590,7 +571,6 @@ public class SuperSorter{
     private void changeTime(Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
         Cell newActivity = activity;
         Date startDate;
-        System.out.println("LOCAL TIMES: " + time1 +  " " + time2);
         String startTime = time1.toString();
         String endTime = time2.toString();
 
