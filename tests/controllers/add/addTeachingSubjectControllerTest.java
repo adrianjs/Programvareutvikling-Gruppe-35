@@ -1,12 +1,9 @@
 package controllers.add;
 
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXTextField;
 import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleGroup;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -56,5 +53,9 @@ public class addTeachingSubjectControllerTest {
         con.desc.setText("Dette er en test");
         assertEquals(true, con.checkDescription() );
     }
+
+
+
+
 
 }

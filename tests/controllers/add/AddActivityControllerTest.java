@@ -1,16 +1,17 @@
 package controllers.add;
 
-import com.jfoenix.controls.*;
-
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
+import controllers.JavaFXThreadingRule;
 import database.Activity;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -32,9 +33,11 @@ public class AddActivityControllerTest {
     private Activity database;
 
 
-    
 
 
+
+    @Rule
+    public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
 
 
 
@@ -55,9 +58,15 @@ public class AddActivityControllerTest {
         AAC.startTime = new JFXDatePicker();
         AAC.endTime = new JFXDatePicker();
         AAC.priority = new JFXComboBox();
-       // database = new Activity();
+       database = new Activity();
         AAC.everyWeek = new JFXCheckBox();
         AAC.desc = new JFXTextField();
+        AAC.initialize(null, null);
+        AAC.dateSet = testDate;
+        AAC.user.getInstance().setUsername("larsmade@stud.ntnu.no");;
+
+
+        //AAC.cancel = new JFXButton();
        
 
     }
@@ -73,8 +82,7 @@ public class AddActivityControllerTest {
 
     @Test
     public void checkDateTest(){
-        assertEquals(false, AAC.checkDate());
-        AAC.date.setValue(testDate);
+
         assertEquals(true, AAC.checkDate());
         AAC.date.setValue(testDate.plusDays(5));
         assertEquals(true, AAC.checkDate());
@@ -106,7 +114,14 @@ public class AddActivityControllerTest {
 
     }
 
- /*   @Test
+    @Test
+    public void testToUserCell(){
+        assertEquals(AAC.act, AAC.toUserCell().getName());
+    }
+
+
+
+    @Test
     public void testSendIn(){
 
 
@@ -122,7 +137,7 @@ public class AddActivityControllerTest {
         assertEquals("test",lastAdded.get(1));
         database.deleteActivity((int) lastAdded.get(0));
     }
-*/
+
 
 }
 

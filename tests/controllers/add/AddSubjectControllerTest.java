@@ -1,20 +1,21 @@
 package controllers.add;
 
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXSnackbar;
 import controllers.CalendarController;
+import controllers.JavaFXThreadingRule;
 import database.Connect;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import layout.User;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.sql.SQLException;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 
 /**
@@ -26,6 +27,11 @@ public class AddSubjectControllerTest {
     User user;
     Connect connect;
     CalendarController CC;
+
+    @Rule
+    public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
+
+
 
     @Before
     public void setup() {
@@ -46,6 +52,7 @@ public class AddSubjectControllerTest {
         con.anchorPane = new AnchorPane();
 
 
+
     }
 
     @Test
@@ -61,6 +68,13 @@ public class AddSubjectControllerTest {
         con.removeSubject();
         assertEquals("4",con.bar.getId());
 
+    }
+
+    
+    @Test
+    public void testInitalization(){
+        con.initialize(null,null);
+       
     }
 
 

@@ -2,10 +2,8 @@ package controllers.add;
 
 import com.jfoenix.controls.*;
 import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleGroup;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,6 +14,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Created by torresrl on 19/04/2017.
@@ -271,24 +270,28 @@ public class AddEventControllerTest {
 
 
     //todo on inteliseren
-    /*
+
     @Test
     public void testAad(){
         AEC.add();
         assertEquals("Must select a radiobutton",AEC.errorLabel.getText());
-        AEC.subjectsDropDown.setValue("AAR4335");
-        AEC.eventName.setText("test");
-        AEC.description.setText("Hvis denne leiger i databasen slet den!");
-        AEC.startDate.setValue(testDate);
-        AEC.endDate.setValue(testDate.plusDays(2));
-        AEC.startTime.setTime(testTime);
-        AEC.endTime.setTime(testTime.plusHours(2));
-        AEC.hours.setText("2");
-        AEC.classRadio.setSelected(true);
-        AEC.add();
 
     }
-*/
+
+
+
+    @Test
+    public void testClearScene(){
+        AEC.clearScheme();
+        assertEquals("", AEC.description.getText());
+        assertNull(AEC.startDate.getValue());
+        assertNull(AEC.endDate.getValue());
+        assertEquals(false,AEC.repeating.isSelected());
+        assertEquals("", AEC.errorLabel.getText());
+        assertNull(AEC.subjectsDropDown.getValue());
+        assertEquals("", AEC.hours.getText());
+
+    }
 
 
 

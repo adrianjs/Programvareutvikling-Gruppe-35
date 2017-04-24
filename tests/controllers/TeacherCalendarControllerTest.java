@@ -38,6 +38,7 @@ public class TeacherCalendarControllerTest {
         con.teachingSubjects = new Label();
         con.centerPane = new AnchorPane();
         con.barPane = new AnchorPane();
+        con.initialize(null,null);
 
     }
 
@@ -94,6 +95,8 @@ public class TeacherCalendarControllerTest {
         assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/feedback.fxml")).getClass(), con.feedback.getClass());
         assertEquals(FXMLLoader.load(getClass().getResource("/resources/fxml/addTeachingSubject.fxml")).getClass(), con.addTsbubject.getClass());
     }
+
+
 
 
 

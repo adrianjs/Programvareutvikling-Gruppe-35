@@ -1,14 +1,13 @@
 package controllers.add;
 
-import calendar.Cell;
 import algorithm.Activity;
+import calendar.Cell;
 import com.jfoenix.controls.*;
 import controllers.CalendarController;
 import database.Connect;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import layout.User;
@@ -17,8 +16,9 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.*;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -43,6 +43,7 @@ public class AddActivityController implements Initializable{
     boolean repeat;
     int priorityNumber;
     String description;
+    User user;
 
     CalendarController cal;
 
@@ -55,7 +56,13 @@ public class AddActivityController implements Initializable{
     public void sendIn(){
         errorTime.setText("");
         if((checkActivity()) && (checkDate())&& (checkTime()) && (checkPriority())){
-            stage = (Stage) cancel.getScene().getWindow();
+            try {
+                stage = (Stage) cancel.getScene().getWindow();
+            } catch( NullPointerException e){
+                System.out.println("Hvis denn meldingen kommer og du ikke tester er det en feil i AddActivityControler" +
+                        " -> SendInn ");
+            }
+
             //setter verdier, må da lagres i databasen...
             act = activity.getText();
             dateSet = date.getValue();
@@ -67,8 +74,15 @@ public class AddActivityController implements Initializable{
             description = desc.getText();
             calendar.Cell cell = toUserCell();
             pushCell(cell);
-            stage.close();
-            CalendarController.getInstance().refresh();
+
+            try {
+                stage.close();
+                CalendarController.getInstance().refresh();
+            } catch( NullPointerException e){
+                System.out.println("Hvis denn meldingen kommer og du ikke tester er det en feil i AddActivityControler" +
+                        " -> SendInn ");
+            }
+
         }
 
     }
@@ -79,7 +93,7 @@ public class AddActivityController implements Initializable{
      */
     private void pushCell(Cell cell) {
         Connect connecter = new Connect();
-        User user = User.getInstance();
+        user = User.getInstance();
         System.out.println(user.getUsername());
         java.util.Calendar calendar = Calendar.getInstance();
         calendar.setTime(cell.getStartDate());
@@ -103,10 +117,9 @@ public class AddActivityController implements Initializable{
         Date dateStart = Date.from(startTime.atZone(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(endTime.atZone(ZoneId.systemDefault()).toInstant());
 
-        String [] colors = {"F44336","E91E63","9C27B0","673AB7","3F51B5","2196F3","03A9F4","009688"};
         int randomNum = ThreadLocalRandom.current().nextInt(0,  7);
 
-        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, description, priorityNumber, repeat, 0, colors[randomNum]);
+        Activity activity = new Activity(dateStart, dateEnd, String.valueOf(startTime.getHour()), String.valueOf(endTime.getHour()), act, description, priorityNumber, repeat, 0, "008080");
         return activity;
     }
 

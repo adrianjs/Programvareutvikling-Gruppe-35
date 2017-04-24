@@ -2,7 +2,6 @@ package controllers.add;
 
 import com.jfoenix.controls.*;
 import controllers.TeacherCalendarController;
-import database.Connect;
 import database.Teacher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,16 +11,12 @@ import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
-import layout.User;
-import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 /**
@@ -89,7 +84,7 @@ public class AddEventController implements Initializable{
     }
 
 
-    private void clearScheme(){
+    public void clearScheme(){
         description.setText("");
         startDate.setValue(null);
         endDate.setValue(null);
