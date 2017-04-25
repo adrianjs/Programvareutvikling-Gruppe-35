@@ -63,6 +63,7 @@ public class CalendarControllerTest {
         con.sunday    = new Label();
 
         con.date = new JFXDatePicker();
+        con.date.setValue(datel);
         con.thisday = new Label();
 
 
@@ -222,10 +223,17 @@ public class CalendarControllerTest {
     }
 
 
-    @Test public void testNext(){
-        
+    @Test public void testNextAndPrevius(){
+        Date testDate = new Date();
+        con.tabs.getSelectionModel().select(con.dayTab);
+        con.next();
+        assertEquals(true, testDate.before(con.getChosenDate()));
+        con.previous();
+        con.previous();
+        assertEquals(true, testDate.after(con.getChosenDate()));
 
     }
+
 
 
 
