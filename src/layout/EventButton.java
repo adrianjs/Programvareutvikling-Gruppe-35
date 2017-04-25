@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 
 /**
  * Created by torresrl on 22/03/2017.
+ * EventButton er knapen på dag og uker som du kan trykke på for å få mer info.
+ *
  */
 public class EventButton {
 
@@ -32,6 +34,20 @@ public class EventButton {
 
 
     //Setter opp hvis det er activitet
+
+    /**
+     * Lager en aktivitet knaps som du kan trykke på for å få mer info.
+     *
+     * @param name
+     * Her skrives navne til aktiviteten (kommer opp som overskrift)
+     *
+     * @param description
+     * Gi beskrivelsen til eventet
+     *
+     * @param cell
+     * Er et ovbjekt med forskjllig info.
+     *
+     */
     public EventButton(String name, String description, Cell cell){
         this.name = name;
         this.description = description;
@@ -98,6 +114,20 @@ public class EventButton {
     }
 
 // setter opp hvis det er event
+
+    /**
+     * LAger en interaktiv knapp som gir mer info om eventer
+     * @param name
+     * navne til eventet
+     * @param description
+     * beskrivelse av eventer
+     * @param subjecCode
+     * fag koden
+     * @param cell
+     * en objekt med skjenerell informasjon
+     * @param id
+     *
+     */
     public EventButton(String name, String description, String subjecCode, Cell cell, int id){
         //TODO: Get event ID here.
         this.name = name;
@@ -251,11 +281,26 @@ public class EventButton {
     }
 
     //returns the button that wil be shown in the calender
+
+    /**
+     * returnere knappen
+     * @return
+     */
     public Button getEvent(){
         return event;
     }
 
+    /**
+     * returene navne til kanppen
+     * @return
+     */
+
     public String getName() {return name;}
+
+    /**
+     * returnere beskrivelsen.
+     * @return
+     */
 
     public String getDescription() {return description;}
 
