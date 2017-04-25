@@ -223,7 +223,8 @@ public class CalendarControllerTest {
     }
 
 
-    @Test public void testNextAndPrevius(){
+    @Test
+    public void testNextAndPrevius(){
         Date testDate = new Date();
         con.tabs.getSelectionModel().select(con.dayTab);
         con.next();
@@ -234,9 +235,11 @@ public class CalendarControllerTest {
 
     }
 
+    @Test
+    public void testSetHouer(){
+        assertEquals(3, con.setHour(date, 3).getHours());
 
-
-
+    }
 
 
 

@@ -640,7 +640,7 @@ public class CalendarController implements Initializable{
 	 * @param hour hour of given day.
 	 * @return Date with time object.
 	 */
-    private Date setHour(Date date, int hour){
+    public Date setHour(Date date, int hour){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
 		cal.setTime(date);
 		cal.set(java.util.Calendar.HOUR_OF_DAY, hour);
