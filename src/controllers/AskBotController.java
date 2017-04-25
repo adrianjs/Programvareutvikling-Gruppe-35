@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 /**
  * Created by larsmade on 15.03.2017.
+ * Set up the web-view for the Bot.
  */
 public class AskBotController implements Initializable{
 

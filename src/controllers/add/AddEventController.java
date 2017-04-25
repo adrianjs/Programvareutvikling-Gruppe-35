@@ -83,7 +83,9 @@ public class AddEventController implements Initializable{
         subjectsDropDown.setItems(subjects.sorted());
     }
 
-
+    /**
+     * Clears the scheme so new input can be made.
+     */
     public void clearScheme(){
         description.setText("");
         startDate.setValue(null);
@@ -467,6 +469,10 @@ public class AddEventController implements Initializable{
         return true;
     }
 
+    /**
+     * Validates the hours of work field in the fxml.document.
+     * @return
+     */
     public boolean validateHoursOfWork(){
         String hour = hours.getText();
         if(hour.length() == 0){

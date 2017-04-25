@@ -25,6 +25,7 @@ import java.util.*;
 
 /**
  * Created by larsmade on 21.02.2017.
+ * Controller class for username.fxml.
  */
 public class LoginController implements Initializable {
 
@@ -46,8 +47,8 @@ public class LoginController implements Initializable {
 
     /**
      * Log in, and set new user to userClass.
-     * @throws IOException
-     * @throws SQLException
+     * @throws IOException inputexception
+     * @throws SQLException sql exception
      */
     public void login() throws IOException, SQLException {
         loginError.setText("");
@@ -152,6 +153,9 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     * Snackbar if new user is created.
+     */
     public void showNewUserSnackbar(){
         jfxSnackbar = new JFXSnackbar(snackBarPane);
         jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent("Your new user is now in the system! Try to login!"));
