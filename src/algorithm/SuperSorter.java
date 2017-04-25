@@ -156,7 +156,6 @@ public class SuperSorter{
                         m_result_set.getString(10)
                 ));
             }else{
-                connect.stmt = connect.conn.createStatement();
                 connect.stmt.executeUpdate("DELETE FROM ACTIVITY WHERE activityID='"+m_result_set.getInt(1)+"'");
             }
         }
@@ -352,7 +351,6 @@ public class SuperSorter{
     }
 
     public void handleUnprioritizedEvent(calendar.Cell event) throws SQLException {
-        connect.stmt = connect.conn.createStatement();
         connect.stmt.executeUpdate("INSERT INTO NOTATTENDINGEVENT(eventId, studentEmail) VALUES('"+event.getID()+"', '"+User.getInstance().getUsername()+"')");
     }
 
@@ -582,7 +580,7 @@ public class SuperSorter{
         }
     }
 
-    private void changeTime(calendar.Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
+    public void changeTime(calendar.Cell activity, LocalDate date, LocalTime time1, LocalTime time2) throws SQLException {
         calendar.Cell newActivity = activity;
         Date startDate;
         String startTime = time1.toString();
@@ -625,4 +623,9 @@ public class SuperSorter{
     }
 
     public Set<calendar.Cell> getDeadlines(){ return deadlines; }
+
+    public void setScheduleWithoutCollision(Set<calendar.Cell> cells){
+        scheduleWithoutCollision.clear();
+        scheduleWithoutCollision.addAll(cells);
+    }
 }

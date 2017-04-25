@@ -116,7 +116,6 @@ public class Teacher{
                         "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
             } else if (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
                 Date sqlStartDate;
-                connect.stmt = connect.conn.createStatement();
                 int counter = 0;
                 while (startDate.getMonthValue() > 0 && startDate.getMonthValue() < 5){
                     sqlStartDate = Date.valueOf(startDate);
@@ -124,12 +123,9 @@ public class Teacher{
                             " description, subjectCode, color) VALUES('" + name + "','" + sqlStartDate + "','" + sqlStartDate + "','" + startTimeSql + "'," +
                             "'" + endTimeSql + "','" + repeating + "',96,'" + description + "', '" + subjectCode + "', '" + color + "')");
                     startDate = startDate.plusWeeks(1);
-
-
                 }
             } else if (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
                 Date sqlStartDate;
-                connect.stmt = connect.conn.createStatement();
                 int counter = 0;
                 while (startDate.getMonthValue() >= 5 && startDate.getMonthValue() < 12){
                     sqlStartDate = Date.valueOf(startDate);
