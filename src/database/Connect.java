@@ -17,13 +17,14 @@ import java.text.SimpleDateFormat;
  * Metodene kan være laget for en spesiel ting så skriv hvem som laget den og hvor den skal
  * brukes i koden (lokasjon og hva den henter ut)
  *
- * Ikke lag noen spesiele metoder over linjen metoder, for her har vi de mest standariserte metodene
+ * ikke lag noen spesiele metoder over linjen metoder, for her har vi de mest standariserte metodene
  * som å koble seg til, stenge tilkoblingen, legge til og hente ut for hver enkel tabll.
  * Hvis du skal lage flere spesialiserte metoder fåreslår jeg og lage en subklasse.
  *
  */
 
 public class Connect {
+
     //Login info
     static final String URL = "jdbc:mysql://mysql.stud.ntnu.no:3306/torresrl_eduorg";
     static final String user = "torresrl_data";
@@ -85,6 +86,8 @@ public class Connect {
         }
     }
 
+
+
     //----------------------------------------------------METHODS----------------------------------------------------
 
     /**
@@ -138,6 +141,7 @@ public class Connect {
         } catch (SQLException se){
             se.printStackTrace();
         }
+
     }
 
     /**
@@ -171,16 +175,36 @@ public class Connect {
         }
     }
 
+    /**
+     * Student legger til fag
+     * @param subject
+     * Faget
+     * @throws SQLException
+     */
+
     public void addStudentSubject(String subject) throws SQLException{
         stmt = conn.createStatement();
         stmt.executeUpdate("INSERT INTO STUDTAKESUB(subjectCode, studentEmail) VALUES('"+subject+"','"+User.getInstance().getUsername()+"')");
     }
+
+    /**
+     * Stdent melder seg av fag
+     * @param subject
+     * Faget
+     * @throws SQLException
+     */
 
     public void removeStudentSubject(String subject) throws SQLException {
         stmt = conn.createStatement();
         stmt.executeUpdate("DELETE FROM STUDTAKESUB WHERE subjectCode='"+subject+"' AND studentEmail='"+User.getInstance().getUsername()+"'");
     }
 
+    /**
+     * student selter en aktivitet
+     * @param activity
+     * Aktiviteten
+     * @throws SQLException
+     */
     public void deleteActivity(Cell activity) throws SQLException {
         stmt = conn.createStatement();
         stmt.executeUpdate("DELETE FROM ACTIVITY WHERE name='"+activity.getName()+"' AND date='" +(new SimpleDateFormat("yyyy-MM-dd").format(activity.getStartDate()))+
