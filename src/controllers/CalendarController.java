@@ -906,7 +906,7 @@ public class CalendarController implements Initializable{
 	 * @param label label
 	 * @param cell cell.
 	 */
-	private void writeToLabel(Label label, Cell cell){
+	public void writeToLabel(Label label, Cell cell){
 		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
 	}

@@ -41,6 +41,10 @@ public class Connect {
         return instance;
     }
 
+    /**
+     * kobler opp EO opp mot databasen.
+     */
+
     public Connect(){
         try {
             System.out.println("Connecting to database...");
@@ -59,6 +63,10 @@ public class Connect {
             System.out.println("Connected to database");
         }
     }
+
+    /**
+     * stenger forbindelsen med databsen
+     */
 
     // Closing the connection after use
     public void close(){
@@ -79,6 +87,22 @@ public class Connect {
 
     //----------------------------------------------------METHODS----------------------------------------------------
 
+    /**
+     * Leger til student i databsen
+     * @param email
+     * mailen til studenten
+     * @param firstName
+     * Fornavn
+     * @param lastName
+     * EtterNavn
+     * @param field
+     * Studieprogram
+     * @param year
+     * Hvilke studie år
+     * @param pass
+     * Passord
+     */
+
     public void addStudent(String email, String firstName, String lastName, String field, int year, String pass){
         try {
             stmt = conn.createStatement();
@@ -90,6 +114,22 @@ public class Connect {
         }
     }
 
+    /**
+     * Leger til Lærer i databsen
+     * @param email
+     * Emailen
+     * @param firstName
+     * Fornavn
+     * @param lastName
+     * Etternavn
+     * @param department
+     * Avdeling
+     * @param description
+     * Beskrivelse av proffesoren
+     * @param pass
+     * Passordet
+     */
+
     public void addTeacher(String email, String firstName, String lastName, String department, String description, String pass){
         try {
             stmt = conn.createStatement();
@@ -100,6 +140,25 @@ public class Connect {
         }
     }
 
+    /**
+     * Legge til aktivitet
+     * @param name
+     * navne på aktiviteten
+     * @param date
+     * når er aktiviteten
+     * @param repeating
+     * skal den repeteres?
+     * @param priority
+     * Hvor viktig er den
+     * @param startTime
+     * når starter det
+     * @param endTime
+     * når slutter det
+     * @param studentEmail
+     * mail til studenten som legger aktiviteten til
+     * @param description
+     * beskrivelse av aktiviteten
+     */
     public void addActivity(String name, Date date, boolean repeating, int priority, double startTime, double endTime, String studentEmail, String description){
         int repeatingInt = (repeating) ? 1 : 0;
         try {

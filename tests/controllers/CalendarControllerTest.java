@@ -1,6 +1,7 @@
 package controllers;
 
 import calendar.Activity;
+import calendar.Cell;
 import calendar.Event;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -29,6 +30,7 @@ public class CalendarControllerTest {
     Date date;
     LocalDate datel;
     User user;
+    Cell cell;
 
     @Rule
     public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
@@ -65,6 +67,9 @@ public class CalendarControllerTest {
         con.date = new JFXDatePicker();
         con.date.setValue(datel);
         con.thisday = new Label();
+
+        cell = new Cell(date, date, "13", "14", "test", "detter er en test",
+                99, false, 333, "F44336");
 
 
     }
@@ -239,6 +244,19 @@ public class CalendarControllerTest {
     public void testSetHouer(){
         assertEquals(3, con.setHour(date, 3).getHours());
 
+    }
+
+    @Test
+    public void testWriteToLabel(){
+        con.writeToLabel(con.monday, cell);
+        assertEquals("test", con.monday.getText());
+
+
+    }
+
+    @Test
+    public void testSetNewDate(){
+        con.setNewDate();
     }
 
 
