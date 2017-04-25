@@ -24,12 +24,12 @@ public class addTeachingSubjectControllerTest {
     public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
 
 
-    private addTeachingSubjectController con;
+    private AddTeachingSubjectController con;
 
     @Before
     public void setup(){
         new JFXPanel();
-        con = new addTeachingSubjectController();
+        con = new AddTeachingSubjectController();
         con.subjectCode = new JFXTextField();
         con.evaluation = new JFXTextField();
         con.desc       = new JFXTextField();

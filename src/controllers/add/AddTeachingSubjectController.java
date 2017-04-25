@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  * Created by larsmade on 17.04.2017.
  * Controllerclass for the addTeachingSubjectController.fxml
  */
-public class addTeachingSubjectController implements Initializable{
+public class AddTeachingSubjectController implements Initializable{
 
     @FXML JFXTextField subjectCode;
     @FXML JFXTextField evaluation;
