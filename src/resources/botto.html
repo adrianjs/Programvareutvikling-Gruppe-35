@@ -19,12 +19,7 @@
           send();
           document.getElementById('speech').value = '';
         }
-      });
-
-      $(".debug__btn").on("click", function() {
-        $(this).next().toggleClass("is-active");
-          return false;
-        });
+      })
       });
 
 
@@ -192,42 +187,6 @@
         width: 100%;
         -webkit-transition: all 0.35s ease-in;
     }
-    .btn {
-        background-color: gainsboro;
-        border: 2px solid black;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-        display: inline-block;
-        font-family: "Arial", sans-serif;
-        font-size: 22px;
-        line-height: 45px;
-        padding: 0 0.75em;
-        text-align: center;
-        -webkit-transition: all 0.35s ease-in;
-    }
-    .btn:hover {
-        background-color: black;
-        color: white;
-    }
-    .debug {
-        bottom: 0;
-        position: fixed;
-        right: 0;
-    }
-    .debug__content {
-        font-size: 14px;
-        max-height: 0;
-        overflow: hidden;
-        -webkit-transition: all 0.35s ease-in;
-    }
-    .debug__content.is-active {
-        display: block;
-        max-height: 500px;
-    }
-    .debug__btn {
-        width: 100%;
-    }
     .spoken-response {
         max-height: 0;
         overflow: hidden;
@@ -251,7 +210,10 @@
         display: block;
     }
     h3{
+        color: gainsboro;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         text-align: center;
+        padding-top: 10px;
     }
   </style>
 </head>
@@ -265,14 +227,6 @@
         <div id="spokenResponse" class="spoken-response">
           <div class="spoken-response__text"></div>
         </div>
-    </div>
-    <div class="debug">
-        <div class="debug__btn btn">
-          Debug JSON results
-        </div>
-      <div class="debug__content">
-          <textarea id="response" cols="40" rows="20"></textarea>
-      </div>
     </div>
 </body>
 </html>
