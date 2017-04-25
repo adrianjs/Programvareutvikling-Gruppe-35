@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/RestoreController.java" afterPath="$PROJECT_DIR$/src/controllers/RestoreController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/RestoreControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/RestoreControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" afterPath="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -22,7 +21,7 @@
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$monthEventButtonTest.coverage" NAME="monthEventButtonTest Coverage Results" MODIFIED="1492711190286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>layout.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$addTeachingSubjectControllerTest.coverage" NAME="addTeachingSubjectControllerTest Coverage Results" MODIFIED="1493032720323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$addTeachingSubjectControllerTest.coverage" NAME="addTeachingSubjectControllerTest Coverage Results" MODIFIED="1493104862580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.add.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1491249463379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -40,7 +39,7 @@
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$runningTest.coverage" NAME="runningTest Coverage Results" MODIFIED="1492867843945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1493044295156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1493107612066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>*</FILTER>
       <FILTER>algorithm.*</FILTER>
       <FILTER>calendar.*</FILTER>
@@ -57,7 +56,7 @@
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$AddEventControllerTest.coverage" NAME="AddEventControllerTest Coverage Results" MODIFIED="1492620613546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.add.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$CalendarControllerTest.coverage" NAME="CalendarControllerTest Coverage Results" MODIFIED="1492889733816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$CalendarControllerTest.coverage" NAME="CalendarControllerTest Coverage Results" MODIFIED="1493103645920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$CreatUserTest.coverage" NAME="CreatUserTest Coverage Results" MODIFIED="1493024797227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -107,29 +106,9 @@
     <favorites_list name="Programvareutvikling-Gruppe-35" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.37582904">
+    <splitter split-orientation="horizontal" split-proportion="0.48869145">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FeedbackControllerTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/controllers/FeedbackControllerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="23" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RestoreControllerTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/controllers/RestoreControllerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="6" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/layout/User.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -142,19 +121,53 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="CalendarControllerTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="363">
+                  <caret line="225" column="8" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#6957#6958#0" expanded="true" />
+                    <element signature="e#6998#6999#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SuperSorter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="423">
+                  <caret line="214" column="43" lean-forward="true" selection-start-line="214" selection-start-column="43" selection-end-line="214" selection-end-column="43" />
+                  <folding>
+                    <marker date="1493037021000" expanded="true" signature="3307:3374" ph="SELECT * FRO... SUBJECT" />
+                    <marker date="1493037021000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
+                    <marker date="1493037021000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
+                    <marker date="1493037021000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
+                    <marker date="1493037021000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
+                    <marker date="1493037021000" expanded="true" signature="6790:6856" ph="DELETE FROM " />
+                    <marker date="1493037021000" expanded="true" signature="14355:14475" ph="INSERT INTO NOTATTENDINGEVENT... " />
+                    <marker date="1493037021000" expanded="true" signature="15529:15602" ph="DELETE FROM " />
+                    <marker date="1493037021000" expanded="true" signature="15779:15884" ph="DELETE FROM " />
+                    <marker date="1493037021000" expanded="true" signature="16530:16650" ph="INSERT INTO NOTATTENDINGEVENT... " />
+                    <marker date="1493037021000" expanded="true" signature="23456:23608" ph="SELECT * FRO... EVENT" />
+                    <marker date="1493037021000" expanded="true" signature="24546:24619" ph="DELETE FROM " />
+                    <marker date="1493037021000" expanded="true" signature="24829:24934" ph="DELETE FROM " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="RestoreController.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/controllers/RestoreController.java">
+          <file leaf-file-name="CalendarController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="44" column="157" lean-forward="false" selection-start-line="44" selection-start-column="157" selection-end-line="44" selection-end-column="157" />
-                  <folding>
-                    <marker date="1493103005000" expanded="true" signature="1386:1476" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-                    <marker date="1493103005000" expanded="true" signature="1842:1891" ph="SELECT * FRO... EVENT" />
-                  </folding>
+                <state relative-caret-position="-1035">
+                  <caret line="149" column="9" lean-forward="false" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -267,7 +280,6 @@
         <option value="$PROJECT_DIR$/tests/controllers/runningTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/LoginControllerTest.java" />
         <option value="$PROJECT_DIR$/src/controllers/CalendarController.java" />
-        <option value="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
         <option value="$PROJECT_DIR$/src/layout/eventButton.java" />
         <option value="$PROJECT_DIR$/tests/layout/eventButtonTest.java" />
         <option value="$PROJECT_DIR$/src/layout/CreateUser.java" />
@@ -275,13 +287,14 @@
         <option value="$PROJECT_DIR$/tests/controllers/add/AddSubjectControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
-        <option value="$PROJECT_DIR$/tests/controllers/add/addTeachingSubjectControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/add/AddEventControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/FeedbackControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" />
         <option value="$PROJECT_DIR$/src/controllers/RestoreController.java" />
         <option value="$PROJECT_DIR$/tests/controllers/RestoreControllerTest.java" />
+        <option value="$PROJECT_DIR$/tests/controllers/add/addTeachingSubjectControllerTest.java" />
+        <option value="$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java" />
       </list>
     </option>
   </component>
@@ -295,8 +308,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -481,28 +494,6 @@
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -558,21 +549,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="calendar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -623,6 +600,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -689,7 +724,7 @@
       <recent name="controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestoreControllerTest">
+  <component name="RunManager" selected="JUnit.All in Programvareutvikling-Gruppe-35">
     <configuration default="false" name="All in Programvareutvikling-Gruppe-35" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -762,32 +797,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="FeedbackControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Programvareutvikling-Gruppe-35" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="controllers" />
-      <option name="MAIN_CLASS_NAME" value="controllers.FeedbackControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="AddActivityControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -826,6 +835,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="controllers" />
       <option name="MAIN_CLASS_NAME" value="controllers.RestoreControllerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalendarControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Programvareutvikling-Gruppe-35" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="controllers" />
+      <option name="MAIN_CLASS_NAME" value="controllers.CalendarControllerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1290,17 +1325,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.addTeachingSubjectControllerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FeedbackControllerTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AddActivityControllerTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RestoreControllerTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AddActivityControllerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RestoreControllerTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RestoreControllerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.addTeachingSubjectControllerTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AddActivityControllerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FeedbackControllerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Programvareutvikling-Gruppe-35" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.addTeachingSubjectControllerTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalendarControllerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RestoreControllerTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AddActivityControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1378,21 +1413,7 @@
       <workItem from="1492860928983" duration="427000" />
       <workItem from="1492864179045" duration="18668000" />
       <workItem from="1492893834436" duration="14342000" />
-      <workItem from="1493037933374" duration="3079000" />
-    </task>
-    <task id="LOCAL-00027" summary="Log in over again problem fixed">
-      <created>1489573022047</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1489573022047</updated>
-    </task>
-    <task id="LOCAL-00028" summary="same instance of calendarcontroller">
-      <created>1489655896436</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1489655896436</updated>
+      <workItem from="1493037933374" duration="6321000" />
     </task>
     <task id="LOCAL-00029" summary="Commented for weekTab-code">
       <created>1489657207302</created>
@@ -1723,43 +1744,57 @@
       <option name="project" value="LOCAL" />
       <updated>1493038178981</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="flere tester">
+      <created>1493103013023</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1493103013023</updated>
+    </task>
+    <task id="LOCAL-00077" summary="flere tester">
+      <created>1493107720592</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1493107720593</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 39m 27s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 09h 19m 55s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 41m 44s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 09h 20m 23s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 42m 11s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 09h 20m 56s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 43m 20s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 09h 21m 43s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 45m 13s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 09h 23m 02s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 46m 06s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 10h 00m 42s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 46m 36s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 10h 06m 47s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 46m 56s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.25 at 10h 07m 11s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 47m 43s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="addTeachingSubjectControllerTest - 2017.04.25 at 09h 21m 05s.xml">
+      <configuration name="addTeachingSubjectControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestoreControllerTest - 2017.04.25 at 08h 48m 42s.xml">
-      <configuration name="RestoreControllerTest" configurationId="JUnit" />
+    <history-entry file="addTeachingSubjectControllerTest - 2017.04.25 at 10h 06m 32s.xml">
+      <configuration name="addTeachingSubjectControllerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="571463000" />
+    <option name="totallyTimeSpent" value="574705000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1771,7 +1806,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1791,11 +1826,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28316832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3958904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32574257" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25292864" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3562197" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32772276" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2774228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42810985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1901,13 +1936,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/javafx-src.zip!/javafx/application/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1820">
-          <caret line="304" column="25" lean-forward="false" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/database/FetcherTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1920,13 +1948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/AskBotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1979,23 +2000,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/runningTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="214" column="75" lean-forward="true" selection-start-line="214" selection-start-column="75" selection-end-line="214" selection-end-column="75" />
-          <folding>
-            <marker date="1493037021000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1493037021000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-            <marker date="1493037021000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
-            <marker date="1493037021000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
-            <marker date="1493037021000" expanded="true" signature="6790:6856" ph="DELETE FROM " />
-            <marker date="1493037021000" expanded="true" signature="14355:14475" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1493037021000" expanded="true" signature="15529:15602" ph="DELETE FROM " />
-            <marker date="1493037021000" expanded="true" signature="15779:15884" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/JavaFXThreadingRule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -2012,6 +2016,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2797#2798#0" expanded="false" />
+            <element signature="e#2829#2830#0" expanded="false" />
+            <element signature="e#2877#2878#0" expanded="false" />
+            <element signature="e#2919#2920#0" expanded="false" />
+            <element signature="e#2951#2952#0" expanded="false" />
+            <element signature="e#2981#2982#0" expanded="false" />
+            <element signature="e#3025#3026#0" expanded="false" />
+            <element signature="e#3063#3064#0" expanded="false" />
+            <element signature="e#3094#3095#0" expanded="false" />
+            <element signature="e#3121#3122#0" expanded="false" />
+            <element signature="e#3161#3162#0" expanded="false" />
+            <element signature="e#3193#3194#0" expanded="false" />
+            <element signature="e#3231#3232#0" expanded="false" />
+            <element signature="e#3265#3266#0" expanded="false" />
+            <element signature="e#3319#3320#0" expanded="false" />
+            <element signature="e#3365#3366#0" expanded="false" />
+            <element signature="e#3401#3402#0" expanded="false" />
+            <element signature="e#3436#3437#0" expanded="false" />
+            <element signature="e#3489#3490#0" expanded="false" />
+            <element signature="e#3537#3538#0" expanded="false" />
+            <element signature="e#3573#3574#0" expanded="false" />
+            <element signature="e#3605#3606#0" expanded="false" />
+            <element signature="e#3656#3657#0" expanded="false" />
+            <element signature="e#3698#3699#0" expanded="false" />
+            <element signature="e#3734#3735#0" expanded="false" />
+            <element signature="e#3766#3767#0" expanded="false" />
+            <element signature="e#3816#3817#0" expanded="false" />
+            <element signature="e#3858#3859#0" expanded="false" />
+            <element signature="e#3892#3893#0" expanded="false" />
+            <element signature="e#3922#3923#0" expanded="false" />
+            <element signature="e#3968#3969#0" expanded="false" />
+            <element signature="e#4006#4007#0" expanded="false" />
+            <element signature="e#4037#4038#0" expanded="false" />
+            <element signature="e#4064#4065#0" expanded="false" />
+            <element signature="e#4104#4105#0" expanded="false" />
+            <element signature="e#4136#4137#0" expanded="false" />
+            <element signature="e#4162#4163#0" expanded="false" />
+            <element signature="e#4187#4188#0" expanded="false" />
+            <element signature="e#4220#4221#0" expanded="false" />
+            <element signature="e#4248#4249#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2064,14 +2111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -2089,27 +2128,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/layout/CreatUserTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-498">
-          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
-          <folding>
-            <marker date="1493023353000" expanded="false" signature="6009:6019" ph=" { " />
-            <marker date="1493023353000" expanded="false" signature="6036:6042" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7652">
-          <caret line="646" column="5" lean-forward="true" selection-start-line="646" selection-start-column="5" selection-end-line="646" selection-end-column="5" />
-          <folding>
-            <element signature="e#4287#4298#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/Activity.java" />
     <entry file="file://$PROJECT_DIR$/tests/controllers/add/AddSubjectControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2134,7 +2152,7 @@
         <state relative-caret-position="222">
           <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2143,14 +2161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2265">
           <caret line="86" column="10" lean-forward="false" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/addTeachingSubjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2173,22 +2183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/controllers/FeedbackControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layout/EventButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -2206,16 +2200,6 @@
         <state relative-caret-position="1170">
           <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/controllers/add/addTeachingSubjectControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2243,16 +2227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <marker date="1493017619000" expanded="true" signature="1033:1094" ph="SELECT * FRO... STUDTAKESUB" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18">
@@ -2276,11 +2250,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/WatchDayMonthTabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/AskBotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/RestoreControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="6" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state relative-caret-position="120">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/addTeachingSubjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CalendarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1035">
+          <caret line="149" column="9" lean-forward="false" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/controllers/FeedbackControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding>
+            <marker date="1493017619000" expanded="true" signature="1033:1094" ph="SELECT * FRO... STUDTAKESUB" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/controllers/add/addTeachingSubjectControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/algorithm/SuperSorterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <marker date="1493037021000" expanded="true" signature="4614:4665" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="214" column="43" lean-forward="true" selection-start-line="214" selection-start-column="43" selection-end-line="214" selection-end-column="43" />
+          <folding>
+            <marker date="1493037021000" expanded="true" signature="3307:3374" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1493037021000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1493037021000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
+            <marker date="1493037021000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
+            <marker date="1493037021000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
+            <marker date="1493037021000" expanded="true" signature="6790:6856" ph="DELETE FROM " />
+            <marker date="1493037021000" expanded="true" signature="14355:14475" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1493037021000" expanded="true" signature="15529:15602" ph="DELETE FROM " />
+            <marker date="1493037021000" expanded="true" signature="15779:15884" ph="DELETE FROM " />
+            <marker date="1493037021000" expanded="true" signature="16530:16650" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1493037021000" expanded="true" signature="23456:23608" ph="SELECT * FRO... EVENT" />
+            <marker date="1493037021000" expanded="true" signature="24546:24619" ph="DELETE FROM " />
+            <marker date="1493037021000" expanded="true" signature="24829:24934" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="225" column="8" lean-forward="false" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
+          <folding>
+            <element signature="e#6957#6958#0" expanded="true" />
+            <element signature="e#6998#6999#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

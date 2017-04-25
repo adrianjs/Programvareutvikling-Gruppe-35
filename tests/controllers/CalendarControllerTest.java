@@ -9,6 +9,7 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
+import layout.User;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,9 +28,11 @@ public class CalendarControllerTest {
     CalendarController con;
     Date date;
     LocalDate datel;
+    User user;
 
     @Rule
     public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
+
 
     @Before
     public void setUp() throws Exception {
@@ -37,6 +40,8 @@ public class CalendarControllerTest {
         con = new CalendarController();
         date = new Date();
         datel = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        user.getInstance().setUsername("torres.lande@gmail.com");
+        con.username = new Label();
         con.askButton = new JFXButton();
         con.logout    = new JFXButton();
         con.remove    = new JFXButton();
@@ -59,6 +64,8 @@ public class CalendarControllerTest {
 
         con.date = new JFXDatePicker();
         con.thisday = new Label();
+
+
     }
 
     @Test
@@ -213,4 +220,21 @@ public class CalendarControllerTest {
         con.handleCalendarClick36();
         con.handleCalendarClick37();
     }
+
+
+    @Test public void testNext(){
+        
+
+    }
+
+
+
+
+
+
+    @Test
+    public void testInitialized(){
+        con.initialize(null,null);
+    }
+
 }
