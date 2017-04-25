@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class MonthEventButtonTest {
 
-    monthEventButton meb;
+    MonthEventButton meb;
     Cell cell;
     Date date;
 
@@ -25,7 +25,7 @@ public class MonthEventButtonTest {
         cell = new Cell(date, date, "13", "14", "test", "detter er en test",
                 99, false, 333, "F44336");
 
-        meb = new monthEventButton(cell);
+        meb = new MonthEventButton(cell);
     }
 
     @Test

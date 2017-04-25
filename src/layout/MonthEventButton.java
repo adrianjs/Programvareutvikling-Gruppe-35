@@ -6,11 +6,11 @@ import javafx.scene.control.Button;
 /**
  * Created by torresrl on 03/04/2017.
  */
-public class monthEventButton {
+public class MonthEventButton {
 
     Cell cell;
     Button btn;
-    public monthEventButton(Cell cell){
+    public MonthEventButton(Cell cell){
         this.cell = cell;
         btn = new Button();
         btn.setText(cell.getName());
