@@ -5,11 +5,11 @@ This product was developed by:
 - Henning Bang Halvorsen
 - Adrian Junger Steffenakk
 ---
-###Running the software
+### Running the software
 1. Download the project as a zip file and open it in your favourite unzipper (7zip, WinZip, WinRar etc).
 2. Unzip the file and save the folder in a place you can easily locate.
 3. **(If you are connected to a network at NTNU, you can skip this step)** Connect to the NTNU network using the Cisco AnyConnect VPN.
- ```see [this link] (https://innsida.ntnu.no/wiki/-/wiki/English/Install+VPN/) for more info on how to do this. ```
+ ```see [this link][1] for more info on how to do this. ```
 4. **(This might work the same in other IDEs, but this setup was based on IntelliJ IDEA)** Open IntelliJ IDEA and select "Open".
 5. Locate the folder you unzipped earlier. Select it and hit "OK".
 6. Locate the ```Main.java``` class in the ```layout``` package. Try to run it by right-clicking and selecting ```Run Main.java```.
@@ -24,7 +24,7 @@ This product was developed by:
 10. Locate the ``lib`` folder in the project files (if they are not present, wait a little while and then come back to this stage). Mark the all and click ``OK``.
 11. They should now all be added, but not checked. Make sure that every single one of them is checked, and hit ``Apply``. Close the ``Project Structure`` window.
 12. Try to run ``Main.java`` once again, and you should get the program running.
-13. Should you run into any more trouble, feel free to contact us at [henning.b.halvorsen@gmail.com] (mailto:henning.b.halvorsen@gmail.com?subject=Question regarding EO) and we will aid you as best we can!
+13. Should you run into any more trouble, feel free to contact us at henning.b.halvorsen@gmail.com and we will aid you as best we can!
 
 ___
 We hope you enjoy this product, and that it helps you get organized and educated!
@@ -32,3 +32,5 @@ We hope you enjoy this product, and that it helps you get organized and educated
 Thank you,
 
 Educational Organizer team
+
+[1]: https://innsida.ntnu.no/wiki/-/wiki/English/Install+VPN/
