@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
       <BorderPane fx:id="borderPane" layoutX="94.0" layoutY="-12.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -72,7 +72,7 @@
                                        <center>
                                           <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <JFXButton id="addButtons" fx:id="openCalendar" onAction="#login" text="Login" />
+                                                <JFXButton id="addButtons" fx:id="openCalendar" defaultButton="true" onAction="#login" text="Login" />
                                                 <JFXButton id="addButtons" onAction="#newUser" text="New User">
                                                    <HBox.margin>
                                                       <Insets left="10.0" />
