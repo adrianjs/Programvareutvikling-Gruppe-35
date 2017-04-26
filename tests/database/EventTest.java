@@ -1,15 +1,16 @@
 package database;
 
+import controllers.JavaFXThreadingRule;
 import layout.User;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Henning on 20.04.2017.
@@ -17,6 +18,10 @@ import static org.junit.Assert.*;
 public class EventTest {
     Connect connect;
     Event event;
+
+    @Rule
+    public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
+
     @Before
     public void setUp() throws Exception {
         connect = new Connect();
@@ -28,10 +33,10 @@ public class EventTest {
     @Test
     public void testDroppingAnEvent() throws SQLException {
         event = new Event();
-        event.deleteEvent(18, User.getInstance().getUsername());
+        event.deleteEvent(26089, User.getInstance().getUsername());
         ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='testStud@test.com'");
         m_result_set.next();
-        assertEquals(18, m_result_set.getInt(1));
+        assertEquals(26089, m_result_set.getInt(1));
     }
 
     @Test
@@ -48,7 +53,7 @@ public class EventTest {
     @After
     public void tearDown() throws Exception {
         connect.stmt.execute("DELETE FROM FEEDBACK WHERE Username='testStud@test.com' AND ID=27474");
-        connect.stmt.execute("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='testStud@test.com' AND eventId=18");
+        connect.stmt.execute("DELETE FROM NOTATTENDINGEVENT WHERE studentEmail='testStud@test.com' AND eventId=26089");
         connect.removeStudentSubject("TDT4100");
         connect.stmt.execute("DELETE FROM STUDENT WHERE email='testStud@test.com'");
     }

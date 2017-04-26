@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -1283,15 +1284,30 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
+                     <tooltip>
+                        <Tooltip text="Add a user-defined activity (i.e. workout, cinema)" />
+                     </tooltip>
                   </JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="121.0" stylesheets="@../css/buttonStyle.css" text="Manage Subject" textFill="RED" />
+                  <JFXButton id="sideButton" onAction="#addSubject" prefHeight="70.0" prefWidth="121.0" stylesheets="@../css/buttonStyle.css" text="Manage Subject" textFill="RED">
+                     <tooltip>
+                        <Tooltip text="Manage the subjects you are taking (i.e. add/remove)" />
+                     </tooltip></JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Bot" textFill="#ff5722" />
+                  <JFXButton id="sideButton" fx:id="askButton" onAction="#slidePane" prefHeight="70.0" prefWidth="124.0" stylesheets="/css/buttonStyle.css" text="Open Bot" textFill="#ff5722">
+                     <tooltip>
+                        <Tooltip text="Open (b)Otto, who can answer many questions!" />
+                     </tooltip></JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" onAction="#restore" prefHeight="70.0" prefWidth="124.0" stylesheets="@../css/buttonStyle.css" text="Restore" />
+                  <JFXButton id="sideButton" onAction="#restore" prefHeight="70.0" prefWidth="124.0" stylesheets="@../css/buttonStyle.css" text="Restore">
+                     <tooltip>
+                        <Tooltip text="Restore any deleted activities" />
+                     </tooltip></JFXButton>
                   <Line endX="220.0" startX="100.0" stroke="#4d5259" strokeWidth="2.0" />
-                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Log Out" />
+                  <JFXButton id="sideButton" fx:id="logout" onAction="#logOut" prefHeight="70.0" prefWidth="125.0" stylesheets="/css/buttonStyle.css" text="Log Out">
+                     <tooltip>
+                        <Tooltip text="Logs you out of the program" />
+                     </tooltip></JFXButton>
                </children>
             </VBox>
          </children>

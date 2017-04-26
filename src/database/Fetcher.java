@@ -7,11 +7,17 @@ import java.util.*;
 
 /**
  * Created by Henning on 02.03.2017.
+ * More general databse class, you can write in more spesific commands
  */
 public class Fetcher{
     private Connect connect = Connect.getInstance();
     private String query;
     private Set<List> results = new HashSet<>();
+
+    /**
+     * write in SQL code
+     * @param query
+     */
 
     public Fetcher(String query){
         this.query = query;

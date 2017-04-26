@@ -13,13 +13,15 @@
       $(document).ready(function(){
         $speechInput = $("#speech");
 
-      $speechInput.keypress(function(event) {
-        if (event.which === 13) {
-          event.preventDefault();
-          send();
-          document.getElementById('speech').value = '';
-        }
-      })
+        $speechInput.keypress(function(event) {
+            if (event.which === 13) {
+                event.preventDefault();
+                send();
+                document.getElementById('speech').value = '';
+            }
+        });
+
+        respond("Hi! You can ask me anything! Write your question in the grey textbox, and press enter to send me the question.")
       });
 
 
