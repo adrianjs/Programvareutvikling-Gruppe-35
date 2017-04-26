@@ -1313,6 +1313,7 @@
          </children>
       </AnchorPane>
    </right>
+
    <bottom>
       <AnchorPane prefHeight="0.0" prefWidth="876.0" BorderPane.alignment="CENTER">
          <children>

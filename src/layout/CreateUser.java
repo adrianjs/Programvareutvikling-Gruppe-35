@@ -90,8 +90,6 @@ public class CreateUser {
         });
         submit.setOnAction(event -> {
             if (isInputValid()) {
-                System.out.println(stud.isSelected());
-                System.out.println(teach.isSelected());
                 if (stud.isSelected()) {
                     connect.addStudent(email.getCharacters().toString(),
                             firstName.getCharacters().toString(),
@@ -182,7 +180,6 @@ public class CreateUser {
 
         if (errorMessage.length() == 0){
             try {
-                System.out.println("new user created");
                 Stage stage = (Stage) cancel.getScene().getWindow();
                 stage.close();
             } catch(NullPointerException se){

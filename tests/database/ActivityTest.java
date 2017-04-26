@@ -12,8 +12,6 @@ import static org.junit.Assert.assertNotEquals;
  * Created by torresrl on 17/04/2017.
  */
 public class ActivityTest {
-    //TODO hvorfor virker kun add med larsmade@stud.ntnu.no?
-
     @Test
     public void testAddAndRemove(){
 

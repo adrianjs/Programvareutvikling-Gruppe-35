@@ -442,7 +442,6 @@ public class SuperSorter{
 
         //If no new time (might happen, only option is to delete). Remove animation.
         if(cell.getStartDate().after(lastPossible)){
-            //TODO: Prompt with that it will be deleted
             if(cell.getType().equals("event")){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "We could not find a new timeslot for this event!\nIt will now be deleted!" +
                         "It can be restored by using the \"restore\" panel");

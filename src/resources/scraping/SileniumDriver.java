@@ -49,7 +49,7 @@ public class SileniumDriver {
      * Start the webdriver with Firefoxdriver.
      */
     private void startSileniumDriver(){
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH har ikke fått det til å funke ved å sette en relativ en......
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\resources\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH har ikke fått det til å funke ved å sette en relativ en......
         driver = new FirefoxDriver();
     }
 

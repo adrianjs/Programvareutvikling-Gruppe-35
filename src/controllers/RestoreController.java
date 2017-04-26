@@ -40,7 +40,6 @@ public class RestoreController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         try {
             connect.stmt = connect.conn.createStatement();
-            System.out.println(User.getInstance().getUsername());
 
             ResultSet m_result_set = connect.stmt.executeQuery("SELECT * FROM NOTATTENDINGEVENT WHERE studentEmail='"+ User.getInstance().getUsername()+"'");
 

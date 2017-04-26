@@ -171,8 +171,6 @@ public class AddEventController implements Initializable{
 
 
             if(subject && name && description && start && startTbeforeEndT && rep){
-                System.out.println(1);
-
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour + ":00:00";
@@ -217,7 +215,6 @@ public class AddEventController implements Initializable{
             boolean desc = validateDescription();
             boolean subject = validateSubject();
             if(name && date && time && desc && subject){
-                System.out.println("all good deadline");
                 String starthour = changeHour(this.startHour);
                 //String startTimeString = starthour + ":00:00";
                 String startTimeString = starthour;
@@ -276,7 +273,6 @@ public class AddEventController implements Initializable{
         }
         else{
             errorLabel.setText("Must select a radiobutton");
-            System.out.println("Must select a radiobutton");
         }
     }
 
@@ -285,7 +281,6 @@ public class AddEventController implements Initializable{
      * Use methods in teacherCalenaderController.
      */
     public void cancel(){//Onaction from cancel-button
-        System.out.println("cancel");
         clearScheme();
         teach.snack(1, "");
         teach.cancel();
@@ -452,6 +447,13 @@ public class AddEventController implements Initializable{
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
             return false;
+        } else if(startHour == endHour) {
+            if(startMinute > endMinute){
+                errorLabel.setText("Start time must be before end time");
+            } else {
+                endHour = endHour + 1;
+            }
+
         }
         return true;
     }
@@ -464,6 +466,7 @@ public class AddEventController implements Initializable{
         boolean rep = repeating.isSelected();
         if(!rep){
             repeating1 = 0;
+            return true;
         }
         repeating1 = 1;
         return true;

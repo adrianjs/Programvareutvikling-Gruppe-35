@@ -20,36 +20,7 @@ import static org.junit.Assert.assertNull;
  * Created by torresrl on 19/04/2017.
  */
 public class AddEventControllerTest {
-    /*
-    private Group mainGroup;
-    private Group endDateGroup;
-    private Group endTimeGroup;
-    private Group repeatingGroup;
-    private Group hoursOfWOrk;
 
-    //Inputfields
-    private final ToggleGroup group = new ToggleGroup();
-
-    private JFXTextField eventName;
-
-    private JFXRadioButton classRadio;
-    private JFXRadioButton schoolWork;
-    private JFXRadioButton deadline;
-    private JFXRadioButton exam;
-    private JFXRadioButton homeExam;
-
-
-
-     private JFXTextField description;
-     private JFXDatePicker startDate;
-     private JFXDatePicker endDate;
-     private JFXDatePicker startTime;
-     private JFXDatePicker endTime;
-     private JFXCheckBox repeating;
-     private Label errorLabel;
-     private JFXComboBox subjectsDropDown;
-     private JFXTextField hours;
-    */
      private AddEventController AEC;
      private Date date;
      private LocalDate testDate;
@@ -159,8 +130,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateSubject());
         AEC.subjectsDropDown.setValue("AAR4335");
         assertEquals(true, AEC.validateSubject());
-
-
     }
 
     @Test
@@ -168,7 +137,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateEventName());
         AEC.eventName.setText("test");
         assertEquals(true, AEC.validateEventName());
-
     }
 
     @Test
@@ -176,7 +144,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateDescription());
         AEC.description.setText("test");
         assertEquals(true, AEC.validateDescription());
-
     }
 
     @Test
@@ -186,7 +153,6 @@ public class AddEventControllerTest {
         assertEquals(false, AEC.validateStartDate());
         AEC.startDate.setValue(testDate.plusDays(2));
         assertEquals(true, AEC.validateStartDate());
-
     }
 
     @Test
@@ -258,16 +224,11 @@ public class AddEventControllerTest {
         assertEquals(true, AEC.validateHoursOfWork());
     }
 
-    //todo on inteliseren
-
     @Test
     public void testAad(){
         AEC.add();
         assertEquals("Must select a radiobutton",AEC.errorLabel.getText());
-
     }
-
-
 
     @Test
     public void testClearScene(){
@@ -279,17 +240,5 @@ public class AddEventControllerTest {
         assertEquals("", AEC.errorLabel.getText());
         assertNull(AEC.subjectsDropDown.getValue());
         assertEquals("", AEC.hours.getText());
-
     }
-
-
-
-
-
-
-
-
-
-
-
 }

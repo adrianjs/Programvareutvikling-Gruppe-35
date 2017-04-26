@@ -22,7 +22,6 @@ public class LoginTest {
 
     @Before
     public void setup(){
-        //TODO: Make a new User so that we can test getter methods for.
         User.getInstance().setUsername("testStud@test.com");
         connect = new Connect();
         connect.addStudent("testStud@test.com", "test", "test", "test", 1, "test");

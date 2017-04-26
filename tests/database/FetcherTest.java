@@ -16,7 +16,6 @@ import static org.junit.Assert.*;
  */
 public class FetcherTest {
     private Fetcher fetcher;
-    //TODO: Run this
     @Before
     public void setup(){
         User user = User.getInstance();

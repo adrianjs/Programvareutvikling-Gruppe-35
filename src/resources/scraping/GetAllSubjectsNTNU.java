@@ -25,7 +25,8 @@ public class GetAllSubjectsNTNU {
      * @throws InterruptedException If driver gets intteruppted.
      */
     public List<String> startSileniumDriver() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH must change in case uf use.
+
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\larsmade\\IdeaProjects\\Programvareutvikling-Gruppe-35\\src\\resources\\scraping\\geckodriver.exe"); //Set the geckodriver Location. --> Absolute PATH must change in case uf use.
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.ntnu.no/studier/emnesok/-/course_list/listall");
         WebElement elemtent = driver.findElement(By.className("allCourses"));
