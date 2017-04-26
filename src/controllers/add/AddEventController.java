@@ -474,7 +474,7 @@ public class AddEventController implements Initializable{
 
     /**
      * Validates the hours of work field in the fxml.document.
-     * @return
+     * @return true if hours of work has value and is int
      */
     public boolean validateHoursOfWork(){
         String hour = hours.getText();
