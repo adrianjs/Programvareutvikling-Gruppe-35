@@ -67,7 +67,11 @@ public class AddActivityController implements Initializable{
             String value = priority.getValue().toString();
             priorityNumber = Integer.parseInt(value);
             start = startTime.getTime().getHour();
-            stop = endTime.getTime().getHour();
+            if(endTime.getTime().getMinute() > 30){
+                stop = endTime.getTime().getHour() + 1;
+            }else{
+                stop = endTime.getTime().getHour();
+            }
             repeat = everyWeek.isSelected();
             description = desc.getText();
             Cell cell = toUserCell();
