@@ -55,9 +55,13 @@ public class AddActivityController implements Initializable{
      */
     public void sendIn(){
         errorTime.setText("");
+        int startMin = 0;
+        int endMin = 0;
         if((checkActivity()) && (checkDate())&& (checkTime()) && (checkPriority())){
             try {
                 stage = (Stage) cancel.getScene().getWindow();
+                startMin = startTime.getTime().getMinute();
+                endMin = endTime.getTime().getMinute();
             } catch (NullPointerException e){
 
             }
@@ -70,6 +74,27 @@ public class AddActivityController implements Initializable{
             stop = endTime.getTime().getHour();
             repeat = everyWeek.isSelected();
             description = desc.getText();
+
+            startMin = startTime.getTime().getMinute();
+            endMin = endTime .getTime().getMinute();
+
+
+            if(start == stop ) {
+                stop = stop + 1;
+                startMin = 0;
+                endMin = 0;
+            }
+
+            if(startMin > 45 && stop > start +1){
+                start = start += 1;
+                startMin = 0;
+            }
+
+            if(endMin > 20){
+                endMin = 0;
+                stop = stop + 1;
+            }
+
             Cell cell = toUserCell();
             pushCell(cell);
             try {
@@ -160,21 +185,31 @@ public class AddActivityController implements Initializable{
     public boolean checkTime(){
         int start = 0;
         int stop = 0;
+        int startMin = 0;
+        int endMin = 0;
+
         try{
             start = startTime.getTime().getHour();
             stop = endTime.getTime().getHour();
+            startMin = startTime.getTime().getMinute();
+            endMin = endTime.getTime().getMinute();
+
+
 
         }catch (Exception e){
             errorTime.setText("Time must be added");
         }
-        if(start >= stop){
+        if(start > stop){
             errorTime.setText("Start must be before end");
             return false;
-        }
-        if(start < 8 || stop < 8){
+        } else if((start == stop) && startMin > endMin) {
+            errorTime.setText("Start must be before end");
+            return false;
+        }if(start < 8 || stop < 8){
             errorTime.setText("You can not have plans before 8 clock");
             return false;
         }
+
         return true;
     }
 
