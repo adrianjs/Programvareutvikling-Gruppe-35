@@ -8,6 +8,7 @@ import java.util.Set;
 
 /**
  * Created by Henning on 22.02.2017.
+ * Login class
  */
 public class Login{
     private Connect connect = Connect.getInstance();

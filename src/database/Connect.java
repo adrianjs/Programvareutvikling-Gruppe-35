@@ -4,6 +4,7 @@ import layout.User;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 /**
  * Created by torresrl on 21/02/2017.
@@ -165,13 +166,35 @@ public class Connect {
      */
     public void addActivity(String name, Date date, boolean repeating, int priority, double startTime, double endTime, String studentEmail, String description){
         int repeatingInt = (repeating) ? 1 : 0;
-        try {
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('"+name+"','"+date+"','"
-                    +repeatingInt+"','"+priority+"','"+startTime+"','"+endTime+"','"+studentEmail+"','"+
-                    description+"', '"+"75bc1b"+"')");
-        } catch (SQLException se) {
-            se.printStackTrace();
+        if(!repeating) {
+            try {
+                stmt = conn.createStatement();
+                stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('" + name + "','" + date + "','"
+                        + repeatingInt + "','" + priority + "','" + startTime + "','" + endTime + "','" + studentEmail + "','" +
+                        description + "', '" + "75bc1b" + "')");
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        } else {
+            try {
+                stmt = conn.createStatement();
+                //leger til aktiviteten frem i 4 uker
+                LocalDate mWeekDate = date.toLocalDate();
+                Date sqlDate;
+                for(int i = 0; i < 4; i ++) {
+                    sqlDate = Date.valueOf(mWeekDate);
+                    stmt.executeUpdate("INSERT INTO ACTIVITY(name, date, repeating, priority, startTime, endTime, studentEmail, description, color) VALUES('" + name + "','" + sqlDate + "','"
+                            + repeatingInt + "','" + priority + "','" + startTime + "','" + endTime + "','" + studentEmail + "','" +
+                            description + "', '" + "75bc1b" + "')");
+                    mWeekDate = mWeekDate.plusWeeks(1);
+
+                }
+
+
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
         }
     }
 

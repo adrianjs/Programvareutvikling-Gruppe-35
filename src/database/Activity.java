@@ -3,7 +3,6 @@ package database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Created by torresrl on 30/03/2017.
@@ -15,6 +14,12 @@ public class Activity{
         super();
     }
 
+
+    /**
+     * sleter en aktivitet
+     * @param id
+     * Id til aktiviteten
+     */
     public void deleteActivity(int id){
         try {
             connect.stmt = connect.conn.createStatement();
@@ -24,6 +29,10 @@ public class Activity{
         }
     }
 
+    /**
+     * denne henter siste aktivtet som er lagt til, brukes mye til testing.
+     * @return
+     */
     public ArrayList getLastActivity(){
         ArrayList outData = new ArrayList();
         try{
