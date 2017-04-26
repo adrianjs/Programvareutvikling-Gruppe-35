@@ -85,7 +85,7 @@ public class AddActivityController implements Initializable{
                 endMin = 0;
             }
 
-            if(startMin > 45 && stop > start +1){
+            if(startMin > 50 && stop > start +1){
                 start = start += 1;
                 startMin = 0;
             }
