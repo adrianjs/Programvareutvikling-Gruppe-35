@@ -129,7 +129,6 @@ public class EventButton {
      *
      */
     public EventButton(String name, String description, String subjecCode, Cell cell, int id){
-        //TODO: Get event ID here.
         this.name = name;
         this.description = description;
         this.subjectCode = subjecCode;

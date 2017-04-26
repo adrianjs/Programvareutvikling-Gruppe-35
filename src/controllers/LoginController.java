@@ -61,10 +61,8 @@ public class LoginController implements Initializable {
         }catch(Exception e){
             //If you login as teacher you cant update subjects.
         }
-        System.out.println(user.getUsername());
-        System.out.println(user.getPassword());
+
         String user = validateLogin();
-        System.out.println("user: "+user);
         if((user == "TEACHER")||(user == "STUDENT")){
             //Jumps to the Calendar window..
                 stage = (Stage) openCalendar.getScene().getWindow();

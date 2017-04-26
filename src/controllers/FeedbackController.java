@@ -64,14 +64,13 @@ public class FeedbackController implements Initializable{
         }catch (Exception e){
 
         }
-        System.out.println("Ceckbutton works");
         String subCode = null;
         try{
             subCode = subjectsDropDown.getValue().toString();
             events = new Teacher().getStudentFeedBack(subCode);
 
         }catch(Exception e){
-            System.out.println("Must set subjectcode before checking value");
+            e.printStackTrace();
         }
         String currentDate;
         float average = 0;
@@ -90,7 +89,6 @@ public class FeedbackController implements Initializable{
         for (String date : splitUpDates){
             for (ArrayList<String> eve : events) {
                 if(eve.get(1).equals(date)){
-                    System.out.println("SAME");
                     average += Integer.parseInt(eve.get(0));
                     count ++;
                     description = eve.get(2);
@@ -105,7 +103,7 @@ public class FeedbackController implements Initializable{
                 average = 0;
                 count = 0;
             }catch (Exception e){
-                System.out.println("Fail");
+                e.printStackTrace();
             }
         }
         table.getItems().setAll(data);

@@ -35,7 +35,6 @@ public class Login{
             user.add(m_ResultSet.getString(3));
             users.add(user);
         }
-        System.out.println("getStudent: done");
         return users;
     }
 

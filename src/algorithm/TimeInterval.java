@@ -12,7 +12,7 @@ public class TimeInterval{
 
     /**
      * Construct a new time interval.
-     * //TODO: Might not be used
+     *
      * @param startTime
      * @param endTime
      */

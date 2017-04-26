@@ -116,7 +116,6 @@ public class AddActivityController implements Initializable{
     private void pushCell(Cell cell) {
         Connect connecter = new Connect();
         User user = User.getInstance();
-        System.out.println(user.getUsername());
         java.util.Calendar calendar = Calendar.getInstance();
         calendar.setTime(cell.getStartDate());
         int startHour = calendar.get(Calendar.HOUR_OF_DAY);

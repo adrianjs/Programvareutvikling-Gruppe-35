@@ -33,7 +33,6 @@ public class AddSubjectController implements Initializable{
     private ResultSet m_ResultSet;
     private ObservableList<String> subjects = FXCollections.observableArrayList(); //Is used to set items in dropdown
 
-    //TODO: FIX DENNE DOKUMENTSJONEN. DEN ER NÅ FEIL.
     /**
      * Inputs a new valid subject to the current users subjects.
      * Connects to the STUDENT database (DB) and fetches the "subjects" column from the currently logged in user.
@@ -44,11 +43,10 @@ public class AddSubjectController implements Initializable{
      * The JFXSnackbar gives feedback to the user.
      * @throws SQLException
      */
-
     public void addSubjectToCalendar() throws SQLException {
         User.getInstance().updateSubjects();
         Set<String> setOfSubjects = User.getInstance().getSubjects();
-        System.out.println(setOfSubjects);
+
         String chosenSubject;
         bar = new JFXSnackbar(anchorPane);
         chosenSubject = subject.getCharacters().toString().split("\\s+")[0];
@@ -66,7 +64,7 @@ public class AddSubjectController implements Initializable{
                 try {
                     CalendarController.getInstance().refresh();
                 } catch (NullPointerException e){
-                    System.out.println("denne funksjonen virker ikke når vi tester");
+                    e.printStackTrace();
                 }
             }else{
                 bar.setId("3");
@@ -83,7 +81,6 @@ public class AddSubjectController implements Initializable{
         String chosenSubject;
         chosenSubject = subject.getCharacters().toString().split("\\s+")[0];
         try {
-            System.out.println("Remove student subject");
             new Connect().removeStudentSubject(chosenSubject);
             bar = new JFXSnackbar(anchorPane);
             if(subject.getCharacters().toString().length() != 0){
@@ -92,7 +89,7 @@ public class AddSubjectController implements Initializable{
                 try {
                     CalendarController.getInstance().refresh();
                 } catch (NullPointerException e){
-                    System.out.println("denne funksjonen virker ikke når vi tester");
+                    e.printStackTrace();
                 }
             }
 

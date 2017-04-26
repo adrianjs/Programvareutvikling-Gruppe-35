@@ -171,8 +171,6 @@ public class AddEventController implements Initializable{
 
 
             if(subject && name && description && start && startTbeforeEndT && rep){
-                System.out.println(1);
-
                 String starthour = changeHour(this.startHour);
                 String endHour = changeHour(this.endHour);
                 String startTimeString = starthour + ":00:00";
@@ -217,7 +215,6 @@ public class AddEventController implements Initializable{
             boolean desc = validateDescription();
             boolean subject = validateSubject();
             if(name && date && time && desc && subject){
-                System.out.println("all good deadline");
                 String starthour = changeHour(this.startHour);
                 //String startTimeString = starthour + ":00:00";
                 String startTimeString = starthour;
@@ -276,7 +273,6 @@ public class AddEventController implements Initializable{
         }
         else{
             errorLabel.setText("Must select a radiobutton");
-            System.out.println("Must select a radiobutton");
         }
     }
 
@@ -285,7 +281,6 @@ public class AddEventController implements Initializable{
      * Use methods in teacherCalenaderController.
      */
     public void cancel(){//Onaction from cancel-button
-        System.out.println("cancel");
         clearScheme();
         teach.snack(1, "");
         teach.cancel();

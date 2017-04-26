@@ -102,13 +102,9 @@ public class CalendarController implements Initializable{
     private ArrayList<EventButton> oldActivityButtons = new ArrayList<>();//liste over activitys som ligger i calenderen denne uken
     private ArrayList<LocalDate> activitysDate = new ArrayList<>(); //Liste over acktiitys som har blit printet inn i listen
 
-
-
-    //*************** HENNINGS ULTRAFELT *****************//
 	//DAY
 	public List<Label> dayTabLabels = new ArrayList<>(); // Hentes fra GUI
 	public List<Cell> cellsAtCurrentDate = new ArrayList<>(); // Skal fylles fra database
-
 	private  Map<TimeInterval, Label> dayTabTimeSlots = new LinkedHashMap<>();
 	public Map<Label, Cell> labelMappedCells = new LinkedHashMap<>(); //Ferdig mappet celler til labels
 
@@ -119,7 +115,6 @@ public class CalendarController implements Initializable{
 	public Map<LocalDate, AnchorPane> dateMappedMonth = new LinkedHashMap<>(); //Lages i metode.
     private ArrayList<LocalDate> doubleDate = new ArrayList<>(); // holder telling på datoer som er 2 ganger;
 
-	//****************************************************//
     private ArrayList<Label> eventLabels = new ArrayList<>(); //MonthTabEventLabels --> Used to remove text in labels in monthTab.
 
     //Mapping used in to weekTab.
@@ -129,7 +124,6 @@ public class CalendarController implements Initializable{
     public Map<Label, Cell> weekLabelMappCell = new LinkedHashMap<>();
 
     //Methods starts here.
-
 	private static CalendarController instance = null; //InstanceControl singelton Pattern.
 	public static CalendarController getInstance() {
 		if (instance == null) {
@@ -215,7 +209,6 @@ public class CalendarController implements Initializable{
 		date.setValue(locDate);
 		refresh();
 	}
-
 
 	/**
 	 * On action from previous button in calendar.fxml, jumps to previos day/week/month
@@ -328,7 +321,6 @@ public class CalendarController implements Initializable{
 	 * @param locDate Takes in the localdate from the setNewDate Method.
 	 */
 	private void setNewDate2(LocalDate locDate){
-        System.out.println(locDate);
         chosenDate = Date.from(locDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         date.setValue(locDate);
         changeDate(locDate);
@@ -573,7 +565,7 @@ public class CalendarController implements Initializable{
 
 
 		}catch (Exception e){
-			System.out.println("");
+            e.printStackTrace();
 		}
 
     }
@@ -625,11 +617,8 @@ public class CalendarController implements Initializable{
      * Sets up the daytab.
      */
     private void setupDayTab(){
-		//System.out.println("Setup day tab");
 		clearTimeSlots();
-        //addTimeToTimeToList();
         try {
-			//System.out.println("get cells");
 			getCells();
         } catch (ParseException e) {
             e.printStackTrace();
@@ -643,7 +632,6 @@ public class CalendarController implements Initializable{
      * @throws ParseException if it fail to get cells from database.
      */
     private void getCells() throws ParseException {
-	    //TODO: endre liste når supersort er ferdig
             cells = new ArrayList<>(superSorter.getScheduleWithoutCollision());
 			cellsAtCurrentDate = new ArrayList<>(superSorter.getScheduleWithoutCollision());
 	}
@@ -718,8 +706,6 @@ public class CalendarController implements Initializable{
 	 * Insert cells at weekTab.
 	 */
 	private void insertWeekCells(){
-		//System.out.println("SETTING NEW CELLS");
-
 		for(EventButton ab : oldActivityButtons){
 			week.getChildren().remove(ab.getEvent());
 		}
@@ -775,7 +761,6 @@ public class CalendarController implements Initializable{
 	 */
 	private void insertMonthCells(){
 		removeMonthActivityLabel();
-		System.out.println("Month");
 		ArrayList<LocalDate> usedDate = new ArrayList<>();
 
 		for (Cell cell : cellsAtCurrentDate) {
@@ -907,11 +892,9 @@ public class CalendarController implements Initializable{
 	 * @param cell cell.
 	 */
 	public void writeToLabel(Label label, Cell cell){
-		//TODO: Make a nice way to write cell info to label
 		label.setText(cell.getName());
 	}
 
-	//****Lars Lager Stuff til weekTab********************************************************************************
     /**
      * Get all week tab cells, an add them to a hash
      */
