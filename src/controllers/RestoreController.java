@@ -97,14 +97,16 @@ public class RestoreController implements Initializable{
 
         Stage stage = (Stage) restoreAll.getScene().getWindow();
         stage.close();
-        superSorter.run();
+        CalendarController calCtrl = CalendarController.getInstance();
+        calCtrl.refresh();
     }
 
     public void restoreAll() throws SQLException, ParseException, IOException {
         superSorter.resetDroppedEvents();
         Stage stage = (Stage) restoreAll.getScene().getWindow();
         stage.close();
-        superSorter.run();
+        CalendarController calCtrl = CalendarController.getInstance();
+        calCtrl.refresh();
     }
 
     public void cancel(){
