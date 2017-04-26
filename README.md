@@ -1,4 +1,6 @@
 # Educational Organizer
+![EO Logo](https://folk.ntnu.no/adrianjs/EO1 "The Educational Organizer logo")
+___
 This product was developed by:
 - Lars Martin Aders
 - Tørres Lande
@@ -8,8 +10,8 @@ This product was developed by:
 ### Running the software
 1. Download the project as a zip file and open it in your favourite unzipper (7zip, WinZip, WinRar etc).
 2. Unzip the file and save the folder in a place you can easily locate.
-3. **(If you are connected to a network at NTNU, you can skip this step)** Connect to the NTNU network using the Cisco AnyConnect VPN.
- ```see [this link][1] for more info on how to do this. ```
+3. **(If you are connected to a network at NTNU, you can skip this step)** Connect to the NTNU network using the Cisco AnyConnect VPN. 
+    - see [this link][1] for more info on how to do this.
 4. **(This might work the same in other IDEs, but this setup was based on IntelliJ IDEA)** Open IntelliJ IDEA and select "Open".
 5. Locate the folder you unzipped earlier. Select it and hit "OK".
 6. Locate the ```Main.java``` class in the ```layout``` package. Try to run it by right-clicking and selecting ```Run Main.java```.
