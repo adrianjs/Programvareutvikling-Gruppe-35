@@ -452,6 +452,13 @@ public class AddEventController implements Initializable{
         if(startHour > endHour){
             errorLabel.setText("Starthour must be before end hour");
             return false;
+        } else if(startHour == endHour) {
+            if(startMinute > endMinute){
+                errorLabel.setText("Start time must be before end time");
+            } else {
+                endHour = endHour + 1;
+            }
+
         }
         return true;
     }
@@ -464,6 +471,7 @@ public class AddEventController implements Initializable{
         boolean rep = repeating.isSelected();
         if(!rep){
             repeating1 = 0;
+            return true;
         }
         repeating1 = 1;
         return true;

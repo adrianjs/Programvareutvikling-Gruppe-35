@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd2b3cfb-2694-42f1-bec6-cd31b4020228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" afterPath="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/add/AddEventController.java" afterPath="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
     </list>
     <list id="003e7013-8ccf-4d2c-8f26-d167cbc05c43" name="Failed commit: Default" comment="Made simple login verification" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -39,7 +39,7 @@
     <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$runningTest.coverage" NAME="runningTest Coverage Results" MODIFIED="1492867843945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1493197332643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Programvareutvikling-Gruppe-35$All_in_Programvareutvikling_Gruppe_35.coverage" NAME="All in Programvareutvikling-Gruppe-35 Coverage Results" MODIFIED="1493217215794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>*</FILTER>
       <FILTER>algorithm.*</FILTER>
       <FILTER>calendar.*</FILTER>
@@ -110,9 +110,90 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SuperSorter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-735">
+              <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+              <folding>
+                <marker date="1493117836000" expanded="true" signature="3307:3374" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1493117836000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1493117836000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
+                <marker date="1493117836000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
+                <marker date="1493117836000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
+                <marker date="1493117836000" expanded="true" signature="6700:6766" ph="DELETE FROM " />
+                <marker date="1493117836000" expanded="true" signature="16412:16532" ph="INSERT INTO NOTATTENDINGEVENT... " />
+                <marker date="1493117836000" expanded="true" signature="23338:23490" ph="SELECT * FRO... EVENT" />
+                <marker date="1493117836000" expanded="true" signature="24428:24501" ph="DELETE FROM " />
+                <marker date="1493117836000" expanded="true" signature="24711:24816" ph="DELETE FROM " />
+                <marker date="1493117836000" expanded="true" signature="28534:28536" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+              <folding>
+                <marker date="1493120154000" expanded="true" signature="535:594" ph="INSERT INTO NOTATTENDINGEVENT... " />
+                <marker date="1493120154000" expanded="true" signature="1090:1157" ph="INSERT INTO FEEDBACK... " />
+                <marker date="1493120154000" expanded="true" signature="1492:1541" ph="SELECT * FRO... EVENT" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="183" column="36" lean-forward="false" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1493196498000" expanded="true" signature="3030:3169" ph="INSERT INTO STUDENT... " />
+                <marker date="1493196498000" expanded="true" signature="3780:3931" ph="INSERT INTO COURSECOORDINATOR... " />
+                <marker date="1493196498000" expanded="true" signature="4824:5162" ph="INSERT INTO ACTIVITY... " />
+                <marker date="1493196498000" expanded="true" signature="5623:5972" ph="INSERT INTO ACTIVITY... " />
+                <marker date="1493196498000" expanded="true" signature="6411:6522" ph="INSERT INTO STUDTAKESUB... " />
+                <marker date="1493196498000" expanded="true" signature="6787:6898" ph="DELETE FROM " />
+                <marker date="1493196498000" expanded="true" signature="7165:7464" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="103" column="13" lean-forward="true" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+              <folding>
+                <marker date="1493117836000" expanded="true" signature="1447:1606" ph="INSERT INTO COURSECOORDINATOR... " />
+                <marker date="1493117836000" expanded="true" signature="2045:2176" ph="INSERT INTO SUBJECT... " />
+                <marker date="1493117836000" expanded="true" signature="2710:2787" ph="SELECT * FRO... SUBJECT" />
+                <marker date="1493117836000" expanded="true" signature="4407:4780" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="5136:5517" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="5951:6332" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="7490:7861" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="8274:8653" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="9196:9575" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="10366:10679" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="11489:11800" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="12847:13179" ph="INSERT INTO EVENT... " />
+                <marker date="1493117836000" expanded="true" signature="13841:13904" ph="SELECT * FRO... EVENT" />
+                <marker date="1493117836000" expanded="true" signature="15339:15548" ph="SELECT FEEDB... FEEDBACK" />
+                <marker date="1493117836000" expanded="true" signature="16206:16321" ph="SELECT SUBJE... SUBJECT" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,41 +211,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddActivityController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddActivityController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/add/AddActivityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="-1998">
               <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/controllers/CalendarControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2400">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="183" column="36" lean-forward="false" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1493196498000" expanded="true" signature="3030:3169" ph="INSERT INTO STUDENT... " />
-                <marker date="1493196498000" expanded="true" signature="3780:3931" ph="INSERT INTO COURSECOORDINATOR... " />
-                <marker date="1493196498000" expanded="true" signature="4824:5162" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1493196498000" expanded="true" signature="5623:5972" ph="INSERT INTO ACTIVITY... " />
-                <marker date="1493196498000" expanded="true" signature="6411:6522" ph="INSERT INTO STUDTAKESUB... " />
-                <marker date="1493196498000" expanded="true" signature="6787:6898" ph="DELETE FROM " />
-                <marker date="1493196498000" expanded="true" signature="7165:7464" ph="DELETE FROM " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -195,52 +247,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/controllers/LoginControllerTest.java">
+      <file leaf-file-name="AddEventController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="282">
+              <caret line="473" column="24" lean-forward="false" selection-start-line="473" selection-start-column="24" selection-end-line="473" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-              <folding>
-                <marker date="1493120154000" expanded="true" signature="535:594" ph="INSERT INTO NOTATTENDINGEVENT... " />
-                <marker date="1493120154000" expanded="true" signature="1090:1157" ph="INSERT INTO FEEDBACK... " />
-                <marker date="1493120154000" expanded="true" signature="1492:1541" ph="SELECT * FRO... EVENT" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="187" column="56" lean-forward="false" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
-              <folding>
-                <marker date="1493117836000" expanded="true" signature="1447:1606" ph="INSERT INTO COURSECOORDINATOR... " />
-                <marker date="1493117836000" expanded="true" signature="2045:2176" ph="INSERT INTO SUBJECT... " />
-                <marker date="1493117836000" expanded="true" signature="2710:2787" ph="SELECT * FRO... SUBJECT" />
-                <marker date="1493117836000" expanded="true" signature="4407:4780" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="5136:5517" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="5951:6332" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="7490:7861" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="8274:8653" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="9196:9575" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="10366:10679" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="11489:11800" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="12847:13179" ph="INSERT INTO EVENT... " />
-                <marker date="1493117836000" expanded="true" signature="13841:13904" ph="SELECT * FRO... EVENT" />
-                <marker date="1493117836000" expanded="true" signature="15339:15548" ph="SELECT FEEDB... FEEDBACK" />
-                <marker date="1493117836000" expanded="true" signature="16206:16321" ph="SELECT SUBJE... SUBJECT" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -348,7 +360,6 @@
         <option value="$PROJECT_DIR$/tests/layout/CreatUserTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/add/AddSubjectControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/TeacherCalendarControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
         <option value="$PROJECT_DIR$/tests/controllers/add/AddEventControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/FeedbackControllerTest.java" />
         <option value="$PROJECT_DIR$/tests/controllers/add/AddActivityControllerTest.java" />
@@ -366,6 +377,7 @@
         <option value="$PROJECT_DIR$/tests/database/EventTest.java" />
         <option value="$PROJECT_DIR$/src/resources/fxml/calendar.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/add/AddActivityController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/add/AddEventController.java" />
       </list>
     </option>
   </component>
@@ -679,6 +691,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="add" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Programvareutvikling-Gruppe-35" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1540,14 +1570,7 @@
       <workItem from="1492860928983" duration="427000" />
       <workItem from="1492864179045" duration="18668000" />
       <workItem from="1492893834436" duration="14342000" />
-      <workItem from="1493037933374" duration="22113000" />
-    </task>
-    <task id="LOCAL-00037" summary="Scraper stuff">
-      <created>1490788896785</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1490788896786</updated>
+      <workItem from="1493037933374" duration="23180000" />
     </task>
     <task id="LOCAL-00038" summary="Scraper can scrape Exam information.">
       <created>1490869367752</created>
@@ -1885,17 +1908,24 @@
       <option name="project" value="LOCAL" />
       <updated>1493216932165</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="utbedringer">
+      <created>1493217175279</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1493217175279</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.26 at 10h 51m 19s.xml">
-      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.26 at 10h 52m 40s.xml">
-      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.26 at 11h 02m 27s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.26 at 16h 34m 17s.xml">
+      <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Programvareutvikling-Gruppe-35 - 2017.04.26 at 16h 41m 51s.xml">
       <configuration name="All in Programvareutvikling-Gruppe-35" configurationId="JUnit" />
     </history-entry>
     <history-entry file="EventTest - 2017.04.26 at 10h 57m 20s.xml">
@@ -1921,7 +1951,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="590497000" />
+    <option name="totallyTimeSpent" value="591564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1955,7 +1985,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3237624" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22151224" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22151224" sideWeight="0.5069686" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32772276" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24440895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2025,7 +2055,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AddEvent finished, exept subjectfield." />
     <MESSAGE value="Little change in GUI" />
     <MESSAGE value="Little week tab on gui" />
     <MESSAGE value="Log in over again problem fixed" />
@@ -2050,7 +2079,8 @@
     <MESSAGE value="testet event adderen til Teacher databasen" />
     <MESSAGE value="utbedring test" />
     <MESSAGE value="flere tester" />
-    <option name="LAST_COMMIT_MESSAGE" value="flere tester" />
+    <MESSAGE value="utbedringer" />
+    <option name="LAST_COMMIT_MESSAGE" value="utbedringer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2131,14 +2161,6 @@
           <folding>
             <marker date="1492710087000" expanded="true" signature="2225:2311" ph="SELECT * FRO... SUBJECT" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2265">
-          <caret line="86" column="10" lean-forward="false" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2255,21 +2277,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5105">
-          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <marker date="1493117836000" expanded="true" signature="3307:3374" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1493117836000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1493117836000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
-            <marker date="1493117836000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
-            <marker date="1493117836000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
-            <marker date="1493117836000" expanded="true" signature="28534:28536" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/layout/EventButtonTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -2382,59 +2389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding>
-            <marker date="1493120154000" expanded="true" signature="535:594" ph="INSERT INTO NOTATTENDINGEVENT... " />
-            <marker date="1493120154000" expanded="true" signature="1090:1157" ph="INSERT INTO FEEDBACK... " />
-            <marker date="1493120154000" expanded="true" signature="1492:1541" ph="SELECT * FRO... EVENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="187" column="56" lean-forward="false" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
-          <folding>
-            <marker date="1493117836000" expanded="true" signature="1447:1606" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1493117836000" expanded="true" signature="2045:2176" ph="INSERT INTO SUBJECT... " />
-            <marker date="1493117836000" expanded="true" signature="2710:2787" ph="SELECT * FRO... SUBJECT" />
-            <marker date="1493117836000" expanded="true" signature="4407:4780" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="5136:5517" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="5951:6332" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="7490:7861" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="8274:8653" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="9196:9575" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="10366:10679" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="11489:11800" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="12847:13179" ph="INSERT INTO EVENT... " />
-            <marker date="1493117836000" expanded="true" signature="13841:13904" ph="SELECT * FRO... EVENT" />
-            <marker date="1493117836000" expanded="true" signature="15339:15548" ph="SELECT FEEDB... FEEDBACK" />
-            <marker date="1493117836000" expanded="true" signature="16206:16321" ph="SELECT SUBJE... SUBJECT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="183" column="36" lean-forward="false" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1493196498000" expanded="true" signature="3030:3169" ph="INSERT INTO STUDENT... " />
-            <marker date="1493196498000" expanded="true" signature="3780:3931" ph="INSERT INTO COURSECOORDINATOR... " />
-            <marker date="1493196498000" expanded="true" signature="4824:5162" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1493196498000" expanded="true" signature="5623:5972" ph="INSERT INTO ACTIVITY... " />
-            <marker date="1493196498000" expanded="true" signature="6411:6522" ph="INSERT INTO STUDTAKESUB... " />
-            <marker date="1493196498000" expanded="true" signature="6787:6898" ph="DELETE FROM " />
-            <marker date="1493196498000" expanded="true" signature="7165:7464" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/controllers/LoginControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -2500,18 +2454,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddActivityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="-1998">
+          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddActivityController.java">
+    <entry file="file://$PROJECT_DIR$/src/layout/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+        <state relative-caret-position="420">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/SuperSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-735">
+          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <folding>
+            <marker date="1493117836000" expanded="true" signature="3307:3374" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1493117836000" expanded="true" signature="3382:3449" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1493117836000" expanded="true" signature="3860:3949" ph="SELECT * FRO... NOTATTENDINGEVENT" />
+            <marker date="1493117836000" expanded="true" signature="4254:4319" ph="SELECT * FRO... EVENT" />
+            <marker date="1493117836000" expanded="true" signature="5465:5531" ph="SELECT * FRO... ACTIVITY" />
+            <marker date="1493117836000" expanded="true" signature="6700:6766" ph="DELETE FROM " />
+            <marker date="1493117836000" expanded="true" signature="16412:16532" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1493117836000" expanded="true" signature="23338:23490" ph="SELECT * FRO... EVENT" />
+            <marker date="1493117836000" expanded="true" signature="24428:24501" ph="DELETE FROM " />
+            <marker date="1493117836000" expanded="true" signature="24711:24816" ph="DELETE FROM " />
+            <marker date="1493117836000" expanded="true" signature="28534:28536" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <marker date="1493120154000" expanded="true" signature="535:594" ph="INSERT INTO NOTATTENDINGEVENT... " />
+            <marker date="1493120154000" expanded="true" signature="1090:1157" ph="INSERT INTO FEEDBACK... " />
+            <marker date="1493120154000" expanded="true" signature="1492:1541" ph="SELECT * FRO... EVENT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="183" column="36" lean-forward="false" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1493196498000" expanded="true" signature="3030:3169" ph="INSERT INTO STUDENT... " />
+            <marker date="1493196498000" expanded="true" signature="3780:3931" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1493196498000" expanded="true" signature="4824:5162" ph="INSERT INTO ACTIVITY... " />
+            <marker date="1493196498000" expanded="true" signature="5623:5972" ph="INSERT INTO ACTIVITY... " />
+            <marker date="1493196498000" expanded="true" signature="6411:6522" ph="INSERT INTO STUDTAKESUB... " />
+            <marker date="1493196498000" expanded="true" signature="6787:6898" ph="DELETE FROM " />
+            <marker date="1493196498000" expanded="true" signature="7165:7464" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="103" column="13" lean-forward="true" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+          <folding>
+            <marker date="1493117836000" expanded="true" signature="1447:1606" ph="INSERT INTO COURSECOORDINATOR... " />
+            <marker date="1493117836000" expanded="true" signature="2045:2176" ph="INSERT INTO SUBJECT... " />
+            <marker date="1493117836000" expanded="true" signature="2710:2787" ph="SELECT * FRO... SUBJECT" />
+            <marker date="1493117836000" expanded="true" signature="4407:4780" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="5136:5517" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="5951:6332" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="7490:7861" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="8274:8653" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="9196:9575" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="10366:10679" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="11489:11800" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="12847:13179" ph="INSERT INTO EVENT... " />
+            <marker date="1493117836000" expanded="true" signature="13841:13904" ph="SELECT * FRO... EVENT" />
+            <marker date="1493117836000" expanded="true" signature="15339:15548" ph="SELECT FEEDB... FEEDBACK" />
+            <marker date="1493117836000" expanded="true" signature="16206:16321" ph="SELECT SUBJE... SUBJECT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/add/AddEventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="473" column="24" lean-forward="false" selection-start-line="473" selection-start-column="24" selection-end-line="473" selection-end-column="24" />
           <folding />
         </state>
       </provider>
