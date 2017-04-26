@@ -41,7 +41,7 @@ public class LoginController implements Initializable {
     CalendarController calController = CalendarController.getInstance();
     JFXSnackbar jfxSnackbar;
     FXMLLoader loader;
-    String test = "denne stringen er til testing";
+    String test = "denne stringen er til testing";  //This is used for unit testing. Ignore.
 
     //Login and set user in userclass.
 
@@ -68,8 +68,6 @@ public class LoginController implements Initializable {
         if((user == "TEACHER")||(user == "STUDENT")){
             //Jumps to the Calendar window..
                 stage = (Stage) openCalendar.getScene().getWindow();
-
-            //Parent load = FXMLLoader.load(getClass().getResource("../resources/Calendar.fxml"));
             if(user == "STUDENT") {
                 loader = new FXMLLoader(getClass().getResource("/resources/fxml/calendar.fxml"));
                 loader.setController(CalendarController.getInstance());
@@ -79,7 +77,6 @@ public class LoginController implements Initializable {
                 stage.getIcons().add(new Image((getClass().getResourceAsStream("/resources/img/EO.png"))));
                 System.out.println("login successful");
                 CalendarController calCtrl = CalendarController.getInstance();
-//                //TODO: SE PÅ DENNE fikset nå??
                 calCtrl.refresh();
                 test = "student";
                 stage.setOnCloseRequest(event -> {
@@ -139,7 +136,6 @@ public class LoginController implements Initializable {
             st.setTitle("Make User");
             CreateUser controller = loader.getController();
             st.getIcons().add(new Image((getClass().getResourceAsStream("/img/EO.png"))));
-            //System.out.println("Controller: " + controller);
             controller.setDialogStage(st);
             st.setScene(new Scene(root));
             st.showAndWait();
