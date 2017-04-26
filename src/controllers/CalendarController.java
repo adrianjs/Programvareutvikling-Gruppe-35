@@ -137,10 +137,21 @@ public class CalendarController implements Initializable{
 		}
 		return instance;
 	}
+
+	/**
+	 * Return the scene.
+	 * @return scene
+	 */
 	public Scene getScene(){
 		return askButton.getScene();
 	}
 
+	/**
+	 * Changes the scene.
+	 * @param s1 fxml.document
+	 * @param s2 document header
+	 * @throws IOException if loading fails.
+	 */
 	public void changeScene(String s1, String s2) throws IOException {
 		cal.changeScene(s1, s2);
 	}
@@ -168,6 +179,9 @@ public class CalendarController implements Initializable{
 
 	}
 
+	/**
+	 * Refreshes the calendar.
+	 */
     public void refresh(){
 		try {
 			superSorter.run();

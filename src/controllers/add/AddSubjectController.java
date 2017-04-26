@@ -20,6 +20,7 @@ import java.util.*;
 
 /**
  * Created by larsmade on 23.02.2017.
+ * Add a new subject, or removes it.
  */
 public class AddSubjectController implements Initializable{
 
@@ -75,6 +76,9 @@ public class AddSubjectController implements Initializable{
         }
     }
 
+    /**
+     * Removes seleced subject for the given user.
+     */
     public void removeSubject(){
         String chosenSubject;
         chosenSubject = subject.getCharacters().toString().split("\\s+")[0];

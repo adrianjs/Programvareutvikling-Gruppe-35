@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="406.0" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddActivityController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="406.0" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.add.AddActivityController">
    <children>
       <BorderPane layoutX="385.0" layoutY="301.0" prefHeight="647.0" prefWidth="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -85,12 +85,12 @@
                            </VBox.margin></Label>
                         <HBox alignment="CENTER" prefHeight="44.0" prefWidth="256.0">
                            <children>
-                              <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="/css/buttonStyle.css" text="Cancel" />
                               <JFXButton id="addButtons" fx:id="sendInn" onAction="#sendIn" stylesheets="/css/buttonStyle.css" text="Add">
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="10.0" right="10.0" />
                                  </HBox.margin>
                               </JFXButton>
+                              <JFXButton id="addButtons" fx:id="cancel" onAction="#cancel" stylesheets="/css/buttonStyle.css" text="Cancel" />
                            </children>
                         </HBox>
                      </children>
