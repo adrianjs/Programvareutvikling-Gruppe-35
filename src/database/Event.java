@@ -2,7 +2,6 @@ package database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * Created by torresrl on 30/03/2017.
@@ -14,7 +13,13 @@ public class Event{
         super();
     }
 
-
+    /**
+     * Student can drop a school event
+     * @param id
+     * Event ID
+     * @param email
+     * Student Email
+     */
     public void deleteEvent(int id, String email){
         try {
             connect.stmt = connect.conn.createStatement();
@@ -24,7 +29,16 @@ public class Event{
         }
     }
 
-
+    /**
+     * Students can give feedback to teacher
+     * @param id
+     * Event ID
+     * @param email
+     * Student Emial
+     * @param hoursUsed
+     * How many houers student Used on event
+     * @return
+     */
     public boolean schoolWorkFeedBack(int id, String email, int hoursUsed){
         try{
             connect.stmt = connect.conn.createStatement();
@@ -35,6 +49,11 @@ public class Event{
             return false;
         }
     }
+
+    /**
+     * get last added event
+     * @return
+     */
 
     public String getLastAddedDes(){
         String outData = "";
