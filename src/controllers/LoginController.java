@@ -172,6 +172,12 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        loginField.setPromptText("example@example.com");
+        passwordField.setPromptText("password");
+        Platform.runLater(new Runnable() {
+            public void run() {
+                openCalendar.getParent().requestFocus();
+            }
+        });
     }
 }
