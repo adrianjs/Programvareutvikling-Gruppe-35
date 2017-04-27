@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import database.Connect;
+import database.Login;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Alert;
@@ -14,6 +15,9 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -107,7 +111,13 @@ public class CreateUser {
                             password.getCharacters().toString()
                     );
                 } else {
-                    System.out.println("You have to choose student or teacher!");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Invalid fields");
+                    alert.setHeaderText("Please choose type of user!");
+                    alert.setContentText("You have to select either 'Student' or 'Teacher'!");
+                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                    stage.getIcons().add(new Image(this.getClass().getResource("/img/EO.png").toString()));
+                    alert.showAndWait();
                 }
                 success = true;
             }
@@ -177,6 +187,17 @@ public class CreateUser {
                 errorMessage += "Department must be less than 100 characters.\n";
             }
         }
+        try {
+            Login login = new Login();
+            Set<List> students = login.getStudent();
+            for(List student : students){
+                if(student.get(0).equals(email.getText())){
+                    errorMessage += "The username/email is taken! Please choose another one\n";
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         if (errorMessage.length() == 0){
             try {
@@ -197,6 +218,8 @@ public class CreateUser {
             alert.showAndWait();
             return false;
         }
+
+
     }
 
     public boolean getSuccess(){
