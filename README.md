@@ -28,6 +28,9 @@ This product was developed by:
 12. Try to run ``Main.java`` once again, and you should get the program running.
 13. Should you run into any more trouble, feel free to contact us at henning.b.halvorsen@gmail.com and we will aid you as best we can!
 
+### UPDATE! (27.04.17)
+
+14. If the SDK is not setup properly, go to the ``Project Structure`` window under the ``Project`` tab. Make sure that your Java SDK is selected, and that it is running Java 8 or newer. Also, make sure that the output path is set to the ``out`` folder. If you do not have the ``out`` folder, simply create a new one and use that one.
 ___
 We hope you enjoy this product, and that it helps you get organized and educated!
 
